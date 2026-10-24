@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- plain CommonJS entry for Passenger */
 // Startup file for cPanel "Setup Node.js App" (Passenger). Run `npm run build` first.
 const { createServer } = require('node:http');
 const next = require('next');
