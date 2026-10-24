@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useId, useState, type FormEvent } from 'react';
 import { ArrowLink } from '@/components/ui/ArrowLink';
-import { ChevronDown, ChevronLeft, ChevronRight } from '@/components/ui/icons';
+import { ChevronDown } from '@/components/ui/icons';
 import { heroSlides } from '@/data/home';
 import { programs, specializationHref } from '@/data/programs';
 import { site } from '@/data/site';
@@ -56,10 +56,10 @@ export function Hero() {
       <div className={s.shade} />
 
       <button type="button" className={`${s.arrow} ${s.prev}`} onClick={() => go(-1)} aria-label="Previous slide">
-        <ChevronLeft />
+        <Image src="/icons/arrow-l-white.png" alt="" width={23} height={40} />
       </button>
       <button type="button" className={`${s.arrow} ${s.next}`} onClick={() => go(1)} aria-label="Next slide">
-        <ChevronRight />
+        <Image src="/icons/arrow-r-white.png" alt="" width={23} height={40} />
       </button>
 
       <div className={s.layout}>

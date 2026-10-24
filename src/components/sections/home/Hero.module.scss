@@ -387,23 +387,25 @@
     width: 104.109%;
   }
 
+  // arrow images are the design's vector boxes (51,480 / 1839,480; 23 x 40)
   .arrow {
-    top: u(464);
-    width: u(72);
-    height: u(72);
+    top: u(480);
+    width: u(23);
+    height: u(40);
     translate: none;
 
-    svg {
-      font-size: u(72);
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
 
   .prev {
-    left: u(26);
+    left: u(51);
   }
 
   .next {
-    right: u(34);
+    right: u(58);
   }
 
   .layout {
@@ -463,8 +465,9 @@
     margin-top: u(46);
 
     > :first-child {
+      gap: u(24);
       width: u(220);
-      padding-left: u(20);
+      padding-left: u(18);
     }
 
     > :last-child {
@@ -491,6 +494,7 @@
     border: 0;
     border-radius: u(20);
     background: rgb(0 0 0 / 60%);
+    backdrop-filter: none;
 
     h2 {
       line-height: u(40);
@@ -539,6 +543,11 @@
       height: u(50);
       margin-top: u(20);
     }
+  }
+
+  .f3 input,
+  .enquiry .f4 {
+    letter-spacing: -0.02em;
   }
 
   .f3 svg {
@@ -628,7 +637,11 @@
 
     .explore {
       width: u(160);
-      padding-left: u(33);
+      padding-left: u(31);
+    }
+
+    .spec select {
+      letter-spacing: -0.02em;
     }
 
     .notSure {

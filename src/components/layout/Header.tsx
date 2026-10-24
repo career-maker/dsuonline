@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { programs, specializationHref } from '@/data/programs';
 import { mainNav, site } from '@/data/site';
-import { ChevronDown, CloseIcon, HomeIcon, MenuIcon, PhoneIcon, SearchIcon, UserIcon } from '@/components/ui/icons';
+import { CloseIcon, MenuIcon } from '@/components/ui/icons';
 import s from './Header.module.scss';
 
 type Hit = { label: string; href: string };
@@ -62,14 +62,14 @@ export function Header() {
     <header className={s.header} data-u>
       <div className={s.bar}>
         <Link href="/" className={s.logo} aria-label="Dayananda Sagar University Online - home" onClick={closeAll}>
-          <Image src="/images/brand/logo.png" alt="Dayananda Sagar University Online" width={385} height={75} priority />
+          <Image src="/images/brand/logo-header.png" alt="Dayananda Sagar University Online" width={385} height={75} priority />
         </Link>
 
         <nav className={`${s.nav} ${menuOpen ? s.navOpen : ''}`} aria-label="Primary">
           <ul>
             <li>
               <Link href="/" className={s.homeLink} aria-label="Home" onClick={closeAll}>
-                <HomeIcon />
+                <Image className={s.ico} src="/icons/hdr-home.png" alt="" width={18} height={19} />
               </Link>
             </li>
             <li ref={progRef} className={s.hasMenu}>
@@ -80,7 +80,7 @@ export function Header() {
                 aria-controls={progId}
                 onClick={() => setProgOpen((v) => !v)}
               >
-                Programs <ChevronDown className={progOpen ? s.flip : ''} />
+                Programs <Image className={`${s.ico} ${progOpen ? s.flip : ''}`} src="/icons/hdr-chev.png" alt="" width={14} height={11} />
               </button>
               <ul id={progId} className={`${s.dropdown} ${progOpen ? s.dropdownOpen : ''}`}>
                 {programs.map((p) => (
@@ -112,7 +112,7 @@ export function Header() {
               aria-expanded={searchOpen}
               onClick={() => setSearchOpen((v) => !v)}
             >
-              <SearchIcon />
+              <Image className={s.ico} src="/icons/hdr-search.png" alt="" width={29} height={29} />
             </button>
             {searchOpen && (
               <div className={s.searchPanel}>
@@ -143,10 +143,10 @@ export function Header() {
             )}
           </div>
           <a href={`tel:${site.phone}`} className={s.phone}>
-            <PhoneIcon /> {site.phoneLabel}
+            <Image className={s.ico} src="/icons/hdr-phone.png" alt="" width={22} height={23} /> {site.phoneLabel}
           </a>
           <a href={site.learnerLogin} className={s.login} target="_blank" rel="noopener noreferrer">
-            <UserIcon /> Learner Login
+            <Image className={s.ico} src="/icons/hdr-user.png" alt="" width={25} height={25} /> Learner Login
           </a>
           <button
             type="button"
