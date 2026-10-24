@@ -2,7 +2,7 @@
 @use 'tokens' as *;
 
 @mixin container {
-  width: min(#{$container-max}, 100% - 2 * clamp(16px, #{$gutter}, 95px));
+  width: min(#{$container-max}, 100% - 2 * var(--gut));
   margin-inline: auto;
 
   // desktop: the design's 1730px column (x95-1825), scaled with the page

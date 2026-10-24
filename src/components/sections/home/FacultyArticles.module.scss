@@ -530,3 +530,27 @@
     display: none;
   }
 }
+
+// ---------- phones: swipeable rows instead of long stacks
+@include down($bp-md) {
+  .faculty,
+  .articles {
+    display: flex;
+    gap: 14px;
+    margin-right: calc(-1 * var(--gut));
+    padding-right: var(--gut);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > li {
+      flex: 0 0 min(78%, 320px);
+      scroll-snap-align: start;
+    }
+  }
+}

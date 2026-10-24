@@ -135,3 +135,61 @@ $w: clamp(40px, #{u(54)}, 54px);
     margin-top: u(15);
   }
 }
+
+// ---------- phones: full-width action bar pinned to the bottom edge
+@include down($bp-md) {
+  .tabs {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 52px 52px;
+    gap: 0;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: #fff;
+    box-shadow: 0 -4px 18px rgb(0 0 0 / 18%);
+  }
+
+  .tab {
+    width: auto;
+    height: 52px;
+    margin: 0;
+    border-radius: 0;
+    font-size: 15px;
+  }
+
+  .enquire {
+    height: 52px;
+  }
+
+  .apply {
+    height: 52px;
+    margin: 0;
+  }
+
+  .ico {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    margin: 0;
+    border-radius: 0;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .mail {
+    display: none;
+  }
+
+  .call {
+    grid-column: 3;
+  }
+
+  .wa {
+    grid-column: 4;
+  }
+}

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { programs, specializationHref } from '@/data/programs';
 import { footerColumns, site } from '@/data/site';
 import { BrochureForm } from './BrochureForm';
+import { FooterGroup } from './FooterGroup';
 import s from './Footer.module.scss';
 
 export function Footer() {
@@ -28,8 +29,7 @@ export function Footer() {
 
           <nav className={s.cols} aria-label="Footer">
             {[footerColumns[0], footerColumns[1]].map((c) => (
-              <div key={c.title}>
-                <h2>{c.title}</h2>
+              <FooterGroup key={c.title} title={c.title}>
                 <ul>
                   {c.links.map((l) => (
                     <li key={l.label}>
@@ -37,10 +37,9 @@ export function Footer() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </FooterGroup>
             ))}
-            <div>
-              <h2>Programs</h2>
+            <FooterGroup title="Programs">
               <ul>
                 {programs.map((p) => (
                   <li key={p.code}>
@@ -48,9 +47,8 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div>
-              <h2>{footerColumns[2].title}</h2>
+            </FooterGroup>
+            <FooterGroup title={footerColumns[2].title}>
               <ul>
                 {footerColumns[2].links.map((l) => (
                   <li key={l.label}>
@@ -58,7 +56,7 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </FooterGroup>
             <div className={s.contact}>
               <h2>Helpdesk</h2>
               <p>
@@ -80,8 +78,7 @@ export function Footer() {
 
         <div className={s.specs}>
           {programs.map((p) => (
-            <section key={p.code} className={`${s.spec} ${s[p.code]}`}>
-              <h2>{p.name} Specializations</h2>
+            <FooterGroup key={p.code} tag="section" className={`${s.spec} ${s[p.code]}`} title={`${p.name} Specializations`}>
               <ul>
                 {p.specializations.map((sp) => (
                   <li key={sp.slug}>
@@ -89,7 +86,7 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
-            </section>
+            </FooterGroup>
           ))}
           <BrochureForm />
         </div>

@@ -16,12 +16,11 @@
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
-  transition: filter 0.2s, translate 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.3s;
+  transition: filter 0.2s, box-shadow 0.3s;
   @include focus-ring;
 
   &:hover {
     filter: brightness(1.1);
-    translate: 0 -2px;
     box-shadow: 0 8px 20px rgb(0 0 0 / 22%);
   }
 

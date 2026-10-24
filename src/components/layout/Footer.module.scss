@@ -154,7 +154,7 @@
 .spec {
   padding: px(18) px(28) px(24) px(24);
 
-  @include up($bp-xl) {
+  @include up($bp-lg) {
     &:not(.bcom) {
       grid-row: 1 / 3;
     }
@@ -449,5 +449,63 @@
     padding: 0 0 u(22.13);
     font-size: u(15);
     line-height: u(20);
+  }
+}
+
+// ---------- phones: link groups collapse into an accordion (FooterGroup)
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  text-transform: inherit;
+  cursor: pointer;
+  @include focus-ring;
+
+  &::after {
+    content: '';
+    flex: none;
+    width: 9px;
+    height: 9px;
+    margin-right: 4px;
+    border: solid currentcolor;
+    border-width: 0 2px 2px 0;
+    rotate: 45deg;
+    transition: rotate 0.25s ease;
+  }
+
+  &[aria-expanded='true']::after {
+    rotate: -135deg;
+  }
+}
+
+@include down($bp-sm) {
+  .cols {
+    gap: 0;
+  }
+
+  .contact {
+    padding-top: 20px;
+  }
+
+  .cols > div:not(.contact) {
+    border-bottom: 1px solid rgb(0 0 0 / 12%);
+  }
+
+  .panel {
+    display: none;
+  }
+
+  .panelOpen {
+    display: block;
+    padding-bottom: 12px;
   }
 }

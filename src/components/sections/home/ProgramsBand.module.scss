@@ -56,7 +56,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @include down($bp-md) {
+  @include down($bp-sm) {
     grid-template-columns: 1fr;
   }
 }
@@ -293,6 +293,10 @@
 
   a {
     height: px(44);
+  }
+
+  > a:first-child {
+    background: #0b0e0d;
   }
 }
 
@@ -594,5 +598,23 @@
       width: u(160.4);
       padding-left: u(20);
     }
+  }
+}
+
+// ---------- phones: the CTA tile grows with its copy instead of clipping it
+@include down($bp-md) {
+  .ctaMedia {
+    min-height: 0;
+  }
+
+  .ctaBody {
+    position: relative;
+    inset: auto;
+    gap: 0;
+    padding: 20px 18px;
+  }
+
+  .ctaBtns {
+    margin-top: 20px;
   }
 }

@@ -12,7 +12,11 @@
   align-items: center;
   gap: u(24);
   height: clamp(68px, #{u(121)}, 121px);
-  padding-inline: clamp(16px, #{u(86)}, 86px);
+  padding-inline: var(--gut);
+
+  @include up($bp-lg) {
+    padding-inline: u(86);
+  }
   background: rgb(0 0 0 / 55%);
   color: #fff;
   letter-spacing: 0;
