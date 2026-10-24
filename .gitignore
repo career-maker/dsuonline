@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local-only
+/shots/
+/design/raw*/
+/GIT-PUSH.local.md
+*.tsbuildinfo

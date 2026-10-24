@@ -1,0 +1,414 @@
+    68  1540 sz14.0 | +91 9880147004
+    68  1724 sz14.0 | Learner Login
+    69   714 sz18.0 | Programs
+    69   864 sz18.0 | About
+    69   972 sz18.0 | Admission
+    69  1115 sz18.0 | Refer
+    69  1214 sz18.0 | Contact
+   267  1156 sz35.0 | What Programme are you Looking for?
+   294  1156 sz18.0 | Choose a programme or search by degree, specialisation or course.
+   349  1172 sz16.0 | Name *
+   349  1502 sz16.0 | Email *
+   408  1899 sz16.0 | Enquire Now
+   415  1227 sz16.0 | +91
+   415  1277 sz16.0 | 000 000 0000
+   415  1502 sz16.0 | Enter OTP *
+   477  1172 sz16.0 | Select a Programme...
+   539  1172 sz16.0 | Select State
+   539  1502 sz16.0 | Select City
+   549  1899 sz16.0 | Apply Now
+   610  1189 sz18.0 | Submit
+   664    95 sz60.9 | Your Degree. Your Pace.
+   727  1156 sz35.0 | What Programme are you Looking for?
+   729    95 sz60.9 | Your Future.
+   754  1156 sz18.0 | Choose a programme or search by degree, specialisation or course.
+   775    96 sz20.9 | Pursue a UGC-entitled online degree from Dayananda Sagar
+   798  1172 sz15.0 | MBA
+   798  1247 sz15.0 | MCA
+   798  1324 sz15.0 | BBA
+   798  1397 sz15.0 | BCA
+   798  1469 sz15.0 | B.Com
+   803    96 sz20.9 | University with the freedom to learn anytime, anywhere.
+   859  1172 sz16.0 | Select a Specialization..
+   860  1667 sz18.0 | Explore
+   887   115 sz18.0 | Explore Programs
+   887   354 sz18.0 | Apply Now
+   908  1156 sz16.0 | Not Sure Which Programme is Right for you?  Enquire Now
+  1024   180 sz16.0 | Net zero Conclave on 29/12/2025
+  1024   468 sz16.0 | Academic Calendar for 2025-26 Even Semester (SOE)
+  1024   891 sz16.0 | Academic Calendar for 2025-26  CLICK HERE
+  1024  1251 sz16.0 | DSU AI Conclave on 29/12/2025
+  1024  1517 sz16.0 | AI Summit 2026 March 25 2026 2PM
+  1024  1813 sz16.0 | Net zero Concla
+  1150    97 sz20.0 | Testimonials
+  1182  1056 sz18.0 | Hear from our alumni as they share how DSU Online helped accelerate their careers and achieve
+  1211    95 sz55.0 | Hear From Our Learners
+  1211  1056 sz18.0 | professional success.
+  1460  1045 sz18.0 | Ms. Chinmaya R
+  1460  1480 sz18.0 | Mr. Akhil S
+  1481  1045 sz16.0 | MBA
+  1481  1480 sz16.0 | BCA
+  1501  1045 sz16.0 | Wipro - Marketing Manager
+  1501  1480 sz16.0 | CTS - Operations Manager
+  1703   176 sz18.0 | Mr. Rakshit R
+  1703  1045 sz18.0 | Mr. John Joe
+  1703  1480 sz18.0 | Mr. Arun Kumar
+  1724   176 sz16.0 | MCA
+  1724  1045 sz16.0 | MCA
+  1724  1480 sz16.0 | MBA
+  1744   176 sz16.0 | Capgemini -  Manager
+  1744  1045 sz16.0 | TCS - Senior Project Lead
+  1744  1480 sz16.0 | Capgemini - Senior Project Lead
+  1924    95 sz20.0 | ABOUT DSU ONLINE
+  1984    93 sz55.0 | DSU Online Degree
+  2008  1013 sz50.0 | 70+
+  2008  1269 sz50.0 | 100+
+  2008  1471 sz50.0 | 700+
+  2008  1682 sz50.0 | 35+LPA
+  2044    93 sz55.0 | Programs with Added Value
+  2045  1013 sz18.0 | Years Educational Legacy
+  2045  1269 sz18.0 | Industry Programs
+  2045  1471 sz18.0 | Placement Partners
+  2045  1682 sz18.0 | Highest Package
+  2121   729 sz18.0 | A true visionary, late Sri Dayananda Sagar, founded Dayananda Sagar Institutions in
+  2150   729 sz18.0 | the 60s. Dayananda Sagar University (DSU) was created by an Act of the Karnataka
+  2179   729 sz18.0 | State in 2014, rooted in its glorious legacy and inspired by its milestones.
+  2228   729 sz18.0 | Our aim of meeting the needs of quality higher education continues with DSU
+  2257   729 sz18.0 | Online, one of the best online universities offering the best online degree programs
+  2286   729 sz18.0 | and industry-relevant online university degrees in India.
+  2380   794 sz20.0 | UGC Entitled
+  2381  1112 sz20.0 | Industry-Aligned
+  2405   794 sz20.0 | Programs
+  2406  1112 sz20.0 | Curriculum
+  2506   794 sz20.0 | Global Alumni
+  2506  1112 sz20.0 | Flexible Learning
+  2531   794 sz20.0 | Network
+  2531  1112 sz20.0 | Model
+  2622   741 sz18.0 | Know More
+  2830    94 sz20.0 | Programs
+  2886    94 sz55.0 | Which Programme are you
+  2890  1242 sz18.0 | Explore flexible, industry-relevant online degrees from Dayananda Sagar
+  2919  1242 sz18.0 | University. Start by choosing the programme you are looking for, then explore
+  2946    94 sz55.0 | Looking for?
+  2948  1242 sz18.0 | the details when you're ready.
+  3043   177 sz16.5 | ZERO
+  3043   760 sz16.5 | ZERO
+  3043  1344 sz16.5 | ZERO
+  3052   129 sz24.7 | 0%
+  3052   712 sz24.7 | 0%
+  3052  1296 sz24.7 | 0%
+  3057   167 sz14.2 | COST EMI
+  3057   750 sz14.2 | COST EMI
+  3057  1334 sz14.2 | COST EMI
+  3231   112 sz28.0 | MCA
+  3231   695 sz28.0 | MBA
+  3231  1279 sz28.0 | BBA
+  3258   112 sz20.0 | Master of Computer Applications
+  3258   695 sz20.0 | Master of Business Administration
+  3258  1279 sz20.0 | Bachelor of Business Administration
+  3298   141 sz16.0 | Fully Online
+  3298   317 sz16.0 | 2 Years
+  3298   448 sz16.0 | 1st Sem Fee : INR 32,875
+  3298   724 sz16.0 | Fully Online
+  3298   900 sz16.0 | 2 Years
+  3298  1031 sz16.0 | 1st Sem Fee : INR 32,875
+  3298  1308 sz16.0 | Fully Online
+  3298  1484 sz16.0 | 2 Years
+  3298  1615 sz16.0 | 1st Sem Fee : INR 32,875
+  3381   112 sz18.0 | Explore Program >
+  3381   497 sz18.0 | Apply Now
+  3381   695 sz18.0 | Explore Program >
+  3381  1080 sz18.0 | Apply Now
+  3381  1279 sz18.0 | Explore Program >
+  3381  1664 sz18.0 | Apply Now
+  3489   177 sz16.5 | ZERO
+  3489   756 sz16.5 | ZERO
+  3498   129 sz24.7 | 0%
+  3498   708 sz24.7 | 0%
+  3503   167 sz14.2 | COST EMI
+  3503   746 sz14.2 | COST EMI
+  3520  1307 sz40.0 | Transform Your Career
+  3563  1307 sz40.0 | with DSU Online
+  3596  1307 sz18.0 | Pursue a recognized online degree while balancing your
+  3625  1307 sz18.0 | work, personal commitments, and academic aspirations
+  3654  1307 sz18.0 | with complete flexibility.
+  3677   112 sz28.0 | BCA
+  3677   691 sz28.0 | B.Com
+  3704   112 sz20.0 | Bachelor of Computer Applications
+  3704   691 sz20.0 | Bachelor of Commerce
+  3744   141 sz16.0 | Fully Online
+  3744   317 sz16.0 | 2 Years
+  3744   448 sz16.0 | 1st Sem Fee : INR 32,875
+  3744   720 sz16.0 | Fully Online
+  3744   896 sz16.0 | 2 Years
+  3744  1027 sz16.0 | 1st Sem Fee : INR 32,875
+  3792  1327 sz18.0 | Explore Programs
+  3792  1565 sz18.0 | Apply Now
+  3827   112 sz18.0 | Explore Program >
+  3827   497 sz18.0 | Apply Now
+  3827   691 sz18.0 | Explore Program >
+  3827  1076 sz18.0 | Apply Now
+  4097    96 sz20.0 | Learning Experience
+  4134   896 sz18.0 | Empower your academic journey with a comprehensive digital learning ecosystem designed for modern students. Access
+  4161    94 sz55.0 | Everything You Need to
+  4163   896 sz18.0 | live classes, interactive discussions, assignments, and recorded lectures anytime, anywhere. Stay connected, collaborate
+  4192   896 sz18.0 | seamlessly, and track your progress through an engaging online platform. Experience flexible, technology-driven education
+  4221    94 sz55.0 | Succeed Online
+  4221   896 sz18.0 | that supports learning beyond the classroom.
+  4542  1576 sz22.0 | Live Classes
+  4543  1286 sz22.0 | Learn Your Way
+  4547   698 sz22.0 | Assignments
+  4547   992 sz22.0 | Projects
+  4868   114 sz22.0 | Dedicated Learning Experience
+  4869  1285 sz22.0 | Mobile Learning
+  4869  1576 sz22.0 | Recorded Lectures
+  4870   699 sz22.0 | Discussion Forums
+  4870   993 sz22.0 | Online Exams
+  5167    97 sz55.0 | Why Choose DSU Online ?
+  5168  1005 sz40.0 | Certifications
+  5226   101 sz18.0 | DSU Online empowers learners with flexible, industry-aligned education designed for career growth and
+  5255   101 sz18.0 | academic excellence. Through expert faculty, a future-focused curriculum, and a seamless digital learning
+  5284   101 sz18.0 | experience, students can earn a recognized degree while balancing their personal and professional
+  5313   101 sz18.0 | commitments.
+  5329  1598 sz17.9 | Equivalent to
+  5345  1315 sz17.9 | NAAC A+ University
+  5349  1082 sz17.9 | UGC Entitled
+  5351  1575 sz17.9 | On-Campus Degree
+  5422   579 sz24.0 | Top-notch Faculty &
+  5426   170 sz24.0 | Flexible Learning
+  5452   579 sz24.0 | Experienced Leadership
+  5456   170 sz24.0 | Options
+  5543   170 sz24.0 | A Dedicated
+  5552   582 sz24.0 | Cutting-Edge
+  5556  1340 sz17.9 | 100% Online
+  5557  1060 sz17.9 | Industry-Oriented
+  5559  1563 sz17.9 | Recognized for Higher
+  5573   170 sz24.0 | Placement Cell
+  5578  1354 sz17.9 | Learning
+  5579  1084 sz17.9 | Curriculum
+  5581  1550 sz17.9 | Education &  Employment
+  5582   582 sz24.0 | Digital Resources
+  5850    96 sz20.0 | Hiring Partners
+  5906    94 sz55.0 | Careers Assistance & Hiring
+  5966    94 sz55.0 | Partners
+  6013    95 sz18.0 | At DSU Online, we go beyond academics to prepare you for a successful career. Our dedicated career
+  6042    95 sz18.0 | services support you at every step.
+  6152   188 sz22.0 | Skill Enhancement
+  6173   557 sz25.0 | Skill Enhancement
+  6177   188 sz22.0 | Workshops
+  6198   557 sz25.0 | Workshops
+  6247   499 sz18.0 | Boost your employability through skill enhancementworkshops offered as part of the Dayananda Sagar
+  6261   188 sz22.0 | Industry Networking
+  6276   803 sz18.0 | University online learning
+  6286   188 sz22.0 | Opportunities
+  6287  1338 sz25.0 | Our Recruitment Partners
+  6305   499 sz18.0 | ecosystem.
+  6340   499 sz18.0 | Designed for learnersenrolled in online degree courses in India,
+  6369   499 sz18.0 | these sessionsfocus on resume building, interview skills, and
+  6370   188 sz22.0 | Job Placement
+  6395   188 sz22.0 | Assistance
+  6398   499 sz18.0 | personalbranding to help you stand out in todays competitive job
+  6427   499 sz18.0 | market.
+  6475   528 sz18.0 | Expert-Led Workshops
+  6479   188 sz22.0 | Career
+  6504   188 sz22.0 | progression
+  6511   528 sz18.0 | Industry-Relevant Curriculum
+  6547   528 sz18.0 | Practical Learning Approach
+  6583   528 sz18.0 | PersonalizedGuidance
+  6587   188 sz22.0 | Leadership
+  6612   188 sz22.0 | Programs
+  6817    96 sz20.0 | Learning Experience
+  6850   797 sz18.0 | Learn from accomplished academicians. researchers and industry experts
+  6861  1641 sz18.0 | View All Faculty
+  6879   797 sz18.0 | who are shaping the next generation of leaders.
+  6880    94 sz55.0 | Meet Our Faculty
+  7234   110 sz20.0 | Dr Prashant Raman
+  7234   460 sz20.0 | Dr. Raghavendra S
+  7234   810 sz20.0 | Dr. Sneha Joshi
+  7234  1160 sz20.0 | Dr. Aakash Verma
+  7234  1510 sz20.0 | Dr. Meera Singh
+  7258   110 sz16.0 | Professor of Finance
+  7258   460 sz16.0 | Associate Professor, Management Studies
+  7258   810 sz16.0 | Senior Lecturer, Marketing
+  7258  1160 sz16.0 | Assistant Professor, Information Systems
+  7258  1510 sz16.0 | Lecturer, Human Resources
+  7297   137 sz16.0 | 20+ years of Academic Experience
+  7297   487 sz16.0 | 20+ years of Academic Experience
+  7297   837 sz16.0 | 15+ years of Industry Experience
+  7297  1187 sz16.0 | 10+ years of Academic Experience
+  7297  1537 sz16.0 | 8+ years in Academia and Consulting
+  7333   137 sz16.0 | Ph.D in Finance
+  7333   487 sz16.0 | Ph.D in Management
+  7333   837 sz16.0 | Ph.D in Marketing
+  7333  1187 sz16.0 | Ph.D in Information Technology
+  7333  1537 sz16.0 | Ph.D in Organizational Behavior
+  7373   342 sz16.0 | LinkedIn
+  7373   692 sz16.0 | LinkedIn
+  7373  1042 sz16.0 | LinkedIn
+  7373  1392 sz16.0 | LinkedIn
+  7373  1742 sz16.0 | LinkedIn
+  7374   110 sz16.0 | View Profile >
+  7374   460 sz16.0 | View Profile >
+  7374   810 sz16.0 | View Profile >
+  7374  1160 sz16.0 | View Profile >
+  7374  1510 sz16.0 | View Profile >
+  7611    96 sz20.0 | Faculty Insights
+  7667    94 sz55.0 | Articles & Expert
+  7701   797 sz18.0 | Explore thought leadership, research updates and expert opinions from our
+  7711  1638 sz18.0 | View All Articles
+  7727    94 sz55.0 | Perspectives
+  7730   797 sz18.0 | faculty on topics that matter.
+  8096   116 sz16.0 | 12 sep 2025
+  8096   699 sz16.0 | 15 sep 2025
+  8096  1282 sz16.0 | 20 sep 2025
+  8135   699 sz28.0 | Gaining Deeper Insights into Business
+  8135  1282 sz28.0 | Building Careers in a Global
+  8136   116 sz28.0 | The Role of Generative A1 in
+  8173   699 sz28.0 | Operations Through Data Analysis
+  8173  1282 sz28.0 | Economy
+  8174   116 sz28.0 | Higher Education
+  8211   116 sz18.0 | Exploring how generative A1 can transform teaching, learning
+  8211   699 sz18.0 | A closer look at how data and analytics help students
+  8211  1282 sz18.0 | Exploring how global markets, international opportunities, and
+  8240   116 sz18.0 | and research in universities.
+  8240   699 sz18.0 | understand business trends, make informed ...
+  8240  1282 sz18.0 | cross-cultural
+  8280   120 sz16.0 | Read Article >
+  8280   703 sz16.0 | Read Article >
+  8280  1286 sz16.0 | Read Article >
+  8344   194 sz18.0 | Dr. Raghavendra S
+  8344   777 sz18.0 | Dr. Meera Singh
+  8344  1360 sz18.0 | Dr. Aakash Verma
+  8367   194 sz16.0 | Associate Professor, Management Studies
+  8367   777 sz16.0 | Lecturer, Human Resources
+  8367  1360 sz16.0 | Assistant Professor, Information Systems
+  8390   194 sz16.0 | View Profile >
+  8390   777 sz16.0 | View Profile >
+  8390  1360 sz16.0 | View Profile >
+  8391   310 sz16.0 | LinkedIn
+  8391   893 sz16.0 | LinkedIn
+  8391  1476 sz16.0 | LinkedIn
+  8662   601 sz55.0 | Recognitions & Accreditations
+  9077    97 sz20.0 | FAQ
+  9138    95 sz55.0 | Frequently Asked Questions
+  9260    95 sz32.0 | 01 Is DSU Online approved by the UGC?
+  9353    95 sz32.0 | 02 Can I apply for multiple programs at DSU Online?
+  9443   142 sz20.0 | Is the online BBA IB.Com I BCA I MBA I MCA degree equal to a regular degree?
+  9446    95 sz32.0 | 03
+  9457  1151 sz55.0 | Ready to take the
+  9517  1151 sz55.0 | Next Step ?
+  9539    95 sz32.0 | 04 Are the online degrees from DSU Online recognized and valid?
+  9556  1153 sz18.0 | Admission Open for 2027, Enroll Now & Stop Your Future
+  9617  1171 sz18.0 | Apply Now
+  9618  1348 sz18.0 | Explore Courses
+  9632    95 sz32.0 | 05 Is DSU a government-recognized university?
+  9921    97 sz20.0 | Blogs & Insights
+  9957  1705 sz18.0 | View All
+  9982    95 sz55.0 | Latest Blogs & Insights
+ 10093   132 sz28.0 | 28th
+ 10093   718 sz28.0 | 28th
+ 10093  1304 sz28.0 | 28th
+ 10113   124 sz16.0 | Apr 2026
+ 10113   710 sz16.0 | Apr 2026
+ 10113  1296 sz16.0 | Apr 2026
+ 10457   723 sz28.0 | Top Job-Oriented Professional Online
+ 10458   137 sz28.0 | Everything You Need to Know About
+ 10458  1309 sz28.0 | Accelerate Your Career Growth with
+ 10495   723 sz28.0 | DegreeCourses After Class 12th /
+ 10496   137 sz28.0 | OnlineMBA: Subjects, Structure & How
+ 10496  1309 sz28.0 | Premium Online Learning at
+ 10533   723 sz28.0 | PUC +2 or Graduation
+ 10534   137 sz28.0 | It Could Change Your Career
+ 10534  1309 sz28.0 | DSU Online
+ 10574   141 sz18.0 | If the MBA idea keeps coming back to you atwork, in
+ 10574   727 sz18.0 | You've finished school or college. Now comesthe real
+ 10574  1313 sz18.0 | You may think you’ve peaked at your job or in your career
+ 10603   141 sz18.0 | conver
+ 10603   308 sz18.0 | sations, or just quietly in then...
+ 10603   727 sz18.0 | question: what's next? W...
+ 10603  1313 sz18.0 | when you become aware of how your current ...
+ 10649   174 sz16.0 | Read More
+ 10649   760 sz16.0 | Read More
+ 10649  1346 sz16.0 | Read More
+ 10898   546 sz20.0 | Quick Links
+ 10898   805 sz20.0 | Resources
+ 10898  1057 sz20.0 | Programs
+ 10898  1244 sz20.0 | Student Support
+ 10898  1504 sz20.0 | Helpdesk
+ 10933   546 sz18.0 | Home
+ 10933   805 sz18.0 | Latest News & Events
+ 10933  1057 sz18.0 | MBA
+ 10933  1244 sz18.0 | Contact Us
+ 10933  1505 sz18.0 | Call Us : +91 98801 48004
+ 10968  1504 sz18.0 | Email Us : helpdesk@dsuonline.com
+ 10972   546 sz18.0 | About DSU Online
+ 10972   805 sz18.0 | Student Testimonials
+ 10972  1057 sz18.0 | MCA
+ 10972  1244 sz18.0 | Blogs
+ 10990    96 sz15.0 | Kudlu Gate, Hosur Road,Bengaluru - 560 114
+ 11011   546 sz18.0 | Academics
+ 11011   805 sz18.0 | Why DSU Online
+ 11011  1057 sz18.0 | BBA
+ 11011  1244 sz18.0 | FAQs
+ 11025  1504 sz20.0 | Admissions
+ 11050   546 sz18.0 | Admissions
+ 11050   805 sz18.0 | Mandatory Disclosure
+ 11050  1057 sz18.0 | BCA
+ 11050  1244 sz18.0 | Placements
+ 11060  1505 sz18.0 | Call Us : +91 98801 48004
+ 11089  1057 sz18.0 | B.Com
+ 11089  1244 sz18.0 | Student Support
+ 11095  1504 sz18.0 | Email Us : admissions@dsuonline.com
+ 11171   466 sz20.0 | MCA Specializations
+ 11171   815 sz20.0 | BBA Specializations
+ 11171  1171 sz20.0 | BCA Specializations
+ 11171  1523 sz20.0 | B.Com Specializations
+ 11172   117 sz20.0 | MBA Specializations
+ 11222   464 sz15.0 | Cloud Computing Technologies
+ 11222   815 sz15.0 | Digital Marketing
+ 11222  1172 sz15.0 | Artificial Intelligence
+ 11222  1524 sz15.0 | Fintech Regulations & Security
+ 11224   117 sz15.0 | Financial Management
+ 11254   464 sz15.0 | Data Science
+ 11254   815 sz15.0 | Supply Chain Management
+ 11254  1172 sz15.0 | Machine Learning
+ 11254  1524 sz15.0 | Supply Chain Management
+ 11256   117 sz15.0 | Human Resource Management
+ 11286   464 sz15.0 | Blockchain Technologies
+ 11286   815 sz15.0 | Business Analytics
+ 11286  1172 sz15.0 | Big Data Analytics
+ 11286  1524 sz15.0 | Business Analytics
+ 11288   117 sz15.0 | (HRM)
+ 11318   464 sz15.0 | Quantum Computing
+ 11318  1172 sz15.0 | Blockchain Technologies
+ 11320   117 sz15.0 | Marketing Management
+ 11350   464 sz15.0 | Artificial Intelligence
+ 11350  1172 sz15.0 | Full Stack Development
+ 11352   117 sz15.0 | IT & Systems Management
+ 11382   464 sz15.0 | Deep Learning
+ 11382  1172 sz15.0 | DevOps
+ 11384   117 sz15.0 | Supply Chain Management
+ 11414   464 sz15.0 | Big Data Analytics
+ 11414  1172 sz15.0 | Ethical Hacking
+ 11416   117 sz15.0 | Entrepreneurship Management
+ 11446   464 sz15.0 | Internet of Things (IoT)
+ 11446  1172 sz15.0 | Mobile Programming
+ 11448   117 sz15.0 | Business Analytics
+ 11478   464 sz15.0 | Natural Language Processing
+ 11478  1172 sz15.0 | Database Administration
+ 11480   117 sz15.0 | Artificial Intelligence
+ 11509  1521 sz18.0 | DOWNLOAD BROCHURES
+ 11510   464 sz15.0 | Mobile Application Development
+ 11510  1172 sz15.0 | Advanced Database (NoSQL)
+ 11542   464 sz15.0 | Data Analytics & Visualization
+ 11542  1172 sz15.0 | Internet of Things (IoT)
+ 11556  1538 sz15.4 | Select Program
+ 11574   464 sz15.0 | Industrial IoT & Automation
+ 11574  1172 sz15.0 | Game Programming
+ 11606   464 sz15.0 | Business Intelligence Technology
+ 11609  1619 sz15.4 | Download PDF
+ 11638   464 sz15.0 | Business Data Analytics
+ 11670   464 sz15.0 | Quantum Machine Learning
+ 11734    96 sz15.0 | Copyright © 2026 DSU. All Rights Reserved
+ 11734   843 sz15.0 | Privacy Policy | Terms & Conditions
+ 11738  1517 sz14.0 | Designed & developed  By:
