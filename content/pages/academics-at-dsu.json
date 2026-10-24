@@ -1,0 +1,416 @@
+{
+ "title": "Academics at DSU | Programs, Courses & Learning Structure",
+ "description": "Explore Academics at DSU. Discover online degree programs, curriculum structure, electives, and industry-focused learning across BBA, BCA, BCom, and MCA.",
+ "blocks": [
+  {
+   "t": "p",
+   "x": "Hero Section"
+  },
+  {
+   "t": "p",
+   "x": "Our Teaching Methodology Section"
+  },
+  {
+   "t": "p",
+   "x": "Our Faculty Section"
+  },
+  {
+   "t": "p",
+   "x": "Student engagement/networking activities Section"
+  },
+  {
+   "t": "p",
+   "x": "Remote Proctored Online Assessment Section"
+  },
+  {
+   "t": "p",
+   "x": "Our placement cell Section"
+  },
+  {
+   "t": "h1",
+   "x": "Academic Excellence Backed by Legacy & Innovation"
+  },
+  {
+   "t": "a",
+   "x": "Know More",
+   "href": "https://apply.dsuonline.com/"
+  },
+  {
+   "t": "p",
+   "x": "Update the image path as needed"
+  },
+  {
+   "t": "img",
+   "src": "/content/3796bafc-point-to-remember.png",
+   "alt": "Application Process",
+   "w": 610,
+   "h": 569
+  },
+  {
+   "t": "h2",
+   "x": "Our Teaching Methodology"
+  },
+  {
+   "t": "p",
+   "x": "At DSU online, we follow a student-centered approach where we focus on flexible and interactive learning. Through live lectures, pre-recorded content, and collaborative projects, students are provided with the opportunity to learn at their own pace. Students engage with teachers and peers through virtual workshops, webinars, and discussion forums. With the use of cutting-edge technology and round-the-clock chat-based assistance, students can learn in a comfortable environment without compromising on the quality of their education."
+  },
+  {
+   "t": "img",
+   "src": "/content/2347f908-chat.jpg",
+   "alt": "Student Engagement",
+   "w": 600,
+   "h": 400
+  },
+  {
+   "t": "h2",
+   "x": "Student Engagement/Networking Activities"
+  },
+  {
+   "t": "p",
+   "x": "Virtual Orientation ▲"
+  },
+  {
+   "t": "p",
+   "x": "Join our comprehensive virtual orientation program to get familiar with the online learning platform, meet your peers, and understand the academic structure. This interactive session helps you start your journey with confidence."
+  },
+  {
+   "t": "p",
+   "x": "Expert sessions and webinars ▼"
+  },
+  {
+   "t": "p",
+   "x": "Learn from industry leaders and subject matter experts to expand your domain knowledge. Attend career readiness workshops, conducted for final semester students, to prepare for placement interviews."
+  },
+  {
+   "t": "p",
+   "x": "Newsletters ▼"
+  },
+  {
+   "t": "p",
+   "x": "Stay updated on latest developments in the world of academia. You can also contribute to the newsletter and have your articles published."
+  },
+  {
+   "t": "h2",
+   "x": "Remote Proctored Online Assessment"
+  },
+  {
+   "t": "p",
+   "x": "Another advantage of studying at DSU online, students can write their tests and exams remotely through a secure and monitored channel, ensuring academic integrity. These assessments are conducted under real-time supervision through webcams, screen monitoring, and other AI-based tools. The exam conditions are constant across the board, ensuring that the standards of testing are uniform throughout, regardless of the student’s location."
+  },
+  {
+   "t": "p",
+   "x": "Update the image path as needed"
+  },
+  {
+   "t": "h2",
+   "x": "Our placement cell"
+  },
+  {
+   "t": "p",
+   "x": "A proactive approach to curriculum development, industry partnerships, and unrelenting training and placement activities have led to stellar placements at DSU, which is a testimony to talents that are a perfect fit."
+  },
+  {
+   "t": "img",
+   "src": "/content/35e63034-asset-5-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 294,
+   "h": 83
+  },
+  {
+   "t": "img",
+   "src": "/content/90889561-asset-6-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 323,
+   "h": 81
+  },
+  {
+   "t": "img",
+   "src": "/content/cb739834-asset-7-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 370,
+   "h": 111
+  },
+  {
+   "t": "img",
+   "src": "/content/12b7fa3f-asset-8-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 329,
+   "h": 115
+  },
+  {
+   "t": "img",
+   "src": "/content/4fd7fd17-asset-10-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 215,
+   "h": 98
+  },
+  {
+   "t": "img",
+   "src": "/content/d0cfdee3-asset-11-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 308,
+   "h": 99
+  },
+  {
+   "t": "img",
+   "src": "/content/79069a70-asset-12-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1818,
+   "h": 611
+  },
+  {
+   "t": "img",
+   "src": "/content/3ee7e10c-asset-13-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 276,
+   "h": 90
+  },
+  {
+   "t": "h2",
+   "x": "Real Stories, Real Impact"
+  },
+  {
+   "t": "p",
+   "x": "Real experiences from learners across our online programs."
+  },
+  {
+   "t": "img",
+   "src": "/content/5aedda87-Simran-Sultana.webp",
+   "alt": "Simran Sultana",
+   "w": 357,
+   "h": 447
+  },
+  {
+   "t": "p",
+   "x": "“The flexibility of this online program helped me balance work and studies effortlessly.”"
+  },
+  {
+   "t": "p",
+   "x": "Simran Sultana"
+  },
+  {
+   "t": "p",
+   "x": "MBA"
+  },
+  {
+   "t": "img",
+   "src": "/content/f4ede5e4-madiha-kousar.webp",
+   "alt": "Madiha Kauser",
+   "w": 1148,
+   "h": 1127
+  },
+  {
+   "t": "p",
+   "x": "“Flexible schedule and strong academic support made learning comfortable.”"
+  },
+  {
+   "t": "p",
+   "x": "Madiha Kauser"
+  },
+  {
+   "t": "p",
+   "x": "MBA"
+  },
+  {
+   "t": "img",
+   "src": "/content/9ae9935a-deepika.s.r.webp",
+   "alt": "Deepika S R",
+   "w": 346,
+   "h": 410
+  },
+  {
+   "t": "p",
+   "x": "“Supportive faculty and recorded sessions helped me learn at my own pace.”"
+  },
+  {
+   "t": "p",
+   "x": "Deepika S R"
+  },
+  {
+   "t": "p",
+   "x": "MCA"
+  },
+  {
+   "t": "img",
+   "src": "/content/abe112e9-gali-janardhan-reddy.webp",
+   "alt": "Mr. GALI JANARDHAN REDDY",
+   "w": 368,
+   "h": 285
+  },
+  {
+   "t": "p",
+   "x": "“A supportive learning environment that boosted my skills, confidence, and overall understanding.”"
+  },
+  {
+   "t": "p",
+   "x": "Mr. GALI JANARDHAN REDDY"
+  },
+  {
+   "t": "p",
+   "x": "BCA"
+  },
+  {
+   "t": "img",
+   "src": "/content/0ea0b5fe-saniya.webp",
+   "alt": "Ms. SANIYA",
+   "w": 350,
+   "h": 366
+  },
+  {
+   "t": "p",
+   "x": "“Well-structured study materials and flexible classes made learning convenient and effective.”"
+  },
+  {
+   "t": "p",
+   "x": "Ms. SANIYA"
+  },
+  {
+   "t": "p",
+   "x": "B.Com"
+  },
+  {
+   "t": "img",
+   "src": "/content/849e44c2-ezra-sultana.webp",
+   "alt": "Ms. EZRA SULTHANA",
+   "w": 359,
+   "h": 373
+  },
+  {
+   "t": "p",
+   "x": "“Supportive faculty, flexible learning, and interactive sessions helped me build strong IT skills.”"
+  },
+  {
+   "t": "p",
+   "x": "Ms. EZRA SULTHANA"
+  },
+  {
+   "t": "p",
+   "x": "BCA"
+  },
+  {
+   "t": "img",
+   "src": "/content/d50b6aa5-SASADHAR.jpg",
+   "alt": "Mr. SASADHAR BHAUMIK",
+   "w": 1082,
+   "h": 1280
+  },
+  {
+   "t": "p",
+   "x": "“Affordable fees, flexible weekend classes, and excellent support for working professionals.”"
+  },
+  {
+   "t": "p",
+   "x": "Mr. SASADHAR BHAUMIK"
+  },
+  {
+   "t": "p",
+   "x": "BBA"
+  },
+  {
+   "t": "img",
+   "src": "/content/eb567263-Varun-M-Raju.webp",
+   "alt": "Varun M Raju",
+   "w": 395,
+   "h": 488
+  },
+  {
+   "t": "p",
+   "x": "“A smooth enrollment process and a program that truly supports working professionals.”"
+  },
+  {
+   "t": "p",
+   "x": "Varun M Raju"
+  },
+  {
+   "t": "p",
+   "x": "MBA"
+  },
+  {
+   "t": "img",
+   "src": "/content/6e5b994e-Rakshith-N.webp",
+   "alt": "Rakshith N",
+   "w": 352,
+   "h": 461
+  },
+  {
+   "t": "p",
+   "x": "“Well-structured learning with excellent support throughout the journey.”"
+  },
+  {
+   "t": "p",
+   "x": "Rakshith N"
+  },
+  {
+   "t": "p",
+   "x": "MBA"
+  },
+  {
+   "t": "img",
+   "src": "/content/8e37fcd1-1.jpg",
+   "alt": "Mr. CHINMAYA R",
+   "w": 612,
+   "h": 612
+  },
+  {
+   "t": "p",
+   "x": "“DSU Online helped me balance sports, recovery, and studies through flexible recorded classes.”"
+  },
+  {
+   "t": "p",
+   "x": "Mr. CHINMAYA R"
+  },
+  {
+   "t": "p",
+   "x": "BCA"
+  },
+  {
+   "t": "p",
+   "x": "“Engaging lectures, strong faculty support, and flexible learning exceeded my expectations.”"
+  },
+  {
+   "t": "p",
+   "x": "Ms. SANDHIYA SHREE J"
+  },
+  {
+   "t": "p",
+   "x": "BCA"
+  },
+  {
+   "t": "p",
+   "x": "“Industry-focused curriculum and hands-on learning made me confident and career-ready.”"
+  },
+  {
+   "t": "p",
+   "x": "Ms. KAVYA M"
+  },
+  {
+   "t": "p",
+   "x": "BCA"
+  },
+  {
+   "t": "p",
+   "x": "“Clear explanations, patient faculty, and recorded sessions made learning smooth and easy.”"
+  },
+  {
+   "t": "p",
+   "x": "Mr. MOHAMMED SHAHID"
+  },
+  {
+   "t": "p",
+   "x": "B.Com"
+  },
+  {
+   "t": "p",
+   "x": "“Live sessions and practical assignments strengthened my skills and shaped my career path.”"
+  },
+  {
+   "t": "p",
+   "x": "Mr. NITHIN T N"
+  },
+  {
+   "t": "p",
+   "x": "BCA"
+  }
+ ],
+ "url": "https://dsuonline.com/academics-at-dsu"
+}

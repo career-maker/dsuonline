@@ -1,0 +1,257 @@
+{
+ "title": "Online BCA in Advanced Database | DSU Online UGC Entitled",
+ "description": "Pursue an online BCA with Advanced Database (NoSQL) elective at DSU Online. Master MongoDB, Cassandra, big data & more. UGC-entitled, NAAC A+ accredited programme.",
+ "blocks": [
+  {
+   "t": "p",
+   "x": "Advance Your Skills"
+  },
+  {
+   "t": "h1",
+   "x": "Online BCA Program - Advanced Database (NoSQL)"
+  },
+  {
+   "t": "p",
+   "x": "Schema-less data modeling | real-time & big data handling | MongoDB & Cassandra | backend data pipelines"
+  },
+  {
+   "t": "p",
+   "x": "Duration"
+  },
+  {
+   "t": "p",
+   "x": "3 Years"
+  },
+  {
+   "t": "p",
+   "x": "(6 Semesters)"
+  },
+  {
+   "t": "p",
+   "x": "1st Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 22,250/-"
+  },
+  {
+   "t": "p",
+   "x": "2nd–5th Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 21,750/-"
+  },
+  {
+   "t": "p",
+   "x": "per sem"
+  },
+  {
+   "t": "p",
+   "x": "6th Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 20,750/-"
+  },
+  {
+   "t": "p",
+   "x": "Total Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 1,30,000/-"
+  },
+  {
+   "t": "h2",
+   "x": "About Advanced Database (NoSQL)"
+  },
+  {
+   "t": "p",
+   "x": "This elective explores non-relational, high-performance databases widely used in big data and real-time applications such as search engines, social media, and scalable backend systems. You will gain skills in schema-less data modeling, handling real-time and big data use cases, and working with databases like MongoDB and Cassandra. This course prepares you for roles such as NoSQL Data Engineer Intern, Big Data Support Analyst, and Backend Developer, giving you hands-on experience with modern, scalable data systems used by top-tier tech firms."
+  },
+  {
+   "t": "img",
+   "src": "/content/d8035b6e-DSU4.webp",
+   "alt": "DSU Campus",
+   "w": 2808,
+   "h": 2049
+  },
+  {
+   "t": "h3",
+   "x": "Learning Modules"
+  },
+  {
+   "t": "p",
+   "x": "Introduction to NoSQL"
+  },
+  {
+   "t": "p",
+   "x": "Understand non-relational databases, differences from SQL, key-value, document, column, and graph database types."
+  },
+  {
+   "t": "p",
+   "x": "Big Data & Real-Time Systems"
+  },
+  {
+   "t": "p",
+   "x": "Learn to handle high-volume, high-velocity data, real-time processing, and scalable storage techniques."
+  },
+  {
+   "t": "p",
+   "x": "Schema-less Data Modeling"
+  },
+  {
+   "t": "p",
+   "x": "Design flexible database schemas for dynamic applications and optimize storage for large datasets."
+  },
+  {
+   "t": "p",
+   "x": "MongoDB & Cassandra Concepts"
+  },
+  {
+   "t": "p",
+   "x": "Work with popular NoSQL databases, CRUD operations, indexing, replication, sharding, and performance optimization."
+  },
+  {
+   "t": "p",
+   "x": "Performance Monitoring & Security"
+  },
+  {
+   "t": "p",
+   "x": "Monitor database performance, backup & recovery, and implement security best practices for NoSQL systems."
+  },
+  {
+   "t": "h3",
+   "x": "Career Path"
+  },
+  {
+   "t": "p",
+   "x": "🗄️"
+  },
+  {
+   "t": "p",
+   "x": "NoSQL Data Engineer Intern"
+  },
+  {
+   "t": "p",
+   "x": "Work on designing and managing schema-less databases, handling real-time data, and ensuring scalability for modern applications."
+  },
+  {
+   "t": "p",
+   "x": "⚡"
+  },
+  {
+   "t": "p",
+   "x": "Big Data Support Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Support big data pipelines, monitor database performance, and optimize NoSQL systems for real-time analytics and high-volume workloads."
+  },
+  {
+   "t": "p",
+   "x": "🛠️"
+  },
+  {
+   "t": "p",
+   "x": "Backend Developer (NoSQL)"
+  },
+  {
+   "t": "p",
+   "x": "Integrate NoSQL databases into applications, develop APIs, manage data storage, and ensure smooth backend operations for scalable systems."
+  },
+  {
+   "t": "p",
+   "x": "📊"
+  },
+  {
+   "t": "p",
+   "x": "Database Performance Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Monitor and tune NoSQL database performance, analyze bottlenecks, and implement best practices for high-availability systems."
+  },
+  {
+   "t": "p",
+   "x": "🔐"
+  },
+  {
+   "t": "p",
+   "x": "NoSQL Security Specialist"
+  },
+  {
+   "t": "p",
+   "x": "Implement security best practices, manage access permissions, and ensure data protection in distributed NoSQL environments."
+  },
+  {
+   "t": "h3",
+   "x": "Awards and Recognitions"
+  },
+  {
+   "t": "img",
+   "src": "/content/d3794b6e-asset-5-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 2094,
+   "h": 594
+  },
+  {
+   "t": "img",
+   "src": "/content/27d36a9d-asset-6-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 2223,
+   "h": 560
+  },
+  {
+   "t": "img",
+   "src": "/content/e0acdebd-asset-7-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1870,
+   "h": 561
+  },
+  {
+   "t": "img",
+   "src": "/content/f287c038-asset-8-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1629,
+   "h": 571
+  },
+  {
+   "t": "img",
+   "src": "/content/9543f93b-asset-9-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 960,
+   "h": 572
+  },
+  {
+   "t": "img",
+   "src": "/content/3d499c39-asset-10-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1255,
+   "h": 573
+  },
+  {
+   "t": "img",
+   "src": "/content/43dfd518-asset-11-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1808,
+   "h": 581
+  },
+  {
+   "t": "img",
+   "src": "/content/b79d5ebd-asset-12-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1010,
+   "h": 339
+  },
+  {
+   "t": "img",
+   "src": "/content/c2d15565-asset-13-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1776,
+   "h": 579
+  }
+ ],
+ "url": "https://dsuonline.com/online-bca/bca-electives/advanced_database"
+}

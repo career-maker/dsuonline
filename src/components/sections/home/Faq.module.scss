@@ -1,0 +1,252 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.faq {
+  background: $blue;
+  color: #fff;
+  letter-spacing: -0.0175em;
+  scroll-margin-top: 20px;
+  @include section-pad(98, 78);
+}
+
+.inner {
+  @include container;
+  display: grid;
+  grid-template-columns: minmax(0, 985fr) minmax(0, 711fr);
+  gap: clamp(28px, #{u(30)}, 30px);
+
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eyebrow {
+  @include eyebrow;
+}
+
+.left h2 {
+  margin-top: clamp(6px, #{u(8)}, 8px);
+  @include h2;
+  color: #fff;
+}
+
+.list {
+  margin-top: clamp(24px, #{u(54)}, 54px);
+  border-top: 1px solid rgb(255 255 255 / 14%);
+
+  > li {
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+  }
+
+  h3 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  button {
+    display: grid;
+    grid-template-columns: clamp(34px, #{u(47)}, 47px) 1fr 20px;
+    align-items: center;
+    width: 100%;
+    min-height: clamp(68px, #{u(92)}, 92px);
+    padding: 6px clamp(8px, #{u(40)}, 40px) 0 0;
+    border: 0;
+    background: none;
+    text-align: left;
+    color: #fff;
+    cursor: pointer;
+    @include focus-ring;
+
+    svg {
+      font-size: px(16);
+      transition: transform 0.2s;
+    }
+  }
+}
+
+.rot {
+  transform: rotate(90deg);
+}
+
+.num {
+  font-size: fs(32, 24px);
+  line-height: 1;
+  font-weight: 400;
+  color: $gold;
+}
+
+.q {
+  font-size: fs(20, 16px);
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: -0.031em;
+}
+
+.a {
+  display: none;
+  padding: 0 clamp(8px, #{u(70)}, 70px) 26px clamp(34px, #{u(47)}, 47px);
+
+  p {
+    @include body-text;
+    color: #fff;
+  }
+}
+
+.aOpen {
+  display: block;
+}
+
+.cta {
+  position: relative;
+  align-self: start;
+  aspect-ratio: 711 / 608;
+  overflow: hidden;
+  border-radius: px(14);
+  color: #fff;
+
+  @include down($bp-lg) {
+    max-width: 711px;
+  }
+
+  @include down($bp-sm) {
+    aspect-ratio: auto;
+    min-height: px(460);
+  }
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(0 0 0 / 0%) 45%, rgb(0 0 0 / 60%) 100%);
+}
+
+.ctaBody {
+  position: absolute;
+  inset: auto clamp(14px, #{u(35)}, 35px) clamp(16px, #{u(34)}, 34px);
+
+  h2 {
+    font-size: fs(55, 34px);
+    line-height: 1.09;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0;
+  }
+
+  p {
+    margin-top: clamp(6px, #{u(14)}, 14px);
+    font-size: fs(18, 15px);
+    line-height: 1.33;
+    font-weight: 400;
+  }
+}
+
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: px(17);
+  margin-top: clamp(14px, #{u(24)}, 24px);
+}
+
+// ---------- desktop: exact geometry of the 1920 artboard
+@include up($bp-lg) {
+  .faq {
+    height: u(826);
+    padding: u(98.16) 0 0;
+  }
+
+  .inner {
+    grid-template-columns: u(985) u(711);
+    gap: u(35);
+  }
+
+  .eyebrow {
+    line-height: u(24);
+  }
+
+  .left h2 {
+    margin-top: u(6.03);
+    line-height: u(60);
+  }
+
+  // dividers at y9197 + 98, then every 93px; chevron ink at x1025
+  .list {
+    margin-top: u(47.8);
+    border-top-color: rgb(255 255 255 / 10%);
+
+    > li {
+      border-bottom-color: rgb(255 255 255 / 10%);
+    }
+
+    > li:first-child button {
+      height: u(97);
+      padding-top: u(5.2);
+    }
+
+    button {
+      grid-template-columns: u(47) 1fr u(18);
+      height: u(92);
+      min-height: 0;
+      padding: 0 u(42.85) 0 0;
+
+      svg {
+        font-size: u(18);
+        stroke-width: 2.4;
+      }
+    }
+  }
+
+  .num {
+    font-size: u(32);
+  }
+
+  .q {
+    font-size: u(20);
+    line-height: u(28);
+    letter-spacing: -0.015em;
+    translate: 0 u(2);
+  }
+
+  .cta {
+    height: u(608);
+    margin-top: u(1.84);
+    aspect-ratio: auto;
+  }
+
+  .ctaBody {
+    inset: auto u(36) u(32);
+
+    h2 {
+      font-size: u(55);
+      line-height: u(60);
+    }
+
+    p {
+      margin: u(9.65) 0 0 u(2);
+      font-size: u(18);
+      line-height: u(24);
+    }
+  }
+
+  .btns {
+    gap: u(15.6);
+    margin-top: u(24.16);
+
+    > :first-child {
+      width: u(160.4);
+      padding-left: u(20);
+    }
+
+    > :last-child {
+      width: u(209.4);
+      padding-left: u(20);
+    }
+  }
+}
+
+// the design photo has no overlay
+@include up($bp-lg) {
+  .shade {
+    display: none;
+  }
+}

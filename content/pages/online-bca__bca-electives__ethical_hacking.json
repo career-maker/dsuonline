@@ -1,0 +1,257 @@
+{
+ "title": "Online BCA in Ethical Hacking | DSU Online Degree Program",
+ "description": "Advance your career with DSU's Online BCA featuring an Ethical Hacking elective. Gain in-demand cybersecurity skills through a flexible, UGC-entitled degree.",
+ "blocks": [
+  {
+   "t": "p",
+   "x": "Advance Your Skills"
+  },
+  {
+   "t": "h1",
+   "x": "Online BCA Program - Ethical Hacking"
+  },
+  {
+   "t": "p",
+   "x": "Threat Analysis | Penetration Testing Basics | Vulnerability Assessment | Network Security Principles"
+  },
+  {
+   "t": "p",
+   "x": "Duration"
+  },
+  {
+   "t": "p",
+   "x": "3 Years"
+  },
+  {
+   "t": "p",
+   "x": "(6 Semesters)"
+  },
+  {
+   "t": "p",
+   "x": "1st Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 22,250/-"
+  },
+  {
+   "t": "p",
+   "x": "2nd–5th Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 21,750/-"
+  },
+  {
+   "t": "p",
+   "x": "per sem"
+  },
+  {
+   "t": "p",
+   "x": "6th Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 20,750/-"
+  },
+  {
+   "t": "p",
+   "x": "Total Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 1,30,000/-"
+  },
+  {
+   "t": "h2",
+   "x": "About Ethical Hacking"
+  },
+  {
+   "t": "p",
+   "x": "This elective teaches how Cyber-Attacks happen and equips you with defensive Techniques to ethically secure Systems and Networks. You will gain skills in threat analysis, Penetration Testing basics, vulnerability assessment, and Network Security principles. Role mapping includes Cybersecurity Associate, SOC Analyst Intern, and Vulnerability Analyst Trainee. Learners build a strong security mindset and acquire foundational knowledge needed for Cybersecurity certifications and real-world Security roles."
+  },
+  {
+   "t": "img",
+   "src": "/content/d8035b6e-DSU4.webp",
+   "alt": "DSU Campus",
+   "w": 2808,
+   "h": 2049
+  },
+  {
+   "t": "h3",
+   "x": "Learning Modules"
+  },
+  {
+   "t": "p",
+   "x": "Threat Analysis"
+  },
+  {
+   "t": "p",
+   "x": "Learn to identify, evaluate, and prioritize security threats targeting systems and networks, and understand attacker methodologies."
+  },
+  {
+   "t": "p",
+   "x": "Penetration Testing Basics"
+  },
+  {
+   "t": "p",
+   "x": "Hands-on experience in ethical hacking techniques, testing vulnerabilities, and simulating attacks in a controlled environment."
+  },
+  {
+   "t": "p",
+   "x": "Vulnerability Assessment"
+  },
+  {
+   "t": "p",
+   "x": "Conduct assessments to detect and prioritize system and network weaknesses using industry-standard tools and frameworks."
+  },
+  {
+   "t": "p",
+   "x": "Network Security Principles"
+  },
+  {
+   "t": "p",
+   "x": "Understand network protocols, firewalls, intrusion detection/prevention, and strategies to secure data in transit and at rest."
+  },
+  {
+   "t": "p",
+   "x": "Security Mindset & Career Prep"
+  },
+  {
+   "t": "p",
+   "x": "Build a strong security mindset, prepare for cybersecurity certifications, and explore roles such as SOC Analyst or Vulnerability Analyst Trainee."
+  },
+  {
+   "t": "h3",
+   "x": "Career Path"
+  },
+  {
+   "t": "p",
+   "x": "???"
+  },
+  {
+   "t": "p",
+   "x": "Cybersecurity Associate"
+  },
+  {
+   "t": "p",
+   "x": "Assist in implementing security measures, monitor threats, and protect organizational systems from cyber-attacks."
+  },
+  {
+   "t": "p",
+   "x": "??"
+  },
+  {
+   "t": "p",
+   "x": "SOC Analyst Intern"
+  },
+  {
+   "t": "p",
+   "x": "Monitor security alerts, analyze logs, detect vulnerabilities, and support incident response in a Security Operations Center environment."
+  },
+  {
+   "t": "p",
+   "x": "??????"
+  },
+  {
+   "t": "p",
+   "x": "Vulnerability Analyst Trainee"
+  },
+  {
+   "t": "p",
+   "x": "Perform vulnerability assessments, identify security gaps, and assist in recommending mitigation strategies for systems and networks."
+  },
+  {
+   "t": "p",
+   "x": "??"
+  },
+  {
+   "t": "p",
+   "x": "Penetration Tester (Entry Level)"
+  },
+  {
+   "t": "p",
+   "x": "Learn to ethically simulate attacks on networks and applications to discover potential security weaknesses."
+  },
+  {
+   "t": "p",
+   "x": "??"
+  },
+  {
+   "t": "p",
+   "x": "Network Security Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Monitor and secure organizational networks, implement firewalls, intrusion detection systems, and network defense protocols."
+  },
+  {
+   "t": "h3",
+   "x": "Awards and Recognitions"
+  },
+  {
+   "t": "img",
+   "src": "/content/d3794b6e-asset-5-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 2094,
+   "h": 594
+  },
+  {
+   "t": "img",
+   "src": "/content/27d36a9d-asset-6-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 2223,
+   "h": 560
+  },
+  {
+   "t": "img",
+   "src": "/content/e0acdebd-asset-7-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1870,
+   "h": 561
+  },
+  {
+   "t": "img",
+   "src": "/content/f287c038-asset-8-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1629,
+   "h": 571
+  },
+  {
+   "t": "img",
+   "src": "/content/9543f93b-asset-9-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 960,
+   "h": 572
+  },
+  {
+   "t": "img",
+   "src": "/content/3d499c39-asset-10-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1255,
+   "h": 573
+  },
+  {
+   "t": "img",
+   "src": "/content/43dfd518-asset-11-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1808,
+   "h": 581
+  },
+  {
+   "t": "img",
+   "src": "/content/b79d5ebd-asset-12-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1010,
+   "h": 339
+  },
+  {
+   "t": "img",
+   "src": "/content/c2d15565-asset-13-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1776,
+   "h": 579
+  }
+ ],
+ "url": "https://dsuonline.com/online-bca/bca-electives/ethical_hacking"
+}

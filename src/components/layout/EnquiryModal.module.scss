@@ -1,0 +1,78 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: px(16);
+  background: rgb(10 5 5 / 70%);
+}
+
+.dialog {
+  position: relative;
+  width: min(480px, 100%);
+  max-height: 100%;
+  overflow: auto;
+  padding: px(36);
+  border-radius: px(14);
+  background: #fff;
+}
+
+.close {
+  position: absolute;
+  top: px(14);
+  right: px(14);
+  display: grid;
+  place-items: center;
+  width: px(36);
+  height: px(36);
+  border: 0;
+  border-radius: 50%;
+  background: #f3f3f3;
+  font-size: px(20);
+  cursor: pointer;
+}
+
+.title {
+  margin-bottom: px(20);
+  font-size: px(28);
+  font-weight: 700;
+  color: $ink;
+}
+
+.form {
+  display: grid;
+  gap: px(16);
+
+  label {
+    display: grid;
+    gap: px(6);
+    font-size: px(15);
+    font-weight: 500;
+    color: $ink;
+  }
+
+  input,
+  select {
+    height: px(46);
+    padding: 0 px(12);
+    border: 1px solid #ccc;
+    border-radius: px(4);
+    font-size: px(16);
+    background: #fff;
+  }
+}
+
+.submit {
+  @include btn-gradient;
+  margin-top: px(4);
+}
+
+.done {
+  font-size: px(17);
+  line-height: 1.5;
+  color: $body;
+}

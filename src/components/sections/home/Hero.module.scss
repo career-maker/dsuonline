@@ -1,0 +1,645 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: #0b0805;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+
+.bgOn {
+  opacity: 1;
+}
+
+.bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(0 0 0 / 50%) 0%, rgb(0 0 0 / 22%) 35%, rgb(0 0 0 / 0%) 60%),
+    linear-gradient(0deg, rgb(0 0 0 / 35%) 0%, rgb(0 0 0 / 0%) 30%);
+
+  @include down($bp-lg) {
+    background: rgb(0 0 0 / 52%);
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  display: none;
+  place-items: center;
+  width: px(40);
+  height: px(40);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  translate: 0 -50%;
+
+  svg {
+    stroke-width: 0.8;
+    font-size: px(72);
+  }
+
+  @include up($bp-lg) {
+    display: grid;
+  }
+}
+
+.prev {
+  left: clamp(8px, #{u(41)}, 41px);
+}
+
+.next {
+  right: clamp(8px, #{u(41)}, 41px);
+}
+
+.layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: px(32);
+  padding: clamp(104px, #{u(204)}, 204px) clamp(16px, #{u(95)}, 95px) clamp(32px, #{u(39)}, 39px);
+
+  @include up($bp-lg) {
+    grid-template-columns: minmax(0, 1fr) clamp(440px, #{u(700)}, 700px);
+    gap: clamp(24px, #{u(60)}, 60px);
+    // fills the screen height, but never shorter than the design's 970px (scaled) and not stretched past ~110% of it
+    min-height: max(#{u(970)}, min(100svh, #{u(1067)}));
+  }
+}
+
+.copy {
+  align-self: end;
+  padding-bottom: clamp(0px, #{u(25)}, 25px);
+  letter-spacing: -0.0175em;
+}
+
+.badges {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(6px, #{u(15)}, 15px);
+
+  img {
+    width: auto;
+    height: clamp(52px, #{u(103)}, 103px);
+    object-fit: contain;
+  }
+
+  .naac {
+    height: clamp(50px, #{u(100)}, 100px);
+  }
+
+  i {
+    width: 1px;
+    height: clamp(40px, #{u(76)}, 76px);
+    background: rgb(255 255 255 / 30%);
+  }
+}
+
+.copy h1 {
+  margin-top: clamp(14px, #{u(6)}, 20px);
+  font-size: fs(60.9, 36px);
+  line-height: 1.067;
+  font-weight: 700;
+  letter-spacing: -0.0175em;
+}
+
+.copy > p {
+  margin-top: clamp(14px, #{u(20)}, 20px);
+  font-size: fs(20.9, 17px);
+  line-height: 1.34;
+  font-weight: 500;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: px(12);
+  margin-top: clamp(20px, #{u(37)}, 37px);
+}
+
+.panels {
+  display: grid;
+  gap: clamp(4px, #{u(5)}, 5px);
+  align-content: start;
+}
+
+.enquiry,
+.finder {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: clamp(12px, #{u(22)}, 22px);
+  row-gap: clamp(10px, #{u(16)}, 16px);
+  padding: clamp(18px, #{u(31)}, 31px) clamp(16px, #{u(31)}, 31px) clamp(18px, #{u(35)}, 35px);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: px(20);
+  background: rgb(33 27 28 / 66%);
+  backdrop-filter: blur(10px);
+  letter-spacing: -0.0175em;
+
+  h2 {
+    grid-column: 1 / -1;
+    font-size: fs(35, 22px);
+    line-height: 1.15;
+    font-weight: 700;
+  }
+
+  > p {
+    grid-column: 1 / -1;
+    margin-top: px(-4);
+    font-size: fs(18, 15px);
+    line-height: 1.33;
+    font-weight: 400;
+  }
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.enquiry {
+  > p:first-of-type {
+    margin-bottom: clamp(4px, #{u(14)}, 14px);
+  }
+
+  input,
+  select {
+    width: 100%;
+    height: px(48);
+    padding: 0 px(16);
+    border: 0;
+    border-radius: px(3);
+    background: rgb(255 255 255 / 20%);
+    color: #fff;
+    font-size: px(16);
+    font-weight: 400;
+    letter-spacing: 0;
+    appearance: none;
+    @include focus-ring;
+
+    &::placeholder {
+      color: rgb(255 255 255 / 85%);
+    }
+
+    option {
+      color: #111;
+    }
+  }
+
+  .f5 {
+    grid-column: 1 / -1;
+  }
+
+  .submit {
+    grid-column: 1;
+    width: px(160);
+    height: px(49);
+    margin-top: clamp(4px, #{u(8)}, 8px);
+    padding-left: px(33);
+  }
+
+  .sent {
+    grid-column: 1 / -1;
+    font-size: px(20);
+    line-height: px(28);
+  }
+}
+
+.f3 {
+  display: flex;
+  align-items: center;
+  height: px(48);
+  border-radius: px(3);
+  background: rgb(255 255 255 / 20%);
+
+  input {
+    flex: 1;
+    min-width: 0;
+    background: none !important;
+    padding-left: 0 !important;
+  }
+
+  svg {
+    width: px(12);
+    height: px(12);
+    margin-left: px(6);
+  }
+}
+
+.flag {
+  display: block;
+  flex: none;
+  width: px(20);
+  height: px(14);
+  margin-left: px(12);
+  background: linear-gradient(180deg, #ff9933 0 33%, #fff 33% 66%, #138808 66%);
+  border-radius: 1px;
+}
+
+.cc {
+  margin: 0 px(16);
+  font-size: px(16);
+  letter-spacing: 0;
+}
+
+.sel {
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: px(18);
+    right: px(18);
+    width: px(12);
+    height: px(12);
+    pointer-events: none;
+  }
+}
+
+.finder {
+  grid-template-columns: minmax(0, 1fr) auto;
+
+  .chips,
+  > p:last-of-type {
+    grid-column: 1 / -1;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: px(11);
+    margin-top: 2px;
+
+    button {
+      height: px(34);
+      padding: 0 px(15.5);
+      border: 1px solid rgb(255 255 255 / 25%);
+      border-radius: px(17);
+      background: rgb(0 0 0 / 70%);
+      color: #fff;
+      font-size: px(15);
+      font-weight: 400;
+      letter-spacing: 0;
+      cursor: pointer;
+      @include focus-ring;
+    }
+
+    .chipOn {
+      border-color: $yellow;
+      background: $yellow;
+      color: #000;
+    }
+  }
+
+  .spec select {
+    width: 100%;
+    height: px(48);
+    padding: 0 px(16);
+    border: 0;
+    border-radius: px(3);
+    background: rgb(255 255 255 / 20%);
+    color: #fff;
+    font-size: px(16);
+    letter-spacing: 0;
+    appearance: none;
+
+    option {
+      color: #111;
+    }
+  }
+
+  .explore {
+    width: px(157);
+    height: px(48);
+    padding-left: px(31);
+  }
+
+  .notSure {
+    margin-top: 2px;
+    font-size: px(16);
+    line-height: px(20);
+
+    a {
+      color: #6fd1ff;
+      text-decoration: underline;
+    }
+  }
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+
+    .explore {
+      width: 100%;
+    }
+  }
+}
+
+.current {
+  border-bottom: 3px solid #f6b800;
+}
+
+// ---------- desktop: exact geometry of the 1920 artboard (u() = 1px at 1920)
+@include up($bp-lg) {
+  .hero {
+    height: u(970);
+  }
+
+  // overlay sampled from the design (design pixels / raw photo), stretched over the frame
+  .shade {
+    background: url('/images/hero/shade.png') 0 0 / 100% 100%;
+  }
+
+  .bg img {
+    inset: auto;
+    max-width: none;
+    height: auto;
+  }
+
+  // design draws each slide larger than the frame; values are the PDF image boxes
+  .bg .slide0 {
+    top: u(0.7);
+    left: -9.3646%;
+    width: 109.323%;
+  }
+
+  .bg .slide1 {
+    top: u(0.2);
+    left: 0.0469%;
+    width: 104.109%;
+  }
+
+  .arrow {
+    top: u(464);
+    width: u(72);
+    height: u(72);
+    translate: none;
+
+    svg {
+      font-size: u(72);
+    }
+  }
+
+  .prev {
+    left: u(26);
+  }
+
+  .next {
+    right: u(34);
+  }
+
+  .layout {
+    position: static;
+    display: block;
+    padding: 0;
+  }
+
+  .copy {
+    position: absolute;
+    left: u(95);
+    bottom: u(64);
+    z-index: 2;
+    padding: 0;
+  }
+
+  .badges {
+    flex-wrap: nowrap;
+    gap: u(7.2);
+    margin-left: u(-8);
+
+    img {
+      height: u(103.3);
+    }
+
+    .naac {
+      width: u(293.9);
+      height: u(99.9);
+    }
+
+    .ugc {
+      width: u(201.7);
+    }
+
+    .legacy {
+      width: u(115.5);
+    }
+
+    i {
+      height: u(76);
+    }
+  }
+
+  .copy h1 {
+    margin-top: u(7);
+    font-size: u(60.4);
+    line-height: u(65);
+  }
+
+  .copy > p {
+    margin-top: u(13);
+    line-height: u(28);
+  }
+
+  .ctas {
+    gap: u(19);
+    margin-top: u(46);
+
+    > :first-child {
+      width: u(220);
+      padding-left: u(20);
+    }
+
+    > :last-child {
+      width: u(160);
+      padding-left: u(20);
+    }
+  }
+
+  .panels {
+    position: absolute;
+    top: u(204);
+    left: u(1125);
+    z-index: 2;
+    width: u(700);
+    gap: u(5);
+  }
+
+  .enquiry,
+  .finder {
+    align-content: start;
+    column-gap: u(22);
+    row-gap: 0;
+    padding: u(31) u(31) u(35);
+    border: 0;
+    border-radius: u(20);
+    background: rgb(0 0 0 / 60%);
+
+    h2 {
+      line-height: u(40);
+      letter-spacing: -0.019em;
+    }
+
+    > p {
+      margin-top: u(1);
+      line-height: u(24);
+      letter-spacing: -0.02em;
+    }
+  }
+
+  .enquiry {
+    height: u(460);
+
+    > p:first-of-type {
+      margin-bottom: 0;
+    }
+
+    input,
+    select,
+    .f3 {
+      height: u(50);
+      border-radius: u(5);
+    }
+
+    .f1,
+    .f2 {
+      margin-top: u(19);
+    }
+
+    .f3,
+    .f4 {
+      margin-top: u(16);
+    }
+
+    .f5,
+    .f6,
+    .f7 {
+      margin-top: u(12);
+    }
+
+    .submit {
+      width: u(160);
+      height: u(50);
+      margin-top: u(20);
+    }
+  }
+
+  .f3 svg {
+    width: u(19);
+    height: u(19);
+    margin-left: u(4.2);
+    stroke-width: 1.7;
+  }
+
+  .flag {
+    width: u(22);
+    height: u(14.6);
+    margin-left: u(14);
+    background: url('/icons/flag-in.png') 0 0 / 100% 100%;
+    border-radius: 0;
+  }
+
+  // +91, then a divider at x1266, then the number at x1277
+  .cc {
+    width: u(39.8);
+    margin: 0 u(10.2) 0 u(11.5);
+    padding-right: 0;
+    border-right: 1px solid rgb(0 0 0 / 22%);
+    line-height: u(26);
+  }
+
+  .sel svg {
+    top: u(18);
+    right: u(27.4);
+    width: u(14);
+    height: u(14);
+    stroke-width: 3;
+  }
+
+  .finder .spec select,
+  .enquiry select {
+    border-radius: u(5);
+  }
+
+  .finder {
+    grid-template-columns: u(465) u(160);
+    column-gap: u(13);
+    height: u(262.5);
+    padding: u(26) u(31) 0;
+
+    .chips {
+      gap: u(9);
+      margin-top: u(16);
+
+      // design chip widths: 66 / 65 / 65 / 65 / 78
+      button {
+        width: u(65);
+        padding: 0;
+        border-color: rgb(255 255 255 / 20%);
+        background: rgb(0 0 0 / 20%);
+        font-weight: 700;
+      }
+
+      button:first-child {
+        width: u(66);
+      }
+
+      button:last-child {
+        width: u(78);
+      }
+
+      .chipOn {
+        border-color: $yellow;
+        background: $yellow;
+      }
+    }
+
+    .spec,
+    .explore {
+      margin-top: u(19);
+    }
+
+    .spec select,
+    .explore {
+      display: block;
+      height: u(50);
+    }
+
+    .explore {
+      display: inline-flex;
+    }
+
+    .explore {
+      width: u(160);
+      padding-left: u(33);
+    }
+
+    .notSure {
+      margin-top: u(13.5);
+
+      a {
+        background: linear-gradient(90deg, #228ca9, #64aa77);
+        background-clip: text;
+        color: transparent;
+        text-decoration-color: #43999a;
+      }
+    }
+  }
+}

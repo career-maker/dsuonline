@@ -1,0 +1,311 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.section {
+  background: #fff;
+  letter-spacing: -0.0175em;
+  @include section-pad(106, 110);
+}
+
+.inner {
+  @include container;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: px(20);
+
+  .eyebrow {
+    @include eyebrow;
+  }
+
+  h2 {
+    @include h2;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px clamp(14px, #{u(34)}, 34px);
+  margin-top: clamp(6px, #{u(8)}, 8px);
+}
+
+.arrows {
+  display: flex;
+  gap: px(15);
+
+  button {
+    @include round-arrow(34px);
+    border: 1.5px solid #1a1a1a;
+    background: #fff;
+    color: #1a1a1a;
+    font-size: px(22);
+
+    &:disabled {
+      cursor: default;
+    }
+  }
+}
+
+.all {
+  flex: none;
+  width: px(140);
+  padding-left: px(21);
+  margin-bottom: px(6);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, #{u(26)}, 26px);
+  margin-top: clamp(24px, #{u(44)}, 44px);
+
+  @include down($bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include down($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  @include lift(5px);
+  @include zoom;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 560 / 673;
+  border-radius: px(14);
+  color: $ink;
+
+  @include down($bp-md) {
+    aspect-ratio: 560 / 640;
+  }
+
+  @include down($bp-sm) {
+    aspect-ratio: auto;
+    min-height: px(600);
+  }
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(0 0 0 / 0%) 40%, rgb(0 0 0 / 55%) 100%);
+}
+
+.date {
+  position: absolute;
+  top: clamp(12px, #{u(21)}, 21px);
+  left: clamp(10px, #{u(14)}, 14px);
+  display: grid;
+  gap: px(5.9);
+  min-width: 88px;
+  padding: px(11) px(14) px(10);
+  border-radius: px(6);
+  background: rgb(22 22 22 / 90%);
+  color: #fff;
+  text-align: center;
+
+  strong {
+    font-size: px(28);
+    line-height: px(28);
+    font-weight: 500;
+  }
+
+  sup {
+    position: relative;
+    top: -2px;
+    font-size: px(16);
+    font-weight: 500;
+    vertical-align: top;
+  }
+
+  span {
+    font-size: px(16);
+    line-height: px(16);
+    font-weight: 400;
+  }
+}
+
+.body {
+  position: absolute;
+  inset: auto clamp(8px, #{u(19)}, 19px) clamp(8px, #{u(17)}, 17px);
+  display: flex;
+  flex-direction: column;
+  gap: px(8.2);
+  padding: clamp(14px, #{u(24.8)}, 24.8px) clamp(14px, #{u(24)}, 24px) clamp(14px, #{u(29)}, 29px);
+  border-radius: px(14);
+  background: #fff;
+
+  h3 {
+    font-size: fs(28, 20px);
+    line-height: 1.357;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+
+  p {
+    margin-top: px(3.8);
+    padding-left: px(3);
+    font-size: fs(18, 15px);
+    line-height: 1.61;
+    font-weight: 400;
+    color: $body;
+  }
+}
+
+.read {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  height: px(44);
+  margin: clamp(6px, #{u(16)}, 16px) 0 0 3px;
+  padding: px(5.8) px(33.5) 0;
+  border-radius: px(3);
+  background: #007cc4;
+  color: #fff;
+  font-size: px(16);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  @include focus-ring;
+}
+
+.br {
+  @include down($bp-lg) {
+    display: none;
+  }
+}
+
+// ---------- desktop: exact geometry of the 1920 artboard
+@include up($bp-lg) {
+  .section {
+    padding: u(116.16) 0 u(118);
+  }
+
+  .head {
+    .eyebrow {
+      line-height: u(24);
+    }
+
+    h2 {
+      line-height: u(60);
+    }
+  }
+
+  .row {
+    gap: u(12);
+    margin-top: u(7.03);
+
+    h2 {
+      margin-right: u(38);
+    }
+  }
+
+  .arrows {
+    gap: u(12);
+    translate: 0 u(3);
+
+    button {
+      width: u(37);
+      height: u(37);
+      border: 1px solid rgb(0 0 0 / 21%);
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .all {
+    width: u(140.4);
+    margin-bottom: u(17.19);
+    padding-left: u(20);
+  }
+
+  // cards x 94 / 680 / 1266, 560 x 672
+  .grid {
+    grid-template-columns: repeat(3, u(560));
+    gap: u(26);
+    margin: u(41.8) 0 0 u(-1);
+  }
+
+  .card {
+    height: u(672);
+    aspect-ratio: auto;
+    border-radius: u(14);
+  }
+
+  .date {
+    top: u(22);
+    left: u(16);
+    width: u(92);
+    min-width: 0;
+    height: u(73);
+    gap: 0;
+    padding: u(15) 0 0;
+    border-radius: u(6);
+    background: #212121;
+
+    strong {
+      font-size: u(28);
+      line-height: u(28);
+    }
+
+    sup {
+      font-size: u(16);
+    }
+
+    span {
+      margin-top: u(-12);
+      font-size: u(16);
+      line-height: u(20);
+    }
+  }
+
+  .body {
+    inset: auto u(18.1) u(16.7) u(18.6);
+    gap: 0;
+    padding: u(25.9) u(20) u(24.3) u(24.4);
+    border-radius: u(14);
+
+    h3 {
+      font-size: u(28);
+      line-height: u(38);
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin-top: u(9.92);
+      padding-left: u(4);
+      font-size: u(18);
+      line-height: u(29);
+      color: #4a5565;
+    }
+  }
+
+  .read {
+    width: u(155);
+    height: u(44);
+    margin: u(10.66) 0 0 u(4);
+    padding: 0 0 0 u(33.2);
+    font-size: u(16);
+  }
+}
+
+// design: no gradient; only the third photo is dimmed (black 20%)
+@include up($bp-lg) {
+  .shade {
+    background: none;
+  }
+
+  .card:nth-child(3) .shade {
+    background: rgb(0 0 0 / 20%);
+  }
+}

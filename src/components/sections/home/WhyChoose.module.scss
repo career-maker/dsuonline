@@ -1,0 +1,313 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.why {
+  background: $bg-sky;
+  @include section-pad(78, 80);
+}
+
+.inner {
+  @include container;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, clamp(480px, #{u(770)}, 770px));
+  gap: clamp(32px, #{u(100)}, 100px);
+  align-items: start;
+
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.left h2 {
+  @include h2;
+}
+
+.copy {
+  max-width: 800px;
+  margin-top: clamp(16px, #{u(30)}, 30px);
+  @include body-text;
+}
+
+.features {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 703px;
+  margin-top: clamp(28px, #{u(60)}, 60px);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: rgb(0 0 0 / 10%);
+  }
+
+  &::before {
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+  }
+
+  &::after {
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: px(14);
+    min-height: clamp(90px, #{u(132)}, 132px);
+    padding: 0 clamp(8px, #{u(24)}, 24px);
+    font-size: fs(24, 18px);
+    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: -0.0175em;
+    color: $ink;
+  }
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.fi {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: clamp(40px, #{u(52)}, 52px);
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.certTitle {
+  font-size: fs(40, 28px);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.0175em;
+  color: $ink;
+}
+
+.certs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(8px, #{u(18)}, 18px);
+  margin-top: clamp(16px, #{u(26)}, 26px);
+
+  @include down($bp-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, #{u(14)}, 14px);
+  aspect-ratio: 244 / 210;
+  padding: px(10);
+  border-radius: px(8);
+  background: $bg-card-sky;
+  text-align: center;
+  font-size: fs(17.9, 14px);
+  line-height: 1.23;
+  font-weight: 400;
+  letter-spacing: -0.0175em;
+  color: $ink;
+  transition: background-color 0.35s ease, color 0.35s ease, translate 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.4s ease;
+
+  &:hover {
+    background: $blue;
+    color: #fff;
+    translate: 0 px(-5);
+    box-shadow: 0 16px 34px rgb(0 125 197 / 30%);
+  }
+
+  @include down($bp-sm) {
+    aspect-ratio: auto;
+    min-height: px(150);
+  }
+}
+
+.cimg {
+  display: grid;
+  place-items: center;
+  height: clamp(44px, #{u(62)}, 62px);
+
+  img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.onBlue {
+  display: none;
+}
+
+// ---------- desktop: exact geometry of the 1920 artboard
+@include up($bp-lg) {
+  .why {
+    padding: u(98.2) 0 0;
+    height: u(688);
+  }
+
+  .inner {
+    grid-template-columns: u(910) u(820);
+    gap: 0;
+  }
+
+  .left h2 {
+    line-height: u(60);
+  }
+
+  .copy {
+    max-width: u(808);
+    margin: u(27.15) 0 0 u(4);
+    line-height: u(29);
+    color: $ink;
+  }
+
+  // dividers: y5494 (x94-797), x432 (y5438-5599); rows 124 / 110
+  .features {
+    grid-template-columns: u(338) u(365);
+    grid-template-rows: u(124) u(110);
+    max-width: none;
+    width: u(703);
+    margin: u(49.7) 0 0 u(-1);
+
+    &::before {
+      left: u(338);
+      top: u(68);
+      bottom: auto;
+      height: u(162);
+    }
+
+    &::after {
+      top: u(124);
+      background: rgb(33 33 33 / 18%);
+    }
+
+    li {
+      min-height: 0;
+      padding: 0 0 0 u(10);
+      gap: u(16);
+      font-size: u(24);
+      line-height: u(30);
+      white-space: nowrap;
+    }
+
+    li:nth-child(even) {
+      padding-left: u(90);
+      gap: u(20);
+
+      .fi {
+        width: auto;
+      }
+    }
+
+    li:nth-child(2) {
+      translate: 0 u(-4);
+    }
+
+    li:nth-child(4) {
+      translate: 0 u(9);
+    }
+  }
+
+  .fi {
+    width: u(50);
+  }
+
+  .right {
+    padding-top: u(14.1);
+    margin-left: u(-1.1);
+  }
+
+  .certTitle {
+    font-size: u(40);
+    line-height: u(44);
+  }
+
+  .certs {
+    grid-template-columns: repeat(3, u(243.5));
+    grid-auto-rows: u(209.5);
+    gap: u(19.7) u(16.9);
+    margin-top: u(20.7);
+  }
+
+  // content hangs from the top: icon, gap, label
+  .cert {
+    justify-content: flex-start;
+    gap: var(--g, #{u(10)});
+    padding: var(--t, #{u(57)}) 0 0;
+    aspect-ratio: auto;
+    border-radius: u(8);
+    font-size: u(17.9);
+    line-height: u(22);
+    font-weight: 500;
+    color: #202020;
+  }
+
+  .cimg {
+    height: auto;
+  }
+
+  // the design's labels in the two logo cards sit 4px right of centre
+  .ugc .ctext,
+  .naac .ctext {
+    translate: u(4) 0;
+  }
+
+  .ugc {
+    --t: #{u(56.4)};
+    --g: #{u(17.6)};
+  }
+
+  .naac {
+    --t: #{u(59.1)};
+    --g: #{u(17.7)};
+  }
+
+  .cert-degree {
+    --g: #{u(11.2)};
+  }
+
+  .cert-curriculum {
+    --g: #{u(10.5)};
+  }
+
+  .cert-online {
+    --g: #{u(8)};
+  }
+
+  .cert-recognized {
+    --g: #{u(12.3)};
+  }
+
+  // the design shows the NAAC card in its highlighted (blue) state
+  .naac {
+    background: $blue;
+    color: #fff;
+
+    .onLight {
+      display: none;
+    }
+
+    .onBlue {
+      display: block;
+    }
+  }
+}

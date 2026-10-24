@@ -1,0 +1,237 @@
+{
+ "title": "Online BCA in Database Administration | DSU Online Elective",
+ "description": "Explore Database Administration in DSU’s Online BCA. Learn DBMS, SQL, database design, and management skills for careers in data and IT administration. Join now.",
+ "blocks": [
+  {
+   "t": "p",
+   "x": "Advance Your Skills"
+  },
+  {
+   "t": "h1",
+   "x": "Online BCA Program - Database Administration"
+  },
+  {
+   "t": "p",
+   "x": "database design | SQL tuning | backup & recovery | DB security | performance monitoring"
+  },
+  {
+   "t": "p",
+   "x": "Duration"
+  },
+  {
+   "t": "p",
+   "x": "3 Years"
+  },
+  {
+   "t": "p",
+   "x": "(6 Semesters)"
+  },
+  {
+   "t": "p",
+   "x": "1st Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 22,250/-"
+  },
+  {
+   "t": "p",
+   "x": "2nd–5th Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 21,750/-"
+  },
+  {
+   "t": "p",
+   "x": "per sem"
+  },
+  {
+   "t": "p",
+   "x": "6th Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 20,750/-"
+  },
+  {
+   "t": "p",
+   "x": "Total Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 1,30,000/-"
+  },
+  {
+   "t": "h2",
+   "x": "About Database Administration"
+  },
+  {
+   "t": "p",
+   "x": "This elective equips you with skills to design, manage, secure, and optimize enterprise-level relational databases. It is unique because: You will gain hands-on expertise in SQL tuning, backup & recovery, database security, managing user permissions, and performance monitoring. It prepares you for operational IT roles highly valued in enterprise environments, making you job-ready as a Database Administrator, SQL Analyst, or Technical Support Engineer with a database focus."
+  },
+  {
+   "t": "img",
+   "src": "/content/d8035b6e-DSU4.webp",
+   "alt": "DSU Campus",
+   "w": 2808,
+   "h": 2049
+  },
+  {
+   "t": "h3",
+   "x": "Learning Modules"
+  },
+  {
+   "t": "p",
+   "x": "Database Design"
+  },
+  {
+   "t": "p",
+   "x": "Learn how to model, structure, and normalize relational databases for optimal performance and maintainability."
+  },
+  {
+   "t": "p",
+   "x": "SQL Tuning & Performance"
+  },
+  {
+   "t": "p",
+   "x": "Optimize SQL queries, indexes, and database performance to handle large-scale enterprise workloads efficiently."
+  },
+  {
+   "t": "p",
+   "x": "Database Security"
+  },
+  {
+   "t": "p",
+   "x": "Implement user permissions, encryption, and best practices to safeguard data and prevent unauthorized access."
+  },
+  {
+   "t": "p",
+   "x": "Backup & Recovery"
+  },
+  {
+   "t": "p",
+   "x": "Learn strategies to backup, restore, and recover databases to ensure business continuity in case of failures."
+  },
+  {
+   "t": "p",
+   "x": "Monitoring & Troubleshooting"
+  },
+  {
+   "t": "p",
+   "x": "Monitor database performance, detect bottlenecks, and troubleshoot issues to maintain system reliability."
+  },
+  {
+   "t": "h3",
+   "x": "Career Path"
+  },
+  {
+   "t": "p",
+   "x": "Database Administrator"
+  },
+  {
+   "t": "p",
+   "x": "Design, configure, and maintain relational databases to ensure data integrity, security, and high availability."
+  },
+  {
+   "t": "p",
+   "x": "SQL Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Perform advanced SQL queries, analyze database performance, optimize queries, and generate actionable insights for business teams."
+  },
+  {
+   "t": "p",
+   "x": "Technical Support Engineer (DB Focus)"
+  },
+  {
+   "t": "p",
+   "x": "Provide database troubleshooting, monitor performance metrics, implement backup/recovery solutions, and assist end-users with database issues."
+  },
+  {
+   "t": "p",
+   "x": "Database Security Specialist"
+  },
+  {
+   "t": "p",
+   "x": "Manage user permissions, enforce security policies, and monitor database access to prevent unauthorized activities."
+  },
+  {
+   "t": "p",
+   "x": "Database Operations Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Monitor database performance, detect bottlenecks, implement tuning measures, and ensure smooth day-to-day database operations."
+  },
+  {
+   "t": "h3",
+   "x": "Awards and Recognitions"
+  },
+  {
+   "t": "img",
+   "src": "/content/d3794b6e-asset-5-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 2094,
+   "h": 594
+  },
+  {
+   "t": "img",
+   "src": "/content/27d36a9d-asset-6-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 2223,
+   "h": 560
+  },
+  {
+   "t": "img",
+   "src": "/content/e0acdebd-asset-7-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1870,
+   "h": 561
+  },
+  {
+   "t": "img",
+   "src": "/content/f287c038-asset-8-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1629,
+   "h": 571
+  },
+  {
+   "t": "img",
+   "src": "/content/9543f93b-asset-9-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 960,
+   "h": 572
+  },
+  {
+   "t": "img",
+   "src": "/content/3d499c39-asset-10-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1255,
+   "h": 573
+  },
+  {
+   "t": "img",
+   "src": "/content/43dfd518-asset-11-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1808,
+   "h": 581
+  },
+  {
+   "t": "img",
+   "src": "/content/b79d5ebd-asset-12-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1010,
+   "h": 339
+  },
+  {
+   "t": "img",
+   "src": "/content/c2d15565-asset-13-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1776,
+   "h": 579
+  }
+ ],
+ "url": "https://dsuonline.com/online-bca/bca-electives/database_administration"
+}

@@ -1,0 +1,64 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: px(20);
+  height: px(50);
+  padding: 0 px(14) 0 px(21);
+  border: 0;
+  border-radius: px(3);
+  font-size: px(18);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: filter 0.2s, translate 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.3s;
+  @include focus-ring;
+
+  &:hover {
+    filter: brightness(1.1);
+    translate: 0 -2px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 22%);
+  }
+
+  &:hover .dots {
+    opacity: 1;
+    rotate: 90deg;
+  }
+}
+
+.dots {
+  flex: none;
+  width: px(14);
+  height: px(14);
+  opacity: 0.85;
+  transition: rotate 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.3s;
+}
+
+.solid {
+  background: #007cc4;
+  color: #fff;
+}
+
+.dark {
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: px(5);
+  background: rgb(15 15 15 / 50%);
+  color: #fff;
+}
+
+.outline {
+  border: 1px solid rgb(255 255 255 / 40%);
+  background: rgb(9 11 10 / 55%);
+  color: #fff;
+}
+
+.ghost {
+  border: 1px solid #007cc4;
+  background: #fff;
+  color: $ink;
+}

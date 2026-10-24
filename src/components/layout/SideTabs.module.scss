@@ -1,0 +1,137 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+$w: clamp(40px, #{u(54)}, 54px);
+
+.tabs {
+  position: fixed;
+  top: clamp(180px, #{u(293)}, 293px);
+  right: 0;
+  z-index: 60;
+  width: $w;
+  letter-spacing: 0;
+
+  @include down($bp-lg) {
+    top: auto;
+    bottom: px(12);
+    right: px(12);
+    display: flex;
+    width: auto;
+    gap: px(8);
+  }
+}
+
+.tab {
+  display: grid;
+  place-items: center;
+  width: $w;
+  border: 0;
+  border-radius: px(12) 0 0 px(12);
+  font-size: fs(16, 14px);
+  font-weight: 500;
+  cursor: pointer;
+
+  span {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+  }
+
+  @include down($bp-lg) {
+    width: auto;
+    height: px(44);
+    padding: 0 px(16);
+    border-radius: px(8);
+    font-size: px(15);
+
+    span {
+      writing-mode: horizontal-tb;
+      transform: none;
+    }
+  }
+}
+
+.enquire {
+  height: clamp(104px, #{u(136)}, 136px);
+  background: $blue-dark;
+  color: #fff;
+}
+
+.apply {
+  height: clamp(110px, #{u(144)}, 144px);
+  margin-top: px(10);
+  background: #b9e5ff;
+  color: $blue-dark;
+}
+
+.ico {
+  display: grid;
+  place-items: center;
+  width: $w;
+  height: clamp(40px, #{u(49)}, 49px);
+  margin-top: px(8);
+
+  @include down($bp-lg) {
+    display: none;
+  }
+}
+
+.call {
+  background: $yellow;
+  color: #111;
+  border-radius: px(12) 0 0 0;
+}
+
+.mail {
+  margin-top: px(6);
+  background: #fff;
+  color: $blue-dark;
+}
+
+.wa {
+  margin-top: px(8);
+  background: #0bc34a;
+  color: #fff;
+  border-radius: 0 0 0 px(12);
+}
+
+// ---------- desktop: exact geometry of the 1920 artboard
+@include up($bp-lg) {
+  .tabs {
+    top: u(292);
+    width: u(55);
+  }
+
+  .tab {
+    width: u(55);
+    border-radius: u(12) 0 0 u(12);
+    font-size: u(16);
+  }
+
+  .enquire {
+    height: u(139);
+  }
+
+  .apply {
+    height: u(143);
+    margin-top: u(8);
+    color: $blue;
+  }
+
+  .ico {
+    width: u(49.5);
+    height: u(49.5);
+    margin: u(8) 0 0 auto;
+    border-radius: 0;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .call {
+    margin-top: u(15);
+  }
+}

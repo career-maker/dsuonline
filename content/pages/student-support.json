@@ -1,0 +1,152 @@
+{
+ "title": "Student Support | DSU Help Desk & Academic Assistance",
+ "description": "Access DSU Student Support for academic help, queries, and assistance. Get guidance and services for a seamless online learning experience.",
+ "blocks": [
+  {
+   "t": "p",
+   "x": "Hero Section"
+  },
+  {
+   "t": "p",
+   "x": "Documents Required Section"
+  },
+  {
+   "t": "p",
+   "x": "Description Section"
+  },
+  {
+   "t": "p",
+   "x": "FAQ Section"
+  },
+  {
+   "t": "h1",
+   "x": "DSU Student Support"
+  },
+  {
+   "t": "h2",
+   "x": "Counselling"
+  },
+  {
+   "t": "h2",
+   "x": "Step-by-Step Admission Process"
+  },
+  {
+   "t": "p",
+   "x": "Follow these simple steps to complete your admission smoothly."
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Step 1: Registration Pay an application fee of Rs. 1000/- + applicable taxes and complete your sign-up.",
+    "Step 2: Online Application Click on the Apply Now tab to begin your application. Fill in personal details, upload the required documents, and pay the program fee.",
+    "Step 3: Document Verification All submitted documents undergo internal verification, which takes approximately five working days. Please wait for an approval notification from the DSU team.",
+    "Step 4: Admission Confirmation Upon successful verification, you will receive an admission confirmation along with access to the LMS platform."
+   ]
+  },
+  {
+   "t": "img",
+   "src": "/content/f10e7bf2-how-to-apply-sec-img.png",
+   "alt": "Admission Process",
+   "w": 505,
+   "h": 461
+  },
+  {
+   "t": "h2",
+   "x": "Talk to Us"
+  },
+  {
+   "t": "p",
+   "x": "Take a step closer to your bright future"
+  },
+  {
+   "t": "a",
+   "x": "Contact Us",
+   "href": "https://dsuonline.com/contact-us.php"
+  },
+  {
+   "t": "h2",
+   "x": "Frequently Asked Questions"
+  },
+  {
+   "t": "p",
+   "x": "How do I apply for a programme at the online university?"
+  },
+  {
+   "t": "p",
+   "x": "You can apply through our official website by filling out the online application form. Ensure you have all required documents, such as academic transcripts, ID proof, and any additional materials specified for your chosen programme."
+  },
+  {
+   "t": "p",
+   "x": "What are the eligibility criteria for admission?"
+  },
+  {
+   "t": "p",
+   "x": "Eligibility varies based on the programme a student chooses. Generally, undergraduate programmes require a high school diploma, while postgraduate programmes require a relevant bachelor's degree. Specific programmes may have additional requirements."
+  },
+  {
+   "t": "p",
+   "x": "Is there an application fee, and is it refundable?"
+  },
+  {
+   "t": "p",
+   "x": "Yes, an application fee is required to process your application. This fee is generally non-refundable, but check the university’s policy for any exceptions."
+  },
+  {
+   "t": "p",
+   "x": "What is the admissions process timeline?"
+  },
+  {
+   "t": "p",
+   "x": "The timeline varies, but typically, after submitting your application, you will receive a response within 2–4 weeks. Some programmes may require additional steps, such as interviews or entrance exams."
+  },
+  {
+   "t": "p",
+   "x": "Do you offer financial aid or scholarships?"
+  },
+  {
+   "t": "p",
+   "x": "Yes, we offer various scholarships and financial aid programmes based on merit and need. Check our website for eligibility criteria and application deadlines."
+  },
+  {
+   "t": "p",
+   "x": "Does the university provide placement assistance?"
+  },
+  {
+   "t": "p",
+   "x": "Yes, we have a dedicated career services team that assists students with job placements, resume building, interview preparation, and networking opportunities."
+  },
+  {
+   "t": "p",
+   "x": "Are internships available for online students?"
+  },
+  {
+   "t": "p",
+   "x": "Yes, we partner with companies to provide virtual and on-site internships for students across different programmes. Internship opportunities are listed on our career portal."
+  },
+  {
+   "t": "p",
+   "x": "What kind of companies recruit from the university?"
+  },
+  {
+   "t": "p",
+   "x": "Our graduates are recruited by leading companies in various sectors, including technology, finance, healthcare, and education. We collaborate with multinational corporations, startups, and industry leaders."
+  },
+  {
+   "t": "p",
+   "x": "How does the university support students in finding jobs after graduation?"
+  },
+  {
+   "t": "p",
+   "x": "We provide career counseling, job fairs, industry webinars, alumni networking events, and direct employer connections to help students secure employment after graduation."
+  },
+  {
+   "t": "p",
+   "x": "Is placement guaranteed after completing a programme?"
+  },
+  {
+   "t": "p",
+   "x": "While we provide extensive support and resources, job placement depends on individual performance, industry demand, and competition. However, our strong industry connections significantly improve job prospects for our graduates."
+  }
+ ],
+ "url": "https://dsuonline.com/student-support"
+}

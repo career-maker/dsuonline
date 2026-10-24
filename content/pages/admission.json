@@ -1,0 +1,240 @@
+{
+ "title": "DSU Online Admissions | Apply for Online Degree Programs",
+ "description": "Apply for DSU Online admissions and start your online degree journey with a UGC-entitled, NAAC A+ accredited university. Get eligibility and application details",
+ "blocks": [
+  {
+   "t": "p",
+   "x": "Hero Section"
+  },
+  {
+   "t": "p",
+   "x": "Description Section"
+  },
+  {
+   "t": "p",
+   "x": "How to Apply Section"
+  },
+  {
+   "t": "p",
+   "x": "Eligibility Section"
+  },
+  {
+   "t": "p",
+   "x": "Points to Remember Section"
+  },
+  {
+   "t": "p",
+   "x": "Documents Required Section"
+  },
+  {
+   "t": "p",
+   "x": "Fee Payment Section - New Design"
+  },
+  {
+   "t": "p",
+   "x": "Support Section - Updated Design"
+  },
+  {
+   "t": "h1",
+   "x": "DSU Online Admission Process"
+  },
+  {
+   "t": "a",
+   "x": "Apply Today",
+   "href": "https://apply.dsuonline.com/"
+  },
+  {
+   "t": "p",
+   "x": "At DSU Online, our constant endeavor is to make quality education accessible to as many individuals as possible, enabling learners to fast-track their careers with the right balance of theoretical and practical knowledge through DSU Online admission and Dayananda Sagar University online admission so if you are already here, take the next step to apply online at DSU Online by filling out the DSU Online application form and kickstart a learning journey that opens doors to a world of possibilities and expands your horizons."
+  },
+  {
+   "t": "h2",
+   "x": "Step-by-Step Guide"
+  },
+  {
+   "t": "p",
+   "x": "1"
+  },
+  {
+   "t": "h3",
+   "x": "Registration"
+  },
+  {
+   "t": "p",
+   "x": "Pay an application fee of Rs. 1000/- + Taxes and sign up."
+  },
+  {
+   "t": "p",
+   "x": "2"
+  },
+  {
+   "t": "h3",
+   "x": "Online Application"
+  },
+  {
+   "t": "p",
+   "x": "Click on the 'Apply Now' tab and kickstart your application process. Fill in your personal details, upload all relevant documents, and pay the program fee."
+  },
+  {
+   "t": "p",
+   "x": "3"
+  },
+  {
+   "t": "h3",
+   "x": "Document Verification"
+  },
+  {
+   "t": "p",
+   "x": "Internal verification of all your documents takes about five working days , so sit back and wait for an approval notification from the DSU team."
+  },
+  {
+   "t": "p",
+   "x": "4"
+  },
+  {
+   "t": "h3",
+   "x": "Admissions Confirmation"
+  },
+  {
+   "t": "p",
+   "x": "Upon successful verification, students will receive an admission confirmation along with access to the LMS platform."
+  },
+  {
+   "t": "h3",
+   "x": "The eligibility criteria varies depending upon your chosen course."
+  },
+  {
+   "t": "p",
+   "x": "Check it on our Programs page before you apply."
+  },
+  {
+   "t": "p",
+   "x": "Update the image path as needed"
+  },
+  {
+   "t": "img",
+   "src": "/content/3796bafc-point-to-remember.png",
+   "alt": "Application Process",
+   "w": 610,
+   "h": 569
+  },
+  {
+   "t": "h2",
+   "x": "Points to Remember"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "The application form has different sections and is designed to get to know the applicant.",
+    "Make sure to provide an active email ID and phone during the registration process.",
+    "Name and other details entered in the application form must be correct and as per your educational qualification documents.",
+    "The Application Fee is non-refundable and not part of the program fee.",
+    "Make sure to attach all mandatory documents for a seamless application process."
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Documents Required for the Admission Process"
+  },
+  {
+   "t": "p",
+   "x": "Please note that you must scan original documents for the following and not photocopies."
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Scanned passport size colored photograph",
+    "Scanned signature",
+    "Scanned copy(ies) of qualification documents starting from 10th to the highest qualification",
+    "Scanned copy(ies) of diploma/ degree of graduation/ post graduation/ PG diploma or equivalent as applicable",
+    "Scanned copy of valid ID proof with photograph issued by the government",
+    "Scanned copy of residence/ address proof (if different from ID proof)"
+   ]
+  },
+  {
+   "t": "p",
+   "x": "Update the image path as needed"
+  },
+  {
+   "t": "img",
+   "src": "/content/336e799b-document-required.png",
+   "alt": "Documents Required",
+   "w": 505,
+   "h": 461
+  },
+  {
+   "t": "h2",
+   "x": "Fee Payment Options"
+  },
+  {
+   "t": "p",
+   "x": "Credit Card"
+  },
+  {
+   "t": "p",
+   "x": "Debit Card"
+  },
+  {
+   "t": "p",
+   "x": "Online Banking"
+  },
+  {
+   "t": "p",
+   "x": "UPI/Wallets"
+  },
+  {
+   "t": "p",
+   "x": "Credit Card"
+  },
+  {
+   "t": "p",
+   "x": "Debit Card"
+  },
+  {
+   "t": "p",
+   "x": "Online Banking"
+  },
+  {
+   "t": "p",
+   "x": "UPI/Wallets"
+  },
+  {
+   "t": "p",
+   "x": "Update the image path as needed"
+  },
+  {
+   "t": "img",
+   "src": "/content/a37889a1-fee-payment.png",
+   "alt": "Payment Options",
+   "w": 627,
+   "h": 500
+  },
+  {
+   "t": "h2",
+   "x": "Support"
+  },
+  {
+   "t": "p",
+   "x": "Please reach out to us if you need any further help in your application process, and one of our representatives will be happy to assist you."
+  },
+  {
+   "t": "p",
+   "x": "✉"
+  },
+  {
+   "t": "a",
+   "x": "admissions@dsuonline.com",
+   "href": "mailto:admissions@dsuonline.com"
+  },
+  {
+   "t": "p",
+   "x": "📞"
+  },
+  {
+   "t": "a",
+   "x": "+91 9880147004",
+   "href": "tel:+919880147004"
+  }
+ ],
+ "url": "https://dsuonline.com/admission"
+}

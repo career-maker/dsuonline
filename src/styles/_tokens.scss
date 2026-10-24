@@ -1,0 +1,46 @@
+// Design tokens - values sampled from design/Index.pdf (v3, 1920px artboard)
+@use 'sass:math';
+
+$blue: #007dc5;
+$blue-dark: #025c90;
+$yellow: #fff200;
+$gold: #e2b500; // eyebrow labels
+$ink: #212121;
+$body: #495464;
+$line: #e6e6e6;
+
+$bg-grey: #fafafa;
+$bg-sky: #e6f2f9;
+$bg-card-sky: #f3f9fc;
+$bg-dark: #1b0b0e;
+
+// legacy aliases used by shared mixins
+$crimson: $blue;
+$red: $gold;
+$orange: $blue;
+
+$bp-xl: 1500px;
+$bp-lg: 1200px; // desktop layout starts here
+$bp-md: 900px;
+$bp-sm: 600px;
+
+// Fluid unit: 1px on the 1920px design, scaling down with the viewport (floor 0.6px).
+// u(95) = 95px at 1920 and ~57px at <= 1200.
+// Proportional unit for fixed-size parts (inputs, buttons, gaps, icons): same scale as u() on desktop,
+// but a plain 1px below the desktop breakpoint so touch targets keep their size.
+@function px($n) {
+  @return calc(var(--k) * #{$n});
+}
+
+@function u($n) {
+  @return calc(var(--u) * #{$n});
+}
+
+// Font size that equals the design size on wide screens but never drops below $min.
+// On desktop the floor is halved (--fk) so text keeps the same proportion as the boxes around it.
+@function fs($n, $min) {
+  @return max(calc(var(--fk) * #{$min}), calc(var(--u) * #{$n}));
+}
+
+$gutter: u(95);
+$container-max: 1731px;

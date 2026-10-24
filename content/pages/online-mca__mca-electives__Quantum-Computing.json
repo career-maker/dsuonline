@@ -1,0 +1,218 @@
+{
+ "title": "Online MCA with Quantum Computing Elective | DSU Online",
+ "description": "Bridge the gap between classical and quantum. Explore DSU's Online MCA elective in Quantum Computing, designed for IT professionals eyeing 2026 tech trends.",
+ "blocks": [
+  {
+   "t": "p",
+   "x": "Advance Your Quantum Computing Skills"
+  },
+  {
+   "t": "h1",
+   "x": "Online MCA Program - Quantum Computing"
+  },
+  {
+   "t": "p",
+   "x": "Qubits & Quantum States | Quantum Gates & Circuits | Superposition | Entanglement | Shor's Algorithm | Grover's Algorithm | Foundations of High-Performance Quantum Computing"
+  },
+  {
+   "t": "p",
+   "x": "Duration"
+  },
+  {
+   "t": "p",
+   "x": "2 Years"
+  },
+  {
+   "t": "p",
+   "x": "(4 Semesters)"
+  },
+  {
+   "t": "p",
+   "x": "1st Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 32,875/-"
+  },
+  {
+   "t": "p",
+   "x": "2nd–4th Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 32,375/-"
+  },
+  {
+   "t": "p",
+   "x": "per sem"
+  },
+  {
+   "t": "p",
+   "x": "Total Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 1,30,000/-"
+  },
+  {
+   "t": "h2",
+   "x": "About Quantum Computing"
+  },
+  {
+   "t": "p",
+   "x": "The elective introduces qubits, quantum gates, superposition, entanglement, and major quantum algorithms like Shor's and Grover's. Concepts are simplified to help learners understand the future of high-performance computing.."
+  },
+  {
+   "t": "img",
+   "src": "/content/2136d926-DSU4.webp",
+   "alt": "DSU Campus",
+   "w": 2808,
+   "h": 2049
+  },
+  {
+   "t": "h3",
+   "x": "Learning Modules"
+  },
+  {
+   "t": "h3",
+   "x": "Qubits & Quantum States"
+  },
+  {
+   "t": "p",
+   "x": "Qubits are the basic units of quantum information that can exist in multiple states simultaneously. This module explains how quantum states are represented and manipulated."
+  },
+  {
+   "t": "h3",
+   "x": "Quantum Gates & Circuits"
+  },
+  {
+   "t": "p",
+   "x": "Quantum gates perform operations on qubits to build circuits. This module covers how these gates enable complex quantum computations."
+  },
+  {
+   "t": "h3",
+   "x": "Superposition"
+  },
+  {
+   "t": "p",
+   "x": "Superposition allows a qubit to exist in multiple states at the same time, increasing computational possibilities in quantum systems."
+  },
+  {
+   "t": "h3",
+   "x": "Entanglement"
+  },
+  {
+   "t": "p",
+   "x": "Entanglement links qubits so that the state of one instantly affects the other, enabling powerful quantum communication and processing."
+  },
+  {
+   "t": "h3",
+   "x": "Shor's Algorithm"
+  },
+  {
+   "t": "p",
+   "x": "Shor's algorithm efficiently factors large numbers and challenges classical encryption. This module explains how it works."
+  },
+  {
+   "t": "h3",
+   "x": "Grover's Algorithm"
+  },
+  {
+   "t": "p",
+   "x": "Grover's algorithm accelerates search operations in unstructured datasets, dramatically reducing search time."
+  },
+  {
+   "t": "h3",
+   "x": "High-Performance Quantum Computing Fundamentals"
+  },
+  {
+   "t": "p",
+   "x": "This module introduces how quantum computers achieve superior performance for computationally intensive tasks."
+  },
+  {
+   "t": "h3",
+   "x": "Career Path"
+  },
+  {
+   "t": "p",
+   "x": "Full Stack Developer"
+  },
+  {
+   "t": "p",
+   "x": "Designs and builds both front-end and back-end components of web applications. Works with modern frameworks, APIs, cloud deployment, and scalable architectures."
+  },
+  {
+   "t": "p",
+   "x": "Mobile App Developer"
+  },
+  {
+   "t": "p",
+   "x": "Develops Android and iOS applications using native or cross-platform frameworks. Focuses on performance, UI/UX, and integration with cloud-based backends."
+  },
+  {
+   "t": "p",
+   "x": "DevOps Engineer"
+  },
+  {
+   "t": "p",
+   "x": "Automates development pipelines, manages CI/CD, and ensures smooth deployment. Works with containerization, monitoring tools, and cloud infrastructure."
+  },
+  {
+   "t": "p",
+   "x": "Systems Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Evaluates business requirements and designs technology solutions. Works closely with stakeholders to analyze workflows and recommend system improvements."
+  },
+  {
+   "t": "p",
+   "x": "AI/ML Engineer"
+  },
+  {
+   "t": "p",
+   "x": "Builds machine learning models and integrates AI solutions into applications. Uses modern ML frameworks, data pipelines, and responsible-AI practices."
+  },
+  {
+   "t": "p",
+   "x": "Technical Project Manager"
+  },
+  {
+   "t": "p",
+   "x": "Leads IT projects, manages timelines, and coordinates cross-functional teams. Ensures successful delivery of technology solutions aligned with business goals."
+  },
+  {
+   "t": "p",
+   "x": "Software Engineer"
+  },
+  {
+   "t": "p",
+   "x": "Designs, develops, tests, and maintains software applications. Works with modern languages, design patterns, and agile development practices."
+  },
+  {
+   "t": "p",
+   "x": "Data Scientist"
+  },
+  {
+   "t": "p",
+   "x": "Analyzes large datasets to uncover insights and build predictive models. Uses statistical methods, machine learning, and data visualization tools."
+  },
+  {
+   "t": "p",
+   "x": "Cloud Developer"
+  },
+  {
+   "t": "p",
+   "x": "Builds and deploys applications on cloud platforms like AWS, Azure, or GCP. Works with serverless computing, cloud-native tools, and scalable architectures."
+  },
+  {
+   "t": "p",
+   "x": "Cybersecurity Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Protects systems, data, and networks from cyber threats. Performs risk assessments, monitors attacks, and implements security controls."
+  }
+ ],
+ "url": "https://dsuonline.com/online-mca/mca-electives/Quantum-Computing"
+}

@@ -1,0 +1,326 @@
+{
+ "title": "DSU Online: UGC-Entitled Online Degree Courses | NAAC A+ Accredited",
+ "description": "Join Dayananda Sagar University (DSU) for UGC-Entitled and NAAC A+ graded online degree courses. 100+ industry recognized programs & 10000+ alumni's.",
+ "blocks": [
+  {
+   "t": "p",
+   "x": "Hero Section"
+  },
+  {
+   "t": "p",
+   "x": "The DSU Advantage"
+  },
+  {
+   "t": "p",
+   "x": "FAQ + Image Section"
+  },
+  {
+   "t": "p",
+   "x": "Success Stories Section"
+  },
+  {
+   "t": "h1",
+   "x": "Fuel your career with quality online education"
+  },
+  {
+   "t": "a",
+   "x": "Inquire Now",
+   "href": "https://apply.dsuonline.com/"
+  },
+  {
+   "t": "h2",
+   "x": "The DSU Advantage"
+  },
+  {
+   "t": "p",
+   "x": "In today’s fast-paced world, learning should be as dynamic and ambitious as your career goals. At DSU Online, we offer a flexible, high-quality education designed to help you fast-track your learning and accelerate your professional growth. With industry-aligned programmes, expert faculty, and an interactive digital learning experience, DSU Online empowers you to gain in-demand skills on your schedule—without putting your career on hold. Whether you're upskilling, switching careers, or advancing in your field, DSU Online is your gateway to success."
+  },
+  {
+   "t": "p",
+   "x": "Row 1"
+  },
+  {
+   "t": "p",
+   "x": "Row 2"
+  },
+  {
+   "t": "img",
+   "src": "/content/956aafbc-graduation-cap.png",
+   "alt": "UGC-Entitled degree",
+   "w": 96,
+   "h": 96
+  },
+  {
+   "t": "p",
+   "x": "UGC-Entitled degree"
+  },
+  {
+   "t": "img",
+   "src": "/content/38ad61ef-laptop.png",
+   "alt": "100% online learning",
+   "w": 96,
+   "h": 96
+  },
+  {
+   "t": "p",
+   "x": "100% online learning"
+  },
+  {
+   "t": "img",
+   "src": "/content/66900df2-timetable.png",
+   "alt": "Flexible learning options",
+   "w": 96,
+   "h": 96
+  },
+  {
+   "t": "p",
+   "x": "Flexible learning options"
+  },
+  {
+   "t": "img",
+   "src": "/content/2931c8c9-gears.png",
+   "alt": "Industry relevant curriculum",
+   "w": 96,
+   "h": 96
+  },
+  {
+   "t": "p",
+   "x": "Industry relevant curriculum"
+  },
+  {
+   "t": "img",
+   "src": "/content/c7bddecb-university.png",
+   "alt": "At par with regular on-campus degrees",
+   "w": 96,
+   "h": 96
+  },
+  {
+   "t": "p",
+   "x": "At par with regular on-campus degrees"
+  },
+  {
+   "t": "img",
+   "src": "/content/14d5506b-elective.png",
+   "alt": "In-demand Electives",
+   "w": 96,
+   "h": 96
+  },
+  {
+   "t": "p",
+   "x": "In-demand Electives"
+  },
+  {
+   "t": "img",
+   "src": "/content/57b183fd-exam.png",
+   "alt": "Online Examination",
+   "w": 96,
+   "h": 96
+  },
+  {
+   "t": "p",
+   "x": "Online Examination"
+  },
+  {
+   "t": "img",
+   "src": "/content/506e2c0a-video-conference.png",
+   "alt": "Live Online Sessions",
+   "w": 96,
+   "h": 96
+  },
+  {
+   "t": "p",
+   "x": "Live Online Sessions"
+  },
+  {
+   "t": "img",
+   "src": "/content/e4c72566-video.png",
+   "alt": "Recorded Content",
+   "w": 96,
+   "h": 96
+  },
+  {
+   "t": "p",
+   "x": "Recorded Content"
+  },
+  {
+   "t": "img",
+   "src": "/content/e59d6cbb-trophy.png",
+   "alt": "Reputed DSU alumni recognition",
+   "w": 96,
+   "h": 96
+  },
+  {
+   "t": "p",
+   "x": "Reputed DSU alumni recognition"
+  },
+  {
+   "t": "h2",
+   "x": "A Learning Experience That’s a Class Apart"
+  },
+  {
+   "t": "p",
+   "x": "Left: FAQ Accordion"
+  },
+  {
+   "t": "p",
+   "x": "Right: Image"
+  },
+  {
+   "t": "p",
+   "x": "Our highly experienced faculty ensures learners get access to the best of learning through captivating insights and real-time guidance."
+  },
+  {
+   "t": "p",
+   "x": "A variety of learning mediums, such as online classes, audio books, physical books, and online material, ensure students get a seamless learning experience."
+  },
+  {
+   "t": "p",
+   "x": "Thought-through curriculums in line with present and future industry needs ensure learners step into the field well-equipped."
+  },
+  {
+   "t": "p",
+   "x": "Placement assistance with a gamut of hiring partners and well-structured job drives ensure a good kickstart to the career."
+  },
+  {
+   "t": "p",
+   "x": "Remote learning need not equate to less immersive and non-interactive. A fluid learning environment and regular faculty interactions ensures seamless learning."
+  },
+  {
+   "t": "p",
+   "x": "Hassle-free remote assessments ensure you can take exams in the comfort of your own space with integrity."
+  },
+  {
+   "t": "img",
+   "src": "/content/cc061378-learn-exp-class-apart.png",
+   "alt": "Students learning online with laptop - DSU Online Education",
+   "w": 770,
+   "h": 782
+  },
+  {
+   "t": "img",
+   "src": "/content/35e63034-asset-5-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 294,
+   "h": 83
+  },
+  {
+   "t": "img",
+   "src": "/content/90889561-asset-6-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 323,
+   "h": 81
+  },
+  {
+   "t": "img",
+   "src": "/content/cb739834-asset-7-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 370,
+   "h": 111
+  },
+  {
+   "t": "img",
+   "src": "/content/12b7fa3f-asset-8-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 329,
+   "h": 115
+  },
+  {
+   "t": "img",
+   "src": "/content/4fd7fd17-asset-10-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 215,
+   "h": 98
+  },
+  {
+   "t": "img",
+   "src": "/content/d0cfdee3-asset-11-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 308,
+   "h": 99
+  },
+  {
+   "t": "img",
+   "src": "/content/79069a70-asset-12-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1818,
+   "h": 611
+  },
+  {
+   "t": "img",
+   "src": "/content/3ee7e10c-asset-13-8.webp",
+   "alt": "DSU Award and Recognition",
+   "w": 276,
+   "h": 90
+  },
+  {
+   "t": "p",
+   "x": "Heading"
+  },
+  {
+   "t": "p",
+   "x": "Carousel with Cards"
+  },
+  {
+   "t": "h2",
+   "x": "Success Stories"
+  },
+  {
+   "t": "p",
+   "x": "Navigation Buttons – BELOW the cards, centered"
+  },
+  {
+   "t": "p",
+   "x": "Testimonial 1"
+  },
+  {
+   "t": "p",
+   "x": "Testimonial 2"
+  },
+  {
+   "t": "p",
+   "x": "Testimonial 3"
+  },
+  {
+   "t": "img",
+   "src": "/content/a791a1af-double_comma_whydsu.svg",
+   "alt": "Quote"
+  },
+  {
+   "t": "p",
+   "x": "The EMBA programme boosted my confidence in my ability to face challenges. I applied for the Project Finance Controller role at ABB, which offers significant visibility and decision-making responsibilities. Thanks to my creative and problem-solving skills and technical expertise, I secured the role with a substantial salary hike."
+  },
+  {
+   "t": "h4",
+   "x": "Supriya Deshpande"
+  },
+  {
+   "t": "p",
+   "x": "Executive MBA"
+  },
+  {
+   "t": "p",
+   "x": "My experience at DSU as an Executive MBA (EMBA) student has been truly transformative, and a significant part of this journey is attributed to the guidance and mentorship of Capt. A. Nagaraj Subbarao along with a very impressive faculty."
+  },
+  {
+   "t": "h4",
+   "x": "Garry Subaiah"
+  },
+  {
+   "t": "p",
+   "x": "Executive MBA"
+  },
+  {
+   "t": "p",
+   "x": "I highly recommend this programme to anyone who needs a refresher on entrepreneurship and innovation approaches. DSU is a fantastic place that has added value and changed my career trajectory."
+  },
+  {
+   "t": "h4",
+   "x": "Dr. Sudheer Patil"
+  },
+  {
+   "t": "p",
+   "x": "Executive MBA"
+  }
+ ],
+ "url": "https://dsuonline.com/why-dsu-online"
+}

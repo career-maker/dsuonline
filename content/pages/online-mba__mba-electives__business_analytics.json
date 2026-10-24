@@ -1,0 +1,269 @@
+{
+ "title": "Online MBA in Business Analytics & Management | Apply Now!",
+ "description": "Transform data into strategy. Master the intersection of leadership and analytics with DSU’s Online MBA. Flexible learning, industry-led electives & more.",
+ "blocks": [
+  {
+   "t": "p",
+   "x": "Advance Your Analytical Skills"
+  },
+  {
+   "t": "h1",
+   "x": "Online MBA Program - Business Analytics"
+  },
+  {
+   "t": "p",
+   "x": "Data Science | Visualization | Predictive Modelling | Decision Intelligence"
+  },
+  {
+   "t": "p",
+   "x": "Duration"
+  },
+  {
+   "t": "p",
+   "x": "2 Years"
+  },
+  {
+   "t": "p",
+   "x": "(4 Semesters)"
+  },
+  {
+   "t": "p",
+   "x": "1st Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 32,875/-"
+  },
+  {
+   "t": "p",
+   "x": "2nd–4th Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 32,375/-"
+  },
+  {
+   "t": "p",
+   "x": "per sem"
+  },
+  {
+   "t": "p",
+   "x": "Total Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 1,30,000/-"
+  },
+  {
+   "t": "h2",
+   "x": "About Business Analytics"
+  },
+  {
+   "t": "p",
+   "x": "Business Analytics equips learners with analytical, technical, and strategic skills to transform data into actionable business insights. This elective provides hands-on learning in data management, visualization, and predictive modelling for effective decision-making. The specialization integrates data science, statistical techniques, and business intelligence to prepare learners for high-growth careers in analytics, consulting, marketing intelligence, finance, operations, and digital transformation. With a strong focus on real-world datasets, industry tools, and practical projects, the program builds expertise demanded by modern organisations."
+  },
+  {
+   "t": "img",
+   "src": "/content/b7a7ff5c-DSU4.webp",
+   "alt": "DSU Campus",
+   "w": 2808,
+   "h": 2049
+  },
+  {
+   "t": "h3",
+   "x": "Learning Modules"
+  },
+  {
+   "t": "p",
+   "x": "Data Management"
+  },
+  {
+   "t": "p",
+   "x": "Data cleaning, preprocessing, database handling, and foundational analytics workflows."
+  },
+  {
+   "t": "p",
+   "x": "Data Visualization"
+  },
+  {
+   "t": "p",
+   "x": "Creating dashboards and insights using tools like Tableau, Power BI, and Python libraries."
+  },
+  {
+   "t": "p",
+   "x": "Predictive Modelling"
+  },
+  {
+   "t": "p",
+   "x": "Statistical modelling, machine learning techniques, forecasting, and decision-making models."
+  },
+  {
+   "t": "p",
+   "x": "Business Intelligence"
+  },
+  {
+   "t": "p",
+   "x": "Transforming data into insights for marketing, finance, operations, and strategic planning."
+  },
+  {
+   "t": "p",
+   "x": "Advanced Analytics"
+  },
+  {
+   "t": "p",
+   "x": "Big data tools, real-world datasets, optimization techniques, and digital transformation analytics."
+  },
+  {
+   "t": "h3",
+   "x": "Career Path"
+  },
+  {
+   "t": "p",
+   "x": "Business Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Translates business needs into data-driven solutions. Works on data interpretation, dashboards, and performance insights to guide decision-making."
+  },
+  {
+   "t": "p",
+   "x": "Data Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Cleans, analyses, and visualizes datasets using tools like Excel, SQL, Power BI, Tableau, and Python to support business functions."
+  },
+  {
+   "t": "p",
+   "x": "Marketing Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Studies market trends, customer behaviour, and campaign performance to help companies optimize marketing strategies and ROI."
+  },
+  {
+   "t": "p",
+   "x": "Financial Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Uses statistical models and financial data to evaluate investments, forecasts, budgets, and performance indicators."
+  },
+  {
+   "t": "p",
+   "x": "Data Scientist"
+  },
+  {
+   "t": "p",
+   "x": "Builds machine learning models, predictive algorithms, and advanced analytics solutions using Python, R, and large datasets."
+  },
+  {
+   "t": "p",
+   "x": "Business Intelligence (BI) Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Designs dashboards, BI reports, and performance metrics to help organizations make data-backed operational and strategic decisions."
+  },
+  {
+   "t": "p",
+   "x": "Operations Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Uses analytics to improve workflows, reduce costs, and enhance operational efficiency across business functions."
+  },
+  {
+   "t": "p",
+   "x": "Management Consultant"
+  },
+  {
+   "t": "p",
+   "x": "Advises companies using analytics-driven strategies for growth, transformation, and competitive advantage."
+  },
+  {
+   "t": "p",
+   "x": "Digital Transformation Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Works on technology-driven innovation, automation, and analytics adoption to modernize business operations."
+  },
+  {
+   "t": "p",
+   "x": "Risk Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Evaluates business risks using predictive modelling, statistical tools, and financial metrics to ensure stability and compliance."
+  },
+  {
+   "t": "h3",
+   "x": "Awards and Recognitions"
+  },
+  {
+   "t": "img",
+   "src": "/content/f3883284-asset-5-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 2094,
+   "h": 594
+  },
+  {
+   "t": "img",
+   "src": "/content/21213f4a-asset-6-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 2223,
+   "h": 560
+  },
+  {
+   "t": "img",
+   "src": "/content/b37ff9a5-asset-7-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1870,
+   "h": 561
+  },
+  {
+   "t": "img",
+   "src": "/content/ba3be998-asset-8-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1629,
+   "h": 571
+  },
+  {
+   "t": "img",
+   "src": "/content/5817d72f-asset-9-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 960,
+   "h": 572
+  },
+  {
+   "t": "img",
+   "src": "/content/3ddc5e1c-asset-10-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1255,
+   "h": 573
+  },
+  {
+   "t": "img",
+   "src": "/content/4da2f687-asset-11-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1808,
+   "h": 581
+  },
+  {
+   "t": "img",
+   "src": "/content/d9ada19c-asset-12-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1010,
+   "h": 339
+  },
+  {
+   "t": "img",
+   "src": "/content/845da638-asset-13-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1776,
+   "h": 579
+  }
+ ],
+ "url": "https://dsuonline.com/online-mba/mba-electives/business_analytics"
+}

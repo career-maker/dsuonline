@@ -1,0 +1,76 @@
+{
+ "title": "",
+ "description": "",
+ "blocks": [
+  {
+   "t": "p",
+   "x": "ACCREDITATION LOGOS"
+  },
+  {
+   "t": "img",
+   "src": "/content/9f7b2dc6-ugc.svg",
+   "alt": "UGC Approved"
+  },
+  {
+   "t": "img",
+   "src": "/content/0aab0f2c-asset-12-8.webp",
+   "alt": "NAAC Accredited",
+   "w": 210,
+   "h": 70
+  },
+  {
+   "t": "img",
+   "src": "/content/dbbc6e32-legacy.svg",
+   "alt": "Additional Accreditation"
+  },
+  {
+   "t": "h3",
+   "x": "Admissions Open for 2026 Batch"
+  },
+  {
+   "t": "p",
+   "x": "Refer & Earn Program."
+  },
+  {
+   "t": "p",
+   "x": "Programmes Offered:"
+  },
+  {
+   "t": "h4",
+   "x": "MBA | MCA | BBA | BCA | B.Com"
+  },
+  {
+   "t": "p",
+   "x": "Widget will be added here later"
+  },
+  {
+   "t": "h2",
+   "x": "Programs Offered"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "MBA",
+    "MCA",
+    "BBA",
+    "BCA",
+    "B.Com"
+   ]
+  },
+  {
+   "t": "h2",
+   "x": "Terms & Conditions"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "The referrer will be eligible for the reward once the referee's enrollment number is generated.",
+    "This offer is run and managed by Dayananda Sagar University | Online and is only applicable for the DSU Online Degree Programs.",
+    "In case of any disputes, DSU Online reserves the right to cancel/abort the referral program.",
+    "The referrer will be rewarded post the completion of the admission cycle.",
+    "Referral will not apply to any existing reference."
+   ]
+  }
+ ],
+ "url": "https://dsuonline.com/refer"
+}

@@ -1,0 +1,257 @@
+{
+ "title": "Master DevOps in DSU’s Online BCA | DSU Online, UGC Entitled",
+ "description": "Explore DevOps in DSU’s Online BCA. Learn CI/CD, automation, cloud deployment, and containerization to build in-demand skills for modern tech careers. Apply now.",
+ "blocks": [
+  {
+   "t": "p",
+   "x": "Advance Your Skills"
+  },
+  {
+   "t": "h1",
+   "x": "Online BCA Program - DevOps"
+  },
+  {
+   "t": "p",
+   "x": "Continuous Integration & Deployment | Automation | Cloud Deployment | Containerization (Docker/Kubernetes Awareness) | Monitoring & Collaboration"
+  },
+  {
+   "t": "p",
+   "x": "Duration"
+  },
+  {
+   "t": "p",
+   "x": "3 Years"
+  },
+  {
+   "t": "p",
+   "x": "(6 Semesters)"
+  },
+  {
+   "t": "p",
+   "x": "1st Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 22,250/-"
+  },
+  {
+   "t": "p",
+   "x": "2nd–5th Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 21,750/-"
+  },
+  {
+   "t": "p",
+   "x": "per sem"
+  },
+  {
+   "t": "p",
+   "x": "6th Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 20,750/-"
+  },
+  {
+   "t": "p",
+   "x": "Total Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 1,30,000/-"
+  },
+  {
+   "t": "h2",
+   "x": "About DevOps"
+  },
+  {
+   "t": "p",
+   "x": "This elective teaches you how modern teams rapidly develop, deploy, and automate software systems using integrated development-operations tools. You will gain skills in CI/CD pipelines, automation, cloud deployment, and containerization basics (Docker/Kubernetes awareness). It prepares you for roles such as DevOps Support Engineer, Cloud Operations Associate, and Site Reliability Intern, making you familiar with the development culture used in global tech companies."
+  },
+  {
+   "t": "img",
+   "src": "/content/d8035b6e-DSU4.webp",
+   "alt": "DSU Campus",
+   "w": 2808,
+   "h": 2049
+  },
+  {
+   "t": "h3",
+   "x": "Learning Modules"
+  },
+  {
+   "t": "p",
+   "x": "CI/CD Pipelines"
+  },
+  {
+   "t": "p",
+   "x": "Learn how to implement Continuous Integration and Continuous Deployment pipelines to automate software building, testing, and deployment."
+  },
+  {
+   "t": "p",
+   "x": "Cloud Deployment"
+  },
+  {
+   "t": "p",
+   "x": "Deploy applications on cloud platforms, understand infrastructure-as-a-service, and manage scalable, reliable cloud-based solutions."
+  },
+  {
+   "t": "p",
+   "x": "Automation"
+  },
+  {
+   "t": "p",
+   "x": "Automate repetitive tasks, manage configuration and orchestration, and streamline development-operations workflows."
+  },
+  {
+   "t": "p",
+   "x": "Containerization"
+  },
+  {
+   "t": "p",
+   "x": "Understand Docker containers, container orchestration basics with Kubernetes, and how to package and deploy applications efficiently."
+  },
+  {
+   "t": "p",
+   "x": "Monitoring & Reliability"
+  },
+  {
+   "t": "p",
+   "x": "Monitor application performance, track metrics, ensure system reliability, and learn practices used by global tech companies."
+  },
+  {
+   "t": "h3",
+   "x": "Career Path"
+  },
+  {
+   "t": "p",
+   "x": "??"
+  },
+  {
+   "t": "p",
+   "x": "DevOps Support Engineer"
+  },
+  {
+   "t": "p",
+   "x": "Assist in implementing CI/CD pipelines, automate build and deployment tasks, monitor system performance, and support cloud operations."
+  },
+  {
+   "t": "p",
+   "x": "??"
+  },
+  {
+   "t": "p",
+   "x": "Cloud Operations Associate"
+  },
+  {
+   "t": "p",
+   "x": "Manage cloud-based infrastructure, deploy applications, monitor availability, and maintain high reliability of services across cloud platforms."
+  },
+  {
+   "t": "p",
+   "x": "??"
+  },
+  {
+   "t": "p",
+   "x": "Automation Engineer Intern"
+  },
+  {
+   "t": "p",
+   "x": "Develop automation scripts for software builds, deployments, and testing, reducing manual effort and improving efficiency in development workflows."
+  },
+  {
+   "t": "p",
+   "x": "??"
+  },
+  {
+   "t": "p",
+   "x": "Containerization Specialist"
+  },
+  {
+   "t": "p",
+   "x": "Work with Docker and Kubernetes basics to package applications, deploy containers, and orchestrate microservices for scalable environments."
+  },
+  {
+   "t": "p",
+   "x": "??"
+  },
+  {
+   "t": "p",
+   "x": "Site Reliability Intern"
+  },
+  {
+   "t": "p",
+   "x": "Monitor application performance, track KPIs, maintain reliability, and support operations to ensure smooth service delivery in tech environments."
+  },
+  {
+   "t": "h3",
+   "x": "Awards and Recognitions"
+  },
+  {
+   "t": "img",
+   "src": "/content/d3794b6e-asset-5-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 2094,
+   "h": 594
+  },
+  {
+   "t": "img",
+   "src": "/content/27d36a9d-asset-6-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 2223,
+   "h": 560
+  },
+  {
+   "t": "img",
+   "src": "/content/e0acdebd-asset-7-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1870,
+   "h": 561
+  },
+  {
+   "t": "img",
+   "src": "/content/f287c038-asset-8-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1629,
+   "h": 571
+  },
+  {
+   "t": "img",
+   "src": "/content/9543f93b-asset-9-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 960,
+   "h": 572
+  },
+  {
+   "t": "img",
+   "src": "/content/3d499c39-asset-10-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1255,
+   "h": 573
+  },
+  {
+   "t": "img",
+   "src": "/content/43dfd518-asset-11-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1808,
+   "h": 581
+  },
+  {
+   "t": "img",
+   "src": "/content/b79d5ebd-asset-12-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1010,
+   "h": 339
+  },
+  {
+   "t": "img",
+   "src": "/content/c2d15565-asset-13-8.png",
+   "alt": "DSU Award and Recognition",
+   "w": 1776,
+   "h": 579
+  }
+ ],
+ "url": "https://dsuonline.com/online-bca/bca-electives/devops"
+}

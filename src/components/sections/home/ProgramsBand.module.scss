@@ -1,0 +1,598 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.band {
+  background: linear-gradient(#fff clamp(8px, #{u(17)}, 17px), $blue clamp(8px, #{u(17)}, 17px));
+  color: #fff;
+  padding-top: clamp(24px, #{u(17)}, 17px);
+  @include section-pad(93, 90);
+  padding-top: calc(clamp(8px, #{u(17)}, 17px) + clamp(48px, #{u(76)}, 76px));
+}
+
+.inner {
+  @include container;
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: px(24) px(48);
+
+  h2 {
+    margin-top: clamp(6px, #{u(8)}, 8px);
+    @include h2;
+    color: #fff;
+  }
+
+  .eyebrow {
+    @include eyebrow;
+  }
+
+  .lead {
+    flex: 0 1 640px;
+    margin-top: clamp(0px, #{u(32)}, 32px);
+    @include body-text;
+    color: #fff;
+  }
+
+  @include down($bp-lg) {
+    flex-direction: column;
+
+    .lead {
+      flex: none;
+      margin-top: 0;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, #{u(19)}, 19px) clamp(12px, #{u(20)}, 20px);
+  margin-top: clamp(28px, #{u(40)}, 40px);
+
+  @include down($bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include down($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(10px, #{u(17)}, 17px) clamp(10px, #{u(17)}, 17px) clamp(14px, #{u(19)}, 19px);
+  border-radius: px(14);
+  background: #fff;
+  color: $ink;
+  letter-spacing: -0.0175em;
+  position: relative;
+  @include lift(6px);
+  @include zoom('.media img');
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 525 / 173;
+  overflow: hidden;
+  border-radius: px(10);
+}
+
+.emi {
+  position: absolute;
+  left: px(9.8);
+  top: px(12.5);
+  width: px(121);
+  height: px(43);
+  letter-spacing: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: px(34);
+    top: px(3.4);
+    width: px(87);
+    height: px(37);
+    border-radius: 0 px(19) px(19) 0;
+    background: #090909;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: px(43);
+    height: px(43);
+    box-sizing: border-box;
+    border: 1.5px solid #090909;
+    border-radius: 50%;
+    background: $yellow;
+  }
+
+  b {
+    position: absolute;
+    left: px(7.1);
+    top: px(8.6);
+    z-index: 1;
+    font-size: px(24.7);
+    line-height: px(25);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: $blue;
+  }
+
+  i {
+    position: absolute;
+    left: px(45.6);
+    top: px(5.9);
+    z-index: 1;
+    width: px(60.2);
+    color: #fff;
+    font-size: px(16.5);
+    line-height: px(18);
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  small {
+    display: block;
+    margin: px(-2.3) px(-9) 0;
+    font-size: px(14.2);
+    line-height: px(16);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+}
+
+.card h3 {
+  margin-top: clamp(14px, #{u(22)}, 22px);
+  font-size: fs(28, 22px);
+  line-height: 1.15;
+  font-weight: 500;
+  color: $ink;
+}
+
+.full {
+  font-size: fs(20, 16px);
+  line-height: 1.25;
+  font-weight: 300;
+  color: #4a5565;
+}
+
+.meta {
+  margin-bottom: clamp(12px, #{u(20)}, 20px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px clamp(12px, #{u(28)}, 28px);
+  margin-top: clamp(10px, #{u(18)}, 18px);
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: px(7);
+    font-size: px(15);
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: $ink;
+  }
+
+  img {
+    width: px(22);
+    height: auto;
+  }
+
+  b {
+    font-weight: 700;
+    color: $blue;
+  }
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: px(12);
+  margin-top: auto;
+  padding-top: clamp(14px, #{u(15)}, 15px);
+  border-top: 1px solid rgb(0 0 0 / 10%);
+}
+
+.explore {
+  font-size: fs(18, 16px);
+  line-height: 1.2;
+  font-weight: 500;
+  color: $blue;
+}
+
+.apply {
+  width: px(162);
+  height: px(52);
+  padding-left: px(21);
+  border-radius: px(3);
+}
+
+.cta {
+  padding: clamp(10px, #{u(14)}, 14px) clamp(10px, #{u(17)}, 17px) clamp(10px, #{u(13)}, 13px);
+}
+
+.ctaMedia {
+  position: relative;
+  flex: 1;
+  min-height: px(330);
+  overflow: hidden;
+  border-radius: px(6);
+  background: $bg-card-sky;
+
+  // below desktop: photo + dark overlay only appear on hover; at rest it is a light card
+  img {
+    opacity: 0;
+    transition: opacity 0.5s ease, scale 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+}
+
+.ctaShade {
+  position: absolute;
+  inset: 0;
+  background: rgb(33 33 33 / 80%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.ctaBody {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(16px, #{u(28)}, 28px);
+  color: $ink;
+  transition: color 0.5s ease;
+
+  h3 {
+    margin: 0;
+    font-size: fs(40, 28px);
+    line-height: 1.075;
+    font-weight: 700;
+    letter-spacing: -0.0175em;
+    color: inherit;
+  }
+
+  p {
+    margin-top: clamp(8px, #{u(14)}, 14px);
+    font-size: fs(18, 15px);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+}
+
+.cta:hover,
+.cta:focus-within {
+  .ctaBody {
+    color: #fff;
+  }
+
+  .ctaShade {
+    opacity: 1;
+  }
+
+  .ctaMedia img {
+    opacity: 1;
+  }
+}
+
+.ctaBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: px(12);
+  margin-top: auto;
+
+  a {
+    height: px(44);
+  }
+}
+
+// ---------- hover detail panel (programme cards)
+.detail {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: clamp(14px, #{u(26)}, 26px) clamp(14px, #{u(28)}, 28px);
+  border-radius: inherit;
+  background: #1c1f22;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 px(10);
+  transition: opacity 0.4s ease, translate 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), visibility 0s 0.4s;
+
+  // pointer devices only; touch keeps the plain card
+  @media (hover: hover) {
+    .card:hover &,
+    .card:focus-within & {
+      opacity: 1;
+      visibility: visible;
+      translate: 0 0;
+      transition-delay: 0s;
+    }
+  }
+
+  > *:not(.detailBg) {
+    position: relative;
+  }
+}
+
+.detailBg {
+  object-fit: cover;
+  object-position: 50% 25%;
+  opacity: 0.16;
+  filter: grayscale(0.4);
+}
+
+.detailTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: px(16);
+}
+
+.detailName {
+  font-size: fs(30, 22px);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.detailFull {
+  margin-top: px(6);
+  font-size: fs(20, 15px);
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+.detailMeta {
+  display: grid;
+  gap: px(8);
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: px(8);
+    font-size: px(15);
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  img {
+    width: px(22);
+    height: auto;
+  }
+
+  b {
+    font-weight: 700;
+    color: $yellow;
+  }
+}
+
+.detailLabel {
+  margin-top: auto;
+  padding-top: px(14);
+  border-top: 1px solid rgb(255 255 255 / 14%);
+  font-size: px(15);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: px(8);
+  margin-top: px(12);
+
+  a {
+    display: block;
+    padding: px(8) px(12);
+    border: 1px solid rgb(255 255 255 / 18%);
+    border-radius: px(4);
+    background: rgb(255 255 255 / 8%);
+    font-size: px(15);
+    line-height: 1.2;
+    transition: background-color 0.25s, border-color 0.25s, color 0.25s;
+    @include focus-ring;
+
+    &:hover {
+      border-color: $yellow;
+      background: rgb(255 255 255 / 16%);
+    }
+  }
+
+  .more {
+    border-color: $yellow;
+    color: $yellow;
+  }
+}
+
+.detailBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: px(12);
+  margin-top: px(18);
+
+  > * {
+    height: px(48);
+  }
+}
+
+// ---------- desktop: exact geometry of the 1920 artboard
+@include up($bp-lg) {
+  // 17px white strip above the blue band (design y2718-2735)
+  .band {
+    padding: u(93.16) 0 u(91);
+    background: linear-gradient(#fff u(17), $blue u(17));
+  }
+
+  .head {
+    margin-left: u(-1);
+
+    .eyebrow {
+      line-height: u(24);
+    }
+
+    h2 {
+      margin-top: u(2);
+      line-height: u(60);
+    }
+
+    .lead {
+      flex: 0 0 u(585);
+      margin: u(58.2) u(-2) 0 0;
+      line-height: u(29);
+    }
+  }
+
+  // cards at x 95 / 678.5 / 1262, rows y2993 / 3439
+  .grid {
+    grid-template-columns: repeat(3, u(563));
+    grid-auto-rows: u(427);
+    gap: u(19) u(20.5);
+    margin-top: u(35.8);
+
+    > :nth-child(5) {
+      margin-left: u(-4.5);
+    }
+  }
+
+  .card {
+    padding: u(17) u(17) u(19);
+    border-radius: u(14);
+  }
+
+  .media {
+    height: u(173);
+    aspect-ratio: auto;
+    border-radius: u(10);
+  }
+
+  .card h3 {
+    margin-top: u(22.3);
+    font-size: u(28);
+    line-height: u(32.2);
+  }
+
+  .full {
+    margin-top: u(1.2);
+    font-size: u(20);
+    line-height: u(25);
+    font-weight: 400;
+    letter-spacing: -0.0175em;
+  }
+
+  // icons at x+0 / +174.4 / +307 of the content box
+  .meta {
+    display: grid;
+    grid-template-columns: u(174.4) u(132.6) auto;
+    gap: 0;
+    margin: u(18.3) 0 u(30);
+
+    li {
+      gap: u(7);
+      height: u(22);
+      font-size: u(16);
+      line-height: u(22);
+    }
+
+    li:nth-child(2) {
+      gap: u(9.6);
+    }
+
+    li:nth-child(3) {
+      gap: u(8);
+    }
+
+    img {
+      width: auto;
+      height: u(22);
+    }
+  }
+
+  .foot {
+    margin-top: 0;
+    padding-top: u(14);
+  }
+
+  .explore {
+    font-size: u(18);
+    letter-spacing: 0;
+  }
+
+  .emi small {
+    letter-spacing: -0.026em;
+  }
+
+  .apply {
+    width: u(162.4);
+    height: u(52);
+    padding-left: u(17);
+  }
+
+  // the design shows this card in its dark (photo) state
+  .cta {
+    padding: u(14) u(17) u(20);
+  }
+
+  .ctaMedia {
+    min-height: 0;
+    border-radius: u(6);
+
+    img {
+      opacity: 1;
+    }
+  }
+
+  .ctaShade {
+    opacity: 1;
+  }
+
+  .ctaBody {
+    padding: u(9.6) u(28) u(35);
+    color: #fff;
+
+    h3 {
+      font-size: u(40);
+      line-height: u(43);
+    }
+
+    p {
+      max-width: u(440);
+      margin-top: u(4.5);
+      font-size: u(18);
+      line-height: u(29);
+      letter-spacing: -0.02em;
+    }
+  }
+
+  .ctaBtns {
+    gap: u(18.6);
+
+    a {
+      height: u(50);
+    }
+
+    > :first-child {
+      width: u(220);
+      padding-left: u(20);
+    }
+
+    > :last-child {
+      width: u(160.4);
+      padding-left: u(20);
+    }
+  }
+}

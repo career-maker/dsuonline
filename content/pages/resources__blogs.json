@@ -1,0 +1,260 @@
+{
+ "title": "Blogs - DSU Online",
+ "description": "",
+ "blocks": [
+  {
+   "t": "a",
+   "x": "Home",
+   "href": "https://dsuonline.com/"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "MBA",
+    "MCA",
+    "BBA",
+    "BCA",
+    "B.Com"
+   ]
+  },
+  {
+   "t": "ul",
+   "items": [
+    "About DSU",
+    "About DSU Online"
+   ]
+  },
+  {
+   "t": "a",
+   "x": "Admissions",
+   "href": "https://dsuonline.com/admission"
+  },
+  {
+   "t": "a",
+   "x": "Blogs",
+   "href": "https://dsuonline.com/resources/blogs/"
+  },
+  {
+   "t": "a",
+   "x": "Academics",
+   "href": "https://dsuonline.com/academics-at-dsu"
+  },
+  {
+   "t": "a",
+   "x": "Refer",
+   "href": "https://dsuonline.com/refer/"
+  },
+  {
+   "t": "a",
+   "x": "+91 9880147004",
+   "href": "tel:+919880147004"
+  },
+  {
+   "t": "a",
+   "x": "Learner Login",
+   "href": "https://student.dsuonline.com/login"
+  },
+  {
+   "t": "p",
+   "x": "APPLY NOW (UTM SAFE)"
+  },
+  {
+   "t": "p",
+   "x": "ENQUIRE NOW (NPF POPUP)"
+  },
+  {
+   "t": "a",
+   "x": "Call us",
+   "href": "tel:+919880147004"
+  },
+  {
+   "t": "h1",
+   "x": "Blogs"
+  },
+  {
+   "t": "h2",
+   "x": "Blogs"
+  },
+  {
+   "t": "img",
+   "src": "/content/d566c16b-20th-blog-1024x625.png",
+   "alt": "Online MBA in Financial Management for Career Growth",
+   "w": 1024,
+   "h": 625
+  },
+  {
+   "t": "p",
+   "x": "By | 03/09/2026"
+  },
+  {
+   "t": "h3",
+   "x": "Future of Finance Advancing Your Career with an Online MBA in Financial Management"
+  },
+  {
+   "t": "p",
+   "x": "Finance is no longer limited to traditional accounting departments, banks, or investment firms. Businesses across industries rely on professionals who..."
+  },
+  {
+   "t": "a",
+   "x": "Read More...",
+   "href": "https://dsuonline.com/resources/blogs/online-mba-financial-management-career/"
+  },
+  {
+   "t": "img",
+   "src": "/content/2296ebc6-19th-blog-1024x625.jpg",
+   "alt": "",
+   "w": 1024,
+   "h": 625
+  },
+  {
+   "t": "p",
+   "x": "By | 06/08/2026"
+  },
+  {
+   "t": "h3",
+   "x": "Online MCA vs. Online MBA Which Path Should You Choose After Graduation?"
+  },
+  {
+   "t": "p",
+   "x": "Deciding to pursue a postgraduate degree is a big decision that you will have to make when you graduate and..."
+  },
+  {
+   "t": "a",
+   "x": "Read More...",
+   "href": "https://dsuonline.com/resources/blogs/online-mca-vs-online-mba/"
+  },
+  {
+   "t": "img",
+   "src": "/content/dfc6be29-18th-blog-1024x625.png",
+   "alt": "Accelerate Your Career Growth with Premium Online Learning at DSU Online",
+   "w": 1024,
+   "h": 625
+  },
+  {
+   "t": "p",
+   "x": "By | 04/06/2026"
+  },
+  {
+   "t": "h3",
+   "x": "Accelerate Your Career Growth with Premium Online Learning at DSU Online"
+  },
+  {
+   "t": "p",
+   "x": "You may think you’ve peaked at your job or in your career when you become aware of how your current..."
+  },
+  {
+   "t": "a",
+   "x": "Read More...",
+   "href": "https://dsuonline.com/resources/blogs/accelerate-your-career-growth-with-premium-online-learning-at-dsu-online/"
+  },
+  {
+   "t": "img",
+   "src": "/content/eec13352-17th-blog-1024x625.png",
+   "alt": "7 Things to Check Before Choosing an Online MBA in India",
+   "w": 1024,
+   "h": 625
+  },
+  {
+   "t": "p",
+   "x": "By | 30/05/2026"
+  },
+  {
+   "t": "h3",
+   "x": "7 Things to Check Before Choosing an Online MBA in India"
+  },
+  {
+   "t": "p",
+   "x": "Here’s something nobody tells you when you start researching an Online MBA in India: the options are overwhelming, and most..."
+  },
+  {
+   "t": "a",
+   "x": "Read More...",
+   "href": "https://dsuonline.com/resources/blogs/7-things-to-check-before-choosing-an-online-mba-in-india/"
+  },
+  {
+   "t": "img",
+   "src": "/content/1681bca5-16th-blog-1024x625.png",
+   "alt": "Beyond Skills: Why Online Degrees Still Hold an Advantage",
+   "w": 1024,
+   "h": 625
+  },
+  {
+   "t": "p",
+   "x": "By | 21/05/2026"
+  },
+  {
+   "t": "h3",
+   "x": "Beyond Skills: Why Online Degrees Still Hold an Advantage"
+  },
+  {
+   "t": "p",
+   "x": "“You don’t need a degree. Just learn the skills.” You’ve probably heard that at least a dozen times. And honestly,..."
+  },
+  {
+   "t": "a",
+   "x": "Read More...",
+   "href": "https://dsuonline.com/resources/blogs/beyond-skills-why-online-degrees-still-hold-an-advantage/"
+  },
+  {
+   "t": "img",
+   "src": "/content/d71cf733-15th-blog-1024x625.png",
+   "alt": "Most-Recommended Online Degree Programs to Apply After 12th (2026 Guide)",
+   "w": 1024,
+   "h": 625
+  },
+  {
+   "t": "p",
+   "x": "By | 15/05/2026"
+  },
+  {
+   "t": "h3",
+   "x": "Most-Recommended Online Degree Programs to Apply After 12th (2026 Guide)"
+  },
+  {
+   "t": "p",
+   "x": "You just finished Class 12th, and now you have to wade through everyone’s opinion on what you should do next...."
+  },
+  {
+   "t": "a",
+   "x": "Read More...",
+   "href": "https://dsuonline.com/resources/blogs/most-recommended-online-degree-programs-to-apply-after-12th-2026-guide/"
+  },
+  {
+   "t": "p",
+   "x": "1"
+  },
+  {
+   "t": "p",
+   "x": "…"
+  },
+  {
+   "t": "p",
+   "x": "1"
+  },
+  {
+   "t": "a",
+   "x": "2",
+   "href": "https://dsuonline.com/resources/blogs/page/2/"
+  },
+  {
+   "t": "a",
+   "x": "3",
+   "href": "https://dsuonline.com/resources/blogs/page/3/"
+  },
+  {
+   "t": "p",
+   "x": "…"
+  },
+  {
+   "t": "a",
+   "x": "23",
+   "href": "https://dsuonline.com/resources/blogs/page/23/"
+  },
+  {
+   "t": "a",
+   "x": "Next »",
+   "href": "https://dsuonline.com/resources/blogs/page/2/"
+  }
+ ],
+ "url": "https://dsuonline.com/resources/blogs/"
+}

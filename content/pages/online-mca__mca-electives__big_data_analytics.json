@@ -1,0 +1,202 @@
+{
+ "title": "Online MCA in Big Data Analytics | DSU Online Bangalore",
+ "description": "Advance your tech career without pausing your job. Pursue an Online MCA elective in Big Data Analytics at DSU. Start your high-demand data career in India.",
+ "blocks": [
+  {
+   "t": "p",
+   "x": "Master Large-Scale Data Processing"
+  },
+  {
+   "t": "h1",
+   "x": "Online MCA Program - Big Data Analytics"
+  },
+  {
+   "t": "p",
+   "x": "Hadoop | Spark | Real-Time Processing | Scalable Pipelines"
+  },
+  {
+   "t": "p",
+   "x": "Duration"
+  },
+  {
+   "t": "p",
+   "x": "2 Years"
+  },
+  {
+   "t": "p",
+   "x": "(4 Semesters)"
+  },
+  {
+   "t": "p",
+   "x": "1st Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 32,875/-"
+  },
+  {
+   "t": "p",
+   "x": "2nd–4th Semester Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 32,375/-"
+  },
+  {
+   "t": "p",
+   "x": "per sem"
+  },
+  {
+   "t": "p",
+   "x": "Total Fees"
+  },
+  {
+   "t": "p",
+   "x": "INR 1,30,000/-"
+  },
+  {
+   "t": "h2",
+   "x": "About Big Data Analytics"
+  },
+  {
+   "t": "p",
+   "x": "This elective covers the processing and analysis of large-scale datasets using big-data frameworks such as Hadoop and Spark. It includes batch analytics, real-time stream processing, distributed storage, and the design of scalable data pipelines used in modern enterprise environments."
+  },
+  {
+   "t": "img",
+   "src": "/content/5fec1bfb-DSU4.webp",
+   "alt": "DSU Campus",
+   "w": 2808,
+   "h": 2049
+  },
+  {
+   "t": "h3",
+   "x": "Learning Modules"
+  },
+  {
+   "t": "p",
+   "x": "Big Data Fundamentals"
+  },
+  {
+   "t": "p",
+   "x": "Concepts of large-scale data processing, distributed computing & data ecosystems."
+  },
+  {
+   "t": "p",
+   "x": "Hadoop Ecosystem"
+  },
+  {
+   "t": "p",
+   "x": "HDFS, MapReduce, YARN, Hive, Pig, and scalable batch processing."
+  },
+  {
+   "t": "p",
+   "x": "Apache Spark"
+  },
+  {
+   "t": "p",
+   "x": "RDDs, DataFrames, Spark SQL, MLlib & real-time stream processing."
+  },
+  {
+   "t": "p",
+   "x": "Data Analytics & Visualization"
+  },
+  {
+   "t": "p",
+   "x": "Exploratory data analysis, statistical modeling, dashboards & BI tools."
+  },
+  {
+   "t": "p",
+   "x": "Real-Time Data Pipelines"
+  },
+  {
+   "t": "p",
+   "x": "Kafka, Flink, workflow orchestration & enterprise-grade scalable pipelines."
+  },
+  {
+   "t": "h3",
+   "x": "Career Path"
+  },
+  {
+   "t": "p",
+   "x": "Big Data Engineer"
+  },
+  {
+   "t": "p",
+   "x": "Designs and builds scalable data pipelines using Hadoop, Spark, Kafka, and distributed systems for enterprise data workflows."
+  },
+  {
+   "t": "p",
+   "x": "Data Analyst"
+  },
+  {
+   "t": "p",
+   "x": "Analyzes business data, generates insights, builds dashboards, and supports decision-making using analytical and visualization tools."
+  },
+  {
+   "t": "p",
+   "x": "Spark Developer"
+  },
+  {
+   "t": "p",
+   "x": "Builds Spark streaming and batch applications using RDDs, DataFrames, and MLlib for high-performance analytics."
+  },
+  {
+   "t": "p",
+   "x": "Hadoop Administrator"
+  },
+  {
+   "t": "p",
+   "x": "Manages Hadoop clusters, configures HDFS, monitors performance, and ensures reliability of distributed big-data systems."
+  },
+  {
+   "t": "p",
+   "x": "Data Scientist"
+  },
+  {
+   "t": "p",
+   "x": "Builds predictive models, applies machine learning, and works with large datasets to solve business problems."
+  },
+  {
+   "t": "p",
+   "x": "Real-Time Data Engineer"
+  },
+  {
+   "t": "p",
+   "x": "Designs streaming architectures using Kafka, Flink, or Spark Streaming for real-time analytics and event processing."
+  },
+  {
+   "t": "p",
+   "x": "ETL Developer"
+  },
+  {
+   "t": "p",
+   "x": "Builds and maintains ETL workflows, handles data cleaning, transformation, and ensures high-quality structured datasets."
+  },
+  {
+   "t": "p",
+   "x": "Data Architect"
+  },
+  {
+   "t": "p",
+   "x": "Designs large-scale data architectures, storage models, and enterprise data strategies using modern big-data platforms."
+  },
+  {
+   "t": "p",
+   "x": "Machine Learning Engineer"
+  },
+  {
+   "t": "p",
+   "x": "Develops ML models and integrates them into big-data environments using Spark MLlib and scalable pipelines."
+  },
+  {
+   "t": "p",
+   "x": "Data Security Specialist"
+  },
+  {
+   "t": "p",
+   "x": "Secures large datasets, ensures data governance, compliance, privacy, and risk-free big-data operations."
+  }
+ ],
+ "url": "https://dsuonline.com/online-mca/mca-electives/big_data_analytics"
+}

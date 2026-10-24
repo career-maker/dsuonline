@@ -1,0 +1,280 @@
+{
+ "title": "DSU Online Offers 100% Placements & Career Support",
+ "description": "100% Placement assistance and career services at DSU Online to support students with career guidance, skill development, and job opportunities.",
+ "blocks": [
+  {
+   "t": "h1",
+   "x": "DSU Online Placements Support"
+  },
+  {
+   "t": "p",
+   "x": "Empowering learners with industry-ready skills and career opportunities"
+  },
+  {
+   "t": "a",
+   "x": "Inquire Now",
+   "href": "https://apply.dsuonline.com/"
+  },
+  {
+   "t": "p",
+   "x": "IMAGE COLUMN"
+  },
+  {
+   "t": "p",
+   "x": "CONTENT COLUMN"
+  },
+  {
+   "t": "img",
+   "src": "/content/9f4f85f1-placement_degree.jpg",
+   "alt": "DSU Online Placements",
+   "w": 1500,
+   "h": 993
+  },
+  {
+   "t": "h2",
+   "x": "Placement Drives"
+  },
+  {
+   "t": "p",
+   "x": "At DSU Online, we bridge the gap between education and employment with structured career guidance, resume building, interview coaching, and recruiter networking, strengthening DSU Online placements for students."
+  },
+  {
+   "t": "p",
+   "x": "Through strong industry partnerships, DSU Online placements at Dayananda Sagar University Online placements provide students access to exclusive job opportunities, internships, and expert mentoring to ensure career readiness."
+  },
+  {
+   "t": "h4",
+   "x": "Your Success Is Our Priority"
+  },
+  {
+   "t": "h2",
+   "x": "Let’s Shape Your Future Together"
+  },
+  {
+   "t": "h3",
+   "x": "0"
+  },
+  {
+   "t": "p",
+   "x": "Learners offered placement assistance"
+  },
+  {
+   "t": "h3",
+   "x": "0"
+  },
+  {
+   "t": "p",
+   "x": "Opportunities created"
+  },
+  {
+   "t": "h3",
+   "x": "0"
+  },
+  {
+   "t": "p",
+   "x": "Hiring Partners"
+  },
+  {
+   "t": "h3",
+   "x": "0"
+  },
+  {
+   "t": "p",
+   "x": "Industry readiness videos, and live sessions"
+  },
+  {
+   "t": "h2",
+   "x": "Top Hiring Partners"
+  },
+  {
+   "t": "img",
+   "src": "/content/4346e867-new-client-logo-1.svg",
+   "alt": ""
+  },
+  {
+   "t": "img",
+   "src": "/content/f6e8ba0e-new-client-logo-2.svg",
+   "alt": ""
+  },
+  {
+   "t": "img",
+   "src": "/content/5de055fc-new-client-logo-3.svg",
+   "alt": ""
+  },
+  {
+   "t": "img",
+   "src": "/content/457befde-new-client-logo-4.svg",
+   "alt": ""
+  },
+  {
+   "t": "img",
+   "src": "/content/55cd4699-new-client-logo-5.svg",
+   "alt": ""
+  },
+  {
+   "t": "img",
+   "src": "/content/c4a090f8-new-client-logo-6.svg",
+   "alt": ""
+  },
+  {
+   "t": "img",
+   "src": "/content/d065a503-new-client-logo-7.svg",
+   "alt": ""
+  },
+  {
+   "t": "img",
+   "src": "/content/7e7e17c3-new-client-logo-8.svg",
+   "alt": ""
+  },
+  {
+   "t": "img",
+   "src": "/content/26f3102f-new-client-logo-9.svg",
+   "alt": ""
+  },
+  {
+   "t": "h2",
+   "x": "Career Advancement Services"
+  },
+  {
+   "t": "ul",
+   "items": [
+    "Professional Enhancement Programme (PEP) designed to develop industry-relevant competencies.",
+    "Personalized mentoring to identify strengths and enhance career performance.",
+    "Practical, hands-on training for fresh graduates and working professionals."
+   ]
+  },
+  {
+   "t": "img",
+   "src": "/content/f01fc950-prof_enhancement_pgm.png",
+   "alt": "Professional Enhancement Programme",
+   "w": 702,
+   "h": 734
+  },
+  {
+   "t": "h2",
+   "x": "Recent Success Stories"
+  },
+  {
+   "t": "p",
+   "x": "Pagination"
+  },
+  {
+   "t": "p",
+   "x": "Slide 1"
+  },
+  {
+   "t": "p",
+   "x": "Slide 2"
+  },
+  {
+   "t": "p",
+   "x": "Slide 3"
+  },
+  {
+   "t": "p",
+   "x": "Slide 2"
+  },
+  {
+   "t": "p",
+   "x": "Slide 3"
+  },
+  {
+   "t": "p",
+   "x": "★★★★★"
+  },
+  {
+   "t": "p",
+   "x": "“DSU Online career support helped me secure a role aligned with my career goals.”"
+  },
+  {
+   "t": "img",
+   "src": "/content/24abcab7-student-01.png",
+   "alt": "Ayush Kumar",
+   "w": 758,
+   "h": 635
+  },
+  {
+   "t": "p",
+   "x": "Ayush Kumar B.Tech – CSE"
+  },
+  {
+   "t": "p",
+   "x": "★★★★★"
+  },
+  {
+   "t": "p",
+   "x": "“dsu online career support gave me confidence and industry exposure.”"
+  },
+  {
+   "t": "img",
+   "src": "/content/60812957-student-02.png",
+   "alt": "Amoolya S",
+   "w": 505,
+   "h": 423
+  },
+  {
+   "t": "p",
+   "x": "Amoolya S B.Tech – CSE"
+  },
+  {
+   "t": "p",
+   "x": "★★★★★"
+  },
+  {
+   "t": "p",
+   "x": "“placement support for online students helped throughout my recruitment journey.”"
+  },
+  {
+   "t": "img",
+   "src": "/content/b89e4bb4-student-03.png",
+   "alt": "Chethan Rao S",
+   "w": 758,
+   "h": 635
+  },
+  {
+   "t": "p",
+   "x": "Chethan Rao S B.Tech – CSE"
+  },
+  {
+   "t": "p",
+   "x": "★★★★★"
+  },
+  {
+   "t": "p",
+   "x": "“dsu online placement assistance helped me secure a role aligned with my career goals.”"
+  },
+  {
+   "t": "p",
+   "x": "Ayush Kumar B.Tech – CSE"
+  },
+  {
+   "t": "p",
+   "x": "★★★★★"
+  },
+  {
+   "t": "p",
+   "x": "“The mentoring and career guidance gave me confidence and industry exposure.”"
+  },
+  {
+   "t": "p",
+   "x": "Amoolya S B.Tech – CSE"
+  },
+  {
+   "t": "p",
+   "x": "★★★★★"
+  },
+  {
+   "t": "p",
+   "x": "“DSU’s placement team provided immense support throughout my recruitment journey.”"
+  },
+  {
+   "t": "p",
+   "x": "Chethan Rao S B.Tech – CSE"
+  },
+  {
+   "t": "h5",
+   "x": "Get in Touch"
+  }
+ ],
+ "url": "https://dsuonline.com/placements"
+}

@@ -1,0 +1,84 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.recog {
+  background: #fff;
+  overflow: hidden;
+  @include section-pad(68, 92);
+
+  h2 {
+    padding: 0 px(16);
+    text-align: center;
+    @include h2;
+  }
+}
+
+.viewport {
+  margin-top: clamp(24px, #{u(72)}, 72px);
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  gap: clamp(10px, #{u(18)}, 18px);
+  width: max-content;
+  animation: marquee 50s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.track li {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: clamp(240px, #{u(398)}, 398px);
+  height: clamp(100px, #{u(159)}, 159px);
+  border: 1px solid #eee;
+  border-radius: px(14);
+  background: #fff;
+
+  img {
+    max-width: 82%;
+    height: auto;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-50% - 9px));
+  }
+}
+
+// ---------- desktop: exact geometry of the 1920 artboard
+@include up($bp-lg) {
+  .recog {
+    padding: u(73.19) 0 u(83.7);
+
+    h2 {
+      line-height: u(60);
+    }
+  }
+
+  // first card starts at x-4.9: 398.4 x 159.2, gap 18.3
+  .viewport {
+    margin-top: u(43.9);
+  }
+
+  .track {
+    gap: u(18.3);
+    margin-left: u(-4.9);
+  }
+
+  .track li {
+    width: u(398.4);
+    height: u(159.2);
+    border-color: rgb(0 0 0 / 10%);
+
+    img {
+      width: calc(var(--w) * var(--u));
+      max-width: none;
+    }
+  }
+}

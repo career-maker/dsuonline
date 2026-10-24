@@ -1,0 +1,385 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 50;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: u(24);
+  height: clamp(68px, #{u(121)}, 121px);
+  padding-inline: clamp(16px, #{u(86)}, 86px);
+  background: rgb(0 0 0 / 55%);
+  color: #fff;
+  letter-spacing: 0;
+
+  @include up($bp-lg) {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
+}
+
+.logo {
+  display: block;
+  width: clamp(150px, #{u(385)}, 385px);
+  margin-right: auto;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.nav {
+  > ul {
+    display: flex;
+    align-items: center;
+  }
+
+  a,
+  .navBtn {
+    font-size: fs(18, 16px);
+    font-weight: 500;
+    line-height: 1.2;
+    color: #fff;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #8fd2ff;
+    }
+  }
+
+  // desktop inline nav
+  @include up($bp-lg) {
+    > ul {
+      gap: clamp(24px, #{u(52)}, 52px);
+    }
+  }
+
+  // drawer
+  @include down($bp-lg) {
+    position: fixed;
+    inset: clamp(68px, #{u(121)}, 121px) 0 0;
+    display: none;
+    padding: px(24) px(20) px(40);
+    overflow: auto;
+    background: #0d1620;
+
+    > ul {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: px(22);
+    }
+
+    a,
+    .navBtn {
+      font-size: px(20);
+    }
+  }
+}
+
+.navOpen {
+  @include down($bp-lg) {
+    display: block;
+  }
+}
+
+.homeLink {
+  display: block;
+  font-size: px(20);
+}
+
+.navBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: px(4);
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+
+  svg {
+    transition: transform 0.2s;
+  }
+}
+
+.flip {
+  transform: rotate(180deg);
+}
+
+.hasMenu {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  flex-direction: column;
+  min-width: 320px;
+  padding: px(10);
+  border-radius: px(10);
+  background: #fff;
+  box-shadow: 0 20px 40px rgb(0 0 0 / 25%);
+
+  a {
+    display: flex;
+    gap: px(12);
+    align-items: baseline;
+    padding: px(12) px(14);
+    border-radius: px(6);
+    color: $ink;
+    font-weight: 400;
+
+    strong {
+      min-width: 52px;
+      font-weight: 700;
+      color: $blue;
+    }
+
+    &:hover {
+      background: $bg-sky;
+      color: $ink;
+    }
+  }
+
+  @include up($bp-lg) {
+    position: absolute;
+    top: calc(100% + 20px);
+    left: px(-20);
+  }
+
+  @include down($bp-lg) {
+    margin-top: px(12);
+    width: 100%;
+  }
+}
+
+.dropdownOpen {
+  display: flex;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: px(8);
+  margin-left: auto;
+}
+
+.search {
+  position: relative;
+}
+
+.searchBtn {
+  display: grid;
+  place-items: center;
+  width: clamp(40px, #{u(50)}, 50px);
+  height: clamp(40px, #{u(50)}, 50px);
+  padding: 0;
+  border: 1px solid rgb(255 255 255 / 16%);
+  border-radius: 50%;
+  background: rgb(0 0 0 / 45%);
+  color: #fff;
+  font-size: px(22);
+  cursor: pointer;
+}
+
+.searchPanel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 5;
+  width: min(380px, 86vw);
+  padding: px(12);
+  border-radius: px(10);
+  background: #fff;
+  box-shadow: 0 20px 40px rgb(0 0 0 / 25%);
+
+  input {
+    width: 100%;
+    height: px(44);
+    padding: 0 px(12);
+    border: 1px solid #ccc;
+    border-radius: px(6);
+    font-size: px(16);
+  }
+
+  ul {
+    display: block;
+    margin-top: px(8);
+  }
+
+  a {
+    display: block;
+    padding: px(9) px(10);
+    border-radius: px(6);
+    color: $ink;
+    font-size: px(15);
+
+    &:hover {
+      background: $bg-sky;
+    }
+  }
+}
+
+.noHits {
+  padding: px(9) px(10);
+  color: $body;
+  font-size: px(15);
+}
+
+.phone,
+.login {
+  display: inline-flex;
+  align-items: center;
+  gap: px(10);
+  height: clamp(40px, #{u(47)}, 47px);
+  padding: 0 px(14);
+  border-radius: px(4);
+  font-size: px(14);
+  font-weight: 500;
+  color: #fff;
+
+  svg {
+    font-size: px(16);
+  }
+}
+
+.phone {
+  margin-right: px(13);
+  border: 1px solid rgb(255 255 255 / 70%);
+  background: rgb(0 0 0 / 25%);
+}
+
+.login {
+  background: $blue;
+}
+
+.burger {
+  display: none;
+  width: px(44);
+  height: px(44);
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 40%);
+  border-radius: px(6);
+  background: transparent;
+  color: #fff;
+  font-size: px(24);
+  cursor: pointer;
+}
+
+@include down($bp-lg) {
+  .burger {
+    display: grid;
+  }
+
+  .phone {
+    display: none;
+  }
+}
+
+@include down($bp-md) {
+  .login {
+    display: none;
+  }
+}
+
+// ---------- desktop: exact geometry of the 1920 artboard
+@include up($bp-lg) {
+  .bar {
+    position: relative;
+    display: block;
+    height: u(121);
+    padding: 0;
+    background: rgb(0 0 0 / 20%);
+  }
+
+  // logo.png has transparent margins; this puts its ink at x88-456, y23-96 like the design
+  .logo {
+    position: absolute;
+    top: u(22.26);
+    left: u(76.85);
+    width: u(394.6);
+  }
+
+  // nav and actions are placed on the design's x positions; text baseline at y69
+  .nav {
+    position: absolute;
+    top: u(49.5);
+    left: u(642.2);
+
+    > ul {
+      gap: 0;
+    }
+
+    li:nth-child(2) {
+      margin-left: u(53.9);
+    }
+
+    li:nth-child(3) {
+      margin-left: u(49);
+    }
+
+    li:nth-child(4) {
+      margin-left: u(59);
+    }
+
+    li:nth-child(5) {
+      margin-left: u(58);
+    }
+
+    li:nth-child(6) {
+      margin-left: u(55.5);
+    }
+  }
+
+  .homeLink {
+    font-size: u(21);
+  }
+
+  .actions {
+    position: absolute;
+    top: u(37);
+    right: u(95);
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .searchBtn {
+    width: u(53);
+    height: u(53);
+    border-color: rgb(255 255 255 / 10%);
+    background: rgb(0 0 0 / 20%);
+    font-size: u(28);
+  }
+
+  .phone,
+  .login {
+    gap: u(9.5);
+    margin-top: u(3);
+    font-size: u(14);
+  }
+
+  .phone {
+    height: u(49);
+    margin: u(2) 0 0 u(19);
+    padding: 0 u(15);
+    border-color: #c3c3c3;
+    background: rgb(0 0 0 / 20%);
+  }
+
+  .login {
+    gap: u(10);
+    width: u(142);
+    height: u(47);
+    margin-left: u(21);
+    padding: 0 u(13.5);
+
+    svg {
+      font-size: u(18);
+    }
+  }
+}
