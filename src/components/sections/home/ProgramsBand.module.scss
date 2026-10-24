@@ -70,7 +70,12 @@
   color: $ink;
   letter-spacing: -0.0175em;
   position: relative;
-  @include lift(6px);
+  transition: box-shadow 0.4s ease;
+
+  &:hover {
+    box-shadow: 0 20px 44px rgb(0 30 70 / 28%);
+  }
+
   @include zoom('.media img');
 }
 
@@ -314,8 +319,7 @@
   color: #fff;
   opacity: 0;
   visibility: hidden;
-  translate: 0 px(10);
-  transition: opacity 0.4s ease, translate 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), visibility 0s 0.4s;
+  transition: opacity 0.4s ease, visibility 0s 0.4s;
 
   // pointer devices only; touch keeps the plain card
   @media (hover: hover) {
@@ -323,7 +327,6 @@
     .card:focus-within & {
       opacity: 1;
       visibility: visible;
-      translate: 0 0;
       transition-delay: 0s;
     }
   }
@@ -546,7 +549,7 @@
     padding-left: u(17);
   }
 
-  // the design shows this card in its dark (photo) state
+  // photo + dark overlay only show on hover (see .cta:hover above); at rest it is a light card
   .cta {
     padding: u(14) u(17) u(20);
   }
@@ -555,18 +558,10 @@
     min-height: 0;
     border-radius: u(6);
 
-    img {
-      opacity: 1;
-    }
-  }
-
-  .ctaShade {
-    opacity: 1;
   }
 
   .ctaBody {
     padding: u(9.6) u(28) u(35);
-    color: #fff;
 
     h3 {
       font-size: u(40);

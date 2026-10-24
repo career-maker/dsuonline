@@ -297,11 +297,8 @@
     --g: #{u(12.3)};
   }
 
-  // the design shows the NAAC card in its highlighted (blue) state
-  .naac {
-    background: $blue;
-    color: #fff;
-
+  // the NAAC logo swaps to its light version whenever a card is hovered (blue state)
+  .cert:hover {
     .onLight {
       display: none;
     }

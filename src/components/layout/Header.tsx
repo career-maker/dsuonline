@@ -86,8 +86,16 @@ export function Header() {
                 {programs.map((p) => (
                   <li key={p.code}>
                     <Link href={p.href} onClick={closeAll}>
-                      <strong>{p.name}</strong>
-                      <span>{p.fullName}</span>
+                      <span className={s.code}>{p.name}</span>
+                      <span className={s.txt}>
+                        <b>{p.fullName}</b>
+                        <small>
+                          {p.duration} · 1st sem INR {p.firstSemFee}
+                        </small>
+                      </span>
+                      <span className={s.arr} aria-hidden="true">
+                        →
+                      </span>
                     </Link>
                   </li>
                 ))}
