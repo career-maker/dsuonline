@@ -325,6 +325,16 @@
   cursor: pointer;
 }
 
+.searchBtn {
+  transition: background-color 0.3s ease, border-color 0.3s ease, scale 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  &:hover {
+    border-color: $yellow;
+    background: rgb(255 255 255 / 16%);
+    scale: 1.08;
+  }
+}
+
 .searchPanel {
   position: absolute;
   top: calc(100% + 12px);
@@ -380,10 +390,36 @@
   font-size: px(14);
   font-weight: 500;
   color: #fff;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 
-  svg {
-    font-size: px(16);
+  svg,
+  img {
+    transition: scale 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), rotate 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
+
+  &:hover {
+    box-shadow: 0 8px 22px rgb(0 0 0 / 28%);
+
+    svg,
+    img {
+      scale: 1.14;
+    }
+  }
+}
+
+.phone:hover {
+  border-color: $yellow;
+  background: rgb(255 255 255 / 14%);
+  color: $yellow;
+
+  img {
+    rotate: -12deg;
+  }
+}
+
+.login:hover {
+  background: #0a95e0;
+  box-shadow: 0 8px 22px rgb(0 125 197 / 45%);
 }
 
 .phone {

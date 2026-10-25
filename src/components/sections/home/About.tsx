@@ -1,3 +1,4 @@
+import { Counter } from '@/components/ui/Counter';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Icon } from '@/components/ui/Icon';
@@ -22,7 +23,7 @@ export function About() {
             {aboutStats.map((st) => (
               <div key={st.label}>
                 <dt>
-                  {st.value}
+                  <Counter to={Number(st.value)} />
                   <span>+</span>
                   {'unit' in st && <em>{st.unit}</em>}
                 </dt>

@@ -252,11 +252,18 @@
 
   p {
     display: flex;
+    align-items: center;
     gap: px(16);
-    margin-top: 2px;
+    margin-top: 4px;
     font-size: fs(16, 13px);
     line-height: 1.25;
     font-weight: 500;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+    }
 
     a:first-child {
       color: #1d9be2;

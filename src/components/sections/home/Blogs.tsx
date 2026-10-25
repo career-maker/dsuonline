@@ -1,79 +1,33 @@
-import Link from 'next/link';
-import { ArrowLink } from '@/components/ui/ArrowLink';
-import { FramedImage } from '@/components/ui/FramedImage';
-import { blogs } from '@/data/home';
+import { loadBlogs } from '@/lib/content';
+import { BlogSlider, type Slide } from './BlogSlider';
 import s from './Blogs.module.scss';
 
-// design arrow: blue chevron with a dark outline inside a 37px ring
-const Arrow = ({ d }: { d: string }) => (
-  <svg viewBox="0 0 37 37" aria-hidden="true" fill="none" strokeLinecap="round" strokeLinejoin="round">
-    <path d={d} stroke="#212121" strokeWidth="2.8" />
-    <path d={d} stroke="#007dc5" strokeWidth="1.2" />
-  </svg>
-);
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const ord = (d: number) => (d % 10 === 1 && d !== 11 ? 'st' : d % 10 === 2 && d !== 12 ? 'nd' : d % 10 === 3 && d !== 13 ? 'rd' : 'th');
 
+/** Home slider shows the newest posts straight from the blog list (same source as /resources/blogs). */
 export function Blogs() {
+  const slides: Slide[] = loadBlogs()
+    .slice(0, 9)
+    .map((b) => {
+      const [dd, mm, yy] = b.date.split('/').map(Number); // content dates are DD/MM/YYYY
+      return {
+        slug: b.slug,
+        day: String(dd),
+        ord: ord(dd),
+        month: `${MONTHS[(mm || 1) - 1]} ${yy}`,
+        title: b.title,
+        excerpt: b.excerpt,
+        image: b.image,
+        alt: b.imageAlt,
+        w: b.w ?? 1024,
+        h: b.h ?? 625,
+      };
+    });
   return (
     <section className={s.section}>
       <div className={s.inner}>
-        <header className={s.head}>
-          <div>
-            <p className={s.eyebrow}>Blogs &amp; Insights</p>
-            <div className={s.row}>
-              <h2>Latest Blogs &amp; Insights</h2>
-              {/* all posts fit on screen; arrows activate with more posts (CMS phase) */}
-              <div className={s.arrows}>
-                <button type="button" disabled aria-label="Previous posts">
-                  <Arrow d="M23 9 13 18.5 23 28" />
-                </button>
-                <button type="button" disabled aria-label="Next posts">
-                  <Arrow d="M14 9 24 18.5 14 28" />
-                </button>
-              </div>
-            </div>
-          </div>
-          <ArrowLink href="/resources/blogs" className={s.all}>
-            View All
-          </ArrowLink>
-        </header>
-
-        <ul className={s.grid}>
-          {blogs.map((b) => (
-            <li key={b.slug} className={s.card}>
-              <FramedImage src={b.image} frame={b.frame} box={b.box} sizes="(max-width: 900px) 100vw, 560px" />
-              <span className={s.shade} />
-              <time className={s.date}>
-                <strong>
-                  {b.date.day}
-                  <sup>{b.date.ord}</sup>
-                </strong>
-                <span>{b.date.month}</span>
-              </time>
-              <div className={s.body}>
-                <h3>
-                  {b.title.map((l, j) => (
-                    <span key={l}>
-                      {j > 0 && (
-                        <>
-                          {' '}
-                          <br className={s.br} />
-                        </>
-                      )}
-                      {l}
-                    </span>
-                  ))}
-                </h3>
-                <p>
-                  {b.excerpt[0]} <br className={s.br} />
-                  {b.excerpt[1]}
-                </p>
-                <Link href={`/resources/blogs/${b.slug}`} className={s.read}>
-                  Read More
-                </Link>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <BlogSlider slides={slides} />
       </div>
     </section>
   );

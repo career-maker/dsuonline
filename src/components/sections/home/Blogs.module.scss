@@ -45,8 +45,13 @@
     color: #1a1a1a;
     font-size: px(22);
 
-    &:disabled {
-      cursor: default;
+    &:hover {
+      border-color: $blue;
+      background: $blue-dark;
+
+      svg path:last-child {
+        stroke: #fff;
+      }
     }
   }
 }
@@ -59,18 +64,35 @@
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  --per: 3;
+  display: flex;
   gap: clamp(12px, #{u(26)}, 26px);
   margin-top: clamp(24px, #{u(44)}, 44px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @include down($bp-lg) {
-    grid-template-columns: repeat(2, 1fr);
+    --per: 2;
   }
 
   @include down($bp-md) {
-    grid-template-columns: 1fr;
+    --per: 1.12;
   }
+
+  > li {
+    flex: 0 0 calc((100% - (var(--per) - 1) * clamp(12px, #{u(26)}, 26px)) / var(--per));
+    scroll-snap-align: start;
+  }
+}
+
+.photo {
+  object-fit: cover;
 }
 
 .card {
@@ -230,9 +252,12 @@
 
   // cards x 94 / 680 / 1266, 560 x 672
   .grid {
-    grid-template-columns: repeat(3, u(560));
     gap: u(26);
     margin: u(41.8) 0 0 u(-1);
+
+    > li {
+      flex-basis: calc((100% - 2 * #{u(26)}) / 3);
+    }
   }
 
   .card {
@@ -298,13 +323,9 @@
   }
 }
 
-// design: no gradient; only the third photo is dimmed (black 20%)
+// soft bottom shade so the date badge and panel sit on any photo
 @include up($bp-lg) {
-  .shade {
-    background: none;
-  }
-
-  .card:nth-child(3) .shade {
-    background: rgb(0 0 0 / 20%);
+  .card .shade {
+    background: linear-gradient(180deg, rgb(0 0 0 / 0%) 45%, rgb(0 0 0 / 28%) 100%);
   }
 }

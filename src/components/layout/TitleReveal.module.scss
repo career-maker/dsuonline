@@ -1,0 +1,28 @@
+// words slide up from behind a mask, staggered; padding/margin keep descenders from being clipped
+.w {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+  vertical-align: top;
+}
+
+.wi {
+  display: inline-block;
+  translate: 0 110%;
+  rotate: 4deg;
+  transform-origin: 0 100%;
+  opacity: 0;
+  transition: translate 0.85s cubic-bezier(0.2, 0.75, 0.2, 1) calc(var(--i) * 60ms), rotate 0.85s cubic-bezier(0.2, 0.75, 0.2, 1) calc(var(--i) * 60ms), opacity 0.5s ease calc(var(--i) * 60ms);
+}
+
+.in .wi {
+  translate: 0 0;
+  rotate: 0deg;
+  opacity: 1;
+}
+
+// a short gold rule draws under the title once revealed
+.title {
+  position: relative;
+}
