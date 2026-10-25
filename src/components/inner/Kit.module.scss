@@ -1082,3 +1082,9 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .sec h3 {
   letter-spacing: -0.0175em;
 }
+
+.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

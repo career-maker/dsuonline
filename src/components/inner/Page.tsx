@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { localHref, type Block } from '@/lib/content';
+import { AboutBand } from '@/components/sections/home/About';
 import { cleanBlocks } from './clean';
 import { CtaBand, InnerHero, type Crumb } from './InnerPage';
 import { FaqList } from './Interactive';
@@ -410,6 +411,29 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     const title = sec.title;
     const key = `${title}-${n}`;
     if (!sec.blocks.length && !sec.subs.length) continue; // heading with no content (its body was layout notes)
+
+    // --- /about: the two 'quality education' sections become the home About block (stats, photos, features)
+    if (slug === 'about' && /how dsu online ensures quality education\?/i.test(title)) {
+      const digital = secs.find((x) => /digital format/i.test(x.title));
+      const copy = [...sec.blocks.filter(isP), ...(digital ? digital.blocks.filter(isP) : [])].map((b) => b.x);
+      const lImg = sec.blocks.find((b) => b.t === 'img');
+      const rImg = digital?.blocks.find((b) => b.t === 'img');
+      nodes.push(
+        <AboutBand
+          key={key}
+          id="about-dsu"
+          title={<>How DSU Online Ensures Quality Education?</>}
+          copy={copy}
+          left={lImg ? <Pic img={imgOf(lImg)} sizes="(max-width: 900px) 100vw, 562px" className={s.cover} /> : null}
+          right={rImg ? <Pic img={imgOf(rImg)} sizes="(max-width: 900px) 100vw, 400px" className={s.cover} /> : null}
+          href="/admission"
+          cta="Apply Now"
+          play={false}
+        />,
+      );
+      continue;
+    }
+    if (slug === 'about' && /digital format/i.test(title)) continue;
 
     // --- single-paragraph sections in a row => accordion with the image beside it
     if (slug === 'why-dsu-online' && sec.blocks.length === 1 && isP(sec.blocks[0]) && !sec.subs.length) {

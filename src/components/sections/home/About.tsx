@@ -4,20 +4,18 @@ import { FramedImage } from '@/components/ui/FramedImage';
 import { Icon } from '@/components/ui/Icon';
 import { PlayIcon } from '@/components/ui/icons';
 import { aboutCopy, aboutFeatures, aboutStats } from '@/data/home';
+import type { ReactNode } from 'react';
 import s from './About.module.scss';
 
-export function About() {
+/** The home 'About DSU Online' block; reused on /about with its own copy and photos. */
+export function AboutBand({ title, copy, left, right, href = '/about', cta = 'Know More', play = true, id }: { title: ReactNode; copy: readonly string[]; left: ReactNode; right: ReactNode; href?: string; cta?: string; play?: boolean; id?: string }) {
   return (
-    <section className={s.about} id="about">
+    <section className={s.about} id={id}>
       <div className={s.inner}>
         <header className={s.head}>
           <div>
             <p className={s.eyebrow}>About DSU Online</p>
-            <h2>
-              DSU Online Degree
-              <br />
-              Programs with Added Value
-            </h2>
+            <h2>{title}</h2>
           </div>
           <dl className={s.stats}>
             {aboutStats.map((st) => (
@@ -34,19 +32,11 @@ export function About() {
         </header>
 
         <div className={s.grid}>
-          <div className={`${s.photo} ${s.left}`}>
-            <FramedImage
-              src="/images/about/about-left.webp"
-              alt="Learner studying online with the DSU campus behind"
-              frame={[95, 2100, 562, 541]}
-              box={[-104.1, 2100, 961.3, 541]}
-              sizes="(max-width: 900px) 100vw, 562px"
-            />
-          </div>
+          <div className={`${s.photo} ${s.left}`}>{left}</div>
 
           <div className={s.mid}>
             <div className={s.copy}>
-              {aboutCopy.map((p) => (
+              {copy.map((p) => (
                 <p key={p}>{p}</p>
               ))}
             </div>
@@ -66,44 +56,74 @@ export function About() {
               ))}
             </ul>
 
-            <ArrowLink href="/about" className={s.more}>
-              Know More
+            <ArrowLink href={href} className={s.more}>
+              {cta}
             </ArrowLink>
           </div>
 
           <div className={`${s.photo} ${s.right}`}>
-            <FramedImage
-              src="/images/about/about-right.webp"
-              alt="Dayananda Sagar University campus"
-              frame={[1424, 2098, 400, 538]}
-              box={[1333, 2098.1, 732.8, 537.9]}
-              sizes="(max-width: 900px) 100vw, 400px"
-            />
-            <a
-              className={s.play}
-              href="https://www.youtube.com/@dsuonline"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Explore DSU - watch the campus video"
-            >
-              <svg className={s.ring} viewBox="0 0 118 118" aria-hidden="true">
-                <defs>
-                  <path id="ring" d="M25.9 76.6A37.5 37.5 0 1 1 57.7 96.5" />
-                </defs>
-                {/* wording (incl. "EXLPORE") as in the approved design */}
-                <text>
-                  <textPath href="#ring" textLength="171" lengthAdjust="spacing">
-                    UNIVERSITY EXLPORE DSU
-                  </textPath>
-                </text>
-              </svg>
-              <span>
-                <PlayIcon />
-              </span>
-            </a>
+            {right}
+            {play && (
+              <a
+                className={s.play}
+                href="https://www.youtube.com/@dsuonline"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Explore DSU - watch the campus video"
+              >
+                <svg className={s.ring} viewBox="0 0 118 118" aria-hidden="true">
+                  <defs>
+                    <path id="ring" d="M25.9 76.6A37.5 37.5 0 1 1 57.7 96.5" />
+                  </defs>
+                  {/* wording (incl. "EXLPORE") as in the approved design */}
+                  <text>
+                    <textPath href="#ring" textLength="171" lengthAdjust="spacing">
+                      UNIVERSITY EXLPORE DSU
+                    </textPath>
+                  </text>
+                </svg>
+                <span>
+                  <PlayIcon />
+                </span>
+              </a>
+            )}
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+export function About() {
+  return (
+    <AboutBand
+      id="about"
+      title={
+        <>
+          DSU Online Degree
+          <br />
+          Programs with Added Value
+        </>
+      }
+      copy={aboutCopy}
+      left={
+        <FramedImage
+          src="/images/about/about-left.webp"
+          alt="Learner studying online with the DSU campus behind"
+          frame={[95, 2100, 562, 541]}
+          box={[-104.1, 2100, 961.3, 541]}
+          sizes="(max-width: 900px) 100vw, 562px"
+        />
+      }
+      right={
+        <FramedImage
+          src="/images/about/about-right.webp"
+          alt="Dayananda Sagar University campus"
+          frame={[1424, 2098, 400, 538]}
+          box={[1333, 2098.1, 732.8, 537.9]}
+          sizes="(max-width: 900px) 100vw, 400px"
+        />
+      }
+    />
   );
 }

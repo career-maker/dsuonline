@@ -423,7 +423,8 @@
     }
 
     .ring {
-      animation: none;
+      transform-origin: 50% 50%;
+      transform-box: fill-box;
 
       text {
         fill: #1e1e1e;
