@@ -667,7 +667,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
 
   return (
     <>
-      <InnerHero crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
+      <InnerHero banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
       {(longSub || (introBlocks.length > 0 && !withFacts)) && (
         <Sec tone="white" narrow={!heroImgs.length}>
           <Body blocks={[...(longSub ? ([{ t: 'p', x: subtitle } as Block]) : []), ...introBlocks, ...heroImgs.slice(0, 1)]} />

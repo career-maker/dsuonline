@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import Link from 'next/link';
+import { heroSlides } from '@/data/home';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { site } from '@/data/site';
 import { localHref, type Block } from '@/lib/content';
@@ -105,7 +107,9 @@ export function InnerHero({
   subtitle,
   facts,
   extra,
+  banner,
 }: {
+  banner?: number;
   crumbs: Crumb[];
   eyebrow?: string;
   title: string;
@@ -116,6 +120,12 @@ export function InnerHero({
   const links = (extra ?? []).filter((b): b is Extract<Block, { t: 'a' }> => b.t === 'a');
   return (
     <section className={s.hero}>
+      {/* banner photo: desktop/tablet and phone crops come from the same slide data as the home hero (CMS: one image per breakpoint) */}
+      <picture className={s.heroBg}>
+        <source media="(max-width: 759.98px)" srcSet={heroSlides[(banner ?? 0) % heroSlides.length].mobile} />
+        <Image src={heroSlides[(banner ?? 0) % heroSlides.length].desktop} alt="" fill priority sizes="100vw" className={s.heroImg} />
+      </picture>
+      <div className={s.heroShade} aria-hidden="true" />
       <div className={s.heroInner}>
         <nav aria-label="Breadcrumb" className={s.crumbs}>
           <ol>
@@ -212,6 +222,7 @@ export function InnerPage({
   return (
     <>
       <InnerHero
+        banner={0}
         crumbs={crumbs}
         eyebrow={preEyebrow}
         title={titleOverride ?? st.h1}

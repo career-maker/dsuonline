@@ -4,15 +4,44 @@
 // ---------- hero
 .hero {
   position: relative;
+  display: flex;
+  align-items: flex-end;
   overflow: hidden;
   color: #fff;
-  background:
-    radial-gradient(circle at 85% 20%, rgb(255 255 255 / 12%), transparent 45%),
-    linear-gradient(120deg, #025c90 0%, #007dc5 60%, #1a93d6 100%);
+  background: #0a0d12;
+  // same height rule as the home hero: fills the screen, never shorter than the design's 970px (scaled)
+  min-height: max(clamp(520px, #{u(970)}, 970px), min(100svh, #{u(1067)}));
   padding: clamp(112px, #{u(190)}, 190px) 0 clamp(40px, #{u(80)}, 80px);
+
+  @include down($bp-lg) {
+    min-height: clamp(520px, calc(100svh - 52px), 820px);
+  }
+
+  @include down($bp-sm) {
+    min-height: clamp(480px, 78svh, 720px);
+  }
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+}
+
+.heroImg {
+  object-fit: cover;
+  object-position: 62% 30%;
+}
+
+.heroShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(2 40 70 / 78%) 0%, rgb(2 40 70 / 45%) 55%, rgb(2 40 70 / 15%) 100%),
+    linear-gradient(0deg, rgb(4 10 18 / 70%) 0%, rgb(4 10 18 / 0%) 55%);
 }
 
 .heroInner {
+  position: relative;
+  z-index: 1;
   @include container;
   letter-spacing: -0.0175em;
 
