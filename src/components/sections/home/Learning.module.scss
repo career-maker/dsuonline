@@ -119,8 +119,15 @@
   margin: px(-17) 0 0 px(-17);
   border-radius: 50%;
   background: rgb(255 255 255 / 85%);
+  border: 0;
   color: #333;
   font-size: px(14);
+  cursor: pointer;
+  transition: scale 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  &:hover {
+    scale: 1.15;
+  }
 }
 
 // ---------- desktop: exact geometry of the 1920 artboard
@@ -216,4 +223,24 @@
   .dedicated .shade {
     background: linear-gradient(180deg, rgb(0 0 0 / 0%) 76%, rgb(0 0 0 / 75%) 100%);
   }
+}
+
+// ---------- video tile: poster -> YouTube player
+.videoBox {
+  position: absolute;
+  inset: 0;
+}
+
+.player {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 3;
+  width: auto;
+  height: 100%;
+  min-width: 100%;
+  aspect-ratio: 16 / 9;
+  translate: -50% 0;
+  border: 0;
+  background: #000;
 }

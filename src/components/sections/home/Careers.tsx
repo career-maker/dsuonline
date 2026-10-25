@@ -113,7 +113,7 @@ export function Careers() {
               <ul>
                 {recruiters.map((r) => (
                   <li key={r.src}>
-                    <Image src={`/images/partners/${r.src}.png`} alt={r.name} width={r.w} height={r.h} style={{ width: r.w, height: 'auto' }} />
+                    <Image src={`/images/partners/${r.src}.png`} alt={r.name} width={r.w} height={r.h} style={{ '--w': r.w } as React.CSSProperties} />
                   </li>
                 ))}
               </ul>

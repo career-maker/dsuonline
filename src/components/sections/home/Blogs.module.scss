@@ -181,6 +181,9 @@
 }
 
 .read {
+  position: relative;
+  overflow: hidden;
+  transition: filter 0.2s, box-shadow 0.3s, padding 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
@@ -195,6 +198,27 @@
   letter-spacing: 0;
   text-transform: uppercase;
   @include focus-ring;
+}
+
+// hover: brighter fill, soft shadow and an arrow that slides in (the button itself does not move)
+.read::after {
+  content: '→';
+  position: absolute;
+  right: px(12);
+  opacity: 0;
+  translate: px(-10) 0;
+  transition: opacity 0.25s, translate 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.read:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 24%);
+  padding-right: px(44);
+
+  &::after {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 
 .br {

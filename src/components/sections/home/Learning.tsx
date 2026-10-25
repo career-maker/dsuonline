@@ -1,9 +1,10 @@
-import Link from 'next/link';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Icon } from '@/components/ui/Icon';
-import { PlayIcon } from '@/components/ui/icons';
 import { bentoTiles } from '@/data/home';
+import { VideoTile } from './VideoTile';
 import s from './Learning.module.scss';
+
+const VIDEO_ID = '10yxPMitlJs'; // sample: https://www.youtube.com/watch?v=10yxPMitlJs
 
 export function Learning() {
   return (
@@ -29,22 +30,25 @@ export function Learning() {
         <ul className={s.grid}>
           {bentoTiles.map((t) => (
             <li key={t.key} className={`${s.tile} ${s[t.key] ?? ''}`}>
-              <FramedImage
-                src={t.src}
-                frame={t.frame}
-                box={t.box}
-                sizes={t.key === 'dedicated' ? '(max-width: 900px) 100vw, 562px' : '(max-width: 900px) 50vw, 267px'}
-              />
-              <span className={s.shade} />
-              {t.key === 'dedicated' && (
-                <Link href="/academics-at-dsu" className={s.play} aria-label="Explore the dedicated learning experience">
-                  <PlayIcon />
-                </Link>
+              {t.key === 'dedicated' ? (
+                <VideoTile id={VIDEO_ID} title="Dedicated learning experience at DSU Online">
+                  <FramedImage src={t.src} frame={t.frame} box={t.box} sizes="(max-width: 900px) 100vw, 562px" />
+                  <span className={s.shade} />
+                  <span className={s.label}>
+                    <Icon name={t.icon} />
+                    <h3>{t.label}</h3>
+                  </span>
+                </VideoTile>
+              ) : (
+                <>
+                  <FramedImage src={t.src} frame={t.frame} box={t.box} sizes="(max-width: 900px) 50vw, 267px" />
+                  <span className={s.shade} />
+                  <span className={s.label}>
+                    <Icon name={t.icon} />
+                    <h3>{t.label}</h3>
+                  </span>
+                </>
               )}
-              <span className={s.label}>
-                <Icon name={t.icon} />
-                <h3>{t.label}</h3>
-              </span>
             </li>
           ))}
         </ul>

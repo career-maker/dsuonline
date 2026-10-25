@@ -78,12 +78,21 @@ export function Hero() {
           <i aria-hidden="true" />
           <Image className={s.legacy} src="/images/brand/legacy-light.png" alt="7 decades legacy in education and healthcare" width={116} height={103} />
         </div>
-        <h1>
-          Your Degree. Your Pace.
-          <br />
-          Your Future.
+        {/* re-keyed on every slide change so the headline re-plays its word-by-word rise */}
+        <h1 key={`t${active}`} className={s.title} aria-label="Your Degree. Your Pace. Your Future.">
+          {[['Your', 'Degree.', 'Your', 'Pace.'], ['Your', 'Future.']].map((line, li) => (
+            <span key={li} className={s.line} aria-hidden="true">
+              {line.map((w, wi) => (
+                <span key={wi} className={s.tw}>
+                  <span className={s.twi} style={{ '--i': li * 4 + wi } as React.CSSProperties}>
+                    {w}
+                  </span>
+                </span>
+              ))}
+            </span>
+          ))}
         </h1>
-        <p>
+        <p key={`p${active}`} className={s.sub}>
           Pursue a UGC-entitled online degree from Dayananda Sagar{' '}
           <br />
           University with the freedom to learn anytime, anywhere.

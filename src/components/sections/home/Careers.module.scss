@@ -193,6 +193,18 @@
     }
   }
 
+  img {
+    width: calc(var(--u) * var(--w));
+    max-width: calc(100% - 12px);
+    height: auto;
+    object-fit: contain;
+
+    @include down($bp-lg) {
+      width: min(calc(var(--w) * 0.85px), 78%);
+      max-width: none;
+    }
+  }
+
   li {
     display: grid;
     place-items: center;

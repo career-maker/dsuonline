@@ -72,11 +72,22 @@
   position: relative;
   transition: box-shadow 0.4s ease;
 
-  &:hover {
+  // hover feedback only from the photo / course name, not from the card's own buttons
+  &:has(.media:hover),
+  &:has(h3:hover) {
     box-shadow: 0 20px 44px rgb(0 30 70 / 28%);
   }
 
-  @include zoom('.media img');
+  .media img {
+    transition: scale 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    &:has(.media:hover) .media img,
+    &:has(h3:hover) .media img {
+      scale: 1.07;
+    }
+  }
 }
 
 .media {
@@ -323,8 +334,10 @@
 
   // pointer devices only; touch keeps the plain card
   @media (hover: hover) {
-    .card:hover &,
-    .card:focus-within & {
+    .card:has(.media:hover) &,
+    .card:has(h3:hover) &,
+    .card:focus-within &,
+    &:hover {
       opacity: 1;
       visibility: visible;
       transition-delay: 0s;
