@@ -44,3 +44,12 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - DONE: programme pages (mba/mca/bba/bca/bcom) "Why DSU Online X?" = 2-column (text + 10 benefits left in tinted box, programme photo from /images/programs/<code>.webp right; photo on top <900px). Code: `Page.tsx` branch "programme pages" + `.whyProg/.whyText/.whyPhoto` in Kit.module.scss. Verified all 5 at 1440/1024/768/390/320.
 - GOTCHA: when editing via bash, the tool layer turns a double backslash + b in my command into a real backspace char. Never write regex word-boundary via python/heredoc; use the Edit tool or `chr(92)`. Fixer: `python shots/fixbs.py <files>`.
 - Always: after each change round -> update this file, commit, `git push origin master`.
+
+## NEXT STEPS (do top item first when the user says "continue")
+1. Visual QA of remaining inner pages at 390/768/1440 (only sampled pages were eyeballed): placements, why-dsu-online, academics-at-dsu, student-support, mandatory-disclosures, contact-us (map iframes blank in headless; check in real browser), all specialization pages, blog list/detail. Fix any layout glitches.
+2. Footer: user brief asked to refine alignment (logo/contact, link columns, specialization columns, brochure box, copyright row). Review at all breakpoints.
+3. Refer page: re-check hero/cards/terms after content changes (live copy only).
+4. Privacy page is scraped; Terms & Conditions + Facts have no live page (footer Terms link dead). Ask the user what to do.
+5. Enquiry popup: set `NEXT_PUBLIC_ENQUIRY_ENDPOINT` when a backend exists; brochure PDFs needed for the Download Brochure form.
+6. Later QA from the user's master checklist: PageSpeed/Core Web Vitals, HTML validator, 75-150% zoom sweep, Firefox/Safari, a11y audit, remove staging noindex/robots before production, footer credit uses `public/images/brand/intersmart.svg`.
+7. Only after user approval: Strapi/CMS phase.
