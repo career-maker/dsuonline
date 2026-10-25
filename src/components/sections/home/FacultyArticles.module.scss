@@ -251,36 +251,48 @@
   }
 
   p {
-    display: flex;
-    align-items: center;
-    gap: px(16);
-    margin-top: 4px;
+    margin-top: 2px;
     font-size: fs(16, 13px);
     line-height: 1.25;
     font-weight: 500;
 
     a {
-      display: inline-flex;
-      align-items: center;
-      line-height: 1;
-    }
-
-    a:first-child {
       color: #1d9be2;
     }
+  }
 
-    a:last-child {
-      display: flex;
-      align-items: center;
-      gap: px(6);
-      color: #fff;
-      font-weight: 400;
+  // LinkedIn sits on the right of the author row, icon and label centred on one line
+  .in {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    gap: px(8);
+    margin-left: auto;
+    padding: px(8) px(12);
+    border: 1px solid rgb(255 255 255 / 22%);
+    border-radius: px(6);
+    color: #fff;
+    font-size: fs(15, 13px);
+    font-weight: 400;
+    line-height: 1;
+    transition: background-color 0.25s, border-color 0.25s;
 
-      img {
-        width: px(16);
-        height: px(16);
-        border-radius: 0;
-      }
+    &:hover {
+      border-color: $yellow;
+      background: rgb(255 255 255 / 10%);
+    }
+
+    img {
+      width: px(20);
+      height: px(20);
+      border-radius: 0;
+    }
+
+    span {
+      display: block;
+      font-size: inherit;
+      line-height: 1;
+      font-weight: inherit;
     }
   }
 }
