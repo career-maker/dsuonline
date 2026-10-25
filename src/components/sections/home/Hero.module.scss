@@ -1104,3 +1104,12 @@
     animation: none;
   }
 }
+
+// tablet + phone: full-width form buttons keep the dotted icon on the far right
+@include down($bp-lg) {
+  .enquiry .submit,
+  .finder .explore {
+    justify-content: space-between;
+    padding: 0 px(18) 0 px(24);
+  }
+}
