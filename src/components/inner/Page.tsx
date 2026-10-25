@@ -421,8 +421,14 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         <AboutBand
           key={key}
           id="about-dsu"
-          title={<>How DSU Online Ensures Quality Education?</>}
-          copy={copy}
+          title={
+            <>
+              How DSU Online Ensures
+              <br />
+              Quality Education?
+            </>
+          }
+          copy={copy.slice(0, 2)}
           left={aboutPhotos.left}
           right={aboutPhotos.right}
           href="/admission"
@@ -430,6 +436,14 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           play={false}
         />,
       );
+      // the long closing paragraph sits under the block so the three columns keep the home proportions
+      if (copy.length > 2) {
+        nodes.push(
+          <Sec key={`${key}-more`} tone="grey" narrow>
+            <Prose paras={copy.slice(2)} />
+          </Sec>,
+        );
+      }
       continue;
     }
     if (slug === 'about' && /digital format/i.test(title)) continue;
