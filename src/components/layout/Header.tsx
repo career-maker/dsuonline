@@ -18,6 +18,40 @@ export function Header() {
   const progRef = useRef<HTMLLIElement>(null);
   const searchRef = useRef<HTMLDivElement>(null);
   const progId = useId();
+  const [hidden, setHidden] = useState(false);
+  const [stuck, setStuck] = useState(false);
+  const busy = useRef(false); // menu / dropdown / search open: never hide
+  useEffect(() => {
+    busy.current = menuOpen || progOpen || searchOpen;
+    if (busy.current) setHidden(false);
+  }, [menuOpen, progOpen, searchOpen]);
+
+  // sticky header: hides while scrolling down, returns on any scroll up
+  useEffect(() => {
+    let last = window.scrollY;
+    let tick = false;
+    const onScroll = () => {
+      if (tick) return;
+      tick = true;
+      requestAnimationFrame(() => {
+        const y = Math.max(0, window.scrollY);
+        setStuck(y > 40);
+        if (Math.abs(y - last) > 6) {
+          setHidden(y > last && y > 160 && !busy.current);
+          last = y;
+        }
+        tick = false;
+      });
+    };
+    // a refresh mid-page restores the scroll position without a scroll event: sync once now and after load
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('load', onScroll);
+    };
+  }, []);
 
   const hits = useMemo<Hit[]>(() => {
     const q = query.trim().toLowerCase();
@@ -59,7 +93,7 @@ export function Header() {
   };
 
   return (
-    <header className={s.header} data-u>
+    <header className={`${s.header} ${stuck ? s.stuck : ''} ${hidden ? s.hide : ''}`} data-u>
       <div className={s.bar}>
         <Link href="/" className={s.logo} aria-label="Dayananda Sagar University Online - home" onClick={closeAll}>
           <Image src="/images/brand/logo-header.png" alt="Dayananda Sagar University Online" width={385} height={75} priority />

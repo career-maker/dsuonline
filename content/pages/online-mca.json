@@ -3,10 +3,6 @@
  "description": "Upgrade your career with DSU Online MCA degree program. 2-year UGC entitled program. NAAC A+ accredited university. 100% Placement assistance. Apply Online MCA.",
  "blocks": [
   {
-   "t": "p",
-   "x": "Certificate Modal for Full Screen View"
-  },
-  {
    "t": "img",
    "src": "/content/0aab0f2c-asset-12-8.webp",
    "alt": "NAAC A+",
@@ -495,14 +491,6 @@
    "x": "BCA"
   },
   {
-   "t": "p",
-   "x": "SEMESTER-WISE TABLE — SEM as rows, Particulars as columns"
-  },
-  {
-   "t": "p",
-   "x": "ANNUAL TABLE — Year as rows, Particulars as columns"
-  },
-  {
    "t": "h2",
    "x": "Online MCA Course Fees Structure"
   },
@@ -585,20 +573,8 @@
    "x": "Note: One Time Processing Fees is non-refundable. Terms & Conditions apply."
   },
   {
-   "t": "p",
-   "x": "Career Path Section with its own navigation"
-  },
-  {
-   "t": "p",
-   "x": "Industries Section with its own navigation"
-  },
-  {
    "t": "h3",
    "x": "Career Path"
-  },
-  {
-   "t": "p",
-   "x": "Career Path Navigation Buttons"
   },
   {
    "t": "p",
@@ -683,10 +659,6 @@
   {
    "t": "h3",
    "x": "Industries"
-  },
-  {
-   "t": "p",
-   "x": "Industries Navigation Buttons"
   },
   {
    "t": "p",
@@ -1111,22 +1083,6 @@
   {
    "t": "h2",
    "x": "Meet Expert Faculty"
-  },
-  {
-   "t": "p",
-   "x": "CARD 1"
-  },
-  {
-   "t": "p",
-   "x": "card 4"
-  },
-  {
-   "t": "p",
-   "x": "CARD 2"
-  },
-  {
-   "t": "p",
-   "x": "CARD 3"
   },
   {
    "t": "h3",

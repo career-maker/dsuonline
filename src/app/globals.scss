@@ -50,7 +50,7 @@ body {
   overflow-x: hidden;
 
   // room for the fixed bottom action bar on phones
-  @media (max-width: 899.98px) {
+  @media (max-width: 1199.98px) {
     padding-bottom: 52px;
   }
 }
@@ -118,4 +118,9 @@ ol {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+// no scrolling behind the preloader
+html.is-loading {
+  overflow: hidden;
 }

@@ -1,0 +1,1074 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+$line-soft: #e6edf3;
+$ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+// ---------- section shell
+.sec {
+  letter-spacing: -0.0175em;
+  padding: clamp(44px, 6vw, 96px) 0;
+}
+
+.white {
+  background: #fff;
+}
+
+.grey {
+  background: $bg-grey;
+}
+
+.sky {
+  background: $bg-sky;
+}
+
+.wrap {
+  width: min(1240px, 100% - 2 * var(--gut));
+  margin-inline: auto;
+}
+
+.narrow {
+  width: min(880px, 100% - 2 * var(--gut));
+}
+
+.head {
+  max-width: 820px;
+  margin-bottom: clamp(24px, 3.4vw, 48px);
+
+  h2 {
+    font-size: clamp(26px, 3.2vw, 44px);
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: $ink;
+  }
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  font-size: clamp(13px, 1.2vw, 16px);
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $gold;
+}
+
+.lead {
+  margin-top: 14px;
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.55;
+  color: $body;
+}
+
+// ---------- text + picture
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(24px, 4.5vw, 72px);
+  align-items: center;
+
+  @include down($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.solo {
+  grid-template-columns: 1fr;
+}
+
+.top {
+  align-items: start;
+}
+
+.rev {
+  .splitText {
+    order: 2;
+  }
+
+  @include down($bp-md) {
+    .splitText {
+      order: 0;
+    }
+  }
+}
+
+.splitMedia {
+  overflow: hidden;
+  border-radius: 18px;
+  background: $bg-sky;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.prose {
+  display: grid;
+  gap: 16px;
+
+  p {
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.7;
+    color: $body;
+  }
+}
+
+// ---------- checklist
+.checks {
+  display: grid;
+  gap: 14px 32px;
+  margin-top: 8px;
+
+  li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.45;
+    font-weight: 500;
+    color: $ink;
+  }
+
+  li::before {
+    content: '';
+    flex: none;
+    width: 22px;
+    height: 22px;
+    margin-top: 1px;
+    border-radius: 50%;
+    background: $blue url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 14px no-repeat;
+  }
+}
+
+.c1 {
+  grid-template-columns: 1fr;
+}
+
+.c2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.c3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.c2,
+.c3 {
+  @include down($bp-md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ---------- cards
+.cards {
+  display: grid;
+  gap: clamp(14px, 1.6vw, 24px);
+
+  > li {
+    position: relative;
+    padding: clamp(20px, 2vw, 30px);
+    border: 1px solid $line-soft;
+    border-radius: 16px;
+    background: #fff;
+    transition: box-shadow 0.35s $ease, border-color 0.35s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: rgb(0 125 197 / 40%);
+        box-shadow: 0 16px 40px rgb(0 40 80 / 12%);
+      }
+    }
+  }
+
+  h3 {
+    font-size: clamp(18px, 1.6vw, 23px);
+    line-height: 1.25;
+    font-weight: 500;
+    color: $ink;
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: clamp(15px, 1.15vw, 17px);
+    line-height: 1.6;
+    color: $body;
+  }
+}
+
+.tint > li {
+  border-color: transparent;
+  background: $bg-card-sky;
+}
+
+.g2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.g3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.g4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.g3,
+.g4 {
+  @include down($bp-lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.g2,
+.g3,
+.g4 {
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.num {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: $gold;
+}
+
+.dots {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+
+  li {
+    position: relative;
+    padding-left: 18px;
+    font-size: clamp(15px, 1.1vw, 16px);
+    line-height: 1.5;
+    color: $body;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: $blue;
+    }
+  }
+}
+
+// ---------- steps
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+  gap: clamp(14px, 1.6vw, 24px);
+
+  > li {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: clamp(20px, 2vw, 28px);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 2px 14px rgb(0 40 80 / 8%);
+  }
+
+  h3 {
+    font-size: clamp(18px, 1.5vw, 21px);
+    line-height: 1.25;
+    font-weight: 500;
+    color: $ink;
+  }
+
+  p {
+    margin-top: 8px;
+    font-size: clamp(15px, 1.1vw, 16px);
+    line-height: 1.55;
+    color: $body;
+  }
+}
+
+.stepNo {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: $blue;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+// ---------- tables
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid $line-soft;
+  border-radius: 14px;
+  background: #fff;
+  @include focus-ring;
+
+  table {
+    width: 100%;
+    min-width: 480px;
+    border-collapse: collapse;
+    font-size: clamp(14px, 1.1vw, 16px);
+    line-height: 1.45;
+  }
+
+  th {
+    padding: 14px 18px;
+    background: $blue;
+    color: #fff;
+    text-align: left;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 12px 18px;
+    border-top: 1px solid $line-soft;
+    color: $body;
+  }
+
+  tbody tr:nth-child(even) td {
+    background: $bg-grey;
+  }
+}
+
+.tables {
+  display: grid;
+  gap: 20px;
+}
+
+.note {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: $body;
+}
+
+// ---------- testimonials (masonry columns: quotes vary in length)
+.quotes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+  gap: clamp(14px, 1.6vw, 24px);
+  align-items: stretch;
+
+  > li {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.quote {
+  position: relative;
+  padding: clamp(22px, 2vw, 30px);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 2px 16px rgb(0 40 80 / 8%);
+  transition: box-shadow 0.35s $ease;
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 16px 40px rgb(0 40 80 / 16%);
+    }
+  }
+
+  > p {
+    flex: 1;
+    margin: 18px 0 22px;
+    font-size: clamp(15px, 1.15vw, 17px);
+    line-height: 1.65;
+    color: $body;
+  }
+}
+
+.qmark {
+  display: block;
+  height: 38px;
+  font-size: 86px;
+  line-height: 0.9;
+  font-weight: 700;
+  color: $gold;
+}
+
+.who {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid $line-soft;
+
+  b {
+    display: block;
+    font-size: 17px;
+    line-height: 1.25;
+    font-weight: 500;
+    color: $ink;
+  }
+
+  > div span {
+    display: block;
+    margin-top: 2px;
+    font-size: 14px;
+    line-height: 1.35;
+    color: $body;
+  }
+}
+
+.avatar {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: $blue;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.revealRow {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(20px, 2.4vw, 32px);
+}
+
+.revealBtn {
+  height: 50px;
+  padding: 0 28px;
+  border: 1px solid $blue;
+  border-radius: 3px;
+  background: #fff;
+  color: $blue;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s;
+  @include focus-ring;
+
+  &:hover {
+    background: $blue;
+    color: #fff;
+  }
+}
+
+// ---------- logos
+.logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: 14px;
+
+  > li {
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    min-height: 100px;
+    border: 1px solid $line-soft;
+    border-radius: 14px;
+    background: #fff;
+  }
+
+  img {
+    width: auto;
+    max-width: 100%;
+    max-height: 64px;
+    object-fit: contain;
+  }
+}
+
+// ---------- faculty
+.faculty {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  gap: clamp(14px, 1.6vw, 24px);
+
+  > li {
+    overflow: hidden;
+    border-radius: 16px;
+    background: $bg-sky;
+    transition: box-shadow 0.35s $ease;
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: 0 16px 40px rgb(0 40 80 / 16%);
+      }
+    }
+  }
+}
+
+.fphoto {
+  aspect-ratio: 4 / 4.4;
+  overflow: hidden;
+  background: #dbe9f3;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 12%;
+  }
+}
+
+.fbody {
+  padding: 18px 18px 22px;
+
+  h3 {
+    font-size: 19px;
+    line-height: 1.25;
+    font-weight: 500;
+    color: $ink;
+  }
+}
+
+.frole {
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: $blue;
+}
+
+.fcreds {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: $body;
+}
+
+// ---------- FAQ
+.faq {
+  max-width: 980px;
+  margin-inline: auto;
+  display: grid;
+  gap: 12px;
+
+  > li {
+    border: 1px solid $line-soft;
+    border-radius: 14px;
+    background: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  button {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) 20px;
+    gap: 6px;
+    align-items: center;
+    width: 100%;
+    min-height: 68px;
+    padding: 12px 20px 12px 18px;
+    border: 0;
+    border-radius: 14px;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    @include focus-ring;
+  }
+}
+
+.faqOn {
+  border-color: rgb(0 125 197 / 45%) !important;
+  box-shadow: 0 10px 30px rgb(0 40 80 / 10%);
+
+  .faqChev {
+    rotate: 90deg;
+  }
+
+  .faqBody {
+    grid-template-rows: 1fr;
+  }
+}
+
+.faqNum {
+  font-size: 22px;
+  font-weight: 400;
+  color: $gold;
+}
+
+.faqQ {
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.4;
+  font-weight: 500;
+  color: $ink;
+}
+
+.faqChev {
+  font-size: 16px;
+  color: $blue;
+  transition: rotate 0.3s $ease;
+}
+
+.faqBody {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s $ease;
+
+  > div {
+    overflow: hidden;
+    padding-inline: 68px 24px;
+  }
+
+  p,
+  li {
+    font-size: clamp(15px, 1.15vw, 17px);
+    line-height: 1.65;
+    color: $body;
+  }
+
+  p {
+    margin-bottom: 12px;
+  }
+
+  ul {
+    display: grid;
+    gap: 6px;
+    margin: 0 0 12px;
+    padding-left: 18px;
+    list-style: disc;
+  }
+
+  @include down($bp-sm) {
+    > div {
+      padding-inline: 18px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faqBody,
+  .faqChev {
+    transition: none;
+  }
+}
+
+// ---------- tabs
+.tabs {
+  display: grid;
+  gap: 18px;
+}
+
+.tabGroup {
+  display: grid;
+  gap: 8px;
+}
+
+.tabLabel {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $body;
+}
+
+.tabList {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+
+  button {
+    flex: none;
+    height: 44px;
+    padding: 0 20px;
+    border: 1px solid #cfdde8;
+    border-radius: 22px;
+    background: #fff;
+    color: $ink;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+    @include focus-ring;
+
+    &:hover {
+      border-color: $blue;
+    }
+  }
+
+  .tabOn {
+    border-color: $blue;
+    background: $blue;
+    color: #fff;
+  }
+}
+
+.tabPanel {
+  min-width: 0;
+}
+
+// ---------- link grid (programme electives)
+.linkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 14px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    min-height: 82px;
+    padding: 16px 22px;
+    border: 1px solid #dbe7f0;
+    border-radius: 14px;
+    background: #fff;
+    transition: border-color 0.25s, box-shadow 0.3s, background-color 0.25s;
+
+    &:hover {
+      border-color: $blue;
+      box-shadow: 0 10px 28px rgb(0 125 197 / 16%);
+
+      i {
+        translate: 4px 0;
+      }
+    }
+  }
+
+  b {
+    display: block;
+    font-size: clamp(17px, 1.4vw, 20px);
+    line-height: 1.25;
+    font-weight: 500;
+    color: $ink;
+  }
+
+  small {
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    color: $body;
+  }
+
+  i {
+    flex: none;
+    font-size: 22px;
+    font-style: normal;
+    color: $blue;
+    transition: translate 0.25s $ease;
+  }
+}
+
+// ---------- contact
+.contactRow {
+  display: grid;
+  gap: 2px;
+  margin-top: 14px;
+
+  span {
+    font-size: 14px;
+    color: $body;
+  }
+
+  a {
+    font-size: clamp(18px, 1.6vw, 22px);
+    font-weight: 500;
+    color: $blue;
+    overflow-wrap: anywhere;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 14px;
+
+  > li {
+    padding: 28px 24px;
+    border-radius: 16px;
+    background: $blue;
+    color: #fff;
+    text-align: center;
+  }
+
+  b {
+    display: block;
+    font-size: clamp(34px, 4vw, 54px);
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  span {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.35;
+    opacity: 0.92;
+  }
+}
+
+.certs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 28px);
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+  }
+
+  figure {
+    margin: 0;
+    padding: 14px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 2px 16px rgb(0 40 80 / 10%);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  figcaption {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: $body;
+  }
+}
+
+.maps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 28px);
+  margin-top: clamp(24px, 3vw, 44px);
+
+  @include down($bp-md) {
+    grid-template-columns: 1fr;
+  }
+
+  iframe {
+    width: 100%;
+    height: clamp(260px, 30vw, 380px);
+    border: 0;
+    border-radius: 16px;
+  }
+}
+
+.officeCard {
+  padding: clamp(22px, 2.4vw, 34px);
+  border: 1px solid $line-soft;
+  border-radius: 18px;
+  background: #fff;
+
+  h3 {
+    font-size: clamp(20px, 1.8vw, 26px);
+    font-weight: 500;
+    color: $ink;
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $body;
+  }
+}
+
+.leaders {
+  display: grid;
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.leader {
+  display: grid;
+  grid-template-columns: clamp(150px, 20vw, 260px) minmax(0, 1fr);
+  gap: clamp(18px, 3vw, 44px);
+  align-items: start;
+  padding: clamp(22px, 2.6vw, 38px);
+  border: 1px solid $line-soft;
+  border-radius: 20px;
+  background: #fff;
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  h3 {
+    font-size: clamp(22px, 2.2vw, 30px);
+    line-height: 1.2;
+    font-weight: 700;
+    color: $ink;
+  }
+
+  .role {
+    margin: 6px 0 16px;
+    font-size: clamp(16px, 1.3vw, 18px);
+    font-weight: 500;
+    color: $blue;
+  }
+
+  p {
+    font-size: clamp(15px, 1.15vw, 17px);
+    line-height: 1.7;
+    color: $body;
+
+    + p {
+      margin-top: 12px;
+    }
+  }
+}
+
+.portrait {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+  background: $bg-sky;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 15%;
+  }
+}
+
+// ---------- picture + caption cards (accreditation logos ...)
+.figs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: clamp(14px, 2vw, 28px);
+
+  > li {
+    display: grid;
+    gap: 14px;
+    justify-items: center;
+    padding: 24px 20px 22px;
+    border: 1px solid $line-soft;
+    border-radius: 16px;
+    background: #fff;
+    text-align: center;
+  }
+
+  img {
+    width: auto;
+    max-width: 100%;
+    height: clamp(110px, 12vw, 160px);
+    object-fit: contain;
+  }
+
+  span {
+    font-size: 16px;
+    font-weight: 500;
+    color: $ink;
+  }
+}
+
+// a lone picture never fills the whole column
+.single {
+  max-width: 620px;
+}
+
+.iconDisc {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $blue, $blue-dark);
+
+  img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+  }
+}
+
+.sumRow td {
+  background: $bg-sky !important;
+  font-weight: 500;
+  color: $ink;
+}
+
+// ---------- document list (mandatory disclosures)
+.docs {
+  display: grid;
+  gap: 12px;
+
+  > li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    padding: 16px 22px;
+    border: 1px solid $line-soft;
+    border-radius: 14px;
+    background: #fff;
+    transition: border-color 0.25s, box-shadow 0.3s;
+
+    &:hover {
+      border-color: rgb(0 125 197 / 45%);
+      box-shadow: 0 10px 28px rgb(0 40 80 / 10%);
+    }
+  }
+}
+
+.docTitle {
+  flex: 1 1 320px;
+  font-size: clamp(16px, 1.3vw, 18px);
+  line-height: 1.4;
+  font-weight: 500;
+  color: $ink;
+}
+
+.docLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 18px;
+    border: 1px solid $blue;
+    border-radius: 3px;
+    color: $blue;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.25s, color 0.25s;
+    @include focus-ring;
+
+    &:hover {
+      background: $blue;
+      color: #fff;
+    }
+  }
+}
+
+.officeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: clamp(14px, 2vw, 28px);
+}

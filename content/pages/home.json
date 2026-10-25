@@ -973,28 +973,56 @@
    "x": "Frequently Asked Questions"
   },
   {
+   "t": "q",
+   "x": "Is DSU Online approved by the UGC?"
+  },
+  {
    "t": "p",
    "x": "Yes. All online degree programs offered by DSU Online are UGC‑Entitled, ensuring they are recognized and equivalent to regular on‑campus degrees."
+  },
+  {
+   "t": "q",
+   "x": "Can I apply for multiple programs at DSU Online?"
   },
   {
    "t": "p",
    "x": "A student can pursue two academic programmes, in Online mode simultaneously."
   },
   {
+   "t": "q",
+   "x": "Is the online BBA /B.Com / BCA / MBA / MCA degree equal to a regular degree?"
+  },
+  {
    "t": "p",
    "x": "Yes. DSU’s online degree courses are equivalent to traditional on‑campus degrees, as per UGC guidelines, and are recognized across industries and for higher studies."
+  },
+  {
+   "t": "q",
+   "x": "Are the online degrees from DSU Online recognized and valid?"
   },
   {
    "t": "p",
    "x": "Yes, all degrees offered through DSU Online are recognized by the University Grants Commission (UGC) and the university is NAAC A+ accredited. These degrees are fully valid and hold the same academic weight as traditional on‑campus degrees."
   },
   {
+   "t": "q",
+   "x": "Is DSU a government‑recognized university?"
+  },
+  {
    "t": "p",
    "x": "Yes. DSU Online (Dayananda Sagar University) is a private university established by the Karnataka State Act and is officially recognized by the UGC. It operates under full regulatory compliance."
   },
   {
+   "t": "q",
+   "x": "How many credits does this program offer?"
+  },
+  {
    "t": "p",
    "x": "102 credits"
+  },
+  {
+   "t": "q",
+   "x": "What electives are offered in the online MBA course?"
   },
   {
    "t": "p",
@@ -1014,44 +1042,88 @@
    ]
   },
   {
+   "t": "q",
+   "x": "How many electives can students choose during the program?"
+  },
+  {
    "t": "p",
    "x": "Two electives can be chosen: one major and one minor"
+  },
+  {
+   "t": "q",
+   "x": "Is DSU Accredited by NAAC?"
   },
   {
    "t": "p",
    "x": "Yes. DSU is accredited with NAAC A+ grade."
   },
   {
+   "t": "q",
+   "x": "Is the online MBA degree recognised and at par with a regular on-campus degree?"
+  },
+  {
    "t": "p",
    "x": "Yes. The online MBA degree from DSU is considered at par with an on-campus degree."
+  },
+  {
+   "t": "q",
+   "x": "Is the online MBA degree recognised by employers?"
   },
   {
    "t": "p",
    "x": "Yes. DSU is accredited by NAAC with A+ grade and the online MBA degree is a UGC-Entitled degree; thus, the degree is recognised by employers."
   },
   {
+   "t": "q",
+   "x": "How flexible is the MBA programme for working professionals?"
+  },
+  {
    "t": "p",
    "x": "The programme is 100% online with flexible schedules, offering evening or weekend classes, live and recorded sessions, with self-paced learning modules that are accessible 24/7 to accommodate working professionals."
+  },
+  {
+   "t": "q",
+   "x": "Will an online MBA provide the same networking opportunities?"
   },
   {
    "t": "p",
    "x": "Yes. Students gain access to virtual networking events, discussion forums, mentorship, webinars with industry leaders for enhanced professional connections."
   },
   {
+   "t": "q",
+   "x": "How will students know important dates for the programme?"
+  },
+  {
    "t": "p",
    "x": "The academic calendar will be published with timelines."
+  },
+  {
+   "t": "q",
+   "x": "Are there opportunities for practical and experiential learning in the MBA programme?"
   },
   {
    "t": "p",
    "x": "Yes, the programme includes case studies, internships, projects, industry-focused assignments to enhance real-world business skills."
   },
   {
+   "t": "q",
+   "x": "Is the MBA programme accredited and globally recognised?"
+  },
+  {
    "t": "p",
    "x": "Yes. Dayananda Sagar University is accredited by NAAC with A+ and adheres to international academic standards, making the degree globally recognised and valued."
   },
   {
+   "t": "q",
+   "x": "Is the course study material available online?"
+  },
+  {
    "t": "p",
    "x": "Yes. The course study material of the online programme will be available through the University’s Learning Portal."
+  },
+  {
+   "t": "q",
+   "x": "How is the online study material made available to the students?"
   },
   {
    "t": "p",
@@ -1067,28 +1139,56 @@
    ]
   },
   {
+   "t": "q",
+   "x": "What kind of networking opportunities are available to MBA students?"
+  },
+  {
    "t": "p",
    "x": "Students gain access to virtual networking events, discussion forums, mentorship, webinars with industry leaders for enhanced professional connections."
+  },
+  {
+   "t": "q",
+   "x": "How will the programme delivery be done?"
   },
   {
    "t": "p",
    "x": "The programme delivery will be fully online ensuring flexibility and accessibility for all students. Live, interactive lectures will be conducted by course coordinators on weekends."
   },
   {
+   "t": "q",
+   "x": "What kind of support will online learners receive from the programme?"
+  },
+  {
    "t": "p",
    "x": "The four-quadrant course design approach will ensure a seamless and engaging learning experience. Dedicated course mentors will provide learning support to the students."
+  },
+  {
+   "t": "q",
+   "x": "Will students be provided mentorship during the programme?"
   },
   {
    "t": "p",
    "x": "Yes. Guidance and mentoring from course coordinators will help students to navigate any academic challenges. Dedicated mentors to assist in learning and academic-related support."
   },
   {
+   "t": "q",
+   "x": "How will evaluations be done during the programme?"
+  },
+  {
    "t": "p",
    "x": "A student shall be assessed for a course through Continuous Internal Assessment (CIA) and Semester End Examination (SEE). CIA and SEE will have 30:70 percent weightage, respectively."
   },
   {
+   "t": "q",
+   "x": "What career options are available after completing the MBA programme?"
+  },
+  {
    "t": "p",
    "x": "Students can explore professions in Financial Management, Marketing Management, Human Resource Management, IT & Systems Management, Supply Chain Management, Entrepreneurship, Business Analytics and Artificial Intelligence."
+  },
+  {
+   "t": "q",
+   "x": "How is the curriculum made?"
   },
   {
    "t": "p",

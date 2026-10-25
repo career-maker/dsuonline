@@ -49,9 +49,13 @@
   }
 }
 
+@mixin hero-eyebrow-gap {
+  margin-top: clamp(20px, #{u(36)}, 36px) !important;
+}
+
 .heroEyebrow {
-  margin-top: clamp(20px, #{u(36)}, 36px);
   @include eyebrow;
+  @include hero-eyebrow-gap;
   color: $yellow;
 }
 

@@ -29,6 +29,9 @@ def tidy(blocks):
     out, seen = [], set()
     for b in blocks:
         t = b['t']
+        if t == 'q':
+            out.append(b)
+            continue
         if t == 'p':
             x = b['x']
             if re.fullmatch(r'\(?(?:\S ){3,}\S\)?', x): continue  # decorative letter-spaced text
@@ -53,6 +56,20 @@ def tidy(blocks):
 
 def extract(html, base):
     s = BeautifulSoup(html, 'lxml')
+    # accordion questions live in <button>s: keep them as 'q' markers before buttons are dropped
+    for b in s.find_all('button'):
+        if any('accordion-button' in c for c in b.get('class', [])):
+            txt = b.select_one('[class*=button__text]') or b
+            for n in b.select('[class*=button__number]'): n.decompose()
+            q = clean(txt.get_text(' '))
+            if q:
+                m = s.new_tag('p'); m['data-q'] = '1'; m.string = q
+                b.replace_with(m)
+    # animated counters render as "0" until JS runs: use the target value
+    for c in s.select('[data-target]'):
+        if (c.get('data-target') or '').isdigit():
+            plus = '+' if any('plus' in k for k in c.get('class', [])) else ''
+            c.string = f"{int(c['data-target']):,}{plus}"
     for t in s(['script', 'style', 'noscript', 'svg', 'form', 'button', 'input', 'select', 'textarea', 'nav']):
         t.decompose()
     root = s.select_one('main#mainContent')
@@ -76,7 +93,7 @@ def extract(html, base):
                 if x: blocks.append({'t': n, 'x': x})
             elif n == 'p':
                 x = clean(T(c))
-                if x: blocks.append({'t': 'p', 'x': x})
+                if x: blocks.append({'t': 'q' if c.get('data-q') else 'p', 'x': x})
                 for i in c.find_all('img'): img(i)
             elif n in ('ul', 'ol'):
                 items = [clean(li.get_text(' ')) for li in c.find_all('li', recursive=False)]

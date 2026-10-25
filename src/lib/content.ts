@@ -5,6 +5,7 @@ import path from 'node:path';
 export type Block =
   | { t: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'; x: string }
   | { t: 'p'; x: string }
+  | { t: 'q'; x: string }
   | { t: 'ul'; items: string[] }
   | { t: 'img'; src: string; alt: string; w?: number; h?: number }
   | { t: 'table'; rows: string[][] }

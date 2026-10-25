@@ -2,9 +2,27 @@
 @use 'mixins' as *;
 
 .header {
-  position: absolute;
+  position: fixed;
   inset: 0 0 auto;
   z-index: 50;
+  transition: top 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+// scrolled past the hero top: solid bar with a shadow so it reads over any section
+.stuck .bar {
+  background: rgb(8 16 26 / 96%); // no backdrop-filter: it would trap the fixed mobile drawer
+  box-shadow: 0 6px 24px rgb(0 0 0 / 28%);
+}
+
+// scrolling down: slide out of view (top, not transform, so the fixed mobile drawer keeps working)
+.hide {
+  top: -160px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header {
+    transition: none;
+  }
 }
 
 .bar {

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { BlogIndex, BlogPost } from '@/components/inner/Blog';
-import { InnerPage, type Crumb } from '@/components/inner/InnerPage';
+import type { Crumb } from '@/components/inner/InnerPage';
+import { ContentPage } from '@/components/inner/Page';
 import { programs, specializationHref } from '@/data/programs';
 import { allPageSegments, BLOGS_PER_PAGE, loadBlogPost, loadBlogs, loadPage, type PageData } from '@/lib/content';
 
@@ -76,5 +77,5 @@ export default async function InnerRoute({ params }: { params: Promise<Params> }
   if (!r) notFound();
   if (r.kind === 'blogIndex') return <BlogIndex page={r.page} />;
   if (r.kind === 'post') return <BlogPost data={r.data} />;
-  return <InnerPage crumbs={r.crumbs} blocks={r.data.blocks} programLinks={r.programLinks} withFacts={r.withFacts} />;
+  return <ContentPage slug={slug.join('/')} crumbs={r.crumbs} blocks={r.data.blocks} programLinks={r.programLinks} withFacts={r.withFacts} />;
 }

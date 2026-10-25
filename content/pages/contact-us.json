@@ -83,41 +83,6 @@
    "x": "Follow us on Social Media"
   },
   {
-   "t": "img",
-   "src": "/content/05753d04-instagram-new.png",
-   "alt": "Instagram",
-   "w": 48,
-   "h": 48
-  },
-  {
-   "t": "img",
-   "src": "/content/48b45bb6-facebook-new.png",
-   "alt": "Facebook",
-   "w": 48,
-   "h": 48
-  },
-  {
-   "t": "img",
-   "src": "/content/e80fb5e5-linkedin.png",
-   "alt": "LinkedIn",
-   "w": 48,
-   "h": 48
-  },
-  {
-   "t": "img",
-   "src": "/content/5a2ffe09-youtube-play.png",
-   "alt": "YouTube",
-   "w": 48,
-   "h": 48
-  },
-  {
-   "t": "img",
-   "src": "/content/d294f871-twitterx.png",
-   "alt": "X",
-   "w": 48,
-   "h": 48
-  },
-  {
    "t": "iframe",
    "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0781183846257!2d77.63941377366997!3d12.887433516720833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14b023dade9d%3A0x35272e55303bd711!2sDayananda%20Sagar%20University%20(DSU)%20-%20City%20Campus!5e0!3m2!1sen!2sin!4v1741094369225!5m2!1sen!2sin"
   },

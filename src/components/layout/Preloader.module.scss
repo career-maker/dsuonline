@@ -1,0 +1,123 @@
+@use 'tokens' as *;
+
+.screen {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  background: $blue;
+  // no-JS safety net: never leave the page covered
+  animation: failsafe 0s 6s forwards;
+}
+
+.disc {
+  display: grid;
+  place-items: center;
+  width: clamp(190px, 28vmin, 320px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff;
+
+  img {
+    width: 74%;
+    height: auto;
+  }
+}
+
+// home exit: the white circle expands over the screen, then the cover fades to reveal the page
+.home.out {
+  animation: cover-fade 0.45s ease 0.75s forwards;
+
+  .disc {
+    animation: expand 0.8s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+
+    img {
+      animation: logo-out 0.25s ease forwards;
+    }
+  }
+}
+
+// inner pages: blue panel slides up and off
+.inner.out {
+  animation: slide-up 0.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+// route changes: panel fades in over the page, then slides up (a single upward motion)
+.sweep {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: $blue;
+  pointer-events: none;
+  animation: sweep 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes expand {
+  to {
+    scale: 9;
+  }
+}
+
+@keyframes logo-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes cover-fade {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes slide-up {
+  to {
+    translate: 0 -100%;
+  }
+}
+
+// one upward pass only: the panel fades in over the page, then slides up and away (same motion as the first load)
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    translate: 0 0;
+  }
+
+  18% {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  32% {
+    translate: 0 0;
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0 -100%;
+  }
+}
+
+@keyframes failsafe {
+  to {
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home.out,
+  .inner.out {
+    animation: cover-fade 0.2s ease forwards;
+  }
+
+  .home.out .disc,
+  .home.out .disc img {
+    animation: none;
+  }
+
+  .sweep {
+    display: none;
+  }
+}

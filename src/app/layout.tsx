@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
+import { Preloader } from '@/components/layout/Preloader';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
 import { EnquiryProvider } from '@/components/layout/EnquiryProvider';
 import { Footer } from '@/components/layout/Footer';
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={roboto.variable}>
       <body>
+        <Preloader />
         <SmoothScroll />
         <EnquiryProvider>
           <Header />

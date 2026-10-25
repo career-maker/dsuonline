@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import Image, { getImageProps } from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useId, useState, type FormEvent } from 'react';
@@ -48,11 +48,18 @@ export function Hero() {
 
   return (
     <section className={s.hero} aria-roledescription="carousel" aria-label="Featured">
-      {heroSlides.map((src, i) => (
-        <div key={src} className={`${s.bg} ${i === active ? s.bgOn : ''}`} aria-hidden={i !== active}>
-          <Image src={src} alt="" width={slideSize[i][0]} height={slideSize[i][1]} priority={i === 0} sizes="110vw" className={i ? s.slide1 : s.slide0} style={{ objectPosition: slidePos[i] }} />
-        </div>
-      ))}
+      {heroSlides.map((slide, i) => {
+        const desktop = getImageProps({ src: slide.desktop, alt: '', width: slideSize[i][0], height: slideSize[i][1], sizes: '110vw', priority: i === 0 }).props;
+        const mobile = getImageProps({ src: slide.mobile, alt: '', width: 790, height: 987, sizes: '100vw', priority: i === 0 }).props;
+        return (
+          <div key={slide.desktop} className={`${s.bg} ${i === active ? s.bgOn : ''}`} aria-hidden={i !== active}>
+            <picture>
+              <source media="(max-width: 759.98px)" srcSet={mobile.srcSet} />
+              <img {...desktop} alt="" className={i ? s.slide1 : s.slide0} style={{ objectPosition: slidePos[i] }} />
+            </picture>
+          </div>
+        );
+      })}
       <div className={s.shade} />
 
       <button type="button" className={`${s.arrow} ${s.prev}`} onClick={() => go(-1)} aria-label="Previous slide">
@@ -77,7 +84,7 @@ export function Hero() {
           Your Future.
         </h1>
         <p>
-          Pursue a UGC-entitled online degree from Dayananda Sagar
+          Pursue a UGC-entitled online degree from Dayananda Sagar{' '}
           <br />
           University with the freedom to learn anytime, anywhere.
         </p>

@@ -357,6 +357,397 @@
   border-bottom: 3px solid #f6b800;
 }
 
+// ---------- tablet + phone layout (reference mock: tablet = copy left / enquiry form right, phone = image on top)
+@include down($bp-lg) {
+  .hero {
+    background: #0a0d12;
+  }
+
+  // keep the subject (right-of-centre in the photos) in frame; inline object-position is the desktop crop
+  .bg img {
+    object-position: 62% 30% !important;
+  }
+
+  .shade {
+    background: linear-gradient(90deg, rgb(6 8 12 / 62%) 0%, rgb(6 8 12 / 30%) 55%, rgb(6 8 12 / 8%) 100%),
+      linear-gradient(0deg, rgb(6 8 12 / 55%) 0%, rgb(6 8 12 / 0%) 45%);
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 45%);
+    align-items: end;
+    gap: 24px;
+    min-height: clamp(560px, calc(100svh - 52px), 820px); // minus the fixed bottom action bar
+    padding: clamp(84px, 8.2vw, 92px) var(--gut) clamp(18px, 2.4vw, 28px);
+  }
+
+  .copy {
+    padding-bottom: 8px;
+  }
+
+  .panels {
+    gap: clamp(6px, 1vw, 10px);
+  }
+
+  // finder stays visible on tablet, compact, under the enquiry form
+  .finder {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 16px 20px 18px;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    // descriptor line dropped on tablet to keep the hero short
+    > p:not(.notSure) {
+      display: none;
+    }
+
+    .chips {
+      gap: 8px;
+
+      button {
+        height: 32px;
+        padding: 0 14px;
+        font-size: 14px;
+      }
+    }
+
+    .spec select,
+    .explore {
+      height: 42px;
+      font-size: 14px;
+    }
+
+    .explore {
+      width: 120px;
+      padding-left: 18px;
+    }
+
+    .notSure {
+      font-size: 14px;
+    }
+  }
+
+  .enquiry {
+    column-gap: 12px;
+    row-gap: 12px;
+    padding: 20px 20px 22px;
+
+    h2 {
+      font-size: 22px;
+    }
+
+    > p {
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    .f3 {
+      height: 42px;
+      font-size: 14px;
+    }
+
+    .submit {
+      grid-column: 1 / -1;
+      width: 100%;
+      height: 44px;
+    }
+  }
+
+  .f5 {
+    grid-column: 1 / -1;
+  }
+
+  .flag {
+    margin-left: 8px;
+  }
+
+  .cc {
+    margin: 0 8px;
+  }
+
+  // fluid type + sizes for tablet widths (760-1199px): everything scales with the viewport
+  .copy h1 {
+    font-size: clamp(28px, 3.9vw, 48px);
+  }
+
+  .copy > p {
+    margin-top: clamp(8px, 1.3vw, 16px);
+    font-size: clamp(14px, 1.7vw, 19px);
+  }
+
+  .badges {
+    gap: clamp(4px, 0.8vw, 10px);
+
+    img {
+      height: clamp(32px, 5vw, 58px);
+    }
+
+    .naac {
+      height: clamp(30px, 4.7vw, 55px);
+    }
+
+    i {
+      height: clamp(26px, 3.8vw, 44px);
+    }
+  }
+
+  .ctas {
+    gap: clamp(8px, 1.2vw, 14px);
+    margin-top: clamp(14px, 2vw, 26px);
+
+    a {
+      height: clamp(38px, 4.6vw, 52px);
+      gap: clamp(10px, 1.6vw, 22px);
+      padding: 0 clamp(10px, 1.5vw, 16px) 0 clamp(14px, 2vw, 20px);
+      font-size: clamp(14px, 1.6vw, 18px);
+    }
+  }
+
+  .enquiry,
+  .finder {
+    padding: clamp(14px, 1.9vw, 22px);
+    row-gap: clamp(8px, 1.1vw, 12px);
+
+    h2 {
+      font-size: clamp(17px, 2vw, 23px);
+    }
+
+    > p {
+      font-size: clamp(12px, 1.3vw, 14px);
+    }
+
+    input,
+    select,
+    .f3 {
+      height: clamp(36px, 4vw, 44px);
+      padding-inline: clamp(10px, 1.4vw, 16px);
+      font-size: clamp(13px, 1.4vw, 15px);
+    }
+
+    .cc,
+    .f3 input {
+      font-size: clamp(13px, 1.4vw, 15px);
+    }
+  }
+
+  .enquiry .submit {
+    height: clamp(38px, 4.2vw, 46px);
+    font-size: clamp(14px, 1.5vw, 17px);
+  }
+
+  .finder {
+    .chips button {
+      height: clamp(28px, 3.1vw, 34px);
+      padding: 0 clamp(10px, 1.4vw, 16px);
+      font-size: clamp(12px, 1.35vw, 15px);
+    }
+
+    .spec select,
+    .explore {
+      height: clamp(36px, 4vw, 44px);
+      font-size: clamp(13px, 1.4vw, 15px);
+    }
+
+    .explore {
+      width: auto;
+      min-width: 0;
+      gap: clamp(8px, 1.2vw, 16px);
+      padding: 0 clamp(10px, 1.4vw, 16px);
+    }
+
+    .notSure {
+      font-size: clamp(12px, 1.3vw, 14px);
+    }
+  }
+}
+
+// tablet portrait: the form stays beside the copy but narrower
+@include down($bp-md) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(330px, 48%);
+    gap: 16px;
+    padding-inline: 20px;
+  }
+
+  .ctas {
+    flex-wrap: wrap;
+  }
+
+  .enquiry .f6 select,
+  .enquiry .f7 select {
+    padding-right: 30px;
+    text-overflow: ellipsis;
+  }
+
+  .badges {
+    flex-wrap: nowrap;
+
+    img {
+      height: 44px;
+    }
+
+    .naac {
+      height: 42px;
+    }
+
+    i {
+      height: 34px;
+    }
+  }
+}
+
+// phones: photo on top, copy over its lower edge, CTAs full width, then the form and the programme chips
+@media (max-width: 759.98px) {
+  .hero {
+    --img-h: min(124vw, 640px);
+  }
+
+  .bg {
+    inset: 0 0 auto;
+    height: var(--img-h);
+  }
+
+  .bg img {
+    object-position: 50% 20% !important;
+  }
+
+  .shade {
+    inset: 0 0 auto;
+    height: var(--img-h);
+    background: linear-gradient(180deg, rgb(10 13 18 / 45%) 0%, rgb(10 13 18 / 0%) 24%, rgb(10 13 18 / 0%) 46%, rgb(10 13 18 / 88%) 82%, #0a0d12 100%);
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    min-height: 0;
+    padding: calc(var(--img-h) - 268px) var(--gut) 22px;
+  }
+
+  .badges {
+    gap: 6px;
+
+    img {
+      height: 38px;
+    }
+
+    .naac {
+      height: 36px;
+    }
+
+    i {
+      height: 28px;
+    }
+  }
+
+  .copy h1 {
+    margin-top: 10px;
+    font-size: clamp(30px, 8.8vw, 40px);
+    line-height: 1.08;
+  }
+
+  .copy > p {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 1.35;
+
+    br {
+      display: none;
+    }
+  }
+
+  .ctas {
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+
+    a {
+      width: 100%;
+      height: 46px;
+      justify-content: space-between;
+      font-size: 16px;
+    }
+
+    a:first-child {
+      border: 0;
+      background: #007cc4;
+    }
+
+    a:last-child {
+      border: 1px solid rgb(255 255 255 / 55%);
+      background: #05080b;
+    }
+  }
+
+  // the finder comes back on phones, compact: chips + specialization + explore
+  .finder {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 18px 16px 20px;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    > p:not(.notSure) {
+      font-size: 14px;
+    }
+
+    .chips {
+      flex-wrap: nowrap;
+      gap: 8px;
+      margin-inline: -16px;
+      padding-inline: 16px;
+      overflow-x: auto;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      button {
+        flex: none;
+        height: 38px;
+        padding: 0 18px;
+        font-size: 15px;
+      }
+    }
+
+    .explore {
+      width: 100%;
+    }
+  }
+
+  .enquiry {
+    grid-template-columns: 1fr 1fr;
+
+    .f1,
+    .f2 {
+      grid-column: 1 / -1;
+    }
+
+    .f3 {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .f4 {
+    grid-column: 1 / -1;
+  }
+
+  .f6,
+  .f7 {
+    grid-column: auto;
+  }
+}
+
 // ---------- desktop: exact geometry of the 1920 artboard (u() = 1px at 1920)
 @include up($bp-lg) {
   .hero {

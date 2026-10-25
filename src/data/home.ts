@@ -1,7 +1,11 @@
 // Homepage copy. Text follows design/Index.pdf (v3); FAQ answers and programme facts follow dsuonline.com.
 // Shapes are provisional and map 1:1 to future Strapi components.
 
-export const heroSlides = ['/images/hero/slide-1.webp', '/images/hero/slide-2.webp'] as const;
+// Each slide carries its own desktop/tablet and phone artwork (CMS: one image field per breakpoint).
+export const heroSlides = [
+  { desktop: '/images/hero/slide-1.webp', mobile: '/images/hero/mobile-1.webp' },
+  { desktop: '/images/hero/slide-2.webp', mobile: '/images/hero/mobile-2.webp' },
+] as const;
 
 export const tickerItems: { text: string; link?: string }[] = [
   { text: 'Net Zero Conclave On 29/12/2025' },

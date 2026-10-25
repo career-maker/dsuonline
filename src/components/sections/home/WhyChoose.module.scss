@@ -153,8 +153,24 @@
   }
 }
 
+.onLight,
 .onBlue {
-  display: none;
+  grid-area: 1 / 1; // stacked, cross-faded with the card colour
+  transition: opacity 0.35s ease;
+}
+
+.onBlue {
+  opacity: 0;
+}
+
+.cert:hover {
+  .onLight {
+    opacity: 0;
+  }
+
+  .onBlue {
+    opacity: 1;
+  }
 }
 
 // ---------- desktop: exact geometry of the 1920 artboard
@@ -297,14 +313,4 @@
     --g: #{u(12.3)};
   }
 
-  // the NAAC logo swaps to its light version whenever a card is hovered (blue state)
-  .cert:hover {
-    .onLight {
-      display: none;
-    }
-
-    .onBlue {
-      display: block;
-    }
-  }
 }

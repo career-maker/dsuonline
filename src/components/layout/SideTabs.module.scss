@@ -136,8 +136,8 @@ $w: clamp(40px, #{u(54)}, 54px);
   }
 }
 
-// ---------- phones: full-width action bar pinned to the bottom edge
-@include down($bp-md) {
+// ---------- phones + tablets: full-width action bar pinned to the bottom edge
+@include down($bp-lg) {
   .tabs {
     right: 0;
     bottom: 0;
