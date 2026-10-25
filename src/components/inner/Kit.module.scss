@@ -1294,3 +1294,59 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     font-size: fs(20, 17px);
   }
 }
+
+// ---------- programme "Why ..." section: copy + benefits left, photo right (no empty right column)
+.whyProg {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  gap: clamp(24px, #{u(64)}, 64px);
+  align-items: stretch;
+
+  @include down($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.whyText {
+  display: grid;
+  gap: clamp(16px, #{u(26)}, 26px);
+  align-content: start;
+
+  .head {
+    margin-bottom: 0;
+  }
+
+  .prose {
+    max-width: none;
+  }
+
+  .checks {
+    gap: 12px clamp(16px, #{u(40)}, 40px);
+    padding: clamp(16px, #{u(26)}, 26px);
+    border-radius: 14px;
+    background: $bg-card-sky;
+  }
+}
+
+.whyPhoto {
+  position: relative;
+  min-height: clamp(260px, 36vw, 420px);
+  overflow: hidden;
+  border-radius: 14px;
+  background: $bg-sky;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
+  }
+
+  @include down($bp-md) {
+    order: -1;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+}

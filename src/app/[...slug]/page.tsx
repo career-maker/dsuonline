@@ -60,7 +60,7 @@ function resolve(segments: string[]): Resolved | null {
       withFacts: true,
     };
   }
-  return { kind: 'page', data, crumbs: [{ label: 'Home', href: '/' }, { label: data.title.split(/\s[|:–-]\s/)[0] || seg[0].replace(/-/g, ' ').replace(/\w/g, (m) => m.toUpperCase()) }], withFacts: false };
+  return { kind: 'page', data, crumbs: [{ label: 'Home', href: '/' }, { label: data.title.split(/\s[|:–-]\s/)[0] || seg[0].replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase()) }], withFacts: false };
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {

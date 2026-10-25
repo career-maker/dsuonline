@@ -748,6 +748,30 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       continue;
     }
 
+    // --- programme pages: "Why DSU Online <X>?" = text + benefits left, programme photo right
+    if (programLinks && /^why\b/i.test(title) && !sec.subs.length) {
+      const code = slug.replace(/^online-/, '');
+      const dims: Record<string, [number, number]> = { mba: [1794, 592], mca: [2776, 1333], bba: [1771, 585], bca: [2986, 1333], bcom: [2924, 1333] };
+      const [pw, ph] = dims[code] ?? [1771, 585];
+      const paras = sec.blocks.filter(isP).filter((b) => b.x.length > 90).map((b) => b.x);
+      const benefits = sec.blocks.filter(isP).filter((b) => b.x.length <= 90).map((b) => b.x);
+      nodes.push(
+        <Sec key={key} tone={nextTone()}>
+          <div className={s.whyProg}>
+            <div className={s.whyText}>
+              <Head title={title} />
+              <Prose paras={paras} />
+              <Checklist items={benefits} cols={2} />
+            </div>
+            <div className={s.whyPhoto}>
+              <Pic img={{ src: `/images/programs/${code}.webp`, alt: `Learner pursuing ${title.replace(/^why\s+|\?$/gi, '')}`, w: pw, h: ph }} sizes="(max-width: 900px) 100vw, 480px" className={s.cover} />
+            </div>
+          </div>
+        </Sec>,
+      );
+      continue;
+    }
+
     // --- default
     const segs0 = segments(sec.blocks);
     const oneMedia = segs0.filter((x) => x.k === 'media').length === 1 && segs0.some((x) => x.k !== 'media') && !segs0.some((x) => x.k === 'pairs' || x.k === 'figs' || x.k === 'table' || x.k === 'logos' || (x.k === 'checks' && x.items.length > 6));
