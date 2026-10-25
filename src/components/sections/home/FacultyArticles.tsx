@@ -120,12 +120,11 @@ export function FacultyArticles() {
                     <span>{a.author.role}</span>
                     <p>
                       <Link href="/academics-at-dsu">View Profile &gt;</Link>
+                      <a href="https://www.linkedin.com/company/dsuonline" target="_blank" rel="noopener noreferrer">
+                        LinkedIn <Icon name="linkedin" />
+                      </a>
                     </p>
                   </div>
-                  <a className={s.in} href="https://www.linkedin.com/company/dsuonline" target="_blank" rel="noopener noreferrer" aria-label={`${a.author.name} on LinkedIn`}>
-                    <Icon name="linkedin" />
-                    <span>LinkedIn</span>
-                  </a>
                 </div>
               </div>
             </li>
