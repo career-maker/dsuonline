@@ -445,3 +445,16 @@
     background: linear-gradient(180deg, rgb(0 0 0 / 0%) 44%, rgb(0 0 0 / 95%) 100%);
   }
 }
+
+// ticker links stay clickable while the track scrolls (hovering pauses it)
+.tickerLink {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+  @include focus-ring;
+
+  &:hover {
+    color: $blue;
+  }
+}

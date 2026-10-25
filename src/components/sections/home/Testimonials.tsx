@@ -33,7 +33,13 @@ export function Testimonials() {
                 {t.link && (
                   <>
                     {' '}
-                    <b>{t.link}</b>
+                    {t.href ? (
+                      <Link href={t.href} className={s.tickerLink} tabIndex={i >= tickerItems.length ? -1 : undefined}>
+                        {t.link}
+                      </Link>
+                    ) : (
+                      <b>{t.link}</b>
+                    )}
                   </>
                 )}
               </li>

@@ -7,10 +7,10 @@ export const heroSlides = [
   { desktop: '/images/hero/slide-2.webp', mobile: '/images/hero/mobile-2.webp' },
 ] as const;
 
-export const tickerItems: { text: string; link?: string }[] = [
+export const tickerItems: { text: string; link?: string; href?: string }[] = [
   { text: 'Net Zero Conclave On 29/12/2025' },
   { text: 'Academic Calendar For 2025-26 Even Semester (SOE)' },
-  { text: 'Academic Calendar For 2025-26', link: 'CLICK HERE' },
+  { text: 'Academic Calendar For 2025-26', link: 'CLICK HERE', href: '/mandatory-disclosures#academic-calendar' },
   { text: 'DSU AI Conclave On 29/12/2025' },
   { text: 'AI Summit 2026 March 25 2026 2PM' },
 ];

@@ -505,6 +505,10 @@
       margin-left: u(58);
     }
 
+    > ul > li:nth-child(7) {
+      margin-left: u(55.5);
+    }
+
     > ul > li:nth-child(6) {
       margin-left: u(55.5);
     }
@@ -582,5 +586,57 @@
 @include up($bp-lg) {
   .hasMenu:hover .navBtn img {
     transform: rotate(180deg);
+  }
+}
+
+// "More" menu: plain text rows (no programme badge column) and two actions at the foot
+.moreMenu {
+  @include up($bp-lg) {
+    width: px(320);
+  }
+
+  a {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .moreCtas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: px(8);
+    margin-top: px(6);
+    padding-top: px(10);
+    border-top: 1px solid rgb(0 0 0 / 8%);
+
+    a,
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: px(44);
+      padding: 0 px(10);
+      border: 0;
+      border-radius: px(3);
+      font-size: px(16);
+      font-weight: 500;
+      cursor: pointer;
+      transition: filter 0.2s;
+    }
+
+    a {
+      background: #007cc4;
+      color: #fff;
+    }
+
+    button {
+      background: #0b0e0d;
+      color: #fff;
+    }
+
+    a:hover,
+    button:hover {
+      filter: brightness(1.15);
+      background: inherit;
+      color: #fff;
+    }
   }
 }

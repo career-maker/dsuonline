@@ -29,6 +29,19 @@ export const mainNav: NavLink[] = [
   { label: 'Contact', href: '/contact-us' },
 ];
 
+/** Remaining pages from the requirements sheet's main menu, shown under "More" in the header. */
+export const moreNav: NavLink[] = [
+  { label: 'Academics', href: '/academics-at-dsu' },
+  { label: 'Why DSU Online', href: '/why-dsu-online' },
+  { label: 'Student Testimonials', href: '/student-testimonials' },
+  { label: 'Placements', href: '/placements' },
+  { label: 'Student Support', href: '/student-support' },
+  { label: 'Mandatory Disclosures', href: '/mandatory-disclosures' },
+  { label: 'Blog', href: '/resources/blogs' },
+  { label: 'Facts', href: '/#about' },
+  { label: 'FAQ', href: '/#dsu-faq' },
+];
+
 export const footerColumns: { title: string; links: NavLink[] }[] = [
   {
     title: 'Quick Links',

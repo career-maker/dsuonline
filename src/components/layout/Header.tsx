@@ -4,7 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { programs, specializationHref } from '@/data/programs';
-import { mainNav, site } from '@/data/site';
+import { mainNav, moreNav, site } from '@/data/site';
+import { useEnquiry } from './EnquiryProvider';
 import { CloseIcon, MenuIcon } from '@/components/ui/icons';
 import s from './Header.module.scss';
 
@@ -13,6 +14,10 @@ type Hit = { label: string; href: string };
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [progOpen, setProgOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const moreRef = useRef<HTMLLIElement>(null);
+  const moreId = useId();
+  const { open: openEnquiry } = useEnquiry();
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState('');
   const progRef = useRef<HTMLLIElement>(null);
@@ -22,9 +27,9 @@ export function Header() {
   const [stuck, setStuck] = useState(false);
   const busy = useRef(false); // menu / dropdown / search open: never hide
   useEffect(() => {
-    busy.current = menuOpen || progOpen || searchOpen;
+    busy.current = menuOpen || progOpen || moreOpen || searchOpen;
     if (busy.current) setHidden(false);
-  }, [menuOpen, progOpen, searchOpen]);
+  }, [menuOpen, progOpen, moreOpen, searchOpen]);
 
   // sticky header: hides while scrolling down, returns on any scroll up
   useEffect(() => {
@@ -69,11 +74,13 @@ export function Header() {
   useEffect(() => {
     const onDoc = (e: MouseEvent) => {
       if (progRef.current && !progRef.current.contains(e.target as Node)) setProgOpen(false);
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) setMoreOpen(false);
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) setSearchOpen(false);
     };
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setProgOpen(false);
+        setMoreOpen(false);
         setSearchOpen(false);
         setMenuOpen(false);
       }
@@ -89,6 +96,7 @@ export function Header() {
   const closeAll = () => {
     setMenuOpen(false);
     setProgOpen(false);
+    setMoreOpen(false);
     setSearchOpen(false);
   };
 
@@ -142,6 +150,39 @@ export function Header() {
                 </Link>
               </li>
             ))}
+            <li ref={moreRef} className={s.hasMenu}>
+              <button type="button" className={s.navBtn} aria-expanded={moreOpen} aria-controls={moreId} onClick={() => setMoreOpen((v) => !v)}>
+                More <Image className={`${s.ico} ${moreOpen ? s.flip : ''}`} src="/icons/hdr-chev.png" alt="" width={14} height={11} />
+              </button>
+              <ul id={moreId} className={`${s.dropdown} ${s.moreMenu} ${moreOpen ? s.dropdownOpen : ''}`}>
+                {moreNav.map((n) => (
+                  <li key={n.href}>
+                    <Link href={n.href} onClick={closeAll}>
+                      <span className={s.txt}>
+                        <b>{n.label}</b>
+                      </span>
+                      <span className={s.arr} aria-hidden="true">
+                        →
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+                <li className={s.moreCtas}>
+                  <a href={site.apply} target="_blank" rel="noopener noreferrer" onClick={closeAll}>
+                    Apply Now
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      closeAll();
+                      openEnquiry();
+                    }}
+                  >
+                    Enquire Now
+                  </button>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
 
