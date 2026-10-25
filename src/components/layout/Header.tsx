@@ -15,6 +15,7 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [progOpen, setProgOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
+  const [held, setHeld] = useState(false); // after a link click the hover/focus dropdowns stay shut until the pointer leaves
   const moreRef = useRef<HTMLLIElement>(null);
   const moreId = useId();
   const { open: openEnquiry } = useEnquiry();
@@ -98,6 +99,8 @@ export function Header() {
     setProgOpen(false);
     setMoreOpen(false);
     setSearchOpen(false);
+    setHeld(true);
+    (document.activeElement as HTMLElement | null)?.blur?.();
   };
 
   return (
@@ -107,7 +110,7 @@ export function Header() {
           <Image src="/images/brand/logo-header.png" alt="Dayananda Sagar University Online" width={385} height={75} priority />
         </Link>
 
-        <nav className={`${s.nav} ${menuOpen ? s.navOpen : ''}`} aria-label="Primary">
+        <nav className={`${s.nav} ${menuOpen ? s.navOpen : ''} ${held ? s.held : ''}`} aria-label="Primary" onMouseLeave={() => setHeld(false)}>
           <ul>
             <li>
               <Link href="/" className={s.homeLink} aria-label="Home" onClick={closeAll}>

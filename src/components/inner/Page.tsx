@@ -348,13 +348,13 @@ function ReferPage({ blocks, crumbs }: { blocks: Block[]; crumbs: Crumb[] }) {
   void prog;
   return (
     <>
-      <InnerHero banner={3} crumbs={crumbs} eyebrow={batch} title="Refer & Earn Program" subtitle="Refer a friend to DSU Online and be rewarded once their admission cycle is complete." extra={[]} />
+      <InnerHero banner={3} crumbs={crumbs} eyebrow={batch} title="Refer & Earn Program" extra={[]} />
       {logos.length > 0 && (
         <Sec tone="white" center>
           <LogoWall imgs={logos} />
         </Sec>
       )}
-      <Sec tone="grey" center eyebrow="Programmes offered" title="Refer a friend to any of our programmes">
+      <Sec tone="grey" center title="Programs Offered">
         <ul className={`${s.cards} ${s.g3} ${s.tint}`} style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))' }}>
           {names.map((n) => (
             <li key={n} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 12 }}>
@@ -367,7 +367,7 @@ function ReferPage({ blocks, crumbs }: { blocks: Block[]; crumbs: Crumb[] }) {
           ))}
         </ul>
       </Sec>
-      <Sec tone="white" eyebrow="Please note" title="Terms & Conditions">
+      <Sec tone="white" title="Terms & Conditions">
         <ol className={s.steps}>
           {tcs.map((t, i) => (
             <li key={t}>
@@ -443,7 +443,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       nodes.push(<WhyChoose key={key} title={title} copy={copy} />);
       if (items.length) {
         nodes.push(
-          <Sec key={`${key}-list`} tone="white" eyebrow="Benefits" title="What you get with DSU Online">
+          <Sec key={`${key}-list`} tone="white">
             <Checklist items={items} cols={2} />
           </Sec>,
         );
@@ -465,7 +465,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         const img = trailing[0];
         const logos = trailing.slice(1).map(imgOf);
         nodes.push(
-          <Sec key={key} tone={nextTone()} eyebrow="Learning experience" title="A Learning Experience That’s a Class Apart">
+          <Sec key={key} tone={nextTone()} title="A Learning Experience That’s a Class Apart">
             <Split media={img ? <Pic img={imgOf(img)} /> : undefined} top>
               <FaqList items={run.map((r) => ({ q: r.title, a: [(r.blocks[0] as P).x] }))} />
             </Split>
@@ -473,7 +473,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         );
         if (logos.length) {
           nodes.push(
-            <Sec key={`${key}-logos`} tone="white" center title="Awards & Recognitions">
+            <Sec key={`${key}-logos`} tone="white" center>
               <LogoWall imgs={logos} />
             </Sec>,
           );
@@ -503,7 +503,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const li = addr.findIndex((x) => /^location$/i.test(x));
       const campus = addr.findIndex((x) => /main campus/i.test(x));
       nodes.push(
-        <Sec key={key} tone={nextTone()} eyebrow="Contact" title={title} lead={lead}>
+        <Sec key={key} tone={nextTone()} title={title} lead={lead}>
           <div className={s.officeGrid}>
             {sec.subs.map((x) => (
               <OfficeCard key={x.title} title={x.title}>
@@ -538,7 +538,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if ((/frequently|faq/i.test(title) || faq.length >= 3) && (faq.length || parseFaqByQuestionMarks(all).length >= 2)) {
       const items = faq.length >= 2 ? faq : parseFaqByQuestionMarks(all);
       nodes.push(
-        <Sec key={key} tone="sky" center eyebrow="Got questions?" title={title.replace(/^Frequently Asked Questions$/i, 'Frequently Asked Questions')}>
+        <Sec key={key} tone="sky" center title={title.replace(/^Frequently Asked Questions$/i, 'Frequently Asked Questions')}>
           <FaqList items={items} />
         </Sec>,
       );
@@ -550,7 +550,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (quotes.length >= 2 && /stor|testimonial|experience|impact|say|review|voice/i.test(title)) {
       const lead = sec.blocks.filter(isP).find((b) => b.x.length > 30 && !/^[“"]/.test(b.x) && !quotes.some((q) => q.quote === b.x))?.x;
       nodes.push(
-        <Sec key={key} tone="sky" center title={title} lead={lead} eyebrow="Testimonials">
+        <Sec key={key} tone="sky" center title={title} lead={lead}>
           {quotes.filter((q) => q.img).length >= quotes.length / 2 ? <StoryCards items={quotes} initial={9} /> : <QuoteCards items={quotes} initial={6} />}
         </Sec>,
       );
@@ -560,7 +560,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     // --- programme electives grid
     if (programLinks && /elective/i.test(title) && sec.subs.length > 0) {
       nodes.push(
-        <Sec key={key} tone={nextTone()} eyebrow="Specialisations" title={title}>
+        <Sec key={key} tone={nextTone()} title={title}>
           <LinkGrid items={programLinks.map((l) => ({ name: l.name, href: l.href, hint: 'Know more' }))} />
         </Sec>,
       );
@@ -572,7 +572,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const tables = all.filter((b): b is Extract<Block, { t: 'table' }> => b.t === 'table');
       const note = all.filter(isP).map((b) => b.x).find((x) => /^note/i.test(x));
       nodes.push(
-        <Sec key={key} tone={nextTone()} eyebrow="Investment" title={title}>
+        <Sec key={key} tone={nextTone()} title={title}>
           <div className={s.tables}>
             {tables.map((t, i) => (
               <DataTable key={i} rows={t.rows} caption={title} />
@@ -587,7 +587,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     // --- curriculum tabs
     if (/curriculum/i.test(title) && all.some((b) => b.t === 'table')) {
       nodes.push(
-        <Sec key={key} tone={nextTone()} eyebrow="What you will study" title={title}>
+        <Sec key={key} tone={nextTone()} title={title}>
           {curriculum(sec)}
         </Sec>,
       );
@@ -597,7 +597,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     // --- faculty
     if (/faculty/i.test(title) && sec.subs.some((x) => x.blocks.some((b) => b.t === 'img'))) {
       nodes.push(
-        <Sec key={key} tone={nextTone()} eyebrow="Learn from the best" title={title}>
+        <Sec key={key} tone={nextTone()} title={title}>
           {faculty(sec)}
         </Sec>,
       );
@@ -607,7 +607,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     // --- career options
     if (/career options/i.test(title)) {
       nodes.push(
-        <Sec key={key} tone={nextTone()} eyebrow="Where it leads" title={title}>
+        <Sec key={key} tone={nextTone()} title={title}>
           {careers(sec)}
         </Sec>,
       );
@@ -630,7 +630,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const rest = sec.subs.filter((x) => !stepSubs.includes(x));
       const steps = stepSubs.map((x) => ({ title: x.title.replace(/^step\s*\d+\s*[:.-]?\s*/i, ''), text: x.blocks.filter(isP).map((b) => b.x).join(' ') }));
       nodes.push(
-        <Sec key={key} tone={nextTone()} eyebrow="Apply" title={title}>
+        <Sec key={key} tone={nextTone()} title={title}>
           <Steps items={steps} />
         </Sec>,
       );
@@ -641,7 +641,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
             <Split media={rimg ? <Pic img={imgOf(rimg)} /> : undefined}>
               <h3 style={{ fontSize: 'max(22px, calc(var(--u) * 36))', fontWeight: 700, lineHeight: 1.2, color: '#212121' }}>{r.title}</h3>
               <Prose paras={r.blocks.filter(isP).map((b) => b.x)} />
-              <CtaLink href="/online-mba">Explore programmes</CtaLink>
+              <CtaLink href="/online-mba">Programs</CtaLink>
             </Split>
           </Sec>,
         );
@@ -658,7 +658,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       });
       const img = sec.blocks.find((b) => b.t === 'img');
       nodes.push(
-        <Sec key={key} tone={nextTone()} eyebrow="Apply" title={title} lead={sec.blocks.filter(isP)[0]?.x}>
+        <Sec key={key} tone={nextTone()} title={title} lead={sec.blocks.filter(isP)[0]?.x}>
           <Steps items={steps} />
           {img && (
             <div className={s.splitMedia} style={{ marginTop: 28, maxWidth: 480 }}>
@@ -673,7 +673,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     // --- leaders (about)
     if (/message from the leadership/i.test(title)) {
       nodes.push(
-        <Sec key={key} tone={nextTone()} eyebrow="Leadership" title={title}>
+        <Sec key={key} tone={nextTone()} title={title}>
           {leaders(sec)}
         </Sec>,
       );
@@ -684,7 +684,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     const imgs = all.filter((b) => b.t === 'img');
     if ((/certificate|added value/i.test(title) || (sec.blocks.length > 0 && sec.blocks.every((b) => b.t === 'img'))) && imgs.length >= 2) {
       nodes.push(
-        <Sec key={key} tone={nextTone()} center eyebrow="Your credential" title={title}>
+        <Sec key={key} tone={nextTone()} center title={title}>
           {certificates(sec.blocks)}
         </Sec>,
       );

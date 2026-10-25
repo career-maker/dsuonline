@@ -632,11 +632,28 @@
       color: #fff;
     }
 
+    // buttons keep their own colours on hover (the generic dropdown row hover would otherwise paint them sky-blue)
     a:hover,
-    button:hover {
-      filter: brightness(1.15);
-      background: inherit;
+    a:focus-visible {
+      background: #0a95e0;
       color: #fff;
+      filter: none;
     }
+
+    button:hover,
+    button:focus-visible {
+      background: #26302e;
+      color: #fff;
+      filter: none;
+    }
+  }
+}
+
+// a menu link was just clicked: keep hover/focus dropdowns closed until the pointer leaves the nav
+.held .dropdown {
+  @include up($bp-lg) {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none;
   }
 }

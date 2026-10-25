@@ -30,17 +30,20 @@ export function TitleReveal() {
           for (const c of Array.from(node.childNodes)) {
             if (c.nodeType === 3) {
               const frag = document.createDocumentFragment();
-              (c.textContent ?? '').split(/(\s+)/).forEach((part) => {
-                if (!part) return;
-                if (/^\s+$/.test(part)) return void frag.appendChild(document.createTextNode(' '));
-                const w = document.createElement('span');
-                w.className = s.w;
-                const inner = document.createElement('span');
-                inner.className = s.wi;
-                inner.style.setProperty('--i', String(i++));
-                inner.textContent = part;
-                w.appendChild(inner);
-                frag.appendChild(w);
+              (c.textContent ?? '').split(/(\s+)/).forEach((token) => {
+                if (!token) return;
+                if (/^\s+$/.test(token)) return void frag.appendChild(document.createTextNode(' '));
+                // "Engagement/Networking" must be able to wrap on narrow screens: break after slashes
+                token.split(/(?<=\/)/).forEach((part) => {
+                  const w = document.createElement('span');
+                  w.className = s.w;
+                  const inner = document.createElement('span');
+                  inner.className = s.wi;
+                  inner.style.setProperty('--i', String(i++));
+                  inner.textContent = part;
+                  w.appendChild(inner);
+                  frag.appendChild(w);
+                });
               });
               c.replaceWith(frag);
             } else if (c.nodeType === 1 && (c as HTMLElement).tagName !== 'BR') walk(c);
