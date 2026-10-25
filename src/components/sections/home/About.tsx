@@ -4,6 +4,27 @@ import { FramedImage } from '@/components/ui/FramedImage';
 import { Icon } from '@/components/ui/Icon';
 import { PlayIcon } from '@/components/ui/icons';
 import { aboutCopy, aboutFeatures, aboutStats } from '@/data/home';
+
+export const aboutPhotos = {
+  left: (
+    <FramedImage
+      src="/images/about/about-left.webp"
+      alt="Learner studying online with the DSU campus behind"
+      frame={[95, 2100, 562, 541]}
+      box={[-104.1, 2100, 961.3, 541]}
+      sizes="(max-width: 900px) 100vw, 562px"
+    />
+  ),
+  right: (
+    <FramedImage
+      src="/images/about/about-right.webp"
+      alt="Dayananda Sagar University campus"
+      frame={[1424, 2098, 400, 538]}
+      box={[1333, 2098.1, 732.8, 537.9]}
+      sizes="(max-width: 900px) 100vw, 400px"
+    />
+  ),
+};
 import type { ReactNode } from 'react';
 import s from './About.module.scss';
 

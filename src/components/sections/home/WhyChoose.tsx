@@ -3,17 +3,16 @@ import { Icon } from '@/components/ui/Icon';
 import { certifications, whyItems } from '@/data/home';
 import s from './WhyChoose.module.scss';
 
-export function WhyChoose() {
+const DEFAULT_COPY =
+  'DSU Online empowers learners with flexible, industry-aligned education designed for career growth and academic excellence. Through expert faculty, a future-focused curriculum, and a seamless digital learning experience, students can earn a recognized degree while balancing their personal and professional commitments.';
+
+export function WhyChoose({ title = 'Why Choose DSU Online ?', copy = DEFAULT_COPY }: { title?: string; copy?: string }) {
   return (
     <section className={s.why}>
       <div className={s.inner}>
         <div className={s.left}>
-          <h2>Why Choose DSU Online ?</h2>
-          <p className={s.copy}>
-            DSU Online empowers learners with flexible, industry-aligned education designed for career growth and academic excellence.
-            Through expert faculty, a future-focused curriculum, and a seamless digital learning experience, students can earn a recognized
-            degree while balancing their personal and professional commitments.
-          </p>
+          <h2>{title}</h2>
+          <p className={s.copy}>{copy}</p>
 
           <ul className={s.features}>
             {whyItems.map((w) => (

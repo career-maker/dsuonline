@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { localHref, type Block } from '@/lib/content';
-import { AboutBand } from '@/components/sections/home/About';
+import { AboutBand, aboutPhotos } from '@/components/sections/home/About';
+import { WhyChoose } from '@/components/sections/home/WhyChoose';
 import { cleanBlocks } from './clean';
 import { CtaBand, InnerHero, type Crumb } from './InnerPage';
 import { FaqList } from './Interactive';
@@ -416,16 +417,14 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (slug === 'about' && /how dsu online ensures quality education\?/i.test(title)) {
       const digital = secs.find((x) => /digital format/i.test(x.title));
       const copy = [...sec.blocks.filter(isP), ...(digital ? digital.blocks.filter(isP) : [])].map((b) => b.x);
-      const lImg = sec.blocks.find((b) => b.t === 'img');
-      const rImg = digital?.blocks.find((b) => b.t === 'img');
       nodes.push(
         <AboutBand
           key={key}
           id="about-dsu"
           title={<>How DSU Online Ensures Quality Education?</>}
           copy={copy}
-          left={lImg ? <Pic img={imgOf(lImg)} sizes="(max-width: 900px) 100vw, 562px" className={s.cover} /> : null}
-          right={rImg ? <Pic img={imgOf(rImg)} sizes="(max-width: 900px) 100vw, 400px" className={s.cover} /> : null}
+          left={aboutPhotos.left}
+          right={aboutPhotos.right}
           href="/admission"
           cta="Apply Now"
           play={false}
@@ -434,6 +433,21 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       continue;
     }
     if (slug === 'about' && /digital format/i.test(title)) continue;
+
+    // --- /about: 'Why choose' becomes the home Why Choose block (icons + certifications) plus the full benefit list
+    if (slug === 'about' && /^why choose/i.test(title)) {
+      const items = sec.blocks.filter(isP).map((b) => b.x);
+      const copy = sec.subs.flatMap((x) => x.blocks.filter(isP)).map((b) => b.x)[0];
+      nodes.push(<WhyChoose key={key} title={title} copy={copy} />);
+      if (items.length) {
+        nodes.push(
+          <Sec key={`${key}-list`} tone="white" eyebrow="Benefits" title="What you get with DSU Online">
+            <Checklist items={items} cols={2} />
+          </Sec>,
+        );
+      }
+      continue;
+    }
 
     // --- single-paragraph sections in a row => accordion with the image beside it
     if (slug === 'why-dsu-online' && sec.blocks.length === 1 && isP(sec.blocks[0]) && !sec.subs.length) {
