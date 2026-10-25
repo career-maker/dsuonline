@@ -1348,3 +1348,39 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     aspect-ratio: 16 / 9;
   }
 }
+
+// phones: two compact photo cards per row instead of one screen-high card
+@include down($bp-sm) {
+  .stories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .storyPhoto {
+    aspect-ratio: 3 / 4;
+    border-radius: 8px;
+  }
+
+  .story > p {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .storyWho {
+    inset: auto 10px 10px;
+
+    b {
+      font-size: 14px;
+    }
+
+    strong,
+    span {
+      font-size: 12px;
+    }
+  }
+
+  .storyInitial {
+    font-size: 48px;
+  }
+}
