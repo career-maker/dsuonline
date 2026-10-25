@@ -670,10 +670,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 .tabList {
   display: flex;
+  flex-wrap: wrap; // wraps onto several rows instead of one long horizontal scroll
   gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-  scrollbar-width: thin;
 
   button {
     flex: none;
