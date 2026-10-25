@@ -1198,3 +1198,99 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     text-decoration: underline;
   }
 }
+
+// ---------- learner stories (home testimonials look)
+.stories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: clamp(12px, #{u(20)}, 20px);
+  align-items: start;
+
+  > li {
+    min-width: 0;
+  }
+}
+
+.story {
+  @include zoom('.storyPhoto img');
+
+  > p {
+    margin-top: 16px;
+    font-size: fs(18, 16px);
+    line-height: 1.61;
+    color: $body;
+  }
+}
+
+.storyPhoto {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 4.6;
+  border-radius: px(10);
+  background: #222;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 18%;
+  }
+}
+
+.storyInitial {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background: linear-gradient(135deg, $blue, $blue-dark);
+  color: #fff;
+  font-size: 72px;
+  font-weight: 700;
+}
+
+.storyShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(0 0 0 / 0%) 45%, rgb(0 0 0 / 82%) 100%);
+}
+
+.storyWho {
+  position: absolute;
+  inset: auto px(18) px(16);
+  color: #fff;
+  letter-spacing: -0.0175em;
+
+  b {
+    display: block;
+    font-size: fs(20, 16px);
+    line-height: 1.17;
+    font-weight: 500;
+  }
+
+  strong {
+    display: block;
+    margin-top: 3px;
+    font-size: fs(16, 14px);
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  span {
+    display: block;
+    font-size: fs(16, 14px);
+    line-height: 1.25;
+    font-weight: 300;
+  }
+}
+
+// centred intro sections: a real lead paragraph, centred on the page
+.centerAll .prose {
+  justify-items: center;
+  max-width: none;
+
+  p {
+    max-width: 62rem;
+    margin-inline: auto;
+    text-align: center;
+    font-size: fs(20, 17px);
+  }
+}

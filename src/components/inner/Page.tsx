@@ -21,6 +21,7 @@ import {
   Pic,
   Prose,
   QuoteCards,
+  StoryCards,
   Sec,
   Split,
   Steps,
@@ -550,7 +551,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const lead = sec.blocks.filter(isP).find((b) => b.x.length > 30 && !/^[“"]/.test(b.x) && !quotes.some((q) => q.quote === b.x))?.x;
       nodes.push(
         <Sec key={key} tone="sky" center title={title} lead={lead} eyebrow="Testimonials">
-          <QuoteCards items={quotes} initial={slug === 'student-testimonials' ? 9 : 6} />
+          {quotes.filter((q) => q.img).length >= quotes.length / 2 ? <StoryCards items={quotes} initial={9} /> : <QuoteCards items={quotes} initial={6} />}
         </Sec>,
       );
       continue;
@@ -763,7 +764,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       <InnerHero banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
       {(longSub || (introBlocks.length > 0 && !withFacts)) && (
         <Sec tone="white" narrow={!heroImgs.length} center={!heroImgs.length}>
-          <Body blocks={[...(longSub ? ([{ t: 'p', x: subtitle } as Block]) : []), ...introBlocks, ...heroImgs.slice(0, 1)]} />
+          <Body blocks={[...(longSub ? ([{ t: 'p', x: slug === 'student-testimonials' ? subtitle.replace(/^Testimonials\s+/, '') : subtitle } as Block]) : []), ...introBlocks, ...heroImgs.slice(0, 1)]} />
         </Sec>
       )}
       {nodes}

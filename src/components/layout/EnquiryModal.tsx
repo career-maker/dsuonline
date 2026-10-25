@@ -2,9 +2,11 @@
 
 import { useCallback, useEffect, useId, useRef, useState, type ChangeEvent, type FormEvent } from 'react';
 import { CloseIcon } from '@/components/ui/icons';
+import { defaultCountry, type Country } from '@/data/countries';
 import { programs } from '@/data/programs';
+import { CountryPicker } from './CountryPicker';
 import { site } from '@/data/site';
-import { submitEnquiry, validate, type EnquiryErrors, type EnquiryValues } from '@/lib/enquiry';
+import { normalisePhone, submitEnquiry, validate, type EnquiryErrors, type EnquiryValues } from '@/lib/enquiry';
 import s from './EnquiryModal.module.scss';
 
 type Phase = 'idle' | 'submitting' | 'sent' | 'unconfigured' | 'error';
@@ -20,6 +22,7 @@ export function EnquiryModal({ onClose }: { onClose: () => void }) {
   const [errors, setErrors] = useState<EnquiryErrors>({});
   const [phase, setPhase] = useState<Phase>('idle');
   const [serverError, setServerError] = useState('');
+  const [country, setCountry] = useState<Country>(defaultCountry);
 
   const close = useCallback(() => {
     abortRef.current?.abort();
@@ -69,7 +72,7 @@ export function EnquiryModal({ onClose }: { onClose: () => void }) {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (phase === 'submitting') return; // double-submit guard
-    const found = validate(values);
+    const found = validate(values, country.iso);
     setErrors(found);
     const firstBad = (Object.keys(found) as (keyof EnquiryValues)[])[0];
     if (firstBad) {
@@ -79,7 +82,7 @@ export function EnquiryModal({ onClose }: { onClose: () => void }) {
     setPhase('submitting');
     setServerError('');
     abortRef.current = new AbortController();
-    const res = await submitEnquiry(values, abortRef.current.signal);
+    const res = await submitEnquiry({ ...values, phone: `${country.dial}${normalisePhone(values.phone, country.iso)}` }, abortRef.current.signal);
     if (res.status === 'error') {
       setServerError(res.message);
       setPhase('error');
@@ -127,7 +130,7 @@ export function EnquiryModal({ onClose }: { onClose: () => void }) {
               {phase === 'sent' ? (
                 <>
                   <h3>Thank you, {values.name.trim().split(/\s+/)[0]}.</h3>
-                  <p>Your enquiry has been submitted. Our admissions team will contact you on {values.phone.trim()}.</p>
+                  <p>Your enquiry has been submitted. Our admissions team will contact you on {country.dial} {values.phone.trim()}.</p>
                 </>
               ) : (
                 <>
@@ -161,8 +164,8 @@ export function EnquiryModal({ onClose }: { onClose: () => void }) {
               <div className={s.field}>
                 <label htmlFor={`${uid}-phone`}>Mobile number *</label>
                 <div className={s.phone}>
-                  <span aria-hidden="true">+91</span>
-                  <input id={`${uid}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel-national" placeholder="98765 43210" value={values.phone} onChange={onChange} maxLength={16} {...invalid('phone')} />
+                  <CountryPicker value={country} onChange={setCountry} />
+                  <input id={`${uid}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel-national" placeholder={country.iso === 'in' ? '98765 43210' : 'Phone number'} value={values.phone} onChange={onChange} maxLength={16} {...invalid('phone')} />
                 </div>
                 {msg('phone')}
               </div>

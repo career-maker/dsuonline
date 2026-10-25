@@ -24,7 +24,7 @@ export function Head({ title, eyebrow, lead, center }: { title?: string; eyebrow
 export function Sec({ title, eyebrow, lead, tone = 'white', center, narrow, children, id }: { title?: string; eyebrow?: string; lead?: string; tone?: Tone; center?: boolean; narrow?: boolean; children?: ReactNode; id?: string }) {
   return (
     <section className={`${s.sec} ${s[tone]}`} id={id ?? (title ? slugify(title) : undefined)}>
-      <div className={`${s.wrap} ${narrow ? s.narrow : ''}`}>
+      <div className={`${s.wrap} ${narrow ? s.narrow : ''} ${center ? s.centerAll : ''}`}>
         <Head title={title} eyebrow={eyebrow} lead={lead} center={center} />
         {children}
       </div>
@@ -260,4 +260,28 @@ export function OfficeCard({ title, children }: { title: string; children: React
       {children}
     </article>
   );
+}
+
+/** Learner stories styled like the home testimonials: photo card, gradient shade, name / course / company over the photo. */
+export function StoryCards({ items, initial = 9 }: { items: Quote[]; initial?: number }) {
+  const cards = items.map((q) => {
+    const [course, ...rest] = q.meta;
+    return (
+      <li key={q.quote} className={s.story}>
+        <div className={s.storyPhoto}>
+          {q.img ? <Pic img={q.img} sizes="(max-width: 600px) 90vw, (max-width: 1200px) 45vw, 400px" /> : <span className={s.storyInitial} aria-hidden="true">{q.name.replace(/^(Mr|Ms|Mrs|Dr)\.?\s*/i, '').charAt(0)}</span>}
+          <span className={s.storyShade} />
+          <span className={s.storyWho}>
+            <b>{q.name}</b>
+            {course && <strong>{course}</strong>}
+            {rest.map((m) => (
+              <span key={m}>{m}</span>
+            ))}
+          </span>
+        </div>
+        <p>{q.quote.replace(/^[“"‘]\s*|[”"’]\s*$/g, '')}</p>
+      </li>
+    );
+  });
+  return <Reveal count={initial} className={s.stories}>{cards}</Reveal>;
 }

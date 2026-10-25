@@ -8,10 +8,13 @@ export type SubmitResult = { status: 'sent' } | { status: 'unconfigured' } | { s
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-/** Indian mobile: 10 digits starting 6-9, optional +91 / 91 / 0 prefix, spaces and dashes ignored. */
-export const normalisePhone = (v: string) => v.replace(/[\s\-()]/g, '').replace(/^(\+?91|0)(?=\d{10}$)/, '');
+/** Digits only; for India a leading +91 / 91 / 0 typed by mistake is dropped. */
+export const normalisePhone = (v: string, iso = 'in') => {
+  const d = v.replace(/[\s\-().]/g, '');
+  return iso === 'in' ? d.replace(/^(\+?91|0)(?=\d{10}$)/, '') : d.replace(/^\+/, '').replace(/^0+/, '');
+};
 
-export function validate(v: EnquiryValues): EnquiryErrors {
+export function validate(v: EnquiryValues, iso = 'in'): EnquiryErrors {
   const e: EnquiryErrors = {};
   const name = v.name.trim();
   if (!name) e.name = 'Enter your full name.';
@@ -20,7 +23,8 @@ export function validate(v: EnquiryValues): EnquiryErrors {
   if (!v.email.trim()) e.email = 'Enter your email address.';
   else if (!EMAIL.test(v.email.trim())) e.email = 'Enter a valid email, like name@example.com.';
   if (!v.phone.trim()) e.phone = 'Enter your mobile number.';
-  else if (!/^[6-9]\d{9}$/.test(normalisePhone(v.phone))) e.phone = 'Enter a valid 10-digit Indian mobile number.';
+  else if (iso === 'in' ? !/^[6-9]\d{9}$/.test(normalisePhone(v.phone, iso)) : !/^\d{6,14}$/.test(normalisePhone(v.phone, iso)))
+    e.phone = iso === 'in' ? 'Enter a valid 10-digit Indian mobile number.' : 'Enter a valid phone number (6-14 digits).';
   if (!v.programme) e.programme = 'Choose the programme you are interested in.';
   if (v.message.length > 500) e.message = 'Keep the message under 500 characters.';
   return e;
@@ -33,7 +37,7 @@ export async function submitEnquiry(v: EnquiryValues, signal?: AbortSignal): Pro
     const res = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...v, name: v.name.trim(), email: v.email.trim(), phone: normalisePhone(v.phone), source: location.pathname }),
+      body: JSON.stringify({ ...v, name: v.name.trim(), email: v.email.trim(), phone: v.phone, source: location.pathname }),
       signal,
     });
     if (!res.ok) return { status: 'error', message: 'The enquiry service did not accept your request. Please try again in a moment.' };
