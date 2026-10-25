@@ -7,7 +7,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 // ---------- section shell
 .sec {
   letter-spacing: -0.0175em;
-  padding: clamp(44px, 6vw, 96px) 0;
+  @include section-pad(100, 100);
 }
 
 .white {
@@ -23,12 +23,11 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .wrap {
-  width: min(1240px, 100% - 2 * var(--gut));
-  margin-inline: auto;
+  @include container;
 }
 
 .narrow {
-  width: min(880px, 100% - 2 * var(--gut));
+  width: min(900px, 100% - 2 * var(--gut));
 }
 
 .head {
@@ -36,11 +35,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   margin-bottom: clamp(24px, 3.4vw, 48px);
 
   h2 {
-    font-size: clamp(26px, 3.2vw, 44px);
-    line-height: 1.12;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: $ink;
+    @include h2;
   }
 }
 
@@ -50,20 +45,13 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .eyebrow {
-  margin-bottom: 8px;
-  font-size: clamp(13px, 1.2vw, 16px);
-  line-height: 1.2;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: $gold;
+  @include eyebrow;
+  margin-bottom: clamp(6px, #{u(8)}, 8px);
 }
 
 .lead {
+  @include body-text;
   margin-top: 14px;
-  font-size: clamp(16px, 1.4vw, 19px);
-  line-height: 1.55;
-  color: $body;
 }
 
 // ---------- text + picture
@@ -112,11 +100,10 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .prose {
   display: grid;
   gap: 16px;
+  max-width: max(680px, calc(var(--u) * 1100));
 
   p {
-    font-size: clamp(16px, 1.3vw, 18px);
-    line-height: 1.7;
-    color: $body;
+    @include body-text;
   }
 }
 
@@ -130,7 +117,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     display: flex;
     gap: 12px;
     align-items: flex-start;
-    font-size: clamp(16px, 1.3vw, 18px);
+    font-size: fs(18, 16px);
     line-height: 1.45;
     font-weight: 500;
     color: $ink;
@@ -192,7 +179,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   h3 {
-    font-size: clamp(18px, 1.6vw, 23px);
+    font-size: fs(28, 20px);
     line-height: 1.25;
     font-weight: 500;
     color: $ink;
@@ -200,8 +187,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   p {
     margin-top: 10px;
-    font-size: clamp(15px, 1.15vw, 17px);
-    line-height: 1.6;
+    font-size: fs(18, 16px);
+    line-height: 1.61;
     color: $body;
   }
 }
@@ -289,7 +276,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   h3 {
-    font-size: clamp(18px, 1.5vw, 21px);
+    font-size: fs(24, 19px);
     line-height: 1.25;
     font-weight: 500;
     color: $ink;
@@ -454,21 +441,22 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .revealBtn {
-  height: 50px;
-  padding: 0 28px;
-  border: 1px solid $blue;
-  border-radius: 3px;
-  background: #fff;
-  color: $blue;
-  font-size: 17px;
+  height: px(50);
+  padding: 0 px(28);
+  border: 0;
+  border-radius: px(3);
+  background: #007cc4;
+  color: #fff;
+  font-size: px(18);
   font-weight: 500;
+  letter-spacing: 0;
   cursor: pointer;
-  transition: background-color 0.25s, color 0.25s;
+  transition: filter 0.2s, box-shadow 0.3s;
   @include focus-ring;
 
   &:hover {
-    background: $blue;
-    color: #fff;
+    filter: brightness(1.1);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 22%);
   }
 }
 
@@ -606,7 +594,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .faqQ {
-  font-size: clamp(16px, 1.4vw, 19px);
+  font-size: fs(22, 17px);
   line-height: 1.4;
   font-weight: 500;
   color: $ink;
@@ -689,28 +677,29 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   button {
     flex: none;
-    height: 44px;
-    padding: 0 20px;
-    border: 1px solid #cfdde8;
-    border-radius: 22px;
-    background: #fff;
-    color: $ink;
-    font-size: 15px;
-    font-weight: 500;
+    height: px(38);
+    padding: 0 px(20);
+    border: 1px solid rgb(255 255 255 / 25%);
+    border-radius: px(19);
+    background: rgb(0 0 0 / 82%);
+    color: #fff;
+    font-size: px(16);
+    font-weight: 400;
+    letter-spacing: 0;
     white-space: nowrap;
     cursor: pointer;
     transition: background-color 0.25s, color 0.25s, border-color 0.25s;
     @include focus-ring;
 
     &:hover {
-      border-color: $blue;
+      border-color: $yellow;
     }
   }
 
   .tabOn {
-    border-color: $blue;
-    background: $blue;
-    color: #fff;
+    border-color: $yellow;
+    background: $yellow;
+    color: #000;
   }
 }
 
@@ -1050,19 +1039,21 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   a {
     display: inline-flex;
     align-items: center;
-    height: 40px;
-    padding: 0 18px;
-    border: 1px solid $blue;
-    border-radius: 3px;
-    color: $blue;
-    font-size: 15px;
+    height: px(46);
+    padding: 0 px(20);
+    border: 1px solid #007cc4;
+    border-radius: px(3);
+    background: #fff;
+    color: $ink;
+    font-size: px(17);
     font-weight: 500;
-    transition: background-color 0.25s, color 0.25s;
+    letter-spacing: 0;
+    transition: filter 0.2s, box-shadow 0.3s;
     @include focus-ring;
 
     &:hover {
-      background: $blue;
-      color: #fff;
+      filter: brightness(1.05);
+      box-shadow: 0 8px 20px rgb(0 0 0 / 16%);
     }
   }
 }

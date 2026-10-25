@@ -185,7 +185,7 @@
   max-width: 1100px;
   margin-bottom: clamp(18px, #{u(32)}, 32px);
   @include h2;
-  font-size: fs(44, 28px);
+  font-size: fs(55, 30px);
 }
 
 .p {
@@ -579,7 +579,7 @@
   }
 
   h2 {
-    font-size: fs(44, 28px);
+    font-size: fs(55, 30px);
     line-height: 1.1;
     font-weight: 700;
     letter-spacing: -0.02em;

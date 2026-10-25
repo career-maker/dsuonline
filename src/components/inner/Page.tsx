@@ -190,7 +190,7 @@ function SubView({ sub }: { sub: Sub }) {
   if (!sub.blocks.length) return null;
   return (
     <div style={{ marginTop: 'clamp(28px, 3.4vw, 52px)' }}>
-      <h3 style={{ marginBottom: 16, fontSize: 'clamp(21px, 2vw, 28px)', fontWeight: 700, lineHeight: 1.2 }}>{sub.title}</h3>
+      <h3 style={{ marginBottom: 16, fontSize: 'max(21px, calc(var(--u) * 30))', fontWeight: 700, lineHeight: 1.2 }}>{sub.title}</h3>
       <Body blocks={sub.blocks} />
     </div>
   );
@@ -223,7 +223,7 @@ function careers(sec: Section): ReactNode {
       <CardGrid items={cards} cols={3} />
       {pairs.length > 0 && (
         <div style={{ marginTop: 'clamp(32px, 4vw, 60px)' }}>
-          <h3 style={{ marginBottom: 18, fontSize: 'clamp(22px, 2.2vw, 30px)', fontWeight: 700 }}>{ind?.title}</h3>
+          <h3 style={{ marginBottom: 18, fontSize: 'max(22px, calc(var(--u) * 36))', fontWeight: 700 }}>{ind?.title}</h3>
           <CardGrid items={pairs} cols={4} tint />
         </div>
       )}
@@ -323,7 +323,7 @@ function IconTiles({ items }: { items: { icon: Img; label: string }[] }) {
           <span className={s.iconDisc}>
             <Image src={t.icon.src} alt="" width={64} height={64} />
           </span>
-          <h3 style={{ fontSize: 'clamp(16px, 1.3vw, 19px)' }}>{t.label}</h3>
+          <h3 style={{ fontSize: 'max(16px, calc(var(--u) * 20))' }}>{t.label}</h3>
         </li>
       ))}
     </ul>
@@ -545,7 +545,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         nodes.push(
           <Sec key={`${key}-${r.title}`} tone="sky">
             <Split media={rimg ? <Pic img={imgOf(rimg)} /> : undefined}>
-              <h3 style={{ fontSize: 'clamp(24px, 2.6vw, 36px)', fontWeight: 700, lineHeight: 1.2, color: '#212121' }}>{r.title}</h3>
+              <h3 style={{ fontSize: 'max(22px, calc(var(--u) * 36))', fontWeight: 700, lineHeight: 1.2, color: '#212121' }}>{r.title}</h3>
               <Prose paras={r.blocks.filter(isP).map((b) => b.x)} />
               <CtaLink href="/online-mba">Explore programmes</CtaLink>
             </Split>
@@ -645,7 +645,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const sub = sec.subs[0];
       nodes.push(
         <Sec key={key} tone="sky" center narrow>
-          <h3 style={{ fontSize: 'clamp(22px, 2.4vw, 32px)', fontWeight: 700, lineHeight: 1.25 }}>{sub.title}</h3>
+          <h3 style={{ fontSize: 'max(22px, calc(var(--u) * 36))', fontWeight: 700, lineHeight: 1.25 }}>{sub.title}</h3>
           <div style={{ marginTop: 12 }}>
             <Body blocks={sub.blocks} />
           </div>
