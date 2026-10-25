@@ -362,7 +362,7 @@ function ReferPage({ blocks, crumbs }: { blocks: Block[]; crumbs: Crumb[] }) {
                 <b style={{ color: '#fff', fontSize: 15 }}>{n}</b>
               </span>
               <h3 style={{ flex: 1 }}>{full[n]}</h3>
-              <CtaLink href={hrefs[n]}>Know more</CtaLink>
+              <CtaLink href={hrefs[n]}>Know More</CtaLink>
             </li>
           ))}
         </ul>
@@ -561,7 +561,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (programLinks && /elective/i.test(title) && sec.subs.length > 0) {
       nodes.push(
         <Sec key={key} tone={nextTone()} title={title}>
-          <LinkGrid items={programLinks.map((l) => ({ name: l.name, href: l.href, hint: 'Know more' }))} />
+          <LinkGrid items={programLinks.map((l) => ({ name: l.name, href: l.href, hint: 'Know More' }))} />
         </Sec>,
       );
       continue;

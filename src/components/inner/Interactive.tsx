@@ -46,7 +46,7 @@ export function FaqList({ items: all, initial = 8 }: { items: Faq[]; initial?: n
       {all.length > initial && (
         <div className={s.revealRow}>
           <button type="button" className={s.revealBtn} aria-expanded={more} onClick={() => setMore((v) => !v)}>
-            {more ? 'Show fewer questions' : `Show all ${all.length} questions`}
+            {more ? 'View Less' : 'View More'}
           </button>
         </div>
       )}
@@ -104,7 +104,7 @@ export function Tabs({ groups }: { groups: { label?: string; tabs: { id: string;
 }
 
 /** Shows the first `count` children and reveals the rest on demand. */
-export function Reveal({ count, className, children, more = 'Show more', less = 'Show less' }: { count: number; className?: string; children: ReactNode[]; more?: string; less?: string }) {
+export function Reveal({ count, className, children, more = 'Show More', less = 'Show Less' }: { count: number; className?: string; children: ReactNode[]; more?: string; less?: string }) {
   const [all, setAll] = useState(false);
   const shown = all ? children : children.slice(0, count);
   return (
@@ -113,7 +113,7 @@ export function Reveal({ count, className, children, more = 'Show more', less = 
       {children.length > count && (
         <div className={s.revealRow}>
           <button type="button" className={s.revealBtn} aria-expanded={all} onClick={() => setAll((v) => !v)}>
-            {all ? less : `${more} (${children.length - count})`}
+            {all ? less : more}
           </button>
         </div>
       )}
@@ -140,7 +140,7 @@ export function LeaderGrid({ items }: { items: { name: string; role?: string; im
               ))}
             </div>
             <button type="button" className={s.leadMore} aria-expanded={on} aria-controls={`${uid}-${i}`} onClick={() => setOpen(on ? null : i)}>
-              {on ? 'Show less' : 'Read message'}
+              {on ? 'Read Less' : 'Read More'}
             </button>
           </li>
         );

@@ -87,7 +87,7 @@ function SectionView({ sec, tone, programLinks }: { sec: Section; tone: 'white' 
               <li key={l.href}>
                 <Link href={l.href}>
                   <span>{l.name}</span>
-                  <em>Know more</em>
+                  <em>Know More</em>
                 </Link>
               </li>
             ))}
