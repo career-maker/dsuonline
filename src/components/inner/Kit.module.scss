@@ -1200,7 +1200,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 // ---------- learner stories (home testimonials look)
 .stories {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); // 2 columns from ~500px, 3-4 on wider screens
   gap: clamp(12px, #{u(20)}, 20px);
   align-items: start;
 
