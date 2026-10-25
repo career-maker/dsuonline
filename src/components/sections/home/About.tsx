@@ -29,7 +29,7 @@ import type { ReactNode } from 'react';
 import s from './About.module.scss';
 
 /** The home 'About DSU Online' block; reused on /about with its own copy and photos. */
-export function AboutBand({ title, copy, left, right, href = '/about', cta = 'Know More', play = true, id }: { title: ReactNode; copy: readonly string[]; left: ReactNode; right: ReactNode; href?: string; cta?: string; play?: boolean; id?: string }) {
+export function AboutBand({ title, copy, left, right, href = '/about', cta = 'Know More', play = true, id, after }: { after?: readonly string[]; title: ReactNode; copy: readonly string[]; left: ReactNode; right: ReactNode; href?: string; cta?: string; play?: boolean; id?: string }) {
   return (
     <section className={s.about} id={id}>
       <div className={s.inner}>
@@ -110,6 +110,13 @@ export function AboutBand({ title, copy, left, right, href = '/about', cta = 'Kn
             )}
           </div>
         </div>
+        {after && after.length > 0 && (
+          <div className={s.after}>
+            {after.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

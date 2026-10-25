@@ -120,3 +120,31 @@ export function Reveal({ count, className, children, more = 'Show more', less = 
     </>
   );
 }
+
+/** Leadership cards side by side; each message is clamped and expands in place. */
+export function LeaderGrid({ items }: { items: { name: string; role?: string; img: ReactNode; paras: string[] }[] }) {
+  const [open, setOpen] = useState<number | null>(null);
+  const uid = useId();
+  return (
+    <ul className={s.leadGrid}>
+      {items.map((l, i) => {
+        const on = open === i;
+        return (
+          <li key={l.name} className={on ? s.leadOn : undefined}>
+            <div className={s.leadPhoto}>{l.img}</div>
+            <h3>{l.name}</h3>
+            {l.role && <p className={s.leadRole}>{l.role}</p>}
+            <div id={`${uid}-${i}`} className={s.leadText}>
+              {l.paras.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
+            <button type="button" className={s.leadMore} aria-expanded={on} aria-controls={`${uid}-${i}`} onClick={() => setOpen(on ? null : i)}>
+              {on ? 'Show less' : 'Read message'}
+            </button>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}

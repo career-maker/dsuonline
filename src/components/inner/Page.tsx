@@ -5,7 +5,7 @@ import { AboutBand, aboutPhotos } from '@/components/sections/home/About';
 import { WhyChoose } from '@/components/sections/home/WhyChoose';
 import { cleanBlocks } from './clean';
 import { CtaBand, InnerHero, type Crumb } from './InnerPage';
-import { FaqList } from './Interactive';
+import { FaqList, LeaderGrid } from './Interactive';
 import {
   CardGrid,
   Checklist,
@@ -279,22 +279,16 @@ function leaders(sec: Section): ReactNode {
     else if (b.t === 'p' && cur) cur.paras.push(b.x);
   }
   return (
-    <div className={s.leaders}>
-      {out
+    <LeaderGrid
+      items={out
         .filter((l) => l.name)
-        .map((l) => (
-          <article key={l.name} className={s.leader}>
-            <div className={s.portrait}>{l.img && <Pic img={{ ...l.img, w: l.img.w ?? 400, h: l.img.h ?? 400 }} sizes="260px" />}</div>
-            <div>
-              <h3>{l.name}</h3>
-              {l.role && <p className={s.role}>{l.role}</p>}
-              {l.paras.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-          </article>
-        ))}
-    </div>
+        .map((l) => ({
+          name: l.name,
+          role: l.role,
+          paras: l.paras,
+          img: l.img ? <Pic img={{ ...l.img, w: l.img.w ?? 400, h: l.img.h ?? 400 }} sizes="200px" /> : null,
+        }))}
+    />
   );
 }
 
@@ -429,6 +423,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
             </>
           }
           copy={copy.slice(0, 2)}
+          after={copy.slice(2)}
           left={aboutPhotos.left}
           right={aboutPhotos.right}
           href="/admission"
@@ -436,14 +431,6 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           play={false}
         />,
       );
-      // the long closing paragraph sits under the block so the three columns keep the home proportions
-      if (copy.length > 2) {
-        nodes.push(
-          <Sec key={`${key}-more`} tone="grey" narrow>
-            <Prose paras={copy.slice(2)} />
-          </Sec>,
-        );
-      }
       continue;
     }
     if (slug === 'about' && /digital format/i.test(title)) continue;

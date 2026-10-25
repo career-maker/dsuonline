@@ -441,3 +441,18 @@
     }
   }
 }
+
+// extra paragraphs below the three columns (used by /about)
+.after {
+  display: grid;
+  gap: clamp(12px, #{u(18)}, 18px);
+  max-width: min(1100px, 100%);
+  margin-top: clamp(28px, #{u(48)}, 48px);
+  padding-top: clamp(20px, #{u(32)}, 32px);
+  border-top: 1px solid rgb(0 0 0 / 8%);
+
+  p {
+    @include body-text;
+    color: #4a5565;
+  }
+}
