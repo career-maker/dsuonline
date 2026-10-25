@@ -151,7 +151,13 @@ function renderSeg(seg: Seg, key: string | number): ReactNode {
     case 'list':
       return <Checklist key={key} items={seg.items} cols={seg.items.length > 3 && seg.items.every((x) => x.length <= 130) ? 2 : 1} />;
     case 'link':
-      return /^(tel|mailto):/.test(seg.href) ? <ContactRow key={key} label={seg.href.startsWith('tel') ? 'Call' : 'Email'} href={seg.href} text={seg.x} /> : <CtaLink key={key} href={seg.href}>{seg.x}</CtaLink>;
+      return /^(tel|mailto):/.test(seg.href) ? (
+        <ContactRow key={key} label={seg.href.startsWith('tel') ? 'Call' : 'Email'} href={seg.href} text={seg.x} />
+      ) : (
+        <div key={key} style={{ justifySelf: 'start' }}>
+          <CtaLink href={seg.href}>{seg.x}</CtaLink>
+        </div>
+      );
     case 'contacts':
       return (
         <div key={key} style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 48px' }}>
@@ -332,8 +338,56 @@ function IconTiles({ items }: { items: { icon: Img; label: string }[] }) {
 
 // ---------- the page
 
+function ReferPage({ blocks, crumbs }: { blocks: Block[]; crumbs: Crumb[] }) {
+  const st = structure(blocks);
+  const prog = st.sections.find((x) => /programs offered/i.test(x.title));
+  const terms = st.sections.find((x) => /terms/i.test(x.title));
+  const logos = st.pre.filter((b) => b.t === 'img').map(imgOf);
+  const names = ['MBA', 'MCA', 'BBA', 'BCA', 'B.Com'];
+  const hrefs: Record<string, string> = { MBA: '/online-mba', MCA: '/online-mca', BBA: '/online-bba', BCA: '/online-bca', 'B.Com': '/online-bcom' };
+  const full: Record<string, string> = { MBA: 'Master of Business Administration', MCA: 'Master of Computer Applications', BBA: 'Bachelor of Business Administration', BCA: 'Bachelor of Computer Applications', 'B.Com': 'Bachelor of Commerce' };
+  const batch = st.pre.find((b): b is P => b.t === 'p' && /batch/i.test(b.x))?.x ?? 'Admissions Open for 2026 Batch';
+  const tcs = (terms ? terms.blocks.filter((b): b is Extract<Block, { t: 'ul' }> => b.t === 'ul').flatMap((b) => b.items) : []).filter(Boolean);
+  void prog;
+  return (
+    <>
+      <InnerHero banner={3} crumbs={crumbs} eyebrow={batch} title="Refer & Earn Program" subtitle="Refer a friend to DSU Online and be rewarded once their admission cycle is complete." extra={[]} />
+      {logos.length > 0 && (
+        <Sec tone="white" center>
+          <LogoWall imgs={logos} />
+        </Sec>
+      )}
+      <Sec tone="grey" center eyebrow="Programmes offered" title="Refer a friend to any of our programmes">
+        <ul className={`${s.cards} ${s.g3} ${s.tint}`} style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))' }}>
+          {names.map((n) => (
+            <li key={n} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 12 }}>
+              <span className={s.iconDisc}>
+                <b style={{ color: '#fff', fontSize: 15 }}>{n}</b>
+              </span>
+              <h3 style={{ flex: 1 }}>{full[n]}</h3>
+              <CtaLink href={hrefs[n]}>Know more</CtaLink>
+            </li>
+          ))}
+        </ul>
+      </Sec>
+      <Sec tone="white" eyebrow="Please note" title="Terms & Conditions">
+        <ol className={s.steps}>
+          {tcs.map((t, i) => (
+            <li key={t}>
+              <span className={s.stepNo}>{String(i + 1).padStart(2, '0')}</span>
+              <p style={{ marginTop: 0 }}>{t}</p>
+            </li>
+          ))}
+        </ol>
+      </Sec>
+      <CtaBand />
+    </>
+  );
+}
+
 export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts = false }: Props) {
   const blocks = cleanBlocks(raw);
+  if (slug === 'refer') return <ReferPage blocks={blocks} crumbs={crumbs} />;
   const st = structure(blocks);
   const heroPs = st.hero.filter(isP);
   const preEyebrow = st.pre.filter(isP).map((b) => b.x).find((x) => x.length < 70 && !st.sections.some((sc) => sc.title === x));
@@ -559,15 +613,15 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const names = ['Registration', 'Online Application', 'Document Verification', 'Admissions Confirmation'];
       const steps = stepList.items.map((x, i) => {
         const body = x.replace(/^step\s*\d+\s*[:.-]?\s*/i, '');
-        const nm = names.find((t) => body.toLowerCase().startsWith(t.toLowerCase()));
-        return nm && stepList.items.length === 4 ? { title: nm, text: body.slice(nm.length).trim() } : { title: `Step ${i + 1}`, text: body };
+        const nm = names.find((t) => body.toLowerCase().startsWith(t.toLowerCase())) ?? (/^admissions?\s+confirmation/i.test(body) ? body.match(/^admissions?\s+confirmation/i)![0] : undefined);
+        return nm && stepList.items.length === 4 ? { title: nm.replace(/^admission /i, 'Admissions '), text: body.slice(nm.length).trim() } : { title: `Step ${i + 1}`, text: body };
       });
       const img = sec.blocks.find((b) => b.t === 'img');
       nodes.push(
         <Sec key={key} tone={nextTone()} eyebrow="Apply" title={title} lead={sec.blocks.filter(isP)[0]?.x}>
           <Steps items={steps} />
           {img && (
-            <div className={s.splitMedia} style={{ marginTop: 28, maxWidth: 560 }}>
+            <div className={s.splitMedia} style={{ marginTop: 28, maxWidth: 480 }}>
               <Pic img={imgOf(img)} />
             </div>
           )}
@@ -669,7 +723,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     <>
       <InnerHero banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
       {(longSub || (introBlocks.length > 0 && !withFacts)) && (
-        <Sec tone="white" narrow={!heroImgs.length}>
+        <Sec tone="white" narrow={!heroImgs.length} center={!heroImgs.length}>
           <Body blocks={[...(longSub ? ([{ t: 'p', x: subtitle } as Block]) : []), ...introBlocks, ...heroImgs.slice(0, 1)]} />
         </Sec>
       )}

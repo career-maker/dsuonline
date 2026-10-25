@@ -12,7 +12,7 @@ export function cleanBlocks(blocks: Block[]): Block[] {
     if (b.t === 'p' || b.t === 'q') {
       const x = b.x.replace(/\s*[▲▼]\s*$/, '').trim();
       // notes, bare step/card numbers and icon glyphs are layout leftovers, not content
-      if (!x || isNote(x) || /^\d{1,2}$/.test(x) || /^[\u2709\u260e\u{1F4DE}]\uFE0F?$/u.test(x)) continue;
+      if (!x || isNote(x) || /^\d{1,2}$/.test(x) || /^[?\s]+$/.test(x) || /^[\u2709\u260e\u{1F4DE}]\uFE0F?$/u.test(x)) continue;
       const nb = { ...b, x };
       const last = out[out.length - 1];
       if (last && last.t === nb.t && 'x' in last && last.x === x && x.length < 60) continue; // carousel duplicates

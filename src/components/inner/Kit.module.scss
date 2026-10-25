@@ -1063,3 +1063,22 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
   gap: clamp(14px, 2vw, 28px);
 }
+
+// centred intro blocks read as a lead paragraph
+.narrow .prose p {
+  max-width: 62ch;
+  margin-inline: auto;
+  font-size: fs(20, 17px);
+}
+
+.splitText h3 {
+  font-size: fs(40, 26px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: $ink;
+}
+
+.sec h3 {
+  letter-spacing: -0.0175em;
+}
