@@ -216,6 +216,8 @@
   margin-top: auto;
   padding-top: clamp(14px, #{u(15)}, 15px);
   border-top: 1px solid rgb(0 0 0 / 10%);
+  position: relative;
+  z-index: 1;
 }
 
 .explore {
@@ -334,16 +336,18 @@
   color: #fff;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.4s ease, visibility 0s 0.4s;
 
   // pointer devices only; touch keeps the plain card
   // hover animation should only open when hovered the image area
   @media (hover: hover) {
     .card:has(.media:hover) &,
-    .card:focus-within &,
-    &:hover {
+    &:hover,
+    &:focus-within {
       opacity: 1;
       visibility: visible;
+      pointer-events: auto;
       transition-delay: 0s;
     }
   }
