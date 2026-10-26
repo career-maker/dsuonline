@@ -327,7 +327,16 @@
   flex-direction: column;
   gap: 28px;
   position: sticky;
-  top: 130px;
+  top: clamp(80px, #{u(110)}, 110px);
+  transition: top 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  :global(html[data-header-hidden='true']) & {
+    top: clamp(16px, #{u(24)}, 24px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 }
 
 .widget {

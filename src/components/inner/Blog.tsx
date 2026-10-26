@@ -6,7 +6,6 @@ import { programs } from '@/data/programs';
 import { site } from '@/data/site';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { CtaBand, InnerHero } from './InnerPage';
-import { EnquireButton } from './EnquireButton';
 import { Flow } from './Flow';
 import s from './Blog.module.scss';
 
@@ -166,9 +165,13 @@ export function BlogPost({ data, slug }: { data: PageData; slug?: string }) {
                 <ArrowLink href={site.apply} external variant="solid" className={s.wApplyBtn}>
                   Apply Now
                 </ArrowLink>
-                <EnquireButton variant="outline">
+                <ArrowLink
+                  href="/docs/dsu-online-brochure.pdf"
+                  download="DSU-Online-Brochure.pdf"
+                  variant="outline"
+                >
                   Download Brochure
-                </EnquireButton>
+                </ArrowLink>
               </div>
             </div>
 

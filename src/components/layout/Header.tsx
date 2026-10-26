@@ -32,6 +32,13 @@ export function Header() {
     if (busy.current) setHidden(false);
   }, [menuOpen, progOpen, moreOpen, searchOpen]);
 
+  useEffect(() => {
+    document.documentElement.dataset.headerHidden = hidden ? 'true' : 'false';
+    return () => {
+      delete document.documentElement.dataset.headerHidden;
+    };
+  }, [hidden]);
+
   // sticky header: hides while scrolling down, returns on any scroll up
   useEffect(() => {
     let last = window.scrollY;

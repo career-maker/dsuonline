@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEnquiry } from '@/components/layout/EnquiryProvider';
-import { EnquireButton } from '@/components/inner/EnquireButton';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Icon } from '@/components/ui/Icon';
@@ -156,7 +155,13 @@ export function ProgramsBand({
                   </ul>
                   <div className={s.detailBtns}>
                     <ArrowLink href={p.href}>Know More</ArrowLink>
-                    <EnquireButton variant="outline" programme={code}>Download Brochure</EnquireButton>
+                    <ArrowLink
+                      href="/docs/dsu-online-brochure.pdf"
+                      download={`DSU-Online-${code.toUpperCase()}-Brochure.pdf`}
+                      variant="outline"
+                    >
+                      Download Brochure
+                    </ArrowLink>
                   </div>
                 </div>
               </article>

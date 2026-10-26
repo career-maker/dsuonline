@@ -13,7 +13,17 @@ export function BrochureForm() {
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
-    setNote(choice ? 'Brochure download will be available soon.' : 'Please select a programme.');
+    if (!choice) {
+      setNote('Please select a programme.');
+      return;
+    }
+    const link = document.createElement('a');
+    link.href = '/docs/dsu-online-brochure.pdf';
+    link.download = `DSU-Online-${choice.toUpperCase()}-Brochure.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setNote('Brochure download started.');
   };
 
   return (
