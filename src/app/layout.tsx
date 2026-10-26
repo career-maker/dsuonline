@@ -18,7 +18,17 @@ const roboto = Roboto({
 
 // Staging: block indexing. Flip to index/follow (and update public/robots.txt) before production launch.
 export const metadata: Metadata = {
-  robots: { index: false, follow: false, noarchive: true },
+  robots: {
+    index: false,
+    follow: false,
+    noarchive: true,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
   title: {
     default: 'DSU Online | UGC-Entitled Online Degrees from Dayananda Sagar University',
     template: '%s | DSU Online',

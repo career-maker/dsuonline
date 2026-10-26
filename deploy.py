@@ -45,10 +45,10 @@ ssh.connect(host, port=port, username=user, password=password, timeout=30)
 sftp = ssh.open_sftp()
 
 print("==> Packaging project files for upload...")
-exclude_dirs = {'.git', 'node_modules', '.next', 'shots'}
+exclude_dirs = {'.git', 'node_modules', '.next', 'shots', 'design'}
 exclude_files = {'.server.local', 'GIT-PUSH.local.md', 'tsconfig.tsbuildinfo'}
 
-with tempfile.NamedTemporaryFile(suffix='.tar.gz', delete=False) as tf:
+with tempfile.NamedTemporaryFile(suffix='.tar.gz', dir='.', delete=False) as tf:
     temp_archive_path = tf.name
 
 try:
@@ -57,7 +57,7 @@ try:
             # Prune excluded directories
             dirs[:] = [d for d in dirs if d not in exclude_dirs and not d.startswith('.next')]
             for file in files:
-                if file in exclude_files or file.endswith('.tsbuildinfo'):
+                if file in exclude_files or file.endswith('.tsbuildinfo') or file.endswith('.tar.gz'):
                     continue
                 full_path = os.path.join(root, file)
                 rel_path = os.path.relpath(full_path, '.')

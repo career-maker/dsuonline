@@ -43,6 +43,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 ## Update 2026-10-26 (latest)
 - DONE: programme pages (mba/mca/bba/bca/bcom) "Why DSU Online X?" = 2-column (text + 10 benefits left in tinted box, programme photo from /images/programs/<code>.webp right; photo on top <900px). Code: `Page.tsx` branch "programme pages" + `.whyProg/.whyText/.whyPhoto` in Kit.module.scss. Verified all 5 at 1440/1024/768/390/320.
 - DONE: Hosted on live server under `https://dsuonline.intersmarthosting.in`! Fixed server `npm install`, built with webpack (WASM SWC for AlmaLinux 8), started PM2 process `dsuonline` on port `3351` proxy-passed via Nginx with HTTPS/HTTP2, verified all 222 pages and static assets. Added `deploy.py` and `DEPLOY-SERVER.md`.
+- DONE: Saved SSH connection details in `.server.local`, `DEPLOY-SERVER.md`, and `CLAUDE.md`. Blocked all crawling/indexing across entire site for beta stage via `public/robots.txt`, dynamic `src/app/robots.ts`, `X-Robots-Tag: noindex, nofollow, noarchive, nosnippet` header in `next.config.ts`, and metadata `noindex, nofollow, noarchive` in `src/app/layout.tsx`. Deployed updates to live server and verified.
 - GOTCHA: when editing via bash, the tool layer turns a double backslash + b in my command into a real backspace char. Never write regex word-boundary via python/heredoc; use the Edit tool or `chr(92)`. Fixer: `python shots/fixbs.py <files>`.
 - Always: after each change round -> update this file, commit, `git push origin master`.
 

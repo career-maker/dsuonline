@@ -12,3 +12,4 @@
 - Port 3111 is the local server (3000 is another project). Use `sh shots/rs.sh` to lint+build+restart; `shots/*.py` are screenshot/test helpers (gitignored).
 - Tool gotcha: do not type a double-backslash followed by `b` in bash/python commands (becomes a backspace char). Use the Edit tool or `chr(92)`.
 - This Next.js version has breaking changes; see `AGENTS.md` and `node_modules/next/dist/docs/` before using unfamiliar APIs.
+- Deploy to server: run `python deploy.py`. Server: `dev-inter-f3@91.121.47.15:22` (password: `Abhiram@123`), PM2 `dsuonline` (port 3351), domain `https://dsuonline.intersmarthosting.in`. See `DEPLOY-SERVER.md` and `.server.local`.
