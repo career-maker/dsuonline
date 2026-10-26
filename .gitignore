@@ -44,4 +44,5 @@ next-env.d.ts
 /shots/
 /design/raw*/
 /GIT-PUSH.local.md
+.server.local
 *.tsbuildinfo
