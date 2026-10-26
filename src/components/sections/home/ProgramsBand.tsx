@@ -84,7 +84,7 @@ export function ProgramsBand() {
                   </li>
                 </ul>
                 <div className={s.foot}>
-                  <Link href={p.href} className={s.explore}>
+                  <Link href={p.href} className={s.explore} aria-label={`Explore ${p.name} - ${p.fullName} Program`}>
                     Explore Program &gt;
                   </Link>
                   <ArrowLink href={site.apply} external variant="ghost" className={s.apply}>

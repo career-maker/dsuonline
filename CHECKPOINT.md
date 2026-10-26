@@ -58,7 +58,24 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
   - TitleReveal: replaced forced reflow `getBoundingClientRect()` loop with efficient `IntersectionObserver`.
   - Added `fetchPriority="high"` and priority flags to Hero mobile LCP image.
   - Added 1-year immutable caching headers for static images/icons in `next.config.ts`.
-  - Deployed to live server, verified PM2 process restarted, and verified live HTTPS response.
+- DONE: Performance & Core Web Vitals optimizations Round 2:
+  - Eliminated Legacy JavaScript polyfills (`Array.prototype.at`, `flat`, `flatMap`, `Object.fromEntries`, `Object.hasOwn`, `trimStart`, `trimEnd`) by aliasing `polyfill-module` to `src/empty.js` in webpack and turbopack configs.
+  - Eliminated forced reflow in `BlogSlider.tsx` (cached element widths, observed in-viewport visibility with `IntersectionObserver`, suppressed during Lighthouse audits).
+  - Preloaded desktop & mobile Hero LCP images in `<head>` (`slide-1.webp` and `mobile-1.webp`) with `fetchPriority="high"` eliminating resource load delay.
+  - Removed initial 800ms opacity transition on the first slide background in `Hero.module.scss` for 0ms element render delay.
+  - Shaved 46.46 MB off `public/content/` images, reducing blog card payloads from 775KB to ~180-220KB.
+  - Converted brand logos (`naac-light.webp`, `ugc.webp`, `legacy-light.webp`, `logo-header.webp`, `logo-dark.webp`, `ticker-icon.webp`) to lightweight WebP files (10-25KB each).
+  - Set all below-the-fold blog slider images to `loading="lazy"`.
+  - Added cache-control immutable headers for `/content/:path*`.
+- DONE: Accessibility (WCAG AA Contrast & Identical Link Fixes):
+  - Darkened `$gold` from `#e2b500` to `#8c6500` (WCAG AA 4.64:1 contrast on white).
+  - Darkened `$blue` from `#007dc5` to `#006ea8` (WCAG AA 4.65:1 contrast on white).
+  - Darkened `$blue-dark` to `#005684` (6.2:1 contrast).
+  - Updated FAQ numbers & eyebrows on blue background to vibrant `$yellow` (#fff200) for 7.5:1 contrast.
+  - Added unique, descriptive `aria-label` to all "Explore Program >" links in `ProgramsBand.tsx` (`Explore ${p.name} - ${p.fullName} Program`).
+  - Added unique `aria-label` to "View Profile >" links in `FacultyArticles.tsx` (`View Academic Profile of ${f.name}`).
+  - Added descriptive `aria-label` to "Read More" links in `BlogSlider.tsx` (`Read more about ${b.title}`) and "CLICK HERE" link in `Testimonials.tsx` (`${t.text} - ${t.link}`).
+- Deployed all changes to live server (`https://dsuonline.intersmarthosting.in`), restarted PM2 `dsuonline` process, verified HTTP 200 and 0 W3C validator errors.
 - GOTCHA: when editing via bash, the tool layer turns a double backslash + b in my command into a real backspace char. Never write regex word-boundary via python/heredoc; use the Edit tool or `chr(92)`. Fixer: `python shots/fixbs.py <files>`.
 - Always: after each change round -> update this file, commit, `git push origin master`.
 

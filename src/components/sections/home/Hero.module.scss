@@ -19,6 +19,10 @@
   opacity: 1;
 }
 
+.bg:first-of-type.bgOn {
+  transition: none;
+}
+
 .bg img {
   position: absolute;
   inset: 0;

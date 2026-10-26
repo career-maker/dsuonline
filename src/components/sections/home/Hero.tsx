@@ -72,11 +72,11 @@ export function Hero() {
       <div className={s.layout}>
       <div className={s.copy}>
         <div className={s.badges}>
-          <Image className={s.naac} src="/images/brand/naac-light.png" alt="NAAC A+ grade accredited" width={294} height={100} />
+          <Image className={s.naac} src="/images/brand/naac-light.webp" alt="NAAC A+ grade accredited" width={294} height={100} />
           <i aria-hidden="true" />
-          <Image className={s.ugc} src="/images/brand/ugc.png" alt="UGC Entitled" width={202} height={103} />
+          <Image className={s.ugc} src="/images/brand/ugc.webp" alt="UGC Entitled" width={202} height={103} />
           <i aria-hidden="true" />
-          <Image className={s.legacy} src="/images/brand/legacy-light.png" alt="7 decades legacy in education and healthcare" width={116} height={103} />
+          <Image className={s.legacy} src="/images/brand/legacy-light.webp" alt="7 decades legacy in education and healthcare" width={116} height={103} />
         </div>
         {/* re-keyed on every slide change so the headline re-plays its word-by-word rise */}
         <h1 key={`t${active}`} className={s.title} aria-label="Your Degree. Your Pace. Your Future.">

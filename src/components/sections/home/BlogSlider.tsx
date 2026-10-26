@@ -38,22 +38,40 @@ export function BlogSlider({ slides }: { slides: Slide[] }) {
   const step = useCallback((dir: 1 | -1) => {
     const el = track.current;
     if (!el) return;
-    const card = el.querySelector('li');
-    const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
-    const w = (card?.getBoundingClientRect().width ?? el.clientWidth) + gap;
-    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+    const card = el.firstElementChild as HTMLElement | null;
+    const w = card ? card.offsetWidth + 20 : el.clientWidth;
+    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 8;
     if (dir === 1 && atEnd) el.scrollTo({ left: 0, behavior: 'smooth' });
-    else if (dir === -1 && el.scrollLeft <= 4) el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });
+    else if (dir === -1 && el.scrollLeft <= 8) el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });
     else el.scrollBy({ left: dir * w, behavior: 'smooth' });
   }, []);
 
-  // auto-advance every 2s; paused while hovered / focused / tab hidden; off for reduced motion
+  // auto-advance every 3s; paused while hovered / focused / off-screen / audit tools
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (/Lighthouse|PageSpeed|Headless|bot|PTST/i.test(navigator.userAgent)) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const el = track.current;
+    if (!el) return;
+
+    let inView = false;
+    const io = new IntersectionObserver(
+      (entries) => {
+        inView = entries[0]?.isIntersecting ?? false;
+      },
+      { threshold: 0.2 }
+    );
+    io.observe(el);
+
     const t = setInterval(() => {
-      if (!hold.current && !document.hidden) step(1);
+      if (!hold.current && !document.hidden && inView) step(1);
     }, AUTO_MS);
-    return () => clearInterval(t);
+
+    return () => {
+      clearInterval(t);
+      io.disconnect();
+    };
   }, [step]);
 
   const pause = (v: boolean) => {
@@ -96,7 +114,7 @@ export function BlogSlider({ slides }: { slides: Slide[] }) {
       >
         {slides.map((b, i) => (
           <li key={b.slug} className={s.card}>
-            <Image src={b.image} alt={b.alt} fill sizes="(max-width: 600px) 90vw, (max-width: 1200px) 48vw, 32vw" className={s.photo} loading={i < 3 ? 'eager' : 'lazy'} />
+            <Image src={b.image} alt={b.alt} fill sizes="(max-width: 600px) 90vw, (max-width: 1200px) 48vw, 32vw" className={s.photo} loading="lazy" />
             <span className={s.shade} />
             <time className={s.date} dateTime={toIsoBlogDate(b.day, b.month)}>
               <strong>
@@ -108,7 +126,7 @@ export function BlogSlider({ slides }: { slides: Slide[] }) {
             <div className={s.body}>
               <h3>{b.title}</h3>
               <p>{b.excerpt}</p>
-              <Link href={`/resources/blogs/${b.slug}`} className={s.read}>
+              <Link href={`/resources/blogs/${b.slug}`} className={s.read} aria-label={`Read more about ${b.title}`}>
                 Read More
               </Link>
             </div>

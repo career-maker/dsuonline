@@ -23,6 +23,12 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/content/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
         source: "/:path*",
         headers: [
           // Next injects inline bootstrap scripts, so script-src needs 'unsafe-inline' until nonces are wired in.
@@ -39,6 +45,22 @@ const nextConfig: NextConfig = {
         ],
       },
     ];
+  },
+  turbopack: {
+    resolveAlias: {
+      '../build/polyfills/polyfill-module': './src/empty.js',
+      'next/dist/build/polyfills/polyfill-module': './src/empty.js',
+    },
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '../build/polyfills/polyfill-module': path.resolve(process.cwd(), 'src/empty.js'),
+        'next/dist/build/polyfills/polyfill-module': path.resolve(process.cwd(), 'src/empty.js'),
+      };
+    }
+    return config;
   },
   sassOptions: {
     loadPaths: [path.join(process.cwd(), "src/styles")],

@@ -13,7 +13,7 @@ export function Footer() {
         <div className={s.top}>
           <div className={s.brand}>
             <Link href="/" aria-label="Dayananda Sagar University Online - home">
-              <Image src="/images/brand/logo-dark.png" alt="Dayananda Sagar University Online" width={401} height={80} />
+              <Image src="/images/brand/logo-dark.webp" alt="Dayananda Sagar University Online" width={401} height={80} />
             </Link>
             <address>Kudlu Gate, Hosur Road, Bengaluru - 560 114</address>
             <ul className={s.social}>

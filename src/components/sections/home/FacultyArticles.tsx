@@ -66,7 +66,9 @@ export function FacultyArticles() {
                   ))}
                 </ul>
                 <div className={s.links}>
-                  <Link href="/academics-at-dsu">View Profile &gt;</Link>
+                  <Link href="/academics-at-dsu" aria-label={`View Academic Profile of ${f.name}`}>
+                    View Profile &gt;
+                  </Link>
                   <a href="https://www.linkedin.com/company/dsuonline" target="_blank" rel="noopener noreferrer">
                     <Icon name="linkedin" /> LinkedIn
                   </a>

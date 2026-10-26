@@ -12,7 +12,7 @@ import './globals.scss';
 const roboto = Roboto({
   variable: '--font-roboto',
   subsets: ['latin'],
-  weight: ['300', '400', '500', '700'],
+  weight: ['400', '500', '700'],
   display: 'swap',
 });
 
@@ -40,6 +40,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={roboto.variable}>
+      <head>
+        <link rel="preload" as="image" href="/images/hero/slide-1.webp" media="(min-width: 760px)" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/hero/mobile-1.webp" media="(max-width: 759.98px)" fetchPriority="high" />
+      </head>
       <body>
         <Preloader />
         <SmoothScroll />
