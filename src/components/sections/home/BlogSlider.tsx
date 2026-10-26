@@ -8,7 +8,7 @@ import s from './Blogs.module.scss';
 
 export type Slide = { slug: string; day: string; ord: string; month: string; title: string; excerpt: string; image: string; alt: string; w: number; h: number };
 
-const AUTO_MS = 2000;
+const AUTO_MS = 6000;
 
 // design arrow: blue chevron with a dark outline inside a 37px ring
 const Arrow = ({ d }: { d: string }) => (
@@ -38,8 +38,7 @@ export function BlogSlider({ slides }: { slides: Slide[] }) {
   const step = useCallback((dir: 1 | -1) => {
     const el = track.current;
     if (!el) return;
-    const card = el.firstElementChild as HTMLElement | null;
-    const w = card ? card.offsetWidth + 20 : el.clientWidth;
+    const w = 340;
     const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 8;
     if (dir === 1 && atEnd) el.scrollTo({ left: 0, behavior: 'smooth' });
     else if (dir === -1 && el.scrollLeft <= 8) el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });

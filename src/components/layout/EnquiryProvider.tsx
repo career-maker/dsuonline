@@ -11,7 +11,7 @@ export function useEnquiry() {
   return ctx;
 }
 
-const AUTO_DELAY_MS = 5000;
+const AUTO_DELAY_MS = 30000;
 const SEEN_KEY = 'dsu-enquiry-seen';
 
 export function EnquiryProvider({ children }: { children: ReactNode }) {

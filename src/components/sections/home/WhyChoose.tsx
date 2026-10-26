@@ -36,11 +36,11 @@ export function WhyChoose({ title = 'Why Choose DSU Online ?', copy = DEFAULT_CO
             {certifications.map((c) => (
               <li key={c.kind} className={`${s.cert} ${s[c.kind] ?? ''}`}>
                 <span className={s.cimg}>
-                  {c.kind === 'ugc' && <Image src="/images/brand/ugc.png" alt="" width={119} height={61} />}
+                  {c.kind === 'ugc' && <Image src="/images/brand/ugc.webp" alt="" width={119} height={61} />}
                   {c.kind === 'naac' && (
                     <>
-                      <Image className={s.onLight} src="/images/brand/naac.png" alt="" width={159} height={54} />
-                      <Image className={s.onBlue} src="/images/brand/naac-light.png" alt="" width={159} height={54} />
+                      <Image className={s.onLight} src="/images/brand/naac.webp" alt="" width={159} height={54} />
+                      <Image className={s.onBlue} src="/images/brand/naac-light.webp" alt="" width={159} height={54} />
                     </>
                   )}
                   {c.kind !== 'ugc' && c.kind !== 'naac' && <Icon name={c.kind} />}

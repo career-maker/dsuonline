@@ -2,11 +2,9 @@
 @use 'mixins' as *;
 
 .band {
-  background: linear-gradient(#fff clamp(8px, #{u(17)}, 17px), $blue clamp(8px, #{u(17)}, 17px));
+  background: $blue;
   color: #fff;
-  padding-top: clamp(24px, #{u(17)}, 17px);
   @include section-pad(93, 90);
-  padding-top: calc(clamp(8px, #{u(17)}, 17px) + clamp(48px, #{u(76)}, 76px));
 }
 
 .inner {
