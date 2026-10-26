@@ -129,14 +129,19 @@
   font-size: fs(16, 14px);
   line-height: 1.4;
 
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 4px 0;
+  }
+
   a:first-child {
     font-weight: 500;
     color: $blue;
   }
 
   a:last-child {
-    display: flex;
-    align-items: center;
     gap: px(4);
     color: $ink;
 

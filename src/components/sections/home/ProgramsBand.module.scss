@@ -218,6 +218,10 @@
 }
 
 .explore {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 0;
   font-size: fs(18, 16px);
   line-height: 1.2;
   font-weight: 500;

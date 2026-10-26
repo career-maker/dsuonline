@@ -96,10 +96,18 @@
     line-height: px(24);
     font-weight: 500;
     overflow-wrap: anywhere;
-  }
 
-  a:hover {
-    color: $blue;
+    a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 4px 0;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $blue;
+      }
+    }
   }
 }
 
@@ -264,8 +272,16 @@
     text-align: center;
   }
 
-  a:hover {
-    color: $blue;
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 4px 0;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $blue;
+    }
   }
 }
 
