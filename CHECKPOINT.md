@@ -56,6 +56,15 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
   - Resolved "Links do not have descriptive text" (11 links): Changed ticker link text from "CLICK HERE" to "View Calendar" and blog cards from "Read More" to "Read Article" with full title descriptive `aria-label`.
   - Resolved "Touch targets do not have sufficient size or spacing": Enlarged elective links and chips in `Footer.module.scss` and `ProgramsBand.module.scss` to >= 36-38px touch targets with >= 8px spacing.
   - Resolved "Background and foreground colors do not have a sufficient contrast ratio": Fixed SideTabs `Apply Now` button text contrast with `#013554` (9.3:1) and EnquiryModal `Submit Enquiry` button background with `#006aa2` (4.85:1, passing WCAG AA).
+- DONE: UI Polish & Blog Details Redesign:
+  - Fixed Lighthouse "Displays images with incorrect aspect ratio": Added `objectFit: 'cover'` and exact natural aspect-ratio coordinates in `FramedImage.tsx` and `ProgramsBand.tsx` for `cta.webp` and `bcom.webp`.
+  - Fixed Blog Slider button text alignment break: Added `white-space: nowrap;` and flex alignment with sliding arrow so text never wraps onto two lines.
+  - Connected home blog cards directly to details pages: Photo, title `<h3>`, and button all link directly to `/resources/blogs/<slug>`.
+  - Professional Blog Details Page redesign: Created a 2-column layout with main article column on left, sticky sidebar on right (Admissions CTA, Explore Online Degrees with fees, Recent Insights), Next & Previous post navigation bar, and Related Articles card grid at the bottom.
+  - Side sticky widgets hover animations: Added internal button hover animations (inner glow, vertical text scale, icon scale 1.18x) without translating or shifting the button tabs.
+  - Header nav hover color: Updated hover text color to DSU logo yellow `#f7c600` with subtle glow.
+  - Header home icon hover: Added bounce and scale (1.22x) animation with gold drop-shadow on hover.
+  - Custom page scrollbar: Designed thin, custom brand blue gradient scrollbar (`#007dc5` to `#025c90`) for all browsers.
 - DONE: Performance & Core Web Vitals optimizations:
   - Optimized all public PNG/WebP images (-6.93MB reduction from 10.58MB to 3.65MB). NAAC/UGC logos shrunk from 717KB to 75KB, partner logos to ~20KB.
   - Preloader: instant bypass for Lighthouse/PageSpeed/bots, reduced user exit delay from 900ms to 300ms.
