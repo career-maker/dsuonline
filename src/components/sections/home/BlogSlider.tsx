@@ -125,8 +125,8 @@ export function BlogSlider({ slides }: { slides: Slide[] }) {
             <div className={s.body}>
               <h3>{b.title}</h3>
               <p>{b.excerpt}</p>
-              <Link href={`/resources/blogs/${b.slug}`} className={s.read} aria-label={`Read more about ${b.title}`}>
-                Read More
+              <Link href={`/resources/blogs/${b.slug}`} className={s.read} aria-label={`Read article: ${b.title}`}>
+                Read Article
               </Link>
             </div>
           </li>

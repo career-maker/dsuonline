@@ -51,6 +51,11 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
   - Converted block-heading wrapper `<span>` to `<div>` in `Learning.tsx`
   - Added valid ISO-8601 `dateTime` attributes to all `<time>` elements in `FacultyArticles.tsx` and `BlogSlider.tsx`
   - Verified 0 errors with W3C Nu HTML Checker API on live site `https://dsuonline.intersmarthosting.in/`
+- DONE: Fixed Lighthouse & DevTools Console/Accessibility issues:
+  - Added explicit default aspect-ratios (`aspect-ratio: auto`, `1 / 1` for dimension-less `img`, `16 / 9` for `img[data-nimg='fill']`) in `globals.scss` to eliminate all 188 "Lazy-loaded images should have explicit dimensions" warnings.
+  - Resolved "Links do not have descriptive text" (11 links): Changed ticker link text from "CLICK HERE" to "View Calendar" and blog cards from "Read More" to "Read Article" with full title descriptive `aria-label`.
+  - Resolved "Touch targets do not have sufficient size or spacing": Enlarged elective links and chips in `Footer.module.scss` and `ProgramsBand.module.scss` to >= 36-38px touch targets with >= 8px spacing.
+  - Resolved "Background and foreground colors do not have a sufficient contrast ratio": Fixed SideTabs `Apply Now` button text contrast with `#013554` (9.3:1) and EnquiryModal `Submit Enquiry` button background with `#006aa2` (4.85:1, passing WCAG AA).
 - DONE: Performance & Core Web Vitals optimizations:
   - Optimized all public PNG/WebP images (-6.93MB reduction from 10.58MB to 3.65MB). NAAC/UGC logos shrunk from 717KB to 75KB, partner logos to ~20KB.
   - Preloader: instant bypass for Lighthouse/PageSpeed/bots, reduced user exit delay from 900ms to 300ms.

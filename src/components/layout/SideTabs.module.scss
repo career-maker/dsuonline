@@ -61,7 +61,11 @@ $w: clamp(40px, #{u(54)}, 54px);
   height: clamp(110px, #{u(144)}, 144px);
   margin-top: px(10);
   background: #b9e5ff;
-  color: $blue-dark;
+  color: #013554 !important;
+
+  span {
+    color: #013554 !important;
+  }
 }
 
 .ico {

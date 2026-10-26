@@ -411,12 +411,18 @@
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: px(8);
+  gap: max(8px, px(8));
   margin-top: px(12);
 
+  li {
+    display: inline-flex;
+  }
+
   a {
-    display: block;
-    padding: px(8) px(12);
+    display: inline-flex;
+    align-items: center;
+    min-height: 38px;
+    padding: max(8px, px(8)) max(12px, px(12));
     border: 1px solid rgb(255 255 255 / 18%);
     border-radius: px(4);
     background: rgb(255 255 255 / 8%);

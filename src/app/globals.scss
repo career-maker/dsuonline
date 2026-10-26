@@ -61,6 +61,18 @@ svg {
   max-width: 100%;
 }
 
+img {
+  aspect-ratio: auto;
+
+  &:not([width]):not([height]) {
+    aspect-ratio: 1 / 1;
+  }
+
+  &[data-nimg='fill'] {
+    aspect-ratio: 16 / 9;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
