@@ -34,7 +34,8 @@ export function Counter({ to, ms = 1800 }: { to: number; ms?: number }) {
   }, [to, ms]);
 
   return (
-    <span ref={ref} aria-label={String(to)}>
+    <span ref={ref}>
+      <span className="sr-only">{to}</span>
       <span aria-hidden="true">{n}</span>
     </span>
   );

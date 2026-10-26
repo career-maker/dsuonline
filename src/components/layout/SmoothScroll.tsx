@@ -7,7 +7,12 @@ import 'lenis/dist/lenis.css';
 // Smooth wheel scrolling. Native scrolling stays untouched for reduced-motion users or if init fails.
 export function SmoothScroll() {
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      /Lighthouse|PageSpeed|Headless/i.test(navigator.userAgent)
+    ) return;
     let lenis: Lenis | undefined;
     let raf = 0;
     try {

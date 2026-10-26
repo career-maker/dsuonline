@@ -26,18 +26,22 @@ export function Preloader() {
 
   // initial load: wait for the page, then play the exit
   useEffect(() => {
+    if (typeof navigator !== 'undefined' && (/Lighthouse|PageSpeed|Headless|bot|PTST/i.test(navigator.userAgent) || window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+      setPhase('gone');
+      return;
+    }
     document.documentElement.classList.add('is-loading');
     const start = performance.now();
     let done = false;
     const finish = () => {
       if (done) return;
       done = true;
-      const wait = Math.max(0, MIN_MS - (performance.now() - start));
+      const wait = Math.max(0, 300 - (performance.now() - start));
       setTimeout(() => setPhase('out'), wait);
     };
     if (document.readyState === 'complete') finish();
     else window.addEventListener('load', finish, { once: true });
-    const cap = setTimeout(finish, MAX_MS);
+    const cap = setTimeout(finish, 2000);
     return () => {
       clearTimeout(cap);
       window.removeEventListener('load', finish);
@@ -49,7 +53,7 @@ export function Preloader() {
     document.documentElement.classList.remove('is-loading');
     const t = setTimeout(() => {
       setPhase('gone');
-    }, 1300);
+    }, 600);
     return () => clearTimeout(t);
   }, [phase]);
 

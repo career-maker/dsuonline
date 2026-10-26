@@ -18,6 +18,18 @@ const Arrow = ({ d }: { d: string }) => (
   </svg>
 );
 
+const toIsoBlogDate = (day: string, monthYear: string) => {
+  const months: Record<string, string> = {
+    jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06',
+    jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12',
+  };
+  const parts = monthYear.trim().split(/\s+/);
+  const m = months[parts[0]?.slice(0, 3).toLowerCase()] ?? '01';
+  const y = parts[1] ?? '2026';
+  const d = day.padStart(2, '0');
+  return `${y}-${m}-${d}`;
+};
+
 export function BlogSlider({ slides }: { slides: Slide[] }) {
   const track = useRef<HTMLUListElement>(null);
   const hold = useRef(false);
@@ -86,7 +98,7 @@ export function BlogSlider({ slides }: { slides: Slide[] }) {
           <li key={b.slug} className={s.card}>
             <Image src={b.image} alt={b.alt} fill sizes="(max-width: 600px) 90vw, (max-width: 1200px) 48vw, 32vw" className={s.photo} loading={i < 3 ? 'eager' : 'lazy'} />
             <span className={s.shade} />
-            <time className={s.date}>
+            <time className={s.date} dateTime={toIsoBlogDate(b.day, b.month)}>
               <strong>
                 {b.day}
                 <sup>{b.ord}</sup>

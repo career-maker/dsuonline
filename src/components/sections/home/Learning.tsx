@@ -34,19 +34,19 @@ export function Learning() {
                 <VideoTile id={VIDEO_ID} title="Dedicated learning experience at DSU Online">
                   <FramedImage src={t.src} frame={t.frame} box={t.box} sizes="(max-width: 900px) 100vw, 562px" />
                   <span className={s.shade} />
-                  <span className={s.label}>
+                  <div className={s.label}>
                     <Icon name={t.icon} />
                     <h3>{t.label}</h3>
-                  </span>
+                  </div>
                 </VideoTile>
               ) : (
                 <>
                   <FramedImage src={t.src} frame={t.frame} box={t.box} sizes="(max-width: 900px) 50vw, 267px" />
                   <span className={s.shade} />
-                  <span className={s.label}>
+                  <div className={s.label}>
                     <Icon name={t.icon} />
                     <h3>{t.label}</h3>
-                  </span>
+                  </div>
                 </>
               )}
             </li>

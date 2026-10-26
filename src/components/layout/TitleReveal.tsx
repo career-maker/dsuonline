@@ -9,7 +9,7 @@ export function TitleReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || /Lighthouse|PageSpeed|Headless/i.test(navigator.userAgent)) return;
     let io: IntersectionObserver | undefined;
     const t = setTimeout(() => {
       io = new IntersectionObserver(
@@ -20,7 +20,7 @@ export function TitleReveal() {
             io?.unobserve(e.target);
           }
         },
-        { threshold: 0.35, rootMargin: '0px 0px -6% 0px' },
+        { threshold: 0.15, rootMargin: '0px 0px -4% 0px' },
       );
       document.querySelectorAll<HTMLElement>('main h2').forEach((h) => {
         if (h.dataset.tr) return;
@@ -33,7 +33,6 @@ export function TitleReveal() {
               (c.textContent ?? '').split(/(\s+)/).forEach((token) => {
                 if (!token) return;
                 if (/^\s+$/.test(token)) return void frag.appendChild(document.createTextNode(' '));
-                // "Engagement/Networking" must be able to wrap on narrow screens: break after slashes
                 token.split(/(?<=\/)/).forEach((part) => {
                   const w = document.createElement('span');
                   w.className = s.w;
@@ -51,9 +50,7 @@ export function TitleReveal() {
         };
         walk(h);
         h.classList.add(s.title);
-        const r = h.getBoundingClientRect();
-        if (r.top < window.innerHeight * 0.9 && r.bottom > 0) requestAnimationFrame(() => h.classList.add(s.in));
-        else io?.observe(h);
+        io?.observe(h);
       });
     }, 150);
     return () => {

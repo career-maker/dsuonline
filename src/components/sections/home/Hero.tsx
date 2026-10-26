@@ -54,8 +54,8 @@ export function Hero() {
         return (
           <div key={slide.desktop} className={`${s.bg} ${i === active ? s.bgOn : ''}`} aria-hidden={i !== active}>
             <picture>
-              <source media="(max-width: 759.98px)" srcSet={mobile.srcSet} />
-              <img {...desktop} alt="" className={i ? s.slide1 : s.slide0} style={{ objectPosition: slidePos[i] }} />
+              <source media="(max-width: 759.98px)" srcSet={mobile.srcSet} sizes="100vw" />
+              <img {...desktop} alt="" fetchPriority={i === 0 ? 'high' : 'low'} loading={i === 0 ? 'eager' : 'lazy'} className={i ? s.slide1 : s.slide0} style={{ objectPosition: slidePos[i] }} />
             </picture>
           </div>
         );
@@ -123,7 +123,7 @@ export function Hero() {
               <span className={s.flag} aria-hidden="true" />
               <ChevronDown />
               <span className={s.cc}>+91</span>
-              <input name="phone" type="tel" inputMode="tel" autoComplete="tel-national" placeholder="000 000 0000" aria-label="Mobile number" pattern="[0-9 ]{10,13}" required />
+              <input name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="000 000 0000" aria-label="Mobile number" pattern="[0-9 ]{10,13}" required />
             </div>
             <input className={s.f4} name="otp" type="text" inputMode="numeric" placeholder="Enter OTP *" aria-label="OTP" required />
             <div className={`${s.sel} ${s.f5}`}>

@@ -9,6 +9,21 @@ import s from './FacultyArticles.module.scss';
 
 const avatar = (key: string) => (key === 'meera' ? '/images/faculty/meera.webp' : `/images/avatars/${key}.webp`);
 
+const toIsoDate = (dateStr: string) => {
+  const months: Record<string, string> = {
+    jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06',
+    jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12',
+  };
+  const parts = dateStr.trim().split(/\s+/);
+  if (parts.length >= 3) {
+    const d = parts[0].padStart(2, '0');
+    const m = months[parts[1].slice(0, 3).toLowerCase()] ?? '01';
+    const y = parts[2];
+    return `${y}-${m}-${d}`;
+  }
+  return dateStr;
+};
+
 export function FacultyArticles() {
   return (
     <section className={s.section}>
@@ -95,7 +110,7 @@ export function FacultyArticles() {
                 <FramedImage src={`/images/articles/${a.key}.webp`} alt="" frame={a.frame} box={a.box} sizes="(max-width: 900px) 100vw, 563px" />
               </div>
               <div className={s.abody}>
-                <time>{a.date}</time>
+                <time dateTime={toIsoDate(a.date)}>{a.date}</time>
                 <h3>
                   {a.title[0]} <br className={s.br} />
                   {a.title[1]}

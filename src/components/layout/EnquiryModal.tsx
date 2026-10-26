@@ -165,7 +165,7 @@ export function EnquiryModal({ onClose }: { onClose: () => void }) {
                 <label htmlFor={`${uid}-phone`}>Mobile number *</label>
                 <div className={s.phone}>
                   <CountryPicker value={country} onChange={setCountry} />
-                  <input id={`${uid}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel-national" placeholder={country.iso === 'in' ? '98765 43210' : 'Phone number'} value={values.phone} onChange={onChange} maxLength={16} {...invalid('phone')} />
+                  <input id={`${uid}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder={country.iso === 'in' ? '98765 43210' : 'Phone number'} value={values.phone} onChange={onChange} maxLength={16} {...invalid('phone')} />
                 </div>
                 {msg('phone')}
               </div>
