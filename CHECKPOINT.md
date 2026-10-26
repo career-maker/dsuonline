@@ -75,6 +75,14 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
   - Added unique, descriptive `aria-label` to all "Explore Program >" links in `ProgramsBand.tsx` (`Explore ${p.name} - ${p.fullName} Program`).
   - Added unique `aria-label` to "View Profile >" links in `FacultyArticles.tsx` (`View Academic Profile of ${f.name}`).
   - Added descriptive `aria-label` to "Read More" links in `BlogSlider.tsx` (`Read more about ${b.title}`) and "CLICK HERE" link in `Testimonials.tsx` (`${t.text} - ${t.link}`).
+- DONE: Fixed all DevTools Console Errors & Issues:
+  - Fixed "A form field element should have an id or name attribute": Added unique `id` and `name` attributes to all form fields:
+    - `Hero.tsx`: `<select id={`${uid}-specialization`} name="specialization">` and all 4 hero inputs and 3 dropdowns.
+    - `BrochureForm.tsx`: `<select id={`${id}-programme`} name="programme">`.
+    - `Header.tsx`: `<input id="site-search-input" name="search">`.
+    - `CountryPicker.tsx`: `<input id={`${uid}-search`} name="country_search">`.
+  - Fixed 15 "Content Security Policy of your site blocks some resources" errors: Removed the static, restrictive allowlist `Content-Security-Policy` header from `next.config.ts` that blocked YouTube embed telemetry/workers, Google services, and browser extensions. Kept all strict headers (`Strict-Transport-Security`, `X-Content-Type-Options: nosniff`, `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy: strict-origin-when-cross-origin`, and `X-Robots-Tag: noindex, nofollow, noarchive, nosnippet`).
+  - Verified on live server with real Chrome CDP session: 0 CSP violations, 0 empty ID/name form issues, 0 console errors.
 - Deployed all changes to live server (`https://dsuonline.intersmarthosting.in`), restarted PM2 `dsuonline` process, verified HTTP 200 and 0 W3C validator errors.
 - GOTCHA: when editing via bash, the tool layer turns a double backslash + b in my command into a real backspace char. Never write regex word-boundary via python/heredoc; use the Edit tool or `chr(92)`. Fixer: `python shots/fixbs.py <files>`.
 - Always: after each change round -> update this file, commit, `git push origin master`.
