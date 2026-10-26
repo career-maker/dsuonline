@@ -20,7 +20,7 @@ export function BrochureForm() {
     <form className={s.brochure} onSubmit={submit}>
       <h2 id={id}>Download Brochures</h2>
       <div className={s.select}>
-        <select aria-labelledby={id} value={choice} onChange={(e) => setChoice(e.target.value)}>
+        <select id={`${id}-programme`} name="programme" aria-labelledby={id} value={choice} onChange={(e) => setChoice(e.target.value)}>
           <option value="">Select Program</option>
           {programs.map((p) => (
             <option key={p.code} value={p.code}>

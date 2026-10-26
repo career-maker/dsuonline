@@ -86,6 +86,8 @@ export function CountryPicker({ value, onChange }: { value: Country; onChange: (
       {open && (
         <div className={s.pickPanel}>
           <input
+            id={`${uid}-search`}
+            name="country_search"
             ref={search}
             type="search"
             value={q}

@@ -117,17 +117,17 @@ export function Hero() {
           </p>
         ) : (
           <>
-            <input className={s.f1} name="name" type="text" autoComplete="name" placeholder="Name *" aria-label="Name" required />
-            <input className={s.f2} name="email" type="email" autoComplete="email" placeholder="Email *" aria-label="Email" required />
+            <input className={s.f1} id={`${uid}-name`} name="name" type="text" autoComplete="name" placeholder="Name *" aria-label="Name" required />
+            <input className={s.f2} id={`${uid}-email`} name="email" type="email" autoComplete="email" placeholder="Email *" aria-label="Email" required />
             <div className={s.f3}>
               <span className={s.flag} aria-hidden="true" />
               <ChevronDown />
               <span className={s.cc}>+91</span>
-              <input name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="000 000 0000" aria-label="Mobile number" pattern="[0-9 ]{10,13}" required />
+              <input id={`${uid}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="000 000 0000" aria-label="Mobile number" pattern="[0-9 ]{10,13}" required />
             </div>
-            <input className={s.f4} name="otp" type="text" inputMode="numeric" placeholder="Enter OTP *" aria-label="OTP" required />
+            <input className={s.f4} id={`${uid}-otp`} name="otp" type="text" inputMode="numeric" placeholder="Enter OTP *" aria-label="OTP" required />
             <div className={`${s.sel} ${s.f5}`}>
-              <select name="programme" aria-label="Programme" defaultValue="" required>
+              <select id={`${uid}-programme`} name="programme" aria-label="Programme" defaultValue="" required>
                 <option value="" disabled>
                   Select a Programme...
                 </option>
@@ -140,7 +140,7 @@ export function Hero() {
               <ChevronDown />
             </div>
             <div className={`${s.sel} ${s.f6}`}>
-              <select name="state" aria-label="State" defaultValue="" required>
+              <select id={`${uid}-state`} name="state" aria-label="State" defaultValue="" required>
                 <option value="" disabled>
                   Select State
                 </option>
@@ -155,7 +155,7 @@ export function Hero() {
               <ChevronDown />
             </div>
             <div className={`${s.sel} ${s.f7}`}>
-              <select name="city" aria-label="City" defaultValue="" required>
+              <select id={`${uid}-city`} name="city" aria-label="City" defaultValue="" required>
                 <option value="" disabled>
                   Select City
                 </option>
@@ -196,7 +196,7 @@ export function Hero() {
           ))}
         </div>
         <div className={`${s.sel} ${s.spec}`}>
-          <select aria-label="Specialization" value={spec} onChange={(e) => setSpec(e.target.value)}>
+          <select id={`${uid}-specialization`} name="specialization" aria-label="Specialization" value={spec} onChange={(e) => setSpec(e.target.value)}>
             <option value="">Select a Specialization..</option>
             {program.specializations.map((sp) => (
               <option key={sp.slug} value={sp.slug}>

@@ -203,6 +203,8 @@ export function Header() {
             {searchOpen && (
               <div className={s.searchPanel}>
                 <input
+                  id="site-search-input"
+                  name="search"
                   type="search"
                   autoFocus
                   value={query}
