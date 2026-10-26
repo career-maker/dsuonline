@@ -90,6 +90,9 @@
   aspect-ratio: 525 / 173;
   overflow: hidden;
   border-radius: px(10);
+  display: block;
+  color: inherit;
+  text-decoration: none;
 
   img {
     object-fit: cover;
@@ -169,6 +172,11 @@
   line-height: 1.15;
   font-weight: 500;
   color: $ink;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .full {
@@ -375,6 +383,11 @@
   font-size: fs(30, 22px);
   line-height: 1.1;
   font-weight: 700;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .detailFull {

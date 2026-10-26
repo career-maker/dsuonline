@@ -57,7 +57,7 @@ export function ProgramsBand({
             const ph = photos[code];
             return (
               <article key={code} className={s.card}>
-                <div className={s.media}>
+                <Link href={p.href} className={s.media} aria-label={`Explore ${p.name} - ${p.fullName} Program`}>
                   <FramedImage
                     src={`/images/programs/${code}.webp`}
                     alt={`Learner pursuing ${p.name} online`}
@@ -73,7 +73,7 @@ export function ProgramsBand({
                       <small>COST EMI</small>
                     </i>
                   </span>
-                </div>
+                </Link>
                 <h3>
                   <Link href={p.href}>{p.name}</Link>
                 </h3>
@@ -114,7 +114,9 @@ export function ProgramsBand({
                   <Image src={`/images/programs/${code}.webp`} alt="" fill sizes="(max-width: 900px) 100vw, 525px" className={s.detailBg} />
                   <div className={s.detailTop}>
                     <div>
-                      <p className={s.detailName}>{p.name}</p>
+                      <p className={s.detailName}>
+                        <Link href={p.href}>{p.name}</Link>
+                      </p>
                       <p className={s.detailFull}>
                         {p.lines[0]}
                         <br />
@@ -154,7 +156,7 @@ export function ProgramsBand({
                     )}
                   </ul>
                   <div className={s.detailBtns}>
-                    <ArrowLink href={p.href}>Know More</ArrowLink>
+                    <ArrowLink href={p.href}>Explore Program</ArrowLink>
                     <ArrowLink
                       href="/docs/dsu-online-brochure.pdf"
                       download={`DSU-Online-${code.toUpperCase()}-Brochure.pdf`}
