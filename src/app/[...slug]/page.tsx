@@ -22,7 +22,7 @@ export function generateStaticParams(): Params[] {
 
 type Resolved =
   | { kind: 'blogIndex'; page: number }
-  | { kind: 'post'; data: PageData }
+  | { kind: 'post'; data: PageData; slug: string }
   | { kind: 'page'; data: PageData; crumbs: Crumb[]; programLinks?: { name: string; href: string }[]; withFacts: boolean };
 
 function resolve(segments: string[]): Resolved | null {
@@ -35,7 +35,7 @@ function resolve(segments: string[]): Resolved | null {
     }
     if (seg.length === 3) {
       const data = loadBlogPost(seg[2]);
-      return data ? { kind: 'post', data } : null;
+      return data ? { kind: 'post', data, slug: seg[2] } : null;
     }
     return null;
   }
@@ -76,6 +76,6 @@ export default async function InnerRoute({ params }: { params: Promise<Params> }
   const r = resolve(slug);
   if (!r) notFound();
   if (r.kind === 'blogIndex') return <BlogIndex page={r.page} />;
-  if (r.kind === 'post') return <BlogPost data={r.data} />;
+  if (r.kind === 'post') return <BlogPost data={r.data} slug={r.slug} />;
   return <ContentPage slug={slug.join('/')} crumbs={r.crumbs} blocks={r.data.blocks} programLinks={r.programLinks} withFacts={r.withFacts} />;
 }

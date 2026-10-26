@@ -36,6 +36,8 @@ export function FramedImage({ src, alt = '', frame, box, sizes, priority, flip }
         top: `${((by - fy) / fh) * 100}%`,
         width: `${(bw / fw) * 100}%`,
         height: `${(bh / fh) * 100}%`,
+        objectFit: 'cover',
+        aspectRatio: `${Math.round(bw)} / ${Math.round(bh)}`,
         transform: flip ? 'scaleX(-1)' : undefined,
       }}
     />

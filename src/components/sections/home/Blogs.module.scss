@@ -153,9 +153,17 @@
   }
 }
 
+.photoLink {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+}
+
 .body {
   position: absolute;
   inset: auto clamp(8px, #{u(19)}, 19px) clamp(8px, #{u(17)}, 17px);
+  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: px(8.2);
@@ -168,6 +176,15 @@
     line-height: 1.357;
     font-weight: 500;
     letter-spacing: -0.015em;
+
+    a {
+      color: inherit;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $blue;
+      }
+    }
   }
 
   p {
@@ -183,41 +200,44 @@
 .read {
   position: relative;
   overflow: hidden;
-  transition: filter 0.2s, box-shadow 0.3s, padding 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  gap: px(8);
   height: px(44);
   margin: clamp(6px, #{u(16)}, 16px) 0 0 3px;
-  padding: px(5.8) px(33.5) 0;
+  padding: 0 px(28);
   border-radius: px(3);
   background: $blue;
   color: #fff;
   font-size: px(16);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0;
   text-transform: uppercase;
+  white-space: nowrap;
+  transition: all 0.25s ease;
   @include focus-ring;
-}
-
-// hover: brighter fill, soft shadow and an arrow that slides in (the button itself does not move)
-.read::after {
-  content: '→';
-  position: absolute;
-  right: px(12);
-  opacity: 0;
-  translate: px(-10) 0;
-  transition: opacity 0.25s, translate 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-
-.read:hover {
-  filter: brightness(1.1);
-  box-shadow: 0 8px 20px rgb(0 0 0 / 24%);
-  padding-right: px(44);
 
   &::after {
-    opacity: 1;
-    translate: 0 0;
+    content: '→';
+    display: inline-block;
+    opacity: 0;
+    max-width: 0;
+    translate: -6px 0;
+    transition: opacity 0.25s ease, translate 0.25s ease, max-width 0.25s ease;
+  }
+
+  &:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 24%);
+    padding: 0 px(22);
+
+    &::after {
+      opacity: 1;
+      max-width: 20px;
+      translate: 0 0;
+    }
   }
 }
 
@@ -339,10 +359,11 @@
   }
 
   .read {
-    width: u(155);
+    width: auto;
+    min-width: u(155);
     height: u(44);
     margin: u(10.66) 0 0 u(4);
-    padding: 0 0 0 u(33.2);
+    padding: 0 u(24);
     font-size: u(16);
   }
 }

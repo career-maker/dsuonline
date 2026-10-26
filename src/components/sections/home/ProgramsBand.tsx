@@ -16,7 +16,7 @@ const photos: Record<string, { frame: Rect; box: Rect }> = {
   mba: { frame: [695, 3010, 525, 173], box: [693.9, 3013, 527.3, 174] },
   bba: { frame: [1279, 3010, 525, 173], box: [1279.3, 3014, 524.4, 173.2] },
   bca: { frame: [112, 3456, 525, 173], box: [112, 3459.7, 524.9, 234.3] },
-  bcom: { frame: [691, 3456, 525, 173], box: [691, 3446.9, 524.9, 239.3] },
+  bcom: { frame: [691, 3456, 525, 173], box: [691, 3446.9, 525, 238.9] },
 };
 
 const order = ['mca', 'mba', 'bba', 'bca', 'bcom'] as const;
@@ -147,7 +147,7 @@ export function ProgramsBand() {
 
           <article className={`${s.card} ${s.cta}`}>
             <div className={s.ctaMedia}>
-              <FramedImage src="/images/programs/cta.webp" frame={[0, 0, 525, 393]} box={[-47.2, 0, 619.5, 413]} sizes="(max-width: 900px) 100vw, 525px" />
+              <FramedImage src="/images/programs/cta.webp" frame={[0, 0, 525, 393]} box={[-47.2, 0, 619.5, 412.7]} sizes="(max-width: 900px) 100vw, 525px" />
               <div className={s.ctaShade} />
               <div className={s.ctaBody}>
                 <h3>
