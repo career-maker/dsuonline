@@ -47,14 +47,20 @@
     place-items: center;
     width: px(44);
     height: px(44);
-    border-radius: px(6);
+    border-radius: px(8);
     background: #fff;
     color: #1d1d1d;
     font-size: px(32);
-    transition: color 0.2s;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease, filter 0.25s ease;
 
     &:hover {
-      color: $blue;
+      transform: translateY(-4px) scale(1.08);
+      box-shadow: 0 8px 18px rgba(0, 30, 70, 0.16);
+      filter: brightness(0.98);
+    }
+
+    &:active {
+      transform: translateY(-1px) scale(1.02);
     }
   }
 }
@@ -102,10 +108,11 @@
       align-items: center;
       min-height: 36px;
       padding: 4px 0;
-      transition: color 0.2s ease;
+      transition: color 0.2s ease, transform 0.2s ease;
 
       &:hover {
         color: $blue;
+        transform: translateX(4px);
       }
     }
   }
@@ -125,6 +132,13 @@
 
     a {
       font-weight: 700;
+      display: inline-block;
+      transition: color 0.2s ease, transform 0.2s ease;
+
+      &:hover {
+        color: $blue;
+        transform: translateX(3px);
+      }
     }
   }
 
@@ -153,59 +167,64 @@
   }
 }
 
+.col5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: px(15);
+}
+
 .spec,
 .brochure {
   border-radius: px(10);
-  background: rgb(255 255 255 / 30%);
+  background: rgb(255 255 255 / 35%);
 }
 
 .spec {
-  padding: px(18) px(28) px(24) px(24);
-
-  @include up($bp-lg) {
-    &:not(.bcom) {
-      grid-row: 1 / 3;
-    }
-  }
+  padding: px(20);
+  overflow: visible;
 
   h2 {
-    font-size: px(20);
-    line-height: px(24);
+    font-size: px(18);
+    line-height: px(22);
     font-weight: 700;
     text-transform: uppercase;
     color: $blue;
   }
 
   ul {
-    margin-top: px(18);
+    margin-top: px(14);
+    display: flex;
+    flex-direction: column;
+    gap: px(6);
   }
 
   li {
-    font-size: px(15);
-    line-height: 1.4;
+    font-size: px(14);
+    line-height: px(20);
     font-weight: 500;
 
     a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 36px;
-      padding: 4px 0;
-      transition: color 0.2s ease;
+      display: inline-block;
+      min-height: auto;
+      padding: 0;
+      transition: color 0.2s ease, transform 0.2s ease;
 
       &:hover {
         color: $blue;
+        transform: translateX(4px);
       }
     }
   }
 }
 
 .brochure {
-  padding: px(40) px(26) px(24) px(25);
+  padding: px(20);
 
   h2 {
     font-size: px(18);
     line-height: px(22);
-    font-weight: 500;
+    font-weight: 700;
     text-transform: uppercase;
     color: $blue;
   }
@@ -213,43 +232,55 @@
   button {
     @include btn-gradient;
     width: 100%;
-    height: px(41);
-    margin-top: px(5);
-    gap: px(6);
+    height: px(42);
+    margin-top: px(14);
+    gap: px(8);
     background: $blue;
     color: #fff;
-    font-size: px(15.4);
+    border-radius: px(6);
+    font-size: px(15);
+    font-weight: 600;
+
+    svg {
+      width: px(18);
+      height: px(18);
+    }
   }
 }
 
 .select {
   position: relative;
-  margin-top: px(21);
+  margin-top: px(14);
 
   select {
     width: 100%;
-    height: px(44);
-    padding: 0 px(40) 0 px(12);
+    height: px(42);
+    padding: 0 px(36) 0 px(14);
     border: 1px solid #c9d3da;
-    border-radius: px(4);
+    border-radius: px(6);
     background: #fff;
     color: #333;
-    font-size: px(15.4);
+    font-size: px(14.5);
     appearance: none;
+    cursor: pointer;
   }
 
   svg {
     position: absolute;
-    top: px(15);
+    top: 50%;
     right: px(14);
+    transform: translateY(-50%);
     pointer-events: none;
+    width: px(18);
+    height: px(18);
   }
 }
 
 .note {
-  min-height: px(20);
+  min-height: px(18);
   margin-top: px(6);
-  font-size: px(13);
+  font-size: px(12);
+  color: $blue;
 }
 
 .bar {
@@ -277,10 +308,11 @@
     align-items: center;
     min-height: 36px;
     padding: 4px 0;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
 
     &:hover {
       color: $blue;
+      transform: translateY(-1px);
     }
   }
 }
@@ -291,6 +323,19 @@
   gap: px(8);
   font-size: px(14);
   letter-spacing: 0.02em;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 0;
+    padding: 0;
+    transition: transform 0.2s ease, filter 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.04);
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12));
+    }
+  }
 }
 
 // ---------- desktop: exact geometry of the 1920 artboard
@@ -331,6 +376,18 @@
       height: u(45.2);
       overflow: hidden;
       background: none;
+      border-radius: u(6);
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease, filter 0.25s ease;
+
+      &:hover {
+        transform: translateY(-4px) scale(1.08);
+        box-shadow: 0 8px 18px rgba(0, 30, 70, 0.16);
+        filter: brightness(0.98);
+      }
+
+      &:active {
+        transform: translateY(-1px) scale(1.02);
+      }
 
       img {
         width: 100%;
@@ -350,107 +407,162 @@
     }
 
     ul {
-      gap: u(15);
-      margin-top: u(11.68);
+      gap: u(12);
+      margin-top: u(12);
     }
 
     li {
-      font-size: u(18);
-      line-height: u(24);
+      font-size: u(16);
+      line-height: u(22);
+
+      a {
+        display: inline-block;
+        min-height: auto;
+        padding: 0;
+        transition: color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+          color: $blue;
+          transform: translateX(4px);
+        }
+      }
     }
   }
 
   .contact {
     p {
-      margin-top: u(11);
-      font-size: u(18);
-      line-height: u(24);
+      margin-top: u(8);
+      font-size: u(16);
+      line-height: u(22);
 
       &:first-of-type {
-        margin-top: u(11.68);
+        margin-top: u(12);
+      }
+
+      a {
+        display: inline-block;
+        transition: color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+          color: $blue;
+          transform: translateX(3px);
+        }
       }
     }
 
     .adm {
-      margin-top: u(32);
+      margin-top: u(28);
     }
   }
 
-  // cards 330 wide at x 95 + 350n, y11134; B.Com 297 + brochure 244 below
+  // 5 equal columns: cards 330 wide at 1730 container; MCA has 15 items naturally sizing row height
   .specs {
     grid-template-columns: repeat(5, u(330));
-    grid-template-rows: u(297) u(244);
     gap: u(15) u(20);
     margin-top: u(34);
+    align-items: stretch;
+  }
+
+  .col5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: u(15);
   }
 
   .spec {
-    padding: u(18.16) u(60) 0 u(22);
-
-    &:not(.bcom) {
-      height: u(560);
-    }
+    padding: u(22) u(20) u(24) u(20);
+    overflow: visible;
 
     h2 {
-      padding-bottom: u(11.84);
-      border-bottom: 1px solid rgb(255 255 255 / 10%);
-      font-size: u(20);
-      line-height: u(24);
+      padding-bottom: 0;
+      border-bottom: none;
+      font-size: u(18);
+      line-height: u(22);
     }
 
     ul {
-      margin-top: u(11.87);
+      margin-top: u(14);
+      display: flex;
+      flex-direction: column;
+      gap: u(5);
     }
 
     li {
-      font-size: u(15);
-      line-height: u(32);
-    }
-  }
+      font-size: u(13.5);
+      line-height: u(20);
 
-  .mca {
-    padding-left: u(19);
-  }
+      a {
+        display: inline-block;
+        min-height: auto;
+        padding: 0;
+        transition: color 0.2s ease, transform 0.2s ease;
 
-  .bba {
-    padding-left: u(20);
-  }
-
-  .bca {
-    padding-left: u(27);
-  }
-
-  .bcom {
-    padding-left: u(29);
-  }
-
-  .mba ul {
-    margin-top: u(13.9);
-  }
-
-  .brochure {
-    padding: u(46) u(38) 0 u(24.7);
-
-    button {
-      gap: u(14);
-
-      svg {
-        width: u(17);
-        height: u(17);
+        &:hover {
+          color: $blue;
+          transform: translateX(4px);
+        }
       }
     }
   }
 
-  .select select {
-    padding-left: u(17);
-    border-color: #c7c7c7;
-    background: transparent;
+  .mca,
+  .bba,
+  .bca,
+  .bcom,
+  .mba {
+    padding-left: u(20);
   }
 
-  .select svg {
-    width: u(18);
-    height: u(18);
-    stroke-width: 2.5;
+  .spec.bcom {
+    min-height: u(297);
+    height: u(297);
+  }
+
+  .brochure {
+    min-height: u(244);
+    height: u(244);
+    padding: u(22) u(20) u(24) u(20);
+
+    h2 {
+      font-size: u(18);
+      line-height: u(22);
+    }
+
+    button {
+      height: u(42);
+      margin-top: u(14);
+      gap: u(8);
+      font-size: u(15);
+      border-radius: u(6);
+
+      svg {
+        width: u(18);
+        height: u(18);
+      }
+    }
+  }
+
+  .select {
+    margin-top: u(14);
+
+    select {
+      height: u(42);
+      padding: 0 u(36) 0 u(14);
+      border-radius: u(6);
+      background: #fff;
+      font-size: u(14.5);
+      border-color: #c9d3da;
+    }
+
+    svg {
+      top: 50%;
+      right: u(14);
+      transform: translateY(-50%);
+      width: u(18);
+      height: u(18);
+      stroke-width: 2.2;
+    }
   }
 
   .bar {

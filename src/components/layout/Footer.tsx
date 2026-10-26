@@ -20,7 +20,7 @@ export function Footer() {
               {site.social.map((x) => (
                 <li key={x.name}>
                   <a href={x.href} target="_blank" rel="noopener noreferrer" aria-label={x.name}>
-                    <Image src={`/icons/social-${x.icon === 'x' ? 'twitter' : x.icon}.png`} alt="" width={45} height={45} />
+                    <Image src={`/icons/social-${x.icon}.png`} alt="" width={45} height={45} />
                   </a>
                 </li>
               ))}
@@ -77,7 +77,7 @@ export function Footer() {
         </div>
 
         <div className={s.specs}>
-          {programs.map((p) => (
+          {programs.slice(0, 4).map((p) => (
             <FooterGroup key={p.code} tag="section" className={`${s.spec} ${s[p.code]}`} title={`${p.name} Specializations`}>
               <ul>
                 {p.specializations.map((sp) => (
@@ -88,7 +88,20 @@ export function Footer() {
               </ul>
             </FooterGroup>
           ))}
-          <BrochureForm />
+          <div className={s.col5}>
+            {programs.slice(4).map((p) => (
+              <FooterGroup key={p.code} tag="section" className={`${s.spec} ${s[p.code]}`} title={`${p.name} Specializations`}>
+                <ul>
+                  {p.specializations.map((sp) => (
+                    <li key={sp.slug}>
+                      <Link href={specializationHref(p, sp)}>{sp.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </FooterGroup>
+            ))}
+            <BrochureForm />
+          </div>
         </div>
       </div>
 

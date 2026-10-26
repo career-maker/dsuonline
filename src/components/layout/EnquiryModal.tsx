@@ -13,12 +13,15 @@ type Phase = 'idle' | 'submitting' | 'sent' | 'unconfigured' | 'error';
 const empty: EnquiryValues = { name: '', email: '', phone: '', programme: '', message: '' };
 const FOCUSABLE = 'button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href]';
 
-export function EnquiryModal({ onClose }: { onClose: () => void }) {
+export function EnquiryModal({ onClose, initialProgramme }: { onClose: () => void; initialProgramme?: string }) {
   const uid = useId();
   const titleId = `${uid}-title`;
   const dialogRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
-  const [values, setValues] = useState<EnquiryValues>(empty);
+  const [values, setValues] = useState<EnquiryValues>(() => ({
+    ...empty,
+    programme: initialProgramme ?? '',
+  }));
   const [errors, setErrors] = useState<EnquiryErrors>({});
   const [phase, setPhase] = useState<Phase>('idle');
   const [serverError, setServerError] = useState('');

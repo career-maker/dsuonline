@@ -1,11 +1,13 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEnquiry } from '@/components/layout/EnquiryProvider';
 import { EnquireButton } from '@/components/inner/EnquireButton';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Icon } from '@/components/ui/Icon';
 import { programs, specializationHref } from '@/data/programs';
-import { site } from '@/data/site';
 import s from './ProgramsBand.module.scss';
 
 type Rect = readonly [number, number, number, number];
@@ -21,23 +23,33 @@ const photos: Record<string, { frame: Rect; box: Rect }> = {
 
 const order = ['mca', 'mba', 'bba', 'bca', 'bcom'] as const;
 
-export function ProgramsBand() {
+export function ProgramsBand({
+  id = 'programs',
+  eyebrow = 'Programs',
+  title = (
+    <>
+      Which Programme are you
+      <br />
+      Looking for?
+    </>
+  ),
+  lead = 'Explore flexible, industry-relevant online degrees from Dayananda Sagar University. Start by choosing the programme you are looking for, then explore the details when you\'re ready.',
+}: {
+  id?: string;
+  eyebrow?: string;
+  title?: React.ReactNode;
+  lead?: string;
+} = {}) {
+  const { open } = useEnquiry();
   return (
-    <section className={s.band} id="programs">
+    <section className={s.band} id={id}>
       <div className={s.inner}>
         <header className={s.head}>
           <div>
-            <p className={s.eyebrow}>Programs</p>
-            <h2>
-              Which Programme are you
-              <br />
-              Looking for?
-            </h2>
+            {eyebrow && <p className={s.eyebrow}>{eyebrow}</p>}
+            <h2>{title}</h2>
           </div>
-          <p className={s.lead}>
-            Explore flexible, industry-relevant online degrees from Dayananda Sagar University. Start by choosing the programme you are
-            looking for, then explore the details when you&apos;re ready.
-          </p>
+          {lead && <p className={s.lead}>{lead}</p>}
         </header>
 
         <div className={s.grid}>
@@ -87,7 +99,13 @@ export function ProgramsBand() {
                   <Link href={p.href} className={s.explore} aria-label={`Explore ${p.name} - ${p.fullName} Program`}>
                     Explore Program &gt;
                   </Link>
-                  <ArrowLink href={site.apply} external variant="ghost" className={s.apply}>
+                  <ArrowLink
+                    type="button"
+                    variant="ghost"
+                    className={s.apply}
+                    onClick={() => open(code)}
+                    aria-label={`Apply Now for ${p.name}`}
+                  >
                     Apply Now
                   </ArrowLink>
                 </div>
@@ -138,7 +156,7 @@ export function ProgramsBand() {
                   </ul>
                   <div className={s.detailBtns}>
                     <ArrowLink href={p.href}>Know More</ArrowLink>
-                    <EnquireButton variant="outline">Download Brochure</EnquireButton>
+                    <EnquireButton variant="outline" programme={code}>Download Brochure</EnquireButton>
                   </div>
                 </div>
               </article>
@@ -163,7 +181,7 @@ export function ProgramsBand() {
                   <ArrowLink href="/online-mba" variant="dark">
                     Explore Programs
                   </ArrowLink>
-                  <ArrowLink href={site.apply} external>
+                  <ArrowLink type="button" onClick={() => open()}>
                     Apply Now
                   </ArrowLink>
                 </div>

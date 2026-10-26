@@ -2,6 +2,7 @@ import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { localHref, type Block } from '@/lib/content';
 import { AboutBand, aboutPhotos } from '@/components/sections/home/About';
+import { ProgramsBand } from '@/components/sections/home/ProgramsBand';
 import { WhyChoose } from '@/components/sections/home/WhyChoose';
 import { cleanBlocks } from './clean';
 import { CtaBand, InnerHero, type Crumb } from './InnerPage';
@@ -340,9 +341,6 @@ function ReferPage({ blocks, crumbs }: { blocks: Block[]; crumbs: Crumb[] }) {
   const prog = st.sections.find((x) => /programs offered/i.test(x.title));
   const terms = st.sections.find((x) => /terms/i.test(x.title));
   const logos = st.pre.filter((b) => b.t === 'img').map(imgOf);
-  const names = ['MBA', 'MCA', 'BBA', 'BCA', 'B.Com'];
-  const hrefs: Record<string, string> = { MBA: '/online-mba', MCA: '/online-mca', BBA: '/online-bba', BCA: '/online-bca', 'B.Com': '/online-bcom' };
-  const full: Record<string, string> = { MBA: 'Master of Business Administration', MCA: 'Master of Computer Applications', BBA: 'Bachelor of Business Administration', BCA: 'Bachelor of Computer Applications', 'B.Com': 'Bachelor of Commerce' };
   const batch = st.pre.find((b): b is P => b.t === 'p' && /batch/i.test(b.x))?.x ?? 'Admissions Open for 2026 Batch';
   const tcs = (terms ? terms.blocks.filter((b): b is Extract<Block, { t: 'ul' }> => b.t === 'ul').flatMap((b) => b.items) : []).filter(Boolean);
   void prog;
@@ -354,19 +352,7 @@ function ReferPage({ blocks, crumbs }: { blocks: Block[]; crumbs: Crumb[] }) {
           <LogoWall imgs={logos} />
         </Sec>
       )}
-      <Sec tone="grey" center title="Programs Offered">
-        <ul className={`${s.cards} ${s.g3} ${s.tint}`} style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))' }}>
-          {names.map((n) => (
-            <li key={n} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 12 }}>
-              <span className={s.iconDisc}>
-                <b style={{ color: '#fff', fontSize: 15 }}>{n}</b>
-              </span>
-              <h3 style={{ flex: 1 }}>{full[n]}</h3>
-              <CtaLink href={hrefs[n]}>Know More</CtaLink>
-            </li>
-          ))}
-        </ul>
-      </Sec>
+      <ProgramsBand id="refer-programs" title="Programs Offered" />
       <Sec tone="white" title="Terms & Conditions">
         <ol className={s.steps}>
           {tcs.map((t, i) => (

@@ -70,7 +70,7 @@
   position: relative;
   transition: box-shadow 0.4s ease;
 
-  // hover feedback only from the photo / course name, not from the card's own buttons
+  &:hover,
   &:has(.media:hover),
   &:has(h3:hover) {
     box-shadow: 0 20px 44px rgb(0 30 70 / 28%);
@@ -81,6 +81,7 @@
   }
 
   @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    &:hover .media img,
     &:has(.media:hover) .media img,
     &:has(h3:hover) .media img {
       scale: 1.07;
@@ -341,6 +342,7 @@
 
   // pointer devices only; touch keeps the plain card
   @media (hover: hover) {
+    .card:hover &,
     .card:has(.media:hover) &,
     .card:has(h3:hover) &,
     .card:focus-within &,
@@ -465,10 +467,9 @@
 
 // ---------- desktop: exact geometry of the 1920 artboard
 @include up($bp-lg) {
-  // 17px white strip above the blue band (design y2718-2735)
   .band {
     padding: u(93.16) 0 u(91);
-    background: linear-gradient(#fff u(17), $blue u(17));
+    background: $blue;
   }
 
   .head {

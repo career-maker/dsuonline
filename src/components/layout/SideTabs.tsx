@@ -9,7 +9,7 @@ export function SideTabs() {
   const { open } = useEnquiry();
   return (
     <aside className={s.tabs} aria-label="Quick actions">
-      <button type="button" className={`${s.tab} ${s.enquire}`} onClick={open}>
+      <button type="button" className={`${s.tab} ${s.enquire}`} onClick={() => open()}>
         <span>Enquire Now</span>
       </button>
       <a href={site.apply} className={`${s.tab} ${s.apply}`} target="_blank" rel="noopener noreferrer">

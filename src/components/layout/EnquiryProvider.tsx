@@ -3,7 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { EnquiryModal } from './EnquiryModal';
 
-const EnquiryContext = createContext<{ open: () => void } | null>(null);
+const EnquiryContext = createContext<{ open: (programCode?: string | unknown) => void } | null>(null);
 
 export function useEnquiry() {
   const ctx = useContext(EnquiryContext);
@@ -16,13 +16,15 @@ const SEEN_KEY = 'dsu-enquiry-seen';
 
 export function EnquiryProvider({ children }: { children: ReactNode }) {
   const [isOpen, setOpen] = useState(false);
+  const [selectedProgram, setSelectedProgram] = useState<string | undefined>(undefined);
   const openRef = useRef(false);
 
   useEffect(() => {
     openRef.current = isOpen;
   }, [isOpen]);
 
-  const open = useCallback(() => {
+  const open = useCallback((programCode?: string | unknown) => {
+    setSelectedProgram(typeof programCode === 'string' ? programCode : undefined);
     setOpen(true);
     try {
       sessionStorage.setItem(SEEN_KEY, '1');
@@ -57,7 +59,15 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
   return (
     <EnquiryContext.Provider value={{ open }}>
       {children}
-      {isOpen && <EnquiryModal onClose={() => setOpen(false)} />}
+      {isOpen && (
+        <EnquiryModal
+          initialProgramme={selectedProgram}
+          onClose={() => {
+            setOpen(false);
+            setSelectedProgram(undefined);
+          }}
+        />
+      )}
     </EnquiryContext.Provider>
   );
 }

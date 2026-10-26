@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useId, useRef, useState, type KeyboardEvent } from 'react';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Icon } from '@/components/ui/Icon';
-import { ChevronRight } from '@/components/ui/icons';
 import { careerTabs, recruiters } from '@/data/home';
 import s from './Careers.module.scss';
 
@@ -56,6 +55,7 @@ export function Careers() {
                   tabIndex={i === active ? 0 : -1}
                   className={i === active ? s.on : undefined}
                   onClick={() => setActive(i)}
+                  onMouseEnter={() => setActive(i)}
                 >
                   <span className={s.ic}>
                     <Icon name={i === active ? `${t.icon}-white` : t.icon} />
@@ -65,7 +65,10 @@ export function Careers() {
                     <br />
                     {t.title[1]}
                   </span>
-                  <ChevronRight />
+                  {/* Fixed-size chevron — same dimensions on every card */}
+                  <svg className={s.chevron} width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M7 4l6 6-6 6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </button>
               ))}
             </div>

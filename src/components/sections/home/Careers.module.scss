@@ -75,7 +75,9 @@
 
     svg {
       margin-left: auto;
-      font-size: px(16);
+      flex: none;
+      width: 20px;
+      height: 20px;
     }
 
     &.on {
@@ -212,6 +214,20 @@
     padding: px(8);
     border-right: 1px solid rgb(0 0 0 / 8%);
     border-bottom: 1px solid rgb(0 0 0 / 8%);
+    transition: background-color 0.25s ease;
+
+    img {
+      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.3s ease;
+    }
+
+    &:hover {
+      background-color: #f7faff;
+
+      img {
+        transform: scale(1.1);
+        filter: drop-shadow(0 6px 14px rgba(0, 50, 120, 0.12));
+      }
+    }
 
     &:nth-child(4n) {
       border-right: 0;
@@ -303,7 +319,9 @@
       letter-spacing: -0.021em;
 
       svg {
-        font-size: u(20);
+        flex: none;
+        width: u(20);
+        height: u(20);
         stroke-width: 2.6;
       }
     }

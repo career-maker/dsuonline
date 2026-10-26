@@ -605,6 +605,28 @@
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+
+  > a,
+  > :first-child {
+    background: #fff;
+    color: $blue;
+    border: none;
+    font-weight: 600;
+
+    span {
+      color: $blue;
+    }
+
+    svg {
+      color: $blue;
+    }
+
+    &:hover {
+      background: #f0f7ff;
+      color: #005fa3;
+      box-shadow: 0 8px 24px rgb(0 0 0 / 22%);
+    }
+  }
 }
 
 .sub .figure,
