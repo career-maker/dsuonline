@@ -504,3 +504,66 @@ $ease: cubic-bezier(0.2, 0.8, 0.2, 1);
     font-size: 16px;
   }
 }
+
+// short screens (small laptops / zoomed browsers): tighter form so everything incl. Submit fits without scrolling
+@media (max-height: 860px) and (min-width: 900px) {
+  .dialog {
+    max-height: calc(100dvh - 24px);
+  }
+
+  .backdrop {
+    padding: 12px;
+  }
+
+  .pane {
+    padding: 18px 26px;
+  }
+
+  .form {
+    gap: 8px 14px;
+  }
+
+  .lead {
+    display: none;
+  }
+
+  .field {
+    gap: 3px;
+
+    label {
+      font-size: 13px;
+    }
+
+    input,
+    select {
+      min-height: 38px;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 52px;
+      padding-block: 8px;
+      font-size: 15px;
+    }
+  }
+
+  .pickBtn {
+    min-height: 38px;
+  }
+
+  .submit {
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  .aside {
+    padding: 24px 28px;
+    gap: 14px;
+  }
+}
+
+@media (max-height: 640px) and (min-width: 900px) {
+  .field textarea {
+    display: none;
+  }
+}
