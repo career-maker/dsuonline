@@ -24,15 +24,15 @@
    "x": "CONTENT COLUMN"
   },
   {
+   "t": "h2",
+   "x": "Placement Drives"
+  },
+  {
    "t": "img",
    "src": "/content/9f4f85f1-placement_degree.jpg",
    "alt": "DSU Online Placements",
    "w": 1500,
    "h": 993
-  },
-  {
-   "t": "h2",
-   "x": "Placement Drives"
   },
   {
    "t": "p",

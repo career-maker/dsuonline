@@ -1663,3 +1663,91 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .fiveUp .steps {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
 }
+
+// ---------- contact page: details left, enquiry form right
+.contactSplit {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(24px, #{u(56)}, 56px);
+  align-items: start;
+
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+  }
+
+  .officeGrid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  }
+
+  .head {
+    max-width: none;
+    margin-bottom: clamp(18px, #{u(28)}, 28px);
+  }
+}
+
+.social {
+  margin-top: clamp(20px, #{u(32)}, 32px);
+
+  p {
+    font-size: fs(20, 17px);
+    font-weight: 500;
+    color: $ink;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  a {
+    display: block;
+    width: 44px;
+    height: 44px;
+    transition: scale 0.25s $ease;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.contactFormCard {
+  padding: clamp(20px, #{u(32)}, 32px);
+  border: 1px solid $line-soft;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgb(0 40 80 / 10%);
+
+  > h2 {
+    margin-bottom: 18px;
+    font-size: fs(32, 24px);
+    line-height: 1.15;
+    font-weight: 700;
+    color: $ink;
+  }
+}
+
+.consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.45;
+  color: $body;
+  cursor: pointer;
+
+  input {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: $blue;
+  }
+}

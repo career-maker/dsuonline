@@ -5,6 +5,7 @@ import { AboutBand, aboutPhotos } from '@/components/sections/home/About';
 import { ProgramsBand } from '@/components/sections/home/ProgramsBand';
 import { WhyChoose } from '@/components/sections/home/WhyChoose';
 import { cleanBlocks, slugify } from './clean';
+import { ContactForm } from './ContactForm';
 import { CtaBand, InnerHero, type Crumb } from './InnerPage';
 import { FaqList, LeaderGrid } from './Interactive';
 import {
@@ -34,6 +35,15 @@ import {
 import { parseFaq, parseFaqByQuestionMarks, parsePairs, parseQuotes, splitBullets, type Img } from './parse';
 import { facts as parseFacts, structure, type Section, type Sub } from './structure';
 import s from './Kit.module.scss';
+
+// social links exactly as on the live contact page
+const contactSocial = [
+  { name: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/dsuonline.official/' },
+  { name: 'Facebook', icon: 'facebook', href: 'https://www.facebook.com/dsuonline.official' },
+  { name: 'LinkedIn', icon: 'linkedin', href: 'https://www.linkedin.com/company/dsu-online/' },
+  { name: 'YouTube', icon: 'youtube', href: 'https://www.youtube.com/@dsuonlineofficial' },
+  { name: 'X', icon: 'x', href: 'https://x.com/dsuonline' },
+] as const;
 
 type Props = {
   slug: string;
@@ -506,7 +516,10 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const li = addr.findIndex((x) => /^location$/i.test(x));
       const campus = addr.findIndex((x) => /main campus/i.test(x));
       nodes.push(
-        <Sec key={key} tone={nextTone()} title={title} lead={lead}>
+        <Sec key={key} tone={nextTone()}>
+          <div className={s.contactSplit}>
+            <div>
+              <Head title={title} eyebrow="Contact Us" lead={lead} />
           <div className={s.officeGrid}>
             {sec.subs.map((x) => (
               <OfficeCard key={x.title} title={x.title}>
@@ -523,6 +536,21 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
                 <p>{addr[campus + 1]}</p>
               </OfficeCard>
             )}
+          </div>
+              <div className={s.social}>
+                <p>Follow us on Social Media</p>
+                <ul>
+                  {contactSocial.map((x) => (
+                    <li key={x.name}>
+                      <a href={x.href} target="_blank" rel="noopener noreferrer" aria-label={x.name}>
+                        <Image src={`/icons/social-${x.icon}.png`} alt="" width={36} height={36} />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <ContactForm />
           </div>
           {maps.length > 0 && (
             <div className={s.maps}>

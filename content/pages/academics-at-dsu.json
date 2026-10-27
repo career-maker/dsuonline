@@ -40,13 +40,6 @@
    "x": "Update the image path as needed"
   },
   {
-   "t": "img",
-   "src": "/content/3796bafc-point-to-remember.png",
-   "alt": "Application Process",
-   "w": 610,
-   "h": 569
-  },
-  {
    "t": "h2",
    "x": "Our Teaching Methodology"
   },
@@ -96,6 +89,13 @@
   {
    "t": "p",
    "x": "Another advantage of studying at DSU online, students can write their tests and exams remotely through a secure and monitored channel, ensuring academic integrity. These assessments are conducted under real-time supervision through webcams, screen monitoring, and other AI-based tools. The exam conditions are constant across the board, ensuring that the standards of testing are uniform throughout, regardless of the student’s location."
+  },
+  {
+   "t": "img",
+   "src": "/content/3796bafc-point-to-remember.png",
+   "alt": "Application Process",
+   "w": 610,
+   "h": 569
   },
   {
    "t": "p",
