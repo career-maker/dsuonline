@@ -196,7 +196,7 @@ $w: clamp(40px, #{u(54)}, 54px);
     bottom: 0;
     left: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 52px 52px;
+    grid-template-columns: 1fr 1fr 52px 52px 52px;
     gap: 0;
     padding-bottom: env(safe-area-inset-bottom);
     background: #fff;
@@ -234,15 +234,16 @@ $w: clamp(40px, #{u(54)}, 54px);
     }
   }
 
-  .mail {
-    display: none;
-  }
-
   .call {
     grid-column: 3;
   }
 
-  .wa {
+  .mail {
     grid-column: 4;
+    margin: 0;
+  }
+
+  .wa {
+    grid-column: 5;
   }
 }

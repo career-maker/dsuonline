@@ -1,6 +1,6 @@
 'use client';
 
-import { useId, useState, useSyncExternalStore, type ReactNode } from 'react';
+import { useEffect, useId, useState, useSyncExternalStore, type ReactNode } from 'react';
 import s from './Footer.module.scss';
 
 const query = '(max-width: 599.98px)';
@@ -19,11 +19,25 @@ export function FooterGroup({ title, className, tag: Tag = 'div', children }: { 
   );
   const [open, setOpen] = useState(false);
   const id = useId();
+
+  // only one footer group stays open: opening another collapses this one
+  useEffect(() => {
+    const onOpen = (e: Event) => {
+      if ((e as CustomEvent<string>).detail !== id) setOpen(false);
+    };
+    window.addEventListener('footer-group-open', onOpen);
+    return () => window.removeEventListener('footer-group-open', onOpen);
+  }, [id]);
+
+  const toggle = () => {
+    if (!open) window.dispatchEvent(new CustomEvent('footer-group-open', { detail: id }));
+    setOpen((o) => !o);
+  };
   return (
     <Tag className={className}>
       <h2>
         {phone ? (
-          <button type="button" className={s.toggle} aria-expanded={open} aria-controls={id} onClick={() => setOpen((o) => !o)}>
+          <button type="button" className={s.toggle} aria-expanded={open} aria-controls={id} onClick={toggle}>
             {title}
           </button>
         ) : (

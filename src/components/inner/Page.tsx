@@ -213,6 +213,17 @@ function Body({ blocks, head }: { blocks: Block[]; head?: ReactNode }) {
 
 function SubView({ sub }: { sub: Sub }) {
   if (!sub.blocks.length) return null;
+  // title paragraph + description paragraph, repeated: heading and copy must read as two different things
+  const onlyP = sub.blocks.every(isP);
+  if (onlyP && sub.blocks.length >= 4 && sub.blocks.length % 2 === 0) {
+    const pairs = parsePairs(sub.blocks);
+    return (
+      <div style={{ marginTop: 'clamp(28px, 3.4vw, 52px)' }}>
+        <h3 style={{ marginBottom: 16, fontSize: 'max(21px, calc(var(--u) * 30))', fontWeight: 700, lineHeight: 1.2 }}>{sub.title}</h3>
+        {/career/i.test(sub.title) ? <RoleGrid items={pairs} /> : <CardGrid items={pairs} cols={3} tint />}
+      </div>
+    );
+  }
   return (
     <div style={{ marginTop: 'clamp(28px, 3.4vw, 52px)' }}>
       <h3 style={{ marginBottom: 16, fontSize: 'max(21px, calc(var(--u) * 30))', fontWeight: 700, lineHeight: 1.2 }}>{sub.title}</h3>

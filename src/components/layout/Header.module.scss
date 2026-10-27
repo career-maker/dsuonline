@@ -673,3 +673,36 @@
     pointer-events: none;
   }
 }
+
+// mobile: menu scroll stays inside the drawer; search panel stays on screen
+.nav {
+  overscroll-behavior: contain;
+}
+
+.drawerOnly {
+  display: none;
+
+  @include down($bp-md) {
+    display: block;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}
+
+@include down($bp-md) {
+  .search {
+    position: static;
+  }
+
+  .searchPanel {
+    position: fixed;
+    top: clamp(68px, #{u(121)}, 121px);
+    right: 12px;
+    left: 12px;
+    width: auto;
+  }
+}

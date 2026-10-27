@@ -270,9 +270,14 @@
     top: 50%;
     right: px(14);
     transform: translateY(-50%);
+    transition: transform 0.2s;
     pointer-events: none;
     width: px(18);
     height: px(18);
+  }
+
+  &:focus-within svg {
+    transform: translateY(-50%) rotate(180deg);
   }
 }
 

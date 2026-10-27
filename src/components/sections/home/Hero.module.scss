@@ -1118,3 +1118,11 @@
     padding: 0 px(18) 0 px(24);
   }
 }
+
+.sel svg {
+  transition: rotate 0.2s;
+}
+
+.sel:focus-within svg {
+  rotate: 180deg;
+}

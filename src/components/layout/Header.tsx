@@ -6,7 +6,7 @@ import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { programs, specializationHref } from '@/data/programs';
 import { mainNav, moreNav, site } from '@/data/site';
 import { useEnquiry } from './EnquiryProvider';
-import { CloseIcon, MenuIcon } from '@/components/ui/icons';
+import { CloseIcon, MenuIcon, UserIcon } from '@/components/ui/icons';
 import s from './Header.module.scss';
 
 type Hit = { label: string; href: string };
@@ -123,7 +123,7 @@ export function Header() {
           <Image src="/images/brand/logo-header.webp" alt="Dayananda Sagar University Online" width={385} height={75} priority />
         </Link>
 
-        <nav className={`${s.nav} ${menuOpen ? s.navOpen : ''} ${held ? s.held : ''}`} aria-label="Primary" onMouseLeave={() => setHeld(false)}>
+        <nav className={`${s.nav} ${menuOpen ? s.navOpen : ''} ${held ? s.held : ''}`} data-lenis-prevent aria-label="Primary" onMouseLeave={() => setHeld(false)}>
           <ul>
             <li>
               <Link href="/" className={s.homeLink} aria-label="Home" onClick={closeAll}>
@@ -166,6 +166,11 @@ export function Header() {
                 </Link>
               </li>
             ))}
+            <li className={s.drawerOnly}>
+              <a href={site.learnerLogin} target="_blank" rel="noopener noreferrer" onClick={closeAll}>
+                <UserIcon /> Learner Login
+              </a>
+            </li>
             <li ref={moreRef} className={s.hasMenu}>
               <button type="button" className={s.navBtn} aria-expanded={moreOpen} aria-controls={moreId} onClick={() => setMoreOpen((v) => !v)}>
                 More <Image className={`${s.ico} ${moreOpen ? s.flip : ''}`} src="/icons/hdr-chev.png" alt="" width={14} height={11} />
