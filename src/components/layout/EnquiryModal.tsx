@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useId, useRef, useState, type ChangeEvent, type FormEvent } from 'react';
 import { CloseIcon } from '@/components/ui/icons';
 import { defaultCountry, type Country } from '@/data/countries';
+import { locations, stateNames } from '@/data/locations';
 import { programs } from '@/data/programs';
 import { CountryPicker } from './CountryPicker';
 import { site } from '@/data/site';
@@ -10,7 +11,7 @@ import { normalisePhone, submitEnquiry, validate, type EnquiryErrors, type Enqui
 import s from './EnquiryModal.module.scss';
 
 type Phase = 'idle' | 'submitting' | 'sent' | 'unconfigured' | 'error';
-const empty: EnquiryValues = { name: '', email: '', phone: '', programme: '', message: '' };
+const empty: EnquiryValues = { name: '', email: '', phone: '', otp: '', programme: '', state: '', city: '', message: '' };
 const FOCUSABLE = 'button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href]';
 
 export function EnquiryModal({ onClose, initialProgramme }: { onClose: () => void; initialProgramme?: string }) {
@@ -68,7 +69,7 @@ export function EnquiryModal({ onClose, initialProgramme }: { onClose: () => voi
 
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setValues((v) => ({ ...v, [name]: value }));
+    setValues((v) => (name === 'state' ? { ...v, state: value, city: '' } : { ...v, [name]: value }));
     if (errors[name as keyof EnquiryValues]) setErrors((er) => ({ ...er, [name]: undefined }));
   };
 
@@ -174,7 +175,13 @@ export function EnquiryModal({ onClose, initialProgramme }: { onClose: () => voi
               </div>
 
               <div className={s.field}>
-                <label htmlFor={`${uid}-programme`}>Programme of interest *</label>
+                <label htmlFor={`${uid}-otp`}>Enter OTP</label>
+                <input id={`${uid}-otp`} name="otp" type="text" inputMode="numeric" autoComplete="one-time-code" placeholder="Enter OTP" value={values.otp} onChange={onChange} maxLength={6} {...invalid('otp')} />
+                {msg('otp')}
+              </div>
+
+              <div className={`${s.field} ${s.wide}`}>
+                <label htmlFor={`${uid}-programme`}>Select your program *</label>
                 <select id={`${uid}-programme`} name="programme" value={values.programme} onChange={onChange} {...invalid('programme')}>
                   <option value="" disabled>
                     Select a programme
@@ -187,6 +194,36 @@ export function EnquiryModal({ onClose, initialProgramme }: { onClose: () => voi
                   <option value="unsure">Not sure yet</option>
                 </select>
                 {msg('programme')}
+              </div>
+
+              <div className={s.field}>
+                <label htmlFor={`${uid}-state`}>Select state *</label>
+                <select id={`${uid}-state`} name="state" value={values.state} onChange={onChange} {...invalid('state')}>
+                  <option value="" disabled>
+                    Select state
+                  </option>
+                  {stateNames.map((st) => (
+                    <option key={st} value={st}>
+                      {st}
+                    </option>
+                  ))}
+                </select>
+                {msg('state')}
+              </div>
+
+              <div className={s.field}>
+                <label htmlFor={`${uid}-city`}>Select city *</label>
+                <select id={`${uid}-city`} name="city" value={values.city} onChange={onChange} disabled={!values.state} {...invalid('city')}>
+                  <option value="" disabled>
+                    {values.state ? 'Select city' : 'Select a state first'}
+                  </option>
+                  {(locations[values.state] ?? []).map((c) => (
+                    <option key={c} value={c}>
+                      {c}
+                    </option>
+                  ))}
+                </select>
+                {msg('city')}
               </div>
 
               <div className={`${s.field} ${s.wide}`}>

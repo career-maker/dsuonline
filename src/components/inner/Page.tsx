@@ -4,7 +4,7 @@ import { localHref, type Block } from '@/lib/content';
 import { AboutBand, aboutPhotos } from '@/components/sections/home/About';
 import { ProgramsBand } from '@/components/sections/home/ProgramsBand';
 import { WhyChoose } from '@/components/sections/home/WhyChoose';
-import { cleanBlocks } from './clean';
+import { cleanBlocks, slugify } from './clean';
 import { CtaBand, InnerHero, type Crumb } from './InnerPage';
 import { FaqList, LeaderGrid } from './Interactive';
 import {
@@ -22,6 +22,8 @@ import {
   Pic,
   Prose,
   QuoteCards,
+  RoleGrid,
+  IndustryGrid,
   StoryCards,
   Sec,
   Split,
@@ -348,12 +350,13 @@ function ReferPage({ blocks, crumbs }: { blocks: Block[]; crumbs: Crumb[] }) {
     <>
       <InnerHero banner={3} crumbs={crumbs} eyebrow={batch} title="Refer & Earn Program" extra={[]} />
       {logos.length > 0 && (
-        <Sec tone="white" center>
+        <Sec tone="white" center compact>
           <LogoWall imgs={logos} />
         </Sec>
       )}
       <ProgramsBand id="refer-programs" title="Programs Offered" />
       <Sec tone="white" title="Terms & Conditions">
+        <div className={s.fiveUp}>
         <ol className={s.steps}>
           {tcs.map((t, i) => (
             <li key={t}>
@@ -362,6 +365,7 @@ function ReferPage({ blocks, crumbs }: { blocks: Block[]; crumbs: Crumb[] }) {
             </li>
           ))}
         </ol>
+        </div>
       </Sec>
       <CtaBand />
     </>
@@ -567,6 +571,24 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           {note && <p className={s.note}>{note}</p>}
         </Sec>,
       );
+      // the live page keeps "Career Path" and "Industries" under the fee block: give each its own section
+      for (const sub of sec.subs) {
+        const pairs = parsePairs(sub.blocks).map((p) => ({ title: p.title, text: p.text.replace(/\.(?=[A-Z])/g, '. ') }));
+        if (!pairs.length) continue;
+        if (/career/i.test(sub.title)) {
+          nodes.push(
+            <Sec key={`${key}-${sub.title}`} tone={nextTone()} title={sub.title}>
+              <RoleGrid items={pairs} />
+            </Sec>,
+          );
+        } else if (/industr/i.test(sub.title)) {
+          nodes.push(
+            <Sec key={`${key}-${sub.title}`} tone="sky" title={sub.title}>
+              <IndustryGrid items={pairs} />
+            </Sec>,
+          );
+        }
+      }
       continue;
     }
 
@@ -645,11 +667,15 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const img = sec.blocks.find((b) => b.t === 'img');
       nodes.push(
         <Sec key={key} tone={nextTone()} title={title} lead={sec.blocks.filter(isP)[0]?.x}>
-          <Steps items={steps} />
-          {img && (
-            <div className={s.splitMedia} style={{ marginTop: 28, maxWidth: 480 }}>
-              <Pic img={imgOf(img)} />
+          {img ? (
+            <div className={s.stepsSplit}>
+              <Steps items={steps} />
+              <div className={s.splitMedia}>
+                <Pic img={imgOf(img)} sizes="(max-width: 900px) 100vw, 440px" className={s.cover} />
+              </div>
             </div>
+          ) : (
+            <Steps items={steps} />
           )}
         </Sec>,
       );
@@ -758,6 +784,25 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       continue;
     }
 
+    // --- short call-to-action block (heading + one line + button): one compact band instead of a tall section
+    const ctaLink = sec.blocks.find((b): b is Extract<Block, { t: 'a' }> => b.t === 'a');
+    if (ctaLink && !sec.subs.length && sec.blocks.every((b) => b.t === 'a' || (isP(b) && b.x.length <= 140))) {
+      nodes.push(
+        <Sec key={key} tone={nextTone()} compact id={slugify(title)}>
+          <div className={s.ctaStrip}>
+            <div>
+              {title && <h2>{title}</h2>}
+              {sec.blocks.filter(isP).map((b) => (
+                <p key={b.x}>{b.x}</p>
+              ))}
+            </div>
+            <CtaLink href={ctaLink.href}>{ctaLink.x}</CtaLink>
+          </div>
+        </Sec>,
+      );
+      continue;
+    }
+
     // --- default
     const segs0 = segments(sec.blocks);
     const oneMedia = segs0.filter((x) => x.k === 'media').length === 1 && segs0.some((x) => x.k !== 'media') && !segs0.some((x) => x.k === 'pairs' || x.k === 'figs' || x.k === 'table' || x.k === 'logos' || (x.k === 'checks' && x.items.length > 6));
@@ -772,11 +817,19 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
   return (
     <>
       <InnerHero banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
-      {(longSub || (introBlocks.length > 0 && !withFacts)) && (
-        <Sec tone="white" narrow={!heroImgs.length} center={!heroImgs.length}>
-          <Body blocks={[...(longSub ? ([{ t: 'p', x: slug === 'student-testimonials' ? subtitle.replace(/^Testimonials\s+/, '') : subtitle } as Block]) : []), ...introBlocks, ...heroImgs.slice(0, 1)]} />
+      {longSub && slug === 'student-testimonials' && subtitle && (
+        <Sec tone="white">
+          <div className={s.introSplit}>
+            <h2>Testimonials</h2>
+            <p>{subtitle.replace(/^Testimonials\s+/, '')}</p>
+          </div>
         </Sec>
       )}
+      {(longSub ? slug !== 'student-testimonials' : false) || (introBlocks.length > 0 && !withFacts) ? (
+        <Sec tone="white" narrow={!heroImgs.length} center={!heroImgs.length}>
+          <Body blocks={[...(longSub ? ([{ t: 'p', x: subtitle } as Block]) : []), ...introBlocks, ...heroImgs.slice(0, 1)]} />
+        </Sec>
+      ) : null}
       {nodes}
       <CtaBand />
     </>

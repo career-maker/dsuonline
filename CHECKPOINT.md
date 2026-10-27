@@ -120,3 +120,11 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 5. Enquiry popup: set `NEXT_PUBLIC_ENQUIRY_ENDPOINT` when a backend exists; brochure PDFs needed for the Download Brochure form.
 6. Only after user approval: Strapi/CMS phase.
 
+
+## Update 2026-10-27 (QA-issue round, new account)
+- Blog posts: embed-note junk ("Add this in the <head>...", "Table container with Jost font...") filtered in `loadBlogPost` (src/lib/content.ts).
+- Programme pages: "Career Path" + "Industries" were swallowed by the fees branch; now rendered as RoleGrid / IndustryGrid sections (Page.tsx fees branch, Kit.tsx/.scss).
+- Testimonials page: `Testimonials` h2 + intro split row (introSplit); StoryCards show quote on photo hover/focus (touch: under photo); `Reveal` rounds visible count to full grid rows (no partial row before Show More).
+- Student Support: steps + photo in 2-col `stepsSplit`; short CTA blocks render as compact `ctaStrip`; Refer terms 5-up.
+- Enquiry popup: added Enter OTP (optional), State, City (src/data/locations.ts, dependent city).
+- Deploy: `python deploy.py` (see DEPLOY-SERVER.md).

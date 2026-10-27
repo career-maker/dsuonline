@@ -22,9 +22,9 @@ export function Head({ title, eyebrow, lead, center }: { title?: string; eyebrow
   );
 }
 
-export function Sec({ title, eyebrow, lead, tone = 'white', center, narrow, children, id }: { title?: string; eyebrow?: string; lead?: string; tone?: Tone; center?: boolean; narrow?: boolean; children?: ReactNode; id?: string }) {
+export function Sec({ title, eyebrow, lead, tone = 'white', center, narrow, compact, children, id }: { title?: string; eyebrow?: string; lead?: string; tone?: Tone; center?: boolean; narrow?: boolean; compact?: boolean; children?: ReactNode; id?: string }) {
   return (
-    <section className={`${s.sec} ${s[tone]}`} id={id ?? (title ? slugify(title) : undefined)}>
+    <section className={`${s.sec} ${s[tone]} ${compact ? s.compactSec : ''}`} id={id ?? (title ? slugify(title) : undefined)}>
       <div className={`${s.wrap} ${narrow ? s.narrow : ''} ${center ? s.centerAll : ''}`}>
         <Head title={title} eyebrow={eyebrow} lead={lead} center={center} />
         {children}
@@ -264,11 +264,17 @@ export function OfficeCard({ title, children }: { title: string; children: React
 export function StoryCards({ items, initial = 9 }: { items: Quote[]; initial?: number }) {
   const cards = items.map((q) => {
     const [course, ...rest] = q.meta;
+    const text = q.quote.replace(/^[“"‘]\s*|[”"’]\s*$/g, '');
     return (
       <li key={q.quote} className={s.story}>
-        <div className={s.storyPhoto}>
-          {q.img ? <Pic img={q.img} sizes="(max-width: 600px) 90vw, (max-width: 1200px) 45vw, 400px" /> : <span className={s.storyInitial} aria-hidden="true">{q.name.replace(/^(Mr|Ms|Mrs|Dr)\.?\s*/i, '').charAt(0)}</span>}
+        {/* hover / keyboard focus on the photo reveals the testimonial; touch devices show it below the photo instead */}
+        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
+        <div className={s.storyPhoto} tabIndex={0}>
+          {q.img ? <Pic img={q.img} sizes="(max-width: 600px) 45vw, (max-width: 1200px) 45vw, 300px" /> : <span className={s.storyInitial} aria-hidden="true">{q.name.replace(/^(Mr|Ms|Mrs|Dr)\.?\s*/i, '').charAt(0)}</span>}
           <span className={s.storyShade} />
+          <span className={s.storyQuote} aria-hidden="true">
+            <span>{text}</span>
+          </span>
           <span className={s.storyWho}>
             <b>{q.name}</b>
             {course && <strong>{course}</strong>}
@@ -277,9 +283,42 @@ export function StoryCards({ items, initial = 9 }: { items: Quote[]; initial?: n
             ))}
           </span>
         </div>
-        <p>{q.quote.replace(/^[“"‘]\s*|[”"’]\s*$/g, '')}</p>
+        <p className={s.storyText}>{text}</p>
       </li>
     );
   });
-  return <CardCarousel desktopCount={initial} className={s.stories} ariaLabel="Learner stories">{cards}</CardCarousel>;
+  return <Reveal count={initial} className={s.stories}>{cards}</Reveal>;
+}
+
+/** Career roles: numbered cards, role name over its description. */
+export function RoleGrid({ items }: { items: { title: string; text: string }[] }) {
+  return (
+    <ol className={s.roles}>
+      {items.map((r, i) => (
+        <li key={r.title}>
+          <span className={s.roleNo} aria-hidden="true">
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <div>
+            <h3>{r.title}</h3>
+            <p>{r.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+/** Industries that hire: compact tiles on a tinted band. */
+export function IndustryGrid({ items }: { items: { title: string; text: string }[] }) {
+  return (
+    <ul className={s.industries}>
+      {items.map((r) => (
+        <li key={r.title}>
+          <h3>{r.title}</h3>
+          <p>{r.text}</p>
+        </li>
+      ))}
+    </ul>
+  );
 }

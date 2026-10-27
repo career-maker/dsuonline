@@ -32,8 +32,13 @@ export function loadPage(segments: string[]): PageData | null {
   return readJson<PageData>(`pages/${fileKey(segments)}.json`);
 }
 
+// Embed-code notes pasted into the live blog posts by their authors; they are instructions, not article copy.
+const BLOG_NOISE = /^(add this in the <head> section of your html|table container with .*(font|border).*|add this in the <body>.*)$/i;
+
 export function loadBlogPost(slug: string): PageData | null {
-  return readJson<PageData>(`blog/${slug}.json`);
+  const d = readJson<PageData>(`blog/${slug}.json`);
+  if (!d) return d;
+  return { ...d, blocks: d.blocks.filter((b) => !((b.t === 'p' || b.t === 'q') && BLOG_NOISE.test(b.x.trim()))) };
 }
 
 let blogCache: BlogPost[] | null = null;

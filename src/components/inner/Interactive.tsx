@@ -1,6 +1,6 @@
 'use client';
 
-import { useId, useState, type ReactNode } from 'react';
+import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { ChevronRight } from '@/components/ui/icons';
 import type { Faq } from './parse';
 import s from './Kit.module.scss';
@@ -106,11 +106,28 @@ export function Tabs({ groups }: { groups: { label?: string; tabs: { id: string;
 /** Shows the first `count` children and reveals the rest on demand. */
 export function Reveal({ count, className, children, more = 'Show More', less = 'Show Less' }: { count: number; className?: string; children: ReactNode[]; more?: string; less?: string }) {
   const [all, setAll] = useState(false);
-  const shown = all ? children : children.slice(0, count);
+  const [cols, setCols] = useState(1);
+  const list = useRef<HTMLUListElement>(null);
+
+  // grid column count follows the viewport; the collapsed state always ends on a full row
+  useEffect(() => {
+    const el = list.current;
+    if (!el) return;
+    const read = () => setCols(Math.max(1, getComputedStyle(el).gridTemplateColumns.split(' ').filter(Boolean).length));
+    read();
+    const ro = new ResizeObserver(read);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const visible = Math.ceil(count / cols) * cols;
+  const shown = all ? children : children.slice(0, visible);
   return (
     <>
-      <ul className={className}>{shown}</ul>
-      {children.length > count && (
+      <ul ref={list} className={className}>
+        {shown}
+      </ul>
+      {children.length > visible && (
         <div className={s.revealRow}>
           <button type="button" className={s.revealBtn} aria-expanded={all} onClick={() => setAll((v) => !v)}>
             {all ? less : more}

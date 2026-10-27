@@ -2,7 +2,7 @@
 // set NEXT_PUBLIC_ENQUIRY_ENDPOINT to a URL that accepts a JSON POST. Without it, submissions are NOT sent
 // and the UI says so instead of pretending the enquiry was delivered.
 
-export type EnquiryValues = { name: string; email: string; phone: string; programme: string; message: string };
+export type EnquiryValues = { name: string; email: string; phone: string; otp: string; programme: string; state: string; city: string; message: string };
 export type EnquiryErrors = Partial<Record<keyof EnquiryValues, string>>;
 export type SubmitResult = { status: 'sent' } | { status: 'unconfigured' } | { status: 'error'; message: string };
 
@@ -25,7 +25,10 @@ export function validate(v: EnquiryValues, iso = 'in'): EnquiryErrors {
   if (!v.phone.trim()) e.phone = 'Enter your mobile number.';
   else if (iso === 'in' ? !/^[6-9]\d{9}$/.test(normalisePhone(v.phone, iso)) : !/^\d{6,14}$/.test(normalisePhone(v.phone, iso)))
     e.phone = iso === 'in' ? 'Enter a valid 10-digit Indian mobile number.' : 'Enter a valid phone number (6-14 digits).';
+  if (v.otp && !/^\d{4,6}$/.test(v.otp.trim())) e.otp = 'OTP is 4 to 6 digits.';
   if (!v.programme) e.programme = 'Choose the programme you are interested in.';
+  if (!v.state) e.state = 'Select your state.';
+  if (!v.city) e.city = 'Select your city.';
   if (v.message.length > 500) e.message = 'Keep the message under 500 characters.';
   return e;
 }
