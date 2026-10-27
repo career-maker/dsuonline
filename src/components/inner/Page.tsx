@@ -405,7 +405,11 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     const all = flat(sec);
     const title = sec.title;
     const key = `${title}-${n}`;
-    if (!sec.blocks.length && !sec.subs.length) continue; // heading with no content (its body was layout notes)
+    if (!sec.blocks.length && !sec.subs.length) {
+      // a heading with no body of its own is the small line above the next section's title (e.g. "Counselling")
+      if (secs[n + 1] && title) kickers[n + 1] = title;
+      continue;
+    }
 
     // --- /about: the two 'quality education' sections become the home About block (stats, photos, features)
     if (slug === 'about' && /how dsu online ensures quality education\?/i.test(title)) {
@@ -675,7 +679,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       });
       const img = sec.blocks.find((b) => b.t === 'img');
       nodes.push(
-        <Sec key={key} tone={nextTone()} title={title} lead={sec.blocks.filter(isP)[0]?.x}>
+        <Sec key={key} tone={nextTone()} title={title} eyebrow={kickers[n]} lead={sec.blocks.filter(isP)[0]?.x}>
           {img ? (
             <div className={s.stepsSplit}>
               <Steps items={steps} />

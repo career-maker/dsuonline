@@ -1477,40 +1477,65 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   inset: 0;
   z-index: 1;
   display: none;
-  align-items: flex-start;
-  padding: clamp(16px, 1.6vw, 22px) clamp(16px, 1.6vw, 22px) 100px;
-  overflow: hidden;
-  background: linear-gradient(180deg, rgb(2 52 88 / 92%), rgb(2 36 62 / 96%));
+  flex-direction: column;
+  gap: 10px;
+  padding: clamp(14px, 1.4vw, 20px);
+  background: linear-gradient(180deg, rgb(2 52 88 / 94%), rgb(2 36 62 / 97%));
   color: #fff;
   font-size: fs(17, 15px);
   line-height: 1.6;
   letter-spacing: -0.01em;
   opacity: 0;
   transition: opacity 0.35s ease;
+}
+
+.storyQ {
+  position: relative;
+  display: block;
+  flex: 1 1 auto;
+  min-height: 0;
+  padding-top: 30px;
+  overflow-y: auto;
   scrollbar-width: thin;
 
   &::before {
     content: '“';
     position: absolute;
-    top: 6px;
-    left: 14px;
-    font-size: 64px;
+    top: -6px;
+    left: -2px;
+    font-size: 60px;
     line-height: 1;
     font-weight: 700;
     color: $yellow;
   }
-
-  > span {
-    display: block;
-    max-height: 100%;
-    padding-top: 30px;
-    overflow-y: auto;
-    scrollbar-width: thin;
-  }
 }
 
-.storyWho {
-  z-index: 2;
+// name block pinned under the scrolling quote (never overlaps it)
+.storyWho2 {
+  flex: none;
+  padding-top: 10px;
+  border-top: 1px solid rgb(255 255 255 / 22%);
+
+  b {
+    display: block;
+    font-size: fs(18, 15px);
+    line-height: 1.2;
+    font-weight: 500;
+  }
+
+  strong {
+    display: block;
+    margin-top: 2px;
+    font-size: fs(15, 13px);
+    font-weight: 700;
+  }
+
+  span {
+    display: block;
+    font-size: fs(15, 13px);
+    font-weight: 300;
+    line-height: 1.25;
+  }
 }
 
 @media (hover: hover) {
@@ -1521,6 +1546,11 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   .storyPhoto:hover .storyQuote,
   .storyPhoto:focus-visible .storyQuote {
     opacity: 1;
+  }
+
+  .storyPhoto:hover .storyWho,
+  .storyPhoto:focus-visible .storyWho {
+    opacity: 0;
   }
 
   .storyPhoto:focus-visible {

@@ -273,7 +273,14 @@ export function StoryCards({ items, initial = 9 }: { items: Quote[]; initial?: n
           {q.img ? <Pic img={q.img} sizes="(max-width: 600px) 45vw, (max-width: 1200px) 45vw, 300px" /> : <span className={s.storyInitial} aria-hidden="true">{q.name.replace(/^(Mr|Ms|Mrs|Dr)\.?\s*/i, '').charAt(0)}</span>}
           <span className={s.storyShade} />
           <span className={s.storyQuote} aria-hidden="true">
-            <span>{text}</span>
+            <span className={s.storyQ}>{text}</span>
+            <span className={s.storyWho2}>
+              <b>{q.name}</b>
+              {course && <strong>{course}</strong>}
+              {rest.map((m) => (
+                <span key={m}>{m}</span>
+              ))}
+            </span>
           </span>
           <span className={s.storyWho}>
             <b>{q.name}</b>
