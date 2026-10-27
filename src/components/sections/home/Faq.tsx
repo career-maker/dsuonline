@@ -10,7 +10,7 @@ import s from './Faq.module.scss';
 
 const FIRST = 5;
 
-export function Faq({ items }: { items: FaqItem[] }) {
+export function Faq({ items, title = 'Frequently Asked Questions' }: { items: FaqItem[]; title?: string }) {
   const [open, setOpen] = useState<number | null>(null);
   const [all, setAll] = useState(false);
   const faqs = all ? items : items.slice(0, FIRST);
@@ -21,7 +21,7 @@ export function Faq({ items }: { items: FaqItem[] }) {
       <div className={s.inner}>
         <div className={s.left}>
           <p className={s.eyebrow}>FAQ</p>
-          <h2>Frequently Asked Questions</h2>
+          <h2>{title}</h2>
 
           <ul className={s.list}>
             {faqs.map((f, i) => {
@@ -31,7 +31,7 @@ export function Faq({ items }: { items: FaqItem[] }) {
                   <h3>
                     <button type="button" aria-expanded={isOpen} aria-controls={`${uid}-${i}`} onClick={() => setOpen(isOpen ? null : i)}>
                       <span className={s.num}>{String(i + 1).padStart(2, '0')}</span>
-                      <span className={s.q}>{f.q}</span>
+                      <span className={s.q}>{f.q.replace(/^\d+\s*\.\s*/, '')}</span>
                       <ChevronRight className={isOpen ? s.rot : ''} />
                     </button>
                   </h3>
