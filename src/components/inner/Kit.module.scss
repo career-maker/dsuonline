@@ -2730,3 +2730,133 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     color: #000;
   }
 }
+
+// ---------- "Why choose" v3: full-width photo with caption overlay, numbered rail underneath
+.whyStage {
+  display: grid;
+  gap: 14px;
+}
+
+.whyHero {
+  position: relative;
+  min-height: clamp(320px, 38vw, 520px);
+  overflow: hidden;
+  border-radius: 20px;
+  background: #0e2a3d;
+  color: #fff;
+}
+
+.whyHeroImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: whyIn 0.6s $ease both;
+}
+
+.whyHero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgb(2 30 52 / 92%) 0%, rgb(2 30 52 / 55%) 42%, transparent 75%);
+}
+
+.whyCaption {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  max-width: 760px;
+  padding: clamp(18px, 2.6vw, 40px);
+  animation: whyIn 0.5s $ease both;
+
+  .whyBadge {
+    position: static;
+    display: inline-block;
+  }
+
+  h3 {
+    margin-top: 10px;
+    font-size: fs(34, 24px);
+    line-height: 1.15;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: fs(18, 15px);
+    line-height: 1.6;
+    color: rgb(255 255 255 / 92%);
+  }
+}
+
+.whyRail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(150px, 1fr);
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  button {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+    padding: 14px 16px;
+    border: 1px solid $line-soft;
+    border-radius: 12px;
+    background: #fff;
+    text-align: left;
+    font-size: fs(16, 14px);
+    line-height: 1.3;
+    font-weight: 500;
+    color: $ink;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s, translate 0.25s;
+    @include focus-ring;
+
+    i {
+      font-size: 14px;
+      font-style: normal;
+      letter-spacing: 0.06em;
+      color: $blue;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        translate: 0 -3px;
+      }
+    }
+  }
+
+  .whyRailOn {
+    background: $blue;
+    border-color: $blue;
+    color: #fff;
+
+    i {
+      color: $yellow;
+    }
+  }
+}
+
+@keyframes whyIn {
+  from {
+    opacity: 0;
+    translate: 0 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whyHeroImg,
+  .whyCaption {
+    animation: none;
+  }
+}

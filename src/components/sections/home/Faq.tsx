@@ -24,7 +24,7 @@ export function Faq({ items, title = 'Frequently Asked Questions' }: { items: Fa
           <p className={s.eyebrow}>FAQ</p>
           <h2>{title}</h2>
 
-          <ul className={`${s.list} ${shown > FIRST ? s.scroll : ''}`} data-lenis-prevent>
+          <ul className={`${s.list} ${shown > FIRST ? s.scroll : ''}`} data-lenis-prevent={shown > FIRST ? '' : undefined}>
             {faqs.map((f, i) => {
               const isOpen = open === i;
               return (
