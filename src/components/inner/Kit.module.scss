@@ -2696,6 +2696,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 // ---------- home-testimonial look for quote cards (dark gradient, white text, name chip)
 .quoteHome {
+  display: flex;
+  flex-direction: column;
   border: 0;
   background: radial-gradient(circle at 100% 0%, rgb(255 255 255 / 16%), transparent 45%), linear-gradient(150deg, #04426b 0%, #007dc5 100%);
   box-shadow: none;
