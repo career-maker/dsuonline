@@ -12,8 +12,9 @@ const FIRST = 5;
 
 export function Faq({ items, title = 'Frequently Asked Questions' }: { items: FaqItem[]; title?: string }) {
   const [open, setOpen] = useState<number | null>(null);
-  const [all, setAll] = useState(false);
-  const faqs = all ? items : items.slice(0, FIRST);
+  const [shown, setShown] = useState(FIRST);
+  const faqs = items.slice(0, shown);
+  const done = shown >= items.length;
   const uid = useId();
 
   return (
@@ -23,7 +24,7 @@ export function Faq({ items, title = 'Frequently Asked Questions' }: { items: Fa
           <p className={s.eyebrow}>FAQ</p>
           <h2>{title}</h2>
 
-          <ul className={s.list}>
+          <ul className={`${s.list} ${shown > FIRST ? s.scroll : ''}`} data-lenis-prevent>
             {faqs.map((f, i) => {
               const isOpen = open === i;
               return (
@@ -52,8 +53,8 @@ export function Faq({ items, title = 'Frequently Asked Questions' }: { items: Fa
             })}
           </ul>
           {items.length > FIRST && (
-            <button type="button" className={s.more} aria-expanded={all} onClick={() => setAll((v) => !v)}>
-              {all ? 'View Less' : 'View More'}
+            <button type="button" className={s.more} aria-expanded={shown > FIRST} onClick={() => setShown(done ? FIRST : shown + FIRST)}>
+              {done ? 'View Less' : 'View More'}
             </button>
           )}
         </div>

@@ -283,3 +283,21 @@
     background: rgb(255 255 255 / 12%);
   }
 }
+
+// "View More" reveals the next questions inside a fixed-height scroll area (section height stays put)
+.scroll {
+  max-height: clamp(340px, #{u(470)}, 470px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255 255 255 / 28%) transparent;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgb(255 255 255 / 28%);
+  }
+}
