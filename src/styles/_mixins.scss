@@ -31,6 +31,11 @@
   text-transform: uppercase;
   color: $gold;
   margin: 0;
+
+  // below desktop the small label needs air before the big title
+  @media (max-width: 1199.98px) {
+    margin-bottom: 12px;
+  }
 }
 
 @mixin h2 {

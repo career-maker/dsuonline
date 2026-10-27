@@ -81,7 +81,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: px(24) px(48);
+  gap: clamp(16px, 3.4vw, 24px) px(48);
   margin-bottom: clamp(24px, #{u(50)}, 50px);
 
   h2 {

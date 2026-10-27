@@ -32,6 +32,11 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 .head {
   max-width: 820px;
+
+  h2 {
+    margin-top: 0;
+  }
+
   margin-bottom: clamp(24px, 3.4vw, 48px);
 
   h2 {
@@ -51,7 +56,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 .lead {
   @include body-text;
-  margin-top: 14px;
+  margin-top: clamp(18px, #{u(22)}, 22px);
 }
 
 // ---------- text + picture
@@ -1750,4 +1755,62 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     margin-top: 2px;
     accent-color: $blue;
   }
+}
+
+// logo marquee: same card look and motion as the home Recognitions & Accreditations strip
+.marquee {
+  overflow: hidden;
+
+  ul {
+    display: flex;
+    gap: clamp(10px, #{u(18)}, 18px);
+    width: max-content;
+    animation: logo-scroll 50s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  li {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: clamp(200px, #{u(398)}, 398px);
+    height: clamp(100px, #{u(159)}, 159px);
+    border: 1px solid #eee;
+    border-radius: px(14);
+    background: #fff;
+  }
+
+  img {
+    width: 76%;
+    height: 62%;
+    object-fit: contain;
+  }
+}
+
+@keyframes logo-scroll {
+  to {
+    transform: translateX(calc(-50% - 9px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee ul {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+  }
+}
+
+// text column in a split: no oversized gap between title and copy
+.splitText .head {
+  margin-bottom: 0;
+}
+
+.splitText {
+  display: grid;
+  gap: clamp(16px, #{u(24)}, 24px);
+  align-content: center;
 }

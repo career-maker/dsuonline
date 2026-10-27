@@ -165,7 +165,21 @@ export function QuoteCards({ items, initial = 6 }: { items: Quote[]; initial?: n
   return <CardCarousel desktopCount={initial} className={s.quotes} ariaLabel="Testimonial quotes">{cards}</CardCarousel>;
 }
 
+/** Logo strip. Six or more logos scroll as the home "Recognitions & Accreditations" marquee; fewer sit in a grid. */
 export function LogoWall({ imgs }: { imgs: Img[] }) {
+  if (imgs.length >= 6) {
+    return (
+      <div className={s.marquee}>
+        <ul>
+          {[...imgs, ...imgs].map((im, i) => (
+            <li key={i} aria-hidden={i >= imgs.length}>
+              <Pic img={{ ...im, alt: i >= imgs.length ? '' : im.alt }} sizes="320px" />
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
   return (
     <ul className={s.logos}>
       {imgs.map((im) => (

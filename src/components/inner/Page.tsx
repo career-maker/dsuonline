@@ -735,7 +735,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
 
     // --- certificate pair
     const imgs = all.filter((b) => b.t === 'img');
-    if ((/certificate|added value/i.test(title) || (sec.blocks.length > 0 && sec.blocks.every((b) => b.t === 'img'))) && imgs.length >= 2) {
+    if ((/certificate|added value/i.test(title) || (sec.blocks.length > 0 && sec.blocks.every((b) => b.t === 'img') && imgs.length <= 3)) && imgs.length >= 2) {
       nodes.push(
         <Sec key={key} tone={nextTone()} center title={title}>
           {certificates(sec.blocks)}
