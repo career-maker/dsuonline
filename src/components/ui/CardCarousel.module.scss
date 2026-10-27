@@ -1,0 +1,156 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.track {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  // On mobile & tablet screens:
+  @include down($bp-md) {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-x: contain !important;
+    gap: 14px !important;
+    padding: 6px var(--gut) 16px !important;
+    margin: 0 calc(-1 * var(--gut)) !important;
+    scroll-padding: 0 var(--gut) !important;
+
+    &::-webkit-scrollbar {
+      display: none !important;
+    }
+  }
+}
+
+.item {
+  @include down($bp-md) {
+    flex: 0 0 calc(85vw - 12px) !important;
+    max-width: 360px !important;
+    min-width: 0 !important;
+    scroll-snap-align: start !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+.hideOnDesktop {
+  @include up($bp-md) {
+    display: none !important;
+  }
+}
+
+.mobileControls {
+  display: none;
+
+  @include down($bp-md) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding: 0 4px;
+  }
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  max-width: 70%;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border: 0;
+  padding: 0;
+  border-radius: 4px;
+  background: rgb(0 0 0 / 18%);
+  transition: width 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.3s;
+  cursor: pointer;
+
+  &.activeDot {
+    width: 24px;
+    background: $blue;
+  }
+}
+
+.arrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+
+.arrowBtn {
+  @include round-arrow(36px);
+  border: 1.5px solid #1a1a1a;
+  background: #fff;
+  color: #1a1a1a;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s, opacity 0.2s;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:not(:disabled):hover {
+    border-color: $blue;
+    background: $blue;
+    color: #fff;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
+.desktopReveal {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(24px, #{u(32)}, 32px);
+
+  @include down($bp-md) {
+    display: none !important;
+  }
+}
+
+.revealBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: px(46);
+  padding: 0 px(28);
+  border: 1px solid rgb(0 0 0 / 15%);
+  border-radius: px(4);
+  background: #fff;
+  font-size: px(16);
+  font-weight: 500;
+  color: $ink;
+  cursor: pointer;
+  transition: all 0.25s;
+
+  &:hover {
+    border-color: $blue;
+    color: $blue;
+  }
+}

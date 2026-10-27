@@ -2,10 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useEnquiry } from '@/components/layout/EnquiryProvider';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Icon } from '@/components/ui/Icon';
+import { ChevronLeft, ChevronRight } from '@/components/ui/icons';
 import { programs, specializationHref } from '@/data/programs';
 import s from './ProgramsBand.module.scss';
 
@@ -40,6 +42,59 @@ export function ProgramsBand({
   lead?: string;
 } = {}) {
   const { open } = useEnquiry();
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const totalCards = order.length + 1; // 5 programs + 1 CTA
+
+  const step = useCallback((dir: 1 | -1) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const cards = Array.from(el.querySelectorAll<HTMLElement>(':scope > article'));
+    const nextIdx = Math.max(0, Math.min(cards.length - 1, activeIdx + dir));
+    if (cards[nextIdx]) {
+      cards[nextIdx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      setActiveIdx(nextIdx);
+    }
+  }, [activeIdx]);
+
+  const scrollTo = useCallback((idx: number) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const cards = Array.from(el.querySelectorAll<HTMLElement>(':scope > article'));
+    if (cards[idx]) {
+      cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      setActiveIdx(idx);
+    }
+  }, []);
+
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const cards = Array.from(el.querySelectorAll<HTMLElement>(':scope > article'));
+          const scrollLeft = el.scrollLeft;
+          let best = 0;
+          let minDiff = Infinity;
+          cards.forEach((c, i) => {
+            const diff = Math.abs(c.offsetLeft - scrollLeft - el.offsetLeft);
+            if (diff < minDiff) {
+              minDiff = diff;
+              best = i;
+            }
+          });
+          setActiveIdx(best);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    el.addEventListener('scroll', onScroll, { passive: true });
+    return () => el.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <section className={s.band} id={id}>
       <div className={s.inner}>
@@ -51,7 +106,7 @@ export function ProgramsBand({
           {lead && <p className={s.lead}>{lead}</p>}
         </header>
 
-        <div className={s.grid}>
+        <div className={s.grid} ref={trackRef}>
           {order.map((code) => {
             const p = programs.find((x) => x.code === code)!;
             const ph = photos[code];
@@ -195,6 +250,40 @@ export function ProgramsBand({
               </div>
             </div>
           </article>
+        </div>
+
+        <div className={s.controls}>
+          <div className={s.dots}>
+            {Array.from({ length: totalCards }).map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                className={`${s.dot} ${activeIdx === i ? s.activeDot : ''}`}
+                onClick={() => scrollTo(i)}
+                aria-label={`Go to program ${i + 1} of ${totalCards}`}
+              />
+            ))}
+          </div>
+          <div className={s.arrowBtns}>
+            <button
+              type="button"
+              className={s.arrowBtn}
+              onClick={() => step(-1)}
+              disabled={activeIdx === 0}
+              aria-label="Previous program"
+            >
+              <ChevronLeft />
+            </button>
+            <button
+              type="button"
+              className={s.arrowBtn}
+              onClick={() => step(1)}
+              disabled={activeIdx === totalCards - 1}
+              aria-label="Next program"
+            >
+              <ChevronRight />
+            </button>
+          </div>
         </div>
       </div>
     </section>

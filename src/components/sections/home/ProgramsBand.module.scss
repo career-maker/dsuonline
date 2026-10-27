@@ -54,8 +54,22 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @include down($bp-sm) {
-    grid-template-columns: 1fr;
+  @include down($bp-md) {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    gap: 14px;
+    padding: 6px var(--gut) 16px;
+    margin: clamp(20px, 3vw, 30px) calc(-1 * var(--gut)) 0;
+    scroll-padding: 0 var(--gut);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
@@ -69,6 +83,13 @@
   letter-spacing: -0.0175em;
   position: relative;
   transition: box-shadow 0.4s ease;
+
+  @include down($bp-md) {
+    flex: 0 0 calc(85vw - 12px);
+    max-width: 360px;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
 
   &:has(.media:hover) {
     box-shadow: 0 20px 44px rgb(0 30 70 / 28%);
@@ -652,3 +673,80 @@
     margin-top: 20px;
   }
 }
+
+.controls {
+  display: none;
+
+  @include down($bp-md) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+    padding: 0 4px;
+  }
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  max-width: 70%;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border: 0;
+  padding: 0;
+  border-radius: 4px;
+  background: rgb(255 255 255 / 35%);
+  transition: width 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.3s;
+  cursor: pointer;
+
+  &.activeDot {
+    width: 24px;
+    background: #fff;
+  }
+}
+
+.arrowBtns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+
+.arrowBtn {
+  @include round-arrow(36px);
+  border: 1.5px solid rgb(255 255 255 / 60%);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s, opacity 0.2s;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:not(:disabled):hover {
+    border-color: #fff;
+    background: #fff;
+    color: $blue;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+

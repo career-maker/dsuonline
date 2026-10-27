@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Icon } from '@/components/ui/Icon';
@@ -25,6 +28,66 @@ const toIsoDate = (dateStr: string) => {
 };
 
 export function FacultyArticles() {
+  const facultyTrackRef = useRef<HTMLUListElement>(null);
+  const articlesTrackRef = useRef<HTMLUListElement>(null);
+  const [facultyIdx, setFacultyIdx] = useState(0);
+  const [articleIdx, setArticleIdx] = useState(0);
+
+  const step = useCallback((el: HTMLElement | null, currentIdx: number, dir: 1 | -1, setIdx: (n: number) => void) => {
+    if (!el) return;
+    const cards = Array.from(el.querySelectorAll<HTMLElement>(':scope > li'));
+    const nextIdx = Math.max(0, Math.min(cards.length - 1, currentIdx + dir));
+    if (cards[nextIdx]) {
+      cards[nextIdx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      setIdx(nextIdx);
+    }
+  }, []);
+
+  const scrollTo = useCallback((el: HTMLElement | null, idx: number, setIdx: (n: number) => void) => {
+    if (!el) return;
+    const cards = Array.from(el.querySelectorAll<HTMLElement>(':scope > li'));
+    if (cards[idx]) {
+      cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      setIdx(idx);
+    }
+  }, []);
+
+  useEffect(() => {
+    const syncScroll = (el: HTMLElement | null, setIdx: (n: number) => void) => {
+      if (!el) return () => {};
+      let ticking = false;
+      const onScroll = () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const cards = Array.from(el.querySelectorAll<HTMLElement>(':scope > li'));
+            const scrollLeft = el.scrollLeft;
+            let best = 0;
+            let minDiff = Infinity;
+            cards.forEach((c, i) => {
+              const diff = Math.abs(c.offsetLeft - scrollLeft - el.offsetLeft);
+              if (diff < minDiff) {
+                minDiff = diff;
+                best = i;
+              }
+            });
+            setIdx(best);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+      el.addEventListener('scroll', onScroll, { passive: true });
+      return () => el.removeEventListener('scroll', onScroll);
+    };
+
+    const cleanupF = syncScroll(facultyTrackRef.current, setFacultyIdx);
+    const cleanupA = syncScroll(articlesTrackRef.current, setArticleIdx);
+    return () => {
+      cleanupF();
+      cleanupA();
+    };
+  }, []);
+
   return (
     <section className={s.section}>
       <div className={s.inner}>
@@ -41,17 +104,27 @@ export function FacultyArticles() {
           </ArrowLink>
         </header>
 
-        {/* single page of faculty for now; arrows activate when the CMS provides more */}
+        {/* desktop chevrons */}
         <div className={`${s.arrows} ${s.arrowsFaculty}`}>
-          <button type="button" aria-label="Previous faculty" disabled>
+          <button
+            type="button"
+            aria-label="Previous faculty"
+            onClick={() => step(facultyTrackRef.current, facultyIdx, -1, setFacultyIdx)}
+            disabled={facultyIdx === 0}
+          >
             <ChevronLeft />
           </button>
-          <button type="button" aria-label="Next faculty" disabled>
+          <button
+            type="button"
+            aria-label="Next faculty"
+            onClick={() => step(facultyTrackRef.current, facultyIdx, 1, setFacultyIdx)}
+            disabled={facultyIdx === faculty.length - 1}
+          >
             <ChevronRight />
           </button>
         </div>
 
-        <ul className={s.faculty}>
+        <ul className={s.faculty} ref={facultyTrackRef}>
           {faculty.map((f, i) => (
             <li key={f.key}>
               <div className={s.fphoto}>
@@ -78,6 +151,40 @@ export function FacultyArticles() {
           ))}
         </ul>
 
+        <div className={s.controls}>
+          <div className={s.dots}>
+            {faculty.map((f, i) => (
+              <button
+                key={f.key}
+                type="button"
+                className={`${s.dot} ${facultyIdx === i ? s.activeDot : ''}`}
+                onClick={() => scrollTo(facultyTrackRef.current, i, setFacultyIdx)}
+                aria-label={`Go to faculty ${i + 1} of ${faculty.length}`}
+              />
+            ))}
+          </div>
+          <div className={s.arrowBtns}>
+            <button
+              type="button"
+              className={s.arrowBtn}
+              onClick={() => step(facultyTrackRef.current, facultyIdx, -1, setFacultyIdx)}
+              disabled={facultyIdx === 0}
+              aria-label="Previous faculty"
+            >
+              <ChevronLeft />
+            </button>
+            <button
+              type="button"
+              className={s.arrowBtn}
+              onClick={() => step(facultyTrackRef.current, facultyIdx, 1, setFacultyIdx)}
+              disabled={facultyIdx === faculty.length - 1}
+              aria-label="Next faculty"
+            >
+              <ChevronRight />
+            </button>
+          </div>
+        </div>
+
         <hr className={s.rule} />
 
         <header className={`${s.head} ${s.head2}`}>
@@ -95,17 +202,27 @@ export function FacultyArticles() {
           </ArrowLink>
         </header>
 
-        {/* single page of articles for now; arrows activate when the CMS provides more */}
+        {/* desktop chevrons */}
         <div className={`${s.arrows} ${s.arrowsArticles}`}>
-          <button type="button" aria-label="Previous articles" disabled>
+          <button
+            type="button"
+            aria-label="Previous articles"
+            onClick={() => step(articlesTrackRef.current, articleIdx, -1, setArticleIdx)}
+            disabled={articleIdx === 0}
+          >
             <ChevronLeft />
           </button>
-          <button type="button" aria-label="Next articles" disabled>
+          <button
+            type="button"
+            aria-label="Next articles"
+            onClick={() => step(articlesTrackRef.current, articleIdx, 1, setArticleIdx)}
+            disabled={articleIdx === articles.length - 1}
+          >
             <ChevronRight />
           </button>
         </div>
 
-        <ul className={s.articles}>
+        <ul className={s.articles} ref={articlesTrackRef}>
           {articles.map((a) => (
             <li key={a.key}>
               <div className={s.aphoto}>
@@ -147,6 +264,40 @@ export function FacultyArticles() {
             </li>
           ))}
         </ul>
+
+        <div className={s.controls}>
+          <div className={s.dots}>
+            {articles.map((a, i) => (
+              <button
+                key={a.key}
+                type="button"
+                className={`${s.dot} ${articleIdx === i ? s.activeDot : ''}`}
+                onClick={() => scrollTo(articlesTrackRef.current, i, setArticleIdx)}
+                aria-label={`Go to article ${i + 1} of ${articles.length}`}
+              />
+            ))}
+          </div>
+          <div className={s.arrowBtns}>
+            <button
+              type="button"
+              className={s.arrowBtn}
+              onClick={() => step(articlesTrackRef.current, articleIdx, -1, setArticleIdx)}
+              disabled={articleIdx === 0}
+              aria-label="Previous article"
+            >
+              <ChevronLeft />
+            </button>
+            <button
+              type="button"
+              className={s.arrowBtn}
+              onClick={() => step(articlesTrackRef.current, articleIdx, 1, setArticleIdx)}
+              disabled={articleIdx === articles.length - 1}
+              aria-label="Next article"
+            >
+              <ChevronRight />
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

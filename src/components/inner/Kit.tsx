@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { ArrowLink } from '@/components/ui/ArrowLink';
+import { CardCarousel } from '@/components/ui/CardCarousel';
 import { localHref } from '@/lib/content';
 import { slugify } from './clean';
 import { Reveal, Tabs } from './Interactive';
@@ -161,7 +162,7 @@ export function QuoteCards({ items, initial = 6 }: { items: Quote[]; initial?: n
       </div>
     </li>
   ));
-  return <Reveal count={initial} className={s.quotes}>{cards}</Reveal>;
+  return <CardCarousel desktopCount={initial} className={s.quotes} ariaLabel="Testimonial quotes">{cards}</CardCarousel>;
 }
 
 export function LogoWall({ imgs }: { imgs: Img[] }) {
@@ -177,20 +178,17 @@ export function LogoWall({ imgs }: { imgs: Img[] }) {
 }
 
 export function FacultyGrid({ items }: { items: { name: string; creds?: string; role?: string; img?: Img }[] }) {
-  return (
-    <ul className={s.faculty}>
-      {items.map((f) => (
-        <li key={f.name}>
-          <div className={s.fphoto}>{f.img && <Pic img={f.img} sizes="(max-width: 600px) 60vw, 280px" />}</div>
-          <div className={s.fbody}>
-            <h3>{f.name}</h3>
-            {f.role && <p className={s.frole}>{f.role}</p>}
-            {f.creds && <p className={s.fcreds}>{f.creds}</p>}
-          </div>
-        </li>
-      ))}
-    </ul>
-  );
+  const cards = items.map((f) => (
+    <li key={f.name}>
+      <div className={s.fphoto}>{f.img && <Pic img={f.img} sizes="(max-width: 600px) 60vw, 280px" />}</div>
+      <div className={s.fbody}>
+        <h3>{f.name}</h3>
+        {f.role && <p className={s.frole}>{f.role}</p>}
+        {f.creds && <p className={s.fcreds}>{f.creds}</p>}
+      </div>
+    </li>
+  ));
+  return <CardCarousel className={s.faculty} ariaLabel="Faculty">{cards}</CardCarousel>;
 }
 
 export function LinkGrid({ items }: { items: { name: string; href: string; hint?: string }[] }) {
@@ -283,5 +281,5 @@ export function StoryCards({ items, initial = 9 }: { items: Quote[]; initial?: n
       </li>
     );
   });
-  return <Reveal count={initial} className={s.stories}>{cards}</Reveal>;
+  return <CardCarousel desktopCount={initial} className={s.stories} ariaLabel="Learner stories">{cards}</CardCarousel>;
 }

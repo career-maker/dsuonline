@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Icon } from '@/components/ui/Icon';
 import { ChevronLeft, ChevronRight, PlayIcon } from '@/components/ui/icons';
@@ -21,6 +24,58 @@ const avatarSrc = (key: string) => `/images/avatars/${key}.webp`;
 
 export function Testimonials() {
   const loop = [...tickerItems, ...tickerItems];
+  const trackRef = useRef<HTMLUListElement>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  const step = useCallback((dir: 1 | -1) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const cards = Array.from(el.querySelectorAll<HTMLElement>('li'));
+    const nextIdx = Math.max(0, Math.min(cards.length - 1, activeIdx + dir));
+    if (cards[nextIdx]) {
+      cards[nextIdx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      setActiveIdx(nextIdx);
+    }
+  }, [activeIdx]);
+
+  const scrollTo = useCallback((idx: number) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const cards = Array.from(el.querySelectorAll<HTMLElement>('li'));
+    if (cards[idx]) {
+      cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      setActiveIdx(idx);
+    }
+  }, []);
+
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const cards = Array.from(el.querySelectorAll<HTMLElement>('li'));
+          const scrollLeft = el.scrollLeft;
+          let best = 0;
+          let minDiff = Infinity;
+          cards.forEach((c, i) => {
+            const diff = Math.abs(c.offsetLeft - scrollLeft - el.offsetLeft);
+            if (diff < minDiff) {
+              minDiff = diff;
+              best = i;
+            }
+          });
+          setActiveIdx(best);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    el.addEventListener('scroll', onScroll, { passive: true });
+    return () => el.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <>
       <section className={s.ticker} aria-label="Announcements">
@@ -60,15 +115,7 @@ export function Testimonials() {
             </p>
           </header>
 
-          {/* one page of videos for now; arrows activate when the CMS provides more */}
-          <button type="button" className={`${s.arrow} ${s.prev}`} aria-label="Previous testimonials" disabled>
-            <ChevronLeft />
-          </button>
-          <button type="button" className={`${s.arrow} ${s.next}`} aria-label="Next testimonials" disabled>
-            <ChevronRight />
-          </button>
-
-          <ul className={s.grid}>
+          <ul className={s.grid} ref={trackRef}>
             {learnerVideos.map((v) => {
               const l = layout[v.key];
               return (
@@ -92,6 +139,40 @@ export function Testimonials() {
               );
             })}
           </ul>
+
+          <div className={s.controls}>
+            <div className={s.dots}>
+              {learnerVideos.map((v, i) => (
+                <button
+                  key={v.key}
+                  type="button"
+                  className={`${s.dot} ${activeIdx === i ? s.activeDot : ''}`}
+                  onClick={() => scrollTo(i)}
+                  aria-label={`Go to slide ${i + 1} of ${learnerVideos.length}`}
+                />
+              ))}
+            </div>
+            <div className={s.arrowBtns}>
+              <button
+                type="button"
+                className={s.arrowBtn}
+                onClick={() => step(-1)}
+                disabled={activeIdx === 0}
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft />
+              </button>
+              <button
+                type="button"
+                className={s.arrowBtn}
+                onClick={() => step(1)}
+                disabled={activeIdx === learnerVideos.length - 1}
+                aria-label="Next testimonial"
+              >
+                <ChevronRight />
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </>
