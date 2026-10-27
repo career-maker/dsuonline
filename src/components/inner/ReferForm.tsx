@@ -22,6 +22,7 @@ export function ReferForm() {
   const [consent, setConsent] = useState(false);
   const [err, setErr] = useState<Partial<Record<keyof V | 'consent', string>>>({});
   const [phase, setPhase] = useState<Phase>('idle');
+  const [step, setStep] = useState<1 | 2>(1);
   const [serverError, setServerError] = useState('');
 
   const on = (e: ChangeEvent<HTMLInputElement>) => {
@@ -30,14 +31,24 @@ export function ReferForm() {
   };
   const phoneOk = (n: string, c: Country) => (c.iso === 'in' ? /^[6-9]\d{9}$/.test(normalisePhone(n, c.iso)) : /^\d{6,14}$/.test(normalisePhone(n, c.iso)));
 
-  const submit = async (e: FormEvent) => {
-    e.preventDefault();
-    if (phase === 'submitting') return;
+  const checkStep1 = () => {
     const f: typeof err = {};
     if (!v.usn.trim()) f.usn = 'Enter the USN number / employee ID.';
     if (v.refName.trim().length < 2) f.refName = 'Enter the referring person name.';
     if (!phoneOk(v.refPhone, c1)) f.refPhone = 'Enter a valid mobile number.';
     if (!EMAIL.test(v.refEmail.trim())) f.refEmail = 'Enter a valid email address.';
+    setErr(f);
+    return Object.keys(f).length === 0;
+  };
+
+  const submit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (phase === 'submitting') return;
+    if (step === 1) {
+      if (checkStep1()) setStep(2);
+      return;
+    }
+    const f: typeof err = {};
     if (v.appName.trim().length < 2) f.appName = 'Enter the applicant name.';
     if (v.appEmail && !EMAIL.test(v.appEmail.trim())) f.appEmail = 'Enter a valid email address.';
     if (!phoneOk(v.appPhone, c2)) f.appPhone = 'Enter a valid mobile number.';
@@ -108,14 +119,24 @@ export function ReferForm() {
   return (
     <div className={k.contactFormCard}>
       <form className={`${s.form} ${s.compact}`} onSubmit={submit} noValidate aria-busy={phase === 'submitting'}>
-        {field('usn', 'Enter Referring Person USN Number / Employee ID')}
-        {field('refName', 'Enter Referring Person Name')}
-        {phone('refPhone', 'Enter Referring Person Mobile Number', c1, setC1)}
-        {field('refEmail', 'Enter Referring Person Email Address', 'email')}
-        {field('appName', 'Enter Applicant Name')}
-        {field('appEmail', 'Enter Applicant Email Address', 'email', false)}
-        {phone('appPhone', 'Enter Applicant Mobile Number', c2, setC2)}
-        {field('otp', 'Enter OTP', 'text', false)}
+        <ol className={k.stepDots} aria-label="Progress">
+          <li className={step === 1 ? k.stepOn : k.stepDone}>1. Referring person</li>
+          <li className={step === 2 ? k.stepOn : undefined}>2. Applicant</li>
+        </ol>
+        {step === 1 && (
+          <>
+            {field('usn', 'Enter Referring Person USN Number / Employee ID')}
+            {field('refName', 'Enter Referring Person Name')}
+            {phone('refPhone', 'Enter Referring Person Mobile Number', c1, setC1)}
+            {field('refEmail', 'Enter Referring Person Email Address', 'email')}
+          </>
+        )}
+        {step === 2 && (
+          <>
+            {field('appName', 'Enter Applicant Name')}
+            {field('appEmail', 'Enter Applicant Email Address', 'email', false)}
+            {phone('appPhone', 'Enter Applicant Mobile Number', c2, setC2)}
+            {field('otp', 'Enter OTP', 'text', false)}
         <label className={`${k.consent} ${s.wide}`}>
           <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
           <span>I authorise Dayananda Sagar University- DSUOnline &amp; its representatives to contact me with updates and notifications via Email/SMS/What&apos;sApp/Call. This will override DND/NDNC. *</span>
@@ -126,9 +147,18 @@ export function ReferForm() {
             {serverError}
           </p>
         )}
-        <button type="submit" className={`${s.submit} ${s.wide}`} disabled={phase === 'submitting'}>
-          {phase === 'submitting' ? 'Sending...' : 'SUBMIT'}
-        </button>
+          </>
+        )}
+        <div className={`${k.stepBtns} ${s.wide}`}>
+          {step === 2 && (
+            <button type="button" className={k.stepBack} onClick={() => setStep(1)}>
+              Back
+            </button>
+          )}
+          <button type="submit" className={s.submit} disabled={phase === 'submitting'}>
+            {step === 1 ? 'NEXT' : phase === 'submitting' ? 'Sending...' : 'SUBMIT'}
+          </button>
+        </div>
       </form>
     </div>
   );

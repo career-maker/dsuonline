@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { ReactNode } from 'react';
-import { loadAboutWhy, localHref, type Block } from '@/lib/content';
+import { loadAboutWhy, loadFaculty, localHref, type Block } from '@/lib/content';
 import { WhyTabs } from './WhyTabs';
 import { AboutBand, aboutPhotos } from '@/components/sections/home/About';
 import { ProgramsBand } from '@/components/sections/home/ProgramsBand';
@@ -22,6 +22,7 @@ import {
   OfficeCard,
   DataTable,
   FacultyGrid,
+  FacultyShowcase,
   LinkGrid,
   LogoWall,
   Pic,
@@ -397,8 +398,58 @@ function ReferPage({ blocks, crumbs }: { blocks: Block[]; crumbs: Crumb[] }) {
   );
 }
 
+function LegalPage({ blocks, crumbs }: { blocks: Block[]; crumbs: Crumb[] }) {
+  const st = structure(blocks);
+  const intro = [...st.hero, ...st.sections.filter((x) => !x.title).flatMap((x) => x.blocks)];
+  const secs = st.sections.filter((x) => x.title);
+  const body = (bl: Block[]) =>
+    bl.map((b, i) =>
+      b.t === 'p' ? (
+        <p key={i}>{b.x}</p>
+      ) : b.t === 'ul' ? (
+        <ul key={i}>
+          {b.items.map((it) => (
+            <li key={it}>{it}</li>
+          ))}
+        </ul>
+      ) : null,
+    );
+  return (
+    <>
+      <InnerHero crumbs={crumbs} title={st.h1} banner={5} />
+      <section className={`${s.sec} ${s.white}`}>
+        <div className={s.wrap}>
+          <div className={s.legal}>
+            <nav aria-label="On this page" className={s.legalToc}>
+              <p>On this page</p>
+              <ol>
+                {secs.map((x) => (
+                  <li key={x.title}>
+                    <a href={`#${slugify(x.title)}`}>{x.title.replace(/:$/, '')}</a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+            <article className={s.legalBody}>
+              <div>{body(intro)}</div>
+              {secs.map((x) => (
+                <section key={x.title} id={slugify(x.title)}>
+                  <h2>{x.title.replace(/:$/, '')}</h2>
+                  {body(x.blocks)}
+                </section>
+              ))}
+            </article>
+          </div>
+        </div>
+      </section>
+      <CtaBand />
+    </>
+  );
+}
+
 export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts = false }: Props) {
   const blocks = cleanBlocks(raw);
+  if (slug === 'privacy-policy') return <LegalPage blocks={blocks} crumbs={crumbs} />;
   if (slug === 'refer') return <ReferPage blocks={blocks} crumbs={crumbs} />;
   const st = structure(blocks);
   const heroPs = st.hero.filter(isP);
@@ -434,6 +485,16 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       // a heading with no body of its own is the small line above the next section's title (e.g. "Counselling")
       if (secs[n + 1] && title) kickers[n + 1] = title;
       continue;
+    }
+
+    // --- academics: full faculty list (from the live programme pages) before the engagement section
+    if (slug === 'academics-at-dsu' && /student engagement/i.test(title)) {
+      const list = loadFaculty();
+      nodes.push(
+        <Sec key="faculty-all" id="faculty" tone="sky" title="Meet Our Faculty">
+          <FacultyShowcase items={list.map((f) => ({ name: f.name, role: f.role, creds: f.creds, img: f.img ? { src: f.img, alt: f.name, w: f.w ?? 400, h: f.h ?? 500 } : undefined }))} />
+        </Sec>,
+      );
     }
 
     // --- /about: the two 'quality education' sections become the home About block (stats, photos, features)

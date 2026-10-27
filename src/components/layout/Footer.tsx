@@ -109,7 +109,7 @@ export function Footer() {
         <div className={s.barInner}>
           <p>Copyright © 2026 DSU. All Rights Reserved</p>
           <p>
-            <Link href="/privacy-policy">Privacy Policy</Link> | <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link> | <Link href="/privacy-policy#dnd-terms-and-conditions">Terms &amp; Conditions</Link>
           </p>
           <p className={s.credit}>
             Designed &amp; Developed&nbsp; By:

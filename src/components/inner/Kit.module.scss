@@ -2176,3 +2176,299 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   line-height: 1.2;
   color: $ink;
 }
+
+// leaders: opened card in its own row; remaining cards always fill their row with equal heights
+.leadWrap {
+  display: grid;
+  gap: clamp(14px, 1.6vw, 24px);
+}
+
+.leadOpen {
+  display: grid;
+}
+
+.leadGrid {
+  align-items: stretch !important;
+
+  > li {
+    height: 100%;
+  }
+
+  .leadMore {
+    margin-top: auto;
+  }
+}
+
+.leadOpen > .leadOn {
+  grid-column: auto;
+}
+
+// quote rows
+.sliderBox {
+  position: relative;
+}
+
+.quoteRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(14px, 1.6vw, 24px);
+
+  > li {
+    flex: 0 1 calc((100% - 2 * clamp(14px, 1.6vw, 24px)) / 3);
+    min-width: min(100%, 280px);
+  }
+}
+
+.quoteRowSlide {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > li {
+    flex: 0 0 calc((100% - 2 * clamp(14px, 1.6vw, 24px)) / 3);
+
+    @include down($bp-lg) {
+      flex-basis: calc((100% - clamp(14px, 1.6vw, 24px)) / 2);
+    }
+
+    @include down($bp-sm) {
+      flex-basis: 86%;
+    }
+  }
+}
+
+.sliderArrows {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 18px;
+
+  button {
+    @include round-arrow(40px);
+    border: 1.5px solid #1a1a1a;
+    background: #fff;
+    color: #1a1a1a;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+
+    &:hover {
+      border-color: $blue;
+      background: $blue;
+      color: #fff;
+    }
+  }
+}
+
+// ---------- full faculty list (academics): same card look as the home "Meet Our Faculty"
+.facAll {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  gap: clamp(12px, #{u(20)}, 20px);
+
+  > li {
+    overflow: hidden;
+    border-radius: px(6);
+    background: #e6f2fa;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.facPhoto {
+  position: relative;
+  aspect-ratio: 330 / 243;
+  overflow: hidden;
+  background: #dbe9f3;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 15%;
+    transition: scale 0.7s $ease;
+  }
+}
+
+.facAll > li:hover .facPhoto img {
+  scale: 1.06;
+}
+
+.facBody {
+  padding: 14px 15px 18px;
+
+  h3 {
+    font-size: fs(20, 17px);
+    line-height: 1.2;
+    font-weight: 500;
+    color: $ink;
+  }
+}
+
+.facRole {
+  margin-top: 4px;
+  font-size: fs(16, 14px);
+  line-height: 1.3;
+  color: $ink;
+}
+
+.facPoints {
+  margin-top: 10px;
+
+  li {
+    position: relative;
+    padding-left: 24px;
+    font-size: fs(16, 14px);
+    line-height: 1.3;
+    color: $ink;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 2px;
+      width: 13px;
+      height: 13px;
+      border-radius: 3px;
+      background: $yellow;
+    }
+  }
+}
+
+// ---------- legal pages: left-aligned reading column with a sticky contents list
+.legal {
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) minmax(0, 1fr);
+  gap: clamp(24px, #{u(64)}, 64px);
+  align-items: start;
+
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.legalToc {
+  position: sticky;
+  top: 110px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: $bg-card-sky;
+
+  p {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $gold;
+  }
+
+  ol {
+    display: grid;
+    gap: 8px;
+    list-style: none;
+  }
+
+  a {
+    font-size: 15px;
+    line-height: 1.35;
+    color: $ink;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  @include down($bp-lg) {
+    position: static;
+  }
+}
+
+.legalBody {
+  max-width: 860px;
+  text-align: left;
+
+  section {
+    margin-top: clamp(28px, #{u(44)}, 44px);
+    scroll-margin-top: 110px;
+  }
+
+  h2 {
+    margin-bottom: 14px;
+    font-size: fs(32, 22px);
+    line-height: 1.2;
+    font-weight: 700;
+    color: $ink;
+  }
+
+  p {
+    margin-bottom: 14px;
+    font-size: max(16px, calc(var(--u) * 18));
+    line-height: 1.75;
+    color: $body;
+  }
+
+  ul {
+    display: grid;
+    gap: 8px;
+    margin: 0 0 16px;
+    padding-left: 22px;
+    list-style: disc;
+  }
+
+  li {
+    font-size: max(16px, calc(var(--u) * 18));
+    line-height: 1.65;
+    color: $body;
+  }
+}
+
+// two-step form chrome
+.stepDots {
+  display: flex;
+  gap: 8px;
+  grid-column: 1 / -1;
+  font-size: 13px;
+
+  li {
+    flex: 1;
+    padding-top: 6px;
+    border-top: 3px solid #d6e1ea;
+    color: $body;
+  }
+
+  .stepOn,
+  .stepDone {
+    border-top-color: $blue;
+    color: $ink;
+    font-weight: 500;
+  }
+}
+
+.stepBtns {
+  display: flex;
+  gap: 10px;
+
+  button {
+    flex: 1;
+  }
+}
+
+.stepBack {
+  max-width: 120px;
+  min-height: 44px;
+  border: 1px solid $blue;
+  border-radius: 3px;
+  background: #fff;
+  color: $blue;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}

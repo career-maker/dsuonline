@@ -48,6 +48,11 @@ export function loadBlogs(): BlogPost[] {
 
 export const BLOGS_PER_PAGE = 6;
 
+/** Faculty gathered from the live programme pages (Meet Expert Faculty). */
+export function loadFaculty(): { name: string; role: string; creds: string; img: string | null; w?: number; h?: number }[] {
+  return readJson('faculty.json') ?? [];
+}
+
 /** "Why Choose Dayananda Sagar University Online?" points with their full text and photo (live /about). */
 export function loadAboutWhy(): { t: string; d: string; img: string | null; w?: number; h?: number }[] {
   return readJson('about-why.json') ?? [];

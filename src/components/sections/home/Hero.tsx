@@ -62,6 +62,11 @@ export function Hero() {
       })}
       <div className={s.shade} />
 
+      <div className={s.dotsNav} role="group" aria-label="Choose slide">
+        {heroSlides.map((_, i) => (
+          <button key={i} type="button" className={i === active ? s.dotOn : undefined} onClick={() => setActive(i)} aria-label={`Show slide ${i + 1}`} aria-current={i === active} />
+        ))}
+      </div>
       <button type="button" className={`${s.arrow} ${s.prev}`} onClick={() => go(-1)} aria-label="Previous slide">
         <Image src="/icons/arrow-l-white.png" alt="" width={23} height={40} />
       </button>

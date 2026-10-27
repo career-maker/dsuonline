@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { ArrowLink } from '@/components/ui/ArrowLink';
-import { CardCarousel } from '@/components/ui/CardCarousel';
+import { QuoteSlider } from './QuoteSlider';
 import { localHref } from '@/lib/content';
 import { slugify } from './clean';
 import { Reveal, Tabs } from './Interactive';
@@ -177,7 +177,8 @@ export function QuoteCards({ items, initial = 6 }: { items: Quote[]; initial?: n
       </div>
     </li>
   ));
-  return <CardCarousel desktopCount={initial} className={s.quotes} ariaLabel="Testimonial quotes">{cards}</CardCarousel>;
+  void initial;
+  return <QuoteSlider cards={cards} />;
 }
 
 /** Logo strip. Six or more logos scroll as the home "Recognitions & Accreditations" marquee; fewer sit in a grid. */
@@ -217,7 +218,7 @@ export function FacultyGrid({ items }: { items: { name: string; creds?: string; 
       </div>
     </li>
   ));
-  return <CardCarousel className={s.faculty} ariaLabel="Faculty">{cards}</CardCarousel>;
+  return <ul className={s.facAll}>{cards}</ul>;
 }
 
 export function LinkGrid({ items }: { items: { name: string; href: string; hint?: string }[] }) {
@@ -353,6 +354,28 @@ export function IndustryGrid({ items }: { items: { title: string; text: string }
         <li key={r.title}>
           <h3>{r.title}</h3>
           <p>{r.text}</p>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** Whole faculty list in the home "Meet Our Faculty" card design (photo, name, role, credentials, links). */
+export function FacultyShowcase({ items }: { items: { name: string; creds?: string; role?: string; img?: Img }[] }) {
+  return (
+    <ul className={s.facAll}>
+      {items.map((f) => (
+        <li key={f.name}>
+          <div className={s.facPhoto}>{f.img && <Pic img={f.img} sizes="(max-width: 600px) 90vw, 330px" />}</div>
+          <div className={s.facBody}>
+            <h3>{f.name}</h3>
+            {f.role && <p className={s.facRole}>{f.role}</p>}
+            {f.creds && (
+              <ul className={s.facPoints}>
+                <li>{f.creds}</li>
+              </ul>
+            )}
+          </div>
         </li>
       ))}
     </ul>

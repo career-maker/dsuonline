@@ -132,6 +132,7 @@ export function InnerHero({
       <div className={s.heroShade} aria-hidden="true" />
       <div className={`${s.heroInner} ${aside ? s.heroWithAside : ''}`}>
         {aside && <div className={s.heroAside}>{aside}</div>}
+        <div className={s.heroCopy}>
         <nav aria-label="Breadcrumb" className={s.crumbs}>
           <ol>
             {crumbs.map((c, i) => (
@@ -169,11 +170,11 @@ export function InnerHero({
             const href = localHref(l.href);
             return href.startsWith('/') ? (
               <ArrowLink key={l.x} href={href}>
-                {l.x}
+                {/^inquire now$/i.test(l.x) ? 'Apply Now' : l.x}
               </ArrowLink>
             ) : (
               <ArrowLink key={l.x} href={href} external>
-                {l.x}
+                {/^inquire now$/i.test(l.x) ? 'Apply Now' : l.x}
               </ArrowLink>
             );
           })}
@@ -183,6 +184,7 @@ export function InnerHero({
             </ArrowLink>
           )}
           <EnquireButton />
+        </div>
         </div>
       </div>
     </section>

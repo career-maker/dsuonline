@@ -1,0 +1,200 @@
+[
+ {
+  "name": "Dr. ANUPAMA G",
+  "creds": "MBA, M.Phil, Ph.D, PGDCA",
+  "role": "Professor & Program Coordinator",
+  "img": "/content/5977f2f2-Dr.anupama.g.webp",
+  "w": 317,
+  "h": 475,
+  "prog": [
+   "mba"
+  ]
+ },
+ {
+  "name": "Dr. RICHA TIWARI",
+  "creds": "B.A (Hons) MBA (MIS), M.A Economics, PGCOM (IIMN), Ph.D",
+  "role": "Professor & Course Coordinator",
+  "img": "/content/0a5d5e9e-Dr.richa-tiwari.webp",
+  "w": 284,
+  "h": 398,
+  "prog": [
+   "mba"
+  ]
+ },
+ {
+  "name": "Prof. Rupasi M Krishnamurthy",
+  "creds": "M.Com, PG - IISC, (Ph.D)",
+  "role": "Assistant Professor & Course Coordinator",
+  "img": "/content/5cb8d9d7-prof_rupasi.webp",
+  "w": 2026,
+  "h": 4032,
+  "prog": [
+   "mba"
+  ]
+ },
+ {
+  "name": "Dr. Vinitha G. Nair",
+  "creds": "MBA, M.Com, Ph.D",
+  "role": "Associate Professor & Course Coordinator",
+  "img": "/content/cd092316-Dr.-Vinita-Nair.webp",
+  "w": 2268,
+  "h": 4032,
+  "prog": [
+   "mba"
+  ]
+ },
+ {
+  "name": "Dr. S. Prabhakaran",
+  "creds": "Ph.D",
+  "role": "Assistant Professor & Course Coordinator",
+  "img": "/content/fe7f050c-Dr-Prabhakaran.webp",
+  "w": 2268,
+  "h": 4032,
+  "prog": [
+   "mba"
+  ]
+ },
+ {
+  "name": "Dr. KAVITHA S N",
+  "creds": "MCA, Ph.D",
+  "role": "Associate Professor & Program Coordinator",
+  "img": "/content/f394fae0-dr.kavitha.webp",
+  "w": 246,
+  "h": 357,
+  "prog": [
+   "mca"
+  ]
+ },
+ {
+  "name": "Dr. Vasanth Suriya V M",
+  "creds": "M.sc, Ph.D",
+  "role": "Assistant Professor and Course Coordinator",
+  "img": "/content/25d79741-prof-vasanth.webp",
+  "w": 422,
+  "h": 591,
+  "prog": [
+   "mca"
+  ]
+ },
+ {
+  "name": "Prof. K. TASMAYUN SULTANA",
+  "creds": "MCA",
+  "role": "Assistant Professor & Course Coordinator",
+  "img": "/content/4e4fa3a4-Tasmayun.webp",
+  "w": 360,
+  "h": 480,
+  "prog": [
+   "mca"
+  ]
+ },
+ {
+  "name": "Prof. SONI AGRAWAL",
+  "creds": "MCA",
+  "role": "Assistant Professor & Course Coordinator",
+  "img": "/content/f1223531-Soni-Agrawal.webp",
+  "w": 363,
+  "h": 500,
+  "prog": [
+   "mca"
+  ]
+ },
+ {
+  "name": "Dr. Sudha N",
+  "creds": "MBA, Ph.D",
+  "role": "Assistant Professor and Program Coordinator",
+  "img": "/content/93be352a-prof-sudha.webp",
+  "w": 2000,
+  "h": 2000,
+  "prog": [
+   "bba"
+  ]
+ },
+ {
+  "name": "Prof. VISMAYA VISHWA",
+  "creds": "MA ENGLISH",
+  "role": "Assistant Professor and Course Coordinator",
+  "img": "/content/a3d32f9a-Vismaya.webp",
+  "w": 327,
+  "h": 425,
+  "prog": [
+   "bba"
+  ]
+ },
+ {
+  "name": "Prof. SAYANI BISWAS",
+  "creds": "B.Com, M.Com",
+  "role": "Assistant Professor and Course Coordinator",
+  "img": "/content/45b9bc57-sayani.png",
+  "w": 363,
+  "h": 548,
+  "prog": [
+   "bba"
+  ]
+ },
+ {
+  "name": "Prof. APOORVA K A",
+  "creds": "B.E., M.E., PGDDE, (Ph.D)",
+  "role": "Assistant Professor and Program Coordinator",
+  "img": "/content/4b9c90f1-Dr.apoorva.ka.webp",
+  "w": 307,
+  "h": 382,
+  "prog": [
+   "bca"
+  ]
+ },
+ {
+  "name": "Prof. SHRUTHI S V",
+  "creds": "M.Sc(CS), B.Ed(PM), KSET, (Ph.D)",
+  "role": "Assistant Professor and Course Coordinator",
+  "img": "/content/a90fe39f-Shruti.webp",
+  "w": 383,
+  "h": 505,
+  "prog": [
+   "bca"
+  ]
+ },
+ {
+  "name": "Prof. Devika Rajan",
+  "creds": "M.Sc(CS)",
+  "role": "Assistant Professor and Course Coordinator",
+  "img": "/content/696375cf-Prof.-Devika-Rajan.webp",
+  "w": 2268,
+  "h": 4032,
+  "prog": [
+   "bca"
+  ]
+ },
+ {
+  "name": "Prof. LOKESHWARI CK",
+  "creds": "M.COM, PGDM, (Ph.D)",
+  "role": "Assistant Professor and Program Coordinator",
+  "img": "/content/987b1e25-Lokeshwari.webp",
+  "w": 370,
+  "h": 531,
+  "prog": [
+   "bcom"
+  ]
+ },
+ {
+  "name": "Prof. ADITI SOOD",
+  "creds": "B.Com (Hons), M.COM, B.Ed, UGC-NET",
+  "role": "Assistant Professor and Course Coordinator",
+  "img": "/content/a8100681-Aditi.webp",
+  "w": 490,
+  "h": 757,
+  "prog": [
+   "bcom"
+  ]
+ },
+ {
+  "name": "Prof. MS. PRADNYA KADAM",
+  "creds": "M.COM, SET, B.ED, LL.B., (Ph.D)",
+  "role": "Assistant Professor and Course Coordinator",
+  "img": "/content/7d262705-Pradnya.webp",
+  "w": 353,
+  "h": 460,
+  "prog": [
+   "bcom"
+  ]
+ }
+]

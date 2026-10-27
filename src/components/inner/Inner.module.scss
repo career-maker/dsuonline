@@ -41,20 +41,23 @@
 
 .heroWithAside {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
-  gap: clamp(20px, 4vw, 56px);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 440px);
+  column-gap: clamp(20px, 4vw, 56px);
   align-items: end;
 
-  > :not(.heroAside) {
+  .heroCopy {
     grid-column: 1;
+    grid-row: 1;
+    align-self: end;
   }
 
   .heroAside {
     grid-column: 2;
-    grid-row: 1 / span 12;
-    align-self: center;
+    grid-row: 1;
+    align-self: end;
   }
 
+  // keep the usual banner height: only the first row grows to hold the form
   @include down($bp-lg) {
     grid-template-columns: 1fr;
 

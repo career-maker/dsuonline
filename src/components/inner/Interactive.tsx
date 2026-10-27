@@ -142,26 +142,29 @@ export function Reveal({ count, className, children, more = 'Show More', less = 
 export function LeaderGrid({ items }: { items: { name: string; role?: string; img: ReactNode; paras: string[] }[] }) {
   const [open, setOpen] = useState<number | null>(null);
   const uid = useId();
+  const card = (l: (typeof items)[number], i: number) => {
+    const on = open === i;
+    return (
+      <li key={l.name} className={on ? s.leadOn : undefined}>
+        <div className={s.leadPhoto}>{l.img}</div>
+        <h3>{l.name}</h3>
+        {l.role && <p className={s.leadRole}>{l.role}</p>}
+        <div id={`${uid}-${i}`} className={s.leadText}>
+          {l.paras.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
+        </div>
+        <button type="button" className={s.leadMore} aria-expanded={on} aria-controls={`${uid}-${i}`} onClick={() => setOpen(on ? null : i)}>
+          {on ? 'Read Less' : 'Read More'}
+        </button>
+      </li>
+    );
+  };
+  // the opened message gets its own full-width row on top; the other cards stay in one row below, equal height
   return (
-    <ul className={s.leadGrid}>
-      {items.map((l, i) => {
-        const on = open === i;
-        return (
-          <li key={l.name} className={on ? s.leadOn : undefined}>
-            <div className={s.leadPhoto}>{l.img}</div>
-            <h3>{l.name}</h3>
-            {l.role && <p className={s.leadRole}>{l.role}</p>}
-            <div id={`${uid}-${i}`} className={s.leadText}>
-              {l.paras.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-            <button type="button" className={s.leadMore} aria-expanded={on} aria-controls={`${uid}-${i}`} onClick={() => setOpen(on ? null : i)}>
-              {on ? 'Read Less' : 'Read More'}
-            </button>
-          </li>
-        );
-      })}
-    </ul>
+    <div className={s.leadWrap}>
+      {open !== null && <ul className={s.leadOpen}>{card(items[open], open)}</ul>}
+      <ul className={s.leadGrid}>{items.map((l, i) => (i === open ? null : card(l, i)))}</ul>
+    </div>
   );
 }

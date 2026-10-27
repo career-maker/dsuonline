@@ -99,7 +99,7 @@ export function FacultyArticles() {
           <p className={s.lead}>
             Learn from accomplished academicians. researchers and industry experts who are shaping the next generation of leaders.
           </p>
-          <ArrowLink href="/academics-at-dsu" className={s.btn}>
+          <ArrowLink href="/academics-at-dsu#faculty" className={s.btn}>
             View All Faculty
           </ArrowLink>
         </header>

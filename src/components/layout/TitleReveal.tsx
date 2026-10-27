@@ -21,7 +21,7 @@ export function TitleReveal() {
             io?.unobserve(e.target);
           }
         },
-        { threshold: 0.35, rootMargin: '0px 0px -6% 0px' },
+        { threshold: 0.01, rootMargin: '0px 0px -4% 0px' },
       );
       document.querySelectorAll<HTMLElement>('main h2').forEach((h) => {
         if (h.dataset.tr) return;

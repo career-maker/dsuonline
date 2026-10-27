@@ -1126,3 +1126,37 @@
 .sel:focus-within svg {
   rotate: 180deg;
 }
+
+// slide dots: shown where the side arrows are hidden (tablet + phone)
+.dotsNav {
+  position: absolute;
+  top: clamp(112px, 22vw, 150px);
+  right: var(--gut);
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 14px;
+  background: rgb(0 0 0 / 35%);
+
+  button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 55%);
+    cursor: pointer;
+    transition: width 0.3s, background-color 0.3s;
+
+    &.dotOn {
+      width: 26px;
+      border-radius: 5px;
+      background: $yellow;
+    }
+  }
+
+  @include up($bp-lg) {
+    display: none;
+  }
+}
