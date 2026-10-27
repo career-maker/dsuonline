@@ -152,8 +152,8 @@
 // ---------- desktop: exact geometry of the 1920 artboard
 @include up($bp-lg) {
   .faq {
-    height: u(826);
-    padding: u(98.16) 0 0;
+    min-height: u(826);
+    padding: u(98.16) 0 u(70);
   }
 
   .inner {
