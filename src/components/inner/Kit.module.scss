@@ -2797,7 +2797,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   grid-auto-columns: minmax(150px, 1fr);
   gap: 10px;
   overflow-x: auto;
-  padding-bottom: 4px;
+  padding: 8px 0 4px; // room above so the hover lift is not clipped by the scroller
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
