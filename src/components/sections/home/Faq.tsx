@@ -4,12 +4,16 @@ import { useId, useState } from 'react';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { ChevronRight } from '@/components/ui/icons';
-import { faqs } from '@/data/home';
+import type { Faq as FaqItem } from '@/components/inner/parse';
 import { site } from '@/data/site';
 import s from './Faq.module.scss';
 
-export function Faq() {
+const FIRST = 5;
+
+export function Faq({ items }: { items: FaqItem[] }) {
   const [open, setOpen] = useState<number | null>(null);
+  const [all, setAll] = useState(false);
+  const faqs = all ? items : items.slice(0, FIRST);
   const uid = useId();
 
   return (
@@ -32,12 +36,26 @@ export function Faq() {
                     </button>
                   </h3>
                   <div id={`${uid}-${i}`} role="region" className={`${s.a} ${isOpen ? s.aOpen : ''}`}>
-                    <p>{f.a}</p>
+                    {f.a.map((p) => (
+                      <p key={p}>{p}</p>
+                    ))}
+                    {f.list && (
+                      <ul>
+                        {f.list.map((it) => (
+                          <li key={it}>{it}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </li>
               );
             })}
           </ul>
+          {items.length > FIRST && (
+            <button type="button" className={s.more} aria-expanded={all} onClick={() => setAll((v) => !v)}>
+              {all ? 'View Less' : 'View More'}
+            </button>
+          )}
         </div>
 
         <aside className={s.cta}>
