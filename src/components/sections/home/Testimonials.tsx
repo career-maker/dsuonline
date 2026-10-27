@@ -128,11 +128,6 @@ export function Testimonials() {
           <button type="button" className={`${s.arrow} ${s.next}`} aria-label="Next testimonials" onClick={() => go(page + 1)}>
             <ChevronRight />
           </button>
-          <div className={s.pagers}>
-            {pages.map((_, i) => (
-              <button key={i} type="button" aria-current={i === page} aria-label={`Show testimonials ${i + 1}`} onClick={() => setPage(i)} />
-            ))}
-          </div>
         </div>
       </section>
     </>

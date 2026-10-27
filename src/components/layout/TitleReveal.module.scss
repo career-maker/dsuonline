@@ -26,3 +26,16 @@
 .title {
   position: relative;
 }
+
+// failsafe: a title that never got its reveal trigger still appears
+.title:not(.in) .wi {
+  animation: show 0.01s 2.2s forwards;
+}
+
+@keyframes show {
+  to {
+    translate: 0 0;
+    rotate: 0deg;
+    opacity: 1;
+  }
+}
