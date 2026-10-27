@@ -124,7 +124,7 @@
 .date {
   position: absolute;
   top: clamp(12px, #{u(21)}, 21px);
-  left: clamp(10px, #{u(14)}, 14px);
+  right: clamp(10px, #{u(14)}, 14px);
   display: grid;
   gap: px(5.9);
   min-width: 88px;
@@ -314,7 +314,7 @@
 
   .date {
     top: u(22);
-    left: u(16);
+    right: u(16);
     width: u(92);
     min-width: 0;
     height: u(73);
