@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import { Preloader } from '@/components/layout/Preloader';
 import { TitleReveal } from '@/components/layout/TitleReveal';
+import { FactsDrawer } from '@/components/layout/FactsDrawer';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
 import { EnquiryProvider } from '@/components/layout/EnquiryProvider';
 import { Footer } from '@/components/layout/Footer';
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Preloader />
         <SmoothScroll />
+        <FactsDrawer />
         <TitleReveal />
         <EnquiryProvider>
           <Header />

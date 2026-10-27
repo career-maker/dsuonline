@@ -2472,3 +2472,137 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   font-weight: 500;
   cursor: pointer;
 }
+
+// ---------- "Why choose" (about) v2: numbered list + photo-first detail card
+.whyTabs {
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: stretch;
+}
+
+.whyMenu {
+  padding: 0;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid $line-soft;
+  background: #fff;
+
+  button {
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 0;
+    border-bottom: 1px solid $line-soft;
+    font-size: fs(19, 16px);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    i {
+      flex: none;
+      width: 32px;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: $gold;
+      transition: color 0.2s;
+    }
+
+    span {
+      width: auto;
+      height: auto;
+      border-radius: 0;
+      background: none;
+    }
+
+    &:hover {
+      background: $bg-card-sky;
+    }
+  }
+
+  .whyOn {
+    background: $blue;
+    color: #fff;
+
+    i {
+      color: $yellow;
+    }
+
+    span {
+      background: none;
+    }
+  }
+}
+
+.whyPanel {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid $line-soft;
+  border-radius: 14px;
+  background: #fff;
+
+  .whyImg {
+    position: relative;
+    margin: 0;
+    border-radius: 0;
+    flex: none;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      max-height: 380px;
+      object-fit: cover;
+    }
+  }
+
+  .whyText {
+    padding: clamp(18px, #{u(28)}, 28px);
+
+    h3 {
+      font-size: fs(30, 22px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: $ink;
+    }
+
+    p {
+      margin-top: 12px;
+    }
+  }
+}
+
+.whyBadge {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: $yellow;
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+// ---------- blue band sections (placement counters, "DSU Advantage")
+.blue {
+  background: radial-gradient(circle at 12% 0%, rgb(255 255 255 / 14%), transparent 40%), linear-gradient(120deg, #025c90 0%, #007dc5 70%, #1a93d6 100%);
+
+  .head h2,
+  .head .lead {
+    color: #fff;
+  }
+
+  .eyebrow {
+    color: $yellow;
+  }
+
+  .stats > li {
+    border: 1px solid rgb(255 255 255 / 28%);
+    background: rgb(255 255 255 / 10%);
+    backdrop-filter: none;
+  }
+}

@@ -163,8 +163,8 @@ export function LeaderGrid({ items }: { items: { name: string; role?: string; im
   // the opened message gets its own full-width row on top; the other cards stay in one row below, equal height
   return (
     <div className={s.leadWrap}>
-      {open !== null && <ul className={s.leadOpen}>{card(items[open], open)}</ul>}
       <ul className={s.leadGrid}>{items.map((l, i) => (i === open ? null : card(l, i)))}</ul>
+      {open !== null && <ul className={s.leadOpen}>{card(items[open], open)}</ul>}
     </div>
   );
 }

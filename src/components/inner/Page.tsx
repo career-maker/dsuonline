@@ -853,7 +853,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (tiles.length >= 4) {
       const lead = sec.blocks.filter(isP).find((b) => b.x.length > 80)?.x;
       nodes.push(
-        <Sec key={key} tone={nextTone()} center title={title} lead={lead}>
+        <Sec key={key} tone="blue" center title={title} lead={lead}>
           <IconTiles items={tiles} />
         </Sec>,
       );
@@ -864,7 +864,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     const statSubs = sec.subs.filter((x) => /^[\d,]+\+?$/.test(x.title));
     if (statSubs.length >= 3) {
       nodes.push(
-        <Sec key={key} tone="white" center title={title} eyebrow={kickers[n]}>
+        <Sec key={key} tone="blue" center title={title} eyebrow={kickers[n]}>
           <ul className={s.stats}>
             {statSubs.map((x) => (
               <li key={x.title + x.blocks[0]}>
@@ -969,7 +969,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
 
   return (
     <>
-      <InnerHero badges={withFacts || slug === 'about'} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
+      <InnerHero size={withFacts ? (crumbs.length >= 3 ? 'gradient' : 'full') : 'short'} badges={withFacts || slug === 'about'} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
       {longSub && slug === 'student-testimonials' && subtitle && (
         <Sec tone="white">
           <div className={s.introGrid}>

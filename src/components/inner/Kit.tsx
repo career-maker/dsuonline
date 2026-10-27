@@ -9,7 +9,7 @@ import { Reveal, Tabs } from './Interactive';
 import type { Img, Quote } from './parse';
 import s from './Kit.module.scss';
 
-export type Tone = 'white' | 'grey' | 'sky';
+export type Tone = 'white' | 'grey' | 'sky' | 'blue';
 
 export function Head({ title, eyebrow, lead, center }: { title?: string; eyebrow?: string; lead?: string; center?: boolean }) {
   if (!title && !eyebrow) return null;

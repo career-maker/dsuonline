@@ -110,7 +110,10 @@ export function InnerHero({
   banner,
   aside,
   badges,
+  size = 'short',
 }: {
+  /** full = home-hero height (programme pages); short = compact banner; gradient = photo-less compact banner (specializations) */
+  size?: 'full' | 'short' | 'gradient';
   badges?: boolean;
   aside?: React.ReactNode;
   banner?: number;
@@ -123,9 +126,9 @@ export function InnerHero({
 }) {
   const links = (extra ?? []).filter((b): b is Extract<Block, { t: 'a' }> => b.t === 'a');
   return (
-    <section className={s.hero}>
+    <section className={`${s.hero} ${size === 'short' ? s.heroShort : size === 'gradient' ? s.heroGradient : ''}`}>
       {/* banner photo: desktop/tablet and phone crops come from the same slide data as the home hero (CMS: one image per breakpoint) */}
-      <picture className={s.heroBg}>
+      <picture className={s.heroBg} hidden={size === 'gradient'}>
         <source media="(max-width: 759.98px)" srcSet={heroSlides[(banner ?? 0) % heroSlides.length].mobile} />
         <Image src={heroSlides[(banner ?? 0) % heroSlides.length].desktop} alt="" fill priority sizes="100vw" className={s.heroImg} />
       </picture>

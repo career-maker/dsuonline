@@ -176,7 +176,26 @@ export function Header() {
                 More <Image className={`${s.ico} ${moreOpen ? s.flip : ''}`} src="/icons/hdr-chev.png" alt="" width={14} height={11} />
               </button>
               <ul id={moreId} className={`${s.dropdown} ${s.moreMenu} ${moreOpen ? s.dropdownOpen : ''}`}>
-                {moreNav.map((n) => (
+                {moreNav.map((n) =>
+                  n.label === 'Facts' ? (
+                    <li key={n.href}>
+                      <a
+                        href="#facts"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          closeAll();
+                          window.dispatchEvent(new Event('open-facts'));
+                        }}
+                      >
+                        <span className={s.txt}>
+                          <b>{n.label}</b>
+                        </span>
+                        <span className={s.arr} aria-hidden="true">
+                          →
+                        </span>
+                      </a>
+                    </li>
+                  ) : (
                   <li key={n.href}>
                     <Link href={n.href} onClick={closeAll}>
                       <span className={s.txt}>
@@ -187,7 +206,8 @@ export function Header() {
                       </span>
                     </Link>
                   </li>
-                ))}
+                  ),
+                )}
                 <li className={s.moreCtas}>
                   <a href={site.apply} target="_blank" rel="noopener noreferrer" onClick={closeAll}>
                     Apply Now

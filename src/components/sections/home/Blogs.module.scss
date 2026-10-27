@@ -92,7 +92,9 @@
 }
 
 .photo {
-  object-fit: cover;
+  object-fit: contain;
+  object-position: 50% 0;
+  background: #0e2a3d;
 }
 
 .card {

@@ -33,19 +33,22 @@ export function WhyTabs({ items }: { items: WhyItem[] }) {
               document.getElementById(`${uid}-t${n}`)?.focus();
             }}
           >
-            <span aria-hidden="true" />
-            {x.t}
+            <i aria-hidden="true">{String(i + 1).padStart(2, '0')}</i>
+            <span>{x.t}</span>
           </button>
         ))}
       </div>
       <div id={`${uid}-p`} role="tabpanel" aria-labelledby={`${uid}-t${cur}`} className={s.whyPanel}>
-        <h3>{it.t}</h3>
-        <p>{it.d}</p>
         {it.img && (
           <div className={s.whyImg}>
             <Image src={it.img} alt={it.t} width={it.w ?? 1024} height={it.h ?? 600} sizes="(max-width: 900px) 100vw, 640px" />
+            <span className={s.whyBadge}>{String(cur + 1).padStart(2, '0')}</span>
           </div>
         )}
+        <div className={s.whyText}>
+          <h3>{it.t}</h3>
+          <p>{it.d}</p>
+        </div>
       </div>
     </div>
   );

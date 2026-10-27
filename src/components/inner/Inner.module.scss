@@ -688,3 +688,32 @@
     background: rgb(255 255 255 / 30%);
   }
 }
+
+// compact banners for ordinary inner pages; the photo still fills it
+.heroShort {
+  min-height: clamp(340px, #{u(520)}, 560px);
+  padding: clamp(104px, #{u(150)}, 150px) 0 clamp(28px, #{u(52)}, 52px);
+
+  @include down($bp-lg) {
+    min-height: clamp(320px, 52svh, 480px);
+  }
+
+  @include down($bp-sm) {
+    min-height: clamp(300px, 52svh, 420px);
+  }
+}
+
+// specialization pages: brand gradient instead of a photo, shorter again
+.heroGradient {
+  min-height: clamp(280px, #{u(400)}, 420px);
+  padding: clamp(100px, #{u(140)}, 140px) 0 clamp(26px, #{u(44)}, 44px);
+  background: radial-gradient(circle at 85% 20%, rgb(255 255 255 / 14%), transparent 45%), linear-gradient(120deg, #025c90 0%, #007dc5 60%, #1a93d6 100%);
+
+  @include down($bp-lg) {
+    min-height: clamp(260px, 40svh, 360px);
+  }
+
+  .heroShade {
+    display: none;
+  }
+}
