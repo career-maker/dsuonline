@@ -8,7 +8,7 @@ import s from './SideTabs.module.scss';
 export function SideTabs() {
   const { open } = useEnquiry();
   return (
-    <aside className={s.tabs} aria-label="Quick actions">
+    <aside className={s.tabs} aria-label="Quick actions" data-sidetabs>
       <button type="button" className={`${s.tab} ${s.enquire}`} onClick={() => open()}>
         <span>Enquire Now</span>
       </button>

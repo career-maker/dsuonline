@@ -6,7 +6,7 @@ import s from './WhyChoose.module.scss';
 const DEFAULT_COPY =
   'DSU Online empowers learners with flexible, industry-aligned education designed for career growth and academic excellence. Through expert faculty, a future-focused curriculum, and a seamless digital learning experience, students can earn a recognized degree while balancing their personal and professional commitments.';
 
-export function WhyChoose({ title = 'Why Choose DSU Online ?', copy = DEFAULT_COPY }: { title?: string; copy?: string }) {
+export function WhyChoose({ title = 'Why Choose DSU Online ?', copy = DEFAULT_COPY }: { title?: string; copy?: string }) {
   return (
     <section className={s.why}>
       <div className={s.inner}>

@@ -390,6 +390,15 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
 
   // sections whose body is a single paragraph (Why DSU: accordion titles) are merged into one FAQ-style block
   const secs = st.sections;
+  // a lone sub-heading with no body (e.g. "Your Success Is Our Priority") is the small line above the NEXT section's title
+  const kickers: Record<number, string> = {};
+  secs.forEach((sc, i) => {
+    const last = sc.subs[sc.subs.length - 1];
+    if (last && !last.blocks.length && secs[i + 1]) {
+      kickers[i + 1] = last.title;
+      sc.subs = sc.subs.slice(0, -1);
+    }
+  });
   const nodes: ReactNode[] = [];
   for (let n = 0; n < secs.length; n++) {
     const sec = secs[n];
@@ -719,7 +728,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     const statSubs = sec.subs.filter((x) => /^[\d,]+\+?$/.test(x.title));
     if (statSubs.length >= 3) {
       nodes.push(
-        <Sec key={key} tone="white" center title={title}>
+        <Sec key={key} tone="white" center title={title} eyebrow={kickers[n]}>
           <ul className={s.stats}>
             {statSubs.map((x) => (
               <li key={x.title + x.blocks[0]}>

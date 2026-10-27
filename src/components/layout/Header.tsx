@@ -101,6 +101,12 @@ export function Header() {
     };
   }, []);
 
+  // the fixed bottom action bar would cover the open mobile menu: let CSS hide it
+  useEffect(() => {
+    document.documentElement.classList.toggle('menu-open', menuOpen);
+    return () => document.documentElement.classList.remove('menu-open');
+  }, [menuOpen]);
+
   const closeAll = () => {
     setMenuOpen(false);
     setProgOpen(false);
