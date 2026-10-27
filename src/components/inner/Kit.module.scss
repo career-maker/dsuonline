@@ -2731,19 +2731,30 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 }
 
-// ---------- "Why choose" v3: full-width photo with caption overlay, numbered rail underneath
+// ---------- "Why choose" v4: main photo + text on the left, numbered tiles on the right
 .whyStage {
   display: grid;
-  gap: 14px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(14px, 1.8vw, 28px);
+  align-items: stretch;
+
+  @include down($bp-md) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .whyHero {
   position: relative;
-  min-height: clamp(320px, 38vw, 520px);
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 20px;
   background: #0e2a3d;
   color: #fff;
+
+  @include down($bp-md) {
+    aspect-ratio: 3 / 4;
+    max-height: 640px;
+  }
 }
 
 .whyHero .whyHeroImg {
@@ -2759,15 +2770,14 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgb(2 30 52 / 92%) 0%, rgb(2 30 52 / 55%) 42%, transparent 75%);
+  background: linear-gradient(0deg, rgb(2 30 52 / 94%) 0%, rgb(2 30 52 / 70%) 38%, transparent 72%);
 }
 
 .whyCaption {
   position: absolute;
   inset: auto 0 0;
   z-index: 1;
-  max-width: 760px;
-  padding: clamp(18px, 2.6vw, 40px);
+  padding: clamp(16px, 2.2vw, 32px);
   animation: whyIn 0.5s $ease both;
 
   .whyBadge {
@@ -2777,61 +2787,62 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   h3 {
     margin-top: 10px;
-    font-size: fs(34, 24px);
+    font-size: fs(30, 22px);
     line-height: 1.15;
     font-weight: 700;
     color: #fff;
   }
 
   p {
-    margin-top: 10px;
-    font-size: fs(18, 15px);
-    line-height: 1.6;
+    margin-top: 8px;
+    font-size: fs(16, 14px);
+    line-height: 1.55;
     color: rgb(255 255 255 / 92%);
   }
 }
 
 .whyRail {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(150px, 1fr);
-  gap: 10px;
-  overflow-x: auto;
-  padding: 8px 0 4px; // room above so the hover lift is not clipped by the scroller
-  scrollbar-width: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(8px, 1vw, 14px);
+  align-content: stretch;
 
-  &::-webkit-scrollbar {
-    display: none;
+  @include down($bp-sm) {
+    grid-template-columns: 1fr 1fr;
   }
 
   button {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
     align-items: flex-start;
-    padding: 14px 16px;
+    justify-content: space-between;
+    padding: clamp(12px, 1.2vw, 18px);
     border: 1px solid $line-soft;
-    border-radius: 12px;
+    border-radius: 14px;
     background: #fff;
     text-align: left;
-    font-size: fs(16, 14px);
+    font-size: fs(17, 14px);
     line-height: 1.3;
     font-weight: 500;
     color: $ink;
     cursor: pointer;
-    transition: background-color 0.25s, color 0.25s, translate 0.25s;
+    transition: background-color 0.25s, color 0.25s, box-shadow 0.25s, border-color 0.25s;
     @include focus-ring;
 
     i {
-      font-size: 14px;
+      font-size: fs(24, 18px);
       font-style: normal;
-      letter-spacing: 0.06em;
+      font-weight: 500;
+      line-height: 1;
       color: $blue;
+      transition: color 0.25s;
     }
 
     @media (hover: hover) {
       &:hover {
-        translate: 0 -3px;
+        border-color: $blue;
+        box-shadow: 0 10px 24px rgb(0 70 120 / 16%);
       }
     }
   }

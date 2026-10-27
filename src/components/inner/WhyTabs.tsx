@@ -28,7 +28,7 @@ export function WhyTabs({ items }: { items: WhyItem[] }) {
           <p>{it.d}</p>
         </div>
       </div>
-      <div role="tablist" aria-orientation="horizontal" className={s.whyRail}>
+      <div role="tablist" aria-orientation="vertical" className={s.whyRail}>
         {items.map((x, i) => (
           <button
             key={x.t}
@@ -41,9 +41,9 @@ export function WhyTabs({ items }: { items: WhyItem[] }) {
             className={i === cur ? s.whyRailOn : undefined}
             onClick={() => setCur(i)}
             onKeyDown={(e) => {
-              if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+              if (!/^Arrow(Right|Left|Down|Up)$/.test(e.key)) return;
               e.preventDefault();
-              const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + items.length) % items.length;
+              const n = (i + (e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
               setCur(n);
               document.getElementById(`${uid}-t${n}`)?.focus();
             }}
