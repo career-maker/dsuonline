@@ -529,48 +529,81 @@
   }
 }
 
-// ---------- learner stories slider: equal cards, auto-scrolling loop (pauses on hover), arrows only when something is off-screen
-.inner .grid {
-  display: flex;
-  grid-template-columns: none;
-  grid-template-rows: none;
-  gap: clamp(8px, #{u(12)}, 12px);
-  overflow-x: auto;
-  scrollbar-width: none;
-  overscroll-behavior-x: contain;
-  margin: 0;
-  padding: 0;
+// ---------- two "pages" of the original bento grid; crossfade on desktop, one swipeable row on phones
+.pages {
+  position: relative;
+  display: grid;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  @include down($bp-md) {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    gap: 12px;
+    padding: 4px var(--gut) 8px;
+    margin: 0 calc(-1 * var(--gut));
 
-  .card {
-    flex: 0 0 calc((100% - 2 * clamp(8px, #{u(12)}, 12px)) / 3);
-    aspect-ratio: 420 / 280;
-    margin: 0;
-    border-radius: px(10);
-
-    @include down($bp-lg) {
-      flex-basis: calc((100% - clamp(8px, #{u(12)}, 12px)) / 2);
+    &::-webkit-scrollbar {
+      display: none;
     }
-
-    @include down($bp-md) {
-      flex: 0 0 calc(85vw - 12px);
-      max-width: 360px;
-      aspect-ratio: 16 / 10;
-    }
-  }
-
-  .cardImg {
-    object-fit: cover;
-    object-position: 50% 25%;
   }
 }
 
-.inner .controlsOn {
-  display: flex;
-  justify-content: flex-end;
-  margin: clamp(14px, #{u(24)}, 24px) 0 0;
-  padding: 0;
+.page {
+  grid-area: 1 / 1;
+  transition: opacity 0.6s ease, visibility 0.6s;
+
+  @include down($bp-md) {
+    display: contents;
+  }
+}
+
+.pageOff {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  @include down($bp-md) {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.dup {
+  @include down($bp-md) {
+    display: none;
+  }
+}
+
+.plainImg {
+  object-fit: cover;
+  object-position: 50% 22%;
+}
+
+.pagers {
+  display: none;
+
+  @include up($bp-lg) {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: clamp(10px, #{u(18)}, 18px);
+
+    button {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: rgb(0 0 0 / 20%);
+      cursor: pointer;
+
+      &[aria-current='true'] {
+        width: 26px;
+        border-radius: 5px;
+        background: $blue;
+      }
+    }
+  }
 }
