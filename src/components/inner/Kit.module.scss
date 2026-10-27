@@ -1814,3 +1814,90 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   gap: clamp(16px, #{u(24)}, 24px);
   align-content: center;
 }
+
+// testimonials intro: wide short photo + title on the left, copy on the right (no tall empty band)
+.introGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(20px, #{u(56)}, 56px);
+  align-items: center;
+
+  > p {
+    @include body-text;
+    font-size: max(17px, calc(var(--u) * 20));
+    line-height: 1.7;
+  }
+
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.introLeft {
+  display: grid;
+  gap: clamp(14px, #{u(22)}, 22px);
+
+  h2 {
+    @include h2;
+  }
+}
+
+.introPhoto {
+  overflow: hidden;
+  aspect-ratio: 16 / 7;
+  border-radius: 14px;
+  background: $bg-sky;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 35%;
+  }
+}
+
+// photo beside copy never stretches the row: cap its height, crop to fit
+.splitMedia {
+  max-height: clamp(280px, 34vw, 460px);
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// varied soft box colours (brand blue + gold family)
+.cards.tint > li:nth-child(4n + 1),
+.roles > li:nth-child(4n + 1),
+.steps > li:nth-child(4n + 1),
+.industries > li:nth-child(4n + 1) {
+  background: #e6f2f9;
+}
+
+.cards.tint > li:nth-child(4n + 2),
+.roles > li:nth-child(4n + 2),
+.steps > li:nth-child(4n + 2),
+.industries > li:nth-child(4n + 2) {
+  background: #fff8d1;
+}
+
+.cards.tint > li:nth-child(4n + 3),
+.roles > li:nth-child(4n + 3),
+.steps > li:nth-child(4n + 3),
+.industries > li:nth-child(4n + 3) {
+  background: #e3f4ea;
+}
+
+.cards.tint > li:nth-child(4n),
+.roles > li:nth-child(4n),
+.steps > li:nth-child(4n),
+.industries > li:nth-child(4n) {
+  background: #fdebdc;
+}
+
+.roles > li,
+.steps > li,
+.industries > li {
+  border-color: transparent;
+  box-shadow: none;
+}

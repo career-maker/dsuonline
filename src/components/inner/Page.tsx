@@ -860,8 +860,13 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       <InnerHero banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
       {longSub && slug === 'student-testimonials' && subtitle && (
         <Sec tone="white">
-          <div className={s.introSplit}>
-            <h2>Testimonials</h2>
+          <div className={s.introGrid}>
+            <div className={s.introLeft}>
+              <div className={s.introPhoto}>
+                <Image src="/images/about/about-left.webp" alt="" width={961} height={541} sizes="(max-width: 1200px) 100vw, 640px" />
+              </div>
+              <h2>Testimonials</h2>
+            </div>
             <p>{subtitle.replace(/^Testimonials\s+/, '')}</p>
           </div>
         </Sec>
