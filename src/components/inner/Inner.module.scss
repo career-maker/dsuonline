@@ -39,6 +39,34 @@
     linear-gradient(0deg, rgb(4 10 18 / 70%) 0%, rgb(4 10 18 / 0%) 55%);
 }
 
+.heroWithAside {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
+  gap: clamp(20px, 4vw, 56px);
+  align-items: end;
+
+  > :not(.heroAside) {
+    grid-column: 1;
+  }
+
+  .heroAside {
+    grid-column: 2;
+    grid-row: 1 / span 12;
+    align-self: center;
+  }
+
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+
+    .heroAside {
+      grid-column: 1;
+      grid-row: auto;
+      order: 99;
+      margin-top: 24px;
+    }
+  }
+}
+
 .heroInner {
   position: relative;
   z-index: 1;

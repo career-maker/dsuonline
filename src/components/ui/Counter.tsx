@@ -35,8 +35,8 @@ export function Counter({ to, ms = 1800 }: { to: number; ms?: number }) {
 
   return (
     <span ref={ref}>
-      <span className="sr-only">{to}</span>
-      <span aria-hidden="true">{n}</span>
+      <span className="sr-only">{to.toLocaleString('en-US')}</span>
+      <span aria-hidden="true">{n.toLocaleString('en-US')}</span>
     </span>
   );
 }

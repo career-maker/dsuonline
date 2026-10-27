@@ -108,7 +108,9 @@ export function InnerHero({
   facts,
   extra,
   banner,
+  aside,
 }: {
+  aside?: React.ReactNode;
   banner?: number;
   crumbs: Crumb[];
   eyebrow?: string;
@@ -126,7 +128,8 @@ export function InnerHero({
         <Image src={heroSlides[(banner ?? 0) % heroSlides.length].desktop} alt="" fill priority sizes="100vw" className={s.heroImg} />
       </picture>
       <div className={s.heroShade} aria-hidden="true" />
-      <div className={s.heroInner}>
+      <div className={`${s.heroInner} ${aside ? s.heroWithAside : ''}`}>
+        {aside && <div className={s.heroAside}>{aside}</div>}
         <nav aria-label="Breadcrumb" className={s.crumbs}>
           <ol>
             {crumbs.map((c, i) => (

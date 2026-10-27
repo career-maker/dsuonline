@@ -6,6 +6,8 @@ import { ProgramsBand } from '@/components/sections/home/ProgramsBand';
 import { WhyChoose } from '@/components/sections/home/WhyChoose';
 import { cleanBlocks, slugify } from './clean';
 import { ContactForm } from './ContactForm';
+import { ReferForm } from './ReferForm';
+import { StatNumber } from './StatNumber';
 import { CtaBand, InnerHero, type Crumb } from './InnerPage';
 import { FaqList, LeaderGrid } from './Interactive';
 import {
@@ -358,7 +360,7 @@ function ReferPage({ blocks, crumbs }: { blocks: Block[]; crumbs: Crumb[] }) {
   void prog;
   return (
     <>
-      <InnerHero banner={3} crumbs={crumbs} eyebrow={batch} title="Refer & Earn Program" extra={[]} />
+      <InnerHero banner={3} aside={<ReferForm />} crumbs={crumbs} eyebrow={batch} title="Refer & Earn Program" extra={[]} />
       {logos.length > 0 && (
         <Sec tone="white" center compact>
           <LogoWall imgs={logos} />
@@ -764,7 +766,9 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           <ul className={s.stats}>
             {statSubs.map((x) => (
               <li key={x.title + x.blocks[0]}>
-                <b>{x.title}</b>
+                <b>
+                  <StatNumber text={x.title} />
+                </b>
                 <span>{x.blocks.filter(isP)[0]?.x}</span>
               </li>
             ))}
@@ -837,7 +841,13 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
                 <p key={b.x}>{b.x}</p>
               ))}
             </div>
-            <CtaLink href={ctaLink.href}>{ctaLink.x}</CtaLink>
+            <div className={s.ctaLinks}>
+              {sec.blocks.filter((b): b is Extract<Block, { t: 'a' }> => b.t === 'a').map((l) => (
+                <CtaLink key={l.href} href={l.href}>
+                  {l.x}
+                </CtaLink>
+              ))}
+            </div>
           </div>
         </Sec>,
       );

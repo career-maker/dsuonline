@@ -7,7 +7,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 // ---------- section shell
 .sec {
   letter-spacing: -0.0175em;
-  @include section-pad(100, 100);
+  @include section-pad(80, 80);
 }
 
 .white {
@@ -37,7 +37,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     margin-top: 0;
   }
 
-  margin-bottom: clamp(24px, 3.4vw, 48px);
+  margin-bottom: clamp(18px, 2.4vw, 32px);
 
   h2 {
     @include h2;
@@ -1900,4 +1900,24 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .industries > li {
   border-color: transparent;
   box-shadow: none;
+}
+
+.ctaLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+// buttons inside text columns keep their natural width
+.splitText > a,
+.splitText > button {
+  justify-self: start;
+}
+
+.ctaStrip h2 + p {
+  margin-top: 14px;
+}
+
+.contactFormCard:has(.consent) .consent {
+  font-size: 12px;
 }

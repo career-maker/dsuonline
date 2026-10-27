@@ -470,3 +470,33 @@ $ease: cubic-bezier(0.2, 0.8, 0.2, 1);
     animation-duration: 1.6s;
   }
 }
+
+// compact variant (hero side form): shorter controls so the form fits beside the banner copy
+.compact {
+  gap: 8px 12px;
+
+  .field {
+    gap: 3px;
+
+    label {
+      font-size: 13px;
+    }
+
+    input,
+    select {
+      min-height: 38px;
+      font-size: 15px;
+    }
+  }
+
+  .pickBtn {
+    min-height: 38px;
+    padding: 0 8px;
+    font-size: 15px;
+  }
+
+  .submit {
+    min-height: 44px;
+    font-size: 16px;
+  }
+}
