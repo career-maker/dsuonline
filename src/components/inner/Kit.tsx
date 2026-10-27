@@ -159,9 +159,9 @@ export function DataTable({ rows, caption }: { rows: string[][]; caption?: strin
   );
 }
 
-export function QuoteCards({ items, initial = 6 }: { items: Quote[]; initial?: number }) {
+export function QuoteCards({ items, initial = 6, home }: { items: Quote[]; initial?: number; home?: boolean }) {
   const cards = items.map((q) => (
-    <li key={q.quote} className={s.quote}>
+    <li key={q.quote} className={`${s.quote} ${home ? s.quoteHome : ''}`}>
       <span className={s.qmark} aria-hidden="true">
         “
       </span>
@@ -179,6 +179,28 @@ export function QuoteCards({ items, initial = 6 }: { items: Quote[]; initial?: n
   ));
   void initial;
   return <QuoteSlider cards={cards} />;
+}
+
+/** "A Learning Experience That's a Class Apart": picture beside six numbered cards (replaces the old accordion). */
+export function ClassApart({ items, img }: { items: { t: string; d: string }[]; img?: Img }) {
+  return (
+    <div className={s.apart}>
+      {img && (
+        <div className={s.apartPic}>
+          <Pic img={img} sizes="(max-width: 900px) 100vw, 520px" />
+        </div>
+      )}
+      <ol className={s.apartGrid}>
+        {items.map((it, i) => (
+          <li key={it.t}>
+            <span className={s.apartNum}>{String(i + 1).padStart(2, '0')}</span>
+            <h3>{it.t}</h3>
+            <p>{it.d}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
 }
 
 /** Logo strip. Six or more logos scroll as the home "Recognitions & Accreditations" marquee; fewer sit in a grid. */

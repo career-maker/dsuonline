@@ -28,6 +28,7 @@ import {
   LogoWall,
   Pic,
   Prose,
+  ClassApart,
   QuoteCards,
   RoleGrid,
   IndustryGrid,
@@ -578,9 +579,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         const logos = trailing.slice(1).map(imgOf);
         nodes.push(
           <Sec key={key} tone={nextTone()} title="A Learning Experience That’s a Class Apart">
-            <Split media={img ? <Pic img={imgOf(img)} /> : undefined} top>
-              <FaqList items={run.map((r) => ({ q: r.title, a: [(r.blocks[0] as P).x] }))} />
-            </Split>
+            <ClassApart img={img ? imgOf(img) : undefined} items={run.map((r) => ({ t: r.title, d: (r.blocks[0] as P).x }))} />
           </Sec>,
         );
         if (logos.length) {
@@ -677,7 +676,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const lead = sec.blocks.filter(isP).find((b) => b.x.length > 30 && !/^[“"]/.test(b.x) && !quotes.some((q) => q.quote === b.x))?.x;
       nodes.push(
         <Sec key={key} tone="sky" center title={title} lead={lead}>
-          {quotes.filter((q) => q.img).length >= quotes.length / 2 ? <StoryCards items={quotes} initial={9} /> : <QuoteCards items={quotes} initial={6} />}
+          {quotes.filter((q) => q.img).length >= quotes.length / 2 ? <StoryCards items={quotes} initial={9} /> : <QuoteCards items={quotes} initial={6} home={slug === 'why-dsu-online'} />}
         </Sec>,
       );
       continue;

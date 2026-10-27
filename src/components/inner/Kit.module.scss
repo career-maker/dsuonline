@@ -2606,3 +2606,125 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     backdrop-filter: none;
   }
 }
+
+// ---------- "Class Apart": picture + numbered cards
+.apart {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(20px, 3vw, 48px);
+  align-items: center;
+
+  @include down($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.apartPic {
+  padding: clamp(16px, 2vw, 28px);
+  border-radius: 20px;
+  background: radial-gradient(circle at 30% 20%, #fff, #d8ecf8);
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+}
+
+.apartGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 20px);
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: clamp(18px, 1.8vw, 26px);
+    border-radius: 14px;
+    border: 1px solid $line-soft;
+    background: #fff;
+    transition: translate 0.35s $ease, box-shadow 0.35s $ease, background-color 0.35s;
+
+    @media (hover: hover) {
+      &:hover {
+        translate: 0 -5px;
+        background: $blue;
+        box-shadow: 0 16px 36px rgb(0 70 120 / 22%);
+
+        h3,
+        p {
+          color: #fff;
+        }
+
+        .apartNum {
+          color: $yellow;
+        }
+      }
+    }
+  }
+
+  h3 {
+    font-size: fs(22, 18px);
+    line-height: 1.25;
+    font-weight: 700;
+    color: $ink;
+    transition: color 0.35s;
+  }
+
+  p {
+    font-size: fs(17, 15px);
+    line-height: 1.55;
+    color: $body;
+    transition: color 0.35s;
+  }
+}
+
+.apartNum {
+  font-size: fs(34, 26px);
+  line-height: 1;
+  font-weight: 500;
+  color: $blue;
+  transition: color 0.35s;
+}
+
+// ---------- home-testimonial look for quote cards (dark gradient, white text, name chip)
+.quoteHome {
+  border: 0;
+  background: radial-gradient(circle at 100% 0%, rgb(255 255 255 / 16%), transparent 45%), linear-gradient(150deg, #04426b 0%, #007dc5 100%);
+  box-shadow: none;
+
+  .qmark {
+    color: $yellow;
+  }
+
+  > p {
+    color: #fff;
+  }
+
+  .who {
+    padding: 12px 14px;
+    border: 0;
+    border-radius: 12px;
+    background: rgb(255 255 255 / 14%);
+
+    b {
+      color: #fff;
+    }
+
+    > div span {
+      color: rgb(255 255 255 / 85%);
+    }
+  }
+
+  .avatar {
+    background: $yellow;
+    color: #000;
+  }
+}
