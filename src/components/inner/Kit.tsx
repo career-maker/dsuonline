@@ -101,6 +101,21 @@ export function CardGrid({ items, cols = 3, numbered, tint }: { items: { title: 
   );
 }
 
+// phrases the live site marks with <span class="highlight-text"> in the admission steps
+const HIGHLIGHTS = ['Rs. 1000/- + Taxes', "'Apply Now'", 'five working days', 'admission confirmation'];
+function highlight(text: string): ReactNode {
+  const hit = HIGHLIGHTS.find((h) => text.includes(h));
+  if (!hit) return text;
+  const i = text.indexOf(hit);
+  return (
+    <>
+      {text.slice(0, i)}
+      <mark>{hit}</mark>
+      {highlight(text.slice(i + hit.length))}
+    </>
+  );
+}
+
 export function Steps({ items }: { items: { title: string; text: string }[] }) {
   return (
     <ol className={s.steps}>
@@ -109,7 +124,7 @@ export function Steps({ items }: { items: { title: string; text: string }[] }) {
           <span className={s.stepNo}>{String(i + 1).padStart(2, '0')}</span>
           <div>
             <h3>{st.title}</h3>
-            <p>{st.text}</p>
+            <p>{highlight(st.text)}</p>
           </div>
         </li>
       ))}

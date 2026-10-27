@@ -64,10 +64,11 @@ export function allPageSegments(): string[][] {
 /** Turn an absolute dsuonline.com link into a local route; keep external links as-is. */
 export function localHref(href: string): string {
   try {
-    const u = new URL(href);
+    const u = new URL(href.startsWith('//') ? `https:${href}` : href);
     if (u.hostname === 'dsuonline.com' || u.hostname === 'www.dsuonline.com') {
-      if (/\.[a-z0-9]{2,5}$/i.test(u.pathname)) return href; // documents/files stay on the live site
-      const p = u.pathname.replace(/\/$/, '') || '/';
+      const clean = u.pathname.replace(/\.php$/i, ''); // old site pages (contact-us.php) map to our routes
+      if (/\.[a-z0-9]{2,5}$/i.test(clean)) return href.startsWith('//') ? `https:${href}` : href; // documents/files stay on the live site
+      const p = clean.replace(/\/$/, '') || '/';
       return p + u.search + u.hash;
     }
   } catch {

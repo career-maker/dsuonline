@@ -805,13 +805,6 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     font-weight: 700;
   }
 
-  span {
-    display: block;
-    margin-top: 10px;
-    font-size: 16px;
-    line-height: 1.35;
-    opacity: 0.92;
-  }
 }
 
 .certs {
@@ -2085,4 +2078,28 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   font-size: clamp(16px, #{u(21)}, 21px);
   overflow-wrap: normal;
   word-break: normal;
+}
+
+.steps mark {
+  padding: 0 4px;
+  border-radius: 3px;
+  background: rgb(255 242 0 / 55%);
+  color: $ink;
+  font-weight: 500;
+}
+
+// counters inside stat tiles keep the big number style (the tile label rule must not hit the animated spans)
+.stats > li > span {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.35;
+  opacity: 0.92;
+}
+
+.stats b span {
+  display: inline;
+  margin: 0;
+  font-size: inherit;
+  opacity: 1;
 }
