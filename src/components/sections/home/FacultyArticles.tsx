@@ -8,6 +8,7 @@ import { FramedImage } from '@/components/ui/FramedImage';
 import { Icon } from '@/components/ui/Icon';
 import { ChevronLeft, ChevronRight } from '@/components/ui/icons';
 import { articles, faculty } from '@/data/home';
+import { useLoopCarousel } from '@/hooks/useLoopCarousel';
 import s from './FacultyArticles.module.scss';
 
 const avatar = (key: string) => (key === 'meera' ? '/images/faculty/meera.webp' : `/images/avatars/${key}.webp`);
@@ -30,7 +31,8 @@ const toIsoDate = (dateStr: string) => {
 export function FacultyArticles() {
   const facultyTrackRef = useRef<HTMLUListElement>(null);
   const articlesTrackRef = useRef<HTMLUListElement>(null);
-  const [facultyIdx, setFacultyIdx] = useState(0);
+  const { canScroll: facultyCan, step: facultyStep } = useLoopCarousel(facultyTrackRef, { looped: true, auto: 3500 });
+  const { canScroll: articlesCan } = useLoopCarousel(articlesTrackRef, { looped: false });
   const [articleIdx, setArticleIdx] = useState(0);
 
   const step = useCallback((el: HTMLElement | null, currentIdx: number, dir: 1 | -1, setIdx: (n: number) => void) => {
@@ -80,10 +82,8 @@ export function FacultyArticles() {
       return () => el.removeEventListener('scroll', onScroll);
     };
 
-    const cleanupF = syncScroll(facultyTrackRef.current, setFacultyIdx);
     const cleanupA = syncScroll(articlesTrackRef.current, setArticleIdx);
     return () => {
-      cleanupF();
       cleanupA();
     };
   }, []);
@@ -104,86 +104,65 @@ export function FacultyArticles() {
           </ArrowLink>
         </header>
 
-        {/* desktop chevrons */}
-        <div className={`${s.arrows} ${s.arrowsFaculty}`}>
-          <button
-            type="button"
-            aria-label="Previous faculty"
-            onClick={() => step(facultyTrackRef.current, facultyIdx, -1, setFacultyIdx)}
-            disabled={facultyIdx === 0}
-          >
-            <ChevronLeft />
-          </button>
-          <button
-            type="button"
-            aria-label="Next faculty"
-            onClick={() => step(facultyTrackRef.current, facultyIdx, 1, setFacultyIdx)}
-            disabled={facultyIdx === faculty.length - 1}
-          >
-            <ChevronRight />
-          </button>
-        </div>
-
-        <ul className={s.faculty} ref={facultyTrackRef}>
-          {faculty.map((f, i) => (
-            <li key={f.key}>
-              <div className={s.fphoto}>
-                <FramedImage src={`/images/faculty/${f.key}.webp`} alt={f.name} frame={[95 + i * 350, 6962, 330, 243]} box={f.box} sizes="(max-width: 900px) 50vw, 330px" />
-              </div>
-              <div className={s.fbody}>
-                <h3>{f.name}</h3>
-                <p className={s.role}>{f.role}</p>
-                <ul className={s.points}>
-                  {f.points.map((pt) => (
-                    <li key={pt}>{pt}</li>
-                  ))}
-                </ul>
-                <div className={s.links}>
-                  <Link href="/academics-at-dsu" aria-label={`View Academic Profile of ${f.name}`}>
-                    View Profile &gt;
-                  </Link>
-                  <a href="https://www.linkedin.com/company/dsuonline" target="_blank" rel="noopener noreferrer">
-                    <Icon name="linkedin" /> LinkedIn
-                  </a>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-
-        <div className={s.controls}>
-          <div className={s.dots}>
-            {faculty.map((f, i) => (
-              <button
-                key={f.key}
-                type="button"
-                className={`${s.dot} ${facultyIdx === i ? s.activeDot : ''}`}
-                onClick={() => scrollTo(facultyTrackRef.current, i, setFacultyIdx)}
-                aria-label={`Go to faculty ${i + 1} of ${faculty.length}`}
-              />
-            ))}
-          </div>
-          <div className={s.arrowBtns}>
-            <button
-              type="button"
-              className={s.arrowBtn}
-              onClick={() => step(facultyTrackRef.current, facultyIdx, -1, setFacultyIdx)}
-              disabled={facultyIdx === 0}
-              aria-label="Previous faculty"
-            >
+        {facultyCan && (
+          <div className={`${s.arrows} ${s.arrowsFaculty}`}>
+            <button type="button" aria-label="Previous faculty" onClick={() => facultyStep(-1)}>
               <ChevronLeft />
             </button>
-            <button
-              type="button"
-              className={s.arrowBtn}
-              onClick={() => step(facultyTrackRef.current, facultyIdx, 1, setFacultyIdx)}
-              disabled={facultyIdx === faculty.length - 1}
-              aria-label="Next faculty"
-            >
+            <button type="button" aria-label="Next faculty" onClick={() => facultyStep(1)}>
               <ChevronRight />
             </button>
           </div>
-        </div>
+        )}
+
+        <ul className={s.faculty} ref={facultyTrackRef} aria-label="Faculty">
+          {[0, 1].map((copy) =>
+            faculty.map((f, i) => {
+              const clone = copy === 1;
+              return (
+                <li key={`${copy}-${f.key}`} aria-hidden={clone || undefined} inert={clone || undefined}>
+                  <div className={s.fphoto}>
+                    {f.src ? (
+                      <Image src={f.src} alt={clone ? '' : f.name} fill sizes="(max-width: 900px) 50vw, 330px" className={s.fimg} />
+                    ) : (
+                      <FramedImage src={`/images/faculty/${f.key}.webp`} alt={clone ? '' : f.name} frame={[95 + i * 350, 6962, 330, 243]} box={f.box} sizes="(max-width: 900px) 50vw, 330px" />
+                    )}
+                  </div>
+                  <div className={s.fbody}>
+                    <h3>{f.name}</h3>
+                    <p className={s.role}>{f.role}</p>
+                    <ul className={s.points}>
+                      {f.points.map((pt) => (
+                        <li key={pt}>{pt}</li>
+                      ))}
+                    </ul>
+                    <div className={s.links}>
+                      <Link href="/academics-at-dsu" aria-label={`View Academic Profile of ${f.name}`} tabIndex={clone ? -1 : undefined}>
+                        View Profile &gt;
+                      </Link>
+                      <a href="https://www.linkedin.com/company/dsuonline" target="_blank" rel="noopener noreferrer" tabIndex={clone ? -1 : undefined}>
+                        <Icon name="linkedin" /> LinkedIn
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              );
+            }),
+          )}
+        </ul>
+
+        {facultyCan && (
+          <div className={`${s.controls} ${s.controlsOn}`}>
+            <div className={s.arrowBtns}>
+              <button type="button" className={s.arrowBtn} onClick={() => facultyStep(-1)} aria-label="Previous faculty">
+                <ChevronLeft />
+              </button>
+              <button type="button" className={s.arrowBtn} onClick={() => facultyStep(1)} aria-label="Next faculty">
+                <ChevronRight />
+              </button>
+            </div>
+          </div>
+        )}
 
         <hr className={s.rule} />
 
@@ -203,6 +182,7 @@ export function FacultyArticles() {
         </header>
 
         {/* desktop chevrons */}
+{articlesCan && (
         <div className={`${s.arrows} ${s.arrowsArticles}`}>
           <button
             type="button"
@@ -221,6 +201,7 @@ export function FacultyArticles() {
             <ChevronRight />
           </button>
         </div>
+)}
 
         <ul className={s.articles} ref={articlesTrackRef}>
           {articles.map((a) => (
@@ -265,7 +246,8 @@ export function FacultyArticles() {
           ))}
         </ul>
 
-        <div className={s.controls}>
+        {articlesCan && (
+<div className={s.controls}>
           <div className={s.dots}>
             {articles.map((a, i) => (
               <button
@@ -298,6 +280,7 @@ export function FacultyArticles() {
             </button>
           </div>
         </div>
+)}
       </div>
     </section>
   );

@@ -21,6 +21,9 @@ export const learnerVideos = [
   { key: 'akhil', name: 'Mr. Akhil S', course: 'BCA', company: 'CTS - Operations Manager' },
   { key: 'john', name: 'Mr. John Joe', course: 'MCA', company: 'TCS - Senior Project Lead' },
   { key: 'arun', name: 'Mr. Arun Kumar', course: 'MBA', company: 'Capgemini - Senior Project Lead' },
+  // two more learners from the live /student-testimonials page (photo cards, same layout)
+  { key: 'simran', name: 'Ms. SIMRAN SULTANA', course: 'MBA', company: 'Capgemini - Junior Software Developer', src: '/content/5aedda87-Simran-Sultana.webp' },
+  { key: 'varun', name: 'Mr. VARUN M RAJU', course: 'MBA', company: 'PinkBlue Supply Solutions Pvt Ltd - Team Lead – Operations & Supply Chain', src: '/content/eb567263-Varun-M-Raju.webp' },
 ] as const;
 
 export const aboutStats = [
@@ -154,6 +157,8 @@ export const recruiters = [
 
 export type Faculty = {
   key: string;
+  /** extra faculty use a plain photo instead of the design's cropped artwork */
+  src?: string;
   name: string;
   role: string;
   points: [string, string];
@@ -167,6 +172,9 @@ export const faculty: Faculty[] = [
   { key: 'sneha', name: 'Dr. Sneha Joshi', role: 'Senior Lecturer, Marketing', points: ['15+ years of Industry Experience', 'Ph.D in Marketing'], box: [795, 6941.1, 330, 438.2] },
   { key: 'aakash', name: 'Dr. Aakash Verma', role: 'Assistant Professor, Information Systems', points: ['10+ years of Academic Experience', 'Ph.D in Information Technology'], box: [1096.3, 6962.5, 538, 358.6] },
   { key: 'meera', name: 'Dr. Meera Singh', role: 'Lecturer, Human Resources', points: ['8+ years in Academia and Consulting', 'Ph.D in Organizational Behavior'], box: [1278.7, 6961.8, 664.4, 443.2] },
+  // two more faculty from the live Online MBA page
+  { key: 'richa', src: '/content/0a5d5e9e-Dr.richa-tiwari.webp', name: 'Dr. Richa Tiwari', role: 'Professor & Course Coordinator', points: ['B.A (Hons) MBA (MIS), M.A Economics', 'PGCOM (IIMN), Ph.D'], box: [0, 0, 0, 0] },
+  { key: 'anupama', src: '/content/5977f2f2-Dr.anupama.g.webp', name: 'Dr. Anupama G', role: 'Professor & Program Coordinator', points: ['MBA, M.Phil', 'Ph.D, PGDCA'], box: [0, 0, 0, 0] },
 ];
 
 export const articles = [

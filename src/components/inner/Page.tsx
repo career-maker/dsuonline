@@ -7,6 +7,7 @@ import { ProgramsBand } from '@/components/sections/home/ProgramsBand';
 import { WhyChoose } from '@/components/sections/home/WhyChoose';
 import { cleanBlocks, slugify } from './clean';
 import { ContactForm } from './ContactForm';
+import { PayOptions } from './PayOptions';
 import { ReferForm } from './ReferForm';
 import { StatNumber } from './StatNumber';
 import { CtaBand, InnerHero, type Crumb } from './InnerPage';
@@ -314,7 +315,7 @@ function leaders(sec: Section): ReactNode {
           name: l.name,
           role: l.role,
           paras: l.paras,
-          img: l.img ? <Pic img={{ ...l.img, w: l.img.w ?? 400, h: l.img.h ?? 400 }} sizes="200px" /> : null,
+          img: l.img ? <Pic img={{ ...l.img, alt: l.img.alt || l.name, w: l.img.w ?? 400, h: l.img.h ?? 400 }} sizes="200px" /> : null,
         }))}
     />
   );
@@ -482,6 +483,21 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           </Sec>,
         );
       }
+      continue;
+    }
+
+    // --- admission: payment methods as large coloured icons beside the payment photo
+    if (/^fee payment/i.test(title)) {
+      const labels = [...new Set(sec.blocks.filter(isP).map((b) => b.x))];
+      const photo = sec.blocks.find((b) => b.t === 'img');
+      nodes.push(
+        <Sec key={key} tone={nextTone()} compact id={slugify(title)}>
+          <Split media={photo ? <Pic img={imgOf(photo)} sizes="(max-width: 900px) 100vw, 480px" /> : undefined}>
+            <Head title={title} />
+            <PayOptions items={labels} />
+          </Split>
+        </Sec>,
+      );
       continue;
     }
 
@@ -898,7 +914,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           <div className={s.introGrid}>
             <div className={s.introLeft}>
               <div className={s.introPhoto}>
-                <Image src="/images/about/about-left.webp" alt="" width={961} height={541} sizes="(max-width: 1200px) 100vw, 640px" />
+                <Image src="/images/about/about-left.webp" alt="DSU Online learner studying with the university campus behind" width={961} height={541} sizes="(max-width: 1200px) 100vw, 640px" />
               </div>
               <h2>Testimonials</h2>
             </div>

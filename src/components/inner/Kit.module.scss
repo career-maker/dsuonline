@@ -2103,3 +2103,76 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   font-size: inherit;
   opacity: 1;
 }
+
+// ---------- payment options
+.pay {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, #{u(16)}, 16px);
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: clamp(10px, #{u(14)}, 14px);
+    border-radius: 14px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: var(--t, #e6f2f9);
+    }
+  }
+}
+
+.pay_blue {
+  --c: #007dc5;
+  --t: #e6f2f9;
+}
+
+.pay_teal {
+  --c: #0f9d8a;
+  --t: #e1f5f1;
+}
+
+.pay_violet {
+  --c: #6d4ad8;
+  --t: #ede8fb;
+}
+
+.pay_orange {
+  --c: #e8750f;
+  --t: #fdebdc;
+}
+
+.payIcon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: clamp(56px, #{u(76)}, 76px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--t, #e6f2f9);
+  color: var(--c, #007dc5);
+  transition: background-color 0.3s, color 0.3s;
+
+  svg {
+    width: 56%;
+    height: 56%;
+  }
+}
+
+.pay li:hover .payIcon {
+  background: var(--c);
+  color: #fff;
+}
+
+.payLabel {
+  font-size: fs(22, 18px);
+  font-weight: 500;
+  line-height: 1.2;
+  color: $ink;
+}

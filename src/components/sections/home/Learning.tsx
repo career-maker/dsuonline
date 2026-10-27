@@ -32,7 +32,7 @@ export function Learning() {
             <li key={t.key} className={`${s.tile} ${s[t.key] ?? ''}`}>
               {t.key === 'dedicated' ? (
                 <VideoTile id={VIDEO_ID} title="Dedicated learning experience at DSU Online">
-                  <FramedImage src={t.src} frame={t.frame} box={t.box} sizes="(max-width: 900px) 100vw, 562px" />
+                  <FramedImage src={t.src} alt={`${t.label} at DSU Online`} frame={t.frame} box={t.box} sizes="(max-width: 900px) 100vw, 562px" />
                   <span className={s.shade} />
                   <div className={s.label}>
                     <Icon name={t.icon} />
@@ -41,7 +41,7 @@ export function Learning() {
                 </VideoTile>
               ) : (
                 <>
-                  <FramedImage src={t.src} frame={t.frame} box={t.box} sizes="(max-width: 900px) 50vw, 267px" />
+                  <FramedImage src={t.src} alt={`${t.label} at DSU Online`} frame={t.frame} box={t.box} sizes="(max-width: 900px) 50vw, 267px" />
                   <span className={s.shade} />
                   <div className={s.label}>
                     <Icon name={t.icon} />

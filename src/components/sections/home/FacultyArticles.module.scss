@@ -649,3 +649,54 @@
   }
 }
 
+
+// ---------- faculty slider: cards in one scrolling row (auto loop), arrows only when something is off-screen
+.section .faculty {
+  display: flex;
+  grid-template-columns: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  margin-inline: 0;
+  padding-inline: 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > li {
+    flex: 0 0 u(330);
+    min-width: 0;
+    max-width: none;
+  }
+
+  @include down($bp-lg) {
+    > li {
+      flex-basis: clamp(240px, 42vw, 330px);
+    }
+  }
+
+  @include down($bp-md) {
+    > li {
+      flex-basis: calc(85vw - 12px);
+      max-width: 330px;
+    }
+  }
+}
+
+.fimg {
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.section .controlsOn {
+  display: none;
+
+  @include down($bp-lg) {
+    display: flex;
+  }
+
+  justify-content: flex-end;
+  margin: clamp(14px, #{u(20)}, 20px) 0 0;
+  padding: 0;
+}

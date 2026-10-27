@@ -199,7 +199,7 @@ export function LogoWall({ imgs }: { imgs: Img[] }) {
     <ul className={s.logos}>
       {imgs.map((im) => (
         <li key={im.src}>
-          <Pic img={im} sizes="200px" />
+          <Pic img={{ ...im, alt: im.alt || 'Hiring partner logo' }} sizes="200px" />
         </li>
       ))}
     </ul>
