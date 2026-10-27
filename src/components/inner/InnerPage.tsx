@@ -109,7 +109,9 @@ export function InnerHero({
   extra,
   banner,
   aside,
+  badges,
 }: {
+  badges?: boolean;
   aside?: React.ReactNode;
   banner?: number;
   crumbs: Crumb[];
@@ -139,6 +141,15 @@ export function InnerHero({
             ))}
           </ol>
         </nav>
+        {badges && (
+          <div className={s.heroBadges}>
+            <Image src="/images/brand/naac-light.png" alt="NAAC A+ grade accredited" width={147} height={50} />
+            <i aria-hidden="true" />
+            <Image src="/images/brand/ugc.png" alt="UGC Entitled" width={101} height={51} />
+            <i aria-hidden="true" />
+            <Image src="/images/brand/legacy-light.png" alt="7 decades legacy in education and healthcare" width={58} height={51} />
+          </div>
+        )}
         {eyebrow && <p className={s.heroEyebrow}>{eyebrow}</p>}
         <h1>{title}</h1>
         {subtitle && <p className={s.heroSub}>{subtitle}</p>}

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import type { ReactNode } from 'react';
-import { localHref, type Block } from '@/lib/content';
+import { loadAboutWhy, localHref, type Block } from '@/lib/content';
+import { WhyTabs } from './WhyTabs';
 import { AboutBand, aboutPhotos } from '@/components/sections/home/About';
 import { ProgramsBand } from '@/components/sections/home/ProgramsBand';
 import { WhyChoose } from '@/components/sections/home/WhyChoose';
@@ -456,7 +457,14 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const items = sec.blocks.filter(isP).map((b) => b.x);
       const copy = sec.subs.flatMap((x) => x.blocks.filter(isP)).map((b) => b.x)[0];
       nodes.push(<WhyChoose key={key} title={title} copy={copy} />);
-      if (items.length) {
+      const why = loadAboutWhy();
+      if (why.length) {
+        nodes.push(
+          <Sec key={`${key}-list`} tone="white" title={title}>
+            <WhyTabs items={why} />
+          </Sec>,
+        );
+      } else if (items.length) {
         nodes.push(
           <Sec key={`${key}-list`} tone="white">
             <Checklist items={items} cols={2} />
@@ -692,7 +700,13 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
             <Split media={rimg ? <Pic img={imgOf(rimg)} /> : undefined}>
               <h3 style={{ fontSize: 'max(22px, calc(var(--u) * 36))', fontWeight: 700, lineHeight: 1.2, color: '#212121' }}>{r.title}</h3>
               <Prose paras={r.blocks.filter(isP).map((b) => b.x)} />
-              <CtaLink href="/online-mba">Programs</CtaLink>
+              <div className={s.progBtns}>
+                {[['MBA', '/online-mba'], ['MCA', '/online-mca'], ['BBA', '/online-bba'], ['BCA', '/online-bca'], ['B.Com', '/online-bcom']].map(([n, h]) => (
+                  <CtaLink key={h} href={h}>
+                    {n}
+                  </CtaLink>
+                ))}
+              </div>
             </Split>
           </Sec>,
         );
@@ -867,7 +881,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
 
   return (
     <>
-      <InnerHero banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
+      <InnerHero badges={withFacts || slug === 'about'} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
       {longSub && slug === 'student-testimonials' && subtitle && (
         <Sec tone="white">
           <div className={s.introGrid}>

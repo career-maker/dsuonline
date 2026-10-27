@@ -667,3 +667,21 @@
     object-position: 50% 100%;
   }
 }
+
+.heroBadges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: clamp(14px, #{u(22)}, 22px);
+
+  img {
+    width: auto;
+    height: clamp(40px, #{u(60)}, 60px);
+  }
+
+  i {
+    width: 1px;
+    height: clamp(30px, #{u(44)}, 44px);
+    background: rgb(255 255 255 / 30%);
+  }
+}

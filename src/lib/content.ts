@@ -48,6 +48,11 @@ export function loadBlogs(): BlogPost[] {
 
 export const BLOGS_PER_PAGE = 6;
 
+/** "Why Choose Dayananda Sagar University Online?" points with their full text and photo (live /about). */
+export function loadAboutWhy(): { t: string; d: string; img: string | null; w?: number; h?: number }[] {
+  return readJson('about-why.json') ?? [];
+}
+
 /** Every content page path (as segment arrays) except the homepage and blogs (handled separately). */
 export function allPageSegments(): string[][] {
   return fs

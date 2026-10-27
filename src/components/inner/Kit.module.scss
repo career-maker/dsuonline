@@ -1921,3 +1921,168 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .contactFormCard:has(.consent) .consent {
   font-size: 12px;
 }
+
+// ---------- "Why choose" tabs (about): menu left, detail + photo right
+.whyTabs {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(16px, #{u(40)}, 40px);
+  align-items: start;
+
+  @include down($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.whyMenu {
+  display: grid;
+  gap: 6px;
+  padding: clamp(10px, #{u(16)}, 16px);
+  border-radius: 14px;
+  background: $bg-card-sky;
+
+  button {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 14px;
+    border: 0;
+    border-radius: 8px;
+    background: none;
+    color: $ink;
+    font-size: fs(18, 16px);
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    @include focus-ring;
+
+    span {
+      flex: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: $blue;
+    }
+
+    &:hover {
+      background: #dcecf6;
+    }
+  }
+
+  .whyOn {
+    background: $blue;
+    color: #fff;
+
+    span {
+      background: $yellow;
+    }
+  }
+
+  @include down($bp-md) {
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    overflow-x: auto;
+  }
+}
+
+.whyPanel {
+  padding: clamp(18px, #{u(28)}, 28px);
+  border: 1px solid $line-soft;
+  border-radius: 14px;
+  background: #fff;
+
+  h3 {
+    font-size: fs(28, 20px);
+    font-weight: 700;
+    color: $ink;
+  }
+
+  p {
+    margin-top: 12px;
+    @include body-text;
+  }
+}
+
+.whyImg {
+  margin-top: 18px;
+  overflow: hidden;
+  border-radius: 10px;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: cover;
+  }
+}
+
+.progBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+// expanded leadership message takes the whole row (photo left, full text right): no blank column space
+.leadOn {
+  grid-column: 1 / -1;
+  display: grid !important;
+  grid-template-columns: clamp(120px, 16vw, 180px) minmax(0, 1fr);
+  column-gap: clamp(16px, #{u(32)}, 32px);
+  justify-items: start;
+  text-align: left !important;
+
+  .leadPhoto {
+    grid-row: 1 / span 3;
+  }
+
+  .leadText {
+    grid-column: 2;
+  }
+
+  .leadMore {
+    grid-column: 2;
+  }
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    .leadPhoto {
+      grid-row: auto;
+    }
+
+    .leadText,
+    .leadMore {
+      grid-column: 1;
+    }
+  }
+}
+
+// contact page: calmer cards, emails never split mid-word
+.contactSplit .officeGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.officeCard {
+  padding: clamp(18px, #{u(26)}, 26px);
+  border-radius: 14px;
+  background: $bg-card-sky;
+  border-color: transparent;
+
+  h3 {
+    padding-bottom: 10px;
+    border-bottom: 2px solid $yellow;
+    width: fit-content;
+  }
+}
+
+.contactRow a {
+  font-size: clamp(16px, #{u(21)}, 21px);
+  overflow-wrap: normal;
+  word-break: normal;
+}
