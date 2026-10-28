@@ -133,3 +133,4 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Server restarted by admin: PM2 list was empty; recreated `dsuonline` via `next start -p 3351` (+ `pm2 save`).
 - Enquiry popup: close button no longer overlaps first form row (`.pane` padding-top 64px on desktop; mobile unchanged since button sits over the aside).
 - Enquiry popup, Contact and Refer forms: submit/Close buttons now use `ArrowLink` (same look, hover and dotted icon as hero buttons); old `.submit`/`.spin` styles removed from EnquiryModal.module.scss.
+- Header programme submenu: removed yellow code-badge hover (stays blue).
