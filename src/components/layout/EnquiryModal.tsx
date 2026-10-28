@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useId, useRef, useState, type ChangeEvent, type FormEvent } from 'react';
+import { ArrowLink } from '@/components/ui/ArrowLink';
 import { CloseIcon } from '@/components/ui/icons';
 import { defaultCountry, type Country } from '@/data/countries';
 import { locations, stateNames } from '@/data/locations';
@@ -145,9 +146,7 @@ export function EnquiryModal({ onClose, initialProgramme }: { onClose: () => voi
                   </p>
                 </>
               )}
-              <button type="button" className={s.submit} onClick={close}>
-                Close
-              </button>
+              <ArrowLink onClick={close}>Close</ArrowLink>
             </div>
           ) : (
             <form className={s.form} onSubmit={onSubmit} noValidate aria-busy={busy}>
@@ -240,15 +239,9 @@ export function EnquiryModal({ onClose, initialProgramme }: { onClose: () => voi
                 </p>
               )}
 
-              <button type="submit" className={`${s.submit} ${s.wide}`} disabled={busy}>
-                {busy ? (
-                  <>
-                    <span className={s.spin} aria-hidden="true" /> Sending...
-                  </>
-                ) : (
-                  'Submit Enquiry'
-                )}
-              </button>
+              <ArrowLink type="submit" className={s.submit} disabled={busy}>
+                {busy ? 'Sending...' : 'Submit Enquiry'}
+              </ArrowLink>
             </form>
           )}
         </div>

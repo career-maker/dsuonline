@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowLink } from '@/components/ui/ArrowLink';
 import { useId, useState, type ChangeEvent, type FormEvent } from 'react';
 import { CountryPicker } from '@/components/layout/CountryPicker';
 import s from '@/components/layout/EnquiryModal.module.scss';
@@ -155,9 +156,9 @@ export function ReferForm() {
               Back
             </button>
           )}
-          <button type="submit" className={s.submit} disabled={phase === 'submitting'}>
+          <ArrowLink type="submit" className={s.submit} disabled={phase === 'submitting'}>
             {step === 1 ? 'NEXT' : phase === 'submitting' ? 'Sending...' : 'SUBMIT'}
-          </button>
+          </ArrowLink>
         </div>
       </form>
     </div>

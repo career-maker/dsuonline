@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowLink } from '@/components/ui/ArrowLink';
 import { useId, useState, type ChangeEvent, type FormEvent } from 'react';
 import { CountryPicker } from '@/components/layout/CountryPicker';
 import s from '@/components/layout/EnquiryModal.module.scss';
@@ -155,15 +156,9 @@ export function ContactForm() {
             {serverError}
           </p>
         )}
-        <button type="submit" className={`${s.submit} ${s.wide}`} disabled={busy}>
-          {busy ? (
-            <>
-              <span className={s.spin} aria-hidden="true" /> Sending...
-            </>
-          ) : (
-            'Enquire Now'
-          )}
-        </button>
+        <ArrowLink type="submit" className={s.submit} disabled={busy}>
+          {busy ? 'Sending...' : 'Enquire Now'}
+        </ArrowLink>
       </form>
     </div>
   );

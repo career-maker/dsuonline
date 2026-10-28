@@ -380,43 +380,15 @@ $ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   line-height: 1.4;
 }
 
-// same button language as the rest of the site (ArrowLink): blue, 3px radius, dotted brightness hover
+// ArrowLink supplies the button look; this only places it in the form grid
 .submit {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 50px;
-  padding: 0 24px;
-  border: 0;
-  border-radius: 3px;
-  background: #006aa2;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0;
-  cursor: pointer;
-  transition: filter 0.2s, box-shadow 0.3s;
-  @include focus-ring;
-
-  &:hover:not(:disabled) {
-    filter: brightness(1.1);
-    box-shadow: 0 8px 20px rgb(0 0 0 / 22%);
-  }
+  grid-column: 1 / -1;
+  justify-self: start;
 
   &:disabled {
     cursor: progress;
     filter: saturate(0.7) brightness(1.05);
   }
-}
-
-.spin {
-  width: 18px;
-  height: 18px;
-  border: 2px solid rgb(255 255 255 / 45%);
-  border-top-color: #fff;
-  border-radius: 50%;
-  animation: spin 0.7s linear infinite;
 }
 
 .result {
@@ -504,10 +476,6 @@ $ease: cubic-bezier(0.2, 0.8, 0.2, 1);
     font-size: 15px;
   }
 
-  .submit {
-    min-height: 44px;
-    font-size: 16px;
-  }
 }
 
 // short screens (small laptops / zoomed browsers): tighter form so everything incl. Submit fits without scrolling
@@ -557,10 +525,6 @@ $ease: cubic-bezier(0.2, 0.8, 0.2, 1);
     min-height: 38px;
   }
 
-  .submit {
-    min-height: 44px;
-    font-size: 16px;
-  }
 
   .aside {
     padding: 24px 28px;
