@@ -227,6 +227,8 @@
   a:hover,
   a:focus-visible {
     background: $bg-sky;
+    color: $ink; // beat the nav-wide yellow link hover
+    text-shadow: none;
 
     .arr {
       opacity: 1;
