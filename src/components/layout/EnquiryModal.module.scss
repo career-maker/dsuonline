@@ -144,7 +144,12 @@ $ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   min-width: 0;
   overflow-y: auto;
   padding: clamp(22px, 3vw, 40px);
+  padding-top: 64px; // clears the close button (top 14 + 40) so it never covers the first row
   overscroll-behavior: contain;
+
+  @include down($bp-md) {
+    padding-top: clamp(22px, 3vw, 40px); // close button sits over the aside here
+  }
 }
 
 .form {
@@ -517,6 +522,7 @@ $ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 
   .pane {
     padding: 18px 26px;
+    padding-top: 58px;
   }
 
   .form {

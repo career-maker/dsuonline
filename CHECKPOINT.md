@@ -128,3 +128,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Student Support: steps + photo in 2-col `stepsSplit`; short CTA blocks render as compact `ctaStrip`; Refer terms 5-up.
 - Enquiry popup: added Enter OTP (optional), State, City (src/data/locations.ts, dependent city).
 - Deploy: `python deploy.py` (see DEPLOY-SERVER.md).
+
+## Update 2026-10-28
+- Server restarted by admin: PM2 list was empty; recreated `dsuonline` via `next start -p 3351` (+ `pm2 save`).
+- Enquiry popup: close button no longer overlaps first form row (`.pane` padding-top 64px on desktop; mobile unchanged since button sits over the aside).
