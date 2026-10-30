@@ -10,7 +10,7 @@ import s from './Faq.module.scss';
 
 const FIRST = 5;
 
-export function Faq({ items, title = 'Frequently Asked Questions' }: { items: FaqItem[]; title?: string }) {
+export function Faq({ items, title = 'Frequently Asked Questions', image = '/images/faq/cta.webp' }: { items: FaqItem[]; title?: string; image?: string }) {
   const [open, setOpen] = useState<number | null>(null);
   const [shown, setShown] = useState(FIRST);
   const faqs = items.slice(0, shown);
@@ -60,7 +60,7 @@ export function Faq({ items, title = 'Frequently Asked Questions' }: { items: Fa
         </div>
 
         <aside className={s.cta}>
-          <FramedImage src="/images/faq/cta.webp" frame={[1115, 9060, 711, 608]} box={[1115, 9059.9, 711, 608.2]} sizes="(max-width: 1200px) 100vw, 711px" />
+          <FramedImage src={image} frame={[1115, 9060, 711, 608]} box={[1115, 9059.9, 711, 608.2]} sizes="(max-width: 1200px) 100vw, 711px" />
           <div className={s.shade} />
           <div className={s.ctaBody}>
             <h2>

@@ -11,6 +11,7 @@ import { PayOptions } from './PayOptions';
 import { ReferForm } from './ReferForm';
 import { StatNumber } from './StatNumber';
 import { CtaBand, InnerHero, type Crumb } from './InnerPage';
+import { FramedImage } from '@/components/ui/FramedImage';
 import { Faq } from '@/components/sections/home/Faq';
 import { FaqList, LeaderGrid } from './Interactive';
 import {
@@ -449,8 +450,31 @@ function LegalPage({ blocks, crumbs }: { blocks: Block[]; crumbs: Crumb[] }) {
   );
 }
 
+// photos supplied for the inner pages (public/images/inner), swapped in for the scraped live-site ones
+const ELECTIVE_PHOTOS = new Set(['artificial_intelligence', 'big_data_analytics', 'business_analytics', 'database_administration', 'devops', 'digital-marketing', 'entrepreneurship-management', 'financial_management', 'fintech', 'full_stack_develpoment', 'game_programming', 'human-resource', 'itandsystems-management', 'machine_learning', 'marketing-management', 'supply_chain_management']);
+const ADMISSION_PHOTOS: Record<string, { src: string; w: number; h: number }> = {
+  '/content/3796bafc-point-to-remember.png': { src: '/images/inner/eligibility.webp', w: 742, h: 692 },
+  '/content/336e799b-document-required.png': { src: '/images/inner/doc-required.webp', w: 742, h: 677 },
+};
+const BANNERS: Record<string, string> = { admission: '/images/inner/banner-admission.webp', 'contact-us': '/images/inner/banner-contact.webp' };
+
+function swapPhotos(blocks: Block[], slug: string): Block[] {
+  const seg = slug.split('/');
+  const el = seg.length === 3 ? seg[2].toLowerCase().replace('&', 'and') : '';
+  let first = true;
+  return blocks.map((b) => {
+    if (b.t !== 'img') return b;
+    if (slug === 'admission' && ADMISSION_PHOTOS[b.src]) return { ...b, ...ADMISSION_PHOTOS[b.src] };
+    if (ELECTIVE_PHOTOS.has(el) && first) {
+      first = false;
+      return { ...b, src: `/images/inner/el-${el}.webp`, w: 742, h: 541 };
+    }
+    return b;
+  });
+}
+
 export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts = false }: Props) {
-  const blocks = cleanBlocks(raw);
+  const blocks = swapPhotos(cleanBlocks(raw), slug);
   if (slug === 'privacy-policy') return <LegalPage blocks={blocks} crumbs={crumbs} />;
   if (slug === 'refer') return <ReferPage blocks={blocks} crumbs={crumbs} />;
   const st = structure(blocks);
@@ -516,7 +540,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           }
           copy={copy.slice(0, 2)}
           after={copy.slice(2)}
-          left={aboutPhotos.left}
+          left={<FramedImage src="/images/inner/quality.webp" alt="Learner studying in the DSU library" frame={[95, 2100, 562, 541]} box={[95, 2100, 562, 541]} sizes="(max-width: 900px) 100vw, 562px" />}
           right={aboutPhotos.right}
           href="/admission"
           cta="Apply Now"
@@ -666,7 +690,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     const faq = parseFaq(all);
     if ((/frequently|faq/i.test(title) || faq.length >= 3) && (faq.length || parseFaqByQuestionMarks(all).length >= 2)) {
       const items = faq.length >= 2 ? faq : parseFaqByQuestionMarks(all);
-      nodes.push(<Faq key={key} items={items} title={title} />);
+      nodes.push(<Faq key={key} items={items} title={title} image={slug === 'about' ? '/images/inner/faq.webp' : undefined} />);
       continue;
     }
 
@@ -906,8 +930,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     // --- programme pages: "Why DSU Online <X>?" = text + benefits left, programme photo right
     if (programLinks && /^why\b/i.test(title) && !sec.subs.length) {
       const code = slug.replace(/^online-/, '');
-      const dims: Record<string, [number, number]> = { mba: [1794, 592], mca: [2776, 1333], bba: [1771, 585], bca: [2986, 1333], bcom: [2924, 1333] };
-      const [pw, ph] = dims[code] ?? [1771, 585];
+      const [pw, ph] = [538, 522];
       const paras = sec.blocks.filter(isP).filter((b) => b.x.length > 90).map((b) => b.x);
       const benefits = sec.blocks.filter(isP).filter((b) => b.x.length <= 90).map((b) => b.x);
       nodes.push(
@@ -919,7 +942,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
               <Checklist items={benefits} cols={2} />
             </div>
             <div className={s.whyPhoto}>
-              <Pic img={{ src: `/images/programs/${code}.webp`, alt: `Learner pursuing ${title.replace(/^why\s+|\?$/gi, '')}`, w: pw, h: ph }} sizes="(max-width: 900px) 100vw, 480px" className={s.cover} />
+              <Pic img={{ src: `/images/inner/prog-${code}.webp`, alt: `Learner pursuing ${title.replace(/^why\s+|\?$/gi, '')}`, w: pw, h: ph }} sizes="(max-width: 900px) 100vw, 480px" className={s.cover} />
             </div>
           </div>
         </Sec>,
@@ -965,7 +988,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
 
   return (
     <>
-      <InnerHero size={withFacts ? (crumbs.length >= 3 ? 'gradient' : 'full') : 'short'} badges={withFacts || slug === 'about'} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
+      <InnerHero size={withFacts ? (crumbs.length >= 3 ? 'gradient' : 'full') : 'short'} badges={withFacts || slug === 'about'} bannerSrc={BANNERS[slug]} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
       {longSub && slug === 'student-testimonials' && subtitle && (
         <Sec tone="white">
           <div className={s.introGrid}>

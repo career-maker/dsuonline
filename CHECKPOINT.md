@@ -135,3 +135,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Enquiry popup, Contact and Refer forms: submit/Close buttons now use `ArrowLink` (same look, hover and dotted icon as hero buttons); old `.submit`/`.spin` styles removed from EnquiryModal.module.scss.
 - Header programme submenu: removed yellow code-badge hover (stays blue).
 - Header dropdown/More rows: nav-wide yellow link hover no longer leaks in (color $ink, no text-shadow on .dropdown a:hover).
+
+
+## 2026-10-30 inner-page photos
+Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo, admission banner+eligibility+documents, contact banner, programme 'Why' photos (prog-*), 16 elective photos (el-*). Home untouched. 360° Chat tab + electives not in zip keep old photos.
