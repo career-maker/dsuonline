@@ -131,7 +131,7 @@ export function InnerHero({
   return (
     <section className={`${s.hero} ${size === 'short' ? s.heroShort : size === 'gradient' ? s.heroGradient : ''}`}>
       {/* banner photo: desktop/tablet and phone crops come from the same slide data as the home hero (CMS: one image per breakpoint) */}
-      <picture className={s.heroBg} hidden={size === 'gradient'}>
+      <picture className={s.heroBg}>
         <source media="(max-width: 759.98px)" srcSet={bannerSrc ?? heroSlides[(banner ?? 0) % heroSlides.length].mobile} />
         <Image src={bannerSrc ?? heroSlides[(banner ?? 0) % heroSlides.length].desktop} alt="" fill priority sizes="100vw" className={s.heroImg} />
       </picture>
