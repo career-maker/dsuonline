@@ -25,7 +25,7 @@ import {
   DataTable,
   FacultyGrid,
   FacultyShowcase,
-  LinkGrid,
+  ElectiveCards,
   LogoWall,
   Pic,
   Prose,
@@ -710,7 +710,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (programLinks && /elective/i.test(title) && sec.subs.length > 0) {
       nodes.push(
         <Sec key={key} tone={nextTone()} title={title}>
-          <LinkGrid items={programLinks.map((l) => ({ name: l.name, href: l.href, hint: 'Know More' }))} />
+          <ElectiveCards items={programLinks} />
         </Sec>,
       );
       continue;

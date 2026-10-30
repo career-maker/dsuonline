@@ -261,6 +261,37 @@ export function LinkGrid({ items }: { items: { name: string; href: string; hint?
   );
 }
 
+/** Programme elective cards: photo on top with an icon badge, name, "Elective" tag and a Know More footer. Photos live in public/images/electives/<slug>.webp. */
+export function ElectiveCards({ items }: { items: { name: string; href: string }[] }) {
+  return (
+    <ul className={s.elective}>
+      {items.map((l) => {
+        const slug = l.href.split('/').pop()!.replace('&', '-and-');
+        return (
+          <li key={l.href}>
+            <Link href={l.href}>
+              <span className={s.elPhoto}>
+                <Image src={`/images/electives/${slug}.webp`} alt="" fill sizes="(max-width: 600px) 90vw, (max-width: 1100px) 45vw, 300px" />
+                <svg className={s.elIcon} viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M2 4.5h6a4 4 0 0 1 4 4V20a3 3 0 0 0-3-3H2z" />
+                  <path d="M22 4.5h-6a4 4 0 0 0-4 4V20a3 3 0 0 1 3-3h7z" />
+                </svg>
+              </span>
+              <span className={s.elBody}>
+                <b>{l.name}</b>
+                <em>Elective</em>
+              </span>
+              <span className={s.elFoot}>
+                Know More <i aria-hidden="true">→</i>
+              </span>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 export function ContactRow({ label, href, text }: { label: string; href: string; text: string }) {
   return (
     <p className={s.contactRow}>

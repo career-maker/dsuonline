@@ -5,5 +5,5 @@ import { iconSize } from '@/data/icon-sizes';
 export function Icon({ name, scale = 1, className }: { name: string; scale?: number; className?: string }) {
   const [w, h] = iconSize[name];
   const ext = name === 'ticker-icon' ? 'webp' : 'png';
-  return <Image src={`/icons/${name}.${ext}`} alt="" width={Math.round(w * scale)} height={Math.round(h * scale)} className={className} unoptimized loading="eager" />;
+  return <Image src={`/icons/${name}.${ext}`} alt="" width={Math.round(w * scale)} height={Math.round(h * scale)} className={className} unoptimized />;
 }
