@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useState, type RefObject } from 'react';
+import { useDragScroll } from '@/components/ui/useDragScroll';
 
 /**
  * Horizontal carousel helper.
@@ -11,6 +12,7 @@ import { useCallback, useEffect, useState, type RefObject } from 'react';
 export function useLoopCarousel(ref: RefObject<HTMLElement | null>, { looped = true, auto = 0 }: { looped?: boolean; auto?: number } = {}) {
   const [canScroll, setCan] = useState(false);
   const [paused, setPaused] = useState(false);
+  useDragScroll(ref);
 
   const geometry = useCallback(() => {
     const el = ref.current;

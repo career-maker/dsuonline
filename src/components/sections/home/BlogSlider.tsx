@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowLink } from '@/components/ui/ArrowLink';
+import { useDragScroll } from '@/components/ui/useDragScroll';
 import s from './Blogs.module.scss';
 
 export type Slide = { slug: string; day: string; ord: string; month: string; title: string; excerpt: string; image: string; alt: string; w: number; h: number };
@@ -32,6 +33,7 @@ const toIsoBlogDate = (day: string, monthYear: string) => {
 
 export function BlogSlider({ slides }: { slides: Slide[] }) {
   const track = useRef<HTMLUListElement>(null);
+  useDragScroll(track);
   const hold = useRef(false);
   const [paused, setPaused] = useState(false);
 

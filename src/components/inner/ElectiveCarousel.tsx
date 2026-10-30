@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { ChevronLeft, ChevronRight } from '@/components/ui/icons';
+import { useDragScroll } from '@/components/ui/useDragScroll';
 import s from './Kit.module.scss';
 
 const AUTO_MS = 3500;
@@ -82,6 +83,7 @@ export function ElectiveCarousel({ items }: { items: { name: string; href: strin
   const track = useRef<HTMLUListElement>(null);
   const paused = useRef(false);
   const [overflow, setOverflow] = useState(false);
+  useDragScroll(track);
 
   const step = useCallback((dir: 1 | -1) => {
     const el = track.current;
