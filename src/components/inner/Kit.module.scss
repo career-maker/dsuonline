@@ -885,6 +885,11 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     font-weight: 600;
     color: $ink;
   }
+
+  small {
+    font-size: 14px;
+    color: $body;
+  }
 }
 
 .elFoot {

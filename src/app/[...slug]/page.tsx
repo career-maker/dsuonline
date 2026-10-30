@@ -4,7 +4,7 @@ import { BlogIndex, BlogPost } from '@/components/inner/Blog';
 import type { Crumb } from '@/components/inner/InnerPage';
 import { ContentPage } from '@/components/inner/Page';
 import { programs, specializationHref } from '@/data/programs';
-import { allPageSegments, BLOGS_PER_PAGE, loadBlogPost, loadBlogs, loadPage, type PageData } from '@/lib/content';
+import { allPageSegments, BLOGS_PER_PAGE, loadBlogPost, loadBlogs, loadPage, type Block, type PageData } from '@/lib/content';
 
 type Params = { slug: string[] };
 
@@ -23,7 +23,14 @@ export function generateStaticParams(): Params[] {
 type Resolved =
   | { kind: 'blogIndex'; page: number }
   | { kind: 'post'; data: PageData; slug: string }
-  | { kind: 'page'; data: PageData; crumbs: Crumb[]; programLinks?: { name: string; href: string }[]; withFacts: boolean };
+  | { kind: 'page'; data: PageData; crumbs: Crumb[]; programLinks?: { name: string; href: string; duration?: string }[]; withFacts: boolean };
+
+/** "3 Years (6 Semesters)" as printed in the specialization page's banner facts. */
+function bannerDuration(prog: (typeof programs)[number], sp: { slug: string }): string | undefined {
+  const ps = (loadPage([prog.href.slice(1), `${prog.code}-electives`, sp.slug])?.blocks ?? []).filter((b): b is Extract<Block, { t: 'p' }> => b.t === 'p').map((b) => b.x);
+  const i = ps.findIndex((x) => /^duration$/i.test(x.trim()));
+  return i < 0 ? undefined : [ps[i + 1], /^\(/.test(ps[i + 2] ?? '') ? ps[i + 2] : ''].filter(Boolean).join(' ');
+}
 
 function resolve(segments: string[]): Resolved | null {
   const seg = segments.map((s) => decodeURIComponent(s));
@@ -47,7 +54,7 @@ function resolve(segments: string[]): Resolved | null {
       kind: 'page',
       data,
       crumbs: [{ label: 'Home', href: '/' }, { label: `Online ${prog.name}` }],
-      programLinks: prog.specializations.map((sp) => ({ name: sp.name, href: specializationHref(prog, sp) })),
+      programLinks: prog.specializations.map((sp) => ({ name: sp.name, href: specializationHref(prog, sp), duration: bannerDuration(prog, sp) })),
       withFacts: true,
     };
   }

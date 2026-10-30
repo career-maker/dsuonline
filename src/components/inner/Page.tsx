@@ -57,7 +57,7 @@ type Props = {
   slug: string;
   crumbs: Crumb[];
   blocks: Block[];
-  programLinks?: { name: string; href: string }[];
+  programLinks?: { name: string; href: string; duration?: string }[];
   withFacts?: boolean;
 };
 
