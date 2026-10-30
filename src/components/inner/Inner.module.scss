@@ -703,10 +703,11 @@
   }
 }
 
-// specialization pages: photo with the home hero's black overlay, shorter again
+// specialization pages: blue brand gradient (no photo) under the home hero's black overlay, shorter again
 .heroGradient {
   min-height: clamp(280px, #{u(400)}, 420px);
   padding: clamp(100px, #{u(140)}, 140px) 0 clamp(26px, #{u(44)}, 44px);
+  background: radial-gradient(circle at 85% 20%, rgb(255 255 255 / 14%), transparent 45%), linear-gradient(120deg, #025c90 0%, #007dc5 60%, #1a93d6 100%);
 
   @include down($bp-lg) {
     min-height: clamp(260px, 40svh, 360px);
