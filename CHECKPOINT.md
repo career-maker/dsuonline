@@ -28,7 +28,7 @@ User rules: home page pixel-matches the PDF; inner pages follow home typography/
 ## Status
 Done: responsive home+inner pages, hero tablet/mobile layouts, preloader, sticky header, animations/counters, blogs slider, all inner pages redesigned with kit, refer page redesign, testimonials page (photo cards like home), About page uses home blocks, country-code picker with flags (public/flags, 46 SVGs), More menu (auto-closes after click), live button wording (Show More/View More/Read More/Know More).
 Specialization page banners (size="gradient"): blue gradient, no photo, with the home hero black overlay on top (Inner.module.scss .heroGradient).
-Programme "Electives" sections use photo cards (Kit.tsx ElectiveCards, photos from Unsplash in public/images/electives/<slug>.webp; names only, no invented copy). Home/inner Icon component no longer forces loading="eager" (80+ eager icon requests slowed first paint on the high-latency server).
+Programme "Electives" sections use photo cards in an auto-scrolling carousel (ElectiveCarousel.tsx; no "Elective" badge; static when they fit, pauses on hover, photos from Unsplash in public/images/electives/<slug>.webp; names only, no invented copy). Home/inner Icon component no longer forces loading="eager" (80+ eager icon requests slowed first paint on the high-latency server).
 Known gaps / TODO:
 - Programme pages: "Why DSU Online <X>?" section needs 2-column layout with a right-side photo + styled checklist (IN PROGRESS, see below) for ALL programme pages (mba, mca, bba, bca, bcom).
 - /terms-and-conditions and Facts have no live page (footer Terms link dead; Facts menu -> home About).

@@ -1,3 +1,4 @@
+import { ElectiveCarousel } from './ElectiveCarousel';
 import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { loadAboutWhy, loadFaculty, localHref, type Block } from '@/lib/content';
@@ -25,7 +26,6 @@ import {
   DataTable,
   FacultyGrid,
   FacultyShowcase,
-  ElectiveCards,
   LogoWall,
   Pic,
   Prose,
@@ -710,7 +710,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (programLinks && /elective/i.test(title) && sec.subs.length > 0) {
       nodes.push(
         <Sec key={key} tone={nextTone()} title={title}>
-          <ElectiveCards items={programLinks} />
+          <ElectiveCarousel items={programLinks} />
         </Sec>,
       );
       continue;

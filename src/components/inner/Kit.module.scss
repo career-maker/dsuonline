@@ -763,10 +763,27 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 // ---------- programme elective cards (photo style)
+.elWrap {
+  position: relative;
+}
+
 .elective {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  display: flex;
   gap: 20px;
+  padding: 6px 2px 18px;
+  margin: -6px -2px -18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > li {
+    flex: 0 0 min(80%, 290px);
+    scroll-snap-align: start;
+  }
 
   a {
     display: flex;
@@ -792,6 +809,32 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
       .elFoot i {
         translate: 4px 0;
       }
+    }
+  }
+}
+
+.elArrows {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 28px;
+
+  button {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #dbe7f0;
+    border-radius: 50%;
+    background: #fff;
+    color: $blue;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+    &:hover {
+      border-color: $blue;
+      background: $blue;
+      color: #fff;
     }
   }
 }
@@ -841,16 +884,6 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     line-height: 1.25;
     font-weight: 600;
     color: $ink;
-  }
-
-  em {
-    padding: 3px 12px;
-    border-radius: 999px;
-    background: #e6f3fb;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 500;
-    color: $blue;
   }
 }
 
