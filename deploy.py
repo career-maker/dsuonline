@@ -45,7 +45,7 @@ ssh.connect(host, port=port, username=user, password=password, timeout=30)
 sftp = ssh.open_sftp()
 
 print("==> Packaging project files for upload...")
-exclude_dirs = {'.git', 'node_modules', '.next', 'shots', 'design'}
+exclude_dirs = {'.git', 'node_modules', '.next', 'shots', 'design', 'video-production', '__pycache__'}
 exclude_files = {'.server.local', 'GIT-PUSH.local.md', 'tsconfig.tsbuildinfo'}
 
 with tempfile.NamedTemporaryFile(suffix='.tar.gz', dir='.', delete=False) as tf:
