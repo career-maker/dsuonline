@@ -770,10 +770,12 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .elective {
   display: flex;
   gap: 20px;
-  padding: 6px 2px 18px;
-  margin: -6px -2px -18px;
+  // room inside the scroller so the hover lift and shadow are not clipped by overflow
+  padding: 12px 24px 52px;
+  margin: -12px -24px -52px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline: 24px;
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
