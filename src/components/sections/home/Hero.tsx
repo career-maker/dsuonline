@@ -1,13 +1,9 @@
 'use client';
 
 import Image, { getImageProps } from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { useEffect, useId, useState, type FormEvent } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowLink } from '@/components/ui/ArrowLink';
-import { ChevronDown } from '@/components/ui/icons';
 import { heroSlides } from '@/data/home';
-import { programs, specializationHref } from '@/data/programs';
 import { site } from '@/data/site';
 import s from './Hero.module.scss';
 
@@ -19,32 +15,14 @@ const slideSize = [
 ] as const;
 
 export function Hero() {
-  const router = useRouter();
-  const uid = useId();
   const [active, setActive] = useState(0);
-  const [sent, setSent] = useState(false);
-  const [code, setCode] = useState<(typeof programs)[number]['code']>('mba');
-  const [spec, setSpec] = useState('');
   const go = (d: number) => setActive((i) => (i + d + heroSlides.length) % heroSlides.length);
-  const program = programs.find((p) => p.code === code)!;
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const t = setInterval(() => setActive((i) => (i + 1) % heroSlides.length), 8000);
     return () => clearInterval(t);
   }, []);
-
-  // Prototype behaviour: no backend yet (Strapi/CRM phase), so the form only confirms locally.
-  const submit = (e: FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-  };
-
-  const explore = (e: FormEvent) => {
-    e.preventDefault();
-    const sp = program.specializations.find((x) => x.slug === spec);
-    router.push(sp ? specializationHref(program, sp) : program.href);
-  };
 
   return (
     <section className={s.hero} aria-roledescription="carousel" aria-label="Featured">
@@ -98,7 +76,7 @@ export function Hero() {
           ))}
         </h1>
         <p key={`p${active}`} className={s.sub}>
-          Pursue a UGC-entitled online degree from Dayananda Sagar{' '}
+          Pursue a UGC-entitled online program from Dayananda Sagar{' '}
           <br />
           University with the freedom to learn anytime, anywhere.
         </p>
@@ -112,113 +90,6 @@ export function Hero() {
         </div>
       </div>
 
-      <div className={s.panels}>
-      <form className={s.enquiry} onSubmit={submit} aria-labelledby={`${uid}-t1`}>
-        <h2 id={`${uid}-t1`}>What Programme are you Looking for?</h2>
-        <p>Choose a programme or search by degree, specialisation or course.</p>
-        {sent ? (
-          <p className={s.sent} role="status">
-            Thank you. This is a prototype form: your details were not sent anywhere yet.
-          </p>
-        ) : (
-          <>
-            <input className={s.f1} id={`${uid}-name`} name="name" type="text" autoComplete="name" placeholder="Name *" aria-label="Name" required />
-            <input className={s.f2} id={`${uid}-email`} name="email" type="email" autoComplete="email" placeholder="Email *" aria-label="Email" required />
-            <div className={s.f3}>
-              <span className={s.flag} aria-hidden="true" />
-              <ChevronDown />
-              <span className={s.cc}>+91</span>
-              <input id={`${uid}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="000 000 0000" aria-label="Mobile number" pattern="[0-9 ]{10,13}" required />
-            </div>
-            <input className={s.f4} id={`${uid}-otp`} name="otp" type="text" inputMode="numeric" placeholder="Enter OTP *" aria-label="OTP" required />
-            <div className={`${s.sel} ${s.f5}`}>
-              <select id={`${uid}-programme`} name="programme" aria-label="Programme" defaultValue="" required>
-                <option value="" disabled>
-                  Select a Programme...
-                </option>
-                {programs.map((p) => (
-                  <option key={p.code} value={p.code}>
-                    {p.name} - {p.fullName}
-                  </option>
-                ))}
-              </select>
-              <ChevronDown />
-            </div>
-            <div className={`${s.sel} ${s.f6}`}>
-              <select id={`${uid}-state`} name="state" aria-label="State" defaultValue="" required>
-                <option value="" disabled>
-                  Select State
-                </option>
-                <option>Karnataka</option>
-                <option>Tamil Nadu</option>
-                <option>Kerala</option>
-                <option>Telangana</option>
-                <option>Andhra Pradesh</option>
-                <option>Maharashtra</option>
-                <option>Other</option>
-              </select>
-              <ChevronDown />
-            </div>
-            <div className={`${s.sel} ${s.f7}`}>
-              <select id={`${uid}-city`} name="city" aria-label="City" defaultValue="" required>
-                <option value="" disabled>
-                  Select City
-                </option>
-                <option>Bengaluru</option>
-                <option>Chennai</option>
-                <option>Hyderabad</option>
-                <option>Kochi</option>
-                <option>Mumbai</option>
-                <option>Other</option>
-              </select>
-              <ChevronDown />
-            </div>
-            <ArrowLink type="submit" className={s.submit}>
-              Submit
-            </ArrowLink>
-          </>
-        )}
-      </form>
-
-      <form className={s.finder} onSubmit={explore} aria-labelledby={`${uid}-t2`}>
-        <h2 id={`${uid}-t2`}>What Programme are you Looking for?</h2>
-        <p>Choose a programme or search by degree, specialisation or course.</p>
-        <div className={s.chips} role="radiogroup" aria-label="Programme">
-          {programs.map((p) => (
-            <button
-              key={p.code}
-              type="button"
-              role="radio"
-              aria-checked={p.code === code}
-              className={p.code === code ? s.chipOn : undefined}
-              onClick={() => {
-                setCode(p.code);
-                setSpec('');
-              }}
-            >
-              {p.name}
-            </button>
-          ))}
-        </div>
-        <div className={`${s.sel} ${s.spec}`}>
-          <select id={`${uid}-specialization`} name="specialization" aria-label="Specialization" value={spec} onChange={(e) => setSpec(e.target.value)}>
-            <option value="">Select a Specialization..</option>
-            {program.specializations.map((sp) => (
-              <option key={sp.slug} value={sp.slug}>
-                {sp.name}
-              </option>
-            ))}
-          </select>
-          <ChevronDown />
-        </div>
-        <ArrowLink type="submit" variant="dark" className={s.explore}>
-          Explore
-        </ArrowLink>
-        <p className={s.notSure}>
-          Not Sure Which Programme is Right for you? <Link href="/contact-us">Enquire Now</Link>
-        </p>
-      </form>
-      </div>
       </div>
     </section>
   );

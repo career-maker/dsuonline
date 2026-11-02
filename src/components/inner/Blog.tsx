@@ -160,7 +160,7 @@ export function BlogPost({ data, slug }: { data: PageData; slug?: string }) {
             <div className={`${s.widget} ${s.ctaWidget}`}>
               <span className={s.badge}>Admissions Open</span>
               <h3>Take the Next Step in Your Career</h3>
-              <p>Learn from anywhere with UGC-entitled, NAAC A+ accredited online degree programs from Dayananda Sagar University.</p>
+              <p>Learn from anywhere with UGC-entitled, NAAC A+ accredited online program programs from Dayananda Sagar University.</p>
               <div className={s.widgetActions}>
                 <ArrowLink href={site.apply} external variant="solid" className={s.wApplyBtn}>
                   Apply Now
@@ -177,7 +177,7 @@ export function BlogPost({ data, slug }: { data: PageData; slug?: string }) {
 
             {/* Widget 2: Popular Programs */}
             <div className={s.widget}>
-              <h4 className={s.widgetTitle}>Explore Online Degrees</h4>
+              <h4 className={s.widgetTitle}>Explore Online Programs</h4>
               <ul className={s.progList}>
                 {programs.map((p) => (
                   <li key={p.code}>

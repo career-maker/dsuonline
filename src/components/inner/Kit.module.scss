@@ -450,7 +450,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: 0 px(28);
   border: 0;
   border-radius: px(3);
-  background: #007cc4;
+  background: #0077be;
   color: #fff;
   font-size: px(18);
   font-weight: 500;
@@ -1187,7 +1187,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     align-items: center;
     height: px(46);
     padding: 0 px(20);
-    border: 1px solid #007cc4;
+    border: 1px solid #0077be;
     border-radius: px(3);
     background: #fff;
     color: $ink;
@@ -2279,7 +2279,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .pay_blue {
-  --c: #007dc5;
+  --c: #0077be;
   --t: #e6f2f9;
 }
 
@@ -2306,7 +2306,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--t, #e6f2f9);
-  color: var(--c, #007dc5);
+  color: var(--c, #0077be);
   transition: background-color 0.3s, color 0.3s;
 
   svg {
@@ -2739,7 +2739,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 // ---------- blue band sections (placement counters, "DSU Advantage")
 .blue {
-  background: radial-gradient(circle at 12% 0%, rgb(255 255 255 / 14%), transparent 40%), linear-gradient(120deg, #025c90 0%, #007dc5 70%, #1a93d6 100%);
+  background: radial-gradient(circle at 12% 0%, rgb(255 255 255 / 14%), transparent 40%), linear-gradient(120deg, #005a8d 0%, #0077be 70%, #1a93d6 100%);
 
   .head h2,
   .head .lead {
@@ -2849,7 +2849,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   display: flex;
   flex-direction: column;
   border: 0;
-  background: radial-gradient(circle at 100% 0%, rgb(255 255 255 / 16%), transparent 45%), linear-gradient(150deg, #04426b 0%, #007dc5 100%);
+  background: radial-gradient(circle at 100% 0%, rgb(255 255 255 / 16%), transparent 45%), linear-gradient(150deg, #04426b 0%, #0077be 100%);
   box-shadow: none;
 
   .qmark {

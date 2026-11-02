@@ -35,7 +35,7 @@ Known gaps / TODO:
 - /terms-and-conditions and Facts have no live page (footer Terms link dead; Facts menu -> home About).
 - Enquiry popup has no backend; brochure PDFs not supplied (brochure form is prototype).
 - No Lighthouse/PageSpeed/HTML-validator/Firefox/Safari/zoom sweeps done. No a11y audit beyond basics.
-- Hero finder panel on short tablets still pushes content below fold.
+- Hero enquiry+finder forms removed (client request 2026-11-02). UI "Online Degree" -> "Online Programs"; blue aligned to live #0077BE/#005A8D.
 
 ## Open questions asked earlier (defaults used)
 Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset downloading (done), privacy/terms (privacy scraped; terms missing).

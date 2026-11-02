@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { CloseIcon } from '@/components/ui/icons';
 import s from './FactsDrawer.module.scss';
 
-// content of the live site's FACTS side frame ("About Online Degree at Dayananda Sagar University")
+// content of the live site's FACTS side frame ("About Online Programs at Dayananda Sagar University")
 const rows: [string, string][] = [
   ['UGC & DEB Approved', 'Yes'],
   ['Approved for Higher Education in India', 'Yes'],
@@ -50,11 +50,11 @@ export function FactsDrawer() {
           <CloseIcon />
         </button>
         <p className={s.kicker}>FACTS</p>
-        <h2 id="facts-title" className={s.title}>About Online Degree at Dayananda Sagar University</h2>
+        <h2 id="facts-title" className={s.title}>About Online Programs at Dayananda Sagar University</h2>
         <dl className={s.list}>
           <div className={s.head} aria-hidden="true">
             <span>What are you looking for</span>
-            <span>Online Degree</span>
+            <span>Online Programs</span>
           </div>
           {rows.map(([q, a]) => (
             <div key={q} className={s.row}>

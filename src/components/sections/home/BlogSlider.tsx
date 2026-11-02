@@ -15,7 +15,7 @@ const AUTO_MS = 6000;
 const Arrow = ({ d }: { d: string }) => (
   <svg viewBox="0 0 37 37" aria-hidden="true" fill="none" strokeLinecap="round" strokeLinejoin="round">
     <path d={d} stroke="#212121" strokeWidth="2.8" />
-    <path d={d} stroke="#007dc5" strokeWidth="1.2" />
+    <path d={d} stroke="#0077be" strokeWidth="1.2" />
   </svg>
 );
 

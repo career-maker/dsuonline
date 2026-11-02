@@ -35,7 +35,7 @@ export const aboutStats = [
 
 export const aboutCopy = [
   'A true visionary, late Sri Dayananda Sagar, founded Dayananda Sagar Institutions in the 60s. Dayananda Sagar University (DSU) was created by an Act of the Karnataka State in 2014, rooted in its glorious legacy and inspired by its milestones.',
-  'Our aim of meeting the needs of quality higher education continues with DSU Online, one of the best online universities offering the best online degree programs and industry-relevant online university degrees in India.',
+  'Our aim of meeting the needs of quality higher education continues with DSU Online, one of the best online universities offering the best online program programs and industry-relevant online university degrees in India.',
 ];
 
 export const aboutFeatures = [
@@ -102,7 +102,7 @@ export const careerTabs = [
     title: ['Skill Enhancement', 'Workshops'],
     intro: [
       'Boost your employability through skill enhancement workshops offered as part of the Dayananda Sagar University online learning ecosystem.',
-      'Designed for learners enrolled in online degree courses in India, these sessions focus on resume building, interview skills, and personal branding to help you stand out in todays competitive job market.',
+      'Designed for learners enrolled in online program courses in India, these sessions focus on resume building, interview skills, and personal branding to help you stand out in todays competitive job market.',
     ],
     points: ['Expert-Led Workshops', 'Industry-Relevant Curriculum', 'Practical Learning Approach', 'Personalized Guidance'],
   },
@@ -111,7 +111,7 @@ export const careerTabs = [
     icon: 'career-2',
     title: ['Industry Networking', 'Opportunities'],
     intro: [
-      'Connect with industry leaders, alumni, and recruiters through exclusive networking events, webinars, and mentorship programs available to students pursuing a DSU online degree, including those enrolled in an online degree program in Bangalore.',
+      'Connect with industry leaders, alumni, and recruiters through exclusive networking events, webinars, and mentorship programs available to students pursuing a DSU online program, including those enrolled in an online program program in Bangalore.',
     ],
     points: [],
   },
@@ -120,7 +120,7 @@ export const careerTabs = [
     icon: 'career-3',
     title: ['Job Placement', 'Assistance'],
     intro: [
-      'Receive dedicated job placement assistance tailored for learners pursuing an online degree program in Bangalore, with support in job applications, interview preparation, and access to trusted placement partners through Dayananda Sagar University online.',
+      'Receive dedicated job placement assistance tailored for learners pursuing an online program program in Bangalore, with support in job applications, interview preparation, and access to trusted placement partners through Dayananda Sagar University online.',
     ],
     points: [],
   },
@@ -129,7 +129,7 @@ export const careerTabs = [
     icon: 'career-4',
     title: ['Career', 'progression'],
     intro: [
-      'Plan your long-term career growth with personalized guidance, upskilling roadmaps, and leadership training designed for students enrolled in online degree courses India, helping you advance confidently in your chosen profession.',
+      'Plan your long-term career growth with personalized guidance, upskilling roadmaps, and leadership training designed for students enrolled in online program courses India, helping you advance confidently in your chosen profession.',
     ],
     points: [],
   },
@@ -138,7 +138,7 @@ export const careerTabs = [
     icon: 'career-5',
     title: ['Leadership', 'Programs'],
     intro: [
-      'Develop strong leadership capabilities through experiential learning, team projects, and executive coaching sessions offered as part of the best online degree programs at DSU, empowering learners enrolled in DSU online degree programs to take on leadership roles across industries.',
+      'Develop strong leadership capabilities through experiential learning, team projects, and executive coaching sessions offered as part of the best online program programs at DSU, empowering learners enrolled in DSU online program programs to take on leadership roles across industries.',
     ],
     points: [],
   },
@@ -240,15 +240,15 @@ export const blogs = [
 export const faqs = [
   {
     q: 'Is DSU Online approved by the UGC?',
-    a: 'Yes. All online degree programs offered by DSU Online are UGC‑Entitled, ensuring they are recognized and equivalent to regular on‑campus degrees.',
+    a: 'Yes. All online program programs offered by DSU Online are UGC‑Entitled, ensuring they are recognized and equivalent to regular on‑campus degrees.',
   },
   { q: 'Can I apply for multiple programs at DSU Online?', a: 'A student can pursue two academic programmes, in Online mode simultaneously.' },
   {
     q: 'Is the online BBA IB.Com I BCA I MBA I MCA degree equal to a regular degree?',
-    a: 'Yes. DSU’s online degree courses are equivalent to traditional on‑campus degrees, as per UGC guidelines, and are recognized across industries and for higher studies.',
+    a: 'Yes. DSU’s online program courses are equivalent to traditional on‑campus degrees, as per UGC guidelines, and are recognized across industries and for higher studies.',
   },
   {
-    q: 'Are the online degrees from DSU Online recognized and valid?',
+    q: 'Are the online programs from DSU Online recognized and valid?',
     a: 'Yes, all degrees offered through DSU Online are recognized by the University Grants Commission (UGC), and the university is NAAC A+ accredited. These degrees are fully valid and hold the same academic weight as traditional on‑campus degrees.',
   },
   {

@@ -128,7 +128,7 @@ export function About() {
       id="about"
       title={
         <>
-          DSU Online Degree
+          DSU Online Programs
           <br />
           Programs with Added Value
         </>

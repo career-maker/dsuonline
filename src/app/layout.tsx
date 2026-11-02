@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     },
   },
   title: {
-    default: 'DSU Online | UGC-Entitled Online Degrees from Dayananda Sagar University',
+    default: 'DSU Online | UGC-Entitled Online Programs from Dayananda Sagar University',
     template: '%s | DSU Online',
   },
   description:

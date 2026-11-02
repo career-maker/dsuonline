@@ -34,7 +34,7 @@ export function ProgramsBand({
       Looking for?
     </>
   ),
-  lead = 'Explore flexible, industry-relevant online degrees from Dayananda Sagar University. Start by choosing the programme you are looking for, then explore the details when you\'re ready.',
+  lead = 'Explore flexible, industry-relevant online programs from Dayananda Sagar University. Start by choosing the programme you are looking for, then explore the details when you\'re ready.',
 }: {
   id?: string;
   eyebrow?: string;
@@ -236,7 +236,7 @@ export function ProgramsBand({
                   with DSU Online
                 </h3>
                 <p>
-                  Pursue a recognized online degree while balancing your work, personal commitments, and academic aspirations with complete
+                  Pursue a recognized online program while balancing your work, personal commitments, and academic aspirations with complete
                   flexibility.
                 </p>
                 <div className={s.ctaBtns}>
