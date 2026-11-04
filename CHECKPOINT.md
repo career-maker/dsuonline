@@ -116,6 +116,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## NEXT STEPS (do top item first when the user says "continue")
+- Done 2026-11-04: titles max 2 lines: phone h2 mixin + inner h1 clamp(21px,5.8vw,26px) + text-wrap balance; hero h1 phone clamp(24px,7.1vw,40px); blog card titles line-clamp 2. Checked all non-blog pages at 360/390/768/1024/1440 with shots/lines.py (blog article headings excluded: long content titles).
 - Done 2026-11-04: programs section: BBA/BCA/B.Com now 3 Years / INR 22,250 (from inner pages); mobile dots removed (arrows only, right-aligned); snap proximity so last card no longer snaps back.
 - Done 2026-11-04: spacing pass: tablet/phone section padding tighter (section-pad mixin), carousels align-items:flex-start, blog card = full photo + text card below <1200px, footer spec accordions slimmer on phones. Programs CTA card is taller than program cards (copy-driven), leaves small gap under shorter cards.
 - Done 2026-11-04: mobile Call us uses inline phone svg (png had its own yellow square).

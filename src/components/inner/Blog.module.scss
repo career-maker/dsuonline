@@ -65,6 +65,10 @@
     line-height: 1.3;
     font-weight: 500;
     color: $ink;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 
     a:hover {
       color: $blue;

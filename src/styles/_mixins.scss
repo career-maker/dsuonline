@@ -45,6 +45,12 @@
   letter-spacing: -0.02em;
   color: $ink;
   margin: 0;
+  text-wrap: balance;
+
+  // phones: section titles stay within two lines
+  @include down($bp-sm) {
+    font-size: clamp(21px, 5.8vw, 26px);
+  }
 }
 
 @mixin body-text {

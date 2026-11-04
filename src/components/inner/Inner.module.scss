@@ -83,6 +83,11 @@
     line-height: 1.1;
     font-weight: 700;
     letter-spacing: -0.02em;
+    text-wrap: balance;
+
+    @include down($bp-sm) {
+      font-size: clamp(21px, 5.8vw, 26px);
+    }
   }
 }
 
