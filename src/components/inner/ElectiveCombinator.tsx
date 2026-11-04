@@ -62,7 +62,7 @@ export function ElectiveCombinator({ programName, programCode, electives, sector
   return (
     <div className={s.wrap}>
       <header className={s.head}>
-        <p className={s.pill}>Interactive Elective Architect</p>
+        <p className={s.eyebrow}>Interactive Elective Architect</p>
         <h2>
           Pair 1 Major + 1 Minor:
           <span className={s.accent}> Unlock Multi-Dimensional Market Dominance</span>

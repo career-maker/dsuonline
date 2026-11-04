@@ -1,11 +1,11 @@
 {
   "0": "Page.tsx",
   "1": "InnerPage.tsx",
-  "2": "layout.tsx",
+  "2": "next",
   "3": "scrape.py",
   "4": "EnquiryModal.tsx",
   "5": "package.json",
-  "6": "next",
+  "6": "ElectiveGrid.tsx",
   "7": "compilerOptions",
   "8": "app/page.tsx",
   "9": "DSU Online — CHECKPOINT (read this first in any new session)",
@@ -13,7 +13,9 @@
   "11": "react",
   "12": "README.md",
   "13": "AGENTS.md",
+  "14": "content.ts",
   "15": "CLAUDE.md",
+  "16": "not-found.tsx",
   "17": "empty.js",
   "19": "BlogSlider.tsx"
 }

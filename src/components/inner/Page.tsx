@@ -728,7 +728,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (programLinks && /elective/i.test(title) && sec.subs.length > 0) {
       const progName = ({ mba: 'MBA', mca: 'MCA', bba: 'BBA', bca: 'BCA', bcom: 'B.Com' } as Record<string, string>)[slug.replace(/^online-/, '')] ?? 'Online';
       nodes.push(
-        <Sec key={`${key}-pair`} tone="blue">
+        <Sec key={`${key}-pair`} tone="sky">
           <ElectiveCombinator programName={progName} programCode={slug.replace(/^online-/, '')} electives={programLinks.map((x) => x.name)} sectors={pageIndustries(raw)} />
         </Sec>,
       );
