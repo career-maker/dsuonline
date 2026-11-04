@@ -1,4 +1,4 @@
-import { ElectiveCarousel } from './ElectiveCarousel';
+import { ElectiveGrid } from './ElectiveGrid';
 import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { loadAboutWhy, loadFaculty, localHref, type Block } from '@/lib/content';
@@ -709,9 +709,15 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
 
     // --- programme electives grid
     if (programLinks && /elective/i.test(title) && sec.subs.length > 0) {
+      const progName = ({ mba: 'MBA', mca: 'MCA', bba: 'BBA', bca: 'BCA', bcom: 'B.Com' } as Record<string, string>)[slug.replace(/^online-/, '')] ?? 'Online';
       nodes.push(
-        <Sec key={key} tone={nextTone()} title={title}>
-          <ElectiveCarousel items={programLinks} />
+        <Sec key={key} tone={nextTone()}>
+          <ElectiveGrid
+            items={programLinks}
+            eyebrow={`${progName} Program`}
+            title={title}
+            lead={`Choose from industry-relevant electives to specialize your ${progName} and build the skills that align with your career goals.`}
+          />
         </Sec>,
       );
       continue;

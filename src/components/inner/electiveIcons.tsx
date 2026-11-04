@@ -1,16 +1,7 @@
-'use client';
-
-import Image from 'next/image';
-import Link from 'next/link';
-import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { ChevronLeft, ChevronRight } from '@/components/ui/icons';
-import { useDragScroll } from '@/components/ui/useDragScroll';
-import s from './Kit.module.scss';
-
-const AUTO_MS = 3500;
+import type { ReactNode } from 'react';
 
 // line icons (24px grid), one per specialization so the badge matches the subject
-const ICONS: Record<string, ReactNode> = {
+export const ICONS: Record<string, ReactNode> = {
   coin: <><circle cx="12" cy="12" r="9" /><path d="M14.5 8.5C14 7.5 13 7 11.8 7 10.3 7 9 7.8 9 9.1c0 3 5.8 1.5 5.8 4.4 0 1.3-1.3 2.1-2.8 2.1-1.3 0-2.3-.6-2.8-1.6M12 5v2M12 17v2" /></>,
   users: <><circle cx="9" cy="8" r="3.2" /><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" /><circle cx="17" cy="9" r="2.4" /><path d="M17 14c2.5 0 4.5 2 4.5 5" /></>,
   megaphone: <><path d="M3 10v4h4l8 5V5l-8 5z" /><path d="M18.5 9a4 4 0 0 1 0 6" /></>,
@@ -43,7 +34,7 @@ const ICONS: Record<string, ReactNode> = {
   trend: <><path d="M3 3v18h18" /><path d="M7 15l4-4 3 3 5-6" /></>,
 };
 
-const ICON_BY_SLUG: Record<string, string> = {
+export const ICON_BY_SLUG: Record<string, string> = {
   financial_management: 'coin',
   'human-resource': 'users',
   'marketing-management': 'megaphone',
@@ -77,78 +68,3 @@ const ICON_BY_SLUG: Record<string, string> = {
   game_programming: 'gamepad',
   fintech: 'card',
 };
-
-/** Programme elective cards: photo, icon badge, name and Know More footer. Scrolls sideways and advances by itself when the cards overflow. Photos: public/images/electives/<slug>.webp. */
-export function ElectiveCarousel({ items }: { items: { name: string; href: string; duration?: string }[] }) {
-  const track = useRef<HTMLUListElement>(null);
-  const paused = useRef(false);
-  const [overflow, setOverflow] = useState(false);
-  useDragScroll(track);
-
-  const step = useCallback((dir: 1 | -1) => {
-    const el = track.current;
-    if (!el) return;
-    const card = el.querySelector<HTMLElement>('li');
-    const w = (card?.offsetWidth ?? 280) + 20;
-    const max = el.scrollWidth - el.clientWidth;
-    if (dir === 1 && el.scrollLeft >= max - 4) el.scrollTo({ left: 0, behavior: 'smooth' });
-    else if (dir === -1 && el.scrollLeft <= 4) el.scrollTo({ left: max, behavior: 'smooth' });
-    else el.scrollBy({ left: dir * w, behavior: 'smooth' });
-  }, []);
-
-  useEffect(() => {
-    const el = track.current;
-    if (!el) return;
-    const measure = () => setOverflow(el.scrollWidth > el.clientWidth + 4);
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(el);
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches || !window.matchMedia('(min-width: 1200px)').matches;
-    const id = reduce ? 0 : window.setInterval(() => {
-      if (!paused.current && el.scrollWidth > el.clientWidth + 4) step(1);
-    }, AUTO_MS);
-    return () => {
-      ro.disconnect();
-      window.clearInterval(id);
-    };
-  }, [step]);
-
-  return (
-    <div className={s.elWrap} onMouseEnter={() => { paused.current = true; }} onMouseLeave={() => { paused.current = false; }} onFocus={() => { paused.current = true; }} onBlur={() => { paused.current = false; }} onTouchStart={() => { paused.current = true; }} onTouchEnd={() => { paused.current = false; }}>
-      <ul className={s.elective} ref={track} aria-label="Program electives">
-        {items.map((l) => {
-          const slug = l.href.split('/').pop()!.replace('&', '-and-');
-          return (
-            <li key={l.href}>
-              <Link href={l.href}>
-                <span className={s.elPhoto}>
-                  <Image src={`/images/electives/${slug}.webp`} alt="" fill sizes="(max-width: 600px) 80vw, 300px" />
-                  <svg className={s.elIcon} viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    {ICONS[ICON_BY_SLUG[slug.toLowerCase()] ?? 'code']}
-                  </svg>
-                </span>
-                <span className={s.elBody}>
-                  <b>{l.name}</b>
-                  {l.duration && <small>{l.duration}</small>}
-                </span>
-                <span className={s.elFoot}>
-                  Know More <i aria-hidden="true">→</i>
-                </span>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-      {overflow && (
-        <div className={s.elArrows}>
-          <button type="button" onClick={() => step(-1)} aria-label="Previous electives">
-            <ChevronLeft />
-          </button>
-          <button type="button" onClick={() => step(1)} aria-label="Next electives">
-            <ChevronRight />
-          </button>
-        </div>
-      )}
-    </div>
-  );
-}

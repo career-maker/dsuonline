@@ -116,6 +116,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## NEXT STEPS (do top item first when the user says "continue")
+- Done 2026-11-04: program page electives redesigned (ElectiveGrid.tsx, electiveIcons.tsx; ElectiveCarousel removed): 3-col horizontal cards w/ diagonal photo edge, eyebrow+title+lead (lead is template text: "Choose from industry-relevant electives to specialize your X..." from the user mockup, not live-site copy).
 - Done 2026-11-04: program Why section: tile hover animation, no gold underline, broken svg curve replaced by offset gold outline behind photo.
 - Done 2026-11-04: testimonial hover panel now matches Programs hover (dark translucent panel, name/course on top, quote below, hidden scrollbar + bottom fade).
 - Done 2026-11-04: program pages (online-mba/mca/bba/bca/bcom) "Why DSU Online X?" redesigned (WhyProgram in Kit.tsx): gold-underlined title, 10 icon tiles (5 cols, 2 on phones), framed photo right. Page scrollbar hidden <1200px.
