@@ -24,7 +24,11 @@ export function TestimonialCard({ t, big, sizes = '(max-width: 600px) 100vw, 430
     <div className={`${s.tc} ${big ? s.big : ''}`}>
       <div className={s.media} tabIndex={reveal ? 0 : undefined}>
         {t.img ? (
-          <Image src={t.img} alt={`${t.name}${t.course ? `, ${t.course} learner` : ''}`} fill sizes={sizes} className={s.photo} />
+          <>
+            {/* blurred copy fills the card; the sharp photo is shown whole (contain) so faces never get cropped */}
+            <Image src={t.img} alt="" aria-hidden="true" fill sizes={sizes} className={s.backdrop} />
+            <Image src={t.img} alt={`${t.name}${t.course ? `, ${t.course} learner` : ''}`} fill sizes={sizes} className={s.photo} />
+          </>
         ) : (
           <span className={s.initial} aria-hidden="true">
             {t.name.replace(/^(Mr|Ms|Mrs|Dr)\.?\s*/i, '').charAt(0)}

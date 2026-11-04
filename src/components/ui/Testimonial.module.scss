@@ -19,8 +19,14 @@
 }
 
 .photo {
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+.backdrop {
   object-fit: cover;
-  object-position: 50% 18%;
+  filter: blur(22px) brightness(0.75);
+  scale: 1.25;
 }
 
 .initial {
@@ -112,16 +118,17 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   gap: px(10);
   padding: clamp(12px, #{u(18)}, 18px);
-  background: rgb(1 6 63 / 94%);
+  background: rgb(1 6 63 / 97%);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s;
 }
 
 .q {
-  flex: 1;
+  flex: 0 1 auto;
   min-height: 0;
   overflow-y: auto;
   font-size: fs(14, 12px);
@@ -148,7 +155,15 @@
   display: block;
 }
 
+.info {
+  transition: opacity 0.2s;
+}
+
 @media (hover: hover) {
+  .media:hover .info {
+    opacity: 0;
+  }
+
   .media:hover .reveal {
     opacity: 1;
     visibility: visible;
