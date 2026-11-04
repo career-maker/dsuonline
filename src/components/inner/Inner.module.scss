@@ -537,7 +537,7 @@
 
     &:hover {
       border-color: $blue;
-      box-shadow: 0 4px 16px rgb(0 125 197 / 14%);
+      box-shadow: 0 4px 16px rgb(2 9 102 / 14%);
     }
   }
 
@@ -654,7 +654,7 @@
 
     &:hover {
       background: #f0f7ff;
-      color: #005fa3;
+      color: #020966;
       box-shadow: 0 8px 24px rgb(0 0 0 / 22%);
     }
   }
@@ -707,7 +707,7 @@
 .heroGradient {
   min-height: clamp(280px, #{u(400)}, 420px);
   padding: clamp(100px, #{u(140)}, 140px) 0 clamp(26px, #{u(44)}, 44px);
-  background: radial-gradient(circle at 85% 20%, rgb(255 255 255 / 14%), transparent 45%), linear-gradient(120deg, #005a8d 0%, #0077be 60%, #1a93d6 100%);
+  background: radial-gradient(circle at 85% 20%, rgb(255 255 255 / 14%), transparent 45%), linear-gradient(120deg, #01063f 0%, #020966 60%, #1a2394 100%);
 
   @include down($bp-lg) {
     min-height: clamp(260px, 40svh, 360px);

@@ -193,7 +193,7 @@
   padding: 4px 14px;
   border-radius: 20px;
   background: #e6f2f9;
-  color: #006aa2;
+  color: #020966;
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.02em;
@@ -286,7 +286,7 @@
   &:hover {
     border-color: $blue;
     background: #fff;
-    box-shadow: 0 8px 24px rgb(0 125 197 / 12%);
+    box-shadow: 0 8px 24px rgb(2 9 102 / 12%);
     transform: translateY(-2px);
 
     .navArrow {
@@ -348,7 +348,7 @@
 }
 
 .ctaWidget {
-  background: linear-gradient(145deg, #005a8d 0%, #0077be 100%);
+  background: linear-gradient(145deg, #01063f 0%, #020966 100%);
   border: 0;
   color: #fff;
   box-shadow: 0 10px 28px rgba(2, 92, 144, 0.28);
@@ -476,7 +476,7 @@
   padding: 3px 8px;
   border-radius: 4px;
   background: #e6f2f9;
-  color: #006aa2;
+  color: #020966;
   font-size: 12px;
   font-weight: 600;
 }

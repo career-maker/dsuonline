@@ -270,9 +270,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/BlogSlider.tsx": {
-    "mtime": 1793618357.7341008,
-    "seen": 1793773932.7654843,
-    "ast_hash": "44d1bd9c56634c417f67e1716411f2b8",
+    "mtime": 1793774977.2777705,
+    "seen": 1793775112.5675213,
+    "ast_hash": "c4062fd9bc96e840fbcd2c63e7465664",
     "semantic_hash": ""
   },
   "src/components/sections/home/Blogs.tsx": {
@@ -486,15 +486,15 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1793773142.0705533,
-    "seen": 1793773932.7655644,
-    "ast_hash": "9cb1789ecdfdb3f4f00b705ef4b79552",
+    "mtime": 1793773956.2314165,
+    "seen": 1793775112.567764,
+    "ast_hash": "a3ea2d93a149a4ea4c3c6f7f217ee5f8",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1792999969.6176822,
-    "seen": 1793773932.7655668,
-    "ast_hash": "ba79de052d931dd530f5ec3f19355dfc",
+    "mtime": 1793773956.22906,
+    "seen": 1793775112.5677688,
+    "ast_hash": "3304a86dbac78aeb7cd2a46213767d0b",
     "semantic_hash": ""
   },
   "DEPLOY-SERVER.md": {

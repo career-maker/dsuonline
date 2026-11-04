@@ -177,7 +177,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
     @media (hover: hover) {
       &:hover {
-        border-color: rgb(0 125 197 / 40%);
+        border-color: rgb(2 9 102 / 40%);
         box-shadow: 0 16px 40px rgb(0 40 80 / 12%);
       }
     }
@@ -450,7 +450,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: 0 px(28);
   border: 0;
   border-radius: px(3);
-  background: #0077be;
+  background: #020966;
   color: #fff;
   font-size: px(18);
   font-weight: 500;
@@ -580,7 +580,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .faqOn {
-  border-color: rgb(0 125 197 / 45%) !important;
+  border-color: rgb(2 9 102 / 45%) !important;
   box-shadow: 0 10px 30px rgb(0 40 80 / 10%);
 
   .faqChev {
@@ -730,7 +730,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
     &:hover {
       border-color: $blue;
-      box-shadow: 0 10px 28px rgb(0 125 197 / 16%);
+      box-shadow: 0 10px 28px rgb(2 9 102 / 16%);
 
       i {
         translate: 4px 0;
@@ -801,7 +801,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     &:hover,
     &:focus-visible {
       border-color: $blue;
-      box-shadow: 0 14px 32px rgb(0 125 197 / 18%);
+      box-shadow: 0 14px 32px rgb(2 9 102 / 18%);
       translate: 0 -4px;
 
       .elPhoto img {
@@ -1163,7 +1163,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     transition: border-color 0.25s, box-shadow 0.3s;
 
     &:hover {
-      border-color: rgb(0 125 197 / 45%);
+      border-color: rgb(2 9 102 / 45%);
       box-shadow: 0 10px 28px rgb(0 40 80 / 10%);
     }
   }
@@ -1187,7 +1187,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     align-items: center;
     height: px(46);
     padding: 0 px(20);
-    border: 1px solid #0077be;
+    border: 1px solid #020966;
     border-radius: px(3);
     background: #fff;
     color: $ink;
@@ -1255,7 +1255,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
     @media (hover: hover) {
       &:hover {
-        border-color: rgb(0 125 197 / 40%);
+        border-color: rgb(2 9 102 / 40%);
         box-shadow: 0 16px 40px rgb(0 40 80 / 14%);
       }
     }
@@ -1552,7 +1552,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
     @media (hover: hover) {
       &:hover {
-        border-color: rgb(0 125 197 / 40%);
+        border-color: rgb(2 9 102 / 40%);
         box-shadow: 0 16px 40px rgb(0 40 80 / 12%);
       }
     }
@@ -2279,7 +2279,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .pay_blue {
-  --c: #0077be;
+  --c: #020966;
   --t: #e6f2f9;
 }
 
@@ -2306,7 +2306,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--t, #e6f2f9);
-  color: var(--c, #0077be);
+  color: var(--c, #020966);
   transition: background-color 0.3s, color 0.3s;
 
   svg {
@@ -2739,7 +2739,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 // ---------- blue band sections (placement counters, "DSU Advantage")
 .blue {
-  background: radial-gradient(circle at 12% 0%, rgb(255 255 255 / 14%), transparent 40%), linear-gradient(120deg, #005a8d 0%, #0077be 70%, #1a93d6 100%);
+  background: radial-gradient(circle at 12% 0%, rgb(255 255 255 / 14%), transparent 40%), linear-gradient(120deg, #01063f 0%, #020966 70%, #1a2394 100%);
 
   .head h2,
   .head .lead {
@@ -2849,7 +2849,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   display: flex;
   flex-direction: column;
   border: 0;
-  background: radial-gradient(circle at 100% 0%, rgb(255 255 255 / 16%), transparent 45%), linear-gradient(150deg, #04426b 0%, #0077be 100%);
+  background: radial-gradient(circle at 100% 0%, rgb(255 255 255 / 16%), transparent 45%), linear-gradient(150deg, #01063f 0%, #020966 100%);
   box-shadow: none;
 
   .qmark {

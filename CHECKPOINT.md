@@ -116,6 +116,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## NEXT STEPS (do top item first when the user says "continue")
+- Done 2026-11-04: all brand blue (#0077be family, buttons/gradients/shadows) replaced with #020966 (dark shade #01063f, light #1a2394). Light blue tint backgrounds (#e6f2f9 etc.) untouched. Not visually verified.
 1. Visual QA of remaining inner pages at 390/768/1440 (only sampled pages were eyeballed): placements, why-dsu-online, academics-at-dsu, student-support, mandatory-disclosures, contact-us (map iframes blank in headless; check in real browser), all specialization pages, blog list/detail. Fix any layout glitches.
 2. Footer: user brief asked to refine alignment (logo/contact, link columns, specialization columns, brochure box, copyright row). Review at all breakpoints.
 3. Refer page: re-check hero/cards/terms after content changes (live copy only).
