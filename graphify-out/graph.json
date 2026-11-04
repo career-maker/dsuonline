@@ -5261,7 +5261,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L148"
+      "source_location": "L150"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -5345,7 +5345,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L132"
+      "source_location": "L134"
     },
     {
       "id": "checkpoint_update_2026_10_28",
@@ -5357,7 +5357,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L140"
+      "source_location": "L142"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -9020,7 +9020,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L116",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -9032,7 +9032,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L138",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -9044,7 +9044,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L156",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -9056,7 +9056,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L202",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -9068,7 +9068,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L275",
+      "source_location": "L254",
       "weight": 1.0
     },
     {
@@ -9080,7 +9080,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L284",
+      "source_location": "L263",
       "weight": 1.0
     },
     {
@@ -17060,7 +17060,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L132",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -17071,7 +17071,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L140",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -17082,7 +17082,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L148",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -21108,7 +21108,7 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L143",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -21144,7 +21144,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L135",
+      "source_location": "L137",
       "weight": 1.0
     },
     {
@@ -21156,7 +21156,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L135",
+      "source_location": "L137",
       "weight": 1.0
     },
     {
@@ -21204,10 +21204,10 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L133",
+      "source_location": "L135",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "196dfe53802ed59fccbfd92dbf65a5564d554780"
+  "built_at_commit": "3ea5bd70a76c39d2596fee9a5b4e4ebf5f21e95f"
 }

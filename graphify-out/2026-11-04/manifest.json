@@ -246,9 +246,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/SideTabs.tsx": {
-    "mtime": 1793777542.4735892,
-    "seen": 1793777666.232565,
-    "ast_hash": "b478a16df107b6ebc27a2e5d10123857",
+    "mtime": 1793781880.598356,
+    "seen": 1793781998.8171024,
+    "ast_hash": "8fe8bd0fc74bdc60fd2c4d2b13c49735",
     "semantic_hash": ""
   },
   "src/components/layout/SmoothScroll.tsx": {
@@ -486,9 +486,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1793781114.8682117,
-    "seen": 1793781125.0262814,
-    "ast_hash": "15de68577bdbbe841013ba8ea2e4ef8c",
+    "mtime": 1793781992.5663667,
+    "seen": 1793781998.8171716,
+    "ast_hash": "a798f7c3071ec9ee7c7c5b9f14efac9a",
     "semantic_hash": ""
   },
   "CLAUDE.md": {

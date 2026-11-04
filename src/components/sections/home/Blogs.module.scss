@@ -105,13 +105,28 @@
   border-radius: px(14);
   color: $ink;
 
-  @include down($bp-md) {
-    aspect-ratio: 560 / 640;
-  }
-
-  @include down($bp-sm) {
+  // below desktop: whole photo on top (images are 1.64:1), white text card under it, no empty bands
+  @include down($bp-lg) {
     aspect-ratio: auto;
-    min-height: px(600);
+    padding-top: 61%;
+    background: #0e2a3d;
+
+    .photo {
+      inset: 0 0 auto 0 !important;
+      height: auto !important;
+      aspect-ratio: 1.64 / 1;
+      object-fit: contain;
+    }
+
+    .shade {
+      display: none;
+    }
+
+    .body {
+      position: relative;
+      inset: auto;
+      margin: -28px 8px 8px;
+    }
   }
 }
 

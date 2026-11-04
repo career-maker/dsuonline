@@ -57,16 +57,6 @@ export function ProgramsBand({
     }
   }, [activeIdx]);
 
-  const scrollTo = useCallback((idx: number) => {
-    const el = trackRef.current;
-    if (!el) return;
-    const cards = Array.from(el.querySelectorAll<HTMLElement>(':scope > article'));
-    if (cards[idx]) {
-      cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
-      setActiveIdx(idx);
-    }
-  }, []);
-
   useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
@@ -253,17 +243,6 @@ export function ProgramsBand({
         </div>
 
         <div className={s.controls}>
-          <div className={s.dots}>
-            {Array.from({ length: totalCards }).map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                className={`${s.dot} ${activeIdx === i ? s.activeDot : ''}`}
-                onClick={() => scrollTo(i)}
-                aria-label={`Go to program ${i + 1} of ${totalCards}`}
-              />
-            ))}
-          </div>
           <div className={s.arrowBtns}>
             <button
               type="button"

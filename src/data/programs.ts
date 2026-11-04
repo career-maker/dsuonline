@@ -67,8 +67,8 @@ export const programs: Program[] = [
     fullName: 'Bachelor of Business Administration',
     lines: ['Bachelor of', 'Business Administration'],
     href: '/online-bba',
-    duration: '2 Years',
-    firstSemFee: '32,875',
+    duration: '3 Years',
+    firstSemFee: '22,250',
     specializations: [
       s('Digital Marketing', 'digital-marketing'),
       s('Supply Chain Management', 'supply_chain_management'),
@@ -81,8 +81,8 @@ export const programs: Program[] = [
     fullName: 'Bachelor of Computer Applications',
     lines: ['Bachelor of', 'Computer Applications'],
     href: '/online-bca',
-    duration: '2 Years',
-    firstSemFee: '32,875',
+    duration: '3 Years',
+    firstSemFee: '22,250',
     specializations: [
       s('Artificial Intelligence', 'artificial_intelligence'),
       s('Machine Learning', 'machine_learning'),
@@ -104,8 +104,8 @@ export const programs: Program[] = [
     fullName: 'Bachelor of Commerce',
     lines: ['Bachelor of', 'Commerce'],
     href: '/online-bcom',
-    duration: '2 Years',
-    firstSemFee: '32,875',
+    duration: '3 Years',
+    firstSemFee: '22,250',
     specializations: [
       s('Fintech Regulations & Security', 'fintech'),
       s('Supply Chain Management', 'supply_chain_management'),

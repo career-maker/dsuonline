@@ -629,6 +629,10 @@
 }
 
 @include down($bp-sm) {
+  .spec {
+    padding: 6px 16px;
+  }
+
   .cols {
     gap: 0;
   }

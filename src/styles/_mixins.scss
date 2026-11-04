@@ -104,6 +104,11 @@
 // Section shell: vertical rhythm + centred container
 @mixin section-pad($top: 100, $bottom: 100) {
   padding-block: clamp(48px, #{u($top)}, #{$top}px) clamp(48px, #{u($bottom)}, #{$bottom}px);
+
+  // tablet + phone: tighter vertical rhythm, no big empty bands between sections
+  @include down($bp-lg) {
+    padding-block: clamp(30px, calc(var(--u) * #{$top} * 0.6), 52px) clamp(30px, calc(var(--u) * #{$bottom} * 0.6), 52px);
+  }
 }
 
 // ---------- hover motion (pointer devices, motion allowed)

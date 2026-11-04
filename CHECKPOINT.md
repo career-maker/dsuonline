@@ -116,6 +116,8 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## NEXT STEPS (do top item first when the user says "continue")
+- Done 2026-11-04: programs section: BBA/BCA/B.Com now 3 Years / INR 22,250 (from inner pages); mobile dots removed (arrows only, right-aligned); snap proximity so last card no longer snaps back.
+- Done 2026-11-04: spacing pass: tablet/phone section padding tighter (section-pad mixin), carousels align-items:flex-start, blog card = full photo + text card below <1200px, footer spec accordions slimmer on phones. Programs CTA card is taller than program cards (copy-driven), leaves small gap under shorter cards.
 - Done 2026-11-04: mobile Call us uses inline phone svg (png had its own yellow square).
 - Done 2026-11-04: testimonial photos now contain + blurred backdrop (no face cropping); hover quote aligned to bottom above name.
 - Done 2026-11-04: testimonials rebuilt: shared `src/components/ui/Testimonial.tsx` (+scss), data in `src/data/testimonials.ts` (from content/pages/student-testimonials.json; optional `video` YouTube id => play button, plays inside card). Home bento keeps layout; text-only cards show quote on hover; <1200px carousel (phone 1 card, tablet 2) with quote under photo; inner pages (StoryCards) use same card. Home now shows page learners (photos are small, big card looks soft). Checked via screenshots at 1920/1024/390.
