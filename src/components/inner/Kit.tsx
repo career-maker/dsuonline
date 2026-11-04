@@ -120,10 +120,6 @@ export function WhyProgram({ title, paras, items, photo }: { title: string; para
         </ul>
       </div>
       <div className={s.whyPPhoto}>
-        <svg className={s.whyCurve} viewBox="0 0 300 560" aria-hidden="true" fill="none" stroke="#e2b500" strokeWidth="1.5" preserveAspectRatio="none">
-          <path d="M60 40C120 10 220 0 300 0" />
-          <path d="M300 540C230 548 150 560 90 520" />
-        </svg>
         <div className={s.whyPFrame}>{photo}</div>
       </div>
     </div>

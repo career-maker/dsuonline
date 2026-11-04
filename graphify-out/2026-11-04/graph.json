@@ -1826,7 +1826,7 @@
       "file_type": "code",
       "norm_label": "carouselcontrols()",
       "source_file": "src/components/ui/Testimonial.tsx",
-      "source_location": "L69"
+      "source_location": "L70"
     },
     {
       "id": "src_components_ui_testimonial_testimonialcard",
@@ -1850,7 +1850,7 @@
       "file_type": "code",
       "norm_label": "testimonialgrid()",
       "source_file": "src/components/ui/Testimonial.tsx",
-      "source_location": "L88"
+      "source_location": "L89"
     },
     {
       "id": "src_data_testimonials_parse",
@@ -5296,7 +5296,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L156"
+      "source_location": "L157"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -5380,7 +5380,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L140"
+      "source_location": "L141"
     },
     {
       "id": "checkpoint_update_2026_10_28",
@@ -5392,7 +5392,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L148"
+      "source_location": "L149"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -9283,7 +9283,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/ui/Testimonial.tsx",
-      "source_location": "L78",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -9295,7 +9295,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/ui/Testimonial.tsx",
-      "source_location": "L81",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -9307,19 +9307,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/ui/Testimonial.tsx",
-      "source_location": "L59",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_ui_testimonial_testimonialgrid",
-      "target": "src_components_ui_testimonial_testimonialcard",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/ui/Testimonial.tsx",
-      "source_location": "L95",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -9331,7 +9319,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/ui/Testimonial.tsx",
-      "source_location": "L99",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_testimonial_testimonialgrid",
+      "target": "src_components_ui_testimonial_testimonialcard",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/ui/Testimonial.tsx",
+      "source_location": "L96",
       "weight": 1.0
     },
     {
@@ -17131,7 +17131,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L140",
+      "source_location": "L141",
       "weight": 1.0
     },
     {
@@ -17142,7 +17142,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L148",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -17153,7 +17153,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L156",
+      "source_location": "L157",
       "weight": 1.0
     },
     {
@@ -19969,7 +19969,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/ui/Testimonial.tsx",
-      "source_location": "L69",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -19980,7 +19980,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/ui/Testimonial.tsx",
-      "source_location": "L88",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -21212,7 +21212,7 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L151",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -21248,7 +21248,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L143",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -21260,7 +21260,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L143",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -21308,10 +21308,10 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L141",
+      "source_location": "L142",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f0dd17c7adf26b8240c7c5cc06219e6918a5524e"
+  "built_at_commit": "da1e3e74c4a4ad4528ca7a2f8214f76478f4b14a"
 }
