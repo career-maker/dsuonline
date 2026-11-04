@@ -116,6 +116,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## NEXT STEPS (do top item first when the user says "continue")
+- Done 2026-11-04: /online-mba banner photo replaced (public/images/inner/banner-mba.webp + banner-mba-mobile.webp, from D:/downloads/Thoughtful Workspace Reflection.png); InnerHero gets optional bannerMobileSrc.
 - Done 2026-11-04: testimonial hover panel paged (Show more / Show less, whole lines, no wheel scroll). Name+course bottom row with button; company dropped from the hover panel (still on card face).
 - Done 2026-11-04: phones: carousel arrows moved above cards (Programs, Faculty, Articles), empty space under cards removed, blog arrows visible (svg size), footer specialization menus hidden <900px (brochure form kept).
 - Done 2026-11-04: testimonial hover content bottom-aligned (quote above name), scroll fixed with data-lenis-prevent (Lenis was hijacking wheel); Careers panel min-height 0 <1200px; blog track align-items:flex-start. shots/blank.py = blank-space scanner.

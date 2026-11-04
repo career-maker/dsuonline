@@ -1,17 +1,17 @@
 # Graph Report - dsu online  (2026-11-04)
 
 ## Corpus Check
-- 88 files · ~54,264 words
+- 88 files · ~54,311 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 30 file(s) not represented in the graph (top: .scss 27, (none) 2, .ico 1)
 
 ## Summary
-- 511 nodes · 1308 edges · 17 communities (13 shown, 4 thin omitted)
+- 512 nodes · 1309 edges · 17 communities (13 shown, 4 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0aef63a3`
+- Built from commit: `079e2ffd`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -62,16 +62,16 @@
 ## Communities (17 total, 4 thin omitted)
 
 ### Community 0 - "Page.tsx"
-Cohesion: 0.06
-Nodes (80): cleanBlocks(), isNote(), isQuote(), slugify(), ElectiveGrid(), Item, ICON_BY_SLUG, ICONS (+72 more)
+Cohesion: 0.07
+Nodes (74): cleanBlocks(), isNote(), isQuote(), slugify(), ElectiveGrid(), LeaderGrid(), Tabs(), CardGrid() (+66 more)
 
 ### Community 1 - "InnerPage.tsx"
-Cohesion: 0.07
-Nodes (54): nextConfig, bannerDuration(), generateMetadata(), generateStaticParams(), InnerRoute(), Params, resolve(), Resolved (+46 more)
+Cohesion: 0.08
+Nodes (50): bannerDuration(), generateMetadata(), generateStaticParams(), InnerRoute(), Params, resolve(), Resolved, BlogIndex() (+42 more)
 
 ### Community 2 - "next"
 Cohesion: 0.05
-Nodes (42): next, app, { createServer }, handle, next, metadata, roboto, RootLayout() (+34 more)
+Nodes (41): nextConfig, next, app, { createServer }, handle, next, metadata, roboto (+33 more)
 
 ### Community 3 - "scrape.py"
 Cohesion: 0.08
@@ -79,7 +79,7 @@ Nodes (14): Update 2026-10-26 (latest), api(), local(), main(), optimize_image()
 
 ### Community 4 - "EnquiryModal.tsx"
 Cohesion: 0.17
-Nodes (23): ContactForm(), empty, Phase, empty, Phase, ReferForm(), V, CountryPicker() (+15 more)
+Nodes (24): ContactForm(), empty, Phase, empty, Phase, ReferForm(), V, CountryPicker() (+16 more)
 
 ### Community 5 - "package.json"
 Cohesion: 0.06
@@ -102,20 +102,20 @@ Cohesion: 0.33
 Nodes (5): Crawling & Beta Stage (SEO), Deploy to Server (dsuonline.intersmarthosting.in), Notes, Quick Deploy Command, SSH & Server Details (For Any AI Agent / Developer)
 
 ### Community 11 - "react"
-Cohesion: 0.11
-Nodes (20): react, QuoteSlider(), pages, slotClass, Testimonials(), CardCarousel(), Props, base (+12 more)
+Cohesion: 0.07
+Nodes (30): react, Accordion(), Item, ICON_BY_SLUG, ICONS, FaqList(), icons, stroke (+22 more)
 
 ### Community 12 - "README.md"
 Cohesion: 0.50
 Nodes (3): Deploy on Vercel, Getting Started, Learn More
 
 ### Community 19 - "BlogSlider.tsx"
-Cohesion: 0.36
-Nodes (7): Blogs(), MONTHS, ord(), Arrow(), BlogSlider(), Slide, toIsoBlogDate()
+Cohesion: 0.30
+Nodes (8): Blogs(), MONTHS, ord(), Arrow(), BlogSlider(), Slide, toIsoBlogDate(), useDragScroll()
 
 ## Knowledge Gaps
 - **6 isolated node(s):** `react-dom`, `sass`, `@types/node`, `@types/react`, `@types/react-dom` (+1 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 173 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 174 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
@@ -128,10 +128,10 @@ _Questions this graph is uniquely positioned to answer:_
 - **What connects `react-dom`, `sass`, `@types/node` to the rest of the system?**
   _6 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.05948399426660296 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06993670886075949 - nodes in this community are weakly interconnected._
 - **Why does `react` connect `react` to `Page.tsx`, `InnerPage.tsx`, `next`, `EnquiryModal.tsx`, `package.json`, `ArrowLink`, `BlogSlider.tsx`?**
-  _High betweenness centrality (0.160) - this node is a cross-community bridge._
+  _High betweenness centrality (0.159) - this node is a cross-community bridge._
 - **Should `InnerPage.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.0710085933966531 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08299240210403273 - nodes in this community are weakly interconnected._
 - **Why does `Update 2026-10-26 (latest)` connect `scrape.py` to `Page.tsx`, `DSU Online — CHECKPOINT (read this first in any new session)`?**
   _High betweenness centrality (0.147) - this node is a cross-community bridge._

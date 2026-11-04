@@ -480,9 +480,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1793791406.401392,
-    "seen": 1793791415.6511912,
-    "ast_hash": "6e45a65a9ea1e1be3cee2cfbbe0d4271",
+    "mtime": 1793792177.6189194,
+    "seen": 1793792190.134028,
+    "ast_hash": "63aaffe5238bc51890abc16eeaa97d75",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -516,9 +516,9 @@
     "semantic_hash": ""
   },
   "src/components/ui/Testimonial.tsx": {
-    "mtime": 1793790432.653169,
-    "seen": 1793790832.9363048,
-    "ast_hash": "0075cc15ae84357d1bbf42d0d80e47c2",
+    "mtime": 1793792044.5899804,
+    "seen": 1793792190.133964,
+    "ast_hash": "7691b3c64b310eaba46af2aa551d061a",
     "semantic_hash": ""
   },
   "src/data/testimonials.ts": {
