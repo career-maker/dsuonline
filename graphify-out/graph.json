@@ -5614,7 +5614,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L178"
+      "source_location": "L179"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -5698,7 +5698,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L162"
+      "source_location": "L163"
     },
     {
       "id": "checkpoint_update_2026_10_28",
@@ -5710,7 +5710,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L170"
+      "source_location": "L171"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -7569,7 +7569,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1028",
+      "source_location": "L1033",
       "weight": 1.0
     },
     {
@@ -7581,7 +7581,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1033",
+      "source_location": "L1038",
       "weight": 1.0
     },
     {
@@ -7593,7 +7593,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1040",
+      "source_location": "L1045",
       "weight": 1.0
     },
     {
@@ -7605,7 +7605,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1060",
+      "source_location": "L1065",
       "weight": 1.0
     },
     {
@@ -7689,7 +7689,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L551",
+      "source_location": "L556",
       "weight": 1.0
     },
     {
@@ -7701,7 +7701,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L562",
+      "source_location": "L567",
       "weight": 1.0
     },
     {
@@ -7713,7 +7713,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L564",
+      "source_location": "L569",
       "weight": 1.0
     },
     {
@@ -7725,7 +7725,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L565",
+      "source_location": "L570",
       "weight": 1.0
     },
     {
@@ -7737,7 +7737,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L575",
+      "source_location": "L580",
       "weight": 1.0
     },
     {
@@ -7749,7 +7749,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L587",
+      "source_location": "L592",
       "weight": 1.0
     },
     {
@@ -7761,7 +7761,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L602",
+      "source_location": "L607",
       "weight": 1.0
     },
     {
@@ -7773,7 +7773,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L603",
+      "source_location": "L608",
       "weight": 1.0
     },
     {
@@ -7785,7 +7785,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L607",
+      "source_location": "L612",
       "weight": 1.0
     },
     {
@@ -7797,7 +7797,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L613",
+      "source_location": "L618",
       "weight": 1.0
     },
     {
@@ -7809,7 +7809,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L625",
+      "source_location": "L630",
       "weight": 1.0
     },
     {
@@ -7821,7 +7821,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L626",
+      "source_location": "L631",
       "weight": 1.0
     },
     {
@@ -7833,7 +7833,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L626",
+      "source_location": "L631",
       "weight": 1.0
     },
     {
@@ -7845,7 +7845,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L626",
+      "source_location": "L631",
       "weight": 1.0
     },
     {
@@ -7857,7 +7857,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L627",
+      "source_location": "L632",
       "weight": 1.0
     },
     {
@@ -7869,7 +7869,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L628",
+      "source_location": "L633",
       "weight": 1.0
     },
     {
@@ -7881,7 +7881,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L650",
+      "source_location": "L655",
       "weight": 1.0
     },
     {
@@ -7893,7 +7893,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L656",
+      "source_location": "L661",
       "weight": 1.0
     },
     {
@@ -7905,7 +7905,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L670",
+      "source_location": "L675",
       "weight": 1.0
     },
     {
@@ -7917,7 +7917,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L680",
+      "source_location": "L685",
       "weight": 1.0
     },
     {
@@ -7929,7 +7929,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L691",
+      "source_location": "L696",
       "weight": 1.0
     },
     {
@@ -7941,7 +7941,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L719",
+      "source_location": "L724",
       "weight": 1.0
     },
     {
@@ -7953,7 +7953,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L734",
+      "source_location": "L739",
       "weight": 1.0
     },
     {
@@ -7965,7 +7965,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L735",
+      "source_location": "L740",
       "weight": 1.0
     },
     {
@@ -7977,7 +7977,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L737",
+      "source_location": "L742",
       "weight": 1.0
     },
     {
@@ -7989,7 +7989,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L742",
+      "source_location": "L747",
       "weight": 1.0
     },
     {
@@ -8001,7 +8001,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L747",
+      "source_location": "L752",
       "weight": 1.0
     },
     {
@@ -8013,7 +8013,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L747",
+      "source_location": "L752",
       "weight": 1.0
     },
     {
@@ -8025,7 +8025,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L758",
+      "source_location": "L763",
       "weight": 1.0
     },
     {
@@ -8037,7 +8037,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L758",
+      "source_location": "L763",
       "weight": 1.0
     },
     {
@@ -8049,7 +8049,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L763",
+      "source_location": "L768",
       "weight": 1.0
     },
     {
@@ -8061,7 +8061,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L781",
+      "source_location": "L786",
       "weight": 1.0
     },
     {
@@ -8073,7 +8073,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L781",
+      "source_location": "L786",
       "weight": 1.0
     },
     {
@@ -8085,7 +8085,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L787",
+      "source_location": "L792",
       "weight": 1.0
     },
     {
@@ -8097,7 +8097,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L793",
+      "source_location": "L798",
       "weight": 1.0
     },
     {
@@ -8109,7 +8109,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L804",
+      "source_location": "L809",
       "weight": 1.0
     },
     {
@@ -8121,7 +8121,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L814",
+      "source_location": "L819",
       "weight": 1.0
     },
     {
@@ -8133,7 +8133,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L824",
+      "source_location": "L829",
       "weight": 1.0
     },
     {
@@ -8145,7 +8145,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L834",
+      "source_location": "L839",
       "weight": 1.0
     },
     {
@@ -8157,7 +8157,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L841",
+      "source_location": "L846",
       "weight": 1.0
     },
     {
@@ -8169,7 +8169,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L849",
+      "source_location": "L854",
       "weight": 1.0
     },
     {
@@ -8181,7 +8181,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L853",
+      "source_location": "L858",
       "weight": 1.0
     },
     {
@@ -8193,7 +8193,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L863",
+      "source_location": "L868",
       "weight": 1.0
     },
     {
@@ -8205,7 +8205,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L866",
+      "source_location": "L871",
       "weight": 1.0
     },
     {
@@ -8217,7 +8217,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L907",
+      "source_location": "L912",
       "weight": 1.0
     },
     {
@@ -8229,7 +8229,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L918",
+      "source_location": "L923",
       "weight": 1.0
     },
     {
@@ -8241,7 +8241,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L925",
+      "source_location": "L930",
       "weight": 1.0
     },
     {
@@ -8253,7 +8253,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L945",
+      "source_location": "L950",
       "weight": 1.0
     },
     {
@@ -8265,7 +8265,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L976",
+      "source_location": "L981",
       "weight": 1.0
     },
     {
@@ -8277,7 +8277,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L991",
+      "source_location": "L996",
       "weight": 1.0
     },
     {
@@ -10149,7 +10149,7 @@
       "confidence_score": 1.0,
       "context": "export",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1065",
+      "source_location": "L1070",
       "weight": 1.0
     },
     {
@@ -17865,7 +17865,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L162",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -17876,7 +17876,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L170",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -17887,7 +17887,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L178",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -22081,7 +22081,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1059",
+      "source_location": "L1064",
       "weight": 1.0
     },
     {
@@ -22189,7 +22189,7 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L173",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -22225,7 +22225,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L165",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -22237,7 +22237,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L165",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -22285,10 +22285,10 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L163",
+      "source_location": "L164",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "33096dfdcb8b15ed1835369186b1a36b14773782"
+  "built_at_commit": "49896e4cec256c05db82d56ee5321047b141180f"
 }

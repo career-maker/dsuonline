@@ -546,7 +546,12 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     }
   });
   const nodes: ReactNode[] = [];
+  // programme pages: "Eligibility Criteria / Eligibility Overview" belongs to the admission process, so it is shown inside that section
+  const eligIdx = programLinks ? secs.findIndex((x) => /^eligibility/i.test(x.title) && x.subs.some((y) => /overview/i.test(y.title))) : -1;
+  const eligSub = eligIdx >= 0 ? secs[eligIdx].subs.find((y) => /overview/i.test(y.title)) : undefined;
+  const eligibility = eligSub ? { title: eligSub.title, text: eligSub.blocks.filter(isP).map((b) => b.x).join(' ') } : undefined;
   for (let n = 0; n < secs.length; n++) {
+    if (n === eligIdx && eligibility?.text) continue;
     const sec = secs[n];
     const all = flat(sec);
     const title = sec.title;
@@ -846,7 +851,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       nodes.push(
         programLinks ? (
           <Sec key={key} tone="white">
-            <AdmissionSteps eyebrow="Admissions" title={title} steps={steps} image={stepImg ? imgOf(stepImg) : undefined} />
+            <AdmissionSteps eyebrow="Admissions" title={title} eligibility={eligibility?.text ? eligibility : undefined} steps={steps} image={stepImg ? imgOf(stepImg) : undefined} />
           </Sec>
         ) : (
           <Sec key={key} tone={nextTone()} title={title}>

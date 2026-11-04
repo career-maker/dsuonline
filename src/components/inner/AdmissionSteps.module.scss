@@ -206,3 +206,51 @@
     color: #fff;
   }
 }
+
+
+// eligibility belongs to the admission process: a highlighted strip above the steps
+.elig {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: clamp(24px, #{u(40)}, 40px);
+  padding: clamp(18px, #{u(26)}, 26px) clamp(18px, #{u(30)}, 30px);
+  border: 1px solid #dfe6f2;
+  border-left: 4px solid $gold;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(2 9 102 / 6%);
+
+  h3 {
+    font-size: fs(24, 19px);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: $ink;
+  }
+
+  p {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $body;
+  }
+
+  @include down($bp-sm) {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.eligIco {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: $blue;
+  color: #fff;
+}
