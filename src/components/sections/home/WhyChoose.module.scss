@@ -69,12 +69,16 @@
     color: $ink;
   }
 
+  // phones: stay 2 x 2 (icon over label) instead of four stacked rows
   @include down($bp-sm) {
-    grid-template-columns: 1fr;
-
-    &::before,
-    &::after {
-      display: none;
+    li {
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      min-height: 120px;
+      padding: 10px 6px;
+      font-size: 15px;
+      text-align: center;
     }
   }
 }
@@ -161,6 +165,15 @@
 
 .onBlue {
   opacity: 0;
+}
+
+.cimg img {
+  transition: filter 0.35s ease;
+}
+
+// icons are blue / black artwork: turn them white on the blue hover card
+.cert:hover .cimg > img:not(.onLight):not(.onBlue) {
+  filter: brightness(0) invert(1);
 }
 
 .cert:hover {

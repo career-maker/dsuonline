@@ -52,6 +52,8 @@ export function BlogSlider({ slides }: { slides: Slide[] }) {
     if (typeof window === 'undefined') return;
     if (/Lighthouse|PageSpeed|Headless|bot|PTST/i.test(navigator.userAgent)) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    // phones / tablets: no auto-advance (it used to jump back to the first card after the last one)
+    if (!window.matchMedia('(min-width: 1200px)').matches) return;
 
     const el = track.current;
     if (!el) return;

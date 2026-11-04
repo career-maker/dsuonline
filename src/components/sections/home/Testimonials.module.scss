@@ -516,7 +516,7 @@
   @include down($bp-lg) {
     display: flex;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     scrollbar-width: none;
     gap: 12px;
 

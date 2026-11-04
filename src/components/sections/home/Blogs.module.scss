@@ -69,7 +69,7 @@
   gap: clamp(12px, #{u(26)}, 26px);
   margin-top: clamp(24px, #{u(44)}, 44px);
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   scrollbar-width: none;
   overscroll-behavior-x: contain;
 

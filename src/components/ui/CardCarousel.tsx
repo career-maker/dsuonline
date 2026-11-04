@@ -104,17 +104,6 @@ export function CardCarousel({
 
       {total > 1 && (
         <div className={s.mobileControls}>
-          <div className={s.dots}>
-            {children.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                className={`${s.dot} ${activeIdx === i ? s.activeDot : ''}`}
-                onClick={() => scrollTo(i)}
-                aria-label={`Go to slide ${i + 1} of ${total}`}
-              />
-            ))}
-          </div>
           <div className={s.arrows}>
             <button
               type="button"

@@ -16,7 +16,7 @@
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
+    scroll-snap-type: x proximity !important;
     scrollbar-width: none !important;
     -webkit-overflow-scrolling: touch !important;
     overscroll-behavior-x: contain !important;

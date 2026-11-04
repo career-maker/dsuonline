@@ -103,7 +103,7 @@ export function ElectiveCarousel({ items }: { items: { name: string; href: strin
     measure();
     const ro = new ResizeObserver(measure);
     ro.observe(el);
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches || !window.matchMedia('(min-width: 1200px)').matches;
     const id = reduce ? 0 : window.setInterval(() => {
       if (!paused.current && el.scrollWidth > el.clientWidth + 4) step(1);
     }, AUTO_MS);

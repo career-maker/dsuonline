@@ -173,12 +173,16 @@
     color: $ink;
   }
 
+  // phones: stay 2 x 2 (icon over label) instead of four stacked rows
   @include down($bp-sm) {
-    grid-template-columns: 1fr;
-
-    &::before,
-    &::after {
-      display: none;
+    li {
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      min-height: 112px;
+      padding: 10px 6px;
+      font-size: 14px;
+      text-align: center;
     }
   }
 }

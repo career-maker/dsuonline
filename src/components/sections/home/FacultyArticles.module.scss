@@ -553,7 +553,7 @@
     align-items: flex-start;
     flex-wrap: nowrap;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
@@ -581,7 +581,7 @@
   @include down($bp-md) {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-top: 14px;
     margin-bottom: 24px;
     padding: 0 4px;

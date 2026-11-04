@@ -248,17 +248,6 @@ export function FacultyArticles() {
 
         {articlesCan && (
 <div className={s.controls}>
-          <div className={s.dots}>
-            {articles.map((a, i) => (
-              <button
-                key={a.key}
-                type="button"
-                className={`${s.dot} ${articleIdx === i ? s.activeDot : ''}`}
-                onClick={() => scrollTo(articlesTrackRef.current, i, setArticleIdx)}
-                aria-label={`Go to article ${i + 1} of ${articles.length}`}
-              />
-            ))}
-          </div>
           <div className={s.arrowBtns}>
             <button
               type="button"

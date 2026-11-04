@@ -774,7 +774,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: 12px 24px 52px;
   margin: -12px -24px -52px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   scroll-padding-inline: 24px;
   scrollbar-width: none;
 
