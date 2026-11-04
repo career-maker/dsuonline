@@ -1,5 +1,8 @@
 import { ElectiveGrid } from './ElectiveGrid';
 import { CareerFlip } from './CareerFlip';
+import { ElectiveCombinator } from './ElectiveCombinator';
+import { AdmissionSteps } from './AdmissionSteps';
+import { FeeTable } from './FeeTable';
 import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { loadAboutWhy, loadFaculty, localHref, type Block } from '@/lib/content';
@@ -252,6 +255,23 @@ function curriculum(sec: Section): ReactNode | null {
     elec.length ? { label: 'Electives', tabs: elec.map((t, i) => ({ id: `e${i}`, label: clean(t.rows[0]?.[2] ?? `Elective ${i + 1}`), panel: <DataTable rows={t.rows} caption={clean(t.rows[0]?.[2] ?? '')} /> })) } : null,
   ].filter((g): g is NonNullable<typeof g> => !!g);
   return <Tabs groups={groups} />;
+}
+
+/** names listed under the page's "Industries" heading (title / description pairs) */
+function pageIndustries(blocks: Block[]): string[] {
+  const i = blocks.findIndex((b) => b.t === 'h3' && /industr/i.test(b.x));
+  if (i < 0) return [];
+  const out: string[] = [];
+  let n = 0;
+  for (let j = i + 1; j < blocks.length; j++) {
+    const b = blocks[j];
+    if (b.t === 'h2' || b.t === 'h3') break;
+    if (b.t === 'p') {
+      if (n % 2 === 0) out.push(b.x);
+      n++;
+    }
+  }
+  return out;
 }
 
 function careers(sec: Section): ReactNode {
@@ -702,6 +722,11 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (programLinks && /elective/i.test(title) && sec.subs.length > 0) {
       const progName = ({ mba: 'MBA', mca: 'MCA', bba: 'BBA', bca: 'BCA', bcom: 'B.Com' } as Record<string, string>)[slug.replace(/^online-/, '')] ?? 'Online';
       nodes.push(
+        <Sec key={`${key}-pair`} tone="blue">
+          <ElectiveCombinator programName={progName} programCode={slug.replace(/^online-/, '')} electives={programLinks.map((x) => x.name)} sectors={pageIndustries(raw)} />
+        </Sec>,
+      );
+      nodes.push(
         <Sec key={key} tone={nextTone()}>
           <ElectiveGrid
             items={programLinks}
@@ -721,9 +746,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       nodes.push(
         <Sec key={key} tone={nextTone()} title={title}>
           <div className={s.tables}>
-            {tables.map((t, i) => (
-              <DataTable key={i} rows={t.rows} caption={title} />
-            ))}
+            {tables.map((t, i) => (programLinks ? <FeeTable key={i} rows={t.rows} /> : <DataTable key={i} rows={t.rows} caption={title} />))}
           </div>
           {note && <p className={s.note}>{note}</p>}
         </Sec>,
@@ -787,10 +810,18 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (stepSubs.length >= 3) {
       const rest = sec.subs.filter((x) => !stepSubs.includes(x));
       const steps = stepSubs.map((x) => ({ title: x.title.replace(/^step\s*\d+\s*[:.-]?\s*/i, ''), text: x.blocks.filter(isP).map((b) => b.x).join(' ') }));
+      const stepImg = all.find((b) => b.t === 'img');
+      const split = title.match(/^(admission process)\s+(.+)$/i) ?? title.match(/^(how to apply)\s*:\s*(.+)$/i);
       nodes.push(
-        <Sec key={key} tone={nextTone()} title={title}>
-          <Steps items={steps} />
-        </Sec>,
+        programLinks ? (
+          <Sec key={key} tone="white">
+            <AdmissionSteps eyebrow={split?.[1]} title={split ? split[2] : title} steps={steps} image={stepImg ? imgOf(stepImg) : undefined} />
+          </Sec>
+        ) : (
+          <Sec key={key} tone={nextTone()} title={title}>
+            <Steps items={steps} />
+          </Sec>
+        ),
       );
       for (const r of rest) {
         const rimg = r.blocks.find((b) => b.t === 'img');

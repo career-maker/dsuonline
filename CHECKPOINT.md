@@ -116,6 +116,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## NEXT STEPS (do top item first when the user says "continue")
+- Done 2026-11-04: program pages: ElectiveCombinator (Pair 1 Major + 1 Minor, placeholder copy; sectors from page industries) above electives; FeeTable redesign (Semester-wise / Year-wise blocks, Total column highlight, navy Total Fees bar); AdmissionSteps redesign (timeline, 7 steps, apply image top-right). Combinator copy/roles are dummy text to be replaced. NOT yet deployed.
 - Done 2026-11-04: program banner: 3 fact cards per row, navy layer nearly opaque (photo ~4% behind copy) and ends around mid-banner.
 - Done 2026-11-04: curriculum table now site theme (brand-blue band, site yellow, Roboto), centred tabs, no horizontal scroll in tables on phones, fee tables redesigned (brand header, highlighted total; replacement-char cells shown as dash).
 - Done 2026-11-04: program banner desktop/tablet: photo dissolves into navy via mask-image on .heroBg (same feel as phone); .heroPanel unused on desktop now.

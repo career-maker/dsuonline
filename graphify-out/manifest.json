@@ -132,9 +132,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1793799859.523008,
-    "seen": 1793800177.157481,
-    "ast_hash": "d561020db1528259b4497b384345265b",
+    "mtime": 1793812002.761905,
+    "seen": 1793812398.1140635,
+    "ast_hash": "4d22c95dd669a4a51e4c247631a329c8",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -480,9 +480,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1793811181.904357,
-    "seen": 1793811193.1861033,
-    "ast_hash": "487f437542b278862ba930764a26d5f5",
+    "mtime": 1793812387.1005988,
+    "seen": 1793812398.114182,
+    "ast_hash": "af8c530a5ef9f46b83e9832322bf2615",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -543,6 +543,24 @@
     "mtime": 1793794661.7767265,
     "seen": 1793795016.4398353,
     "ast_hash": "d914021252633f818d89698d78a20f43",
+    "semantic_hash": ""
+  },
+  "src/components/inner/AdmissionSteps.tsx": {
+    "mtime": 1793811715.5530012,
+    "seen": 1793812398.1140397,
+    "ast_hash": "d73198c6406baa438e5baa6a55865aa3",
+    "semantic_hash": ""
+  },
+  "src/components/inner/ElectiveCombinator.tsx": {
+    "mtime": 1793812095.2499492,
+    "seen": 1793812398.1140482,
+    "ast_hash": "ef9c20d235fd9f33c3ab87ebc5a46a10",
+    "semantic_hash": ""
+  },
+  "src/components/inner/FeeTable.tsx": {
+    "mtime": 1793811715.4255402,
+    "seen": 1793812398.1140542,
+    "ast_hash": "d0e0ae25205bf3d1cda7fe235ca48614",
     "semantic_hash": ""
   }
 }

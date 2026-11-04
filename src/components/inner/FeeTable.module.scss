@@ -1,0 +1,136 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.block {
+  min-width: 0;
+}
+
+.cap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 16px;
+  font-size: fs(28, 20px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: $ink;
+
+  i {
+    flex: 1;
+    height: 1px;
+    background: #cfd6e6;
+  }
+}
+
+.card {
+  overflow: hidden;
+  border: 1px solid #dfe5f1;
+  border-radius: 14px 14px 0 0;
+  background: #fff;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    font-size: clamp(14px, 1.1vw, 17px);
+  }
+
+  th {
+    padding: 15px 18px;
+    background: #eef1f8;
+    border-right: 1px solid #fff;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $ink;
+  }
+
+  th:first-child,
+  td:first-child {
+    text-align: left;
+  }
+
+  td {
+    padding: 14px 18px;
+    border-top: 1px solid #e8ecf4;
+    border-right: 1px solid #edf0f7;
+    text-align: center;
+    font-weight: 500;
+    color: $ink;
+  }
+
+  td:first-child {
+    font-weight: 700;
+  }
+
+  td:last-child,
+  th:last-child {
+    border-right: 0;
+  }
+
+  .totalHead {
+    background: $blue;
+    color: #fff;
+  }
+
+  .totalCell {
+    background: #fff6d3;
+    font-weight: 700;
+    color: $blue-dark;
+  }
+}
+
+// "Total Fees" bar
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border-radius: 0 0 14px 14px;
+  background: $blue;
+  color: #fff;
+
+  span {
+    font-size: fs(22, 17px);
+    font-weight: 600;
+  }
+
+  b {
+    font-size: fs(24, 18px);
+    font-weight: 700;
+    color: $yellow;
+    white-space: nowrap;
+  }
+}
+
+@include down($bp-sm) {
+  .card {
+    th,
+    td {
+      padding: 11px 5px;
+      font-size: 12.5px;
+    }
+
+    th {
+      font-size: 10px;
+      letter-spacing: 0.02em;
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 10px;
+    }
+
+    th:last-child,
+    td:last-child {
+      padding-right: 10px;
+    }
+  }
+
+  .bar {
+    padding: 14px 16px;
+  }
+}
