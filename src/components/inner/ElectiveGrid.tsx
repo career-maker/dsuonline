@@ -10,10 +10,7 @@ export function ElectiveGrid({ items, eyebrow, title, lead }: { items: Item[]; e
   return (
     <div className={s.elGridWrap}>
       <header className={s.elHead}>
-        <p className={s.elEyebrow}>
-          {eyebrow}
-          <i aria-hidden="true" />
-        </p>
+        <p className={s.elEyebrow}>{eyebrow}</p>
         <h2>{title}</h2>
         <p className={s.elLead}>{lead}</p>
       </header>

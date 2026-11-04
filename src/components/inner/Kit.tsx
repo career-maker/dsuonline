@@ -107,6 +107,7 @@ export function WhyProgram({ title, paras, items, photo }: { title: string; para
   return (
     <div className={s.whyP}>
       <div className={s.whyPText}>
+        <p className={s.eyebrow}>The Program</p>
         <h2>{title}</h2>
         {paras.map((p) => (
           <p key={p}>{p}</p>

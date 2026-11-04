@@ -22,13 +22,7 @@
   h2 {
     margin-top: 14px;
     @include h2;
-    font-size: fs(46, 26px);
     text-wrap: balance;
-
-    // wide screens: the whole title sits on one line beside the photo
-    @include up($bp-lg) {
-      white-space: nowrap;
-    }
   }
 
   @include down($bp-lg) {
@@ -37,21 +31,9 @@
   }
 }
 
+// same mini title as every other section
 .eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: $ink;
-
-  i {
-    width: 52px;
-    height: 2px;
-    background: $gold;
-  }
+  @include eyebrow;
 }
 
 // photo sits in the top-right corner with a curved lower-left edge

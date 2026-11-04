@@ -3181,11 +3181,15 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     @include h2;
   }
 
-  > p {
-    margin-top: 18px;
+  > p:not(.eyebrow) {
+    margin-top: clamp(16px, #{u(24)}, 24px);
     @include body-text;
     color: $ink;
     max-width: none;
+  }
+
+  h2 {
+    margin-top: clamp(6px, #{u(8)}, 8px);
   }
 
   h2 + p {
@@ -3348,21 +3352,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .elEyebrow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: $body;
-
-  i {
-    width: 48px;
-    height: 1px;
-    background: $body;
-    opacity: 0.6;
-  }
+  @include eyebrow;
 }
 
 .elLead {

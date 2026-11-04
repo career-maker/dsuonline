@@ -4,7 +4,7 @@ import { ElectiveCombinator } from './ElectiveCombinator';
 import { AdmissionSteps } from './AdmissionSteps';
 import { FeeTable } from './FeeTable';
 import Image from 'next/image';
-import type { ReactNode } from 'react';
+import { cloneElement, isValidElement, type ReactElement, type ReactNode } from 'react';
 import { loadAboutWhy, loadFaculty, localHref, type Block } from '@/lib/content';
 import { WhyTabs } from './WhyTabs';
 import { AboutBand, aboutPhotos } from '@/components/sections/home/About';
@@ -491,6 +491,32 @@ function swapPhotos(blocks: Block[], slug: string): Block[] {
   });
 }
 
+/** programme pages: every section gets a mini title like the home page sections */
+function eyebrowFor(title: string): string | undefined {
+  if (/learning system/i.test(title)) return 'Learning Experience';
+  if (/elective/i.test(title)) return 'Electives';
+  if (/real stories/i.test(title)) return 'Testimonials';
+  if (/fee/i.test(title)) return 'Fee Structure';
+  if (/career/i.test(title)) return 'Careers';
+  if (/curriculum/i.test(title)) return 'Curriculum';
+  if (/faculty/i.test(title)) return 'Faculty';
+  if (/admission|how to apply/i.test(title)) return 'Admissions';
+  if (/added value|certificate/i.test(title)) return 'Certification';
+  if (/eligib/i.test(title)) return 'Eligibility';
+  return undefined;
+}
+
+function withEyebrow(n: ReactNode): ReactNode {
+  if (isValidElement(n) && n.type === Sec) {
+    const props = n.props as { title?: string; eyebrow?: string };
+    if (props.title && !props.eyebrow) {
+      const e = eyebrowFor(props.title);
+      if (e) return cloneElement(n as ReactElement<{ eyebrow?: string }>, { eyebrow: e });
+    }
+  }
+  return n;
+}
+
 export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts = false }: Props) {
   const blocks = swapPhotos(cleanBlocks(raw), slug);
   if (slug === 'privacy-policy') return <LegalPage blocks={blocks} crumbs={crumbs} />;
@@ -736,7 +762,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         <Sec key={key} tone={nextTone()}>
           <ElectiveGrid
             items={programLinks}
-            eyebrow={`${progName} Program`}
+            eyebrow="Electives"
             title={title}
             lead={`Choose from industry-relevant electives to specialize your ${progName} and build the skills that align with your career goals.`}
           />
@@ -820,7 +846,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       nodes.push(
         programLinks ? (
           <Sec key={key} tone="white">
-            <AdmissionSteps title={title} steps={steps} image={stepImg ? imgOf(stepImg) : undefined} />
+            <AdmissionSteps eyebrow="Admissions" title={title} steps={steps} image={stepImg ? imgOf(stepImg) : undefined} />
           </Sec>
         ) : (
           <Sec key={key} tone={nextTone()} title={title}>
@@ -1030,7 +1056,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           <Body blocks={[...(longSub ? ([{ t: 'p', x: subtitle } as Block]) : []), ...introBlocks, ...heroImgs.slice(0, 1)]} />
         </Sec>
       ) : null}
-      {nodes}
+      {programLinks ? nodes.map(withEyebrow) : nodes}
       <CtaBand />
     </>
   );
