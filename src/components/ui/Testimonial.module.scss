@@ -217,6 +217,7 @@
 }
 
 .text,
+.cap,
 .controls {
   display: none;
 }
@@ -252,9 +253,34 @@
     display: none;
   }
 
+  // name / programme / quote sit under the photo, aligned with the card edge
+  .info {
+    display: none;
+  }
+
+  .cap {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 14px 0 0;
+    color: $ink;
+
+    b {
+      font-size: 18px;
+      line-height: 1.25;
+      font-weight: 600;
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 1.35;
+      color: $body;
+    }
+  }
+
   .text {
     display: block;
-    padding: px(14) px(4) 0;
+    padding: 8px 0 0;
     font-size: px(15);
     line-height: 1.6;
     color: $body;

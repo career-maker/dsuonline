@@ -16,7 +16,7 @@
 // so 1 design px = 1/1920 of the available width (scrollbar excluded via container units).
 @media (min-width: 1200px) {
   :root {
-    --u: calc(100cqw / 1920);
+    --u: calc(min(100cqw, 2200px) / 1920); // stops growing past 2200px so zoomed-out / ultra-wide screens keep the same proportions
     --k: var(--u);
     --fk: 0.5;
     --gut: calc(var(--u) * 95);

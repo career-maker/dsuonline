@@ -105,6 +105,10 @@ export function TestimonialCard({ t, big, sizes = '(max-width: 600px) 100vw, 430
             </button>
           ))}
       </div>
+      <div className={s.cap}>
+        <b>{t.name}</b>
+        {(t.course || t.company) && <span>{[t.course, t.company].filter(Boolean).join(' · ')}</span>}
+      </div>
       {t.quote && <p className={s.text}>{t.quote}</p>}
     </div>
   );
