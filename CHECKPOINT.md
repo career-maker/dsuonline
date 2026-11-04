@@ -116,6 +116,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## NEXT STEPS (do top item first when the user says "continue")
+- Done 2026-11-04: program banner panel edge is now a smooth gradient fade (no clip-path shapes).
 - Done 2026-11-04: curriculum redesigned in dark UI (night tone section, amber pill tabs, dark table card, mono code/header/total row); tabs are a swipeable single row <1200px; Tabs scroll selected into view. No content changed.
 - Done 2026-11-04: program banners redesigned (navy 90% panel with torn edge + photo right; phones/tablets <900px photo on top, 2-col dark tiles, buttons grid). Career Options/Career Path -> CareerFlip.tsx flip cards (industries on card backs, separate Industries section removed). NOTE: source content has no career->industry mapping, so every card back lists the same page industries.
 - Done 2026-11-04: testimonial cards <1200px: name/programme/quote under the photo (no overlay); desktop --u capped at 2200px (zoomed-out/ultra-wide keeps proportions, content centered).

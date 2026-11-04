@@ -758,11 +758,9 @@
     display: block;
     position: absolute;
     inset: 0 auto 0 0;
-    width: 64%;
-    background: rgb(1 6 63 / 90%);
-    // brushed, slightly torn right edge that fades into the photo
-    clip-path: polygon(0 0, 93% 0, 95% 4%, 92% 9%, 95.5% 15%, 91.5% 21%, 95% 28%, 92% 34%, 96% 41%, 91.5% 48%, 95% 55%, 92% 62%, 95.5% 69%, 91.5% 76%, 95% 83%, 92% 90%, 95% 96%, 93% 100%, 0 100%);
-    mask-image: linear-gradient(90deg, #000 0, #000 90%, transparent 100%);
+    width: 70%;
+    // solid 90% navy behind the copy, easing out smoothly into the photo
+    background: linear-gradient(90deg, rgb(1 6 63 / 90%) 0%, rgb(1 6 63 / 90%) 68%, rgb(1 6 63 / 55%) 84%, rgb(1 6 63 / 0%) 100%);
   }
 
   .heroCopy {
@@ -812,7 +810,7 @@
     min-height: clamp(520px, 70svh, 780px);
 
     .heroPanel {
-      width: 66%;
+      width: 74%;
     }
 
     .heroCopy {
