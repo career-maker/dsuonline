@@ -686,3 +686,23 @@
     transform: translateX(4px);
   }
 }
+
+
+// blog list: same card as the home blog slider
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, #{u(26)}, 26px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include down($bp-lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}

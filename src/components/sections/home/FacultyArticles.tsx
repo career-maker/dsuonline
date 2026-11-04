@@ -129,16 +129,13 @@ export function FacultyArticles() {
         )}
         <ul className={s.faculty} ref={facultyTrackRef} aria-label="Faculty">
           {[0, 1].map((copy) =>
-            faculty.map((f, i) => {
+            faculty.map((f) => {
               const clone = copy === 1;
               return (
                 <li key={`${copy}-${f.key}`} aria-hidden={clone || undefined} inert={clone || undefined}>
                   <div className={s.fphoto}>
-                    {f.src ? (
-                      <Image src={f.src} alt={clone ? '' : f.name} fill sizes="(max-width: 900px) 50vw, 330px" className={s.fimg} />
-                    ) : (
-                      <FramedImage src={`/images/faculty/${f.key}.webp`} alt={clone ? '' : f.name} frame={[95 + i * 350, 6962, 330, 243]} box={f.box} sizes="(max-width: 900px) 50vw, 330px" />
-                    )}
+                    {/* whole portrait, top-aligned so heads are never cut (the old design crop trimmed some) */}
+                    <Image src={f.src ?? `/images/faculty/${f.key}.webp`} alt={clone ? '' : f.name} fill sizes="(max-width: 900px) 50vw, 330px" className={s.fimg} />
                   </div>
                   <div className={s.fbody}>
                     <h3>{f.name}</h3>
@@ -243,7 +240,7 @@ export function FacultyArticles() {
                   {a.excerpt[0]} <br className={s.br} />
                   {a.excerpt[1]}
                 </p>
-                <Link href="/resources/blogs" className={s.read}>
+                <Link href={`/resources/blogs/${a.post}`} className={s.read}>
                   Read Article &gt;
                 </Link>
                 <div className={s.author}>

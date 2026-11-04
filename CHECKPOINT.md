@@ -116,6 +116,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## NEXT STEPS (do top item first when the user says "continue")
+- Done 2026-11-04: home faculty photos top-aligned (no cropped heads); blog list uses the home blog card (toSlide + Blogs.module card styles); Faculty Insights "Read Article" links to real posts (data/home.ts post slugs: closest topical matches); BBA/BCA/B.Com/MCA eligibility overview is the 5th Program Learning System card (not in Admission). NOT deployed yet.
 - Done 2026-11-04: BBA/BCA/B.Com/MCA: "Eligibility Criteria / Eligibility Overview" section is merged into the Admission Process section (strip above the steps). MBA unchanged (its Eligibility Overview is a card in Program Learning System). NOT deployed yet.
 - Done 2026-11-04: program pages typography aligned with home: every section h2 = home size (admission override removed); every section has a home-style mini title (eyebrowFor/withEyebrow in Page.tsx; Why/Electives/Admission/Pair use the shared eyebrow mixin). NOT deployed yet.
 - Done 2026-11-04: admission title single line (nbsp keeps "A Step-by-Step" together); faculty cards redesigned (fcCard: photo + role pill, gold-bar name, credentials w/ cap icon, hover lift). NOT deployed yet.

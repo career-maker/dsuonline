@@ -180,6 +180,7 @@ export const faculty: Faculty[] = [
 export const articles = [
   {
     key: 'ai',
+    post: 'how-ai-is-personalising-online-degrees-in-2025-smarter-tailored-learning',
     date: '12 sep 2025',
     title: ['The Role of Generative A1 in', 'Higher Education'],
     excerpt: ['Exploring how generative A1 can transform teaching, learning', 'and research in universities.'],
@@ -189,6 +190,7 @@ export const articles = [
   },
   {
     key: 'data',
+    post: 'online-bba-degree-in-business-analytics',
     date: '15 sep 2025',
     title: ['Gaining Deeper Insights into Business', 'Operations Through Data Analysis'],
     excerpt: ['A closer look at how data and analytics help students', 'understand business trends, make informed ...'],
@@ -198,6 +200,7 @@ export const articles = [
   },
   {
     key: 'global',
+    post: 'online-degree-courses-that-open-doors-to-study-and-work-abroad',
     date: '20 sep 2025',
     title: ['Building Careers in a Global', 'Economy'],
     excerpt: ['Exploring how global markets, international opportunities, and', 'cross-cultural'],

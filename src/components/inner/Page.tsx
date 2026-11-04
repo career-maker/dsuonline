@@ -293,7 +293,7 @@ function faculty(sec: Section): ReactNode {
   return <FacultyGrid items={items} />;
 }
 
-function learningCards(sec: Section): ReactNode {
+function learningCards(sec: Section, extra?: { title: string; text: string }): ReactNode {
   const items = sec.subs.map((x) => {
     const ps = x.blocks.filter(isP).map((b) => b.x);
     const list = x.blocks.filter((b): b is Extract<Block, { t: 'ul' }> => b.t === 'ul').flatMap((b) => b.items);
@@ -302,6 +302,8 @@ function learningCards(sec: Section): ReactNode {
     const rest = ps.filter((_, i) => i !== subIdx);
     return { title: x.title, sub, list: list.length ? list : undefined, text: list.length ? undefined : rest.join(' ') };
   });
+  // programme pages: "Eligibility Overview" is part of the learning system when the page lists it as its own section
+  if (extra?.text && !items.some((i) => /eligib/i.test(i.title))) items.push({ title: extra.title, sub: undefined, list: undefined, text: extra.text });
   return (
     <LearningCards
       items={items}
@@ -836,7 +838,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (/learning system/i.test(title) && sec.subs.length >= 2) {
       nodes.push(
         <Sec key={key} tone={nextTone()} title={title}>
-          {learningCards(sec)}
+          {learningCards(sec, eligibility)}
         </Sec>,
       );
       continue;
@@ -851,7 +853,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       nodes.push(
         programLinks ? (
           <Sec key={key} tone="white">
-            <AdmissionSteps eyebrow="Admissions" title={title} eligibility={eligibility?.text ? eligibility : undefined} steps={steps} image={stepImg ? imgOf(stepImg) : undefined} />
+            <AdmissionSteps eyebrow="Admissions" title={title} steps={steps} image={stepImg ? imgOf(stepImg) : undefined} />
           </Sec>
         ) : (
           <Sec key={key} tone={nextTone()} title={title}>
