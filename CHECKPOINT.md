@@ -116,6 +116,8 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## NEXT STEPS (do top item first when the user says "continue")
+- Done 2026-11-04: program pages (online-mba/mca/bba/bca/bcom) "Why DSU Online X?" redesigned (WhyProgram in Kit.tsx): gold-underlined title, 10 icon tiles (5 cols, 2 on phones), framed photo right. Page scrollbar hidden <1200px.
+- Done 2026-11-04: program pages (online-mba/mca/bba/bca/bcom) "Why DSU Online X?" redesigned (WhyProgram in Kit.tsx): gold-underlined title, 10 icon tiles (5 cols, 2 on phones), framed photo right. Page scrollbar hidden <1200px.
 - Done 2026-11-04: no horizontal page scroll on phones: html overflow-x:clip + ElectiveCarousel bleed 16px on phones (was 24px => 8px overflow). Checked all non-blog pages 360/390.
 - Done 2026-11-04: elective/specialization pages: hero badge logos removed (crumbs>=3); hero fact cards solid light tiles on phones.
 - Done 2026-11-04: 2x2 feature grids on phones (About + WhyChoose); cert-card icons turn white on hover; dots removed from faculty-articles + CardCarousel; autoplay of BlogSlider/ElectiveCarousel desktop-only (fixes jump back to card 1 on phones); scroll-snap mandatory -> proximity on carousels.

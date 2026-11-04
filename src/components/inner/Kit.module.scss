@@ -3028,3 +3028,169 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     animation: none;
   }
 }
+
+// ---------- programme "Why DSU Online X?" redesign: copy + icon tiles left, framed photo right
+.whyP {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 0.8fr);
+  gap: clamp(28px, #{u(64)}, 64px);
+  align-items: stretch;
+
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.whyPText {
+  min-width: 0;
+
+  h2 {
+    @include h2;
+    position: relative;
+    padding-bottom: 18px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 4px;
+      border-radius: 2px;
+      background: $gold;
+    }
+  }
+
+  > p {
+    margin-top: 18px;
+    @include body-text;
+    color: $ink;
+    max-width: none;
+  }
+
+  h2 + p {
+    margin-top: 22px;
+  }
+}
+
+.whyTiles {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: clamp(24px, #{u(40)}, 40px) 0 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 22px 10px;
+    border-right: 1px solid $line;
+    border-bottom: 1px solid $line;
+    text-align: center;
+    min-width: 0;
+  }
+
+  // 5 columns: the last tile of each row has no right rule
+  li:nth-child(5n) {
+    border-right: 0;
+  }
+
+  @include down($bp-sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    li {
+      padding: 16px 8px;
+      gap: 10px;
+    }
+
+    li:nth-child(5n) {
+      border-right: 1px solid $line;
+    }
+
+    li:nth-child(2n) {
+      border-right: 0;
+    }
+  }
+}
+
+.whyIco {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f1efec;
+  color: $ink;
+
+  @include down($bp-sm) {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+.whyLbl {
+  font-size: fs(18, 15px);
+  line-height: 1.25;
+  font-weight: 500;
+  color: $ink;
+  text-wrap: balance;
+}
+
+.whyPPhoto {
+  position: relative;
+  display: flex;
+  padding: 8px 0;
+
+  @include down($bp-lg) {
+    order: -1;
+  }
+}
+
+.whyPFrame {
+  position: relative;
+  flex: 1;
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 56px 14px 56px 14px;
+  background: $bg-sky;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
+  }
+
+  @include down($bp-lg) {
+    flex: none;
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    border-radius: 36px 12px 36px 12px;
+  }
+
+  @include down($bp-sm) {
+    border-radius: 28px 10px 28px 10px;
+  }
+}
+
+.whyCurve {
+  position: absolute;
+  top: -8px;
+  right: 0;
+  bottom: -8px;
+  width: 38%;
+  height: calc(100% + 16px);
+  pointer-events: none;
+
+  @include down($bp-lg) {
+    display: none;
+  }
+}

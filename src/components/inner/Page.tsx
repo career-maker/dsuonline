@@ -34,6 +34,7 @@ import {
   RoleGrid,
   IndustryGrid,
   StoryCards,
+  WhyProgram,
   Sec,
   Split,
   Steps,
@@ -935,16 +936,12 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const benefits = sec.blocks.filter(isP).filter((b) => b.x.length <= 90).map((b) => b.x);
       nodes.push(
         <Sec key={key} tone={nextTone()}>
-          <div className={s.whyProg}>
-            <div className={s.whyText}>
-              <Head title={title} />
-              <Prose paras={paras} />
-              <Checklist items={benefits} cols={2} />
-            </div>
-            <div className={s.whyPhoto}>
-              <Pic img={{ src: `/images/inner/prog-${code}.webp`, alt: `Learner pursuing ${title.replace(/^why\s+|\?$/gi, '')}`, w: pw, h: ph }} sizes="(max-width: 900px) 100vw, 480px" className={s.cover} />
-            </div>
-          </div>
+          <WhyProgram
+            title={title}
+            paras={paras}
+            items={benefits}
+            photo={<Pic img={{ src: `/images/inner/prog-${code}.webp`, alt: `Learner pursuing ${title.replace(/^why\s+|\?$/gi, '')}`, w: pw, h: ph }} sizes="(max-width: 900px) 100vw, 480px" className={s.cover} />}
+          />
         </Sec>,
       );
       continue;

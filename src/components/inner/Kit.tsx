@@ -81,6 +81,55 @@ export function Checklist({ items, cols = 2 }: { items: string[]; cols?: 1 | 2 |
   );
 }
 
+// ---------- programme "Why DSU Online X?": copy + icon tiles left, photo right
+const wi = { fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round', strokeLinejoin: 'round' } as const;
+const whyIcon = (label: string): ReactNode => {
+  const l = label.toLowerCase();
+  const svg = (d: ReactNode) => (
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true" {...wi}>
+      {d}
+    </svg>
+  );
+  if (/ugc/.test(l)) return svg(<><path d="M2 12 16 5l14 7-14 7z" /><path d="M8 15v6c0 2 4 4 8 4s8-2 8-4v-6" /><path d="M30 12v8" /></>);
+  if (/100%|online learning/.test(l)) return svg(<><rect x="6" y="7" width="20" height="14" rx="1.5" /><path d="M3 25h26" /></>);
+  if (/flexible/.test(l)) return svg(<><path d="m16 4 12 6-12 6-12-6z" /><path d="m4 16 12 6 12-6" /><path d="m4 22 12 6 12-6" /></>);
+  if (/curriculum|industry/.test(l)) return svg(<><path d="M7 26V16M13 26V10M19 26V14M25 26V6" /></>);
+  if (/par with|campus/.test(l)) return svg(<><circle cx="16" cy="12" r="7" /><path d="m12 18-2 10 6-4 6 4-2-10" /></>);
+  if (/elective/.test(l)) return svg(<><path d="m10 5 5 3v6l-5 3-5-3V8z" /><path d="m22 5 5 3v6l-5 3-5-3V8z" /><path d="m16 16 5 3v6l-5 3-5-3v-6z" /></>);
+  if (/examination|exam/.test(l)) return svg(<><path d="M8 4h12l5 5v19H8z" /><path d="M20 4v5h5M12 14h8M12 19h4" /><path d="m17 24 2 2 4-4" /></>);
+  if (/live/.test(l)) return svg(<><circle cx="16" cy="16" r="2.5" /><path d="M10.5 10.5a7.8 7.8 0 0 0 0 11M21.5 10.5a7.8 7.8 0 0 1 0 11M6.5 6.5a13.5 13.5 0 0 0 0 19M25.5 6.5a13.5 13.5 0 0 1 0 19" /></>);
+  if (/record/.test(l)) return svg(<><rect x="4" y="6" width="24" height="20" rx="4" /><path d="m13 12 8 4-8 4z" /></>);
+  return svg(<><circle cx="16" cy="11" r="4" /><path d="M6 27c0-5 4-8 10-8s10 3 10 8" /><circle cx="6.5" cy="13" r="2.5" /><circle cx="25.5" cy="13" r="2.5" /></>);
+};
+
+export function WhyProgram({ title, paras, items, photo }: { title: string; paras: string[]; items: string[]; photo: ReactNode }) {
+  return (
+    <div className={s.whyP}>
+      <div className={s.whyPText}>
+        <h2>{title}</h2>
+        {paras.map((p) => (
+          <p key={p}>{p}</p>
+        ))}
+        <ul className={s.whyTiles}>
+          {items.map((it) => (
+            <li key={it}>
+              <span className={s.whyIco}>{whyIcon(it)}</span>
+              <span className={s.whyLbl}>{it}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className={s.whyPPhoto}>
+        <svg className={s.whyCurve} viewBox="0 0 300 560" aria-hidden="true" fill="none" stroke="#e2b500" strokeWidth="1.5" preserveAspectRatio="none">
+          <path d="M60 40C120 10 220 0 300 0" />
+          <path d="M300 540C230 548 150 560 90 520" />
+        </svg>
+        <div className={s.whyPFrame}>{photo}</div>
+      </div>
+    </div>
+  );
+}
+
 export function CardGrid({ items, cols = 3, numbered, tint }: { items: { title: string; text?: string; list?: string[] }[]; cols?: 2 | 3 | 4; numbered?: boolean; tint?: boolean }) {
   return (
     <ul className={`${s.cards} ${s[`g${cols}`]} ${tint ? s.tint : ''}`}>
