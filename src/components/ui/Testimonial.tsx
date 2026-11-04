@@ -40,8 +40,9 @@ export function TestimonialCard({ t, big, sizes = '(max-width: 600px) 100vw, 430
         </span>
         {reveal && (
           <span className={s.reveal} aria-hidden="true">
+            <span className={s.rName}>{t.name}</span>
+            {(t.course || t.company) && <span className={s.rSub}>{[t.course, t.company].filter(Boolean).join(' · ')}</span>}
             <span className={s.q}>{t.quote}</span>
-            <span className={`${s.who} ${s.whoB}`}>{who}</span>
           </span>
         )}
         {t.video &&

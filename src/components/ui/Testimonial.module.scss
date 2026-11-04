@@ -111,48 +111,65 @@
   background: #000;
 }
 
-// hover / focus: the quote replaces the name block (text-only cards)
+// hover / focus: same look as the home Programs cards - dark translucent panel over the photo, name on top
 .reveal {
   position: absolute;
   inset: 0;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  gap: px(10);
-  padding: clamp(12px, #{u(18)}, 18px);
-  background: rgb(1 6 63 / 97%);
+  overflow: hidden;
+  padding: clamp(14px, #{u(26)}, 26px) clamp(14px, #{u(28)}, 28px);
+  background: rgb(28 31 34 / 84%);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s;
+  transition: opacity 0.4s ease, visibility 0s 0.4s;
+}
+
+.rName {
+  font-size: fs(26, 18px);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.rSub {
+  margin-top: px(6);
+  font-size: fs(16, 13px);
+  line-height: 1.25;
+  font-weight: 400;
 }
 
 .q {
-  flex: 0 1 auto;
+  flex: 1;
   min-height: 0;
+  margin-top: px(12);
+  padding-top: px(12);
   overflow-y: auto;
+  border-top: 1px solid rgb(255 255 255 / 14%);
   font-size: fs(14, 12px);
   line-height: 1.5;
-  scrollbar-width: thin;
-}
+  scrollbar-width: none;
+  // last line fades out so it is clear there is more to scroll
+  mask-image: linear-gradient(180deg, #000 calc(100% - 30px), transparent 100%);
 
-.big .q {
-  font-size: fs(20, 14px);
-  line-height: 1.55;
-}
-
-.whoB {
-  flex: none;
-  padding-top: px(8);
-  border-top: 1px solid rgb(255 255 255 / 25%);
-
-  span {
+  &::-webkit-scrollbar {
     display: none;
   }
 }
 
-.big .whoB span {
-  display: block;
+.big {
+  .rName {
+    font-size: fs(34, 22px);
+  }
+
+  .rSub {
+    font-size: fs(20, 15px);
+  }
+
+  .q {
+    font-size: fs(20, 14px);
+    line-height: 1.55;
+  }
 }
 
 .info {
@@ -167,12 +184,14 @@
   .media:hover .reveal {
     opacity: 1;
     visibility: visible;
+    transition-delay: 0s;
   }
 }
 
 .media:focus-visible .reveal {
   opacity: 1;
   visibility: visible;
+  transition-delay: 0s;
 }
 
 .text,
