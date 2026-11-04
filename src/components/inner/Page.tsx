@@ -21,6 +21,7 @@ import { Faq } from '@/components/sections/home/Faq';
 import { FaqList, LeaderGrid } from './Interactive';
 import {
   CardGrid,
+  LearningCards,
   Checklist,
   ContactRow,
   Head,
@@ -296,17 +297,22 @@ function learningCards(sec: Section): ReactNode {
   const items = sec.subs.map((x) => {
     const ps = x.blocks.filter(isP).map((b) => b.x);
     const list = x.blocks.filter((b): b is Extract<Block, { t: 'ul' }> => b.t === 'ul').flatMap((b) => b.items);
-    return { title: x.title, text: list.length ? ps[0] : ps.join(' '), list: list.length ? list : undefined };
+    const subIdx = ps.findIndex((p) => /^\(.*\)$/.test(p.trim()));
+    const sub = subIdx >= 0 ? ps[subIdx].trim().replace(/^\(|\)$/g, '') : undefined;
+    const rest = ps.filter((_, i) => i !== subIdx);
+    return { title: x.title, sub, list: list.length ? list : undefined, text: list.length ? undefined : rest.join(' ') };
   });
   return (
-    <>
-      {sec.blocks.length > 0 && (
-        <div style={{ marginBottom: 'clamp(22px, 3vw, 40px)' }}>
-          <Body blocks={sec.blocks} />
-        </div>
-      )}
-      <CardGrid items={items} cols={items.length === 4 ? 4 : items.length === 2 ? 2 : 3} tint />
-    </>
+    <LearningCards
+      items={items}
+      intro={
+        sec.blocks.length > 0 ? (
+          <div style={{ marginBottom: 'clamp(22px, 3vw, 40px)' }}>
+            <Body blocks={sec.blocks} />
+          </div>
+        ) : undefined
+      }
+    />
   );
 }
 

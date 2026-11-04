@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { TestimonialGrid } from '@/components/ui/Testimonial';
+import { FacultyScroller } from './FacultyScroller';
 import { QuoteSlider } from './QuoteSlider';
 import { localHref } from '@/lib/content';
 import { slugify } from './clean';
@@ -286,7 +287,54 @@ export function FacultyGrid({ items }: { items: { name: string; creds?: string; 
       </div>
     </li>
   ));
-  return <ul className={s.facAll}>{cards}</ul>;
+  return <FacultyScroller>{cards}</FacultyScroller>;
+}
+
+// ---------- "Program Learning System": icon cards (title, subtitle, bullets or paragraph)
+const lsi = { fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round', strokeLinejoin: 'round' } as const;
+const lsIcon = (title: string): ReactNode => {
+  const l = title.toLowerCase();
+  const svg = (d: ReactNode) => (
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" {...lsi}>
+      {d}
+    </svg>
+  );
+  if (/tutorial/.test(l)) return svg(<><rect x="4" y="6" width="24" height="20" rx="4" /><path d="m13 12 8 4-8 4z" /></>);
+  if (/content/.test(l)) return svg(<><path d="m16 4 12 6-12 6-12-6z" /><path d="m4 16 12 6 12-6" /><path d="m4 22 12 6 12-6" /></>);
+  if (/web|resource/.test(l)) return svg(<><circle cx="16" cy="11" r="4" /><path d="M6 27c0-5 4-8 10-8s10 3 10 8" /><circle cx="6.5" cy="13" r="2.5" /><circle cx="25.5" cy="13" r="2.5" /></>);
+  if (/assess/.test(l)) return svg(<><rect x="7" y="6" width="18" height="22" rx="2.5" /><path d="M12 4h8v4h-8zM12 15l2 2 4-4M12 22l2 2 4-4" /></>);
+  if (/eligib/.test(l)) return svg(<><path d="M2 12 16 5l14 7-14 7z" /><path d="M8 15v6c0 2 4 4 8 4s8-2 8-4v-6" /></>);
+  return svg(<><path d="M5 5h16a3 3 0 0 1 3 3v19H8a3 3 0 0 1-3-3z" /><path d="M24 10h3v17" /></>);
+};
+
+export function LearningCards({ items, intro }: { items: { title: string; sub?: string; list?: string[]; text?: string }[]; intro?: ReactNode }) {
+  return (
+    <>
+      {intro}
+      <ul className={`${s.lsGrid} ${s[`ls${Math.min(items.length, 6)}`] ?? ''}`}>
+        {items.map((c) => (
+          <li key={c.title} className={s.lsCard}>
+            <div className={s.lsHead}>
+              <span className={s.lsIco}>{lsIcon(c.title)}</span>
+              <div>
+                <h3>{c.title}</h3>
+                {c.sub && <p>{c.sub}</p>}
+              </div>
+            </div>
+            {c.list ? (
+              <ul className={s.lsList}>
+                {c.list.map((x) => (
+                  <li key={x}>{x}</li>
+                ))}
+              </ul>
+            ) : (
+              <p className={s.lsText}>{c.text}</p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
 }
 
 export function LinkGrid({ items }: { items: { name: string; href: string; hint?: string }[] }) {

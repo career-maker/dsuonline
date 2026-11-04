@@ -3616,3 +3616,194 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     }
   }
 }
+
+
+// ---------- faculty carousel controls (phones)
+.facCtl {
+  display: none;
+}
+
+@include down($bp-sm) {
+  .facCtl {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+
+    button {
+      @include round-arrow(40px);
+      display: grid;
+      place-items: center;
+      border: 1.5px solid #1a1a1a;
+      background: #fff;
+      color: #1a1a1a;
+      cursor: pointer;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .facAll {
+    display: flex;
+    align-items: flex-start;
+    overflow-x: auto;
+    gap: 12px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    margin-inline: calc(-1 * var(--gut));
+    padding-inline: var(--gut);
+    scroll-padding-inline: var(--gut);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > li {
+      flex: 0 0 78%;
+      scroll-snap-align: start;
+    }
+  }
+}
+
+// ---------- Program Learning System cards
+.lsGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(14px, #{u(24)}, 24px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    grid-column: span 2;
+  }
+
+  // 4 cards: 2 x 2
+  &.ls4 > li {
+    grid-column: span 3;
+  }
+
+  // 5 cards: three on top, two wider below
+  &.ls5 > li:nth-child(n + 4) {
+    grid-column: span 3;
+  }
+
+  // 2 cards
+  &.ls2 > li {
+    grid-column: span 3;
+  }
+
+  @include down($bp-lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    > li,
+    &.ls4 > li,
+    &.ls5 > li:nth-child(n + 4),
+    &.ls2 > li {
+      grid-column: span 1;
+    }
+
+    // an odd last card takes the full row
+    > li:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lsCard {
+  padding: clamp(20px, #{u(30)}, 30px);
+  border: 1px solid #e3e8f2;
+  border-radius: 18px;
+  background: linear-gradient(160deg, #fff 0%, #f5f7fd 100%);
+  box-shadow: 0 8px 26px rgb(2 9 102 / 6%);
+  transition: translate 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s ease, border-color 0.3s;
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    &:hover {
+      translate: 0 -5px;
+      border-color: rgb(2 9 102 / 22%);
+      box-shadow: 0 18px 40px rgb(2 9 102 / 13%);
+    }
+
+    &:hover .lsIco {
+      background: $blue;
+      color: #fff;
+    }
+  }
+}
+
+.lsHead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #e6eaf4;
+
+  h3 {
+    font-size: fs(26, 20px);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: $ink;
+  }
+
+  p {
+    margin-top: 4px;
+    font-size: 15px;
+    line-height: 1.35;
+    color: $body;
+  }
+}
+
+.lsIco {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: #e9edfa;
+  color: $blue;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.lsList {
+  display: grid;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: $body;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $gold;
+      box-shadow: 0 0 0 3px rgb(226 181 0 / 22%);
+    }
+  }
+}
+
+.lsText {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: $body;
+}

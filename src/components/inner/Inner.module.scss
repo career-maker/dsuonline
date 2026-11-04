@@ -750,13 +750,16 @@
     object-position: 78% 28%;
   }
 
+  // extra feathering layers: a wide navy veil easing out + a soft glow centred on the seam, so no edge is visible
   .heroShade {
-    display: none;
+    background:
+      radial-gradient(ellipse 34% 90% at 52% 50%, rgb(1 6 63 / 34%) 0%, rgb(1 6 63 / 18%) 45%, rgb(1 6 63 / 0%) 100%),
+      linear-gradient(90deg, rgb(1 6 63 / 70%) 0%, rgb(1 6 63 / 66%) 30%, rgb(1 6 63 / 52%) 42%, rgb(1 6 63 / 34%) 52%, rgb(1 6 63 / 18%) 62%, rgb(1 6 63 / 7%) 72%, rgb(1 6 63 / 0%) 84%);
   }
 
   // the photo itself dissolves into the navy (same soft blend as the phone layout): ~10% of it shows behind the copy
   .heroBg {
-    mask-image: linear-gradient(90deg, rgb(0 0 0 / 4%) 0%, rgb(0 0 0 / 4%) 44%, rgb(0 0 0 / 38%) 49%, rgb(0 0 0 / 80%) 54%, #000 59%);
+    mask-image: linear-gradient(90deg, rgb(0 0 0 / 4%) 0%, rgb(0 0 0 / 4%) 36%, rgb(0 0 0 / 6.7%) 40.0%, rgb(0 0 0 / 14.0%) 44.0%, rgb(0 0 0 / 24.7%) 48.0%, rgb(0 0 0 / 37.8%) 52.0%, rgb(0 0 0 / 52.0%) 56.0%, rgb(0 0 0 / 66.2%) 60.0%, rgb(0 0 0 / 79.3%) 64.0%, rgb(0 0 0 / 90.0%) 68.0%, rgb(0 0 0 / 97.3%) 72.0%, rgb(0 0 0 / 100.0%) 76.0%);
   }
 
   .heroCopy {
@@ -806,7 +809,7 @@
     min-height: clamp(520px, 70svh, 780px);
 
     .heroBg {
-      mask-image: linear-gradient(90deg, rgb(0 0 0 / 4%) 0%, rgb(0 0 0 / 4%) 55%, rgb(0 0 0 / 40%) 61%, rgb(0 0 0 / 80%) 66%, #000 72%);
+      mask-image: linear-gradient(90deg, rgb(0 0 0 / 4%) 0%, rgb(0 0 0 / 4%) 48%, rgb(0 0 0 / 6.7%) 51.8%, rgb(0 0 0 / 14.0%) 55.6%, rgb(0 0 0 / 24.7%) 59.4%, rgb(0 0 0 / 37.8%) 63.2%, rgb(0 0 0 / 52.0%) 67.0%, rgb(0 0 0 / 66.2%) 70.8%, rgb(0 0 0 / 79.3%) 74.6%, rgb(0 0 0 / 90.0%) 78.4%, rgb(0 0 0 / 97.3%) 82.2%, rgb(0 0 0 / 100.0%) 86.0%);
     }
 
     .heroCopy {
@@ -830,7 +833,8 @@
       object-position: 72% 6%;
     }
 
-    .heroPanel {
+    .heroPanel,
+    .heroShade {
       display: none;
     }
 
