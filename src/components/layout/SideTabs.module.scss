@@ -127,7 +127,8 @@ $w: clamp(40px, #{u(54)}, 54px);
   }
 }
 
-.callTxt {
+.callTxt,
+.callSvg {
   display: none;
 }
 
@@ -226,10 +227,15 @@ $w: clamp(40px, #{u(54)}, 54px);
     font-size: 15px;
     font-weight: 500;
 
-    img {
-      width: 28px;
-      height: 28px;
+    .callImg {
+      display: none;
     }
+  }
+
+  .callSvg {
+    display: block;
+    width: 20px;
+    height: 20px;
   }
 
   .callTxt {

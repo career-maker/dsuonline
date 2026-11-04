@@ -5,7 +5,7 @@
   "3": "scrape.py",
   "4": "EnquiryModal.tsx",
   "5": "package.json",
-  "6": "BlogSlider.tsx",
+  "6": "icons.tsx",
   "7": "compilerOptions",
   "8": "app/page.tsx",
   "9": "DSU Online — CHECKPOINT (read this first in any new session)",
@@ -13,7 +13,12 @@
   "11": "react",
   "12": "README.md",
   "13": "AGENTS.md",
+  "14": "Footer.tsx",
   "15": "CLAUDE.md",
   "16": "not-found.tsx",
-  "17": "empty.js"
+  "17": "empty.js",
+  "18": "site.ts",
+  "19": "ProgramsBand.tsx",
+  "20": "EnquiryProvider.tsx",
+  "21": "server.js"
 }

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { site } from '@/data/site';
+import { PhoneIcon } from '@/components/ui/icons';
 import { useEnquiry } from './EnquiryProvider';
 import s from './SideTabs.module.scss';
 
@@ -16,7 +17,8 @@ export function SideTabs() {
         <span>Apply Now</span>
       </a>
       <a href={`tel:${site.phone}`} className={`${s.ico} ${s.call}`} aria-label="Call us">
-        <Image src="/icons/side-call.png" alt="" width={50} height={50} />
+        <Image src="/icons/side-call.png" alt="" width={50} height={50} className={s.callImg} />
+        <PhoneIcon className={s.callSvg} aria-hidden="true" />
         <span className={s.callTxt}>Call us</span>
       </a>
     </aside>

@@ -280,6 +280,19 @@
       "source_location": "L15"
     },
     {
+      "id": "src_components_sections_home_blogslider_slide",
+      "label": "Slide",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "slide",
+      "source_file": "src/components/sections/home/BlogSlider.tsx",
+      "source_location": "L10"
+    },
+    {
       "id": "src_components_ui_cardcarousel_props",
       "label": "Props",
       "_callable": true,
@@ -291,19 +304,6 @@
       "norm_label": "props",
       "source_file": "src/components/ui/CardCarousel.tsx",
       "source_location": "L7"
-    },
-    {
-      "id": "src_components_ui_icons_p",
-      "label": "P",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "p",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L3"
     },
     {
       "id": "src_data_testimonials_b",
@@ -332,39 +332,13 @@
       "source_location": "L3"
     },
     {
-      "id": "src_components_layout_header_hit",
-      "label": "Hit",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "hit",
-      "source_file": "src/components/layout/Header.tsx",
-      "source_location": "L12"
-    },
-    {
-      "id": "src_components_sections_home_programsband_rect",
-      "label": "Rect",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "rect",
-      "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L14"
-    },
-    {
       "id": "src_data_programs_program",
       "label": "Program",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
+      "community": 14,
+      "community_name": "Footer.tsx",
       "file_type": "code",
       "norm_label": "program",
       "source_file": "src/data/programs.ts",
@@ -376,8 +350,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
+      "community": 14,
+      "community_name": "Footer.tsx",
       "file_type": "code",
       "norm_label": "specialization",
       "source_file": "src/data/programs.ts",
@@ -389,12 +363,51 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
+      "community": 18,
+      "community_name": "site.ts",
       "file_type": "code",
       "norm_label": "navlink",
       "source_file": "src/data/site.ts",
       "source_location": "L23"
+    },
+    {
+      "id": "src_components_sections_home_programsband_rect",
+      "label": "Rect",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "ProgramsBand.tsx",
+      "file_type": "code",
+      "norm_label": "rect",
+      "source_file": "src/components/sections/home/ProgramsBand.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_components_ui_arrowlink_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "ProgramsBand.tsx",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/components/ui/ArrowLink.tsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_components_ui_arrowlink_variant",
+      "label": "Variant",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "ProgramsBand.tsx",
+      "file_type": "code",
+      "norm_label": "variant",
+      "source_file": "src/components/ui/ArrowLink.tsx",
+      "source_location": "L6"
     },
     {
       "id": "src_components_inner_contactform_phase",
@@ -449,32 +462,6 @@
       "source_location": "L14"
     },
     {
-      "id": "src_components_ui_arrowlink_props",
-      "label": "Props",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "EnquiryModal.tsx",
-      "file_type": "code",
-      "norm_label": "props",
-      "source_file": "src/components/ui/ArrowLink.tsx",
-      "source_location": "L8"
-    },
-    {
-      "id": "src_components_ui_arrowlink_variant",
-      "label": "Variant",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "EnquiryModal.tsx",
-      "file_type": "code",
-      "norm_label": "variant",
-      "source_file": "src/components/ui/ArrowLink.tsx",
-      "source_location": "L6"
-    },
-    {
       "id": "src_data_countries_country",
       "label": "Country",
       "_callable": true,
@@ -527,17 +514,30 @@
       "source_location": "L7"
     },
     {
-      "id": "src_components_sections_home_blogslider_slide",
-      "label": "Slide",
+      "id": "src_components_layout_header_hit",
+      "label": "Hit",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "BlogSlider.tsx",
+      "community_name": "icons.tsx",
       "file_type": "code",
-      "norm_label": "slide",
-      "source_file": "src/components/sections/home/BlogSlider.tsx",
-      "source_location": "L10"
+      "norm_label": "hit",
+      "source_file": "src/components/layout/Header.tsx",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_components_ui_icons_p",
+      "label": "P",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "icons.tsx",
+      "file_type": "code",
+      "norm_label": "p",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L3"
     },
     {
       "id": "src_components_ui_framedimage_props",
@@ -1793,6 +1793,66 @@
       "source_location": "L9"
     },
     {
+      "id": "src_components_sections_home_blogs_blogs",
+      "label": "Blogs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "blogs()",
+      "source_file": "src/components/sections/home/Blogs.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_components_sections_home_blogs_ord",
+      "label": "ord()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "ord()",
+      "source_file": "src/components/sections/home/Blogs.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_components_sections_home_blogslider_arrow",
+      "label": "Arrow()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "arrow()",
+      "source_file": "src/components/sections/home/BlogSlider.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_components_sections_home_blogslider_blogslider",
+      "label": "BlogSlider()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "blogslider()",
+      "source_file": "src/components/sections/home/BlogSlider.tsx",
+      "source_location": "L34"
+    },
+    {
+      "id": "src_components_sections_home_blogslider_toisoblogdate",
+      "label": "toIsoBlogDate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "toisoblogdate()",
+      "source_file": "src/components/sections/home/BlogSlider.tsx",
+      "source_location": "L22"
+    },
+    {
       "id": "src_components_sections_home_testimonials_testimonials",
       "label": "Testimonials()",
       "_callable": true,
@@ -1839,66 +1899,6 @@
       "norm_label": "chevronright()",
       "source_file": "src/components/ui/icons.tsx",
       "source_location": "L6"
-    },
-    {
-      "id": "src_components_ui_icons_homeicon",
-      "label": "HomeIcon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "homeicon()",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L27"
-    },
-    {
-      "id": "src_components_ui_icons_megaphoneicon",
-      "label": "MegaphoneIcon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "megaphoneicon()",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L65"
-    },
-    {
-      "id": "src_components_ui_icons_phoneicon",
-      "label": "PhoneIcon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "phoneicon()",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_components_ui_icons_searchicon",
-      "label": "SearchIcon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "searchicon()",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_components_ui_icons_socialicon",
-      "label": "SocialIcon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "socialicon()",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L83"
     },
     {
       "id": "src_components_ui_testimonial_carouselcontrols",
@@ -1973,6 +1973,102 @@
       "source_location": "L12"
     },
     {
+      "id": "src_components_layout_brochureform_brochureform",
+      "label": "BrochureForm()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "file_type": "code",
+      "norm_label": "brochureform()",
+      "source_file": "src/components/layout/BrochureForm.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_components_layout_footer_footer",
+      "label": "Footer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "file_type": "code",
+      "norm_label": "footer()",
+      "source_file": "src/components/layout/Footer.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_components_layout_footergroup_footergroup",
+      "label": "FooterGroup()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "file_type": "code",
+      "norm_label": "footergroup()",
+      "source_file": "src/components/layout/FooterGroup.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_components_layout_footergroup_subscribe",
+      "label": "subscribe()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "file_type": "code",
+      "norm_label": "subscribe()",
+      "source_file": "src/components/layout/FooterGroup.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_components_ui_icons_chevrondown",
+      "label": "ChevronDown()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "file_type": "code",
+      "norm_label": "chevrondown()",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_components_ui_icons_downloadicon",
+      "label": "DownloadIcon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "file_type": "code",
+      "norm_label": "downloadicon()",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L45"
+    },
+    {
+      "id": "src_data_programs_s",
+      "label": "s()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "file_type": "code",
+      "norm_label": "s()",
+      "source_file": "src/data/programs.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_data_programs_specializationhref",
+      "label": "specializationHref()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "file_type": "code",
+      "norm_label": "specializationhref()",
+      "source_file": "src/data/programs.ts",
+      "source_location": "L117"
+    },
+    {
       "id": "src_app_error_errorpage",
       "label": "ErrorPage()",
       "_callable": true,
@@ -1995,6 +2091,18 @@
       "norm_label": "notfound()",
       "source_file": "src/app/not-found.tsx",
       "source_location": "L4"
+    },
+    {
+      "id": "src_components_ui_icons_dotsicon",
+      "label": "DotsIcon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "ProgramsBand.tsx",
+      "file_type": "code",
+      "norm_label": "dotsicon()",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L73"
     },
     {
       "id": "src_app_layout_rootlayout",
@@ -2021,18 +2129,6 @@
       "source_location": "L3"
     },
     {
-      "id": "src_components_layout_brochureform_brochureform",
-      "label": "BrochureForm()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "brochureform()",
-      "source_file": "src/components/layout/BrochureForm.tsx",
-      "source_location": "L9"
-    },
-    {
       "id": "src_components_layout_enquiryprovider_enquiryprovider",
       "label": "EnquiryProvider()",
       "_callable": true,
@@ -2043,18 +2139,6 @@
       "norm_label": "enquiryprovider()",
       "source_file": "src/components/layout/EnquiryProvider.tsx",
       "source_location": "L17"
-    },
-    {
-      "id": "src_components_layout_enquiryprovider_useenquiry",
-      "label": "useEnquiry()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "useenquiry()",
-      "source_file": "src/components/layout/EnquiryProvider.tsx",
-      "source_location": "L8"
     },
     {
       "id": "src_components_layout_factsdrawer_factsdrawer",
@@ -2069,54 +2153,6 @@
       "source_location": "L21"
     },
     {
-      "id": "src_components_layout_footer_footer",
-      "label": "Footer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "footer()",
-      "source_file": "src/components/layout/Footer.tsx",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_components_layout_footergroup_footergroup",
-      "label": "FooterGroup()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "footergroup()",
-      "source_file": "src/components/layout/FooterGroup.tsx",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_components_layout_footergroup_subscribe",
-      "label": "subscribe()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "subscribe()",
-      "source_file": "src/components/layout/FooterGroup.tsx",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_components_layout_header_header",
-      "label": "Header()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "header()",
-      "source_file": "src/components/layout/Header.tsx",
-      "source_location": "L14"
-    },
-    {
       "id": "src_components_layout_preloader_preloader",
       "label": "Preloader()",
       "_callable": true,
@@ -2127,18 +2163,6 @@
       "norm_label": "preloader()",
       "source_file": "src/components/layout/Preloader.tsx",
       "source_location": "L15"
-    },
-    {
-      "id": "src_components_layout_sidetabs_sidetabs",
-      "label": "SideTabs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "sidetabs()",
-      "source_file": "src/components/layout/SideTabs.tsx",
-      "source_location": "L8"
     },
     {
       "id": "src_components_layout_smoothscroll_smoothscroll",
@@ -2165,88 +2189,40 @@
       "source_location": "L8"
     },
     {
-      "id": "src_components_ui_icons_chevrondown",
-      "label": "ChevronDown()",
+      "id": "src_components_layout_enquiryprovider_useenquiry",
+      "label": "useEnquiry()",
       "_callable": true,
       "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
+      "community": 20,
+      "community_name": "EnquiryProvider.tsx",
       "file_type": "code",
-      "norm_label": "chevrondown()",
+      "norm_label": "useenquiry()",
+      "source_file": "src/components/layout/EnquiryProvider.tsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_components_layout_sidetabs_sidetabs",
+      "label": "SideTabs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "EnquiryProvider.tsx",
+      "file_type": "code",
+      "norm_label": "sidetabs()",
+      "source_file": "src/components/layout/SideTabs.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_components_ui_icons_phoneicon",
+      "label": "PhoneIcon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "EnquiryProvider.tsx",
+      "file_type": "code",
+      "norm_label": "phoneicon()",
       "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_components_ui_icons_closeicon",
-      "label": "CloseIcon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "closeicon()",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L50"
-    },
-    {
-      "id": "src_components_ui_icons_downloadicon",
-      "label": "DownloadIcon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "downloadicon()",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L45"
-    },
-    {
-      "id": "src_components_ui_icons_menuicon",
-      "label": "MenuIcon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "menuicon()",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L55"
-    },
-    {
-      "id": "src_components_ui_icons_usericon",
-      "label": "UserIcon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "usericon()",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L38"
-    },
-    {
-      "id": "src_data_programs_s",
-      "label": "s()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "s()",
-      "source_file": "src/data/programs.ts",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_data_programs_specializationhref",
-      "label": "specializationHref()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "specializationhref()",
-      "source_file": "src/data/programs.ts",
-      "source_location": "L117"
+      "source_location": "L33"
     },
     {
       "id": "gl_api",
@@ -2489,18 +2465,6 @@
       "source_location": "L18"
     },
     {
-      "id": "src_components_ui_icons_dotsicon",
-      "label": "DotsIcon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "EnquiryModal.tsx",
-      "file_type": "code",
-      "norm_label": "dotsicon()",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L73"
-    },
-    {
       "id": "src_lib_enquiry_normalisephone",
       "label": "normalisePhone()",
       "_callable": true,
@@ -2537,64 +2501,100 @@
       "source_location": "L17"
     },
     {
-      "id": "src_components_sections_home_blogs_blogs",
-      "label": "Blogs()",
+      "id": "src_components_layout_header_header",
+      "label": "Header()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "BlogSlider.tsx",
+      "community_name": "icons.tsx",
       "file_type": "code",
-      "norm_label": "blogs()",
-      "source_file": "src/components/sections/home/Blogs.tsx",
-      "source_location": "L9"
+      "norm_label": "header()",
+      "source_file": "src/components/layout/Header.tsx",
+      "source_location": "L14"
     },
     {
-      "id": "src_components_sections_home_blogs_ord",
-      "label": "ord()",
+      "id": "src_components_ui_icons_closeicon",
+      "label": "CloseIcon()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "BlogSlider.tsx",
+      "community_name": "icons.tsx",
       "file_type": "code",
-      "norm_label": "ord()",
-      "source_file": "src/components/sections/home/Blogs.tsx",
-      "source_location": "L6"
+      "norm_label": "closeicon()",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L50"
     },
     {
-      "id": "src_components_sections_home_blogslider_arrow",
-      "label": "Arrow()",
+      "id": "src_components_ui_icons_homeicon",
+      "label": "HomeIcon()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "BlogSlider.tsx",
+      "community_name": "icons.tsx",
       "file_type": "code",
-      "norm_label": "arrow()",
-      "source_file": "src/components/sections/home/BlogSlider.tsx",
-      "source_location": "L15"
+      "norm_label": "homeicon()",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L27"
     },
     {
-      "id": "src_components_sections_home_blogslider_blogslider",
-      "label": "BlogSlider()",
+      "id": "src_components_ui_icons_megaphoneicon",
+      "label": "MegaphoneIcon()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "BlogSlider.tsx",
+      "community_name": "icons.tsx",
       "file_type": "code",
-      "norm_label": "blogslider()",
-      "source_file": "src/components/sections/home/BlogSlider.tsx",
-      "source_location": "L34"
+      "norm_label": "megaphoneicon()",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L65"
     },
     {
-      "id": "src_components_sections_home_blogslider_toisoblogdate",
-      "label": "toIsoBlogDate()",
+      "id": "src_components_ui_icons_menuicon",
+      "label": "MenuIcon()",
       "_callable": true,
       "_origin": "ast",
       "community": 6,
-      "community_name": "BlogSlider.tsx",
+      "community_name": "icons.tsx",
       "file_type": "code",
-      "norm_label": "toisoblogdate()",
-      "source_file": "src/components/sections/home/BlogSlider.tsx",
-      "source_location": "L22"
+      "norm_label": "menuicon()",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L55"
+    },
+    {
+      "id": "src_components_ui_icons_searchicon",
+      "label": "SearchIcon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "icons.tsx",
+      "file_type": "code",
+      "norm_label": "searchicon()",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_components_ui_icons_socialicon",
+      "label": "SocialIcon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "icons.tsx",
+      "file_type": "code",
+      "norm_label": "socialicon()",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L83"
+    },
+    {
+      "id": "src_components_ui_icons_usericon",
+      "label": "UserIcon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "icons.tsx",
+      "file_type": "code",
+      "norm_label": "usericon()",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L38"
     },
     {
       "id": "src_app_page_homepage",
@@ -3228,6 +3228,39 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_sections_home_blogs",
+      "label": "Blogs.tsx",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "blogs.tsx",
+      "source_file": "src/components/sections/home/Blogs.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_sections_home_blogs_months",
+      "label": "MONTHS",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "months",
+      "source_file": "src/components/sections/home/Blogs.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_sections_home_blogslider",
+      "label": "BlogSlider.tsx",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "blogslider.tsx",
+      "source_file": "src/components/sections/home/BlogSlider.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_sections_home_testimonials",
       "label": "Testimonials.tsx",
       "_origin": "ast",
@@ -3270,28 +3303,6 @@
       "norm_label": "cardcarousel.tsx",
       "source_file": "src/components/ui/CardCarousel.tsx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_components_ui_icons",
-      "label": "icons.tsx",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "icons.tsx",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_ui_icons_base",
-      "label": "base",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "base",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L4"
     },
     {
       "id": "src_components_ui_testimonial",
@@ -3443,6 +3454,61 @@
       "source_location": "L3"
     },
     {
+      "id": "src_components_layout_brochureform",
+      "label": "BrochureForm.tsx",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "file_type": "code",
+      "norm_label": "brochureform.tsx",
+      "source_file": "src/components/layout/BrochureForm.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_footer",
+      "label": "Footer.tsx",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "file_type": "code",
+      "norm_label": "footer.tsx",
+      "source_file": "src/components/layout/Footer.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_footergroup",
+      "label": "FooterGroup.tsx",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "file_type": "code",
+      "norm_label": "footergroup.tsx",
+      "source_file": "src/components/layout/FooterGroup.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_data_programs",
+      "label": "programs.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "file_type": "code",
+      "norm_label": "programs.ts",
+      "source_file": "src/data/programs.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_data_programs_programs",
+      "label": "programs",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "file_type": "code",
+      "norm_label": "programs",
+      "source_file": "src/data/programs.ts",
+      "source_location": "L18"
+    },
+    {
       "id": "claude",
       "label": "CLAUDE.md",
       "_origin": "ast",
@@ -3500,59 +3566,158 @@
       "source_location": "L1"
     },
     {
-      "id": "server",
-      "label": "server.js",
+      "id": "src_components_sections_home_hero",
+      "label": "Hero.tsx",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
+      "community": 18,
+      "community_name": "site.ts",
       "file_type": "code",
-      "norm_label": "server.js",
-      "source_file": "server.js",
+      "norm_label": "hero.tsx",
+      "source_file": "src/components/sections/home/Hero.tsx",
       "source_location": "L1"
     },
     {
-      "id": "server_app",
-      "label": "app",
+      "id": "src_components_sections_home_hero_slidepos",
+      "label": "slidePos",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
+      "community": 18,
+      "community_name": "site.ts",
       "file_type": "code",
-      "norm_label": "app",
-      "source_file": "server.js",
-      "source_location": "L6"
+      "norm_label": "slidepos",
+      "source_file": "src/components/sections/home/Hero.tsx",
+      "source_location": "L11"
     },
     {
-      "id": "server_createserver",
-      "label": "{ createServer }",
+      "id": "src_components_sections_home_hero_slidesize",
+      "label": "slideSize",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
+      "community": 18,
+      "community_name": "site.ts",
       "file_type": "code",
-      "norm_label": "{ createserver }",
-      "source_file": "server.js",
-      "source_location": "L3"
+      "norm_label": "slidesize",
+      "source_file": "src/components/sections/home/Hero.tsx",
+      "source_location": "L12"
     },
     {
-      "id": "server_handle",
-      "label": "handle",
+      "id": "src_data_home_heroslides",
+      "label": "heroSlides",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
+      "community": 18,
+      "community_name": "site.ts",
       "file_type": "code",
-      "norm_label": "handle",
-      "source_file": "server.js",
-      "source_location": "L7"
+      "norm_label": "heroslides",
+      "source_file": "src/data/home.ts",
+      "source_location": "L5"
     },
     {
-      "id": "server_next",
-      "label": "next",
+      "id": "src_data_site",
+      "label": "site.ts",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
+      "community": 18,
+      "community_name": "site.ts",
       "file_type": "code",
-      "norm_label": "next",
-      "source_file": "server.js",
-      "source_location": "L4"
+      "norm_label": "site.ts",
+      "source_file": "src/data/site.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_data_site_announcements",
+      "label": "announcements",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "site.ts",
+      "file_type": "code",
+      "norm_label": "announcements",
+      "source_file": "src/data/site.ts",
+      "source_location": "L76"
+    },
+    {
+      "id": "src_data_site_footercolumns",
+      "label": "footerColumns",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "site.ts",
+      "file_type": "code",
+      "norm_label": "footercolumns",
+      "source_file": "src/data/site.ts",
+      "source_location": "L45"
+    },
+    {
+      "id": "src_data_site_mainnav",
+      "label": "mainNav",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "site.ts",
+      "file_type": "code",
+      "norm_label": "mainnav",
+      "source_file": "src/data/site.ts",
+      "source_location": "L25"
+    },
+    {
+      "id": "src_data_site_morenav",
+      "label": "moreNav",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "site.ts",
+      "file_type": "code",
+      "norm_label": "morenav",
+      "source_file": "src/data/site.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_data_site_site",
+      "label": "site",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "site.ts",
+      "file_type": "code",
+      "norm_label": "site",
+      "source_file": "src/data/site.ts",
+      "source_location": "L2"
+    },
+    {
+      "id": "src_components_sections_home_programsband",
+      "label": "ProgramsBand.tsx",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "ProgramsBand.tsx",
+      "file_type": "code",
+      "norm_label": "programsband.tsx",
+      "source_file": "src/components/sections/home/ProgramsBand.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_sections_home_programsband_order",
+      "label": "order",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "ProgramsBand.tsx",
+      "file_type": "code",
+      "norm_label": "order",
+      "source_file": "src/components/sections/home/ProgramsBand.tsx",
+      "source_location": "L25"
+    },
+    {
+      "id": "src_components_sections_home_programsband_photos",
+      "label": "photos",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "ProgramsBand.tsx",
+      "file_type": "code",
+      "norm_label": "photos",
+      "source_file": "src/components/sections/home/ProgramsBand.tsx",
+      "source_location": "L17"
+    },
+    {
+      "id": "src_components_ui_arrowlink",
+      "label": "ArrowLink.tsx",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "ProgramsBand.tsx",
+      "file_type": "code",
+      "norm_label": "arrowlink.tsx",
+      "source_file": "src/components/ui/ArrowLink.tsx",
+      "source_location": "L1"
     },
     {
       "id": "src_app_layout",
@@ -3599,116 +3764,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_inner_enquirebutton",
-      "label": "EnquireButton.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "enquirebutton.tsx",
-      "source_file": "src/components/inner/EnquireButton.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_brochureform",
-      "label": "BrochureForm.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "brochureform.tsx",
-      "source_file": "src/components/layout/BrochureForm.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_enquiryprovider",
-      "label": "EnquiryProvider.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "enquiryprovider.tsx",
-      "source_file": "src/components/layout/EnquiryProvider.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_enquiryprovider_enquirycontext",
-      "label": "EnquiryContext",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "enquirycontext",
-      "source_file": "src/components/layout/EnquiryProvider.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_components_layout_factsdrawer",
-      "label": "FactsDrawer.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "factsdrawer.tsx",
-      "source_file": "src/components/layout/FactsDrawer.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_factsdrawer_open_facts",
-      "label": "OPEN_FACTS",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "open_facts",
-      "source_file": "src/components/layout/FactsDrawer.tsx",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_components_layout_factsdrawer_rows",
-      "label": "rows",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "rows",
-      "source_file": "src/components/layout/FactsDrawer.tsx",
-      "source_location": "L8"
-    },
-    {
-      "id": "src_components_layout_footer",
-      "label": "Footer.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "footer.tsx",
-      "source_file": "src/components/layout/Footer.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_footergroup",
-      "label": "FooterGroup.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "footergroup.tsx",
-      "source_file": "src/components/layout/FooterGroup.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_header",
-      "label": "Header.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "header.tsx",
-      "source_file": "src/components/layout/Header.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_layout_preloader",
       "label": "Preloader.tsx",
       "_origin": "ast",
@@ -3717,17 +3772,6 @@
       "file_type": "code",
       "norm_label": "preloader.tsx",
       "source_file": "src/components/layout/Preloader.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_layout_sidetabs",
-      "label": "SideTabs.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "sidetabs.tsx",
-      "source_file": "src/components/layout/SideTabs.tsx",
       "source_location": "L1"
     },
     {
@@ -3753,171 +3797,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_sections_home_hero",
-      "label": "Hero.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "hero.tsx",
-      "source_file": "src/components/sections/home/Hero.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_sections_home_hero_slidepos",
-      "label": "slidePos",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "slidepos",
-      "source_file": "src/components/sections/home/Hero.tsx",
-      "source_location": "L11"
-    },
-    {
-      "id": "src_components_sections_home_hero_slidesize",
-      "label": "slideSize",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "slidesize",
-      "source_file": "src/components/sections/home/Hero.tsx",
-      "source_location": "L12"
-    },
-    {
-      "id": "src_components_sections_home_programsband",
-      "label": "ProgramsBand.tsx",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "programsband.tsx",
-      "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_sections_home_programsband_order",
-      "label": "order",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "order",
-      "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L25"
-    },
-    {
-      "id": "src_components_sections_home_programsband_photos",
-      "label": "photos",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "photos",
-      "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_data_home_heroslides",
-      "label": "heroSlides",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "heroslides",
-      "source_file": "src/data/home.ts",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_data_programs",
-      "label": "programs.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "programs.ts",
-      "source_file": "src/data/programs.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_data_programs_programs",
-      "label": "programs",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "programs",
-      "source_file": "src/data/programs.ts",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_data_site",
-      "label": "site.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "site.ts",
-      "source_file": "src/data/site.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_data_site_announcements",
-      "label": "announcements",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "announcements",
-      "source_file": "src/data/site.ts",
-      "source_location": "L76"
-    },
-    {
-      "id": "src_data_site_footercolumns",
-      "label": "footerColumns",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "footercolumns",
-      "source_file": "src/data/site.ts",
-      "source_location": "L45"
-    },
-    {
-      "id": "src_data_site_mainnav",
-      "label": "mainNav",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "mainnav",
-      "source_file": "src/data/site.ts",
-      "source_location": "L25"
-    },
-    {
-      "id": "src_data_site_morenav",
-      "label": "moreNav",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "morenav",
-      "source_file": "src/data/site.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_data_site_site",
-      "label": "site",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "next",
-      "file_type": "code",
-      "norm_label": "site",
-      "source_file": "src/data/site.ts",
-      "source_location": "L2"
-    },
-    {
       "id": "ref_next",
       "label": "next",
       "_origin": "ast",
@@ -3927,6 +3806,105 @@
       "norm_label": "next",
       "source_file": "package.json",
       "source_location": "L13"
+    },
+    {
+      "id": "src_components_inner_enquirebutton",
+      "label": "EnquireButton.tsx",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "EnquiryProvider.tsx",
+      "file_type": "code",
+      "norm_label": "enquirebutton.tsx",
+      "source_file": "src/components/inner/EnquireButton.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_enquiryprovider",
+      "label": "EnquiryProvider.tsx",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "EnquiryProvider.tsx",
+      "file_type": "code",
+      "norm_label": "enquiryprovider.tsx",
+      "source_file": "src/components/layout/EnquiryProvider.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_layout_enquiryprovider_enquirycontext",
+      "label": "EnquiryContext",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "EnquiryProvider.tsx",
+      "file_type": "code",
+      "norm_label": "enquirycontext",
+      "source_file": "src/components/layout/EnquiryProvider.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_components_layout_sidetabs",
+      "label": "SideTabs.tsx",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "EnquiryProvider.tsx",
+      "file_type": "code",
+      "norm_label": "sidetabs.tsx",
+      "source_file": "src/components/layout/SideTabs.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "server",
+      "label": "server.js",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "server.js",
+      "file_type": "code",
+      "norm_label": "server.js",
+      "source_file": "server.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_app",
+      "label": "app",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "server.js",
+      "file_type": "code",
+      "norm_label": "app",
+      "source_file": "server.js",
+      "source_location": "L6"
+    },
+    {
+      "id": "server_createserver",
+      "label": "{ createServer }",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "server.js",
+      "file_type": "code",
+      "norm_label": "{ createserver }",
+      "source_file": "server.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "server_handle",
+      "label": "handle",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "server.js",
+      "file_type": "code",
+      "norm_label": "handle",
+      "source_file": "server.js",
+      "source_location": "L7"
+    },
+    {
+      "id": "server_next",
+      "label": "next",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "server.js",
+      "file_type": "code",
+      "norm_label": "next",
+      "source_file": "server.js",
+      "source_location": "L4"
     },
     {
       "id": "deploy",
@@ -4170,17 +4148,6 @@
       "norm_label": "empty",
       "source_file": "src/components/layout/EnquiryModal.tsx",
       "source_location": "L15"
-    },
-    {
-      "id": "src_components_ui_arrowlink",
-      "label": "ArrowLink.tsx",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "EnquiryModal.tsx",
-      "file_type": "code",
-      "norm_label": "arrowlink.tsx",
-      "source_file": "src/components/ui/ArrowLink.tsx",
-      "source_location": "L1"
     },
     {
       "id": "src_data_countries",
@@ -4623,37 +4590,70 @@
       "source_location": "L24"
     },
     {
-      "id": "src_components_sections_home_blogs",
-      "label": "Blogs.tsx",
+      "id": "src_components_layout_factsdrawer",
+      "label": "FactsDrawer.tsx",
       "_origin": "ast",
       "community": 6,
-      "community_name": "BlogSlider.tsx",
+      "community_name": "icons.tsx",
       "file_type": "code",
-      "norm_label": "blogs.tsx",
-      "source_file": "src/components/sections/home/Blogs.tsx",
+      "norm_label": "factsdrawer.tsx",
+      "source_file": "src/components/layout/FactsDrawer.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_sections_home_blogs_months",
-      "label": "MONTHS",
+      "id": "src_components_layout_factsdrawer_open_facts",
+      "label": "OPEN_FACTS",
       "_origin": "ast",
       "community": 6,
-      "community_name": "BlogSlider.tsx",
+      "community_name": "icons.tsx",
       "file_type": "code",
-      "norm_label": "months",
-      "source_file": "src/components/sections/home/Blogs.tsx",
-      "source_location": "L5"
+      "norm_label": "open_facts",
+      "source_file": "src/components/layout/FactsDrawer.tsx",
+      "source_location": "L18"
     },
     {
-      "id": "src_components_sections_home_blogslider",
-      "label": "BlogSlider.tsx",
+      "id": "src_components_layout_factsdrawer_rows",
+      "label": "rows",
       "_origin": "ast",
       "community": 6,
-      "community_name": "BlogSlider.tsx",
+      "community_name": "icons.tsx",
       "file_type": "code",
-      "norm_label": "blogslider.tsx",
-      "source_file": "src/components/sections/home/BlogSlider.tsx",
+      "norm_label": "rows",
+      "source_file": "src/components/layout/FactsDrawer.tsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_components_layout_header",
+      "label": "Header.tsx",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "icons.tsx",
+      "file_type": "code",
+      "norm_label": "header.tsx",
+      "source_file": "src/components/layout/Header.tsx",
       "source_location": "L1"
+    },
+    {
+      "id": "src_components_ui_icons",
+      "label": "icons.tsx",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "icons.tsx",
+      "file_type": "code",
+      "norm_label": "icons.tsx",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_ui_icons_base",
+      "label": "base",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "icons.tsx",
+      "file_type": "code",
+      "norm_label": "base",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L4"
     },
     {
       "id": "tsconfig",
@@ -5261,7 +5261,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L147"
+      "source_location": "L148"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -5345,7 +5345,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L131"
+      "source_location": "L132"
     },
     {
       "id": "checkpoint_update_2026_10_28",
@@ -5357,7 +5357,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L139"
+      "source_location": "L140"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -5449,6 +5449,17 @@
       "type": "external"
     },
     {
+      "id": "src_components_sections_home_blogs_module",
+      "label": "src_components_sections_home_blogs_module",
+      "community": 11,
+      "community_name": "react",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_components_sections_home_blogs_module",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "src_components_sections_home_testimonials_module",
       "label": "src_components_sections_home_testimonials_module",
       "community": 11,
@@ -5482,6 +5493,17 @@
       "type": "external"
     },
     {
+      "id": "src_components_layout_footer_module",
+      "label": "src_components_layout_footer_module",
+      "community": 14,
+      "community_name": "Footer.tsx",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_components_layout_footer_module",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "src_app_status_module",
       "label": "src_app_status_module",
       "community": 16,
@@ -5493,13 +5515,35 @@
       "type": "external"
     },
     {
-      "id": "ref_node_http",
-      "label": "ref_node_http",
-      "community": 2,
-      "community_name": "next",
+      "id": "src_components_sections_home_hero_module",
+      "label": "src_components_sections_home_hero_module",
+      "community": 18,
+      "community_name": "site.ts",
       "external": true,
       "file_type": "concept",
-      "norm_label": "ref_node_http",
+      "norm_label": "src_components_sections_home_hero_module",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "src_components_sections_home_programsband_module",
+      "label": "src_components_sections_home_programsband_module",
+      "community": 19,
+      "community_name": "ProgramsBand.tsx",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_components_sections_home_programsband_module",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "src_components_ui_arrowlink_module",
+      "label": "src_components_ui_arrowlink_module",
+      "community": 19,
+      "community_name": "ProgramsBand.tsx",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_components_ui_arrowlink_module",
       "source_file": "",
       "type": "external"
     },
@@ -5515,39 +5559,6 @@
       "type": "external"
     },
     {
-      "id": "src_components_layout_factsdrawer_module",
-      "label": "src_components_layout_factsdrawer_module",
-      "community": 2,
-      "community_name": "next",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_components_layout_factsdrawer_module",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "src_components_layout_footer_module",
-      "label": "src_components_layout_footer_module",
-      "community": 2,
-      "community_name": "next",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_components_layout_footer_module",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "src_components_layout_header_module",
-      "label": "src_components_layout_header_module",
-      "community": 2,
-      "community_name": "next",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_components_layout_header_module",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "src_components_layout_preloader_module",
       "label": "src_components_layout_preloader_module",
       "community": 2,
@@ -5555,17 +5566,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_components_layout_preloader_module",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "src_components_layout_sidetabs_module",
-      "label": "src_components_layout_sidetabs_module",
-      "community": 2,
-      "community_name": "next",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_components_layout_sidetabs_module",
       "source_file": "",
       "type": "external"
     },
@@ -5581,24 +5581,24 @@
       "type": "external"
     },
     {
-      "id": "src_components_sections_home_hero_module",
-      "label": "src_components_sections_home_hero_module",
-      "community": 2,
-      "community_name": "next",
+      "id": "src_components_layout_sidetabs_module",
+      "label": "src_components_layout_sidetabs_module",
+      "community": 20,
+      "community_name": "EnquiryProvider.tsx",
       "external": true,
       "file_type": "concept",
-      "norm_label": "src_components_sections_home_hero_module",
+      "norm_label": "src_components_layout_sidetabs_module",
       "source_file": "",
       "type": "external"
     },
     {
-      "id": "src_components_sections_home_programsband_module",
-      "label": "src_components_sections_home_programsband_module",
-      "community": 2,
-      "community_name": "next",
+      "id": "ref_node_http",
+      "label": "ref_node_http",
+      "community": 21,
+      "community_name": "server.js",
       "external": true,
       "file_type": "concept",
-      "norm_label": "src_components_sections_home_programsband_module",
+      "norm_label": "ref_node_http",
       "source_file": "",
       "type": "external"
     },
@@ -5779,24 +5779,24 @@
       "type": "external"
     },
     {
-      "id": "src_components_ui_arrowlink_module",
-      "label": "src_components_ui_arrowlink_module",
-      "community": 4,
-      "community_name": "EnquiryModal.tsx",
+      "id": "src_components_layout_factsdrawer_module",
+      "label": "src_components_layout_factsdrawer_module",
+      "community": 6,
+      "community_name": "icons.tsx",
       "external": true,
       "file_type": "concept",
-      "norm_label": "src_components_ui_arrowlink_module",
+      "norm_label": "src_components_layout_factsdrawer_module",
       "source_file": "",
       "type": "external"
     },
     {
-      "id": "src_components_sections_home_blogs_module",
-      "label": "src_components_sections_home_blogs_module",
+      "id": "src_components_layout_header_module",
+      "label": "src_components_layout_header_module",
       "community": 6,
-      "community_name": "BlogSlider.tsx",
+      "community_name": "icons.tsx",
       "external": true,
       "file_type": "concept",
-      "norm_label": "src_components_sections_home_blogs_module",
+      "norm_label": "src_components_layout_header_module",
       "source_file": "",
       "type": "external"
     },
@@ -8636,7 +8636,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/layout/SideTabs.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_sidetabs_sidetabs",
+      "target": "src_components_ui_icons_phoneicon",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/layout/SideTabs.tsx",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -12313,7 +12325,7 @@
     },
     {
       "source": "src_components_layout_sidetabs",
-      "target": "src_components_layout_enquiryprovider_useenquiry",
+      "target": "src_components_ui_icons_phoneicon",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12321,6 +12333,18 @@
       "context": "import",
       "source_file": "src/components/layout/SideTabs.tsx",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_sidetabs",
+      "target": "src_components_layout_enquiryprovider_useenquiry",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/layout/SideTabs.tsx",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -15612,7 +15636,7 @@
     },
     {
       "source": "src_components_layout_sidetabs",
-      "target": "src_components_layout_enquiryprovider",
+      "target": "src_components_ui_icons",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -15624,7 +15648,7 @@
     },
     {
       "source": "src_components_layout_sidetabs",
-      "target": "src_components_layout_sidetabs_module",
+      "target": "src_components_layout_enquiryprovider",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -15632,6 +15656,18 @@
       "context": "import",
       "source_file": "src/components/layout/SideTabs.tsx",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_sidetabs",
+      "target": "src_components_layout_sidetabs_module",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/layout/SideTabs.tsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -17024,7 +17060,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L131",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -17035,7 +17071,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L139",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -17046,7 +17082,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L147",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -19180,7 +19216,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layout/SideTabs.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -21072,7 +21108,7 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L142",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -21108,7 +21144,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L134",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -21120,7 +21156,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L134",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -21168,10 +21204,10 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L132",
+      "source_location": "L133",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ac226dbb51b1a34bb7e47abde07ffa5aaea394d7"
+  "built_at_commit": "196dfe53802ed59fccbfd92dbf65a5564d554780"
 }
