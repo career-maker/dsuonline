@@ -1,6 +1,27 @@
 @use 'tokens' as *;
 @use 'mixins' as *;
 
+.logoStrip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, #{u(40)}, 40px);
+  padding: clamp(18px, #{u(28)}, 28px) var(--gut);
+  background: #fff;
+
+  img {
+    width: auto;
+    height: clamp(44px, #{u(80)}, 80px);
+    object-fit: contain;
+  }
+
+  i {
+    width: 1px;
+    height: clamp(32px, #{u(60)}, 60px);
+    background: rgb(0 0 0 / 15%);
+  }
+}
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -95,30 +116,6 @@
   align-self: end;
   padding-bottom: clamp(0px, #{u(25)}, 25px);
   letter-spacing: -0.0175em;
-}
-
-.badges {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: clamp(6px, #{u(15)}, 15px);
-
-  img {
-    width: auto;
-    height: clamp(52px, #{u(103)}, 103px);
-    object-fit: contain;
-  }
-
-  .naac {
-    height: clamp(50px, #{u(100)}, 100px);
-  }
-
-  i {
-    width: 1px;
-    height: clamp(40px, #{u(76)}, 76px);
-    background: rgb(255 255 255 / 30%);
-  }
 }
 
 .copy h1 {
@@ -485,22 +482,6 @@
     font-size: clamp(14px, 1.7vw, 19px);
   }
 
-  .badges {
-    gap: clamp(4px, 0.8vw, 10px);
-
-    img {
-      height: clamp(32px, 5vw, 58px);
-    }
-
-    .naac {
-      height: clamp(30px, 4.7vw, 55px);
-    }
-
-    i {
-      height: clamp(26px, 3.8vw, 44px);
-    }
-  }
-
   .ctas {
     gap: clamp(8px, 1.2vw, 14px);
     margin-top: clamp(14px, 2vw, 26px);
@@ -589,54 +570,10 @@
     text-overflow: ellipsis;
   }
 
-  .badges {
-    flex-wrap: nowrap;
-
-    img {
-      height: 44px;
-    }
-
-    .naac {
-      height: 42px;
-    }
-
-    i {
-      height: 34px;
-    }
-  }
 }
 
 // phones: photo on top, copy over its lower edge, CTAs full width, then the form and the programme chips
-// mobile-only logo strip under the hero (logos are hidden inside the hero on mobile)
-.logoStrip {
-  display: none;
-}
-
 @media (max-width: 759.98px) {
-  .badges {
-    display: none;
-  }
-
-  .logoStrip {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    padding: 18px var(--gut);
-    background: #fff;
-
-    img {
-      width: auto;
-      height: 44px;
-      object-fit: contain;
-    }
-
-    i {
-      width: 1px;
-      height: 32px;
-      background: rgb(0 0 0 / 15%);
-    }
-  }
 
   .hero {
     --img-h: min(124vw, 640px);
@@ -663,22 +600,6 @@
     gap: 18px;
     min-height: 0;
     padding: calc(var(--img-h) - 268px) var(--gut) 22px;
-  }
-
-  .badges {
-    gap: 6px;
-
-    img {
-      height: 38px;
-    }
-
-    .naac {
-      height: 36px;
-    }
-
-    i {
-      height: 28px;
-    }
   }
 
   .copy h1 {
@@ -846,33 +767,6 @@
     bottom: u(64);
     z-index: 2;
     padding: 0;
-  }
-
-  .badges {
-    flex-wrap: nowrap;
-    gap: u(7.2);
-    margin-left: u(-8);
-
-    img {
-      height: u(103.3);
-    }
-
-    .naac {
-      width: u(293.9);
-      height: u(99.9);
-    }
-
-    .ugc {
-      width: u(201.7);
-    }
-
-    .legacy {
-      width: u(115.5);
-    }
-
-    i {
-      height: u(76);
-    }
   }
 
   .copy h1 {

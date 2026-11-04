@@ -1,0 +1,9 @@
+﻿content/
+design/
+public/
+video-production/
+shots/
+docs/
+node_modules/
+.next/
+__pycache__/

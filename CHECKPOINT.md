@@ -144,3 +144,4 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo, admission banner+eligibility+documents, contact banner, programme 'Why' photos (prog-*), 16 elective photos (el-*). Home untouched. 360° Chat tab + electives not in zip keep old photos.
 
 - 2026-11-04: mobile (<760px) hero no longer shows NAAC/UGC/Legacy logos; shown as white strip under hero (`.logoStrip` in Hero.tsx). Server pm2 auto-start via systemd `pm2-dev-inter-f3` (done). Playwright py works; playwright-cli needs `--browser msedge`.
+- 2026-11-04: hero logos (NAAC/UGC/Legacy) now removed from the hero on ALL devices; white `.logoStrip` under hero everywhere. Graphify graph built (src+tools+root, AST only); keep it current with `graphify update .` after every round.
