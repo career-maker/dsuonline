@@ -101,12 +101,6 @@
     "ast_hash": "89743b66ff08918f6430621a0d7b92b2",
     "semantic_hash": ""
   },
-  "src/components/inner/ElectiveCarousel.tsx": {
-    "mtime": 1793784113.235381,
-    "seen": 1793784233.0128322,
-    "ast_hash": "890a9d5ba7454a002e86b1118825cff7",
-    "semantic_hash": ""
-  },
   "src/components/inner/EnquireButton.tsx": {
     "mtime": 1793015931.0356472,
     "seen": 1793773932.7654223,
@@ -138,9 +132,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1793785774.2826898,
-    "seen": 1793786113.258053,
-    "ast_hash": "39082702e0cea7f58dd89756326d5d02",
+    "mtime": 1793787706.3286457,
+    "seen": 1793787907.0452235,
+    "ast_hash": "8dbf43d14150ecf68722399553fec7f6",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -486,9 +480,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1793787295.530031,
-    "seen": 1793787306.093152,
-    "ast_hash": "56eef8b437feaaf28bd3aa3c01de189f",
+    "mtime": 1793787894.3393369,
+    "seen": 1793787907.0455477,
+    "ast_hash": "872228d1f1b4f4df00c31350cf94dc71",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -531,6 +525,18 @@
     "mtime": 1793778890.3156588,
     "seen": 1793779392.8030338,
     "ast_hash": "ee39ef569e3f2d981d677241f1ad026d",
+    "semantic_hash": ""
+  },
+  "src/components/inner/ElectiveGrid.tsx": {
+    "mtime": 1793787693.0409327,
+    "seen": 1793787907.045187,
+    "ast_hash": "af612500556f5b11f5dcd8f586481c0c",
+    "semantic_hash": ""
+  },
+  "src/components/inner/electiveIcons.tsx": {
+    "mtime": 1793787692.8952804,
+    "seen": 1793787907.0452683,
+    "ast_hash": "f47d7f7c4263ade13db37baa84da01f6",
     "semantic_hash": ""
   }
 }

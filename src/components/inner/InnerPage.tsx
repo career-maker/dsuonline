@@ -190,6 +190,11 @@ export function InnerHero({
             </ArrowLink>
           )}
           <EnquireButton />
+          {facts && facts.length > 0 && (
+            <ArrowLink href="/docs/dsu-online-brochure.pdf" download="DSU-Online-Brochure.pdf" variant="outline">
+              Download Brochure
+            </ArrowLink>
+          )}
         </div>
         </div>
       </div>
