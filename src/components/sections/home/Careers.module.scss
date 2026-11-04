@@ -110,6 +110,11 @@
   border: 1px solid rgb(0 0 0 / 10%);
   border-radius: px(6);
   background: #fff;
+
+  // tablet + phone: the card is as tall as its own copy (no empty band under short panels)
+  @include down($bp-lg) {
+    min-height: 0;
+  }
 }
 
 .ptitle {

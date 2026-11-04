@@ -118,6 +118,7 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   overflow: hidden;
   padding: clamp(14px, #{u(26)}, 26px) clamp(14px, #{u(28)}, 28px);
   background: rgb(28 31 34 / 84%);
@@ -127,7 +128,7 @@
 }
 
 .rName {
-  font-size: fs(26, 18px);
+  font-size: fs(22, 17px);
   line-height: 1.1;
   font-weight: 700;
 }
@@ -139,13 +140,20 @@
   font-weight: 400;
 }
 
-.q {
-  flex: 1;
-  min-height: 0;
+.rWho {
+  display: flex;
+  flex: none;
+  flex-direction: column;
   margin-top: px(12);
   padding-top: px(12);
-  overflow-y: auto;
   border-top: 1px solid rgb(255 255 255 / 14%);
+}
+
+.q {
+  flex: 0 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   font-size: fs(14, 12px);
   line-height: 1.5;
   scrollbar-width: none;
