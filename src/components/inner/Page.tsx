@@ -1,4 +1,5 @@
 import { ElectiveGrid } from './ElectiveGrid';
+import { CareerFlip } from './CareerFlip';
 import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { loadAboutWhy, loadFaculty, localHref, type Block } from '@/lib/content';
@@ -32,7 +33,6 @@ import {
   ClassApart,
   QuoteCards,
   RoleGrid,
-  IndustryGrid,
   StoryCards,
   WhyProgram,
   Sec,
@@ -256,21 +256,11 @@ function curriculum(sec: Section): ReactNode | null {
 
 function careers(sec: Section): ReactNode {
   const ps = sec.blocks.filter(isP).map((b) => b.x);
-  const cards: { title: string; list: string[] }[] = [];
-  for (let i = 0; i + 1 < ps.length; i += 2) cards.push({ title: ps[i], list: splitBullets(ps[i + 1]) });
+  const cards: { title: string; items: string[] }[] = [];
+  for (let i = 0; i + 1 < ps.length; i += 2) cards.push({ title: ps[i], items: splitBullets(ps[i + 1]) });
   const ind = sec.subs.find((x) => /industr/i.test(x.title));
   const pairs = ind ? parsePairs(ind.blocks) : [];
-  return (
-    <>
-      <CardGrid items={cards} cols={3} />
-      {pairs.length > 0 && (
-        <div style={{ marginTop: 'clamp(32px, 4vw, 60px)' }}>
-          <h3 style={{ marginBottom: 18, fontSize: 'max(22px, calc(var(--u) * 36))', fontWeight: 700 }}>{ind?.title}</h3>
-          <CardGrid items={pairs} cols={4} tint />
-        </div>
-      )}
-    </>
-  );
+  return <CareerFlip careers={cards} industries={pairs} industriesTitle={ind?.title} />;
 }
 
 function faculty(sec: Section): ReactNode {
@@ -738,23 +728,16 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           {note && <p className={s.note}>{note}</p>}
         </Sec>,
       );
-      // the live page keeps "Career Path" and "Industries" under the fee block: give each its own section
-      for (const sub of sec.subs) {
-        const pairs = parsePairs(sub.blocks).map((p) => ({ title: p.title, text: p.text.replace(/\.(?=[A-Z])/g, '. ') }));
-        if (!pairs.length) continue;
-        if (/career/i.test(sub.title)) {
-          nodes.push(
-            <Sec key={`${key}-${sub.title}`} tone={nextTone()} title={sub.title}>
-              <RoleGrid items={pairs} />
-            </Sec>,
-          );
-        } else if (/industr/i.test(sub.title)) {
-          nodes.push(
-            <Sec key={`${key}-${sub.title}`} tone="sky" title={sub.title}>
-              <IndustryGrid items={pairs} />
-            </Sec>,
-          );
-        }
+      // the live page keeps "Career Path" and "Industries" under the fee block: one flip-card section (industries live on the card backs)
+      const cleanPairs = (sub: Sub) => parsePairs(sub.blocks).map((p) => ({ title: p.title, text: p.text.replace(/\.(?=[A-Z])/g, '. ') }));
+      const careerSub = sec.subs.find((x) => /career/i.test(x.title));
+      const indSub = sec.subs.find((x) => /industr/i.test(x.title));
+      if (careerSub && cleanPairs(careerSub).length) {
+        nodes.push(
+          <Sec key={`${key}-${careerSub.title}`} tone={nextTone()} title={careerSub.title}>
+            <CareerFlip careers={cleanPairs(careerSub).map((p) => ({ title: p.title, text: p.text }))} industries={indSub ? cleanPairs(indSub) : []} industriesTitle={indSub?.title} />
+          </Sec>,
+        );
       }
       continue;
     }

@@ -132,13 +132,14 @@ export function InnerHero({
 }) {
   const links = (extra ?? []).filter((b): b is Extract<Block, { t: 'a' }> => b.t === 'a');
   return (
-    <section className={`${s.hero} ${size === 'short' ? s.heroShort : size === 'gradient' ? s.heroGradient : ''}`}>
+    <section className={`${s.hero} ${size === 'short' ? s.heroShort : size === 'gradient' ? s.heroGradient : size === 'full' && facts?.length ? s.heroProgram : ''}`}>
       {/* banner photo: desktop/tablet and phone crops come from the same slide data as the home hero (CMS: one image per breakpoint) */}
       <picture className={s.heroBg} hidden={size === 'gradient'}>
-        <source media="(max-width: 759.98px)" srcSet={bannerMobileSrc ?? bannerSrc ?? heroSlides[(banner ?? 0) % heroSlides.length].mobile} />
+        <source media="(max-width: 899.98px)" srcSet={bannerMobileSrc ?? bannerSrc ?? heroSlides[(banner ?? 0) % heroSlides.length].mobile} />
         <Image src={bannerSrc ?? heroSlides[(banner ?? 0) % heroSlides.length].desktop} alt="" fill priority sizes="100vw" className={s.heroImg} />
       </picture>
       <div className={s.heroShade} aria-hidden="true" />
+      <div className={s.heroPanel} aria-hidden="true" />
       <div className={`${s.heroInner} ${aside ? s.heroWithAside : ''}`}>
         {aside && <div className={s.heroAside}>{aside}</div>}
         <div className={s.heroCopy}>
