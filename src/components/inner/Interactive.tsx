@@ -86,7 +86,10 @@ export function Tabs({ groups }: { groups: { label?: string; tabs: { id: string;
                   aria-controls={`${uid}-panel`}
                   tabIndex={t.id === cur?.id ? 0 : -1}
                   className={t.id === cur?.id ? s.tabOn : undefined}
-                  onClick={() => setActive(t.id)}
+                  onClick={(e) => {
+                    setActive(t.id);
+                    e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                  }}
                   onKeyDown={(e) => onKey(e, i)}
                 >
                   {t.label}

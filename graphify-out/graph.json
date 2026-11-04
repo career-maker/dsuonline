@@ -737,7 +737,7 @@
       "file_type": "code",
       "norm_label": "leadergrid()",
       "source_file": "src/components/inner/Interactive.tsx",
-      "source_location": "L142"
+      "source_location": "L145"
     },
     {
       "id": "src_components_inner_interactive_tabs",
@@ -2909,7 +2909,7 @@
       "file_type": "code",
       "norm_label": "reveal()",
       "source_file": "src/components/inner/Interactive.tsx",
-      "source_location": "L107"
+      "source_location": "L110"
     },
     {
       "id": "src_components_inner_clean",
@@ -5368,7 +5368,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L167"
+      "source_location": "L168"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -5464,7 +5464,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L151"
+      "source_location": "L152"
     },
     {
       "id": "checkpoint_update_2026_10_28",
@@ -5476,7 +5476,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L159"
+      "source_location": "L160"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -17191,7 +17191,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L151",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -17202,7 +17202,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L159",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -17213,7 +17213,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L167",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -18225,7 +18225,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/Interactive.tsx",
-      "source_location": "L107",
+      "source_location": "L110",
       "weight": 1.0
     },
     {
@@ -18236,7 +18236,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/Interactive.tsx",
-      "source_location": "L142",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -21327,7 +21327,7 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L162",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -21363,7 +21363,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L154",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -21375,7 +21375,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L154",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -21423,10 +21423,10 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L152",
+      "source_location": "L153",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4be3d74626e138c3874c523390d3656446e8b838"
+  "built_at_commit": "b0d4486242d92da8c2e9d9df5f639d9df8163d5a"
 }
