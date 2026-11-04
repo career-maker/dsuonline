@@ -329,7 +329,7 @@
       "file_type": "code",
       "norm_label": "chunk",
       "source_file": "src/components/inner/Blog.tsx",
-      "source_location": "L80"
+      "source_location": "L81"
     },
     {
       "id": "src_components_inner_innerpage_crumb",
@@ -2070,7 +2070,7 @@
       "file_type": "code",
       "norm_label": "blogpost()",
       "source_file": "src/components/inner/Blog.tsx",
-      "source_location": "L82"
+      "source_location": "L83"
     },
     {
       "id": "src_components_sections_home_blogs_blogs",
@@ -3646,7 +3646,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L164"
+      "source_location": "L165"
     },
     {
       "id": "readme",
@@ -5638,7 +5638,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L180"
+      "source_location": "L181"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -5722,7 +5722,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L172"
+      "source_location": "L173"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -6741,7 +6741,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Blog.tsx",
-      "source_location": "L75",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -6753,7 +6753,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Blog.tsx",
-      "source_location": "L113",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -6765,7 +6765,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Blog.tsx",
-      "source_location": "L147",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -6777,7 +6777,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Blog.tsx",
-      "source_location": "L177",
+      "source_location": "L178",
       "weight": 1.0
     },
     {
@@ -6789,7 +6789,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Blog.tsx",
-      "source_location": "L272",
+      "source_location": "L273",
       "weight": 1.0
     },
     {
@@ -6801,7 +6801,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Blog.tsx",
-      "source_location": "L83",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -9357,7 +9357,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/Careers.tsx",
-      "source_location": "L105",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -9369,7 +9369,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/Careers.tsx",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -17937,7 +17937,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L164",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -17948,7 +17948,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L172",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -17970,7 +17970,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L180",
+      "source_location": "L181",
       "weight": 1.0
     },
     {
@@ -18685,7 +18685,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/Blog.tsx",
-      "source_location": "L80",
+      "source_location": "L81",
       "weight": 1.0
     },
     {
@@ -18696,7 +18696,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/Blog.tsx",
-      "source_location": "L82",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -22284,7 +22284,7 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L175",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -22320,7 +22320,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L167",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -22332,7 +22332,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L167",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -22380,10 +22380,10 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L165",
+      "source_location": "L166",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d45056ce97ddac50be5b1563da44bccce85c7446"
+  "built_at_commit": "385df2c87c2a2150af3529f9c2b5122aa7a32d9a"
 }

@@ -54,6 +54,7 @@ export function Careers() {
                   aria-controls={`${uid}-p`}
                   tabIndex={i === active ? 0 : -1}
                   className={i === active ? s.on : undefined}
+                  style={{ order: i * 2 }}
                   onClick={() => setActive(i)}
                   onMouseEnter={() => setActive(i)}
                 >
@@ -73,7 +74,7 @@ export function Careers() {
               ))}
             </div>
 
-            <div role="tabpanel" id={`${uid}-p`} aria-labelledby={`${uid}-t${active}`} className={s.panel}>
+            <div role="tabpanel" id={`${uid}-p`} aria-labelledby={`${uid}-t${active}`} className={s.panel} style={{ order: active * 2 + 1 }}>
               <div className={s.ptitle}>
                 <Icon name={tab.icon} />
                 <h3>

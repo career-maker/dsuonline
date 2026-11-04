@@ -54,7 +54,8 @@ export function BlogIndex({ page }: { page: number }) {
 
           {pages > 1 && (
             <nav className={s.pager} aria-label="Blog pages">
-              {page > 1 && <Link href={href(page - 1)}>« Previous</Link>}
+              {/* plain links: a full page load always gets the current styles (soft navigation after a redeploy could show unstyled cards) */}
+              {page > 1 && <a href={href(page - 1)}>« Previous</a>}
               {nums.map((n, i) => (
                 <Fragment key={n}>
                   {i > 0 && n - nums[i - 1] > 1 && <span aria-hidden="true">…</span>}
@@ -63,11 +64,11 @@ export function BlogIndex({ page }: { page: number }) {
                       {n}
                     </span>
                   ) : (
-                    <Link href={href(n)}>{n}</Link>
+                    <a href={href(n)}>{n}</a>
                   )}
                 </Fragment>
               ))}
-              {page < pages && <Link href={href(page + 1)}>Next »</Link>}
+              {page < pages && <a href={href(page + 1)}>Next »</a>}
             </nav>
           )}
         </div>
