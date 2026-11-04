@@ -782,6 +782,13 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     display: none;
   }
 
+  // phones: the page gutter is 16px, so bleed by 16px (24px pushed the row past the viewport)
+  @include down($bp-sm) {
+    padding-inline: 16px;
+    margin-inline: -16px;
+    scroll-padding-inline: 16px;
+  }
+
   > li {
     flex: 0 0 min(80%, 290px);
     scroll-snap-align: start;

@@ -116,6 +116,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## NEXT STEPS (do top item first when the user says "continue")
+- Done 2026-11-04: no horizontal page scroll on phones: html overflow-x:clip + ElectiveCarousel bleed 16px on phones (was 24px => 8px overflow). Checked all non-blog pages 360/390.
 - Done 2026-11-04: elective/specialization pages: hero badge logos removed (crumbs>=3); hero fact cards solid light tiles on phones.
 - Done 2026-11-04: 2x2 feature grids on phones (About + WhyChoose); cert-card icons turn white on hover; dots removed from faculty-articles + CardCarousel; autoplay of BlogSlider/ElectiveCarousel desktop-only (fixes jump back to card 1 on phones); scroll-snap mandatory -> proximity on carousels.
 - Done 2026-11-04: titles max 2 lines: phone h2 mixin + inner h1 clamp(21px,5.8vw,26px) + text-wrap balance; hero h1 phone clamp(24px,7.1vw,40px); blog card titles line-clamp 2. Checked all non-blog pages at 360/390/768/1024/1440 with shots/lines.py (blog article headings excluded: long content titles).
