@@ -25,6 +25,7 @@ export function Hero() {
   }, []);
 
   return (
+    <>
     <section className={s.hero} aria-roledescription="carousel" aria-label="Featured">
       {heroSlides.map((slide, i) => {
         const desktop = getImageProps({ src: slide.desktop, alt: '', width: slideSize[i][0], height: slideSize[i][1], sizes: '110vw', priority: i === 0 }).props;
@@ -92,5 +93,13 @@ export function Hero() {
 
       </div>
     </section>
+    <div className={s.logoStrip}>
+      <Image src="/images/brand/naac.webp" alt="NAAC A+ grade accredited" width={294} height={100} />
+      <i aria-hidden="true" />
+      <Image src="/images/brand/ugc.webp" alt="UGC Entitled" width={202} height={103} />
+      <i aria-hidden="true" />
+      <Image src="/images/brand/legacy.webp" alt="7 decades legacy in education and healthcare" width={116} height={103} />
+    </div>
+    </>
   );
 }

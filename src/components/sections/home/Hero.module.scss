@@ -607,7 +607,37 @@
 }
 
 // phones: photo on top, copy over its lower edge, CTAs full width, then the form and the programme chips
+// mobile-only logo strip under the hero (logos are hidden inside the hero on mobile)
+.logoStrip {
+  display: none;
+}
+
 @media (max-width: 759.98px) {
+  .badges {
+    display: none;
+  }
+
+  .logoStrip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 18px var(--gut);
+    background: #fff;
+
+    img {
+      width: auto;
+      height: 44px;
+      object-fit: contain;
+    }
+
+    i {
+      width: 1px;
+      height: 32px;
+      background: rgb(0 0 0 / 15%);
+    }
+  }
+
   .hero {
     --img-h: min(124vw, 640px);
   }
