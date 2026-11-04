@@ -17,12 +17,7 @@ export function SideTabs() {
       </a>
       <a href={`tel:${site.phone}`} className={`${s.ico} ${s.call}`} aria-label="Call us">
         <Image src="/icons/side-call.png" alt="" width={50} height={50} />
-      </a>
-      <a href={`mailto:${site.admissionsEmail}`} className={`${s.ico} ${s.mail}`} aria-label="Email admissions">
-        <Image src="/icons/side-mail.png" alt="" width={50} height={50} />
-      </a>
-      <a href={`https://wa.me/${site.phone.replace('+', '')}`} className={`${s.ico} ${s.wa}`} aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer">
-        <Image src="/icons/side-wa.png" alt="" width={50} height={50} />
+        <span className={s.callTxt}>Call us</span>
       </a>
     </aside>
   );
