@@ -5320,7 +5320,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L162"
+      "source_location": "L163"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -5404,7 +5404,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L146"
+      "source_location": "L147"
     },
     {
       "id": "checkpoint_update_2026_10_28",
@@ -5416,7 +5416,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L154"
+      "source_location": "L155"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -8923,7 +8923,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/FacultyArticles.tsx",
-      "source_location": "L128",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -8935,7 +8935,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/FacultyArticles.tsx",
-      "source_location": "L144",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
@@ -8947,7 +8947,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/FacultyArticles.tsx",
-      "source_location": "L213",
+      "source_location": "L237",
       "weight": 1.0
     },
     {
@@ -8959,7 +8959,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/FacultyArticles.tsx",
-      "source_location": "L227",
+      "source_location": "L251",
       "weight": 1.0
     },
     {
@@ -9060,54 +9060,6 @@
     },
     {
       "source": "src_components_sections_home_programsband_programsband",
-      "target": "src_components_ui_framedimage_framedimage",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L106",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_sections_home_programsband_programsband",
-      "target": "src_components_ui_icon_icon",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L128",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_sections_home_programsband_programsband",
-      "target": "src_components_ui_arrowlink_arrowlink",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L146",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_sections_home_programsband_programsband",
-      "target": "src_data_programs_specializationhref",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L192",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_sections_home_programsband_programsband",
       "target": "src_components_ui_icons_chevronleft",
       "relation": "calls",
       "_origin": "ast",
@@ -9115,7 +9067,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L254",
+      "source_location": "L108",
       "weight": 1.0
     },
     {
@@ -9127,7 +9079,55 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/ProgramsBand.tsx",
-      "source_location": "L263",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_sections_home_programsband_programsband",
+      "target": "src_components_ui_framedimage_framedimage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/sections/home/ProgramsBand.tsx",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_sections_home_programsband_programsband",
+      "target": "src_components_ui_icon_icon",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/sections/home/ProgramsBand.tsx",
+      "source_location": "L151",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_sections_home_programsband_programsband",
+      "target": "src_components_ui_arrowlink_arrowlink",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/sections/home/ProgramsBand.tsx",
+      "source_location": "L169",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_sections_home_programsband_programsband",
+      "target": "src_data_programs_specializationhref",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/sections/home/ProgramsBand.tsx",
+      "source_location": "L215",
       "weight": 1.0
     },
     {
@@ -17096,7 +17096,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L146",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -17107,7 +17107,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L154",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -17118,7 +17118,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L162",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -21188,7 +21188,7 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L157",
+      "source_location": "L158",
       "weight": 1.0
     },
     {
@@ -21224,7 +21224,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L149",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -21236,7 +21236,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L149",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -21284,10 +21284,10 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L147",
+      "source_location": "L148",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f1dcc5c3d4ce35b4a8cf8cab75b2d8addd03fb9d"
+  "built_at_commit": "109c8b4922a69113aa68d01649e19e3495a158cb"
 }

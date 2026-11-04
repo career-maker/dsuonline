@@ -120,7 +120,7 @@
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
-  padding: clamp(14px, #{u(26)}, 26px) clamp(14px, #{u(28)}, 28px);
+  padding: clamp(12px, #{u(20)}, 20px) clamp(14px, #{u(24)}, 24px);
   background: rgb(28 31 34 / 84%);
   opacity: 0;
   visibility: hidden;
@@ -128,7 +128,7 @@
 }
 
 .rName {
-  font-size: fs(22, 17px);
+  font-size: fs(20, 16px);
   line-height: 1.1;
   font-weight: 700;
 }
@@ -143,26 +143,40 @@
 .rWho {
   display: flex;
   flex: none;
-  flex-direction: column;
-  margin-top: px(12);
-  padding-top: px(12);
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: px(10);
+  padding-top: px(10);
   border-top: 1px solid rgb(255 255 255 / 14%);
+}
+
+.rText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .q {
   flex: 0 1 auto;
   min-height: 0;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  font-size: fs(14, 12px);
-  line-height: 1.5;
-  scrollbar-width: none;
-  // last line fades out so it is clear there is more to scroll
-  mask-image: linear-gradient(180deg, #000 calc(100% - 30px), transparent 100%);
+  overflow: hidden; // paged with Show more / Show less (no wheel scrolling)
+  font-size: fs(13, 12px);
+  line-height: 1.45;
+}
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+.more {
+  flex: none;
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  color: $yellow;
+  font: inherit;
+  font-size: fs(14, 12px);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
 }
 
 .big {

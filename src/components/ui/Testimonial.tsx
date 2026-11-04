@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useRef, useState, type RefObject } from 'react';
+import { useCallback, useEffect, useRef, useState, type RefObject } from 'react';
 import { ChevronLeft, ChevronRight, PlayIcon } from '@/components/ui/icons';
 import type { Testimonial } from '@/data/testimonials';
 import s from './Testimonial.module.scss';
@@ -12,6 +12,39 @@ import s from './Testimonial.module.scss';
  */
 export function TestimonialCard({ t, big, sizes = '(max-width: 600px) 100vw, 430px' }: { t: Testimonial; big?: boolean; sizes?: string }) {
   const [playing, setPlaying] = useState(false);
+  const qRef = useRef<HTMLSpanElement>(null);
+  const [page, setPage] = useState(0);
+  const [pages, setPages] = useState(1);
+
+  // hover panel shows the quote a "page" at a time (whole lines only); Show more moves to the next page, the last page offers Show less
+  const measure = useCallback(() => {
+    const q = qRef.current;
+    if (!q) return;
+    q.style.maxHeight = '';
+    q.scrollTop = 0;
+    const lh = parseFloat(getComputedStyle(q).lineHeight) || 20;
+    const h = Math.max(1, Math.floor(q.clientHeight / lh)) * lh;
+    q.style.maxHeight = `${h}px`;
+    setPages(Math.max(1, Math.ceil((q.scrollHeight - 2) / h)));
+    setPage(0);
+  }, []);
+
+  useEffect(() => {
+    measure();
+    const q = qRef.current;
+    if (!q) return;
+    const ro = new ResizeObserver(() => measure());
+    ro.observe(q.parentElement!);
+    return () => ro.disconnect();
+  }, [measure]);
+
+  const turn = () => {
+    const q = qRef.current;
+    if (!q) return;
+    const next = page >= pages - 1 ? 0 : page + 1;
+    q.scrollTop = next * q.clientHeight;
+    setPage(next);
+  };
   const who = (
     <>
       <b>{t.name}</b>
@@ -39,13 +72,20 @@ export function TestimonialCard({ t, big, sizes = '(max-width: 600px) 100vw, 430
           <span className={s.who}>{who}</span>
         </span>
         {reveal && (
-          <span className={s.reveal} aria-hidden="true">
-            <span className={s.q} data-lenis-prevent>
+          <span className={s.reveal}>
+            <span className={s.q} ref={qRef}>
               {t.quote}
             </span>
             <span className={s.rWho}>
-              <span className={s.rName}>{t.name}</span>
-              {(t.course || t.company) && <span className={s.rSub}>{[t.course, t.company].filter(Boolean).join(' · ')}</span>}
+              <span className={s.rText}>
+                <span className={s.rName}>{t.name}</span>
+                {t.course && <span className={s.rSub}>{t.course}</span>}
+              </span>
+              {pages > 1 && (
+                <button type="button" className={s.more} onClick={turn}>
+                  {page >= pages - 1 ? 'Show less' : 'Show more'}
+                </button>
+              )}
             </span>
           </span>
         )}
