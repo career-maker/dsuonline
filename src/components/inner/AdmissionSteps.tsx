@@ -6,6 +6,9 @@ import s from './AdmissionSteps.module.scss';
 
 type Step = { title: string; text: string };
 
+// one title: keep "A" with "Step-by-Step" so it never ends a line on its own
+const heading = (t: string): ReactNode => t.replace(/A (?=Step)/, 'A ');
+
 const ic = { fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round', strokeLinejoin: 'round' } as const;
 const wrap = (d: ReactNode) => (
   <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" {...ic}>
@@ -34,7 +37,7 @@ export function AdmissionSteps({ eyebrow, title, steps, image }: { eyebrow?: str
             <i aria-hidden="true" />
           </p>
         )}
-        <h2>{title}</h2>
+        <h2>{heading(title)}</h2>
       </header>
       {image && (
         <div className={s.photo}>

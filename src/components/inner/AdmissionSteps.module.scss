@@ -14,7 +14,7 @@
 .head {
   position: relative;
   z-index: 1;
-  max-width: 58%;
+  max-width: 64%;
   // leaves room for the photo in the top-right corner so it never reaches the steps
   min-height: clamp(150px, #{u(210)}, 220px);
   padding-bottom: clamp(18px, #{u(30)}, 30px);
@@ -22,7 +22,13 @@
   h2 {
     margin-top: 14px;
     @include h2;
+    font-size: fs(46, 26px);
     text-wrap: balance;
+
+    // wide screens: the whole title sits on one line beside the photo
+    @include up($bp-lg) {
+      white-space: nowrap;
+    }
   }
 
   @include down($bp-lg) {
@@ -53,7 +59,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 36%;
+  width: 30%;
   height: clamp(150px, #{u(210)}, 220px);
   overflow: hidden;
   border-radius: 0 0 0 clamp(60px, #{u(130)}, 130px);
