@@ -3759,7 +3759,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L159"
+      "source_location": "L160"
     },
     {
       "id": "claude",
@@ -5590,7 +5590,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L175"
+      "source_location": "L176"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -5674,7 +5674,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L167"
+      "source_location": "L168"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -7521,7 +7521,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1003",
+      "source_location": "L1002",
       "weight": 1.0
     },
     {
@@ -7533,7 +7533,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1008",
+      "source_location": "L1007",
       "weight": 1.0
     },
     {
@@ -7545,7 +7545,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1015",
+      "source_location": "L1014",
       "weight": 1.0
     },
     {
@@ -7557,7 +7557,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1035",
+      "source_location": "L1034",
       "weight": 1.0
     },
     {
@@ -8121,7 +8121,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L824",
+      "source_location": "L823",
       "weight": 1.0
     },
     {
@@ -8133,7 +8133,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L828",
+      "source_location": "L827",
       "weight": 1.0
     },
     {
@@ -8145,7 +8145,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L838",
+      "source_location": "L837",
       "weight": 1.0
     },
     {
@@ -8157,7 +8157,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L841",
+      "source_location": "L840",
       "weight": 1.0
     },
     {
@@ -8169,7 +8169,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L882",
+      "source_location": "L881",
       "weight": 1.0
     },
     {
@@ -8181,7 +8181,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L893",
+      "source_location": "L892",
       "weight": 1.0
     },
     {
@@ -8193,7 +8193,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L900",
+      "source_location": "L899",
       "weight": 1.0
     },
     {
@@ -8205,7 +8205,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L920",
+      "source_location": "L919",
       "weight": 1.0
     },
     {
@@ -8217,7 +8217,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L951",
+      "source_location": "L950",
       "weight": 1.0
     },
     {
@@ -8229,7 +8229,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L966",
+      "source_location": "L965",
       "weight": 1.0
     },
     {
@@ -10089,7 +10089,7 @@
       "confidence_score": 1.0,
       "context": "export",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1040",
+      "source_location": "L1039",
       "weight": 1.0
     },
     {
@@ -17806,7 +17806,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L159",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -17817,7 +17817,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L167",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -17828,7 +17828,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L175",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -22085,7 +22085,7 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L170",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -22121,7 +22121,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L162",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -22133,7 +22133,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L162",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -22181,10 +22181,10 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L160",
+      "source_location": "L161",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "85b3a237c91fabc6e3c8f45bec7773f37c30ac59"
+  "built_at_commit": "d437240c674af825e1d34ce9690cba06c68fd20d"
 }

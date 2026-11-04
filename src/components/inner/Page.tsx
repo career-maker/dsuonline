@@ -817,11 +817,10 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const rest = sec.subs.filter((x) => !stepSubs.includes(x));
       const steps = stepSubs.map((x) => ({ title: x.title.replace(/^step\s*\d+\s*[:.-]?\s*/i, ''), text: x.blocks.filter(isP).map((b) => b.x).join(' ') }));
       const stepImg = all.find((b) => b.t === 'img');
-      const split = title.match(/^(admission process)\s+(.+)$/i) ?? title.match(/^(how to apply)\s*:\s*(.+)$/i);
       nodes.push(
         programLinks ? (
           <Sec key={key} tone="white">
-            <AdmissionSteps eyebrow={split?.[1]} title={split ? split[2] : title} steps={steps} image={stepImg ? imgOf(stepImg) : undefined} />
+            <AdmissionSteps title={title} steps={steps} image={stepImg ? imgOf(stepImg) : undefined} />
           </Sec>
         ) : (
           <Sec key={key} tone={nextTone()} title={title}>

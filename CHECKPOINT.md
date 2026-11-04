@@ -116,6 +116,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## NEXT STEPS (do top item first when the user says "continue")
+- Done 2026-11-04: Admission section: no eyebrow, full page title as normal section title.
 - Done 2026-11-04: Pair section restyled in site theme (light sky band, white cards, brand-blue major / yellow-tint minor, navy profile card, site eyebrow + h2 style). NOT deployed yet.
 - Done 2026-11-04: program banner seam: eased 10-stop mask + navy veil/glow layers; faculty cards = phone carousel with arrows (FacultyScroller); Program Learning System redesigned (LearningCards in Kit.tsx).
 - Done 2026-11-04: program pages: ElectiveCombinator (Pair 1 Major + 1 Minor, placeholder copy; sectors from page industries) above electives; FeeTable redesign (Semester-wise / Year-wise blocks, Total column highlight, navy Total Fees bar); AdmissionSteps redesign (timeline, 7 steps, apply image top-right). Combinator copy/roles are dummy text to be replaced. NOT yet deployed.
