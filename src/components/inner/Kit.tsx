@@ -194,7 +194,7 @@ export function DataTable({ rows, caption }: { rows: string[][]; caption?: strin
             <tr key={j} className={r.length < rows[0].length ? s.sumRow : undefined}>
               {r.map((c, k) => (
                 <td key={k} colSpan={k === r.length - 1 && r.length < rows[0].length ? rows[0].length - k : undefined}>
-                  {c}
+                  {c === String.fromCharCode(0xfffd) ? '–' : c}
                 </td>
               ))}
             </tr>

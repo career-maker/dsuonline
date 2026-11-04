@@ -654,70 +654,73 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 }
 
-// ---------- tabs (programme curriculum: dark pill tabs + table card)
+// ---------- tabs (programme curriculum on the brand-blue band: pill tabs + table card), site typography
 .tabs {
   display: grid;
-  gap: 22px;
+  gap: 24px;
 }
 
 .tabGroup {
   display: grid;
-  gap: 10px;
+  gap: 12px;
+  justify-items: center;
 }
 
 .tabLabel {
-  font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgb(255 255 255 / 60%);
+  text-align: center;
+  color: rgb(255 255 255 / 70%);
 }
 
 .tabList {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center; // tabs are centred
   gap: 10px;
+  max-width: 100%;
 
   button {
     flex: none;
-    height: 40px;
+    height: 42px;
     padding: 0 22px;
-    border: 0;
-    border-radius: 20px;
-    background: #172036;
-    color: #dbe3f5;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    border: 1px solid rgb(255 255 255 / 22%);
+    border-radius: 21px;
+    background: rgb(255 255 255 / 10%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
     white-space: nowrap;
     cursor: pointer;
-    transition: background-color 0.25s, color 0.25s, translate 0.25s;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
     @include focus-ring;
 
     &:hover {
-      background: #212d4a;
-      color: #fff;
+      border-color: $yellow;
+      background: rgb(255 255 255 / 18%);
     }
   }
 
   .tabOn,
   .tabOn:hover {
-    background: #ffb400;
-    color: #1a1400;
+    border-color: $yellow;
+    background: $yellow;
+    color: $blue-dark;
+    font-weight: 600;
   }
 
-  // wide screens: tabs wrap; phones + tablets: one swipeable row (carousel) instead of a tall stack
-  flex-wrap: wrap;
-
+  // phones + tablets: one swipeable row (carousel) instead of a tall stack; centred while it fits
   @include down($bp-lg) {
     flex-wrap: nowrap;
+    justify-content: flex-start;
     overflow-x: auto;
+    width: 100%;
     scroll-snap-type: x proximity;
     scrollbar-width: none;
-    margin-inline: calc(-1 * var(--gut));
-    padding: 2px var(--gut);
-    scroll-padding-inline: var(--gut);
+    padding: 2px 0;
     -webkit-overflow-scrolling: touch;
 
     &::-webkit-scrollbar {
@@ -727,34 +730,44 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     button {
       scroll-snap-align: center;
     }
+
+    button:first-child {
+      margin-left: auto;
+    }
+
+    button:last-child {
+      margin-right: auto;
+    }
   }
 }
 
 .tabPanel {
   min-width: 0;
+  width: 100%;
 
   .tableWrap {
-    overflow-x: auto;
-    border: 1px solid rgb(255 255 255 / 9%);
-    border-radius: 18px;
-    background: #0a1126;
-    box-shadow: 0 24px 60px rgb(0 0 0 / 35%);
+    overflow: hidden;
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 16px;
+    background: rgb(255 255 255 / 8%);
+    box-shadow: 0 18px 44px rgb(0 0 20 / 28%);
   }
 
   table {
+    width: 100%;
     min-width: 0;
+    table-layout: auto;
     font-size: clamp(14px, 1.1vw, 16px);
   }
 
   th {
-    padding: 20px 26px;
-    background: #101a31;
-    border-bottom: 1px solid rgb(255 255 255 / 9%);
-    color: rgb(255 255 255 / 75%);
-    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
-    font-size: 12px;
+    padding: 16px 24px;
+    background: rgb(1 6 63 / 55%);
+    border-bottom: 1px solid rgb(255 255 255 / 18%);
+    color: rgb(255 255 255 / 85%);
+    font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
   }
 
@@ -765,80 +778,68 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   td {
-    padding: 17px 26px;
-    border-top: 1px solid rgb(255 255 255 / 8%);
+    padding: 15px 24px;
+    border-top: 1px solid rgb(255 255 255 / 12%);
     background: transparent;
     color: #fff;
-    font-weight: 600;
+    font-weight: 500;
+    overflow-wrap: anywhere;
   }
 
   tbody tr:nth-child(even) td {
-    background: transparent;
+    background: rgb(255 255 255 / 4%);
   }
 
   tbody tr:first-child td {
     border-top: 0;
   }
 
-  // course code: amber monospace
+  // course code in the site yellow
   td:first-child {
     width: 22%;
-    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
-    font-size: 0.82em;
-    font-weight: 500;
-    color: #ffb400;
-  }
-
-  td:nth-child(2) {
     font-weight: 600;
+    color: $yellow;
   }
 
-  td:nth-child(3) {
+  td:nth-child(3):last-child {
+    color: rgb(255 255 255 / 90%);
     font-weight: 400;
-    color: rgb(255 255 255 / 85%);
   }
 
   // total row
   .sumRow td {
-    background: #101a31 !important;
-    border-top: 1px solid rgb(255 255 255 / 9%);
-    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
-    font-size: 0.82em;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    background: rgb(1 6 63 / 55%) !important;
+    border-top: 1px solid rgb(255 255 255 / 18%);
+    font-size: 0.95em;
+    font-weight: 600;
     color: #fff !important;
   }
 
   .sumRow td:last-child {
     text-align: right;
-    color: #ffb400 !important;
+    color: $yellow !important;
     font-weight: 700;
   }
 
   @include down($bp-sm) {
     th,
     td {
-      padding: 14px 14px;
+      padding: 12px 12px;
     }
 
     th {
       font-size: 11px;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.04em;
+    }
+
+    td {
+      font-size: 14px;
     }
 
     td:first-child {
-      width: 26%;
-      font-size: 11.5px;
+      width: 28%;
+      font-size: 12.5px;
     }
-  }
-}
-
-// near-black band for the curriculum
-.night {
-  background: #04081f;
-
-  .head h2 {
-    color: #fff;
   }
 }
 
@@ -3511,5 +3512,107 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   .elPic {
     width: 44%;
+  }
+}
+
+
+// ---------- fee structure tables (site theme: brand header, soft rows, highlighted total)
+.tables .tableWrap {
+  overflow: hidden;
+  border: 1px solid #dfe5f1;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgb(2 9 102 / 8%);
+
+  table {
+    min-width: 0;
+    table-layout: auto;
+  }
+
+  th {
+    padding: 16px 20px;
+    background: $blue;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: normal;
+    text-align: center;
+  }
+
+  th:first-child,
+  td:first-child {
+    text-align: left;
+  }
+
+  td {
+    padding: 15px 20px;
+    border-top: 1px solid #edf0f7;
+    color: $ink;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  td:first-child {
+    font-weight: 700;
+    color: $blue;
+  }
+
+  // Total column
+  td:last-child:not([colspan]) {
+    font-weight: 700;
+    color: $blue;
+  }
+
+  tbody tr:nth-child(even) td {
+    background: #f6f8fd;
+  }
+
+  .sumRow td {
+    background: #e8edfb !important;
+    border-top: 2px solid rgb(2 9 102 / 14%);
+    font-size: 1.05em;
+    font-weight: 700;
+    color: $blue;
+    text-align: left;
+  }
+
+  .sumRow td:last-child {
+    text-align: right;
+  }
+
+  @include down($bp-sm) {
+    th,
+    td {
+      padding: 11px 6px;
+      font-size: 12.5px;
+    }
+
+    th {
+      font-size: 10.5px;
+      letter-spacing: 0.02em;
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 12px;
+    }
+
+    th:last-child,
+    td:last-child {
+      padding-right: 12px;
+    }
+  }
+}
+
+// no sideways scrolling inside tables on phones: they fit and wrap instead
+@include down($bp-sm) {
+  .tableWrap {
+    overflow-x: visible;
+
+    table {
+      min-width: 0;
+    }
   }
 }

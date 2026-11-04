@@ -745,7 +745,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     // --- curriculum tabs
     if (/curriculum/i.test(title) && all.some((b) => b.t === 'table')) {
       nodes.push(
-        <Sec key={key} tone={(nextTone(), 'night')} title={title}>
+        <Sec key={key} tone={(nextTone(), 'blue')} title={title}>
           {curriculum(sec)}
         </Sec>,
       );
