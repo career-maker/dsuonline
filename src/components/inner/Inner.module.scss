@@ -756,11 +756,11 @@
 
   // the photo itself dissolves into the navy (same soft blend as the phone layout): ~10% of it shows behind the copy
   .heroBg {
-    mask-image: linear-gradient(90deg, rgb(0 0 0 / 10%) 0%, rgb(0 0 0 / 10%) 30%, rgb(0 0 0 / 28%) 40%, rgb(0 0 0 / 62%) 50%, rgb(0 0 0 / 88%) 60%, #000 70%);
+    mask-image: linear-gradient(90deg, rgb(0 0 0 / 4%) 0%, rgb(0 0 0 / 4%) 44%, rgb(0 0 0 / 38%) 49%, rgb(0 0 0 / 80%) 54%, #000 59%);
   }
 
   .heroCopy {
-    max-width: min(58%, 800px);
+    max-width: min(45%, 660px);
   }
 
   h1 {
@@ -770,7 +770,7 @@
   // dark glass tiles (as in the design), not the white phone tiles of other banners
   .facts {
     max-width: none;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr)); // three cards per row
     gap: 12px;
 
     > div {
@@ -806,11 +806,11 @@
     min-height: clamp(520px, 70svh, 780px);
 
     .heroBg {
-      mask-image: linear-gradient(90deg, rgb(0 0 0 / 10%) 0%, rgb(0 0 0 / 10%) 36%, rgb(0 0 0 / 40%) 48%, rgb(0 0 0 / 80%) 60%, #000 72%);
+      mask-image: linear-gradient(90deg, rgb(0 0 0 / 4%) 0%, rgb(0 0 0 / 4%) 55%, rgb(0 0 0 / 40%) 61%, rgb(0 0 0 / 80%) 66%, #000 72%);
     }
 
     .heroCopy {
-      max-width: 60%;
+      max-width: 56%;
     }
   }
 
