@@ -991,7 +991,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
 
   return (
     <>
-      <InnerHero size={withFacts ? (crumbs.length >= 3 ? 'gradient' : 'full') : 'short'} badges={(withFacts && crumbs.length < 3) || slug === 'about'} bannerSrc={BANNERS[slug]} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
+      <InnerHero size={withFacts ? (crumbs.length >= 3 ? 'gradient' : 'full') : 'short'} badges={slug === 'about'} bannerSrc={BANNERS[slug]} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
       {longSub && slug === 'student-testimonials' && subtitle && (
         <Sec tone="white">
           <div className={s.introGrid}>

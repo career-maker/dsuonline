@@ -1515,7 +1515,7 @@
       "file_type": "code",
       "norm_label": "ctaband()",
       "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L200"
+      "source_location": "L205"
     },
     {
       "id": "src_components_inner_innerpage_innerhero",
@@ -1539,7 +1539,7 @@
       "file_type": "code",
       "norm_label": "innerpage()",
       "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L219"
+      "source_location": "L224"
     },
     {
       "id": "src_components_inner_innerpage_isfaq",
@@ -5320,7 +5320,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L159"
+      "source_location": "L160"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -5404,7 +5404,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L143"
+      "source_location": "L144"
     },
     {
       "id": "checkpoint_update_2026_10_28",
@@ -5416,7 +5416,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L151"
+      "source_location": "L152"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -6631,7 +6631,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L209",
+      "source_location": "L214",
       "weight": 1.0
     },
     {
@@ -6643,7 +6643,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L212",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -6691,7 +6691,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L234",
+      "source_location": "L239",
       "weight": 1.0
     },
     {
@@ -6703,7 +6703,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L237",
+      "source_location": "L242",
       "weight": 1.0
     },
     {
@@ -6715,7 +6715,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L246",
+      "source_location": "L251",
       "weight": 1.0
     },
     {
@@ -6727,7 +6727,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L258",
+      "source_location": "L263",
       "weight": 1.0
     },
     {
@@ -6739,7 +6739,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L263",
+      "source_location": "L268",
       "weight": 1.0
     },
     {
@@ -6751,7 +6751,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L265",
+      "source_location": "L270",
       "weight": 1.0
     },
     {
@@ -17096,7 +17096,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L143",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -17107,7 +17107,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L151",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -17118,7 +17118,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L159",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -18042,7 +18042,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L200",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -18053,7 +18053,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L219",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -21188,7 +21188,7 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L154",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -21224,7 +21224,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L146",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -21236,7 +21236,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L146",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -21284,10 +21284,10 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L144",
+      "source_location": "L145",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e88f3c0a3e4127f8b77fc108b6719b7e92e94349"
+  "built_at_commit": "8e1aa9a8f0c273b4f0e13147089eafb8ea10b279"
 }
