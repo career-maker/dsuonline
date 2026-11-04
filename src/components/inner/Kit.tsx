@@ -2,10 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { ArrowLink } from '@/components/ui/ArrowLink';
+import { TestimonialGrid } from '@/components/ui/Testimonial';
 import { QuoteSlider } from './QuoteSlider';
 import { localHref } from '@/lib/content';
 import { slugify } from './clean';
-import { Reveal, Tabs } from './Interactive';
+import { Tabs } from './Interactive';
 import type { Img, Quote } from './parse';
 import s from './Kit.module.scss';
 
@@ -312,41 +313,16 @@ export function OfficeCard({ title, children }: { title: string; children: React
   );
 }
 
-/** Learner stories styled like the home testimonials: photo card, gradient shade, name / course / company over the photo. */
-export function StoryCards({ items, initial = 9 }: { items: Quote[]; initial?: number }) {
-  const cards = items.map((q) => {
-    const [course, ...rest] = q.meta;
-    const text = q.quote.replace(/^[“"‘]\s*|[”"’]\s*$/g, '');
-    return (
-      <li key={q.quote} className={s.story}>
-        {/* hover / keyboard focus on the photo reveals the testimonial; touch devices show it below the photo instead */}
-        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
-        <div className={s.storyPhoto} tabIndex={0}>
-          {q.img ? <Pic img={q.img} sizes="(max-width: 600px) 45vw, (max-width: 1200px) 45vw, 300px" /> : <span className={s.storyInitial} aria-hidden="true">{q.name.replace(/^(Mr|Ms|Mrs|Dr)\.?\s*/i, '').charAt(0)}</span>}
-          <span className={s.storyShade} />
-          <span className={s.storyQuote} aria-hidden="true">
-            <span className={s.storyQ}>{text}</span>
-            <span className={s.storyWho2}>
-              <b>{q.name}</b>
-              {course && <strong>{course}</strong>}
-              {rest.map((m) => (
-                <span key={m}>{m}</span>
-              ))}
-            </span>
-          </span>
-          <span className={s.storyWho}>
-            <b>{q.name}</b>
-            {course && <strong>{course}</strong>}
-            {rest.map((m) => (
-              <span key={m}>{m}</span>
-            ))}
-          </span>
-        </div>
-        <p className={s.storyText}>{text}</p>
-      </li>
-    );
-  });
-  return <Reveal count={initial} className={s.stories}>{cards}</Reveal>;
+/** Learner stories: same card as the home testimonials (hover shows the quote; carousel with the quote under the photo on tablet / phone). */
+export function StoryCards({ items }: { items: Quote[]; initial?: number }) {
+  return (
+    <TestimonialGrid
+      items={items.map((q) => {
+        const [course, ...rest] = q.meta;
+        return { name: q.name, course, company: rest.join(' - ') || undefined, quote: q.quote.replace(/^[“"‘]\s*|[”"’]\s*$/g, ''), img: q.img?.src };
+      })}
+    />
+  );
 }
 
 /** Career roles: numbered cards, role name over its description. */

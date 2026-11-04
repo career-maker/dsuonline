@@ -1,31 +1,14 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { FramedImage } from '@/components/ui/FramedImage';
+import { useEffect, useRef, useState } from 'react';
 import { Icon } from '@/components/ui/Icon';
-import { ChevronLeft, ChevronRight, PlayIcon } from '@/components/ui/icons';
-import { learnerVideos, tickerItems } from '@/data/home';
+import { ChevronLeft, ChevronRight } from '@/components/ui/icons';
+import { CarouselControls, TestimonialCard } from '@/components/ui/Testimonial';
+import { tickerItems } from '@/data/home';
+import { homeTestimonials } from '@/data/testimonials';
 
-type Rect = readonly [number, number, number, number];
-
-// frame = clipped card, box = where the design draws the photo (design px)
-const layout: Record<string, { big?: boolean; frame: Rect; box: Rect; avatar: { w: number; h: number } }> = {
-  rakshit: { big: true, frame: [95, 1277, 859, 487], box: [91.2, 1275, 867.6, 488], avatar: { w: 54, h: 59 } },
-  chinmaya: { frame: [970, 1275, 420, 239], box: [967.6, 1275, 424.9, 239], avatar: { w: 59, h: 54 } },
-  akhil: { frame: [1402, 1275, 423, 239], box: [1402.6, 1275, 424.9, 239], avatar: { w: 59, h: 54 } },
-  john: { frame: [970, 1525, 420, 239], box: [970, 1245.3, 420, 798.4], avatar: { w: 73, h: 54 } },
-  arun: { frame: [1402, 1525, 423, 239], box: [1402.6, 1525, 424.9, 239], avatar: { w: 54, h: 60 } },
-};
-
-const avatarSrc = (key: string) => `/images/avatars/${key}.webp`;
-
-// page 1 = the approved design; page 2 brings in the two added learners in the same bento slots
-const pages = [
-  ['rakshit', 'chinmaya', 'akhil', 'john', 'arun'],
-  ['simran', 'varun', 'john', 'arun', 'chinmaya'],
-];
+const pages = [homeTestimonials.slice(0, 5), homeTestimonials.slice(5, 10)];
 const slotClass = ['rakshit', 'chinmaya', 'akhil', 'john', 'arun'];
 import s from './Testimonials.module.scss';
 
@@ -33,6 +16,7 @@ export function Testimonials() {
   const loop = [...tickerItems, ...tickerItems];
   const [page, setPage] = useState(0);
   const [paused, setPaused] = useState(false);
+  const scroller = useRef<HTMLDivElement>(null);
   const go = (n: number) => setPage((n + pages.length) % pages.length);
 
   useEffect(() => {
@@ -82,45 +66,19 @@ export function Testimonials() {
             </p>
           </header>
 
-          <div className={s.pages} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)} onBlur={() => setPaused(false)}>
+          <div ref={scroller} className={s.pages} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)} onBlur={() => setPaused(false)}>
             {pages.map((keys, pi) => (
               <ul key={pi} className={`${s.grid} ${s.page} ${pi === page ? '' : s.pageOff}`} aria-label={`Learner stories ${pi + 1}`} aria-hidden={pi === page ? undefined : true} inert={pi === page ? undefined : true}>
-                {keys.map((key, si) => {
-                  const v = learnerVideos.find((x) => x.key === key)!;
-                  const extra = 'src' in v ? v.src : undefined;
-                  const l = layout[key];
-                  const slot = slotClass[si];
-                  const big = si === 0;
-                  const dup = pi === 1 && !extra;
-                  return (
-                    <li key={`${pi}-${key}`} className={`${s.card} ${s[slot]} ${big ? s.big : ''} ${dup ? s.dup : ''}`}>
-                      <Link href="/student-testimonials" aria-label={`Watch ${v.name}'s story`}>
-                        {l && !big ? (
-                          <FramedImage src={`/images/testimonials/${key}.webp`} alt={`${v.name}, ${v.course} learner`} frame={l.frame} box={l.box} sizes="(max-width: 900px) 100vw, 430px" />
-                        ) : l ? (
-                          <FramedImage src={`/images/testimonials/${key}.webp`} alt={`${v.name}, ${v.course} learner`} frame={l.frame} box={l.box} sizes="(max-width: 900px) 100vw, 860px" />
-                        ) : (
-                          <Image src={extra!} alt={`${v.name}, ${v.course} learner`} fill sizes={big ? '(max-width: 900px) 100vw, 860px' : '(max-width: 900px) 85vw, 430px'} className={s.plainImg} />
-                        )}
-                        <span className={s.shade} />
-                        <span className={s.info}>
-                          {l && <Image className={s.avatar} src={avatarSrc(key)} alt="" width={l.avatar.w} height={l.avatar.h} />}
-                          <span className={s.who}>
-                            <b>{v.name}</b>
-                            <strong>{v.course}</strong>
-                            <span>{v.company}</span>
-                          </span>
-                        </span>
-                        <span className={s.play}>
-                          <PlayIcon />
-                        </span>
-                      </Link>
-                    </li>
-                  );
-                })}
+                {keys.map((v, si) => (
+                  <li key={`${pi}-${v.name}`} className={`${s.card} ${s[slotClass[si]]} ${si === 0 ? s.big : ''}`}>
+                    <TestimonialCard t={v} big={si === 0} sizes={si === 0 ? '(max-width: 600px) 100vw, 860px' : '(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 430px'} />
+                  </li>
+                ))}
               </ul>
             ))}
           </div>
+
+          <CarouselControls target={scroller} />
 
           <button type="button" className={`${s.arrow} ${s.prev}`} aria-label="Previous testimonials" onClick={() => go(page - 1)}>
             <ChevronLeft />

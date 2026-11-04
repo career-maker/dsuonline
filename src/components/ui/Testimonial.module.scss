@@ -1,0 +1,298 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+// ---------- desktop: fills its parent li (home bento cell / inner grid cell)
+.tc {
+  position: absolute;
+  inset: 0;
+  color: #fff;
+}
+
+.media {
+  @include zoom;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: px(10);
+  background: #222;
+  outline-offset: 2px;
+}
+
+.photo {
+  object-fit: cover;
+  object-position: 50% 18%;
+}
+
+.initial {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: $blue;
+  font-size: px(64);
+  font-weight: 700;
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(0 0 0 / 0%) 50%, rgb(0 0 0 / 92%) 100%);
+}
+
+.info {
+  position: absolute;
+  left: clamp(10px, #{u(18)}, 18px);
+  right: px(56);
+  bottom: clamp(10px, #{u(18)}, 18px);
+  letter-spacing: -0.0175em;
+}
+
+.who {
+  display: block;
+
+  b {
+    display: block;
+    font-size: fs(18, 14px);
+    line-height: 1.2;
+    font-weight: 500;
+  }
+
+  strong {
+    display: block;
+    font-size: fs(16, 13px);
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  span {
+    display: block;
+    font-size: fs(16, 13px);
+    line-height: 1.25;
+    font-weight: 300;
+  }
+}
+
+.play {
+  position: absolute;
+  right: clamp(8px, #{u(14)}, 14px);
+  bottom: clamp(8px, #{u(16)}, 16px);
+  display: grid;
+  place-items: center;
+  width: clamp(30px, #{u(34)}, 34px);
+  height: clamp(30px, #{u(34)}, 34px);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 85%);
+  color: #4a4a4a;
+  font-size: px(18);
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s;
+
+  &:hover {
+    transform: scale(1.1);
+    background: #fff;
+  }
+}
+
+.player {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #000;
+}
+
+// hover / focus: the quote replaces the name block (text-only cards)
+.reveal {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: px(10);
+  padding: clamp(12px, #{u(18)}, 18px);
+  background: rgb(1 6 63 / 94%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.q {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  font-size: fs(14, 12px);
+  line-height: 1.5;
+  scrollbar-width: thin;
+}
+
+.big .q {
+  font-size: fs(20, 14px);
+  line-height: 1.55;
+}
+
+.whoB {
+  flex: none;
+  padding-top: px(8);
+  border-top: 1px solid rgb(255 255 255 / 25%);
+
+  span {
+    display: none;
+  }
+}
+
+.big .whoB span {
+  display: block;
+}
+
+@media (hover: hover) {
+  .media:hover .reveal {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.media:focus-visible .reveal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.text,
+.controls {
+  display: none;
+}
+
+// ---------- inner pages: grid of cards
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: u(20);
+}
+
+.item {
+  position: relative;
+  aspect-ratio: 4 / 3.1;
+  min-width: 0;
+}
+
+// ---------- tablet + phone: photo with name, quote underneath, carousel
+@include down($bp-lg) {
+  .tc {
+    position: static;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    inset: auto;
+  }
+
+  .reveal {
+    display: none;
+  }
+
+  .text {
+    display: block;
+    padding: px(14) px(4) 0;
+    font-size: px(15);
+    line-height: 1.6;
+    color: $body;
+  }
+
+  .play {
+    width: 40px;
+    height: 40px;
+  }
+
+  .grid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .item {
+    flex: 0 0 calc((100% - 12px) / 2);
+    aspect-ratio: auto;
+    scroll-snap-align: start;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+
+    button {
+      @include round-arrow(40px);
+      display: grid;
+      place-items: center;
+      border: 1.5px solid #1a1a1a;
+      background: #fff;
+      color: #1a1a1a;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      &:hover {
+        border-color: $blue;
+        background: $blue;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@include down($bp-sm) {
+  .item {
+    flex-basis: 100%;
+  }
+}
+
+// ---------- desktop: design-artboard sizes
+@include up($bp-lg) {
+  .media {
+    border-radius: u(10);
+  }
+
+  .info {
+    left: u(18);
+    right: u(56);
+    bottom: u(20);
+  }
+
+  .play {
+    right: u(14);
+    bottom: u(20);
+    width: u(34);
+    height: u(34);
+    font-size: u(22);
+  }
+
+  .who {
+    b {
+      font-size: u(18);
+    }
+
+    strong,
+    span {
+      font-size: u(16);
+    }
+  }
+}
