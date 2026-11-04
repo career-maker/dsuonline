@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/FacultyArticles.tsx": {
-    "mtime": 1793784099.228946,
-    "seen": 1793784233.012888,
-    "ast_hash": "7ac57147366c02fdba259629e821050a",
+    "mtime": 1793791197.9593592,
+    "seen": 1793791415.6511126,
+    "ast_hash": "5a8a71f53b313ac0c29872120667788a",
     "semantic_hash": ""
   },
   "src/components/sections/home/Faq.tsx": {
@@ -306,9 +306,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/ProgramsBand.tsx": {
-    "mtime": 1793782642.998212,
-    "seen": 1793782808.988234,
-    "ast_hash": "5b0ef5a7044fb6bdfbeeaaad374a450c",
+    "mtime": 1793791179.793293,
+    "seen": 1793791415.6511219,
+    "ast_hash": "45e98b50490ccb389fdc6421254f00bc",
     "semantic_hash": ""
   },
   "src/components/sections/home/Recognitions.tsx": {
@@ -480,9 +480,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1793790823.2916005,
-    "seen": 1793790832.9363549,
-    "ast_hash": "fac8a72952edf64e8670ce2f544fb3fd",
+    "mtime": 1793791406.401392,
+    "seen": 1793791415.6511912,
+    "ast_hash": "6e45a65a9ea1e1be3cee2cfbbe0d4271",
     "semantic_hash": ""
   },
   "CLAUDE.md": {

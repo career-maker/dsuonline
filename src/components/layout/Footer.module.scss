@@ -654,3 +654,10 @@
     padding-bottom: 12px;
   }
 }
+
+// phones + small tablets: no specialization menus in the footer (the download-brochure form stays)
+@include down($bp-md) {
+  .spec {
+    display: none;
+  }
+}

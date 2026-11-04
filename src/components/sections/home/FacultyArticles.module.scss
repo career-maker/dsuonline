@@ -581,10 +581,10 @@
   @include down($bp-md) {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    margin-top: 14px;
-    margin-bottom: 24px;
-    padding: 0 4px;
+    justify-content: flex-start;
+    margin-top: 16px;
+    margin-bottom: 0;
+    padding: 0;
   }
 }
 
@@ -699,7 +699,24 @@
     display: flex;
   }
 
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin: clamp(14px, #{u(20)}, 20px) 0 0;
   padding: 0;
+}
+
+// arrows sit above the cards on phones, so the cards start right under them
+@include down($bp-md) {
+  .faculty,
+  .articles {
+    margin-top: 14px;
+    padding-bottom: 0;
+  }
+
+  .rule {
+    margin-top: 28px;
+  }
+
+  .head2 {
+    margin-top: 28px;
+  }
 }

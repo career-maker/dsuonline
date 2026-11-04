@@ -116,6 +116,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## NEXT STEPS (do top item first when the user says "continue")
+- Done 2026-11-04: phones: carousel arrows moved above cards (Programs, Faculty, Articles), empty space under cards removed, blog arrows visible (svg size), footer specialization menus hidden <900px (brochure form kept).
 - Done 2026-11-04: testimonial hover content bottom-aligned (quote above name), scroll fixed with data-lenis-prevent (Lenis was hijacking wheel); Careers panel min-height 0 <1200px; blog track align-items:flex-start. shots/blank.py = blank-space scanner.
 - Done 2026-11-04: hero badge logos only on /about now (removed from program + specialization banners).
 - Done 2026-11-04: Download Brochure button in program + specialization banners (InnerPage.tsx, any page with facts); file public/docs/dsu-online-brochure.pdf (single generic brochure).

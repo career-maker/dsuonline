@@ -45,6 +45,12 @@
     color: #1a1a1a;
     font-size: px(22);
 
+    // phones: the 37-unit arrow drawing must not shrink with the em-based size (it vanished, leaving an empty ring)
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+
     &:hover {
       border-color: $blue;
       background: $blue-dark;

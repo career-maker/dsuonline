@@ -64,8 +64,8 @@
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
     gap: 14px;
-    padding: 6px var(--gut) 16px;
-    margin: clamp(20px, 3vw, 30px) calc(-1 * var(--gut)) 0;
+    padding: 6px var(--gut) 0;
+    margin: 12px calc(-1 * var(--gut)) 0;
     scroll-padding: 0 var(--gut);
 
     &::-webkit-scrollbar {
@@ -667,11 +667,22 @@
     position: relative;
     inset: auto;
     gap: 0;
-    padding: 20px 18px;
+    padding: 18px 16px;
+
+    h3 {
+      font-size: 24px;
+    }
+
+    p {
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
   }
 
   .ctaBtns {
-    margin-top: 20px;
+    margin-top: 14px;
+    gap: 10px;
   }
 }
 
@@ -681,10 +692,10 @@
   @include down($bp-md) {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    margin-top: 18px;
-    margin-bottom: 24px;
-    padding: 0 4px;
+    justify-content: flex-start;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 0;
   }
 }
 

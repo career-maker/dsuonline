@@ -115,6 +115,18 @@ export function FacultyArticles() {
           </div>
         )}
 
+        {facultyCan && (
+          <div className={`${s.controls} ${s.controlsOn}`}>
+            <div className={s.arrowBtns}>
+              <button type="button" className={s.arrowBtn} onClick={() => facultyStep(-1)} aria-label="Previous faculty">
+                <ChevronLeft />
+              </button>
+              <button type="button" className={s.arrowBtn} onClick={() => facultyStep(1)} aria-label="Next faculty">
+                <ChevronRight />
+              </button>
+            </div>
+          </div>
+        )}
         <ul className={s.faculty} ref={facultyTrackRef} aria-label="Faculty">
           {[0, 1].map((copy) =>
             faculty.map((f, i) => {
@@ -151,18 +163,6 @@ export function FacultyArticles() {
           )}
         </ul>
 
-        {facultyCan && (
-          <div className={`${s.controls} ${s.controlsOn}`}>
-            <div className={s.arrowBtns}>
-              <button type="button" className={s.arrowBtn} onClick={() => facultyStep(-1)} aria-label="Previous faculty">
-                <ChevronLeft />
-              </button>
-              <button type="button" className={s.arrowBtn} onClick={() => facultyStep(1)} aria-label="Next faculty">
-                <ChevronRight />
-              </button>
-            </div>
-          </div>
-        )}
 
         <hr className={s.rule} />
 
@@ -203,6 +203,30 @@ export function FacultyArticles() {
         </div>
 )}
 
+        {articlesCan && (
+<div className={s.controls}>
+          <div className={s.arrowBtns}>
+            <button
+              type="button"
+              className={s.arrowBtn}
+              onClick={() => step(articlesTrackRef.current, articleIdx, -1, setArticleIdx)}
+              disabled={articleIdx === 0}
+              aria-label="Previous article"
+            >
+              <ChevronLeft />
+            </button>
+            <button
+              type="button"
+              className={s.arrowBtn}
+              onClick={() => step(articlesTrackRef.current, articleIdx, 1, setArticleIdx)}
+              disabled={articleIdx === articles.length - 1}
+              aria-label="Next article"
+            >
+              <ChevronRight />
+            </button>
+          </div>
+        </div>
+)}
         <ul className={s.articles} ref={articlesTrackRef}>
           {articles.map((a) => (
             <li key={a.key}>
@@ -246,30 +270,6 @@ export function FacultyArticles() {
           ))}
         </ul>
 
-        {articlesCan && (
-<div className={s.controls}>
-          <div className={s.arrowBtns}>
-            <button
-              type="button"
-              className={s.arrowBtn}
-              onClick={() => step(articlesTrackRef.current, articleIdx, -1, setArticleIdx)}
-              disabled={articleIdx === 0}
-              aria-label="Previous article"
-            >
-              <ChevronLeft />
-            </button>
-            <button
-              type="button"
-              className={s.arrowBtn}
-              onClick={() => step(articlesTrackRef.current, articleIdx, 1, setArticleIdx)}
-              disabled={articleIdx === articles.length - 1}
-              aria-label="Next article"
-            >
-              <ChevronRight />
-            </button>
-          </div>
-        </div>
-)}
       </div>
     </section>
   );

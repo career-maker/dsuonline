@@ -96,6 +96,29 @@ export function ProgramsBand({
           {lead && <p className={s.lead}>{lead}</p>}
         </header>
 
+        <div className={s.controls}>
+          <div className={s.arrowBtns}>
+            <button
+              type="button"
+              className={s.arrowBtn}
+              onClick={() => step(-1)}
+              disabled={activeIdx === 0}
+              aria-label="Previous program"
+            >
+              <ChevronLeft />
+            </button>
+            <button
+              type="button"
+              className={s.arrowBtn}
+              onClick={() => step(1)}
+              disabled={activeIdx === totalCards - 1}
+              aria-label="Next program"
+            >
+              <ChevronRight />
+            </button>
+          </div>
+        </div>
+
         <div className={s.grid} ref={trackRef}>
           {order.map((code) => {
             const p = programs.find((x) => x.code === code)!;
@@ -242,28 +265,6 @@ export function ProgramsBand({
           </article>
         </div>
 
-        <div className={s.controls}>
-          <div className={s.arrowBtns}>
-            <button
-              type="button"
-              className={s.arrowBtn}
-              onClick={() => step(-1)}
-              disabled={activeIdx === 0}
-              aria-label="Previous program"
-            >
-              <ChevronLeft />
-            </button>
-            <button
-              type="button"
-              className={s.arrowBtn}
-              onClick={() => step(1)}
-              disabled={activeIdx === totalCards - 1}
-              aria-label="Next program"
-            >
-              <ChevronRight />
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );
