@@ -3974,38 +3974,100 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 }
 
-// ---------- specialization pages: cards follow the programme pages' Careers cards
-// (white card, soft shadow, gold top rule, brand-blue numbers) instead of the pastel boxes
+// ---------- specialization pages: cards follow the programme pages' career cards
+// (white card, blue-to-gold top bar, ghost number top-right, gold-dot lists)
 :global([data-spec]) {
+  .cards.tint,
+  .roles {
+    counter-reset: n;
+  }
+
   .cards.tint > li:nth-child(n),
-  .roles > li:nth-child(n),
-  .steps > li:nth-child(n),
-  .industries > li:nth-child(n) {
-    border: 0;
-    border-top: 3px solid $yellow;
-    border-radius: 10px;
+  .roles > li:nth-child(n) {
+    position: relative;
+    display: block;
+    min-height: 0;
+    padding: 28px 26px 24px;
+    overflow: hidden;
+    counter-increment: n;
+    border: 1px solid #e3e8f2;
+    border-radius: 18px;
     background: #fff;
-    box-shadow: 0 6px 22px rgb(2 9 102 / 9%);
+    box-shadow: 0 6px 22px rgb(2 9 102 / 6%);
     transition: box-shadow 0.3s $ease, translate 0.3s $ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, $blue, $gold);
+    }
+
+    &::after {
+      content: counter(n, decimal-leading-zero);
+      position: absolute;
+      top: 16px;
+      right: 22px;
+      font-size: 44px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: rgb(2 9 102 / 9%);
+    }
 
     @media (hover: hover) {
       &:hover {
         translate: 0 -4px;
-        box-shadow: 0 16px 36px rgb(2 9 102 / 16%);
+        box-shadow: 0 16px 36px rgb(2 9 102 / 14%);
       }
     }
   }
 
-  .cards.tint h3 {
-    font-weight: 600;
-    color: $blue;
+  .cards.tint h3,
+  .roles h3 {
+    max-width: 82%;
+    font-size: fs(24, 20px);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: $ink;
+    text-wrap: balance;
   }
 
-  .roles h3 {
-    font-weight: 600;
+  .cards.tint p {
+    margin-top: 14px;
+    font-size: 15.5px;
+    line-height: 1.6;
   }
 
   .roleNo {
-    box-shadow: 0 0 0 4px rgb(255 215 0 / 55%);
+    display: none;
+  }
+
+  .roleList {
+    display: grid;
+    gap: 9px;
+    margin-top: 16px;
+
+    li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 15.5px;
+      line-height: 1.45;
+      color: $body;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0.5em;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $gold;
+        box-shadow: 0 0 0 3px rgb(226 181 0 / 22%);
+      }
+    }
   }
 }

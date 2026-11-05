@@ -421,7 +421,19 @@ export function RoleGrid({ items }: { items: { title: string; text: string }[] }
           </span>
           <div>
             <h3>{r.title}</h3>
-            <p>{r.text}</p>
+            {r.text.includes('•') ? (
+              <ul className={s.roleList}>
+                {r.text
+                  .split('•')
+                  .map((x) => x.trim())
+                  .filter(Boolean)
+                  .map((x) => (
+                    <li key={x}>{x}</li>
+                  ))}
+              </ul>
+            ) : (
+              <p>{r.text}</p>
+            )}
           </div>
         </li>
       ))}
