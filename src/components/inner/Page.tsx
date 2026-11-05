@@ -226,28 +226,47 @@ function Body({ blocks, head }: { blocks: Block[]; head?: ReactNode }) {
   );
 }
 
-/** Sub-sections as views; runs of short one-paragraph subs (e.g. each learning module as its own heading) become one card grid under the empty "Learning Modules"-style heading before them. */
-function subViews(subs: Sub[]): ReactNode[] {
-  const simple = (x: Sub) => x.blocks.length > 0 && x.blocks.every(isP) && x.blocks.length <= 2 && x.blocks.reduce((n, b) => n + (isP(b) ? b.x.length : 0), 0) < 420 && !/career/i.test(x.title);
+/**
+ * Specialization pages: one template whatever shape the content arrives in.
+ * "Learning Modules" -> numbered cards, "Career Path" -> ruled list with icons; everything else keeps its normal view.
+ * Content shapes handled: title/description paragraph pairs under one heading, a heading with a list, or one heading per module.
+ */
+function specViews(subs: Sub[]): ReactNode[] {
+  const ps = (x: Sub) => x.blocks.filter(isP).map((b) => b.x);
+  const clean = (x: Sub) => x.blocks.filter((b) => !isP(b) || b.x.trim());
+  const pairsOf = (x: Sub) => {
+    const bl = clean(x);
+    return bl.length >= 2 && bl.every(isP) && bl.length % 2 === 0 ? parsePairs(bl) : [];
+  };
+  // a career list that only names the roles (no descriptions)
+  const titlesOf = (x: Sub) => (/career/i.test(x.title) && x.blocks.length >= 2 && x.blocks.every(isP) ? ps(x).filter((v) => v.trim()).map((v) => ({ title: v.trim(), text: '' })) : []);
+  const simple = (x: Sub) => x.blocks.length > 0 && x.blocks.every(isP) && x.blocks.length <= 2 && ps(x).join('').length < 420 && !/career/i.test(x.title);
+  const wrap = (key: string, title: string, node: ReactNode) => (
+    <div key={key} style={{ marginTop: 'clamp(28px, 3.4vw, 52px)' }}>
+      <h3 style={{ marginBottom: 16, fontSize: 'max(21px, calc(var(--u) * 30))', fontWeight: 700, lineHeight: 1.2 }}>{title}</h3>
+      {node}
+    </div>
+  );
   const out: ReactNode[] = [];
   for (let i = 0; i < subs.length; i++) {
     const x = subs[i];
-    if (!x.blocks.length && subs[i + 1] && simple(subs[i + 1])) {
+    const pairs = pairsOf(x);
+    const titles = pairs.length ? [] : titlesOf(x);
+    if (/career/i.test(x.title) && (pairs.length || titles.length)) {
+      out.push(wrap(x.title, x.title, <RoleGrid items={pairs.length ? pairs : titles} />));
+    } else if (pairs.length) {
+      out.push(wrap(x.title, x.title, <CardGrid items={pairs} cols={3} tint />));
+    } else if (!x.blocks.length && subs[i + 1] && simple(subs[i + 1])) {
       const run: Sub[] = [];
       let j = i + 1;
       while (j < subs.length && simple(subs[j])) run.push(subs[j++]);
       if (run.length >= 3) {
-        out.push(
-          <div key={x.title} style={{ marginTop: 'clamp(28px, 3.4vw, 52px)' }}>
-            <h3 style={{ marginBottom: 16, fontSize: 'max(21px, calc(var(--u) * 30))', fontWeight: 700, lineHeight: 1.2 }}>{x.title}</h3>
-            <CardGrid items={run.map((r) => ({ title: r.title, text: r.blocks.filter(isP).map((b) => b.x).join(' ') }))} cols={3} tint />
-          </div>,
-        );
+        out.push(wrap(x.title, x.title, <CardGrid items={run.map((r) => ({ title: r.title, text: ps(r).join(' ') }))} cols={3} tint />));
         i = j - 1;
         continue;
       }
-    }
-    out.push(<SubView key={x.title} sub={x} />);
+      out.push(<SubView key={x.title} sub={x} />);
+    } else out.push(<SubView key={x.title} sub={x} />);
   }
   return out;
 }
@@ -999,8 +1018,9 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     // --- mixed: sub-headings that all hold a few lines become cards
     const cardSubs = sec.subs.length >= 2 && sec.subs.every((x) => !x.blocks.some((b) => b.t === 'img' || b.t === 'table') && x.blocks.reduce((t, b) => t + (isP(b) ? b.x.length : b.t === 'ul' ? b.items.join('').length : 0), 0) < 700);
     const hasLead = sec.blocks.length > 0;
+    const spec = withFacts && crumbs.length >= 3; // specialization pages share one card template
 
-    if (cardSubs && !hasLead) {
+    if (!spec && cardSubs && !hasLead) {
       nodes.push(
         <Sec key={key} tone={nextTone()} title={title}>
           {learningCards({ ...sec, blocks: [] })}
@@ -1073,7 +1093,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     nodes.push(
       <Sec key={key} tone={nextTone()} title={oneMedia ? undefined : title || undefined} narrow={!imgs.length && !sec.subs.length && sec.blocks.every((b) => b.t === 'p' && b.x.length > 80)}>
         {hasLead && <Body blocks={sec.blocks} head={oneMedia ? <Head title={title || undefined} /> : undefined} />}
-        {cardSubs && hasLead ? <div style={{ marginTop: 28 }}>{learningCards({ ...sec, blocks: [] })}</div> : subViews(sec.subs)}
+        {!spec && cardSubs && hasLead ? <div style={{ marginTop: 28 }}>{learningCards({ ...sec, blocks: [] })}</div> : spec ? specViews(sec.subs) : sec.subs.map((x) => <SubView key={x.title} sub={x} />)}
       </Sec>,
     );
   }

@@ -422,13 +422,15 @@ export function RoleGrid({ items }: { items: { title: string; text: string }[] }
           </span>
           <div className={s.roleBody}>
             <h3>{r.title}</h3>
-            <p>
-              {r.text
-                .split('•')
-                .map((x) => x.trim())
-                .filter(Boolean)
-                .join(' · ')}
-            </p>
+            {r.text && (
+              <p>
+                {r.text
+                  .split('•')
+                  .map((x) => x.trim())
+                  .filter(Boolean)
+                  .join(' · ')}
+              </p>
+            )}
           </div>
           <span className={s.roleIcon}>
             <RoleIcon title={r.title} />

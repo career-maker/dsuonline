@@ -48,7 +48,7 @@ const P: Record<string, ReactNode> = {
 
 // first matching keyword wins
 const MAP: [RegExp, keyof typeof P][] = [
-  [/learn|train|educat|teach|l&d/i, 'book'],
+  [/train|educat|teach|l&d|learning (&|and) |instruct/i, 'book'],
   [/analy|data|insight|research|intelligence|risk/i, 'chart'],
   [/secur|compliance|audit|legal|law|govern/i, 'shield'],
   [/develop|engineer|software|program|cloud|devops|iot|network/i, 'code'],
