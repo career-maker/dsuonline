@@ -7,7 +7,8 @@ import { ArrowLink } from '@/components/ui/ArrowLink';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Icon } from '@/components/ui/Icon';
 import { ChevronLeft, ChevronRight } from '@/components/ui/icons';
-import { articles, faculty } from '@/data/home';
+import { articles } from '@/data/home';
+import { realFaculty } from '@/data/faculty';
 import { useLoopCarousel } from '@/hooks/useLoopCarousel';
 import s from './FacultyArticles.module.scss';
 
@@ -129,29 +130,24 @@ export function FacultyArticles() {
         )}
         <ul className={s.faculty} ref={facultyTrackRef} aria-label="Faculty">
           {[0, 1].map((copy) =>
-            faculty.map((f) => {
+            realFaculty.map((f) => {
               const clone = copy === 1;
               return (
-                <li key={`${copy}-${f.key}`} aria-hidden={clone || undefined} inert={clone || undefined}>
+                <li key={`${copy}-${f.name}`} aria-hidden={clone || undefined} inert={clone || undefined}>
                   <div className={s.fphoto}>
-                    {/* whole portrait, top-aligned so heads are never cut (the old design crop trimmed some) */}
-                    <Image src={f.src ?? `/images/faculty/${f.key}.webp`} alt={clone ? '' : f.name} fill sizes="(max-width: 900px) 50vw, 330px" className={s.fimg} />
+                    {/* whole portrait, top-aligned so heads are never cut */}
+                    <Image src={f.src} alt={clone ? '' : f.name} fill sizes="(max-width: 900px) 50vw, 330px" className={s.fimg} />
                   </div>
                   <div className={s.fbody}>
                     <h3>{f.name}</h3>
-                    <p className={s.role}>{f.role}</p>
+                    <p className={s.role}>{f.role || `Online ${f.program}`}</p>
                     <ul className={s.points}>
-                      {f.points.map((pt) => (
-                        <li key={pt}>{pt}</li>
-                      ))}
+                      <li>{f.creds}</li>
                     </ul>
                     <div className={s.links}>
-                      <Link href="/academics-at-dsu" aria-label={`View Academic Profile of ${f.name}`} tabIndex={clone ? -1 : undefined}>
+                      <Link href={`${f.page}#meet-expert-faculty`} aria-label={`View Academic Profile of ${f.name}`} tabIndex={clone ? -1 : undefined}>
                         View Profile &gt;
                       </Link>
-                      <a href="https://www.linkedin.com/company/dsuonline" target="_blank" rel="noopener noreferrer" tabIndex={clone ? -1 : undefined}>
-                        <Icon name="linkedin" /> LinkedIn
-                      </a>
                     </div>
                   </div>
                 </li>
