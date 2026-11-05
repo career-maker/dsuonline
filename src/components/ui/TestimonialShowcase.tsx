@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, PlayIcon } from '@/components/ui/icons';
 import type { Testimonial } from '@/data/testimonials';
 import s from './TestimonialShowcase.module.scss';
@@ -9,131 +9,113 @@ import s from './TestimonialShowcase.module.scss';
 const initialOf = (name: string) => name.replace(/^(Mr|Ms|Mrs|Dr)\.?\s*/i, '').charAt(0);
 
 /**
- * Learner stories: one large portrait with the quote beside it, the other learners as a thumbnail strip
- * (the one before + the next three). Click a thumbnail to bring that learner forward; autoplays, pauses on hover / focus / touch.
+ * Learner stories as a marquee: quote bubbles drift left on a loop (JS-driven so the arrows and the progress line share one position).
+ * Pauses on hover / focus / touch / an opened quote and when off-screen; the arrows nudge it one card.
  */
-export function TestimonialShowcase({ items, label = 'Testimonials', interval = 2000 }: { items: Testimonial[]; label?: string; interval?: number }) {
+export function TestimonialShowcase({ items, label = 'Testimonials' }: { items: Testimonial[]; label?: string }) {
   const n = items.length;
-  const [i, setI] = useState(0);
-  const [hold, setHold] = useState(false);
-  const [open, setOpen] = useState(false); // quote expanded
-  const [long, setLong] = useState(false); // quote taller than its clamp
-  const [playing, setPlaying] = useState(false);
-  const rootRef = useRef<HTMLDivElement>(null);
-  const qRef = useRef<HTMLParagraphElement>(null);
-  const t = items[i];
+  const railRef = useRef<HTMLDivElement>(null);
+  const barRef = useRef<HTMLSpanElement>(null);
+  const hold = useRef(false);
+  const opened = useRef(false);
+  const [open, setOpen] = useState<number | null>(null);
+  const loop = [...items, ...items];
 
-  const go = (k: number) => {
-    setI(((k % n) + n) % n);
-    setOpen(false);
-    setPlaying(false);
-  };
-
-  // does the quote need "Read more"? (measured collapsed)
-  useLayoutEffect(() => {
-    const q = qRef.current;
-    if (!q) return;
-    setLong(!open && q.scrollHeight > q.clientHeight + 2 ? true : long && open);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [i, open]);
-
-  // autoplay: next learner; idle while hovered / focused / touched, quote expanded, video playing, off-screen or tab hidden
   useEffect(() => {
-    const el = rootRef.current;
-    if (!el || n < 2 || hold || open || playing || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const el = railRef.current;
+    if (!el || n < 2) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let raf = 0;
     let inView = false;
-    const io = new IntersectionObserver(([e]) => (inView = e.isIntersecting), { threshold: 0.3 });
+    const io = new IntersectionObserver(([e]) => (inView = e.isIntersecting), { threshold: 0.1 });
     io.observe(el);
-    const id = setInterval(() => {
-      if (inView && !document.hidden) setI((v) => (v + 1) % n);
-    }, interval);
+    const tick = () => {
+      const half = el.scrollWidth / 2;
+      if (!reduce && inView && !hold.current && !opened.current && !document.hidden) el.scrollLeft += 0.6;
+      if (el.scrollLeft >= half) el.scrollLeft -= half;
+      else if (el.scrollLeft < 0) el.scrollLeft += half;
+      if (barRef.current) barRef.current.style.width = `${Math.max(8, (el.scrollLeft / half) * 100)}%`;
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
     return () => {
-      clearInterval(id);
+      cancelAnimationFrame(raf);
       io.disconnect();
     };
-  }, [n, hold, open, playing, interval]);
+  }, [n]);
 
-  if (!t) return null;
-  const thumbs = Array.from(new Set([i - 1, i + 1, i + 2, i + 3].map((k) => ((k % n) + n) % n))).filter((k) => k !== i);
-  const dept = [t.course, t.company].filter(Boolean).join(' · ');
+  const nudge = (dir: 1 | -1) => {
+    const el = railRef.current;
+    const card = el?.querySelector('li');
+    if (el && card) el.scrollBy({ left: dir * (card.clientWidth + 20), behavior: 'smooth' });
+  };
+
+  const toggle = (k: number) => {
+    const next = open === k ? null : k;
+    setOpen(next);
+    opened.current = next !== null;
+  };
 
   return (
     <div
-      ref={rootRef}
       className={s.root}
       aria-roledescription="carousel"
       aria-label={label}
-      onMouseEnter={() => setHold(true)}
-      onMouseLeave={() => setHold(false)}
-      onFocus={() => setHold(true)}
-      onBlur={() => setHold(false)}
-      onTouchStart={() => setHold(true)}
-      onTouchEnd={() => setTimeout(() => setHold(false), 4000)}
+      onMouseEnter={() => (hold.current = true)}
+      onMouseLeave={() => (hold.current = false)}
+      onFocus={() => (hold.current = true)}
+      onBlur={() => (hold.current = false)}
+      onTouchStart={() => (hold.current = true)}
+      onTouchEnd={() => setTimeout(() => (hold.current = false), 3000)}
     >
-      <figure className={s.stage} key={i}>
-        <div className={s.photo}>
-          {t.img ? (
-            <Image src={t.img} alt={`${t.name}${t.course ? `, ${t.course} learner` : ''}`} fill sizes="(max-width: 900px) 80vw, 340px" priority={i === 0} />
-          ) : (
-            <span className={s.initial} aria-hidden="true">
-              {initialOf(t.name)}
-            </span>
-          )}
-          {t.video &&
-            (playing ? (
-              <iframe
-                src={`https://www.youtube.com/embed/${t.video}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
-                title={`${t.name} testimonial video`}
-                allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-                allowFullScreen
-                referrerPolicy="strict-origin-when-cross-origin"
-              />
-            ) : (
-              <button type="button" className={s.play} onClick={() => setPlaying(true)} aria-label={`Watch ${t.name}'s video`}>
-                <PlayIcon />
-              </button>
-            ))}
-        </div>
-
-        <figcaption className={s.copy}>
-          <span className={s.no}>#{i + 1}</span>
-          <h3>{t.name}</h3>
-          {dept && <p className={s.dept}>{dept}</p>}
-          <blockquote className={s.quote}>
-            <p ref={qRef} className={open ? s.qOpen : s.q}>
-              {t.quote}
-            </p>
-          </blockquote>
-          {(long || open) && (
-            <button type="button" className={s.more} onClick={() => setOpen((v) => !v)} aria-expanded={open}>
-              {open ? 'Show less' : 'Show more'}
-            </button>
-          )}
-        </figcaption>
-      </figure>
-
-      <div className={s.strip} role="group" aria-label="More learner stories">
-        {thumbs.map((k) => (
-          <button key={k} type="button" className={s.thumb} onClick={() => go(k)} aria-label={`Show ${items[k].name}'s story`}>
-            {items[k].img ? <Image src={items[k].img!} alt="" fill sizes="96px" /> : <span aria-hidden="true">{initialOf(items[k].name)}</span>}
-            <i>{items[k].name.replace(/^(Mr|Ms|Mrs|Dr)\.?\s*/i, '')}</i>
-          </button>
-        ))}
-      </div>
-
-      {n > 1 && (
-        <div className={s.arrows}>
-          <button type="button" onClick={() => go(i - 1)} aria-label="Previous story">
+      <div className={s.side}>
+        <svg className={s.mark} viewBox="0 0 64 48" aria-hidden="true">
+          <path d="M0 48V28C0 12 9 2 24 0l2 7C17 9 13 15 13 22h11v26H0Zm38 0V28C38 12 47 2 62 0l2 7c-9 2-13 8-13 15h11v26H38Z" fill="currentColor" />
+        </svg>
+        <div className={s.ctl}>
+          <button type="button" onClick={() => nudge(-1)} aria-label="Previous story">
             <ChevronLeft />
           </button>
-          <span aria-live="polite">
-            {String(i + 1).padStart(2, '0')} / {String(n).padStart(2, '0')}
+          <span className={s.prog} aria-hidden="true">
+            <span ref={barRef} />
           </span>
-          <button type="button" onClick={() => go(i + 1)} aria-label="Next story">
+          <button type="button" onClick={() => nudge(1)} aria-label="Next story">
             <ChevronRight />
           </button>
         </div>
-      )}
+      </div>
+
+      <div className={s.rail} ref={railRef}>
+        <ul>
+          {loop.map((t, k) => {
+            const dup = k >= n;
+            const isOpen = open === k;
+            const dept = [t.course, t.company].filter(Boolean).join(' · ');
+            return (
+              <li key={k} className={s.item} aria-hidden={dup || undefined}>
+                <blockquote className={s.bubble}>
+                  <p className={isOpen ? s.qOpen : s.q}>{t.quote}</p>
+                  <button type="button" className={s.more} tabIndex={dup ? -1 : undefined} aria-expanded={isOpen} onClick={() => toggle(k)}>
+                    {isOpen ? 'Show less' : 'Show more'}
+                  </button>
+                </blockquote>
+                <div className={s.who}>
+                  <span className={s.av}>{t.img ? <Image src={t.img} alt="" fill sizes="56px" /> : <b aria-hidden="true">{initialOf(t.name)}</b>}</span>
+                  <span className={s.nm}>
+                    <strong>{t.name}</strong>
+                    {dept && <em>{dept}</em>}
+                  </span>
+                  {t.video && (
+                    <a className={s.play} href={`https://www.youtube.com/watch?v=${t.video}`} target="_blank" rel="noopener noreferrer" tabIndex={dup ? -1 : undefined} aria-label={`Watch ${t.name} video`}>
+                      <PlayIcon />
+                    </a>
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }
