@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { ArrowLink } from '@/components/ui/ArrowLink';
-import { FacultyCarousel } from './FacultyCarousel';
+import { FacultyStrip } from '@/components/sections/home/FacultyArticles';
 import { TestimonialGrid } from '@/components/ui/Testimonial';
 import { FacultyScroller } from './FacultyScroller';
 import { QuoteSlider } from './QuoteSlider';
@@ -465,5 +465,5 @@ export function IndustryGrid({ items }: { items: { title: string; text: string }
 
 /** Whole faculty list in the home "Meet Our Faculty" card design (photo, name, role, credentials, links). */
 export function FacultyShowcase({ items }: { items: { name: string; creds?: string; role?: string; img?: Img }[] }) {
-  return <FacultyCarousel items={items} />;
+  return <FacultyStrip items={items.filter((f) => f.img).map((f) => ({ name: f.name, role: f.role ?? '', creds: f.creds ?? '', src: f.img!.src }))} />;
 }

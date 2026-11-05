@@ -126,9 +126,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Kit.tsx": {
-    "mtime": 1793858896.1643214,
-    "seen": 1793859058.3655307,
-    "ast_hash": "93aed4d13524d91fce12b20fb06cb95b",
+    "mtime": 1793860051.2834368,
+    "seen": 1793860172.099559,
+    "ast_hash": "f8c86ec7db89341e9aeda13662109473",
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/FacultyArticles.tsx": {
-    "mtime": 1793857565.926674,
-    "seen": 1793857700.3763552,
-    "ast_hash": "fda6f3f9d239cd7124c5112f5c91f303",
+    "mtime": 1793860066.10656,
+    "seen": 1793860172.0996034,
+    "ast_hash": "c0bbab836a26c69fff752702f74d1f43",
     "semantic_hash": ""
   },
   "src/components/sections/home/Faq.tsx": {
@@ -480,9 +480,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1793857700.8010378,
-    "seen": 1793858333.541445,
-    "ast_hash": "443fd39ccc6de8138c0d0257db6fdfcd",
+    "mtime": 1793859059.0211437,
+    "seen": 1793860172.099662,
+    "ast_hash": "2c7e007bb1e8c4301d7ccc0e1089d769",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -579,12 +579,6 @@
     "mtime": 1793857557.5813625,
     "seen": 1793857700.3763845,
     "ast_hash": "5e328cc8f4aa89da038eb8e7eb2ba657",
-    "semantic_hash": ""
-  },
-  "src/components/inner/FacultyCarousel.tsx": {
-    "mtime": 1793858896.0855925,
-    "seen": 1793859058.3655138,
-    "ast_hash": "4abcc76671281852d3b34ba0df259c91",
     "semantic_hash": ""
   }
 }

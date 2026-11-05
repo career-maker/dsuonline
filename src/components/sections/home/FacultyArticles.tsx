@@ -29,6 +29,55 @@ const toIsoDate = (dateStr: string) => {
   return dateStr;
 };
 
+export type FacultyCardData = { name: string; role: string; creds: string; src: string };
+
+/** One "Meet Our Faculty" card (shared by the home page and /academics-at-dsu). */
+export function FacultyCard({ f, clone }: { f: FacultyCardData; clone?: boolean }) {
+  return (
+    <li aria-hidden={clone || undefined} inert={clone || undefined}>
+      <div className={s.fphoto}>
+        {/* whole portrait, top-aligned so heads are never cut */}
+        <Image src={f.src} alt={clone ? '' : f.name} fill sizes="(max-width: 900px) 50vw, 330px" className={s.fimg} />
+      </div>
+      <div className={s.fbody}>
+        <h3>{f.name}</h3>
+        <p className={s.role}>{f.role}</p>
+        <ul className={s.points}>
+          <li>{f.creds}</li>
+        </ul>
+        <div className={s.links}>
+          <a href="https://www.linkedin.com/company/dsuonline" target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn: ${f.name}`} tabIndex={clone ? -1 : undefined}>
+            <Icon name="linkedin" /> LinkedIn
+          </a>
+        </div>
+      </div>
+    </li>
+  );
+}
+
+/** The home faculty carousel (same cards, same styles) for other pages: 2s autoplay, arrows below. */
+export function FacultyStrip({ items }: { items: FacultyCardData[] }) {
+  const ref = useRef<HTMLUListElement>(null);
+  const { canScroll, step } = useLoopCarousel(ref, { looped: true, auto: 2000 });
+  return (
+    <div className={s.section} style={{ padding: 0, background: 'transparent' }}>
+      <ul className={s.faculty} ref={ref} aria-label="Faculty" style={{ marginTop: 0 }}>
+        {[0, 1].map((copy) => items.map((f) => <FacultyCard key={`${copy}-${f.name}`} f={f} clone={copy === 1} />))}
+      </ul>
+      {canScroll && (
+        <div className={s.arrowBtns} style={{ justifyContent: 'flex-end', marginTop: 18 }}>
+          <button type="button" className={s.arrowBtn} onClick={() => step(-1)} aria-label="Previous faculty">
+            <ChevronLeft />
+          </button>
+          <button type="button" className={s.arrowBtn} onClick={() => step(1)} aria-label="Next faculty">
+            <ChevronRight />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function FacultyArticles() {
   const facultyTrackRef = useRef<HTMLUListElement>(null);
   const articlesTrackRef = useRef<HTMLUListElement>(null);
@@ -129,31 +178,7 @@ export function FacultyArticles() {
           </div>
         )}
         <ul className={s.faculty} ref={facultyTrackRef} aria-label="Faculty">
-          {[0, 1].map((copy) =>
-            realFaculty.map((f) => {
-              const clone = copy === 1;
-              return (
-                <li key={`${copy}-${f.name}`} aria-hidden={clone || undefined} inert={clone || undefined}>
-                  <div className={s.fphoto}>
-                    {/* whole portrait, top-aligned so heads are never cut */}
-                    <Image src={f.src} alt={clone ? '' : f.name} fill sizes="(max-width: 900px) 50vw, 330px" className={s.fimg} />
-                  </div>
-                  <div className={s.fbody}>
-                    <h3>{f.name}</h3>
-                    <p className={s.role}>{f.role || `Online ${f.program}`}</p>
-                    <ul className={s.points}>
-                      <li>{f.creds}</li>
-                    </ul>
-                    <div className={s.links}>
-                      <Link href={`${f.page}#meet-expert-faculty`} aria-label={`View Academic Profile of ${f.name}`} tabIndex={clone ? -1 : undefined}>
-                        View Profile &gt;
-                      </Link>
-                    </div>
-                  </div>
-                </li>
-              );
-            }),
-          )}
+          {[0, 1].map((copy) => realFaculty.map((f) => <FacultyCard key={`${copy}-${f.name}`} f={{ name: f.name, role: f.role || `Online ${f.program}`, creds: f.creds, src: f.src }} clone={copy === 1} />))}
         </ul>
 
 

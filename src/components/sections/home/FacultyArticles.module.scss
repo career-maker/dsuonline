@@ -141,6 +141,11 @@
     color: $blue;
   }
 
+  // single LinkedIn button (replaces View Profile): left aligned
+  a:only-child {
+    margin-left: 0;
+  }
+
   a:last-child {
     gap: px(4);
     color: $ink;
@@ -449,6 +454,10 @@
     a:last-child {
       gap: u(4);
       margin-left: auto;
+
+      &:only-child {
+        margin-left: 0;
+      }
       margin-right: u(10);
 
       img {
