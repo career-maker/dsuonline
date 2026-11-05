@@ -55,6 +55,13 @@ export function Hero() {
 
       <div className={s.layout}>
       <div className={s.copy}>
+        <div className={s.badges}>
+          <Image className={s.naac} src="/images/brand/naac-light.webp" alt="NAAC A+ grade accredited" width={294} height={100} />
+          <i aria-hidden="true" />
+          <Image className={s.ugc} src="/images/brand/ugc.webp" alt="UGC Entitled" width={202} height={103} />
+          <i aria-hidden="true" />
+          <Image className={s.legacy} src="/images/brand/legacy-light.webp" alt="7 decades legacy in education and healthcare" width={116} height={103} />
+        </div>
         {/* re-keyed on every slide change so the headline re-plays its word-by-word rise */}
         <h1 key={`t${active}`} className={s.title} aria-label="Your Degree. Your Pace. Your Future.">
           {[['Your', 'Degree.', 'Your', 'Pace.'], ['Your', 'Future.']].map((line, li) => (
@@ -86,13 +93,6 @@ export function Hero() {
 
       </div>
     </section>
-    <div className={s.logoStrip}>
-      <Image src="/images/brand/naac.webp" alt="NAAC A+ grade accredited" width={294} height={100} />
-      <i aria-hidden="true" />
-      <Image src="/images/brand/ugc.webp" alt="UGC Entitled" width={202} height={103} />
-      <i aria-hidden="true" />
-      <Image src="/images/brand/legacy.webp" alt="7 decades legacy in education and healthcare" width={116} height={103} />
-    </div>
     </>
   );
 }

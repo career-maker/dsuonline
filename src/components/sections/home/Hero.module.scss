@@ -1,27 +1,6 @@
 @use 'tokens' as *;
 @use 'mixins' as *;
 
-.logoStrip {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(14px, #{u(40)}, 40px);
-  padding: clamp(18px, #{u(28)}, 28px) var(--gut);
-  background: #fff;
-
-  img {
-    width: auto;
-    height: clamp(44px, #{u(80)}, 80px);
-    object-fit: contain;
-  }
-
-  i {
-    width: 1px;
-    height: clamp(32px, #{u(60)}, 60px);
-    background: rgb(0 0 0 / 15%);
-  }
-}
-
 .hero {
   position: relative;
   overflow: hidden;
@@ -113,6 +92,8 @@
 }
 
 .copy {
+  position: relative;
+  isolation: isolate;
   align-self: end;
   padding-bottom: clamp(0px, #{u(25)}, 25px);
   letter-spacing: -0.0175em;
@@ -1082,5 +1063,71 @@
 
   @include up($bp-lg) {
     display: none;
+  }
+}
+
+// logos above the headline (white-on-dark variants) + a soft, shapeless extra darkening behind the text block only
+.badges {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, #{u(7.2)}, 15px);
+  margin-bottom: clamp(6px, #{u(8)}, 14px);
+
+  img {
+    width: auto;
+    height: clamp(40px, #{u(103)}, 103px);
+    object-fit: contain;
+  }
+
+  i {
+    width: 1px;
+    height: clamp(30px, #{u(76)}, 76px);
+    background: rgb(255 255 255 / 30%);
+  }
+}
+
+.copy::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -60px -90px -40px -90px;
+  pointer-events: none;
+  background: radial-gradient(ellipse 70% 70% at 45% 50%, rgb(0 0 0 / 45%) 0%, rgb(0 0 0 / 30%) 50%, rgb(0 0 0 / 0%) 100%);
+}
+
+@include down($bp-lg) {
+  .badges {
+    gap: clamp(4px, 0.8vw, 10px);
+
+    img {
+      height: clamp(32px, 5vw, 58px);
+    }
+
+    i {
+      height: clamp(26px, 3.8vw, 44px);
+    }
+  }
+}
+
+@media (max-width: 759.98px) {
+  .badges {
+    flex-wrap: nowrap;
+    gap: 6px;
+
+    img {
+      height: 38px;
+    }
+
+    .naac {
+      height: 36px;
+    }
+
+    i {
+      height: 28px;
+    }
+  }
+
+  .copy::before {
+    inset: -30px -20px -20px -20px;
   }
 }
