@@ -88,3 +88,6 @@ export const showFacultyInsights = false;
 
 /** Home blog cards slider (bottom of the home page). Hidden for now: set to true to show it again. */
 export const showHomeBlogs = false;
+
+/** Home "Careers Assistance & Hiring Partners" section. Hidden for now: set to true to show it again. */
+export const showHomeCareers = false;

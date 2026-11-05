@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
-    "mtime": 1793100359.4625723,
-    "seen": 1793773932.7654085,
-    "ast_hash": "32c5ecd513fe6286e1a1f2ec7d56bd1d",
+    "mtime": 1793874664.3551197,
+    "seen": 1793874828.2028549,
+    "ast_hash": "e96d3dd0779268c466dc9c1a3d709713",
     "semantic_hash": ""
   },
   "src/app/robots.ts": {
@@ -90,9 +90,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Blog.tsx": {
-    "mtime": 1793817166.869225,
-    "seen": 1793817297.398639,
-    "ast_hash": "9c6efdf892b8825ad7b5cadd325405a8",
+    "mtime": 1793874674.9357076,
+    "seen": 1793874828.2028656,
+    "ast_hash": "86c00d1b33946dcabcbdcf925a8d03b0",
     "semantic_hash": ""
   },
   "src/components/inner/ContactForm.tsx": {
@@ -228,9 +228,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/Header.tsx": {
-    "mtime": 1793100925.1416852,
-    "seen": 1793773932.7654698,
-    "ast_hash": "7f3125a68a57dbbc8608f629576bbbda",
+    "mtime": 1793874664.359074,
+    "seen": 1793874828.2029328,
+    "ast_hash": "007e25accd63d39c3f5a540cf0184b1d",
     "semantic_hash": ""
   },
   "src/components/layout/Preloader.tsx": {
@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/FacultyArticles.tsx": {
-    "mtime": 1793860066.10656,
-    "seen": 1793860172.0996034,
-    "ast_hash": "c0bbab836a26c69fff752702f74d1f43",
+    "mtime": 1793874664.3551197,
+    "seen": 1793874828.2029614,
+    "ast_hash": "30aabf323cc13f0ac7daad1b00e83a74",
     "semantic_hash": ""
   },
   "src/components/sections/home/Faq.tsx": {
@@ -408,9 +408,9 @@
     "semantic_hash": ""
   },
   "src/data/site.ts": {
-    "mtime": 1793873983.7024527,
-    "seen": 1793874271.2375925,
-    "ast_hash": "37c0c096e0e19f256bd10359c513e037",
+    "mtime": 1793874664.3551197,
+    "seen": 1793874828.2030306,
+    "ast_hash": "0ca9c465b910bd4e7cfa180486192f79",
     "semantic_hash": ""
   },
   "src/empty.js": {
@@ -564,9 +564,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/FacultyScroller.tsx": {
-    "mtime": 1793862366.9116156,
-    "seen": 1793863544.6404035,
-    "ast_hash": "33c2cfd46ee791e47abfd19360662009",
+    "mtime": 1793874664.3551197,
+    "seen": 1793874828.2028794,
+    "ast_hash": "1a82c421cb88b6287f6b6048d3ee27e3",
     "semantic_hash": ""
   },
   "src/data/section-heads.ts": {
