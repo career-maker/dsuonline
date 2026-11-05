@@ -404,8 +404,8 @@
   }
 
   .fbody {
-    height: u(193);
-    padding: u(11.16) u(15) 0;
+    min-height: u(193);
+    padding: u(11.16) u(15) u(25);
 
     h3 {
       margin: 0;

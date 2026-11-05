@@ -1,7 +1,7 @@
 {
   "0": "ContentPage",
   "1": "Page.tsx",
-  "2": "next",
+  "2": "icons.tsx",
   "3": "scrape.py",
   "4": "ArrowLink",
   "5": "package.json",
@@ -10,7 +10,7 @@
   "8": "Kit.tsx",
   "9": "DSU Online — CHECKPOINT (read this first in any new session)",
   "10": "Deploy to Server (dsuonline.intersmarthosting.in)",
-  "11": "react",
+  "11": "ChevronRight",
   "12": "README.md",
   "13": "AGENTS.md",
   "14": "InnerPage.tsx",
@@ -19,9 +19,9 @@
   "17": "empty.js",
   "18": "slugify",
   "19": "AdmissionSteps.tsx",
-  "20": "PayOptions.tsx",
-  "21": "ElectiveGrid.tsx",
-  "22": "app/page.tsx",
-  "23": "DataTable",
-  "24": "CareerFlip.tsx"
+  "20": "FeeTable.tsx",
+  "21": "react",
+  "22": "next",
+  "23": "Interactive.tsx",
+  "24": "server.js"
 }

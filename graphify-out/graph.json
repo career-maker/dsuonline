@@ -7,45 +7,6 @@
   },
   "nodes": [
     {
-      "id": "src_components_inner_structure_structure",
-      "label": "structure",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "structure",
-      "source_file": "src/components/inner/structure.ts",
-      "source_location": "L19"
-    },
-    {
-      "id": "src_components_inner_careerflip_careeritem",
-      "label": "CareerItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Page.tsx",
-      "file_type": "code",
-      "norm_label": "careeritem",
-      "source_file": "src/components/inner/CareerFlip.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_components_inner_careerflip_industryitem",
-      "label": "IndustryItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Page.tsx",
-      "file_type": "code",
-      "norm_label": "industryitem",
-      "source_file": "src/components/inner/CareerFlip.tsx",
-      "source_location": "L7"
-    },
-    {
       "id": "src_components_inner_page_p",
       "label": "P",
       "_callable": true,
@@ -83,6 +44,19 @@
       "norm_label": "seg",
       "source_file": "src/components/inner/Page.tsx",
       "source_location": "L83"
+    },
+    {
+      "id": "src_components_inner_parse_faq",
+      "label": "Faq",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "Page.tsx",
+      "file_type": "code",
+      "norm_label": "faq",
+      "source_file": "src/components/inner/parse.ts",
+      "source_location": "L6"
     },
     {
       "id": "src_components_inner_whytabs_whyitem",
@@ -319,13 +293,26 @@
       "source_location": "L5"
     },
     {
+      "id": "src_components_inner_structure_structure",
+      "label": "structure",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "structure",
+      "file_type": "code",
+      "norm_label": "structure",
+      "source_file": "src/components/inner/structure.ts",
+      "source_location": "L19"
+    },
+    {
       "id": "src_data_section_heads_sectionhead",
       "label": "SectionHead",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "slugify",
+      "community_name": "structure",
       "file_type": "code",
       "norm_label": "sectionhead",
       "source_file": "src/data/section-heads.ts",
@@ -527,17 +514,30 @@
       "source_location": "L57"
     },
     {
-      "id": "src_components_inner_parse_faq",
-      "label": "Faq",
+      "id": "src_components_inner_careerflip_careeritem",
+      "label": "CareerItem",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "Interactive.tsx",
+      "community_name": "SubView",
       "file_type": "code",
-      "norm_label": "faq",
-      "source_file": "src/components/inner/parse.ts",
+      "norm_label": "careeritem",
+      "source_file": "src/components/inner/CareerFlip.tsx",
       "source_location": "L6"
+    },
+    {
+      "id": "src_components_inner_careerflip_industryitem",
+      "label": "IndustryItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SubView",
+      "file_type": "code",
+      "norm_label": "industryitem",
+      "source_file": "src/components/inner/CareerFlip.tsx",
+      "source_location": "L7"
     },
     {
       "id": "src_components_inner_contactform_phase",
@@ -683,18 +683,6 @@
       "source_location": "L14"
     },
     {
-      "id": "src_components_inner_kit_checklist",
-      "label": "Checklist()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "checklist()",
-      "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L73"
-    },
-    {
       "id": "src_components_inner_kit_classapart",
       "label": "ClassApart()",
       "_callable": true,
@@ -707,16 +695,16 @@
       "source_location": "L233"
     },
     {
-      "id": "src_components_inner_kit_contactrow",
-      "label": "ContactRow()",
+      "id": "src_components_inner_kit_facultygrid",
+      "label": "FacultyGrid()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "ContentPage",
       "file_type": "code",
-      "norm_label": "contactrow()",
+      "norm_label": "facultygrid()",
       "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L369"
+      "source_location": "L280"
     },
     {
       "id": "src_components_inner_kit_facultyshowcase",
@@ -753,18 +741,6 @@
       "norm_label": "pic()",
       "source_file": "src/components/inner/Kit.tsx",
       "source_location": "L38"
-    },
-    {
-      "id": "src_components_inner_kit_prose",
-      "label": "Prose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "prose()",
-      "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L63"
     },
     {
       "id": "src_components_inner_kit_split",
@@ -815,6 +791,30 @@
       "source_location": "L509"
     },
     {
+      "id": "src_components_inner_page_faculty",
+      "label": "faculty()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "ContentPage",
+      "file_type": "code",
+      "norm_label": "faculty()",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L288"
+    },
+    {
+      "id": "src_components_inner_page_flat",
+      "label": "flat()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "ContentPage",
+      "file_type": "code",
+      "norm_label": "flat()",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L75"
+    },
+    {
       "id": "src_components_inner_page_icontiles",
       "label": "iconTiles()",
       "_callable": true,
@@ -839,40 +839,40 @@
       "source_location": "L72"
     },
     {
-      "id": "src_components_inner_page_issteptitle",
-      "label": "isStepTitle()",
+      "id": "src_components_inner_page_isp",
+      "label": "isP()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "ContentPage",
       "file_type": "code",
-      "norm_label": "issteptitle()",
+      "norm_label": "isp()",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L79"
+      "source_location": "L71"
     },
     {
-      "id": "src_components_inner_page_legalpage",
-      "label": "LegalPage()",
+      "id": "src_components_inner_page_leaders",
+      "label": "leaders()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "ContentPage",
       "file_type": "code",
-      "norm_label": "legalpage()",
+      "norm_label": "leaders()",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L424"
+      "source_location": "L322"
     },
     {
-      "id": "src_components_inner_page_pageindustries",
-      "label": "pageIndustries()",
+      "id": "src_components_inner_page_learningcards",
+      "label": "learningCards()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "ContentPage",
       "file_type": "code",
-      "norm_label": "pageindustries()",
+      "norm_label": "learningcards()",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L263"
+      "source_location": "L297"
     },
     {
       "id": "src_components_inner_page_referpage",
@@ -887,18 +887,6 @@
       "source_location": "L390"
     },
     {
-      "id": "src_components_inner_page_renderseg",
-      "label": "renderSeg()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "renderseg()",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L152"
-    },
-    {
       "id": "src_components_inner_page_segments",
       "label": "segments()",
       "_callable": true,
@@ -909,18 +897,6 @@
       "norm_label": "segments()",
       "source_file": "src/components/inner/Page.tsx",
       "source_location": "L85"
-    },
-    {
-      "id": "src_components_inner_page_swapphotos",
-      "label": "swapPhotos()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "swapphotos()",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L482"
     },
     {
       "id": "src_components_sections_home_about_aboutband",
@@ -935,124 +911,100 @@
       "source_location": "L32"
     },
     {
-      "id": "src_components_inner_careerflip_careerflip",
-      "label": "CareerFlip()",
+      "id": "src_components_inner_interactive_faqlist",
+      "label": "FaqList()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "Page.tsx",
       "file_type": "code",
-      "norm_label": "careerflip()",
-      "source_file": "src/components/inner/CareerFlip.tsx",
-      "source_location": "L13"
+      "norm_label": "faqlist()",
+      "source_file": "src/components/inner/Interactive.tsx",
+      "source_location": "L9"
     },
     {
-      "id": "src_components_inner_kit_cardgrid",
-      "label": "CardGrid()",
+      "id": "src_components_inner_interactive_leadergrid",
+      "label": "LeaderGrid()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "Page.tsx",
       "file_type": "code",
-      "norm_label": "cardgrid()",
+      "norm_label": "leadergrid()",
+      "source_file": "src/components/inner/Interactive.tsx",
+      "source_location": "L145"
+    },
+    {
+      "id": "src_components_inner_interactive_tabs",
+      "label": "Tabs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "Page.tsx",
+      "file_type": "code",
+      "norm_label": "tabs()",
+      "source_file": "src/components/inner/Interactive.tsx",
+      "source_location": "L58"
+    },
+    {
+      "id": "src_components_inner_kit_datatable",
+      "label": "DataTable()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "Page.tsx",
+      "file_type": "code",
+      "norm_label": "datatable()",
       "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L131"
+      "source_location": "L183"
     },
     {
-      "id": "src_components_inner_kit_facultygrid",
-      "label": "FacultyGrid()",
+      "id": "src_components_inner_page_curriculum",
+      "label": "curriculum()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "Page.tsx",
       "file_type": "code",
-      "norm_label": "facultygrid()",
-      "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L280"
-    },
-    {
-      "id": "src_components_inner_kit_rolegrid",
-      "label": "RoleGrid()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Page.tsx",
-      "file_type": "code",
-      "norm_label": "rolegrid()",
-      "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L433"
-    },
-    {
-      "id": "src_components_inner_page_careers",
-      "label": "careers()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Page.tsx",
-      "file_type": "code",
-      "norm_label": "careers()",
+      "norm_label": "curriculum()",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L279"
+      "source_location": "L248"
     },
     {
-      "id": "src_components_inner_page_faculty",
-      "label": "faculty()",
+      "id": "src_components_inner_page_issteptitle",
+      "label": "isStepTitle()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "Page.tsx",
       "file_type": "code",
-      "norm_label": "faculty()",
+      "norm_label": "issteptitle()",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L288"
+      "source_location": "L79"
     },
     {
-      "id": "src_components_inner_page_isp",
-      "label": "isP()",
+      "id": "src_components_inner_page_pageindustries",
+      "label": "pageIndustries()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "Page.tsx",
       "file_type": "code",
-      "norm_label": "isp()",
+      "norm_label": "pageindustries()",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L71"
+      "source_location": "L263"
     },
     {
-      "id": "src_components_inner_page_subview",
-      "label": "SubView()",
+      "id": "src_components_inner_page_swapphotos",
+      "label": "swapPhotos()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "Page.tsx",
       "file_type": "code",
-      "norm_label": "subview()",
+      "norm_label": "swapphotos()",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L225"
-    },
-    {
-      "id": "src_components_inner_parse_parsepairs",
-      "label": "parsePairs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Page.tsx",
-      "file_type": "code",
-      "norm_label": "parsepairs()",
-      "source_file": "src/components/inner/parse.ts",
-      "source_location": "L87"
-    },
-    {
-      "id": "src_components_inner_parse_splitbullets",
-      "label": "splitBullets()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Page.tsx",
-      "file_type": "code",
-      "norm_label": "splitbullets()",
-      "source_file": "src/components/inner/parse.ts",
-      "source_location": "L94"
+      "source_location": "L482"
     },
     {
       "id": "src_components_inner_whytabs_whytabs",
@@ -1768,7 +1720,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "slugify",
+      "community_name": "structure",
       "file_type": "code",
       "norm_label": "slugify()",
       "source_file": "src/components/inner/clean.ts",
@@ -1780,7 +1732,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "slugify",
+      "community_name": "structure",
       "file_type": "code",
       "norm_label": "head()",
       "source_file": "src/components/inner/Kit.tsx",
@@ -1792,11 +1744,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "slugify",
+      "community_name": "structure",
       "file_type": "code",
       "norm_label": "sec()",
       "source_file": "src/components/inner/Kit.tsx",
       "source_location": "L27"
+    },
+    {
+      "id": "src_components_inner_page_legalpage",
+      "label": "LegalPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "structure",
+      "file_type": "code",
+      "norm_label": "legalpage()",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L424"
     },
     {
       "id": "src_components_inner_page_witheyebrow",
@@ -1804,7 +1768,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "slugify",
+      "community_name": "structure",
       "file_type": "code",
       "norm_label": "witheyebrow()",
       "source_file": "src/components/inner/Page.tsx",
@@ -1816,7 +1780,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "slugify",
+      "community_name": "structure",
       "file_type": "code",
       "norm_label": "headfor()",
       "source_file": "src/data/section-heads.ts",
@@ -2507,88 +2471,88 @@
       "source_location": "L60"
     },
     {
-      "id": "src_components_inner_interactive_faqlist",
-      "label": "FaqList()",
+      "id": "src_components_inner_careerflip_careerflip",
+      "label": "CareerFlip()",
       "_callable": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "Interactive.tsx",
+      "community_name": "SubView",
       "file_type": "code",
-      "norm_label": "faqlist()",
-      "source_file": "src/components/inner/Interactive.tsx",
-      "source_location": "L9"
+      "norm_label": "careerflip()",
+      "source_file": "src/components/inner/CareerFlip.tsx",
+      "source_location": "L13"
     },
     {
-      "id": "src_components_inner_interactive_leadergrid",
-      "label": "LeaderGrid()",
+      "id": "src_components_inner_kit_cardgrid",
+      "label": "CardGrid()",
       "_callable": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "Interactive.tsx",
+      "community_name": "SubView",
       "file_type": "code",
-      "norm_label": "leadergrid()",
-      "source_file": "src/components/inner/Interactive.tsx",
-      "source_location": "L145"
-    },
-    {
-      "id": "src_components_inner_interactive_tabs",
-      "label": "Tabs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "Interactive.tsx",
-      "file_type": "code",
-      "norm_label": "tabs()",
-      "source_file": "src/components/inner/Interactive.tsx",
-      "source_location": "L58"
-    },
-    {
-      "id": "src_components_inner_kit_datatable",
-      "label": "DataTable()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "Interactive.tsx",
-      "file_type": "code",
-      "norm_label": "datatable()",
+      "norm_label": "cardgrid()",
       "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L183"
+      "source_location": "L131"
     },
     {
-      "id": "src_components_inner_page_curriculum",
-      "label": "curriculum()",
+      "id": "src_components_inner_kit_rolegrid",
+      "label": "RoleGrid()",
       "_callable": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "Interactive.tsx",
+      "community_name": "SubView",
       "file_type": "code",
-      "norm_label": "curriculum()",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L248"
+      "norm_label": "rolegrid()",
+      "source_file": "src/components/inner/Kit.tsx",
+      "source_location": "L433"
     },
     {
-      "id": "src_components_inner_page_flat",
-      "label": "flat()",
+      "id": "src_components_inner_page_careers",
+      "label": "careers()",
       "_callable": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "Interactive.tsx",
+      "community_name": "SubView",
       "file_type": "code",
-      "norm_label": "flat()",
+      "norm_label": "careers()",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L75"
+      "source_location": "L279"
     },
     {
-      "id": "src_components_inner_page_leaders",
-      "label": "leaders()",
+      "id": "src_components_inner_page_subview",
+      "label": "SubView()",
       "_callable": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "Interactive.tsx",
+      "community_name": "SubView",
       "file_type": "code",
-      "norm_label": "leaders()",
+      "norm_label": "subview()",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L322"
+      "source_location": "L225"
+    },
+    {
+      "id": "src_components_inner_parse_parsepairs",
+      "label": "parsePairs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SubView",
+      "file_type": "code",
+      "norm_label": "parsepairs()",
+      "source_file": "src/components/inner/parse.ts",
+      "source_location": "L87"
+    },
+    {
+      "id": "src_components_inner_parse_splitbullets",
+      "label": "splitBullets()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "SubView",
+      "file_type": "code",
+      "norm_label": "splitbullets()",
+      "source_file": "src/components/inner/parse.ts",
+      "source_location": "L94"
     },
     {
       "id": "gl_api",
@@ -2915,6 +2879,30 @@
       "source_location": "L4"
     },
     {
+      "id": "src_components_inner_kit_checklist",
+      "label": "Checklist()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "Kit.tsx",
+      "file_type": "code",
+      "norm_label": "checklist()",
+      "source_file": "src/components/inner/Kit.tsx",
+      "source_location": "L73"
+    },
+    {
+      "id": "src_components_inner_kit_contactrow",
+      "label": "ContactRow()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "Kit.tsx",
+      "file_type": "code",
+      "norm_label": "contactrow()",
+      "source_file": "src/components/inner/Kit.tsx",
+      "source_location": "L369"
+    },
+    {
       "id": "src_components_inner_kit_ctalink",
       "label": "CtaLink()",
       "_callable": true,
@@ -3011,6 +2999,18 @@
       "source_location": "L411"
     },
     {
+      "id": "src_components_inner_kit_prose",
+      "label": "Prose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "Kit.tsx",
+      "file_type": "code",
+      "norm_label": "prose()",
+      "source_file": "src/components/inner/Kit.tsx",
+      "source_location": "L63"
+    },
+    {
       "id": "src_components_inner_kit_quotecards",
       "label": "QuoteCards()",
       "_callable": true,
@@ -3059,16 +3059,16 @@
       "source_location": "L106"
     },
     {
-      "id": "src_components_inner_page_learningcards",
-      "label": "learningCards()",
+      "id": "src_components_inner_page_renderseg",
+      "label": "renderSeg()",
       "_callable": true,
       "_origin": "ast",
       "community": 8,
       "community_name": "Kit.tsx",
       "file_type": "code",
-      "norm_label": "learningcards()",
+      "norm_label": "renderseg()",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L297"
+      "source_location": "L152"
     },
     {
       "id": "src_components_inner_quoteslider_quoteslider",
@@ -3119,14 +3119,38 @@
       "source_location": "L18"
     },
     {
-      "id": "src_components_inner_careerflip",
-      "label": "CareerFlip.tsx",
+      "id": "checkpoint_status",
+      "label": "Status",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "ContentPage",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "status",
+      "source_file": "CHECKPOINT.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "checkpoint_update_2026_10_26_latest",
+      "label": "Update 2026-10-26 (latest)",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "ContentPage",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "update 2026-10-26 (latest)",
+      "source_file": "CHECKPOINT.md",
+      "source_location": "L49"
+    },
+    {
+      "id": "src_components_inner_interactive",
+      "label": "Interactive.tsx",
       "_origin": "ast",
       "community": 1,
       "community_name": "Page.tsx",
       "file_type": "code",
-      "norm_label": "careerflip.tsx",
-      "source_file": "src/components/inner/CareerFlip.tsx",
+      "norm_label": "interactive.tsx",
+      "source_file": "src/components/inner/Interactive.tsx",
       "source_location": "L1"
     },
     {
@@ -3665,7 +3689,7 @@
       "label": "section-heads.ts",
       "_origin": "ast",
       "community": 18,
-      "community_name": "slugify",
+      "community_name": "structure",
       "file_type": "code",
       "norm_label": "section-heads.ts",
       "source_file": "src/data/section-heads.ts",
@@ -3676,7 +3700,7 @@
       "label": "sectionHeads",
       "_origin": "ast",
       "community": 18,
-      "community_name": "slugify",
+      "community_name": "structure",
       "file_type": "code",
       "norm_label": "sectionheads",
       "source_file": "src/data/section-heads.ts",
@@ -4640,27 +4664,15 @@
       "source_location": "L13"
     },
     {
-      "id": "src_components_inner_interactive",
-      "label": "Interactive.tsx",
+      "id": "src_components_inner_careerflip",
+      "label": "CareerFlip.tsx",
       "_origin": "ast",
       "community": 23,
-      "community_name": "Interactive.tsx",
+      "community_name": "SubView",
       "file_type": "code",
-      "norm_label": "interactive.tsx",
-      "source_file": "src/components/inner/Interactive.tsx",
+      "norm_label": "careerflip.tsx",
+      "source_file": "src/components/inner/CareerFlip.tsx",
       "source_location": "L1"
-    },
-    {
-      "id": "checkpoint_update_2026_10_26_latest",
-      "label": "Update 2026-10-26 (latest)",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "Interactive.tsx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "update 2026-10-26 (latest)",
-      "source_file": "CHECKPOINT.md",
-      "source_location": "L48"
     },
     {
       "id": "server",
@@ -5685,7 +5697,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L183"
+      "source_location": "L184"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -5709,7 +5721,7 @@
       "node_kind": "heading",
       "norm_label": "latest commits (newest last)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L45"
+      "source_location": "L46"
     },
     {
       "id": "checkpoint_next_steps_do_top_item_first_when_the_user_says_continue",
@@ -5721,7 +5733,7 @@
       "node_kind": "heading",
       "norm_label": "next steps (do top item first when the user says \"continue\")",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L120"
+      "source_location": "L121"
     },
     {
       "id": "checkpoint_open_questions_asked_earlier_defaults_used",
@@ -5733,7 +5745,7 @@
       "node_kind": "heading",
       "norm_label": "open questions asked earlier (defaults used)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L42"
+      "source_location": "L43"
     },
     {
       "id": "checkpoint_run_locally",
@@ -5748,18 +5760,6 @@
       "source_location": "L12"
     },
     {
-      "id": "checkpoint_status",
-      "label": "Status",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "DSU Online \u2014 CHECKPOINT (read this first in any new session)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "status",
-      "source_file": "CHECKPOINT.md",
-      "source_location": "L28"
-    },
-    {
       "id": "checkpoint_update_2026_10_27_qa_issue_round_new_account",
       "label": "Update 2026-10-27 (QA-issue round, new account)",
       "_origin": "ast",
@@ -5769,7 +5769,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L167"
+      "source_location": "L168"
     },
     {
       "id": "checkpoint_update_2026_10_28",
@@ -5781,7 +5781,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L175"
+      "source_location": "L176"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -5794,17 +5794,6 @@
       "norm_label": "what this is",
       "source_file": "CHECKPOINT.md",
       "source_location": "L7"
-    },
-    {
-      "id": "src_components_inner_careerflip_module",
-      "label": "src_components_inner_careerflip_module",
-      "community": 1,
-      "community_name": "Page.tsx",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_components_inner_careerflip_module",
-      "source_file": "",
-      "type": "external"
     },
     {
       "id": "src_components_inner_kit_tabs",
@@ -6122,6 +6111,17 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_components_sections_home_whychoose_module",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "src_components_inner_careerflip_module",
+      "label": "src_components_inner_careerflip_module",
+      "community": 23,
+      "community_name": "SubView",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_components_inner_careerflip_module",
       "source_file": "",
       "type": "external"
     },
@@ -18045,7 +18045,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L120",
+      "source_location": "L121",
       "weight": 1.0
     },
     {
@@ -18056,7 +18056,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L167",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -18067,7 +18067,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L175",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -18089,7 +18089,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L183",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -18111,7 +18111,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L42",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -18122,7 +18122,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -18133,7 +18133,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -22436,7 +22436,7 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L178",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -22472,7 +22472,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L170",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -22484,7 +22484,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L170",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -22500,6 +22500,18 @@
       "weight": 1.0
     },
     {
+      "source": "checkpoint_status",
+      "target": "src_components_inner_page_faculty",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "faculty",
+      "source_file": "CHECKPOINT.md",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
       "source": "checkpoint_update_2026_10_26_latest",
       "target": "src_components_inner_page_flat",
       "relation": "references",
@@ -22508,7 +22520,7 @@
       "confidence_score": 0.95,
       "context": "flat",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L81",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -22520,7 +22532,7 @@
       "confidence_score": 0.95,
       "context": "img",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -22532,10 +22544,10 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L168",
+      "source_location": "L169",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "846eecb54e7afe93a29ced498083b377a42605fd"
+  "built_at_commit": "2097276ff00e646145dbc60fda1621919db6e722"
 }
