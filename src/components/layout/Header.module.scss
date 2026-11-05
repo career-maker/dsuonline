@@ -555,7 +555,7 @@
   .login {
     gap: u(8);
     margin: 0;
-    font-size: u(14);
+    font-size: fs(21, 16px); // same size as the nav links
   }
 
   .phone {
