@@ -10,17 +10,19 @@ import s from './Kit.module.scss';
 type Item = { name: string; creds?: string; role?: string; img?: Img };
 
 /** Programme-page faculty cards as a looping carousel: autoplay every 2s (pauses on hover), arrows, drag. */
-export function FacultyScroller({ items }: { items: Item[] }) {
+export function FacultyScroller({ items: base }: { items: Item[] }) {
+  // a programme may list only 3-5 faculty (fewer than fit on screen); repeat them so the row always overflows and can loop
+  const items = Array.from({ length: Math.ceil(10 / Math.max(1, base.length)) }, () => base).flat();
   const ref = useRef<HTMLUListElement>(null);
   const { canScroll, step } = useLoopCarousel(ref, { looped: true, auto: 2000 });
   return (
     <div className={s.sliderBox}>
       <ul ref={ref} className={`${s.facAll} ${s.facCar}`} aria-label="Faculty">
         {[0, 1].map((copy) =>
-          items.map((f) => (
-            <li key={`${copy}-${f.name}`} className={s.fcCard} aria-hidden={copy === 1 || undefined} inert={copy === 1 || undefined}>
+          items.map((f, i) => (
+            <li key={`${copy}-${i}-${f.name}`} className={s.fcCard} aria-hidden={copy === 1 || i >= base.length || undefined} inert={copy === 1 || i >= base.length || undefined}>
               <div className={s.fcPhoto}>
-                {f.img && <Image src={f.img.src} alt={copy ? '' : f.img.alt} width={f.img.w ?? 1200} height={f.img.h ?? 800} sizes="(max-width: 600px) 80vw, 300px" />}
+                {f.img && <Image src={f.img.src} alt={copy || i >= base.length ? '' : f.img.alt} width={f.img.w ?? 1200} height={f.img.h ?? 800} sizes="(max-width: 600px) 80vw, 300px" />}
                 {f.role && <span className={s.fcRole}>{f.role}</span>}
               </div>
               <div className={s.fcBody}>

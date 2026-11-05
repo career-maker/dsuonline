@@ -7042,7 +7042,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/FacultyScroller.tsx",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -7054,7 +7054,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/FacultyScroller.tsx",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -7066,7 +7066,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/FacultyScroller.tsx",
-      "source_location": "L48",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -22895,5 +22895,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d5cc9ccd1447a7d53c90fe1bd8746b7deb1d2a0a"
+  "built_at_commit": "66fad5509d9fb80286377d571b08449d7717bb6f"
 }

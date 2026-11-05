@@ -564,9 +564,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/FacultyScroller.tsx": {
-    "mtime": 1793861594.1241446,
-    "seen": 1793861805.4057152,
-    "ast_hash": "7c0ef26aa388f27f0a5db141d954fb56",
+    "mtime": 1793862366.9116156,
+    "seen": 1793863544.6404035,
+    "ast_hash": "33c2cfd46ee791e47abfd19360662009",
     "semantic_hash": ""
   },
   "src/data/section-heads.ts": {
