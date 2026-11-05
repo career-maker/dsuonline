@@ -2781,13 +2781,14 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   display: flex;
   gap: 10px;
 
+  // regular-width buttons (not stretched across the form)
   button {
-    flex: 1;
+    flex: 0 0 auto;
   }
 }
 
 .stepBack {
-  max-width: 120px;
+  min-width: 96px;
   min-height: 44px;
   border: 1px solid $blue;
   border-radius: 3px;
