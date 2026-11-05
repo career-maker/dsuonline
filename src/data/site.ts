@@ -82,3 +82,9 @@ export const announcements = [
 
 /** Home announcement ticker (above Testimonials). Hidden for now: set to true to show it again. */
 export const showAnnouncement = false;
+
+/** Home "Faculty Insights" (articles under Meet Our Faculty). Hidden for now: set to true to show it again. */
+export const showFacultyInsights = false;
+
+/** Home blog cards slider (bottom of the home page). Hidden for now: set to true to show it again. */
+export const showHomeBlogs = false;

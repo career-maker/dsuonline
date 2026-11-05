@@ -1,5 +1,6 @@
 import { About } from '@/components/sections/home/About';
 import { Blogs } from '@/components/sections/home/Blogs';
+import { showHomeBlogs } from '@/data/site';
 import { Careers } from '@/components/sections/home/Careers';
 import { FacultyArticles } from '@/components/sections/home/FacultyArticles';
 import { Faq } from '@/components/sections/home/Faq';
@@ -28,7 +29,7 @@ export default function HomePage() {
       <FacultyArticles />
       <Recognitions />
       <Faq items={homeFaqs} />
-      <Blogs />
+      {showHomeBlogs && <Blogs />}
     </>
   );
 }

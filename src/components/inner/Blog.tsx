@@ -8,7 +8,6 @@ import { ArrowLink } from '@/components/ui/ArrowLink';
 import { CtaBand, InnerHero } from './InnerPage';
 import { Flow } from './Flow';
 import s from './Blog.module.scss';
-import cardCss from '@/components/sections/home/Blogs.module.scss';
 import { toSlide } from '@/components/sections/home/Blogs';
 
 export function BlogIndex({ page }: { page: number }) {
@@ -26,25 +25,21 @@ export function BlogIndex({ page }: { page: number }) {
             {items.map((p) => {
               const c = toSlide(p);
               return (
-                <li key={c.slug} className={cardCss.card}>
-                  <Link href={`/resources/blogs/${c.slug}`} className={cardCss.photoLink} aria-label={c.title} tabIndex={-1}>
-                    {c.image && <Image src={c.image} alt={c.alt} fill sizes="(max-width: 600px) 90vw, (max-width: 1200px) 48vw, 32vw" className={cardCss.photo} />}
+                <li key={c.slug} className={s.acard}>
+                  <Link href={`/resources/blogs/${c.slug}`} className={s.aphoto} aria-label={c.title} tabIndex={-1}>
+                    {c.image && <Image src={c.image} alt={c.alt} fill sizes="(max-width: 600px) 90vw, (max-width: 1200px) 48vw, 32vw" />}
                   </Link>
-                  <span className={cardCss.shade} />
-                  <time className={cardCss.date}>
-                    <strong>
+                  <div className={s.abody}>
+                    <time>
                       {c.day}
-                      <sup>{c.ord}</sup>
-                    </strong>
-                    <span>{c.month}</span>
-                  </time>
-                  <div className={cardCss.body}>
+                      {c.ord} {c.month}
+                    </time>
                     <h3>
                       <Link href={`/resources/blogs/${c.slug}`}>{c.title}</Link>
                     </h3>
                     <p>{c.excerpt}</p>
-                    <Link href={`/resources/blogs/${c.slug}`} className={cardCss.read} aria-label={`Read article: ${c.title}`}>
-                      Read Article
+                    <Link href={`/resources/blogs/${c.slug}`} className={s.aread} aria-label={`Read article: ${c.title}`}>
+                      Read Article &gt;
                     </Link>
                   </div>
                 </li>

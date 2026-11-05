@@ -36,6 +36,9 @@ export function FacultyScroller({ items: base }: { items: Item[] }) {
                     <span>{f.creds}</span>
                   </p>
                 )}
+                <a href="#" className={s.fcProfile} aria-label={`View profile: ${f.name}`} tabIndex={copy === 1 || i >= base.length ? -1 : undefined}>
+                  View Profile &gt;
+                </a>
               </div>
             </li>
           )),

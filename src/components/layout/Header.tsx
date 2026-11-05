@@ -173,7 +173,13 @@ export function Header() {
             </li>
             <li ref={moreRef} className={s.hasMenu}>
               <button type="button" className={s.navBtn} aria-expanded={moreOpen} aria-controls={moreId} onClick={() => setMoreOpen((v) => !v)}>
-                More <Image className={`${s.ico} ${moreOpen ? s.flip : ''}`} src="/icons/hdr-chev.png" alt="" width={14} height={11} />
+                <span className={s.moreTxt}>
+                  More <Image className={`${s.ico} ${moreOpen ? s.flip : ''}`} src="/icons/hdr-chev.png" alt="" width={14} height={11} />
+                </span>
+                <span className={s.moreIcon} aria-hidden="true">
+                  <MenuIcon />
+                </span>
+                <span className={s.srOnly}>More menu</span>
               </button>
               <ul id={moreId} className={`${s.dropdown} ${s.moreMenu} ${moreOpen ? s.dropdownOpen : ''}`}>
                 {moreNav.map((n) =>

@@ -9,6 +9,7 @@ import { Icon } from '@/components/ui/Icon';
 import { ChevronLeft, ChevronRight } from '@/components/ui/icons';
 import { articles } from '@/data/home';
 import { realFaculty } from '@/data/faculty';
+import { showFacultyInsights } from '@/data/site';
 import { useLoopCarousel } from '@/hooks/useLoopCarousel';
 import s from './FacultyArticles.module.scss';
 
@@ -46,6 +47,9 @@ export function FacultyCard({ f, clone }: { f: FacultyCardData; clone?: boolean 
           <li>{f.creds}</li>
         </ul>
         <div className={s.links}>
+          <a href="#" aria-label={`View profile: ${f.name}`} tabIndex={clone ? -1 : undefined}>
+            View Profile &gt;
+          </a>
           <a href="https://www.linkedin.com/company/dsuonline" target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn: ${f.name}`} tabIndex={clone ? -1 : undefined}>
             <Icon name="linkedin" /> LinkedIn
           </a>
@@ -60,7 +64,7 @@ export function FacultyStrip({ items }: { items: FacultyCardData[] }) {
   const ref = useRef<HTMLUListElement>(null);
   const { canScroll, step } = useLoopCarousel(ref, { looped: true, auto: 2000 });
   return (
-    <div className={s.section} style={{ padding: 0, background: 'transparent' }}>
+    <div className={`${s.section} ${s.onSky}`} style={{ padding: 0, background: 'transparent' }}>
       <ul className={s.faculty} ref={ref} aria-label="Faculty" style={{ marginTop: 0 }}>
         {[0, 1].map((copy) => items.map((f) => <FacultyCard key={`${copy}-${f.name}`} f={f} clone={copy === 1} />))}
       </ul>
@@ -182,6 +186,7 @@ export function FacultyArticles() {
         </ul>
 
 
+        {showFacultyInsights && (<>
         <hr className={s.rule} />
 
         <header className={`${s.head} ${s.head2}`}>
@@ -287,6 +292,7 @@ export function FacultyArticles() {
             </li>
           ))}
         </ul>
+        </>)}
 
       </div>
     </section>

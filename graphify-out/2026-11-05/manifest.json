@@ -318,9 +318,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/Testimonials.tsx": {
-    "mtime": 1793858770.464679,
-    "seen": 1793859058.365618,
-    "ast_hash": "96eaae3f9dc772d3bc3a8c9253d70eef",
+    "mtime": 1793873983.7024527,
+    "seen": 1793874271.2375493,
+    "ast_hash": "367470ecbd714a3b58f64df9bbe26776",
     "semantic_hash": ""
   },
   "src/components/sections/home/VideoTile.tsx": {
@@ -408,9 +408,9 @@
     "semantic_hash": ""
   },
   "src/data/site.ts": {
-    "mtime": 1793005609.887245,
-    "seen": 1793773932.7655368,
-    "ast_hash": "33295cb5bafc8fbb812308061cc79cd2",
+    "mtime": 1793873983.7024527,
+    "seen": 1793874271.2375925,
+    "ast_hash": "37c0c096e0e19f256bd10359c513e037",
     "semantic_hash": ""
   },
   "src/empty.js": {

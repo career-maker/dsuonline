@@ -64,7 +64,7 @@
 
   a,
   .navBtn {
-    font-size: fs(18, 16px);
+    font-size: fs(21, 16px);
     font-weight: 500;
     line-height: 1.2;
     color: #fff;
@@ -705,5 +705,36 @@
     right: 12px;
     left: 12px;
     width: auto;
+  }
+}
+
+// desktop: "More" becomes a hamburger icon opening the extra links; drawer (tablet/phone) keeps the "More" text row
+.moreIcon {
+  display: none;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@include up($bp-lg) {
+  .moreTxt {
+    display: none;
+  }
+
+  .moreIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
   }
 }
