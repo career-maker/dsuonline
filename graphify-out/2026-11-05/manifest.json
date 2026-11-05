@@ -228,9 +228,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/Header.tsx": {
-    "mtime": 1793874664.359074,
-    "seen": 1793874828.2029328,
-    "ast_hash": "007e25accd63d39c3f5a540cf0184b1d",
+    "mtime": 1793879079.0949612,
+    "seen": 1793879274.1966848,
+    "ast_hash": "7119d7a8f1624f9ac15736bbaa66f537",
     "semantic_hash": ""
   },
   "src/components/layout/Preloader.tsx": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/Hero.tsx": {
-    "mtime": 1793873247.126091,
-    "seen": 1793873306.3020568,
-    "ast_hash": "28b4bb416f31be803da15b5cbaa21ff2",
+    "mtime": 1793878643.9633143,
+    "seen": 1793879274.1967027,
+    "ast_hash": "2a2dbb954ef3e24c02612e4f3546dbbf",
     "semantic_hash": ""
   },
   "src/components/sections/home/Learning.tsx": {
@@ -318,9 +318,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/Testimonials.tsx": {
-    "mtime": 1793873983.7024527,
-    "seen": 1793874271.2375493,
-    "ast_hash": "367470ecbd714a3b58f64df9bbe26776",
+    "mtime": 1793878635.9317708,
+    "seen": 1793879274.1967087,
+    "ast_hash": "5aed1b26d377cc588a685d7e9c0e435e",
     "semantic_hash": ""
   },
   "src/components/sections/home/VideoTile.tsx": {
@@ -516,9 +516,9 @@
     "semantic_hash": ""
   },
   "src/components/ui/Testimonial.tsx": {
-    "mtime": 1793877887.7382824,
-    "seen": 1793878200.7086647,
-    "ast_hash": "a43dcc440ab152428320a4beb0979448",
+    "mtime": 1793878635.9327786,
+    "seen": 1793879274.1967208,
+    "ast_hash": "ff83ba8ee61d932f1e712c3627e5dd94",
     "semantic_hash": ""
   },
   "src/data/testimonials.ts": {
@@ -591,6 +591,12 @@
     "mtime": 1793877567.3849213,
     "seen": 1793878200.708671,
     "ast_hash": "424d9cc60dba1981a3105d87ef630299",
+    "semantic_hash": ""
+  },
+  "src/components/ui/TestimonialShowcase.tsx": {
+    "mtime": 1793878780.3915286,
+    "seen": 1793879274.1967227,
+    "ast_hash": "a609bf0925f19222b1ae873d427a255a",
     "semantic_hash": ""
   }
 }

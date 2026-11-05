@@ -1,5 +1,6 @@
 import { ElectiveGrid } from './ElectiveGrid';
 import { CareerFlip } from './CareerFlip';
+import { EmiCalculator } from './EmiCalculator';
 import { ElectiveCombinator } from './ElectiveCombinator';
 import { AdmissionSteps } from './AdmissionSteps';
 import { FeeTable } from './FeeTable';
@@ -786,6 +787,18 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           {note && <p className={s.note}>{note}</p>}
         </Sec>,
       );
+      // programme pages: EMI planner right under the fee table (total read from the table's "Total Fees" row)
+      if (programLinks) {
+        const totalRow = tables.flatMap((tb) => tb.rows).find((r) => /^total fees?/i.test(r[0] ?? ''));
+        const total = Number((totalRow?.[1] ?? '').replace(/[^\d]/g, ''));
+        if (total > 10000) {
+          nodes.push(
+            <Sec key={`${key}-emi`} tone={nextTone()} eyebrow="Plan Your Payments" title="EMI Calculator">
+              <EmiCalculator total={total} program={({ mba: 'MBA', mca: 'MCA', bba: 'BBA', bca: 'BCA', bcom: 'B.Com' } as Record<string, string>)[slug.replace(/^online-/, '')] ?? 'programme'} />
+            </Sec>,
+          );
+        }
+      }
       // the live page keeps "Career Path" and "Industries" under the fee block: one flip-card section (industries live on the card backs)
       const cleanPairs = (sub: Sub) => parsePairs(sub.blocks).map((p) => ({ title: p.title, text: p.text.replace(/\.(?=[A-Z])/g, '. ') }));
       const careerSub = sec.subs.find((x) => /career/i.test(x.title));

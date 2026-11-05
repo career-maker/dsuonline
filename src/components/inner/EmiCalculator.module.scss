@@ -1,0 +1,222 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+// two panels: white inputs | navy result (same gradient family as the specialization banner)
+.calc {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 18px 40px rgb(2 9 102 / 14%);
+  letter-spacing: -0.0175em;
+
+  @include down($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inputs {
+  display: grid;
+  gap: clamp(18px, #{u(28)}, 28px);
+  padding: clamp(20px, #{u(40)}, 40px);
+  background: #fff;
+}
+
+.lead {
+  font-size: fs(17, 15px);
+  line-height: 1.6;
+  color: $body;
+}
+
+.field {
+  label {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: fs(17, 15px);
+    font-weight: 500;
+    color: $ink;
+  }
+
+  output {
+    min-width: 7ch;
+    padding: 4px 12px;
+    border-radius: 4px;
+    background: $bg-sky;
+    color: $blue;
+    font-size: fs(18, 16px);
+    font-weight: 700;
+    text-align: right;
+  }
+
+  input[type='range'] {
+    --p: 50%;
+    width: 100%;
+    height: 6px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, $blue 0 var(--p), #dfe6f1 var(--p) 100%);
+    appearance: none;
+    cursor: pointer;
+    @include focus-ring;
+
+    &::-webkit-slider-thumb {
+      width: 22px;
+      height: 22px;
+      border: 4px solid $yellow;
+      border-radius: 50%;
+      background: $blue;
+      box-shadow: 0 2px 8px rgb(2 9 102 / 35%);
+      appearance: none;
+    }
+
+    &::-moz-range-thumb {
+      width: 14px;
+      height: 14px;
+      border: 4px solid $yellow;
+      border-radius: 50%;
+      background: $blue;
+    }
+
+    &:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.ends {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #7a8696;
+}
+
+.zero {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px dashed $blue;
+  border-radius: 6px;
+  cursor: pointer;
+
+  input {
+    width: 20px;
+    height: 20px;
+    accent-color: $blue;
+  }
+
+  b {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: $ink;
+  }
+
+  small {
+    font-size: 13px;
+    color: $body;
+  }
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(20px, #{u(40)}, 40px);
+  background: radial-gradient(circle at 85% 12%, rgb(255 255 255 / 14%), transparent 45%), linear-gradient(120deg, #01063f 0%, #020966 60%, #1a2394 100%);
+  color: #fff;
+}
+
+.k {
+  font-size: fs(16, 14px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 72%);
+}
+
+.big {
+  margin-top: 6px;
+  font-size: fs(58, 38px);
+  line-height: 1.05;
+  font-weight: 700;
+  color: $yellow;
+}
+
+.per {
+  margin-top: 6px;
+  font-size: 15px;
+  color: rgb(255 255 255 / 80%);
+}
+
+.bar {
+  height: 10px;
+  margin-top: clamp(18px, #{u(30)}, 30px);
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ff8a5b;
+
+  i {
+    display: block;
+    height: 100%;
+    background: $yellow;
+    transition: width 0.3s ease;
+  }
+}
+
+.legend {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgb(255 255 255 / 80%);
+
+  em {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 6px;
+    border-radius: 50%;
+  }
+}
+
+.dotP {
+  background: $yellow;
+}
+
+.dotI {
+  background: #ff8a5b;
+}
+
+.sum {
+  display: grid;
+  gap: 0;
+  margin-top: clamp(16px, #{u(26)}, 26px);
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-top: 1px solid rgb(255 255 255 / 16%);
+  }
+
+  dt {
+    font-size: 15px;
+    color: rgb(255 255 255 / 78%);
+  }
+
+  dd {
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+
+.note {
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgb(255 255 255 / 62%);
+}
