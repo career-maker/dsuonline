@@ -1073,7 +1073,9 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           <Body blocks={[...(longSub ? ([{ t: 'p', x: subtitle } as Block]) : []), ...introBlocks, ...heroImgs.slice(0, 1)]} />
         </Sec>
       ) : null}
-      {programLinks ? nodes.map(withEyebrow) : nodes}
+      <div data-spec={withFacts && crumbs.length >= 3 ? '' : undefined} style={{ display: 'contents' }}>
+        {programLinks ? nodes.map(withEyebrow) : nodes}
+      </div>
       <CtaBand />
     </>
   );

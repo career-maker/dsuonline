@@ -3973,3 +3973,39 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     text-decoration: underline;
   }
 }
+
+// ---------- specialization pages: cards follow the programme pages' Careers cards
+// (white card, soft shadow, gold top rule, brand-blue numbers) instead of the pastel boxes
+:global([data-spec]) {
+  .cards.tint > li:nth-child(n),
+  .roles > li:nth-child(n),
+  .steps > li:nth-child(n),
+  .industries > li:nth-child(n) {
+    border: 0;
+    border-top: 3px solid $yellow;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 6px 22px rgb(2 9 102 / 9%);
+    transition: box-shadow 0.3s $ease, translate 0.3s $ease;
+
+    @media (hover: hover) {
+      &:hover {
+        translate: 0 -4px;
+        box-shadow: 0 16px 36px rgb(2 9 102 / 16%);
+      }
+    }
+  }
+
+  .cards.tint h3 {
+    font-weight: 600;
+    color: $blue;
+  }
+
+  .roles h3 {
+    font-weight: 600;
+  }
+
+  .roleNo {
+    box-shadow: 0 0 0 4px rgb(255 215 0 / 55%);
+  }
+}
