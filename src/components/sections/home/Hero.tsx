@@ -54,7 +54,7 @@ export function Hero() {
 
       <div className={s.layout}>
       <div className={s.copy}>
-        <div className={s.badges}>
+        <div key={`b${active}`} className={s.badges}>
           <Image className={s.naac} src="/images/brand/naac-light.webp" alt="NAAC A+ grade accredited" width={294} height={100} />
           <i aria-hidden="true" />
           <Image className={s.ugc} src="/images/brand/ugc.webp" alt="UGC Entitled" width={202} height={103} />
