@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
-    "mtime": 1793874664.3551197,
-    "seen": 1793874828.2028549,
-    "ast_hash": "e96d3dd0779268c466dc9c1a3d709713",
+    "mtime": 1793875118.7242236,
+    "seen": 1793875206.2058444,
+    "ast_hash": "0cf99b4c3df07999c29e4e0fcca034de",
     "semantic_hash": ""
   },
   "src/app/robots.ts": {
@@ -408,9 +408,9 @@
     "semantic_hash": ""
   },
   "src/data/site.ts": {
-    "mtime": 1793874664.3551197,
-    "seen": 1793874828.2030306,
-    "ast_hash": "0ca9c465b910bd4e7cfa180486192f79",
+    "mtime": 1793875118.7226007,
+    "seen": 1793875206.205985,
+    "ast_hash": "98a24aed92d16e1b3bffe8779ca2ae11",
     "semantic_hash": ""
   },
   "src/empty.js": {

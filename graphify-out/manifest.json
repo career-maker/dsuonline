@@ -516,9 +516,9 @@
     "semantic_hash": ""
   },
   "src/components/ui/Testimonial.tsx": {
-    "mtime": 1793861618.8628316,
-    "seen": 1793861805.4057884,
-    "ast_hash": "acf0fac84d46113c7abfba9f4de99f42",
+    "mtime": 1793877887.7382824,
+    "seen": 1793878200.7086647,
+    "ast_hash": "a43dcc440ab152428320a4beb0979448",
     "semantic_hash": ""
   },
   "src/data/testimonials.ts": {
@@ -579,6 +579,18 @@
     "mtime": 1793857557.5813625,
     "seen": 1793857700.3763845,
     "ast_hash": "5e328cc8f4aa89da038eb8e7eb2ba657",
+    "semantic_hash": ""
+  },
+  "src/components/ui/avatar.tsx": {
+    "mtime": 1793877567.4170396,
+    "seen": 1793878200.7086685,
+    "ast_hash": "c92809c83b342f5d54c2f8ec520757a6",
+    "semantic_hash": ""
+  },
+  "src/components/ui/card.tsx": {
+    "mtime": 1793877567.3849213,
+    "seen": 1793878200.708671,
+    "ast_hash": "424d9cc60dba1981a3105d87ef630299",
     "semantic_hash": ""
   }
 }

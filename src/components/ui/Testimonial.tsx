@@ -1,22 +1,23 @@
 'use client';
 
-import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState, type RefObject } from 'react';
 import { ChevronLeft, ChevronRight, PlayIcon } from '@/components/ui/icons';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import type { Testimonial } from '@/data/testimonials';
 import s from './Testimonial.module.scss';
 
 /**
- * One learner card (home + inner pages). Fills its parent `li` on desktop; on tablet / phone the quote sits under the photo.
- * Text-only: hover / focus shows the quote over the photo. With `video`: play button, plays inside the card.
+ * One learner card (home, testimonials page, programme pages): the quote first, then a small photo with name and department.
+ * With `video`: a Watch button plays the video inside the card.
  */
-export function TestimonialCard({ t, big, sizes = '(max-width: 600px) 100vw, 430px' }: { t: Testimonial; big?: boolean; sizes?: string }) {
+export function TestimonialCard({ t, big }: { t: Testimonial; big?: boolean; sizes?: string }) {
   const [playing, setPlaying] = useState(false);
-  const qRef = useRef<HTMLSpanElement>(null);
+  const qRef = useRef<HTMLParagraphElement>(null);
   const [page, setPage] = useState(0);
   const [pages, setPages] = useState(1);
 
-  // hover panel shows the quote a "page" at a time (whole lines only); Show more moves to the next page, the last page offers Show less
+  // the quote area fills the card; it shows whole lines only and "Show more" moves to the next page ("Show less" returns)
   const measure = useCallback(() => {
     const q = qRef.current;
     if (!q) return;
@@ -45,72 +46,49 @@ export function TestimonialCard({ t, big, sizes = '(max-width: 600px) 100vw, 430
     q.scrollTop = next * q.clientHeight;
     setPage(next);
   };
-  const who = (
-    <>
-      <b>{t.name}</b>
-      {t.course && <strong>{t.course}</strong>}
-      {t.company && <span>{t.company}</span>}
-    </>
-  );
-  const reveal = !t.video && !!t.quote;
+  const initial = t.name.replace(/^(Mr|Ms|Mrs|Dr)\.?\s*/i, '').charAt(0);
+  const dept = [t.course, t.company].filter(Boolean).join(' · ');
   return (
-    <div className={`${s.tc} ${big ? s.big : ''}`}>
-      <div className={s.media} tabIndex={reveal ? 0 : undefined}>
-        {t.img ? (
-          <>
-            {/* blurred copy fills the card; the sharp photo is shown whole (contain) so faces never get cropped */}
-            <Image src={t.img} alt="" aria-hidden="true" fill sizes={sizes} className={s.backdrop} />
-            <Image src={t.img} alt={`${t.name}${t.course ? `, ${t.course} learner` : ''}`} fill sizes={sizes} className={s.photo} />
-          </>
-        ) : (
-          <span className={s.initial} aria-hidden="true">
-            {t.name.replace(/^(Mr|Ms|Mrs|Dr)\.?\s*/i, '').charAt(0)}
-          </span>
-        )}
-        <span className={s.shade} />
-        <span className={s.info}>
-          <span className={s.who}>{who}</span>
+    <Card className={`${s.tc} ${big ? s.big : ''}`}>
+      <CardContent className={s.body}>
+        {t.course && <span className={s.tag}>{t.course}</span>}
+        <p className={s.q} ref={qRef}>
+          {t.quote}
+        </p>
+        {/* always rendered (hidden when the quote fits) so showing it never changes the quote area's height */}
+        <button type="button" className={s.more} onClick={turn} style={pages > 1 ? undefined : { visibility: 'hidden' }} tabIndex={pages > 1 ? undefined : -1} aria-hidden={pages > 1 ? undefined : true}>
+          {page >= pages - 1 ? 'Show less' : 'Show more'}
+        </button>
+      </CardContent>
+      <CardFooter className={s.foot}>
+        <Avatar>
+          {t.img ? <AvatarImage src={t.img} alt={`${t.name}${t.course ? `, ${t.course} learner` : ''}`} /> : <AvatarFallback>{initial}</AvatarFallback>}
+        </Avatar>
+        <span className={s.who}>
+          <b>{t.name}</b>
+          {dept && <span>{dept}</span>}
         </span>
-        {reveal && (
-          <span className={s.reveal}>
-            <span className={s.q} ref={qRef}>
-              {t.quote}
-            </span>
-            <span className={s.rWho}>
-              <span className={s.rText}>
-                <span className={s.rName}>{t.name}</span>
-                {t.course && <span className={s.rSub}>{t.course}</span>}
-              </span>
-              {pages > 1 && (
-                <button type="button" className={s.more} onClick={turn}>
-                  {page >= pages - 1 ? 'Show less' : 'Show more'}
-                </button>
-              )}
-            </span>
-          </span>
+        {t.video && (
+          <button type="button" className={s.play} onClick={() => setPlaying(true)} aria-label={`Watch ${t.name}'s video`}>
+            <PlayIcon /> Watch
+          </button>
         )}
-        {t.video &&
-          (playing ? (
-            <iframe
-              className={s.player}
-              src={`https://www.youtube.com/embed/${t.video}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
-              title={`${t.name} testimonial video`}
-              allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          ) : (
-            <button type="button" className={s.play} onClick={() => setPlaying(true)} aria-label={`Play ${t.name}'s video`}>
-              <PlayIcon />
-            </button>
-          ))}
-      </div>
-      <div className={s.cap}>
-        <b>{t.name}</b>
-        {(t.course || t.company) && <span>{[t.course, t.company].filter(Boolean).join(' · ')}</span>}
-      </div>
-      {t.quote && <p className={s.text}>{t.quote}</p>}
-    </div>
+      </CardFooter>
+      {t.video && playing && (
+        <div className={s.player}>
+          <iframe
+            src={`https://www.youtube.com/embed/${t.video}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+            title={`${t.name} testimonial video`}
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+            allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+          <button type="button" className={s.close} onClick={() => setPlaying(false)} aria-label="Close video">
+            ✕
+          </button>
+        </div>
+      )}
+    </Card>
   );
 }
 
