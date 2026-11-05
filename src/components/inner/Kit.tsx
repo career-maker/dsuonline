@@ -279,27 +279,7 @@ export function LogoWall({ imgs }: { imgs: Img[] }) {
 }
 
 export function FacultyGrid({ items }: { items: { name: string; creds?: string; role?: string; img?: Img }[] }) {
-  const cards = items.map((f) => (
-    <li key={f.name} className={s.fcCard}>
-      <div className={s.fcPhoto}>
-        {f.img && <Pic img={f.img} sizes="(max-width: 600px) 80vw, 300px" />}
-        {f.role && <span className={s.fcRole}>{f.role}</span>}
-      </div>
-      <div className={s.fcBody}>
-        <h3>{f.name}</h3>
-        {f.creds && (
-          <p className={s.fcCreds}>
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M2 9 12 4l10 5-10 5z" />
-              <path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5" />
-            </svg>
-            <span>{f.creds}</span>
-          </p>
-        )}
-      </div>
-    </li>
-  ));
-  return <FacultyScroller>{cards}</FacultyScroller>;
+  return <FacultyScroller items={items} />;
 }
 
 // ---------- "Program Learning System": icon cards (title, subtitle, bullets or paragraph)

@@ -136,6 +136,36 @@ export function CarouselControls({ target }: { target: RefObject<HTMLElement | n
 /** Inner-page list: grid on desktop, one-card (phone) / multi-card (tablet) carousel below. */
 export function TestimonialGrid({ items }: { items: Testimonial[] }) {
   const ref = useRef<HTMLUListElement>(null);
+  // tablet / phone carousel: next card every 2s (wraps); idle on desktop (grid), while hovered / touched, off-screen or tab hidden
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let hold = false;
+    let inView = false;
+    const io = new IntersectionObserver(([e]) => (inView = e.isIntersecting), { threshold: 0.2 });
+    io.observe(el);
+    const on = () => (hold = true);
+    const off = () => setTimeout(() => (hold = false), 3000);
+    el.addEventListener('pointerenter', on);
+    el.addEventListener('pointerleave', off);
+    el.addEventListener('touchstart', on, { passive: true });
+    el.addEventListener('touchend', off, { passive: true });
+    const t = setInterval(() => {
+      const li = el.querySelector('li');
+      if (hold || !inView || document.hidden || !li || el.scrollWidth <= el.clientWidth + 2) return;
+      const stepW = li.getBoundingClientRect().width + 12;
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+      el.scrollTo({ left: atEnd ? 0 : el.scrollLeft + stepW, behavior: 'smooth' });
+    }, 2000);
+    return () => {
+      clearInterval(t);
+      io.disconnect();
+      el.removeEventListener('pointerenter', on);
+      el.removeEventListener('pointerleave', off);
+      el.removeEventListener('touchstart', on);
+      el.removeEventListener('touchend', off);
+    };
+  }, []);
   return (
     <>
       <ul ref={ref} className={s.grid}>

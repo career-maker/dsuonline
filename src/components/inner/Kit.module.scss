@@ -2565,6 +2565,9 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   scroll-snap-type: none;
   margin-inline: 0;
   padding-inline: 0;
+  // room for the card hover lift / shadow inside the scroller
+  padding-block: 12px 28px;
+  margin-block: -12px -28px;
 
   &::-webkit-scrollbar {
     display: none;
