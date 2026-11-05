@@ -114,5 +114,5 @@ export function CarouselControls({ target }: { target: RefObject<HTMLElement | n
 
 /** Inner-page learner stories (testimonials page, programme pages): the showcase layout. */
 export function TestimonialGrid({ items }: { items: Testimonial[] }) {
-  return <TestimonialShowcase items={items} />;
+  return <TestimonialShowcase items={items} onSky />;
 }

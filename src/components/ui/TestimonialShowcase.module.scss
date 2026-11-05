@@ -110,6 +110,14 @@
   }
 }
 
+.onSky {
+  --bub: #fff;
+
+  .bubble {
+    box-shadow: 0 8px 22px rgb(2 9 102 / 8%);
+  }
+}
+
 .bubble {
   position: relative;
   display: flex;
@@ -119,7 +127,7 @@
   margin: 0;
   padding: clamp(20px, #{u(28)}, 30px);
   border-radius: 12px;
-  background: $bg-sky;
+  background: var(--bub, #{$bg-sky});
 
   // speech-bubble tail, bottom-left
   &::after {
@@ -128,8 +136,8 @@
     top: 100%;
     left: 38px;
     border: 12px solid transparent;
-    border-top-color: $bg-sky;
-    border-left-color: $bg-sky;
+    border-top-color: var(--bub, #{$bg-sky});
+    border-left-color: var(--bub, #{$bg-sky});
   }
 }
 

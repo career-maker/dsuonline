@@ -12,7 +12,7 @@ const initialOf = (name: string) => name.replace(/^(Mr|Ms|Mrs|Dr)\.?\s*/i, '').c
  * Learner stories as a marquee: quote bubbles drift left on a loop (JS-driven so the arrows and the progress line share one position).
  * Pauses on hover / focus / touch / an opened quote and when off-screen; the arrows nudge it one card.
  */
-export function TestimonialShowcase({ items, label = 'Testimonials' }: { items: Testimonial[]; label?: string }) {
+export function TestimonialShowcase({ items, label = 'Testimonials', onSky = false }: { items: Testimonial[]; label?: string; onSky?: boolean }) {
   const n = items.length;
   const railRef = useRef<HTMLDivElement>(null);
   const barRef = useRef<HTMLSpanElement>(null);
@@ -58,7 +58,7 @@ export function TestimonialShowcase({ items, label = 'Testimonials' }: { items: 
 
   return (
     <div
-      className={s.root}
+      className={onSky ? `${s.root} ${s.onSky}` : s.root}
       aria-roledescription="carousel"
       aria-label={label}
       onMouseEnter={() => (hold.current = true)}
