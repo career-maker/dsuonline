@@ -303,7 +303,7 @@ export function Header() {
         createPortal(
           <>
             <div className={`${s.sideShade} ${moreOpen ? s.sideShadeOn : ''}`} onClick={() => setMoreOpen(false)} aria-hidden="true" />
-            <aside className={`${s.sidePanel} ${moreOpen ? s.sidePanelOn : ''}`} aria-label="More menu" aria-hidden={!moreOpen} inert={!moreOpen || undefined}>
+            <aside data-lenis-prevent className={`${s.sidePanel} ${moreOpen ? s.sidePanelOn : ''}`} aria-label="More menu" aria-hidden={!moreOpen} inert={!moreOpen || undefined}>
               <div className={s.sideHead}>
                 <span>Menu</span>
                 <button type="button" onClick={() => setMoreOpen(false)} aria-label="Close menu">
