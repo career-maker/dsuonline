@@ -26,6 +26,7 @@ User rules: home page pixel-matches the PDF; inner pages follow home typography/
 - Enquiry popup submit: NO backend. `NEXT_PUBLIC_ENQUIRY_ENDPOINT` env var (JSON POST) enables delivery; otherwise UI says "Not sent yet". Do not claim delivery.
 
 ## Status
+Testimonials: programme pages 'Real Stories' + /student-testimonials use TestimonialGrid (4/row, 12px hover copy, Show more/less); programme pages show the same learners as home (own programme first). Home bento: click small card swaps it into big card (desktop). Academics 'Meet Our Faculty' = FacultyCarousel (2s autoplay). Visual check of these NOT done (browser tools unavailable).
 Home 'Meet Our Faculty' = 18 real faculty from the 5 programme pages (`src/data/faculty.ts`, generated from content/pages/online-*.json). Old dummy `faculty` in home.ts still feeds article authors only.
 All autoplay carousels (hero, testimonials, faculty, articles, quotes, blog slider, mobile programs band) advance every 2000ms; pause on hover/focus/off-screen/hidden/reduced-motion.
 Programme section headings: `src/data/section-heads.ts` (match regex -> eyebrow/mini title, title override or `null` to hide main title). Admission section = mini title "Admission Process", no main title. Add an entry to give any section a mini/main title.

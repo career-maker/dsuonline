@@ -12,6 +12,8 @@ import { ProgramsBand } from '@/components/sections/home/ProgramsBand';
 import { WhyChoose } from '@/components/sections/home/WhyChoose';
 import { cleanBlocks, slugify } from './clean';
 import { headFor } from '@/data/section-heads';
+import { testimonials } from '@/data/testimonials';
+import { TestimonialGrid } from '@/components/ui/Testimonial';
 import { ContactForm } from './ContactForm';
 import { PayOptions } from './PayOptions';
 import { ReferForm } from './ReferForm';
@@ -506,6 +508,13 @@ function withEyebrow(n: ReactNode): ReactNode {
   return n;
 }
 
+/** programme pages: the same learner stories as the home page / testimonials page, this programme's learners first (8 cards) */
+function programTestimonials(slug: string) {
+  const prog = ({ mba: 'MBA', mca: 'MCA', bba: 'BBA', bca: 'BCA', bcom: 'B.Com' } as Record<string, string>)[slug.replace(/^online-/, '')];
+  const own = testimonials.filter((t) => t.course === prog);
+  return [...own, ...testimonials.filter((t) => t.course !== prog)].slice(0, Math.max(8, own.length));
+}
+
 export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts = false }: Props) {
   const blocks = swapPhotos(cleanBlocks(raw), slug);
   if (slug === 'privacy-policy') return <LegalPage blocks={blocks} crumbs={crumbs} />;
@@ -738,7 +747,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const lead = sec.blocks.filter(isP).find((b) => b.x.length > 30 && !/^[“"]/.test(b.x) && !quotes.some((q) => q.quote === b.x))?.x;
       nodes.push(
         <Sec key={key} tone="sky" center title={title} lead={lead}>
-          {quotes.filter((q) => q.img).length >= quotes.length / 2 ? <StoryCards items={quotes} initial={9} /> : <QuoteCards items={quotes} initial={6} home={slug === 'why-dsu-online'} />}
+          {programLinks ? <TestimonialGrid items={programTestimonials(slug)} /> : quotes.filter((q) => q.img).length >= quotes.length / 2 ? <StoryCards items={quotes} initial={9} /> : <QuoteCards items={quotes} initial={6} home={slug === 'why-dsu-online'} />}
         </Sec>,
       );
       continue;

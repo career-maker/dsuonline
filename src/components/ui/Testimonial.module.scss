@@ -223,15 +223,38 @@
 }
 
 // ---------- inner pages: grid of cards
+// 4 per row; taller cards and a darker panel so the hover text stays readable (12px copy)
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: u(20);
+
+  .reveal {
+    padding: clamp(12px, #{u(16)}, 16px);
+    background: rgb(16 18 20 / 94%);
+  }
+
+  .q {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .rName {
+    font-size: 16px;
+  }
+
+  .rSub {
+    font-size: 12px;
+  }
+
+  .more {
+    font-size: 12px;
+  }
 }
 
 .item {
   position: relative;
-  aspect-ratio: 4 / 3.1;
+  aspect-ratio: 4 / 5;
   min-width: 0;
 }
 

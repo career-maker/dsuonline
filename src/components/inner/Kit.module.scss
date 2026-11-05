@@ -2555,6 +2555,38 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 }
 
+// faculty as an auto-scroll carousel: 4 cards per view, 3 / 2 / 1 on smaller screens (wins over the phone .facAll flex rules by order)
+.facCar.facAll {
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: none;
+  margin-inline: 0;
+  padding-inline: 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > li {
+    flex: 0 0 calc((100% - 3 * clamp(12px, #{u(20)}, 20px)) / 4);
+
+    @include down($bp-lg) {
+      flex-basis: calc((100% - 2 * clamp(12px, #{u(20)}, 20px)) / 3);
+    }
+
+    @include down($bp-md) {
+      flex-basis: calc((100% - clamp(12px, #{u(20)}, 20px)) / 2);
+    }
+
+    @include down($bp-sm) {
+      flex-basis: 78%;
+    }
+  }
+}
+
 // ---------- full faculty list (academics): same card look as the home "Meet Our Faculty"
 .facAll {
   display: grid;

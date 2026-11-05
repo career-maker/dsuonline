@@ -127,6 +127,12 @@
     aspect-ratio: auto;
   }
 
+  @include up($bp-lg) {
+    &:not(.big) {
+      cursor: pointer;
+    }
+  }
+
   &.rakshit { grid-column: 1; }
   &.chinmaya { grid-column: 2; grid-row: 1; }
   &.akhil { grid-column: 3; grid-row: 1; }
