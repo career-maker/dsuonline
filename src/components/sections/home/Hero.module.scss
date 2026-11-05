@@ -600,13 +600,14 @@
   }
 
   .ctas {
-    display: grid;
+    display: flex;
     gap: 10px;
     margin-top: 18px;
 
     a {
-      width: 100%;
+      width: auto;
       height: 46px;
+      gap: 18px;
       justify-content: space-between;
       font-size: 16px;
     }
@@ -616,7 +617,7 @@
       background: #020966;
     }
 
-    a:last-child {
+    a:last-child:not(:first-child) {
       border: 1px solid rgb(255 255 255 / 55%);
       background: #05080b;
     }
@@ -771,7 +772,7 @@
       padding-left: u(18);
     }
 
-    > :last-child {
+    > :last-child:not(:first-child) {
       width: u(160);
       padding-left: u(20);
     }

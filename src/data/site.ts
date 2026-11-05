@@ -79,3 +79,6 @@ export const announcements = [
   'Academic Calendar 2026-27 Published',
   'Placement Assistance Program Registrations Open',
 ];
+
+/** Home announcement ticker (above Testimonials). Hidden for now: set to true to show it again. */
+export const showAnnouncement = false;

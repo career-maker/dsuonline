@@ -6,6 +6,7 @@ import { Icon } from '@/components/ui/Icon';
 import { ChevronLeft, ChevronRight } from '@/components/ui/icons';
 import { CarouselControls, TestimonialCard } from '@/components/ui/Testimonial';
 import { tickerItems } from '@/data/home';
+import { showAnnouncement } from '@/data/site';
 import { homeTestimonials } from '@/data/testimonials';
 
 const initialPages = [homeTestimonials.slice(0, 5), homeTestimonials.slice(5, 10)];
@@ -36,6 +37,7 @@ export function Testimonials() {
 
   return (
     <>
+      {showAnnouncement && (
       <section className={s.ticker} aria-label="Announcements">
         <Icon name="ticker-icon" />
         <div className={s.track}>
@@ -60,6 +62,7 @@ export function Testimonials() {
           </ul>
         </div>
       </section>
+      )}
 
       <section className={s.section}>
         <div className={s.inner}>
