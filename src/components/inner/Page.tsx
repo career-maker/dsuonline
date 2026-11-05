@@ -226,6 +226,32 @@ function Body({ blocks, head }: { blocks: Block[]; head?: ReactNode }) {
   );
 }
 
+/** Sub-sections as views; runs of short one-paragraph subs (e.g. each learning module as its own heading) become one card grid under the empty "Learning Modules"-style heading before them. */
+function subViews(subs: Sub[]): ReactNode[] {
+  const simple = (x: Sub) => x.blocks.length > 0 && x.blocks.every(isP) && x.blocks.length <= 2 && x.blocks.reduce((n, b) => n + (isP(b) ? b.x.length : 0), 0) < 420 && !/career/i.test(x.title);
+  const out: ReactNode[] = [];
+  for (let i = 0; i < subs.length; i++) {
+    const x = subs[i];
+    if (!x.blocks.length && subs[i + 1] && simple(subs[i + 1])) {
+      const run: Sub[] = [];
+      let j = i + 1;
+      while (j < subs.length && simple(subs[j])) run.push(subs[j++]);
+      if (run.length >= 3) {
+        out.push(
+          <div key={x.title} style={{ marginTop: 'clamp(28px, 3.4vw, 52px)' }}>
+            <h3 style={{ marginBottom: 16, fontSize: 'max(21px, calc(var(--u) * 30))', fontWeight: 700, lineHeight: 1.2 }}>{x.title}</h3>
+            <CardGrid items={run.map((r) => ({ title: r.title, text: r.blocks.filter(isP).map((b) => b.x).join(' ') }))} cols={3} tint />
+          </div>,
+        );
+        i = j - 1;
+        continue;
+      }
+    }
+    out.push(<SubView key={x.title} sub={x} />);
+  }
+  return out;
+}
+
 function SubView({ sub }: { sub: Sub }) {
   if (!sub.blocks.length) return null;
   // title paragraph + description paragraph, repeated: heading and copy must read as two different things
@@ -1047,7 +1073,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     nodes.push(
       <Sec key={key} tone={nextTone()} title={oneMedia ? undefined : title || undefined} narrow={!imgs.length && !sec.subs.length && sec.blocks.every((b) => b.t === 'p' && b.x.length > 80)}>
         {hasLead && <Body blocks={sec.blocks} head={oneMedia ? <Head title={title || undefined} /> : undefined} />}
-        {cardSubs && hasLead ? <div style={{ marginTop: 28 }}>{learningCards({ ...sec, blocks: [] })}</div> : sec.subs.map((x) => <SubView key={x.title} sub={x} />)}
+        {cardSubs && hasLead ? <div style={{ marginTop: 28 }}>{learningCards({ ...sec, blocks: [] })}</div> : subViews(sec.subs)}
       </Sec>,
     );
   }
