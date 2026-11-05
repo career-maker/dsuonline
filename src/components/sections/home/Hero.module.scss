@@ -1094,16 +1094,19 @@
     animation-delay: 0.55s;
   }
 
+  // each logo sits on its own white chip
   img {
     width: auto;
-    height: clamp(40px, #{u(103)}, 103px);
+    height: clamp(40px, #{u(86)}, 86px);
+    padding: clamp(5px, #{u(8)}, 10px) clamp(8px, #{u(14)}, 16px);
+    border-radius: clamp(6px, #{u(8)}, 10px);
+    background: #fff;
+    box-shadow: 0 4px 14px rgb(0 0 0 / 18%);
     object-fit: contain;
   }
 
   i {
-    width: 1px;
-    height: clamp(30px, #{u(76)}, 76px);
-    background: rgb(255 255 255 / 30%);
+    display: none;
   }
 }
 
@@ -1111,9 +1114,12 @@
   content: '';
   position: absolute;
   z-index: -1;
-  inset: -60px -90px -40px -90px;
+  inset: -120px -200px -80px -160px;
   pointer-events: none;
-  background: radial-gradient(ellipse 70% 70% at 45% 50%, rgb(0 0 0 / 45%) 0%, rgb(0 0 0 / 30%) 50%, rgb(0 0 0 / 0%) 100%);
+  background: rgb(0 0 0 / 42%);
+  mask-image: linear-gradient(90deg, transparent 0, rgb(0 0 0 / 4%) 6%, rgb(0 0 0 / 15%) 12%, rgb(0 0 0 / 33%) 18%, rgb(0 0 0 / 55%) 24%, rgb(0 0 0 / 76%) 30%, rgb(0 0 0 / 91%) 36%, #000 44%, #000 56%, rgb(0 0 0 / 91%) 64%, rgb(0 0 0 / 76%) 70%, rgb(0 0 0 / 55%) 76%, rgb(0 0 0 / 33%) 82%, rgb(0 0 0 / 15%) 88%, rgb(0 0 0 / 4%) 94%, transparent 100%), linear-gradient(180deg, transparent 0, rgb(0 0 0 / 4%) 6%, rgb(0 0 0 / 15%) 12%, rgb(0 0 0 / 33%) 18%, rgb(0 0 0 / 55%) 24%, rgb(0 0 0 / 76%) 30%, rgb(0 0 0 / 91%) 36%, #000 44%, #000 56%, rgb(0 0 0 / 91%) 64%, rgb(0 0 0 / 76%) 70%, rgb(0 0 0 / 55%) 76%, rgb(0 0 0 / 33%) 82%, rgb(0 0 0 / 15%) 88%, rgb(0 0 0 / 4%) 94%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
 }
 
 @include down($bp-lg) {
@@ -1122,10 +1128,6 @@
 
     img {
       height: clamp(32px, 5vw, 58px);
-    }
-
-    i {
-      height: clamp(26px, 3.8vw, 44px);
     }
   }
 }
@@ -1136,15 +1138,12 @@
     gap: 6px;
 
     img {
-      height: 38px;
+      height: 34px;
+      padding: 4px 7px;
     }
 
     .naac {
-      height: 36px;
-    }
-
-    i {
-      height: 28px;
+      height: 34px;
     }
   }
 
@@ -1187,14 +1186,3 @@
 }
 
 // feathered dark backing behind the logos: eased alpha ramps on all four sides, so no edge is visible
-.badges::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: -22px -40px;
-  pointer-events: none;
-  background: rgb(0 0 0 / 62%);
-  mask-image: linear-gradient(90deg, transparent 0, rgb(0 0 0 / 6%) 5%, rgb(0 0 0 / 17%) 10%, rgb(0 0 0 / 35%) 15%, rgb(0 0 0 / 59%) 20%, rgb(0 0 0 / 80%) 25%, rgb(0 0 0 / 94%) 30%, #000 35%, #000 65%, rgb(0 0 0 / 94%) 70%, rgb(0 0 0 / 80%) 75%, rgb(0 0 0 / 59%) 80%, rgb(0 0 0 / 35%) 85%, rgb(0 0 0 / 17%) 90%, rgb(0 0 0 / 6%) 95%, transparent 100%), linear-gradient(180deg, transparent 0, rgb(0 0 0 / 6%) 5%, rgb(0 0 0 / 17%) 10%, rgb(0 0 0 / 35%) 15%, rgb(0 0 0 / 59%) 20%, rgb(0 0 0 / 80%) 25%, rgb(0 0 0 / 94%) 30%, #000 35%, #000 65%, rgb(0 0 0 / 94%) 70%, rgb(0 0 0 / 80%) 75%, rgb(0 0 0 / 59%) 80%, rgb(0 0 0 / 35%) 85%, rgb(0 0 0 / 17%) 90%, rgb(0 0 0 / 6%) 95%, transparent 100%);
-  mask-composite: intersect;
-  -webkit-mask-composite: source-in;
-}

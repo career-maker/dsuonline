@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useId, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState, useSyncExternalStore } from 'react';
+import { createPortal } from 'react-dom';
 import { programs, specializationHref } from '@/data/programs';
 import { mainNav, moreNav, site } from '@/data/site';
 import { useEnquiry } from './EnquiryProvider';
@@ -18,6 +19,7 @@ export function Header() {
   const [held, setHeld] = useState(false); // after a link click the hover/focus dropdowns stay shut until the pointer leaves
   const moreRef = useRef<HTMLLIElement>(null);
   const moreId = useId();
+  const mounted = useSyncExternalStore(() => () => {}, () => true, () => false); // client only (portal target)
   const { open: openEnquiry } = useEnquiry();
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState('');
@@ -82,7 +84,7 @@ export function Header() {
   useEffect(() => {
     const onDoc = (e: MouseEvent) => {
       if (progRef.current && !progRef.current.contains(e.target as Node)) setProgOpen(false);
-      if (moreRef.current && !moreRef.current.contains(e.target as Node)) setMoreOpen(false);
+      if (moreRef.current && !moreRef.current.contains(e.target as Node) && !(e.target as HTMLElement).closest?.('[aria-label="More menu"]')) setMoreOpen(false);
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) setSearchOpen(false);
     };
     const onKey = (e: KeyboardEvent) => {
@@ -115,6 +117,57 @@ export function Header() {
     setHeld(true);
     (document.activeElement as HTMLElement | null)?.blur?.();
   };
+
+  const moreItems = (
+    <>
+      {moreNav.map((n) =>
+        n.label === 'Facts' ? (
+          <li key={n.href}>
+            <a
+              href="#facts"
+              onClick={(e) => {
+                e.preventDefault();
+                closeAll();
+                window.dispatchEvent(new Event('open-facts'));
+              }}
+            >
+              <span className={s.txt}>
+                <b>{n.label}</b>
+              </span>
+              <span className={s.arr} aria-hidden="true">
+                →
+              </span>
+            </a>
+          </li>
+        ) : (
+        <li key={n.href}>
+          <Link href={n.href} onClick={closeAll}>
+            <span className={s.txt}>
+              <b>{n.label}</b>
+            </span>
+            <span className={s.arr} aria-hidden="true">
+              →
+            </span>
+          </Link>
+        </li>
+        ),
+      )}
+      <li className={s.moreCtas}>
+        <a href={site.apply} target="_blank" rel="noopener noreferrer" onClick={closeAll}>
+          Apply Now
+        </a>
+        <button
+          type="button"
+          onClick={() => {
+            closeAll();
+            openEnquiry();
+          }}
+        >
+          Enquire Now
+        </button>
+      </li>
+    </>
+  );
 
   return (
     <header className={`${s.header} ${stuck ? s.stuck : ''} ${hidden ? s.hide : ''}`} data-u>
@@ -182,52 +235,7 @@ export function Header() {
                 <span className={s.srOnly}>More menu</span>
               </button>
               <ul id={moreId} className={`${s.dropdown} ${s.moreMenu} ${moreOpen ? s.dropdownOpen : ''}`}>
-                {moreNav.map((n) =>
-                  n.label === 'Facts' ? (
-                    <li key={n.href}>
-                      <a
-                        href="#facts"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          closeAll();
-                          window.dispatchEvent(new Event('open-facts'));
-                        }}
-                      >
-                        <span className={s.txt}>
-                          <b>{n.label}</b>
-                        </span>
-                        <span className={s.arr} aria-hidden="true">
-                          →
-                        </span>
-                      </a>
-                    </li>
-                  ) : (
-                  <li key={n.href}>
-                    <Link href={n.href} onClick={closeAll}>
-                      <span className={s.txt}>
-                        <b>{n.label}</b>
-                      </span>
-                      <span className={s.arr} aria-hidden="true">
-                        →
-                      </span>
-                    </Link>
-                  </li>
-                  ),
-                )}
-                <li className={s.moreCtas}>
-                  <a href={site.apply} target="_blank" rel="noopener noreferrer" onClick={closeAll}>
-                    Apply Now
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      closeAll();
-                      openEnquiry();
-                    }}
-                  >
-                    Enquire Now
-                  </button>
-                </li>
+                {moreItems}
               </ul>
             </li>
           </ul>
@@ -291,6 +299,22 @@ export function Header() {
           </button>
         </div>
       </div>
+      {mounted &&
+        createPortal(
+          <>
+            <div className={`${s.sideShade} ${moreOpen ? s.sideShadeOn : ''}`} onClick={() => setMoreOpen(false)} aria-hidden="true" />
+            <aside className={`${s.sidePanel} ${moreOpen ? s.sidePanelOn : ''}`} aria-label="More menu" aria-hidden={!moreOpen} inert={!moreOpen || undefined}>
+              <div className={s.sideHead}>
+                <span>Menu</span>
+                <button type="button" onClick={() => setMoreOpen(false)} aria-label="Close menu">
+                  <CloseIcon />
+                </button>
+              </div>
+              <ul className={s.sideList}>{moreItems}</ul>
+            </aside>
+          </>,
+          document.body,
+        )}
     </header>
   );
 }

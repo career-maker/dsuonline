@@ -1,0 +1,300 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+// Learner stories showcase: vertical label | large portrait | quote, with a thumbnail strip underneath
+.root {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    'label stage'
+    'label strip'
+    'label arrows';
+  column-gap: clamp(14px, #{u(34)}, 40px);
+  row-gap: clamp(14px, #{u(24)}, 26px);
+  text-align: left;
+  letter-spacing: -0.0175em;
+}
+
+.label {
+  grid-area: label;
+  align-self: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: fs(44, 28px);
+  line-height: 1;
+  font-weight: 700;
+  color: $blue;
+}
+
+.stage {
+  grid-area: stage;
+  display: grid;
+  grid-template-columns: minmax(0, clamp(240px, #{u(340)}, 360px)) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(18px, #{u(48)}, 56px);
+  margin: 0;
+  animation: swap 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 6px;
+  background: $blue;
+
+  img {
+    object-fit: cover;
+    object-position: 50% 15%;
+  }
+
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+.initial {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 96px;
+  font-weight: 700;
+}
+
+.play {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 50%;
+  background: $yellow;
+  color: #1b1b1b;
+  cursor: pointer;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.copy {
+  align-self: center;
+  min-width: 0;
+  max-width: 640px;
+}
+
+.no {
+  display: block;
+  font-size: fs(30, 22px);
+  line-height: 1.1;
+  font-weight: 700;
+  color: $blue;
+}
+
+.copy h3 {
+  margin-top: clamp(8px, #{u(14)}, 14px);
+  font-size: fs(38, 26px);
+  line-height: 1.1;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $ink;
+}
+
+.dept {
+  margin-top: 8px;
+  font-size: fs(17, 14px);
+  line-height: 1.4;
+  font-weight: 500;
+  color: #8a6d00;
+}
+
+.quote {
+  margin: clamp(14px, #{u(22)}, 22px) 0 0;
+  padding-left: 16px;
+  border-left: 3px solid $yellow;
+}
+
+.q,
+.qOpen {
+  font-size: fs(18, 15px);
+  line-height: 1.7;
+  font-weight: 400;
+  color: $body;
+}
+
+.q {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+
+.qOpen {
+  max-height: 14em;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.more {
+  margin-top: 10px;
+  padding: 2px 0;
+  border: 0;
+  background: none;
+  color: $blue;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+// thumbnails: the learner before + the next three
+.strip {
+  grid-area: strip;
+  display: flex;
+  gap: clamp(8px, #{u(14)}, 14px);
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.thumb {
+  position: relative;
+  flex: 0 0 clamp(78px, #{u(104)}, 112px);
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border: 0;
+  border-radius: 4px;
+  background: $blue;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  animation: swap 0.5s ease both;
+  @include focus-ring;
+
+  img {
+    object-fit: cover;
+    object-position: 50% 15%;
+  }
+
+  &:hover {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+
+  // name on hover
+  i {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 18px 6px 6px;
+    background: linear-gradient(0deg, rgb(0 0 0 / 75%), rgb(0 0 0 / 0%));
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover i,
+  &:focus-visible i {
+    opacity: 1;
+  }
+}
+
+.arrows {
+  grid-area: arrows;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $body;
+
+  button {
+    @include round-arrow(40px);
+    display: grid;
+    place-items: center;
+    border: 1.5px solid #1a1a1a;
+    background: #fff;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      border-color: $blue;
+      background: $blue;
+      color: #fff;
+    }
+  }
+}
+
+@keyframes swap {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage,
+  .thumb {
+    animation: none;
+  }
+}
+
+// ---------- tablet + phone: label becomes a normal line, portrait over the text
+@include down($bp-lg) {
+  .root {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'stage'
+      'strip'
+      'arrows';
+  }
+
+  .label {
+    display: none;
+  }
+
+  .stage {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .photo {
+    width: min(100%, 240px);
+  }
+
+  .arrows {
+    justify-content: center;
+  }
+}

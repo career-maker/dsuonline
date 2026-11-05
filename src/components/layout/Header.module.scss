@@ -738,3 +738,168 @@
     }
   }
 }
+
+// ---------- desktop: the hamburger opens a side menu on the right (tablet / phone keep the drawer)
+.sideShade,
+.sidePanel {
+  display: none;
+}
+
+@include up($bp-lg) {
+  // the inline dropdown version is for the drawer only
+  .hasMenu .moreMenu {
+    display: none !important;
+  }
+
+  .sideShade {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 190;
+    background: rgb(4 8 24 / 55%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+  }
+
+  .sideShadeOn {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .sidePanel {
+    display: flex;
+    position: fixed;
+    inset: 0 0 0 auto;
+    z-index: 200;
+    flex-direction: column;
+    width: min(400px, 92vw);
+    background: #fff;
+    box-shadow: -24px 0 60px rgb(0 10 40 / 30%);
+    translate: 100% 0;
+    visibility: hidden;
+    transition: translate 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), visibility 0s 0.4s;
+  }
+
+  .sidePanelOn {
+    translate: 0 0;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .sideHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 24px;
+    background: $blue;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+
+    button {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgb(255 255 255 / 40%);
+      border-radius: 50%;
+      background: none;
+      color: #fff;
+      cursor: pointer;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      &:hover {
+        background: rgb(255 255 255 / 15%);
+      }
+    }
+  }
+
+  .sideList {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px 16px 28px;
+    overflow-y: auto;
+
+    li {
+      opacity: 1;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 12px;
+      border-bottom: 1px solid rgb(0 0 0 / 7%);
+      color: $ink;
+      font-size: 18px;
+      font-weight: 500;
+      transition: background-color 0.2s ease, padding-left 0.25s ease;
+
+      b {
+        font-weight: 500;
+      }
+
+      .arr {
+        color: $blue;
+        opacity: 0.4;
+        transition: opacity 0.2s ease, translate 0.25s ease;
+      }
+
+      &:hover {
+        padding-left: 18px;
+        background: $bg-sky;
+        color: $ink;
+        text-shadow: none;
+
+        .arr {
+          opacity: 1;
+          translate: 4px 0;
+        }
+      }
+    }
+
+    .moreCtas {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 18px;
+
+      a,
+      button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        padding: 0;
+        border: 0;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      a {
+        background: $blue;
+        color: #fff;
+
+        &:hover {
+          padding-left: 0;
+          background: #0a95e0;
+          color: #fff;
+        }
+      }
+
+      button {
+        background: #0b0e0d;
+        color: #fff;
+      }
+    }
+  }
+}
