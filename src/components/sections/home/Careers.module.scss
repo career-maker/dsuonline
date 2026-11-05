@@ -445,3 +445,10 @@
     }
   }
 }
+
+// phone / tablet accordion: the open card can be closed by tapping it again
+@include down($bp-lg) {
+  .panel.shut {
+    display: none;
+  }
+}

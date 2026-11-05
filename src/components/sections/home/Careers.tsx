@@ -9,6 +9,7 @@ import s from './Careers.module.scss';
 
 export function Careers() {
   const [active, setActive] = useState(0);
+  const [shut, setShut] = useState(false); // phone / tablet accordion: tapping the open card closes it
   const uid = useId();
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   const tab = careerTabs[active];
@@ -51,12 +52,23 @@ export function Careers() {
                   role="tab"
                   id={`${uid}-t${i}`}
                   aria-selected={i === active}
+                  aria-expanded={i === active && !shut}
                   aria-controls={`${uid}-p`}
                   tabIndex={i === active ? 0 : -1}
                   className={i === active ? s.on : undefined}
-                  style={{ order: i * 2 }}
-                  onClick={() => setActive(i)}
-                  onMouseEnter={() => setActive(i)}
+                  style={{ order: i * 2, scrollMarginTop: 96 }}
+                  onClick={(e) => {
+                    if (!window.matchMedia('(max-width: 1199.98px)').matches) return setActive(i);
+                    const btn = e.currentTarget;
+                    if (i === active) setShut((v) => !v);
+                    else {
+                      setActive(i);
+                      setShut(false);
+                    }
+                    // the card that was open collapses above, so bring the tapped one back under the sticky header
+                    setTimeout(() => btn.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+                  }}
+                  onMouseEnter={() => window.matchMedia('(min-width: 1200px)').matches && setActive(i)}
                 >
                   <span className={s.ic}>
                     <Icon name={i === active ? `${t.icon}-white` : t.icon} />
@@ -74,7 +86,7 @@ export function Careers() {
               ))}
             </div>
 
-            <div role="tabpanel" id={`${uid}-p`} aria-labelledby={`${uid}-t${active}`} className={s.panel} style={{ order: active * 2 + 1 }}>
+            <div role="tabpanel" id={`${uid}-p`} aria-labelledby={`${uid}-t${active}`} className={`${s.panel} ${shut ? s.shut : ''}`} style={{ order: active * 2 + 1 }}>
               <div className={s.ptitle}>
                 <Icon name={tab.icon} />
                 <h3>

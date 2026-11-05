@@ -9526,7 +9526,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/Careers.tsx",
-      "source_location": "L106",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
@@ -9538,7 +9538,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/Careers.tsx",
-      "source_location": "L62",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -22895,5 +22895,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "66fad5509d9fb80286377d571b08449d7717bb6f"
+  "built_at_commit": "ec41b471fcd933e6989d8ec6ffa1ccfc8ea21a04"
 }
