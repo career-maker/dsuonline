@@ -5,32 +5,21 @@
 .root {
   position: relative;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   grid-template-areas:
-    'label stage'
-    'label strip'
-    'label arrows';
-  column-gap: clamp(14px, #{u(34)}, 40px);
+    'stage'
+    'strip'
+    'arrows';
   row-gap: clamp(14px, #{u(24)}, 26px);
   text-align: left;
   letter-spacing: -0.0175em;
 }
 
-.label {
-  grid-area: label;
-  align-self: center;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: fs(44, 28px);
-  line-height: 1;
-  font-weight: 700;
-  color: $blue;
-}
-
 .stage {
   grid-area: stage;
   display: grid;
-  grid-template-columns: minmax(0, clamp(240px, #{u(340)}, 360px)) minmax(0, 1fr);
+  grid-template-columns: minmax(0, clamp(240px, #{u(340)}, 360px)) minmax(0, 640px);
+  justify-content: center;
   align-items: start;
   gap: clamp(18px, #{u(48)}, 56px);
   margin: 0;
@@ -164,6 +153,7 @@
   grid-area: strip;
   display: flex;
   gap: clamp(8px, #{u(14)}, 14px);
+  justify-content: safe center;
   overflow-x: auto;
   scrollbar-width: none;
 
@@ -224,6 +214,7 @@
   grid-area: arrows;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   font-size: 14px;
   font-weight: 500;
@@ -273,20 +264,9 @@
 
 // ---------- tablet + phone: label becomes a normal line, portrait over the text
 @include down($bp-lg) {
-  .root {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      'stage'
-      'strip'
-      'arrows';
-  }
-
-  .label {
-    display: none;
-  }
-
   .stage {
     grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
     gap: 18px;
   }
 

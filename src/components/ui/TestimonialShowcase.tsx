@@ -70,10 +70,6 @@ export function TestimonialShowcase({ items, label = 'Testimonials', interval = 
       onTouchStart={() => setHold(true)}
       onTouchEnd={() => setTimeout(() => setHold(false), 4000)}
     >
-      <p className={s.label} aria-hidden="true">
-        {label}
-      </p>
-
       <figure className={s.stage} key={i}>
         <div className={s.photo}>
           {t.img ? (
