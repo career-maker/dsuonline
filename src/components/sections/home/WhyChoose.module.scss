@@ -178,8 +178,8 @@
 // ---------- desktop: exact geometry of the 1920 artboard
 @include up($bp-lg) {
   .why {
-    padding: u(98.2) 0 0;
-    height: u(688);
+    padding: u(98.2) 0 u(80);
+    min-height: u(688);
   }
 
   .inner {
@@ -207,8 +207,8 @@
     gap: u(14);
 
     li {
-      min-height: u(170);
-      padding: u(22);
+      min-height: u(140);
+      padding: u(20);
       font-size: u(24);
       line-height: u(30);
     }
