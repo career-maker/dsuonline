@@ -4,7 +4,6 @@ import Image, { getImageProps } from 'next/image';
 import { useEffect, useState } from 'react';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { heroSlides } from '@/data/home';
-import { site } from '@/data/site';
 import s from './Hero.module.scss';
 
 // object-position that reproduces the design's crop of each slide
@@ -82,11 +81,8 @@ export function Hero() {
           University with the freedom to learn anytime, anywhere.
         </p>
         <div className={s.ctas}>
-          <ArrowLink href="/online-mba" variant="dark">
+          <ArrowLink href="#programs" variant="dark">
             Explore Programs
-          </ArrowLink>
-          <ArrowLink href={site.apply} external>
-            Apply Now
           </ArrowLink>
         </div>
       </div>

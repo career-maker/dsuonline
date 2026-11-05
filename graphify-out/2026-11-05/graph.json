@@ -9754,7 +9754,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/sections/home/Hero.tsx",
-      "source_location": "L78",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -22895,5 +22895,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ec41b471fcd933e6989d8ec6ffa1ccfc8ea21a04"
+  "built_at_commit": "e144459974864070d1657d885137fe290ff5e41d"
 }

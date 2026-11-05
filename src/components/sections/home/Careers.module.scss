@@ -45,8 +45,8 @@
   grid-template-columns: minmax(0, 349fr) minmax(0, 581fr);
   gap: clamp(12px, #{u(20)}, 20px);
 
-  // phones: accordion - the open tab's panel appears directly under that tab (not after the whole list)
-  @include down($bp-md) {
+  // phones + tablets: accordion - the open tab's panel appears directly under that tab (not after the whole list)
+  @include down($bp-lg) {
     display: flex;
     flex-direction: column;
     gap: px(8.5);
