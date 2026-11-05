@@ -23,7 +23,7 @@ export function Testimonials() {
     if (paused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const id = setInterval(() => {
       if (!document.hidden) setPage((p) => (p + 1) % pages.length);
-    }, 5000);
+    }, 2000);
     return () => clearInterval(id);
   }, [paused]);
 

@@ -57,6 +57,38 @@ export function ProgramsBand({
     }
   }, [activeIdx]);
 
+  // autoplay every 2s: next card, wraps to the first; skips while hovered/focused, off-screen, tab hidden or reduced motion
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let hold = false;
+    let inView = false;
+    const io = new IntersectionObserver(([e]) => (inView = e.isIntersecting), { threshold: 0.2 });
+    io.observe(el);
+    const on = () => (hold = true);
+    const off = () => (hold = false);
+    el.addEventListener('pointerenter', on);
+    el.addEventListener('pointerleave', off);
+    el.addEventListener('focusin', on);
+    el.addEventListener('focusout', off);
+    const t = setInterval(() => {
+      if (hold || !inView || document.hidden || el.scrollWidth <= el.clientWidth + 2) return;
+      const cards = Array.from(el.querySelectorAll<HTMLElement>(':scope > article'));
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+      const cur = cards.findIndex((c) => c.offsetLeft - el.offsetLeft >= el.scrollLeft - 4);
+      const next = atEnd ? 0 : Math.min(cards.length - 1, (cur < 0 ? 0 : cur) + 1);
+      el.scrollTo({ left: cards[next].offsetLeft - el.offsetLeft, behavior: 'smooth' });
+    }, 2000);
+    return () => {
+      clearInterval(t);
+      io.disconnect();
+      el.removeEventListener('pointerenter', on);
+      el.removeEventListener('pointerleave', off);
+      el.removeEventListener('focusin', on);
+      el.removeEventListener('focusout', off);
+    };
+  }, []);
+
   useEffect(() => {
     const el = trackRef.current;
     if (!el) return;

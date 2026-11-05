@@ -9,7 +9,7 @@ import s from './Blogs.module.scss';
 
 export type Slide = { slug: string; day: string; ord: string; month: string; title: string; excerpt: string; image: string; alt: string; w: number; h: number };
 
-const AUTO_MS = 6000;
+const AUTO_MS = 2000;
 
 // design arrow: blue chevron with a dark outline inside a 37px ring
 const Arrow = ({ d }: { d: string }) => (

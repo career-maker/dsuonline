@@ -20,7 +20,7 @@ export function Hero() {
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const t = setInterval(() => setActive((i) => (i + 1) % heroSlides.length), 8000);
+    const t = setInterval(() => setActive((i) => (i + 1) % heroSlides.length), 2000);
     return () => clearInterval(t);
   }, []);
 

@@ -26,6 +26,7 @@ User rules: home page pixel-matches the PDF; inner pages follow home typography/
 - Enquiry popup submit: NO backend. `NEXT_PUBLIC_ENQUIRY_ENDPOINT` env var (JSON POST) enables delivery; otherwise UI says "Not sent yet". Do not claim delivery.
 
 ## Status
+All autoplay carousels (hero, testimonials, faculty, articles, quotes, blog slider, mobile programs band) advance every 2000ms; pause on hover/focus/off-screen/hidden/reduced-motion.
 Programme section headings: `src/data/section-heads.ts` (match regex -> eyebrow/mini title, title override or `null` to hide main title). Admission section = mini title "Admission Process", no main title. Add an entry to give any section a mini/main title.
 Done: responsive home+inner pages, hero tablet/mobile layouts, preloader, sticky header, animations/counters, blogs slider, all inner pages redesigned with kit, refer page redesign, testimonials page (photo cards like home), About page uses home blocks, country-code picker with flags (public/flags, 46 SVGs), More menu (auto-closes after click), live button wording (Show More/View More/Read More/Know More).
 Specialization page banners (size="gradient"): blue gradient, no photo, with the home hero black overlay on top (Inner.module.scss .heroGradient).

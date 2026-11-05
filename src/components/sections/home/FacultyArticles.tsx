@@ -31,8 +31,8 @@ const toIsoDate = (dateStr: string) => {
 export function FacultyArticles() {
   const facultyTrackRef = useRef<HTMLUListElement>(null);
   const articlesTrackRef = useRef<HTMLUListElement>(null);
-  const { canScroll: facultyCan, step: facultyStep } = useLoopCarousel(facultyTrackRef, { looped: true, auto: 3500 });
-  const { canScroll: articlesCan } = useLoopCarousel(articlesTrackRef, { looped: false });
+  const { canScroll: facultyCan, step: facultyStep } = useLoopCarousel(facultyTrackRef, { looped: true, auto: 2000 });
+  const { canScroll: articlesCan } = useLoopCarousel(articlesTrackRef, { looped: true, auto: 2000 });
   const [articleIdx, setArticleIdx] = useState(0);
 
   const step = useCallback((el: HTMLElement | null, currentIdx: number, dir: 1 | -1, setIdx: (n: number) => void) => {

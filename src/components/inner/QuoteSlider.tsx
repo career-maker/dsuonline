@@ -9,7 +9,7 @@ import s from './Kit.module.scss';
 export function QuoteSlider({ cards }: { cards: ReactNode[] }) {
   const ref = useRef<HTMLUListElement>(null);
   const many = cards.length > 3;
-  const { canScroll, step } = useLoopCarousel(ref, { looped: many, auto: many ? 4000 : 0 });
+  const { canScroll, step } = useLoopCarousel(ref, { looped: many, auto: many ? 2000 : 0 });
   const list = many ? [...cards, ...cards.map((c, i) => <li key={`c${i}`} aria-hidden="true" className={(c as { props: { className?: string } }).props.className} inert>{(c as { props: { children: ReactNode } }).props.children}</li>)] : cards;
   return (
     <div className={s.sliderBox}>

@@ -132,9 +132,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1793816290.3114421,
-    "seen": 1793816433.2487843,
-    "ast_hash": "bba5a2938855f74965d956c84dc7adcb",
+    "mtime": 1793852590.2528713,
+    "seen": 1793852714.848665,
+    "ast_hash": "72b0bcc4f9ef1747b357103cbf1418f6",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -546,9 +546,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/AdmissionSteps.tsx": {
-    "mtime": 1793815744.2296906,
-    "seen": 1793816010.2624779,
-    "ast_hash": "bedfd4e1e35fb1627c5a04257b8e421a",
+    "mtime": 1793852590.3897321,
+    "seen": 1793852714.8486402,
+    "ast_hash": "50fd8149553a9c79019dc824ce4a6585",
     "semantic_hash": ""
   },
   "src/components/inner/ElectiveCombinator.tsx": {
@@ -567,6 +567,12 @@
     "mtime": 1793812472.1688936,
     "seen": 1793812984.7660272,
     "ast_hash": "89abebde526d192c6445544e7234300c",
+    "semantic_hash": ""
+  },
+  "src/data/section-heads.ts": {
+    "mtime": 1793852584.3623066,
+    "seen": 1793852714.8487492,
+    "ast_hash": "a658173778c88fe1b13168327081a440",
     "semantic_hash": ""
   }
 }
