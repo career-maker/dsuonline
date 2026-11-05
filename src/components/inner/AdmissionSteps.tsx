@@ -26,7 +26,7 @@ const icons: ReactNode[] = [
 ];
 
 /** Admission process: numbered timeline (hover / focus moves the highlight), one column per step; stacks on phones. */
-export function AdmissionSteps({ eyebrow, title, steps, image, eligibility }: { eyebrow?: string; title: string; steps: Step[]; eligibility?: { title: string; text: string }; image?: { src: string; alt: string; w?: number; h?: number } }) {
+export function AdmissionSteps({ eyebrow, title, steps, image, eligibility }: { eyebrow?: string; title?: string; steps: Step[]; eligibility?: { title: string; text: string }; image?: { src: string; alt: string; w?: number; h?: number } }) {
   const [active, setActive] = useState(0);
   return (
     <div className={s.wrap}>
@@ -37,7 +37,7 @@ export function AdmissionSteps({ eyebrow, title, steps, image, eligibility }: { 
             <i aria-hidden="true" />
           </p>
         )}
-        <h2>{heading(title)}</h2>
+        {title && <h2>{heading(title)}</h2>}
       </header>
       {image && (
         <div className={s.photo}>

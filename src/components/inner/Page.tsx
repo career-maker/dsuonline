@@ -11,6 +11,7 @@ import { AboutBand, aboutPhotos } from '@/components/sections/home/About';
 import { ProgramsBand } from '@/components/sections/home/ProgramsBand';
 import { WhyChoose } from '@/components/sections/home/WhyChoose';
 import { cleanBlocks, slugify } from './clean';
+import { headFor } from '@/data/section-heads';
 import { ContactForm } from './ContactForm';
 import { PayOptions } from './PayOptions';
 import { ReferForm } from './ReferForm';
@@ -494,26 +495,12 @@ function swapPhotos(blocks: Block[], slug: string): Block[] {
 }
 
 /** programme pages: every section gets a mini title like the home page sections */
-function eyebrowFor(title: string): string | undefined {
-  if (/learning system/i.test(title)) return 'Learning Experience';
-  if (/elective/i.test(title)) return 'Electives';
-  if (/real stories/i.test(title)) return 'Testimonials';
-  if (/fee/i.test(title)) return 'Fee Structure';
-  if (/career/i.test(title)) return 'Careers';
-  if (/curriculum/i.test(title)) return 'Curriculum';
-  if (/faculty/i.test(title)) return 'Faculty';
-  if (/admission|how to apply/i.test(title)) return 'Admissions';
-  if (/added value|certificate/i.test(title)) return 'Certification';
-  if (/eligib/i.test(title)) return 'Eligibility';
-  return undefined;
-}
-
 function withEyebrow(n: ReactNode): ReactNode {
   if (isValidElement(n) && n.type === Sec) {
-    const props = n.props as { title?: string; eyebrow?: string };
+    const props = n.props as { title?: string; eyebrow?: string; id?: string };
     if (props.title && !props.eyebrow) {
-      const e = eyebrowFor(props.title);
-      if (e) return cloneElement(n as ReactElement<{ eyebrow?: string }>, { eyebrow: e });
+      const h = headFor(props.title);
+      if (h.eyebrow || h.title !== props.title) return cloneElement(n as ReactElement<{ eyebrow?: string; title?: string; id?: string }>, { eyebrow: h.eyebrow, title: h.title, id: props.id ?? slugify(props.title) });
     }
   }
   return n;
@@ -853,7 +840,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       nodes.push(
         programLinks ? (
           <Sec key={key} tone="white">
-            <AdmissionSteps eyebrow="Admissions" title={title} steps={steps} image={stepImg ? imgOf(stepImg) : undefined} />
+            <AdmissionSteps eyebrow={headFor(title).eyebrow} title={headFor(title).title} steps={steps} image={stepImg ? imgOf(stepImg) : undefined} />
           </Sec>
         ) : (
           <Sec key={key} tone={nextTone()} title={title}>
