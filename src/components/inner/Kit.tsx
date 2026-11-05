@@ -9,6 +9,7 @@ import { QuoteSlider } from './QuoteSlider';
 import { localHref } from '@/lib/content';
 import { slugify } from './clean';
 import { Tabs } from './Interactive';
+import { RoleIcon } from './RoleIcon';
 import type { Img, Quote } from './parse';
 import s from './Kit.module.scss';
 
@@ -419,22 +420,19 @@ export function RoleGrid({ items }: { items: { title: string; text: string }[] }
           <span className={s.roleNo} aria-hidden="true">
             {String(i + 1).padStart(2, '0')}
           </span>
-          <div>
+          <div className={s.roleBody}>
             <h3>{r.title}</h3>
-            {r.text.includes('•') ? (
-              <ul className={s.roleList}>
-                {r.text
-                  .split('•')
-                  .map((x) => x.trim())
-                  .filter(Boolean)
-                  .map((x) => (
-                    <li key={x}>{x}</li>
-                  ))}
-              </ul>
-            ) : (
-              <p>{r.text}</p>
-            )}
+            <p>
+              {r.text
+                .split('•')
+                .map((x) => x.trim())
+                .filter(Boolean)
+                .join(' · ')}
+            </p>
           </div>
+          <span className={s.roleIcon}>
+            <RoleIcon title={r.title} />
+          </span>
         </li>
       ))}
     </ol>
