@@ -723,15 +723,16 @@
 .heroGradient {
   min-height: clamp(280px, #{u(400)}, 420px);
   padding: clamp(100px, #{u(140)}, 140px) 0 clamp(26px, #{u(44)}, 44px);
-  background: radial-gradient(circle at 85% 20%, rgb(255 255 255 / 14%), transparent 45%), linear-gradient(120deg, #01063f 0%, #020966 60%, #1a2394 100%);
+  // vivid royal blue (sampled from the approved banner): #00178a at the top-left easing to #011078, soft glow top-centre
+  background: radial-gradient(ellipse at 38% 0%, rgb(255 255 255 / 12%), transparent 48%), linear-gradient(135deg, #00178a 0%, #01137f 55%, #011078 100%);
 
   @include down($bp-lg) {
     min-height: clamp(260px, 40svh, 360px);
   }
 
+  // no black overlay here: it would turn the blue to navy
   .heroShade {
-    background: linear-gradient(90deg, rgb(0 0 0 / 68%) 0%, rgb(0 0 0 / 45%) 55%, rgb(0 0 0 / 22%) 100%),
-      linear-gradient(0deg, rgb(0 0 0 / 45%) 0%, rgb(0 0 0 / 0%) 45%);
+    display: none;
   }
 }
 

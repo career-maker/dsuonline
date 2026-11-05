@@ -1,0 +1,37 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: clamp(18px, #{u(28)}, 28px);
+}
+
+.tab {
+  padding: 12px clamp(18px, #{u(30)}, 30px);
+  border: 1.5px solid $blue;
+  border-radius: 4px;
+  background: #fff;
+  color: $blue;
+  font-size: fs(18, 15px);
+  font-weight: 600;
+  letter-spacing: -0.0175em;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  @include focus-ring;
+
+  &:hover {
+    background: $bg-sky;
+  }
+}
+
+.on,
+.on:hover {
+  background: $blue;
+  color: #fff;
+}
+
+.panel[hidden] {
+  display: none;
+}

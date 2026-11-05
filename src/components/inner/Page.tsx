@@ -1,5 +1,6 @@
 import { ElectiveGrid } from './ElectiveGrid';
 import { CareerFlip } from './CareerFlip';
+import { FeeTabs } from '@/components/inner/FeeTabs';
 import { EmiCalculator } from './EmiCalculator';
 import { ElectiveCombinator } from './ElectiveCombinator';
 import { AdmissionSteps } from './AdmissionSteps';
@@ -782,7 +783,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       nodes.push(
         <Sec key={key} tone={nextTone()} title={title}>
           <div className={s.tables}>
-            {tables.map((t, i) => (programLinks ? <FeeTable key={i} rows={t.rows} /> : <DataTable key={i} rows={t.rows} caption={title} />))}
+            {programLinks && tables.length > 1 ? <FeeTabs tables={tables.map((t) => t.rows)} /> : tables.map((t, i) => (programLinks ? <FeeTable key={i} rows={t.rows} /> : <DataTable key={i} rows={t.rows} caption={title} />))}
           </div>
           {note && <p className={s.note}>{note}</p>}
         </Sec>,

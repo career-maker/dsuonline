@@ -3,7 +3,12 @@ import s from './FeeTable.module.scss';
 const dash = (c: string) => (c === String.fromCharCode(0xfffd) ? '–' : c);
 
 /** Fee structure table: titled block, light header with a highlighted Total column, navy "Total Fees" bar. */
-export function FeeTable({ rows }: { rows: string[][] }) {
+export const feeTitle = (head: string[]) => {
+  const first = head[0] ?? '';
+  return /sem/i.test(first) ? 'Semester-wise Fees' : /year/i.test(first) ? 'Year-wise Fees' : first;
+};
+
+export function FeeTable({ rows, bare = false }: { rows: string[][]; bare?: boolean }) {
   const head = rows[0];
   const body = rows.slice(1).filter((r) => r.length >= head.length);
   const sums = rows.slice(1).filter((r) => r.length < head.length);
@@ -12,10 +17,12 @@ export function FeeTable({ rows }: { rows: string[][] }) {
   const last = head.length - 1;
   return (
     <div className={s.block}>
-      <h3 className={s.cap}>
-        <span>{title}</span>
-        <i aria-hidden="true" />
-      </h3>
+      {!bare && (
+        <h3 className={s.cap}>
+          <span>{title}</span>
+          <i aria-hidden="true" />
+        </h3>
+      )}
       <div className={s.card}>
         <table>
           <thead>
