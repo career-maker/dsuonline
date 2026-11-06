@@ -47,3 +47,12 @@ next-env.d.ts
 .server.local
 *.tsbuildinfo
 graphify-out/cache/
+
+# local scratch
+__pycache__/
+/tmp*.tar.gz
+/gl.py
+/gl2.py
+/issues.json
+/video-production/
+/shots/

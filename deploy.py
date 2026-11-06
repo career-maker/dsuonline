@@ -113,3 +113,14 @@ if err:
 sftp.close()
 ssh.close()
 print("==> Deployment complete!")
+
+# Push source to GitHub too (only non-ignored files)
+import subprocess
+here = os.path.dirname(os.path.abspath(__file__))
+def git(*a):
+    return subprocess.run(['git', *a], cwd=here, capture_output=True, text=True)
+git('add', '-A')
+if git('status', '--porcelain').stdout.strip():
+    git('-c', 'user.name=Abhiram P M', '-c', 'user.email=abhiram@intersmart.in', 'commit', '-m', 'Deploy: sync source')
+r = git('push', 'origin', 'master')
+print("==> GitHub push:", "ok" if r.returncode == 0 else "FAILED\n" + r.stderr)
