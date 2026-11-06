@@ -321,7 +321,7 @@
 }
 
 .search {
-  position: relative;
+  position: static; // panel anchors to the fixed .header, so it spans the full width under the bar
 }
 
 .searchBtn {
@@ -350,27 +350,34 @@
 
 .searchPanel {
   position: absolute;
-  top: calc(100% + 12px);
+  top: 100%;
   right: 0;
+  left: 0;
   z-index: 5;
-  width: min(380px, 86vw);
-  padding: px(12);
-  border-radius: px(10);
+  padding: px(22) var(--gut);
   background: #fff;
-  box-shadow: 0 20px 40px rgb(0 0 0 / 25%);
+  box-shadow: 0 14px 24px rgb(0 0 0 / 14%);
+
+  @include up($bp-lg) {
+    padding-inline: u(86);
+  }
 
   input {
-    width: 100%;
-    height: px(44);
-    padding: 0 px(12);
+    display: block;
+    width: min(900px, 100%);
+    height: px(56);
+    margin-inline: auto;
+    padding: 0 px(26);
     border: 1px solid #ccc;
-    border-radius: px(6);
-    font-size: px(16);
+    border-radius: 999px;
+    color: $ink;
+    font-size: px(18);
   }
 
   ul {
     display: block;
-    margin-top: px(8);
+    width: min(900px, 100%);
+    margin: px(10) auto 0;
   }
 
   a {
@@ -662,20 +669,6 @@
       align-items: center;
       gap: 10px;
     }
-  }
-}
-
-@include down($bp-md) {
-  .search {
-    position: static;
-  }
-
-  .searchPanel {
-    position: fixed;
-    top: clamp(68px, #{u(121)}, 121px);
-    right: 12px;
-    left: 12px;
-    width: auto;
   }
 }
 

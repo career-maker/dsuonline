@@ -187,3 +187,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 
 - 2026-11-04: mobile (<760px) hero no longer shows NAAC/UGC/Legacy logos; shown as white strip under hero (`.logoStrip` in Hero.tsx). Server pm2 auto-start via systemd `pm2-dev-inter-f3` (done). Playwright py works; playwright-cli needs `--browser msedge`.
 - 2026-11-04: hero logos (NAAC/UGC/Legacy) now removed from the hero on ALL devices; white `.logoStrip` under hero everywhere. Graphify graph built (src+tools+root, AST only); keep it current with `graphify update .` after every round.
+- 2026-11-06: header search icon now opens a full-width white search bar underneath the header (not a popup); .searchPanel anchors to fixed .header.

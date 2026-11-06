@@ -126,15 +126,15 @@
     "semantic_hash": ""
   },
   "src/components/inner/Kit.tsx": {
-    "mtime": 1793861594.1801417,
-    "seen": 1793861805.4057233,
-    "ast_hash": "fca9b98d176ed6787d67c0d104bbf368",
+    "mtime": 1793907005.7987628,
+    "seen": 1793907174.2738295,
+    "ast_hash": "54df08d75e0edcd2dd2cdcbcb7b296b1",
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1793879824.3352435,
-    "seen": 1793880018.2139044,
-    "ast_hash": "fcb67167f65e707b88ce25bddb9164c9",
+    "mtime": 1793907005.7947984,
+    "seen": 1793907174.2738316,
+    "ast_hash": "6410256283caacf69b48569670e31aad",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -228,9 +228,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/Header.tsx": {
-    "mtime": 1793879079.0949612,
-    "seen": 1793879274.1966848,
-    "ast_hash": "7119d7a8f1624f9ac15736bbaa66f537",
+    "mtime": 1793902746.5722053,
+    "seen": 1793903316.8259835,
+    "ast_hash": "8256a98d6d73e96baaa3ce92aea1d5c7",
     "semantic_hash": ""
   },
   "src/components/layout/Preloader.tsx": {
@@ -516,9 +516,9 @@
     "semantic_hash": ""
   },
   "src/components/ui/Testimonial.tsx": {
-    "mtime": 1793878635.9327786,
-    "seen": 1793879274.1967208,
-    "ast_hash": "ff83ba8ee61d932f1e712c3627e5dd94",
+    "mtime": 1793900680.399072,
+    "seen": 1793903316.8261466,
+    "ast_hash": "5cd010d5944a8c8890963c751ff658ed",
     "semantic_hash": ""
   },
   "src/data/testimonials.ts": {
@@ -558,9 +558,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/FeeTable.tsx": {
-    "mtime": 1793811715.4255402,
-    "seen": 1793812398.1140542,
-    "ast_hash": "d0e0ae25205bf3d1cda7fe235ca48614",
+    "mtime": 1793903169.3548055,
+    "seen": 1793903316.8258128,
+    "ast_hash": "9d5e8547a92036ff92a96a998439ed3f",
     "semantic_hash": ""
   },
   "src/components/inner/FacultyScroller.tsx": {
@@ -594,15 +594,27 @@
     "semantic_hash": ""
   },
   "src/components/ui/TestimonialShowcase.tsx": {
-    "mtime": 1793878780.3915286,
-    "seen": 1793879274.1967227,
-    "ast_hash": "a609bf0925f19222b1ae873d427a255a",
+    "mtime": 1793900680.399072,
+    "seen": 1793903316.8261535,
+    "ast_hash": "dc1a5f4245433227d4d102052464e146",
     "semantic_hash": ""
   },
   "src/components/inner/EmiCalculator.tsx": {
     "mtime": 1793879809.410247,
     "seen": 1793880018.2138855,
     "ast_hash": "07cf721b218fc3baf01b8047a6d6387b",
+    "semantic_hash": ""
+  },
+  "src/components/inner/FeeTabs.tsx": {
+    "mtime": 1793903182.007207,
+    "seen": 1793903316.825824,
+    "ast_hash": "e18c66d44daa4e867fdf7cf2a4b179ce",
+    "semantic_hash": ""
+  },
+  "src/components/inner/RoleIcon.tsx": {
+    "mtime": 1793907125.0320127,
+    "seen": 1793907174.2738385,
+    "ast_hash": "29799151cff9a9b0b7e2f095bea237e2",
     "semantic_hash": ""
   }
 }

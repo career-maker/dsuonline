@@ -1,7 +1,7 @@
 {
   "0": "content.ts",
   "1": "Page.tsx",
-  "2": "icons.tsx",
+  "2": "next",
   "3": "scrape.py",
   "4": "EnquiryModal.tsx",
   "5": "package.json",
@@ -10,6 +10,7 @@
   "8": "InnerPage.tsx",
   "9": "DSU Online — CHECKPOINT (read this first in any new session)",
   "10": "Deploy to Server (dsuonline.intersmarthosting.in)",
+  "11": "Testimonial.tsx",
   "12": "README.md",
   "13": "AGENTS.md",
   "15": "CLAUDE.md",
@@ -17,5 +18,5 @@
   "20": "server.js",
   "21": "AdmissionSteps.tsx",
   "24": "not-found.tsx",
-  "27": "next"
+  "27": "app/page.tsx"
 }
