@@ -9,6 +9,7 @@
 }
 
 // scrolled past the hero top: solid bar with a shadow so it reads over any section
+.stuck .searchPanel,
 .stuck .bar {
   background: rgb(8 16 26 / 96%); // no backdrop-filter: it would trap the fixed mobile drawer
   box-shadow: 0 6px 24px rgb(0 0 0 / 28%);
@@ -355,8 +356,9 @@
   left: 0;
   z-index: 5;
   padding: px(22) var(--gut);
-  background: #fff;
-  box-shadow: 0 14px 24px rgb(0 0 0 / 14%);
+  background: rgb(0 0 0 / 55%); // same as .bar so it reads as part of the header
+  color: #fff;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 28%);
 
   @include up($bp-lg) {
     padding-inline: u(86);
@@ -368,10 +370,20 @@
     height: px(56);
     margin-inline: auto;
     padding: 0 px(26);
-    border: 1px solid #ccc;
+    border: 1px solid rgb(255 255 255 / 35%);
+    background: rgb(255 255 255 / 8%);
+    outline: 0;
     border-radius: 999px;
-    color: $ink;
+    color: #fff;
     font-size: px(18);
+
+    &::placeholder {
+      color: rgb(255 255 255 / 70%);
+    }
+
+    &:focus {
+      border-color: $yellow;
+    }
   }
 
   ul {
@@ -384,18 +396,18 @@
     display: block;
     padding: px(9) px(10);
     border-radius: px(6);
-    color: $ink;
+    color: #fff;
     font-size: px(15);
 
     &:hover {
-      background: $bg-sky;
+      background: rgb(255 255 255 / 14%);
     }
   }
 }
 
 .noHits {
   padding: px(9) px(10);
-  color: $body;
+  color: rgb(255 255 255 / 75%);
   font-size: px(15);
 }
 
