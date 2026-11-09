@@ -7,9 +7,9 @@ import { ContinentCards } from '@/components/international/ContinentCards';
 import { compare, intlPrograms, modes, parChecks, steps, usps } from '@/components/international/data';
 import { HeroMap } from '@/components/international/HeroMap';
 import { Ico } from '@/components/international/Ico';
-import { indiaStates } from '@/components/international/india-paths';
 import { IntlMotion } from '@/components/international/IntlMotion';
 import { TimeZones } from '@/components/international/TimeZones';
+import { worldCountries } from '@/components/international/world-data';
 import { site } from '@/data/site';
 import s from '@/components/international/International.module.scss';
 
@@ -64,8 +64,8 @@ export default function InternationalLearners() {
             </div>
           </div>
           <HeroMap>
-            {indiaStates.map(([n, d]) => (
-              <path key={n} data-n={n} d={d} className={n === 'Karnataka' ? `${s.st} ${s.ka}` : s.st} />
+            {worldCountries.map(([n, d, c, home]) => (
+              <path key={n} data-n={n} data-c={c >= 0 ? c : undefined} d={d} className={home ? `${s.st} ${s.home}` : c >= 0 ? `${s.st} ${s.listed}` : s.st} />
             ))}
           </HeroMap>
         </div>
@@ -233,7 +233,7 @@ export default function InternationalLearners() {
       </section>
 
       {/* ADMISSIONS */}
-      <section className={`${s.sec} ${s.white}`} id="admissions">
+      <section className={`${s.sec} ${s.compact} ${s.white}`} id="admissions">
         <div className={s.wrap}>
           <div className={s.split} data-reveal>
             <div>

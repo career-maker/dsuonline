@@ -38,6 +38,14 @@ $gold-ink: #8c6500; // gold that passes AA on white
   }
 }
 
+// content-height section (no forced full screen): used where the content is short
+.sec.compact {
+  @include up($bp-lg) {
+    min-height: 0;
+    padding-block: clamp(56px, #{u(100)}, 100px);
+  }
+}
+
 // small gold label above a section title: the site's own mini-title style
 .eyebrow {
   @include eyebrow;
@@ -131,9 +139,9 @@ $gold-ink: #8c6500; // gold that passes AA on white
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   align-items: center;
-  gap: clamp(32px, #{u(80)}, 80px);
+  gap: clamp(32px, #{u(60)}, 60px);
 
   @include down($bp-lg) {
     grid-template-columns: minmax(0, 1fr);
@@ -247,7 +255,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 .map {
   position: relative;
   width: 100%;
-  max-width: calc(var(--u) * 700);
+  max-width: calc(var(--u) * 940);
   margin-inline: auto 0;
 
   @include down($bp-lg) {
@@ -256,47 +264,67 @@ $gold-ink: #8c6500; // gold that passes AA on white
   }
 }
 
-.india {
+.world {
   display: block;
-  width: auto;
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  max-height: 52svh;
-  margin-inline: auto;
-  overflow: visible;
+  max-height: 50svh;
+  overflow: hidden;
 
   @include down($bp-lg) {
     max-height: none;
-    width: 100%;
   }
 }
 
 .st {
   fill: rgb(255 255 255 / 9%);
-  stroke: rgb(255 255 255 / 30%);
-  stroke-width: 0.8;
-  transition: fill 0.25s;
+  stroke: rgb(255 255 255 / 22%);
+  stroke-width: 0.5;
+  transition: fill 0.4s;
+}
 
-  &:hover {
-    fill: rgb(255 215 0 / 28%);
+// countries DSU learners come from
+.listed {
+  fill: rgb(255 255 255 / 22%);
+}
+
+.home {
+  fill: $yellow;
+  stroke: #fff;
+  stroke-width: 0.8;
+}
+
+// the lit continent's countries turn gold
+@for $i from 0 through 5 {
+  .world[data-active='#{$i}'] .listed[data-c='#{$i}'] {
+    fill: rgb(255 215 0 / 55%);
+    stroke: rgb(255 255 255 / 70%);
   }
 }
 
-.ka {
-  fill: $yellow;
-  stroke: #fff;
-  stroke-width: 1.4;
+.cdot {
+  fill: #fff;
+  opacity: 0.75;
+  transition: r 0.3s;
 
-  &:hover {
+  &.on {
     fill: $yellow;
+    opacity: 1;
   }
+}
+
+.blrDot {
+  fill: $navy;
+  stroke: #fff;
+  stroke-width: 2.5;
 }
 
 .ring {
   fill: none;
   stroke: $yellow;
-  stroke-width: 3;
-  transform-origin: 197px 563px;
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
   opacity: 0;
 
   @media (prefers-reduced-motion: no-preference) {
@@ -316,36 +344,38 @@ $gold-ink: #8c6500; // gold that passes AA on white
   }
 }
 
-.tick {
-  fill: none;
-  stroke: rgb(255 255 255 / 70%);
-  stroke-width: 1.5;
-}
-
 .blr1 {
   fill: #fff;
-  font-size: 26px;
+  font-size: 19px;
   font-weight: 700;
+  paint-order: stroke;
+  stroke: $navy;
+  stroke-width: 3px;
+  stroke-linejoin: round;
 }
 
 .blr2 {
   fill: $yellow;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 500;
+  paint-order: stroke;
+  stroke: $navy;
+  stroke-width: 3px;
+  stroke-linejoin: round;
 }
 
 .route {
   fill: none;
   stroke: #fff;
-  stroke-width: 1.5;
-  stroke-dasharray: 5 7;
-  opacity: 0.28;
+  stroke-width: 1;
+  stroke-dasharray: 4 5;
+  opacity: 0.35;
   transition: opacity 0.4s, stroke-width 0.4s, stroke 0.4s;
 
   &.on {
     opacity: 1;
     stroke: $yellow;
-    stroke-width: 3;
+    stroke-width: 2.2;
   }
 }
 
@@ -360,34 +390,19 @@ $gold-ink: #8c6500; // gold that passes AA on white
     fill: transparent;
   }
 
-  .dot {
-    fill: $navy;
-    stroke: #fff;
-    stroke-width: 2.5;
-    transition: fill 0.3s;
-  }
-
   text {
-    fill: rgb(255 255 255 / 65%);
+    fill: rgb(255 255 255 / 80%);
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 700;
     paint-order: stroke;
     stroke: $navy;
-    stroke-width: 4px;
+    stroke-width: 3.5px;
     stroke-linejoin: round;
     transition: fill 0.3s;
   }
 
-  &.on {
-    .dot {
-      fill: $yellow;
-      stroke: $yellow;
-    }
-
-    text {
-      fill: #fff;
-      font-weight: 700;
-    }
+  &.on text {
+    fill: $yellow;
   }
 }
 

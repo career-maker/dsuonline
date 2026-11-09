@@ -53,14 +53,14 @@ export const modes = [
   { icon: 'screen', title: 'Online Exams', text: 'Continuous assessment and semester-end exams — all from home.' },
 ];
 
-/** x/y = where the continent badge sits on the map's 732x776 viewBox; Bengaluru is the origin of every route. */
+/** The six continents, in the order the hero map uses (see world-data.ts). */
 export const continents = [
-  { n: 'Asia', ex: 'UAE · Saudi Arabia · Qatar · Singapore · Nepal', x: 600, y: 300, img: 'asia' },
-  { n: 'Africa', ex: 'Kenya · Nigeria', x: -10, y: 470, img: 'africa' },
-  { n: 'Europe', ex: 'United Kingdom', x: -10, y: 120, img: 'europe' },
-  { n: 'North America', ex: 'United States · Canada', x: 330, y: -10, img: 'north-america' },
-  { n: 'South America', ex: 'Learners across South America', x: 40, y: 330, img: 'south-america' },
-  { n: 'Oceania', ex: 'Australia', x: 560, y: 690, img: 'oceania' },
+  { n: 'Asia', ex: 'UAE · Saudi Arabia · Qatar · Singapore · Nepal', img: 'asia' },
+  { n: 'Africa', ex: 'Kenya · Nigeria', img: 'africa' },
+  { n: 'Europe', ex: 'United Kingdom', img: 'europe' },
+  { n: 'North America', ex: 'United States · Canada', img: 'north-america' },
+  { n: 'South America', ex: 'Learners across South America', img: 'south-america' },
+  { n: 'Oceania', ex: 'Australia', img: 'oceania' },
 ];
 
 export const parChecks = [
