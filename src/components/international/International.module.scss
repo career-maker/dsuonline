@@ -26,7 +26,28 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .sec {
   position: relative;
-  @include section-pad(120, 120);
+  @include section-pad(100, 100);
+
+  // desktop: every section is one screen, content centred in it
+  @include up($bp-lg) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100svh;
+    padding-block: clamp(72px, #{u(120)}, 120px) clamp(32px, #{u(60)}, 60px);
+  }
+}
+
+// small gold label above a section title: the site's own mini-title style
+.eyebrow {
+  @include eyebrow;
+  margin-bottom: clamp(6px, #{u(8)}, 8px);
+}
+
+.anywhere .eyebrow,
+.cta .eyebrow,
+.hero .eyebrow {
+  color: $yellow;
 }
 
 .white {
@@ -52,7 +73,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   align-items: end;
   gap: clamp(16px, #{u(80)}, 80px);
-  margin-bottom: clamp(32px, #{u(72)}, 72px);
+  margin-bottom: clamp(20px, #{u(44)}, 44px);
 
   h2 {
     @include h2;
@@ -85,8 +106,8 @@ $gold-ink: #8c6500; // gold that passes AA on white
   overflow: hidden;
   color: #fff;
   background: linear-gradient(135deg, $navy 0%, $blue 70%, $navy 100%);
-  min-height: max(clamp(560px, #{u(970)}, 970px), min(100svh, #{u(1067)}));
-  padding: clamp(112px, #{u(190)}, 190px) 0 clamp(48px, #{u(90)}, 90px);
+  min-height: 100svh;
+  padding: clamp(104px, #{u(150)}, 150px) 0 clamp(32px, #{u(60)}, 60px);
 
   @include down($bp-lg) {
     min-height: 0;
@@ -125,6 +146,10 @@ $gold-ink: #8c6500; // gold that passes AA on white
   justify-items: start;
 }
 
+.crumbs {
+  margin-bottom: clamp(18px, #{u(34)}, 34px);
+}
+
 .crumbs ol {
   display: flex;
   flex-wrap: wrap;
@@ -148,11 +173,11 @@ $gold-ink: #8c6500; // gold that passes AA on white
 }
 
 .heroCopy h1 {
-  margin: clamp(22px, #{u(40)}, 40px) 0 0;
-  font-size: fs(84, 36px);
-  line-height: 1.02;
+  margin: 10px 0 0;
+  font-size: fs(55, 32px);
+  line-height: 1.1;
   font-weight: 700;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 
   em {
@@ -163,8 +188,8 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .heroLead {
   max-width: 34em;
-  margin: clamp(18px, #{u(30)}, 30px) 0 0;
-  font-size: fs(22, 17px);
+  margin: clamp(14px, #{u(22)}, 22px) 0 0;
+  font-size: fs(20, 17px);
   line-height: 1.55;
   color: rgb(255 255 255 / 86%);
 }
@@ -233,9 +258,17 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .india {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
+  max-height: 52svh;
+  margin-inline: auto;
   overflow: visible;
+
+  @include down($bp-lg) {
+    max-height: none;
+    width: 100%;
+  }
 }
 
 .st {
@@ -375,9 +408,13 @@ $gold-ink: #8c6500; // gold that passes AA on white
 // ruled destinations list: the selector for the routes
 .legend {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 clamp(16px, #{u(32)}, 32px);
-  margin: clamp(16px, #{u(28)}, 28px) 0 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 clamp(14px, #{u(28)}, 28px);
+  margin: clamp(10px, #{u(20)}, 20px) 0 0;
+
+  @include down($bp-md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   padding: 0;
   list-style: none;
 
@@ -386,7 +423,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
     display: grid;
     gap: 2px;
     width: 100%;
-    padding: 12px 0 12px 16px;
+    padding: 9px 0 9px 14px;
     border: 0;
     border-top: 1px solid rgb(255 255 255 / 18%);
     background: none;
@@ -402,7 +439,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
       content: '';
       position: absolute;
       left: 0;
-      top: 14px;
+      top: 12px;
       width: 4px;
       height: 0;
       background: $yellow;
@@ -416,8 +453,8 @@ $gold-ink: #8c6500; // gold that passes AA on white
     }
 
     span {
-      font-size: 14px;
-      line-height: 1.4;
+      font-size: 13px;
+      line-height: 1.35;
     }
 
     &:hover,
@@ -426,7 +463,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
     }
 
     &.on::before {
-      height: calc(100% - 28px);
+      height: calc(100% - 24px);
     }
   }
 }
@@ -468,8 +505,8 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .whyPhoto {
   position: relative;
-  aspect-ratio: 4 / 3;
-  margin-top: clamp(24px, #{u(48)}, 48px);
+  aspect-ratio: 16 / 10;
+  margin-top: clamp(18px, #{u(36)}, 36px);
   overflow: hidden;
   border-radius: 10px;
 
@@ -479,45 +516,46 @@ $gold-ink: #8c6500; // gold that passes AA on white
 }
 
 .whyLead {
-  padding-bottom: clamp(24px, #{u(44)}, 44px);
+  padding-bottom: clamp(16px, #{u(30)}, 30px);
   border-bottom: 2px solid $navy;
 
   h3 {
     margin: 0;
-    font-size: fs(52, 30px);
-    line-height: 1.05;
+    font-size: fs(34, 26px);
+    line-height: 1.1;
     font-weight: 700;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     color: $blue;
   }
 
   p {
     @include body-text;
     max-width: 38em;
-    margin-top: clamp(14px, #{u(22)}, 22px);
-    font-size: fs(21, 17px);
+    margin-top: clamp(10px, #{u(16)}, 16px);
     color: $ink;
   }
 }
 
 .facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(20px, #{u(48)}, 48px);
   margin: 0;
+
+  @include down($bp-sm) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
   > div {
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    gap: clamp(8px, #{u(40)}, 40px);
-    padding: clamp(16px, #{u(26)}, 26px) 0;
+    gap: 4px;
+    align-content: start;
+    padding: clamp(12px, #{u(20)}, 20px) 0;
     border-bottom: 1px solid $hair;
-
-    @include down($bp-sm) {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 4px;
-    }
   }
 
   dt {
-    font-size: fs(23, 18px);
+    font-size: fs(20, 17px);
     line-height: 1.25;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -527,8 +565,8 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
   dd {
     margin: 0;
-    font-size: fs(18, 16px);
-    line-height: 1.55;
+    font-size: fs(16, 15px);
+    line-height: 1.5;
     color: $body;
   }
 
@@ -558,7 +596,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   grid-template-columns: minmax(0, 0.9fr) auto minmax(0, 1.5fr);
   align-items: center;
   gap: clamp(12px, #{u(56)}, 56px);
-  padding: clamp(18px, #{u(34)}, 34px) 0;
+  padding: clamp(14px, #{u(24)}, 24px) 0;
   border-bottom: 1px solid rgb(255 255 255 / 25%);
 
   @include down($bp-md) {
@@ -572,22 +610,22 @@ $gold-ink: #8c6500; // gold that passes AA on white
   gap: 2px;
 
   b {
-    font-size: fs(30, 22px);
+    font-size: fs(24, 19px);
     font-weight: 700;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
   }
 
   span {
-    font-size: fs(17, 15px);
+    font-size: fs(16, 15px);
     color: rgb(255 255 255 / 70%);
   }
 }
 
 .clock {
-  font-size: fs(64, 40px);
+  font-size: fs(48, 34px);
   line-height: 1;
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -631,7 +669,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(20px, #{u(64)}, 64px);
-  margin-top: clamp(40px, #{u(80)}, 80px);
+  margin-top: clamp(24px, #{u(44)}, 44px);
 
   @include down($bp-lg) {
     grid-template-columns: minmax(0, 1fr);
@@ -639,8 +677,8 @@ $gold-ink: #8c6500; // gold that passes AA on white
   }
 
   h3 {
-    margin: 0 0 8px;
-    font-size: fs(26, 20px);
+    margin: 0 0 6px;
+    font-size: fs(24, 19px);
     font-weight: 700;
     letter-spacing: -0.02em;
     color: $yellow;
@@ -770,7 +808,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 .checks {
   display: grid;
   gap: 16px;
-  margin: clamp(22px, #{u(36)}, 36px) 0 0;
+  margin: clamp(16px, #{u(26)}, 26px) 0 0;
   padding: 0;
   list-style: none;
 
@@ -794,8 +832,8 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .parImg {
   position: relative;
-  aspect-ratio: 16 / 9;
-  margin-top: clamp(24px, #{u(44)}, 44px);
+  aspect-ratio: 21 / 9;
+  margin-top: clamp(18px, #{u(32)}, 32px);
   overflow: hidden;
   border-radius: 10px;
 
@@ -807,11 +845,11 @@ $gold-ink: #8c6500; // gold that passes AA on white
 .compare {
   width: 100%;
   border-collapse: collapse;
-  font-size: fs(19, 16px);
+  font-size: fs(18, 16px);
 
   th,
   td {
-    padding: clamp(14px, #{u(22)}, 22px) clamp(8px, #{u(20)}, 20px);
+    padding: clamp(10px, #{u(16)}, 16px) clamp(8px, #{u(20)}, 20px);
     border-bottom: 1px solid $hair;
     text-align: center;
     vertical-align: middle;
@@ -864,41 +902,35 @@ $gold-ink: #8c6500; // gold that passes AA on white
   color: #9aa6b4;
 }
 
-// ---------- PROGRAMS (a ruled list, not a card grid)
-.progGroup + .progGroup {
-  margin-top: clamp(32px, #{u(64)}, 64px);
-}
-
-.groupTitle {
-  margin: 0;
-  padding-bottom: 14px;
-  border-bottom: 2px solid $navy;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: $body;
-}
-
+// ---------- PROGRAMS (five columns, one screen)
 .progList {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(14px, #{u(28)}, 28px);
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media (max-width: 1199.98px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include down($bp-sm) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  li {
+    display: flex;
+  }
 }
 
 .prog {
-  display: grid;
-  grid-template-columns: clamp(200px, #{u(340)}, 340px) minmax(0, 1fr) auto;
-  align-items: center;
-  gap: clamp(16px, #{u(56)}, 56px);
-  padding: clamp(18px, #{u(30)}, 30px) 0;
-  border-bottom: 1px solid $hair;
-  @include focus-ring;
-
-  @include down($bp-md) {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
-  }
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 2px solid $navy;
 }
 
 .progPhoto {
@@ -914,69 +946,48 @@ $gold-ink: #8c6500; // gold that passes AA on white
   }
 }
 
-.progBody {
-  display: grid;
-  gap: 8px;
+@media (hover: hover) {
+  .prog:hover .progPhoto img {
+    scale: 1.06;
+  }
 }
 
 .lvl {
-  font-size: 14px;
+  margin-top: 4px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: $gold-ink;
 }
 
 .progTitle {
-  font-size: fs(48, 30px);
-  line-height: 1.05;
+  font-size: fs(28, 22px);
+  line-height: 1.1;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: $ink;
-  transition: color 0.3s;
 }
 
 .progText {
-  font-size: fs(19, 16px);
-  line-height: 1.5;
+  font-size: fs(16, 15px);
+  line-height: 1.45;
   color: $ink;
 }
 
 .progElectives {
-  font-size: 15px;
-  line-height: 1.6;
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 13.5px;
+  line-height: 1.5;
   color: $body;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
-.go {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: fs(19, 16px);
-  font-weight: 700;
-  color: $blue;
-  transition: gap 0.3s $ease;
-
-  svg {
-    width: 22px;
-    height: 22px;
-  }
-}
-
-@media (hover: hover) {
-  .prog:hover {
-    .progPhoto img {
-      scale: 1.06;
-    }
-
-    .progTitle {
-      color: $blue;
-    }
-
-    .go {
-      gap: 18px;
-    }
-  }
+.progAct {
+  margin-top: auto;
+  padding-top: 6px;
 }
 
 .advisor {
@@ -984,24 +995,24 @@ $gold-ink: #8c6500; // gold that passes AA on white
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 20px 40px;
-  margin-top: clamp(40px, #{u(80)}, 80px);
-  padding: clamp(24px, #{u(44)}, 44px) clamp(20px, #{u(52)}, 52px);
+  gap: 14px 40px;
+  margin-top: clamp(20px, #{u(36)}, 36px);
+  padding: clamp(16px, #{u(26)}, 26px) clamp(20px, #{u(44)}, 44px);
   border-radius: 12px;
   background: $blue;
   color: #fff;
 
   h3 {
     margin: 0;
-    font-size: fs(34, 24px);
+    font-size: fs(28, 22px);
     font-weight: 700;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
   }
 
   p {
-    margin: 6px 0 0;
-    max-width: 44ch;
-    font-size: fs(18, 16px);
+    margin: 4px 0 0;
+    max-width: 52ch;
+    font-size: fs(16, 15px);
     color: rgb(255 255 255 / 82%);
   }
 
@@ -1018,7 +1029,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(20px, #{u(48)}, 48px);
   margin: 0;
-  padding: clamp(28px, #{u(52)}, 52px) 0 0;
+  padding: clamp(24px, #{u(44)}, 44px) 0 0;
   list-style: none;
 
   // the line the four steps hang from
@@ -1052,7 +1063,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
     &::before {
       content: '';
       position: absolute;
-      top: calc(-1 * clamp(28px, #{u(52)}, 52px) - 7px);
+      top: calc(-1 * clamp(24px, #{u(44)}, 44px) - 7px);
       left: 0;
       width: 16px;
       height: 16px;
@@ -1073,10 +1084,10 @@ $gold-ink: #8c6500; // gold that passes AA on white
   }
 
   h3 {
-    margin: 10px 0 8px;
-    font-size: fs(28, 22px);
+    margin: 10px 0 6px;
+    font-size: fs(24, 19px);
     font-weight: 700;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
     color: $ink;
   }
 
@@ -1097,10 +1108,10 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .stepNo {
   display: block;
-  font-size: fs(88, 56px);
-  line-height: 0.9;
+  font-size: fs(56, 40px);
+  line-height: 0.95;
   font-weight: 700;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
   color: $blue;
 }
 
@@ -1109,7 +1120,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   position: relative;
   display: flex;
   align-items: center;
-  min-height: clamp(420px, #{u(620)}, 620px);
+  min-height: 100svh;
   overflow: hidden;
   color: #fff;
   background: $navy;
@@ -1132,7 +1143,6 @@ $gold-ink: #8c6500; // gold that passes AA on white
   h2 {
     @include h2;
     max-width: 14em;
-    font-size: fs(72, 34px);
     color: #fff;
   }
 
@@ -1140,7 +1150,6 @@ $gold-ink: #8c6500; // gold that passes AA on white
     @include body-text;
     max-width: 36em;
     margin-top: clamp(16px, #{u(26)}, 26px);
-    font-size: fs(21, 17px);
     color: rgb(255 255 255 / 88%);
   }
 }
@@ -1195,9 +1204,9 @@ $gold-ink: #8c6500; // gold that passes AA on white
   align-items: center;
   gap: 10px;
   min-height: 44px;
-  font-size: fs(28, 21px);
+  font-size: fs(22, 18px);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: #fff;
   @include focus-ring;
 
@@ -1221,16 +1230,16 @@ $gold-ink: #8c6500; // gold that passes AA on white
 .form {
   display: grid;
   gap: 16px;
-  padding: clamp(22px, #{u(44)}, 44px);
+  padding: clamp(20px, #{u(34)}, 34px);
   border-radius: 12px;
   background: #fff;
   color: $ink;
 
   h3 {
     margin: 0;
-    font-size: fs(32, 24px);
+    font-size: fs(28, 22px);
     font-weight: 700;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
   }
 
   > button,

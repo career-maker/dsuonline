@@ -20,10 +20,6 @@ export const metadata: Metadata = {
 
 const img = (n: string) => `/images/international/${n}.webp`;
 const [lead, ...rest] = usps;
-const groups = [
-  { title: 'Postgraduate', codes: ['mba', 'mca'] },
-  { title: 'Undergraduate', codes: ['bba', 'bca', 'bcom'] },
-];
 
 export default function InternationalLearners() {
   return (
@@ -46,6 +42,7 @@ export default function InternationalLearners() {
                 </li>
               </ol>
             </nav>
+            <p className={`${s.eyebrow} ${s.heroEyebrow}`}>Dayananda Sagar University · Bengaluru, India</p>
             <h1>
               An Indian degree that <em>travels</em> with you.
             </h1>
@@ -79,6 +76,7 @@ export default function InternationalLearners() {
         <div className={`${s.wrap} ${s.why}`}>
           <div className={s.whyAside}>
             <div data-reveal>
+              <p className={s.eyebrow}>Why DSU Online</p>
               <h2>Why learners worldwide choose DSU Online</h2>
               <p className={s.sub}>Everything you need to earn a respected degree — without putting your career, family or country on hold.</p>
             </div>
@@ -107,7 +105,10 @@ export default function InternationalLearners() {
       <section className={`${s.sec} ${s.anywhere}`} id="learn">
         <div className={s.wrap}>
           <div className={s.split} data-reveal>
-            <h2>Your classroom opens wherever you are</h2>
+            <div>
+              <p className={s.eyebrow}>Built for every time zone</p>
+              <h2>Your classroom opens wherever you are</h2>
+            </div>
             <p className={s.sub}>Live lectures run on weekends; everything else is self-paced and open 24/7. Your learning fits your life — not the other way round.</p>
           </div>
           <TimeZones />
@@ -126,7 +127,10 @@ export default function InternationalLearners() {
       <section className={`${s.sec} ${s.sky}`} id="world">
         <div className={s.wrap}>
           <div className={s.split} data-reveal>
-            <h2>From Bengaluru to learners worldwide</h2>
+            <div>
+              <p className={s.eyebrow}>Rooted in Bengaluru · Open to every continent</p>
+              <h2>From Bengaluru to learners worldwide</h2>
+            </div>
             <p className={s.sub}>Dayananda Sagar University is based in Bengaluru, Karnataka. With DSU Online, your classroom reaches you on any continent. Select a continent to trace its route on the map above.</p>
           </div>
           <ContinentCards />
@@ -137,6 +141,7 @@ export default function InternationalLearners() {
       <section className={`${s.sec} ${s.white}`}>
         <div className={`${s.wrap} ${s.par}`}>
           <div data-reveal>
+            <p className={s.eyebrow}>Same degree, new way</p>
             <h2>At par with DSU&apos;s on-campus degrees</h2>
             <p className={s.sub}>An online degree from DSU holds the same academic standing as its regular on-campus degree. The only difference is where you sit while you earn it.</p>
             <ul className={s.checks}>
@@ -193,40 +198,30 @@ export default function InternationalLearners() {
       <section className={`${s.sec} ${s.grey}`} id="programs">
         <div className={s.wrap}>
           <div className={s.split} data-reveal>
-            <h2>Choose your path</h2>
+            <div>
+              <p className={s.eyebrow}>Programs</p>
+              <h2>Choose your path</h2>
+            </div>
             <p className={s.sub}>Undergraduate and postgraduate degrees with electives employers are looking for.</p>
           </div>
-          {groups.map((g) => (
-            <div key={g.title} className={s.progGroup}>
-              <h3 className={s.groupTitle} data-reveal>
-                {g.title}
-              </h3>
-              <ul className={s.progList} data-stagger>
-                {g.codes.map((code) => {
-                  const p = intlPrograms.find((x) => x.code === code)!;
-                  return (
-                    <li key={p.code}>
-                      <Link href={p.href} className={s.prog} aria-label={`${p.cta} - ${p.title} programme page`}>
-                        <span className={s.progPhoto}>
-                          <Image src={img(p.code)} alt={p.alt} fill sizes="(max-width: 900px) 100vw, 320px" />
-                        </span>
-                        <span className={s.progBody}>
-                          <span className={s.lvl}>{p.level}</span>
-                          <b className={s.progTitle}>{p.title}</b>
-                          <span className={s.progText}>{p.text}</span>
-                          <span className={s.progElectives}>{p.chips.join(' · ')}</span>
-                        </span>
-                        <span className={s.go}>
-                          {p.cta}
-                          <Ico name="arrow" />
-                        </span>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          ))}
+          <ul className={s.progList} data-stagger>
+            {intlPrograms.map((p) => (
+              <li key={p.code}>
+                <article className={s.prog}>
+                  <Link href={p.href} className={s.progPhoto} aria-label={`${p.cta} - ${p.title} programme page`} tabIndex={-1}>
+                    <Image src={img(p.code)} alt={p.alt} fill sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 20vw" />
+                  </Link>
+                  <span className={s.lvl}>{p.level}</span>
+                  <h3 className={s.progTitle}>{p.title}</h3>
+                  <p className={s.progText}>{p.text}</p>
+                  <p className={s.progElectives}>{p.chips.join(' · ')}</p>
+                  <div className={s.progAct}>
+                    <ArrowLink href={p.href}>{p.cta}</ArrowLink>
+                  </div>
+                </article>
+              </li>
+            ))}
+          </ul>
           <div className={s.advisor} data-reveal>
             <div>
               <h3>Not sure where to start?</h3>
@@ -241,7 +236,10 @@ export default function InternationalLearners() {
       <section className={`${s.sec} ${s.white}`} id="admissions">
         <div className={s.wrap}>
           <div className={s.split} data-reveal>
-            <h2>Four steps, fully online</h2>
+            <div>
+              <p className={s.eyebrow}>Admissions</p>
+              <h2>Four steps, fully online</h2>
+            </div>
             <p className={s.sub}>Apply from your home country — no paperwork to post, no offices to visit.</p>
           </div>
           <ol className={s.steps} data-stagger>
@@ -284,6 +282,7 @@ export default function InternationalLearners() {
       <section className={`${s.sec} ${s.cta}`} id="apply">
         <div className={`${s.wrap} ${s.ctaGrid}`}>
           <div data-reveal>
+            <p className={s.eyebrow}>Talk to an advisor</p>
             <h2>Ready to earn your DSU degree from abroad?</h2>
             <p className={s.sub}>
               Share a few details and our admissions team will help you choose the right program, explain eligibility for your country, and walk you through fees and timelines.
