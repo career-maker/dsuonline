@@ -1,17 +1,17 @@
 # Graph Report - dsu online  (2026-11-09)
 
 ## Corpus Check
-- 107 files · ~71,229 words
+- 107 files · ~71,042 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 39 file(s) not represented in the graph (top: .scss 36, (none) 2, .ico 1)
 
 ## Summary
-- 626 nodes · 1588 edges · 28 communities (23 shown, 5 thin omitted)
+- 626 nodes · 1583 edges · 28 communities (23 shown, 5 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `50f1ec63`
+- Built from commit: `718a4ee9`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -105,8 +105,8 @@ Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+10 more)
 
 ### Community 8 - "international-learners/page.tsx"
-Cohesion: 0.10
-Nodes (31): gsap, Head(), img(), InternationalLearners(), metadata, ContinentCards(), compare, continents (+23 more)
+Cohesion: 0.09
+Nodes (31): gsap, groups, img(), InternationalLearners(), metadata, ContinentCards(), compare, continents (+23 more)
 
 ### Community 9 - "DSU Online — CHECKPOINT (read this first in any new session)"
 Cohesion: 0.15
@@ -166,14 +166,14 @@ Nodes (16): aboutPhotos, aboutCopy, aboutFeatures, aboutStats, BentoTile, blogs,
 
 ## Knowledge Gaps
 - **5 isolated node(s):** `sass`, `@types/node`, `@types/react`, `@types/react-dom`, `typescript`
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 199 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 201 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `react` connect `react` to `InnerPage.tsx`, `Page.tsx`, `icons.tsx`, `ArrowLink`, `package.json`, `FacultyArticles.tsx`, `international-learners/page.tsx`, `app/page.tsx`, `Testimonials.tsx`, `next`, `FeeTabs.tsx`, `ProgramsBand.tsx`, `Blogs.tsx`, `ElectiveGrid.tsx`, `EmiCalculator.tsx`, `Counter`, `home.ts`?**
-  _High betweenness centrality (0.182) - this node is a cross-community bridge._
+  _High betweenness centrality (0.180) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `ContentPage()` (e.g. with `Architecture` and `isP()`) actually correct?**
   _`ContentPage()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `sass`, `@types/node`, `@types/react` to the rest of the system?**
@@ -181,7 +181,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `InnerPage.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.07570621468926554 - nodes in this community are weakly interconnected._
 - **Why does `next` connect `next` to `InnerPage.tsx`, `Page.tsx`, `icons.tsx`, `ArrowLink`, `package.json`, `FacultyArticles.tsx`, `international-learners/page.tsx`, `react`, `Testimonials.tsx`, `ProgramsBand.tsx`, `Blogs.tsx`, `server.js`, `ElectiveGrid.tsx`, `not-found.tsx`, `home.ts`?**
-  _High betweenness centrality (0.157) - this node is a cross-community bridge._
+  _High betweenness centrality (0.158) - this node is a cross-community bridge._
 - **Should `Page.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.05586477015048444 - nodes in this community are weakly interconnected._
 - **Why does `ArrowLink()` connect `ArrowLink` to `InnerPage.tsx`, `Page.tsx`, `icons.tsx`, `FacultyArticles.tsx`, `international-learners/page.tsx`, `DSU Online — CHECKPOINT (read this first in any new session)`, `app/page.tsx`, `next`, `ProgramsBand.tsx`, `Blogs.tsx`, `home.ts`?**

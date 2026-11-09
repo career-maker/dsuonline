@@ -8,8 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
  * Scroll choreography for the International Learners page (GSAP + ScrollTrigger). Renders nothing.
  *  [data-reveal]        fades up once when it enters
  *  [data-stagger]       its children rise one after another
- *  [data-parallax]      photo drifts slower than the page (scrubbed)
- *  [data-draw]          line grows with scroll
+ *  [data-clip]          photo is uncovered from the top
  *  [data-ticks] [data-tick]  comparison ticks pop in
  * Reduced-motion users get the finished page with no animation.
  */
@@ -42,12 +41,12 @@ export function IntlMotion() {
         });
       });
 
-      q('[data-parallax]').forEach((img) => {
-        gsap.fromTo(img, { yPercent: -7 }, { yPercent: 7, ease: 'none', scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } });
-      });
-
-      q('[data-draw]').forEach((line) => {
-        gsap.fromTo(line, { scaleX: 0 }, { scaleX: 1, ease: 'none', transformOrigin: 'left center', scrollTrigger: { trigger: line.parentElement, start: 'top 80%', end: 'bottom 70%', scrub: 0.6 } });
+      // photos are uncovered from the top, the picture settling as it opens
+      q('[data-clip]').forEach((el) => {
+        const pic = el.querySelector('img');
+        const st = { trigger: el, start: 'top 85%', once: true };
+        gsap.fromTo(el, { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: 1.3, ease: 'power3.inOut', scrollTrigger: st });
+        if (pic) gsap.fromTo(pic, { scale: 1.2 }, { scale: 1, duration: 1.8, ease: 'power3.out', scrollTrigger: st });
       });
 
       q('[data-ticks]').forEach((table) => {

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { CallbackForm } from '@/components/international/CallbackForm';
 import { ContinentCards } from '@/components/international/ContinentCards';
-import { compare, heroBadges, intlPrograms, modes, parChecks, steps, strip, usps } from '@/components/international/data';
+import { compare, intlPrograms, modes, parChecks, steps, usps } from '@/components/international/data';
 import { HeroMap } from '@/components/international/HeroMap';
 import { Ico } from '@/components/international/Ico';
 import { indiaStates } from '@/components/international/india-paths';
@@ -19,16 +19,11 @@ export const metadata: Metadata = {
 };
 
 const img = (n: string) => `/images/international/${n}.webp`;
-
-function Head({ eyebrow, title, text, center, light }: { eyebrow: string; title: string; text?: string; center?: boolean; light?: boolean }) {
-  return (
-    <div className={`${s.head} ${center ? s.center : ''} ${light ? s.light : ''}`} data-reveal>
-      <p className={s.eyebrow}>{eyebrow}</p>
-      <h2>{title}</h2>
-      {text && <p className={s.sub}>{text}</p>}
-    </div>
-  );
-}
+const [lead, ...rest] = usps;
+const groups = [
+  { title: 'Postgraduate', codes: ['mba', 'mca'] },
+  { title: 'Undergraduate', codes: ['bba', 'bca', 'bcom'] },
+];
 
 export default function InternationalLearners() {
   return (
@@ -51,7 +46,6 @@ export default function InternationalLearners() {
                 </li>
               </ol>
             </nav>
-            <p className={s.heroEyebrow}>Dayananda Sagar University · Bengaluru, India</p>
             <h1>
               An Indian degree that <em>travels</em> with you.
             </h1>
@@ -64,14 +58,13 @@ export default function InternationalLearners() {
                 Explore Programs
               </ArrowLink>
             </div>
-            <ul className={s.badges}>
-              {heroBadges.map((b) => (
-                <li key={b}>
-                  <i aria-hidden="true" />
-                  {b}
-                </li>
-              ))}
-            </ul>
+            <div className={s.badges}>
+              <Image src="/images/brand/naac-light.webp" alt="NAAC A+ grade accredited" width={147} height={50} />
+              <i aria-hidden="true" />
+              <Image src="/images/brand/ugc.webp" alt="UGC Entitled" width={101} height={51} />
+              <i aria-hidden="true" />
+              <Image src="/images/brand/legacy-light.webp" alt="Legacy since the 1960s" width={58} height={51} />
+            </div>
           </div>
           <HeroMap>
             {indiaStates.map(([n, d]) => (
@@ -81,67 +74,48 @@ export default function InternationalLearners() {
         </div>
       </section>
 
-      {/* STRIP */}
-      <div className={s.strip} aria-hidden="true">
-        <div className={s.stripTrack}>
-          {[...strip, ...strip].map((t, i) => (
-            <span key={i}>{t}</span>
-          ))}
-        </div>
-      </div>
-
       {/* WHY */}
       <section className={`${s.sec} ${s.white}`} id="why">
-        <div className={s.wrap}>
-          <Head center eyebrow="Why DSU Online" title="Why learners worldwide choose DSU Online" text="Everything you need to earn a respected degree — without putting your career, family or country on hold." />
-          <div className={s.uspGrid} data-stagger>
-            {usps.map((u) =>
-              u.feature ? (
-                <article key={u.title} className={`${s.usp} ${s.feature}`}>
-                  <Image src={img(u.feature.img)} alt={u.feature.alt} fill sizes="(max-width: 700px) 100vw, 50vw" />
-                  <div className={s.uspBody}>
-                    <span className={s.ico}>
-                      <Ico name={u.icon} />
-                    </span>
-                    <h3>{u.title}</h3>
-                    <p>{u.text}</p>
-                    <span className={s.tag}>{u.feature.tag}</span>
-                  </div>
-                </article>
-              ) : (
-                <article key={u.title} className={s.usp}>
-                  <span className={s.ico}>
-                    <Ico name={u.icon} />
-                  </span>
-                  <h3>{u.title}</h3>
-                  <p>{u.text}</p>
-                </article>
-              ),
-            )}
+        <div className={`${s.wrap} ${s.why}`}>
+          <div className={s.whyAside}>
+            <div data-reveal>
+              <h2>Why learners worldwide choose DSU Online</h2>
+              <p className={s.sub}>Everything you need to earn a respected degree — without putting your career, family or country on hold.</p>
+            </div>
+            <div className={s.whyPhoto} data-clip>
+              <Image src={img('usp-degree')} alt="Graduates celebrating their degree" fill sizes="(max-width: 1200px) 100vw, 36vw" />
+            </div>
+          </div>
+          <div className={s.whyMain}>
+            <div className={s.whyLead} data-reveal>
+              <h3>{lead.title}</h3>
+              <p>{lead.text}</p>
+            </div>
+            <dl className={s.facts} data-stagger>
+              {rest.map((u) => (
+                <div key={u.title}>
+                  <dt>{u.title}</dt>
+                  <dd>{u.text}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </section>
 
       {/* LEARN ANYWHERE */}
       <section className={`${s.sec} ${s.anywhere}`} id="learn">
-        <div className={s.bgPhoto} aria-hidden="true">
-          <div className={s.plx} data-parallax>
-            <Image src={img('anywhere')} alt="" fill sizes="100vw" />
-          </div>
-        </div>
         <div className={s.wrap}>
-          <Head light eyebrow="Built for every time zone" title="Your classroom opens wherever you are" text="Live lectures run on weekends; everything else is self-paced and open 24/7. Your learning fits your life — not the other way round." />
+          <div className={s.split} data-reveal>
+            <h2>Your classroom opens wherever you are</h2>
+            <p className={s.sub}>Live lectures run on weekends; everything else is self-paced and open 24/7. Your learning fits your life — not the other way round.</p>
+          </div>
           <TimeZones />
           <div className={s.modes} data-stagger>
             {modes.map((m) => (
-              <div key={m.title} className={s.mode}>
-                <span className={s.ico}>
-                  <Ico name={m.icon} />
-                </span>
-                <div>
-                  <h3>{m.title}</h3>
-                  <p>{m.text}</p>
-                </div>
+              <div key={m.title}>
+                <h3>{m.title}</h3>
+                <p>{m.text}</p>
               </div>
             ))}
           </div>
@@ -151,7 +125,10 @@ export default function InternationalLearners() {
       {/* BENGALURU TO THE WORLD */}
       <section className={`${s.sec} ${s.sky}`} id="world">
         <div className={s.wrap}>
-          <Head center eyebrow="Rooted in Bengaluru · Open to every continent" title="From Bengaluru to learners worldwide" text="Dayananda Sagar University is based in Bengaluru, Karnataka. With DSU Online, your classroom reaches you on any continent. Select a continent to trace its route on the map above." />
+          <div className={s.split} data-reveal>
+            <h2>From Bengaluru to learners worldwide</h2>
+            <p className={s.sub}>Dayananda Sagar University is based in Bengaluru, Karnataka. With DSU Online, your classroom reaches you on any continent. Select a continent to trace its route on the map above.</p>
+          </div>
           <ContinentCards />
         </div>
       </section>
@@ -160,7 +137,6 @@ export default function InternationalLearners() {
       <section className={`${s.sec} ${s.white}`}>
         <div className={`${s.wrap} ${s.par}`}>
           <div data-reveal>
-            <p className={s.eyebrow}>Same degree, new way</p>
             <h2>At par with DSU&apos;s on-campus degrees</h2>
             <p className={s.sub}>An online degree from DSU holds the same academic standing as its regular on-campus degree. The only difference is where you sit while you earn it.</p>
             <ul className={s.checks}>
@@ -171,81 +147,92 @@ export default function InternationalLearners() {
                 </li>
               ))}
             </ul>
-            <div className={s.parImg}>
-              <div className={s.plx} data-parallax>
-                <Image src={img('par')} alt="Learner studying online from home" fill sizes="(max-width: 900px) 100vw, 40vw" />
-              </div>
+            <div className={s.parImg} data-clip>
+              <Image src={img('par')} alt="Learner studying online from home" fill sizes="(max-width: 1200px) 100vw, 40vw" />
             </div>
           </div>
-          <div className={s.compare} data-reveal data-ticks role="table" aria-label="DSU Online compared with on-campus study">
-            <div className={`${s.row} ${s.rowHead}`} role="row">
-              <div role="columnheader">What you get</div>
-              <div role="columnheader">DSU Online</div>
-              <div role="columnheader">On-Campus</div>
-            </div>
-            {compare.map(([label, both]) => (
-              <div key={label} className={s.row} role="row">
-                <div role="cell">{label}</div>
-                <div role="cell">
-                  <span className={s.yes} data-tick>
-                    <Ico name="check" />
-                    <span className={s.sr}>Yes</span>
-                  </span>
-                </div>
-                <div role="cell">
-                  {both ? (
+          <table className={s.compare} data-reveal data-ticks>
+            <caption className={s.sr}>DSU Online compared with on-campus study</caption>
+            <thead>
+              <tr>
+                <th scope="col">What you get</th>
+                <th scope="col">DSU Online</th>
+                <th scope="col">On-Campus</th>
+              </tr>
+            </thead>
+            <tbody>
+              {compare.map(([label, both]) => (
+                <tr key={label}>
+                  <th scope="row">{label}</th>
+                  <td>
                     <span className={s.yes} data-tick>
                       <Ico name="check" />
                       <span className={s.sr}>Yes</span>
                     </span>
-                  ) : (
-                    <span className={s.no}>
-                      —<span className={s.sr}>No</span>
-                    </span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+                  </td>
+                  <td>
+                    {both ? (
+                      <span className={s.yes} data-tick>
+                        <Ico name="check" />
+                        <span className={s.sr}>Yes</span>
+                      </span>
+                    ) : (
+                      <span className={s.no}>
+                        —<span className={s.sr}>No</span>
+                      </span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
       {/* PROGRAMS */}
       <section className={`${s.sec} ${s.grey}`} id="programs">
         <div className={s.wrap}>
-          <Head center eyebrow="Programs" title="Choose your path" text="Undergraduate and postgraduate degrees with electives employers are looking for." />
-          <div className={s.progGrid} data-stagger>
-            {intlPrograms.map((p) => (
-              <article key={p.code} className={s.prog}>
-                <div className={s.progPhoto}>
-                  <Image src={img(p.code)} alt={p.alt} fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" />
-                </div>
-                <div className={s.progBody}>
-                  <span className={s.lvl}>{p.level}</span>
-                  <h3>{p.title}</h3>
-                  <p>{p.text}</p>
-                  <ul className={s.chipList}>
-                    {p.chips.map((c) => (
-                      <li key={c}>{c}</li>
-                    ))}
-                  </ul>
-                  <Link href={p.href} className={s.go} aria-label={`${p.cta} - ${p.title} programme page`}>
-                    {p.cta} <span aria-hidden="true">→</span>
-                  </Link>
-                </div>
-              </article>
-            ))}
-            <article className={`${s.prog} ${s.advisor}`}>
-              <Image src={img('advisor')} alt="" fill sizes="(max-width: 700px) 100vw, 33vw" />
-              <div className={s.progBody}>
-                <span className={s.lvl}>Not sure where to start?</span>
-                <h3>Talk to an advisor</h3>
-                <p>Get free counselling on the right program and elective for your goals and country.</p>
-                <a href="#apply" className={s.go}>
-                  Request a callback <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </article>
+          <div className={s.split} data-reveal>
+            <h2>Choose your path</h2>
+            <p className={s.sub}>Undergraduate and postgraduate degrees with electives employers are looking for.</p>
+          </div>
+          {groups.map((g) => (
+            <div key={g.title} className={s.progGroup}>
+              <h3 className={s.groupTitle} data-reveal>
+                {g.title}
+              </h3>
+              <ul className={s.progList} data-stagger>
+                {g.codes.map((code) => {
+                  const p = intlPrograms.find((x) => x.code === code)!;
+                  return (
+                    <li key={p.code}>
+                      <Link href={p.href} className={s.prog} aria-label={`${p.cta} - ${p.title} programme page`}>
+                        <span className={s.progPhoto}>
+                          <Image src={img(p.code)} alt={p.alt} fill sizes="(max-width: 900px) 100vw, 320px" />
+                        </span>
+                        <span className={s.progBody}>
+                          <span className={s.lvl}>{p.level}</span>
+                          <b className={s.progTitle}>{p.title}</b>
+                          <span className={s.progText}>{p.text}</span>
+                          <span className={s.progElectives}>{p.chips.join(' · ')}</span>
+                        </span>
+                        <span className={s.go}>
+                          {p.cta}
+                          <Ico name="arrow" />
+                        </span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
+          <div className={s.advisor} data-reveal>
+            <div>
+              <h3>Not sure where to start?</h3>
+              <p>Get free counselling on the right program and elective for your goals and country.</p>
+            </div>
+            <ArrowLink href="#apply">Request a callback</ArrowLink>
           </div>
         </div>
       </section>
@@ -253,64 +240,50 @@ export default function InternationalLearners() {
       {/* ADMISSIONS */}
       <section className={`${s.sec} ${s.white}`} id="admissions">
         <div className={s.wrap}>
-          <Head center eyebrow="Admissions" title="Four steps, fully online" text="Apply from your home country — no paperwork to post, no offices to visit." />
-          <div className={s.stepsWrap}>
-            <div className={s.stepsLine} aria-hidden="true">
-              <i data-draw />
-            </div>
-            <ol className={s.steps} data-stagger>
-              {steps.map((st, i) => (
-                <li key={st.title} className={i === steps.length - 1 ? s.last : ''}>
-                  <span className={s.stepNo}>{String(i + 1).padStart(2, '0')}</span>
-                  <h3>{st.title}</h3>
-                  <p>
-                    {st.text}
-                    {st.link && (
-                      <>
-                        {' '}
-                        <a href={site.apply} target="_blank" rel="noopener noreferrer">
-                          {st.link}
-                        </a>
-                        .
-                      </>
-                    )}
-                  </p>
-                </li>
-              ))}
-            </ol>
+          <div className={s.split} data-reveal>
+            <h2>Four steps, fully online</h2>
+            <p className={s.sub}>Apply from your home country — no paperwork to post, no offices to visit.</p>
           </div>
+          <ol className={s.steps} data-stagger>
+            {steps.map((st, i) => (
+              <li key={st.title}>
+                <span className={s.stepNo}>{i + 1}</span>
+                <h3>{st.title}</h3>
+                <p>
+                  {st.text}
+                  {st.link && (
+                    <>
+                      {' '}
+                      <a href={site.apply} target="_blank" rel="noopener noreferrer">
+                        {st.link}
+                      </a>
+                      .
+                    </>
+                  )}
+                </p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
       {/* ALUMNI */}
-      <section className={`${s.white} ${s.alumniSec}`}>
-        <div className={s.wrap}>
-          <div className={s.alumni} data-reveal>
-            <Image src={img('alumni')} alt="" fill sizes="100vw" />
-            <div className={s.alumniShade} aria-hidden="true" />
-            <div className={s.alumniCopy}>
-              <h2>Graduate with a name that opens doors</h2>
-              <p>When you complete your online degree, you join the Dayananda Sagar University alumni family — recognised across India and connected to professionals worldwide.</p>
-              <ArrowLink href="#apply" className={s.alumniBtn}>
-                Join the DSU Community
-              </ArrowLink>
-            </div>
-            <div className={s.seal} aria-hidden="true">
-              <b>DSU</b>
-              <small>Alumni · Worldwide</small>
-            </div>
-          </div>
+      <section className={s.alumni}>
+        <Image src={img('alumni')} alt="" fill sizes="100vw" />
+        <div className={s.alumniShade} aria-hidden="true" />
+        <div className={`${s.wrap} ${s.alumniCopy}`} data-reveal>
+          <h2>Graduate with a name that opens doors</h2>
+          <p>When you complete your online degree, you join the Dayananda Sagar University alumni family — recognised across India and connected to professionals worldwide.</p>
+          <ArrowLink href="#apply" className={s.alumniBtn}>
+            Join the DSU Community
+          </ArrowLink>
         </div>
       </section>
 
       {/* CTA */}
       <section className={`${s.sec} ${s.cta}`} id="apply">
-        <div className={s.bgPhoto} aria-hidden="true">
-          <Image src={img('cta')} alt="" fill sizes="100vw" />
-        </div>
         <div className={`${s.wrap} ${s.ctaGrid}`}>
           <div data-reveal>
-            <p className={s.eyebrow}>Talk to an advisor</p>
             <h2>Ready to earn your DSU degree from abroad?</h2>
             <p className={s.sub}>
               Share a few details and our admissions team will help you choose the right program, explain eligibility for your country, and walk you through fees and timelines.
