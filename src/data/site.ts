@@ -33,6 +33,7 @@ export const mainNav: NavLink[] = [
 export const moreNav: NavLink[] = [
   { label: 'Academics', href: '/academics-at-dsu' },
   { label: 'Why DSU Online', href: '/why-dsu-online' },
+  { label: 'International Learners', href: '/international-learners' },
   { label: 'Student Testimonials', href: '/student-testimonials' },
   { label: 'Placements', href: '/placements' },
   { label: 'Student Support', href: '/student-support' },
