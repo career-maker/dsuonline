@@ -972,21 +972,31 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 // ---------- CONTINENTS
 .continents {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: clamp(10px, #{u(16)}, 16px);
+  --gap: clamp(10px, #{u(16)}, 16px);
+  --per: 6; // cards visible at once; more than this and the row scrolls
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: $blue transparent;
+  padding-block: 8px 14px; // room for the lifted card + its shadow
+  cursor: grab;
 
   @media (max-width: 1199.98px) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    --per: 3;
   }
 
   @include down($bp-sm) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    --per: 2;
   }
 }
 
 .cont {
   position: relative;
+  flex: 0 0 calc((100% - (var(--per) - 1) * var(--gap)) / var(--per));
+  scroll-snap-align: start;
   min-height: clamp(220px, #{u(380)}, 380px);
   padding: 0;
   overflow: hidden;
