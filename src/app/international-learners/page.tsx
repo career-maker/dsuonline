@@ -207,7 +207,7 @@ export default function InternationalLearners() {
             <h2>Choose your path</h2>
             <p className={s.sub}>Undergraduate and postgraduate degrees with electives employers are looking for.</p>
           </div>
-          <Rail className={s.progList} label="program" stagger always>
+          <Rail className={s.progList} label="program" stagger>
             {intlPrograms.map((p) => (
               <li key={p.code} className={s.prog}>
                 <Link href={p.href} className={s.progPhoto} aria-label={`${p.cta} - ${p.title} programme page`} tabIndex={-1}>
