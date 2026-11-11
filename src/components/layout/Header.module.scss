@@ -498,14 +498,15 @@
   .bar {
     display: flex;
     align-items: center;
-    gap: u(40);
+    gap: u(24);
     height: u(121);
     padding: 0 u(95) 0 u(86);
     background: rgb(0 0 0 / 20%);
   }
 
   .logo {
-    flex: none;
+    flex: 0 1 auto;
+    min-width: 0;
     width: u(385);
     margin-right: 0;
   }
@@ -514,10 +515,10 @@
   .nav {
     flex: none;
     margin-left: auto;
-    margin-right: clamp(20px, #{u(54)}, 54px);
+    margin-right: clamp(12px, #{u(30)}, 30px);
 
     > ul {
-      gap: clamp(20px, #{u(54)}, 54px);
+      gap: clamp(14px, #{u(34)}, 34px);
     }
 
     > ul > li:not(.drawerOnly) {
