@@ -5,9 +5,9 @@ import s from './International.module.scss';
 
 /**
  * A list of cards. Desktop: the `className` grid. Mobile (<760px): a swipeable carousel, one card at a time,
- * with previous / next arrow buttons instead of a scrollbar.
+ * with previous / next arrow buttons instead of a scrollbar. `always` keeps the carousel on desktop too (3 cards across).
  */
-export function Rail({ className, label, children, stagger, style }: { className: string; label: string; children: ReactNode; stagger?: boolean; style?: CSSProperties }) {
+export function Rail({ className, label, children, stagger, style, always }: { className: string; label: string; children: ReactNode; stagger?: boolean; style?: CSSProperties; always?: boolean }) {
   const track = useRef<HTMLUListElement>(null);
   const [edge, setEdge] = useState({ start: true, end: false });
 
@@ -35,7 +35,7 @@ export function Rail({ className, label, children, stagger, style }: { className
   };
 
   return (
-    <div className={s.rail}>
+    <div className={`${s.rail} ${always ? s.always : ''}`}>
       <ul ref={track} className={`${className} ${s.track}`} data-stagger={stagger ? '' : undefined} style={style}>
         {children}
       </ul>

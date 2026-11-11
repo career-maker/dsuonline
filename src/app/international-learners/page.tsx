@@ -44,7 +44,7 @@ export default function InternationalLearners() {
             </nav>
             <p className={`${s.eyebrow} ${s.heroEyebrow}`}>Dayananda Sagar University · Bengaluru, India</p>
             <h1>
-              An Indian degree that <em>travels</em> with you.
+              <span>An Indian degree that</span> <span><em>travels</em> with you.</span>
             </h1>
             <p className={s.heroLead}>
               Earn a UGC-entitled degree from Dayananda Sagar University — 100% online, on your schedule, from any country and any time zone. Keep your job, run your business, stay close to family.
@@ -207,7 +207,7 @@ export default function InternationalLearners() {
             <h2>Choose your path</h2>
             <p className={s.sub}>Undergraduate and postgraduate degrees with electives employers are looking for.</p>
           </div>
-          <Rail className={s.progList} label="program" stagger>
+          <Rail className={s.progList} label="program" stagger always>
             {intlPrograms.map((p) => (
               <li key={p.code} className={s.prog}>
                 <Link href={p.href} className={s.progPhoto} aria-label={`${p.cta} - ${p.title} programme page`} tabIndex={-1}>
