@@ -1246,7 +1246,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 .progPhoto {
   position: relative;
   display: block;
-  height: clamp(90px, 15svh, 150px);
+  aspect-ratio: 16 / 10;
   overflow: hidden;
   background: linear-gradient(135deg, #123a8f 0%, #1d5bd8 55%, #22c3e6 100%);
 
@@ -1850,22 +1850,6 @@ $gold-ink: #8c6500; // gold that passes AA on white
     gap: clamp(8px, 1.4svh, 14px);
     margin-top: clamp(12px, 2.4svh, 26px);
   }
-
-  .progBody {
-    padding: clamp(14px, 2.4svh, 26px) 24px clamp(14px, 2.4svh, 28px);
-  }
-
-  .progText {
-    margin-bottom: clamp(8px, 1.6svh, 20px);
-  }
-
-  .chips {
-    margin-bottom: clamp(10px, 1.8svh, 24px);
-  }
-
-  .progTitle {
-    font-size: clamp(22px, 3.4svh, 32px);
-  }
 }
 
 // programmes: a carousel at every width (three cards across on desktop) so the section stays one screen tall
@@ -2016,59 +2000,6 @@ $gold-ink: #8c6500; // gold that passes AA on white
   #why .head,
   .head {
     margin-bottom: clamp(10px, 2svh, 40px);
-  }
-}
-
-// programmes on desktop: a plain 3 x 2 grid, compact enough to stay on one screen
-@include up($bp-lg) {
-  .progList {
-    gap: clamp(10px, 1.8svh, 22px);
-  }
-
-  .progPhoto {
-    height: clamp(44px, 8svh, 100px);
-  }
-
-  .progBody {
-    padding: clamp(10px, 1.8svh, 22px) 22px clamp(10px, 1.8svh, 20px);
-  }
-
-  .progTitle {
-    margin: 4px 0 2px;
-    font-size: clamp(20px, 3svh, 28px);
-  }
-
-  .progText {
-    margin-bottom: clamp(6px, 1.2svh, 14px);
-    font-size: clamp(12.5px, 1.6svh, 15px);
-    line-height: 1.4;
-  }
-
-  .chips {
-    gap: 5px;
-    margin-bottom: clamp(8px, 1.4svh, 16px);
-
-    li {
-      padding: 3px 9px;
-      font-size: clamp(11px, 1.45svh, 13px);
-    }
-  }
-}
-
-// short laptop screens: drop the programmes intro line so the grid still fits
-@media (min-width: 1200px) and (max-height: 800px) {
-  .soft .head .sub {
-    display: none;
-  }
-
-  .soft .head {
-    margin-bottom: 10px;
-  }
-}
-
-@media (min-width: 1200px) and (max-height: 740px) {
-  .progPhoto {
-    height: 30px;
   }
 }
 
