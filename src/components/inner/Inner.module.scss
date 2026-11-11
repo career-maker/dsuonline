@@ -724,7 +724,7 @@
   min-height: clamp(280px, #{u(400)}, 420px);
   padding: clamp(100px, #{u(140)}, 140px) 0 clamp(26px, #{u(44)}, 44px);
   // vivid royal blue (sampled from the approved banner): #00178a at the top-left easing to #011078, soft glow top-centre
-  background: radial-gradient(ellipse at 38% 0%, rgb(255 255 255 / 12%), transparent 48%), linear-gradient(135deg, #00178a 0%, #01137f 55%, #011078 100%);
+  background: radial-gradient(1000px 600px at 85% 15%, rgb(34 195 230 / 32%), transparent 60%), linear-gradient(100deg, #0b1f4d 30%, #102a66 65%, #1d5bd8 100%);
 
   @include down($bp-lg) {
     min-height: clamp(260px, 40svh, 360px);
@@ -742,7 +742,7 @@
 }
 
 .heroProgram {
-  background: #01063f;
+  background: radial-gradient(1000px 600px at 85% 15%, rgb(34 195 230 / 32%), transparent 60%), linear-gradient(100deg, #0b1f4d 30%, #102a66 65%, #1d5bd8 100%);
   align-items: center;
   min-height: clamp(560px, #{u(900)}, 900px);
   padding: clamp(112px, #{u(150)}, 150px) 0 clamp(40px, #{u(70)}, 70px);
@@ -753,9 +753,7 @@
 
   // extra feathering layers: a wide navy veil easing out + a soft glow centred on the seam, so no edge is visible
   .heroShade {
-    background:
-      radial-gradient(ellipse 34% 90% at 52% 50%, rgb(1 6 63 / 34%) 0%, rgb(1 6 63 / 18%) 45%, rgb(1 6 63 / 0%) 100%),
-      linear-gradient(90deg, rgb(1 6 63 / 70%) 0%, rgb(1 6 63 / 66%) 30%, rgb(1 6 63 / 52%) 42%, rgb(1 6 63 / 34%) 52%, rgb(1 6 63 / 18%) 62%, rgb(1 6 63 / 7%) 72%, rgb(1 6 63 / 0%) 84%);
+    background: linear-gradient(100deg, rgb(11 31 77 / 55%) 30%, rgb(16 42 102 / 25%) 65%, rgb(29 91 216 / 10%));
   }
 
   // the photo itself dissolves into the navy (same soft blend as the phone layout): ~10% of it shows behind the copy

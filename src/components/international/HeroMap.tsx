@@ -37,6 +37,7 @@ export function HeroMap() {
   const activeRef = useRef(0);
   const [active, setActive] = useState(0);
   const [ist, setIst] = useState('');
+  const [small, setSmall] = useState(false);
   const [tip, setTip] = useState<{ text: string; x: number; y: number } | null>(null);
 
   const pick = useCallback((i: number) => {
@@ -56,6 +57,15 @@ export function HeroMap() {
     window.addEventListener(EVT_PICK, on);
     return () => window.removeEventListener(EVT_PICK, on);
   }, [pick]);
+
+  // on a narrow screen the Bengaluru label sits under the map instead of off its left edge
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 759.98px)');
+    const on = () => setSmall(mq.matches);
+    on();
+    mq.addEventListener('change', on);
+    return () => mq.removeEventListener('change', on);
+  }, []);
 
   // live Bengaluru time
   useEffect(() => {
@@ -166,7 +176,7 @@ export function HeroMap() {
         <circle className={s.ring} cx={blr.x} cy={blr.y} r="10" />
         <circle className={`${s.ring} ${s.r2}`} cx={blr.x} cy={blr.y} r="10" />
         <circle cx={blr.x} cy={blr.y} r="8" className={s.blrDot} />
-        <g className={s.blrLabel} transform="translate(-205,600)">
+        <g className={s.blrLabel} transform={small ? 'translate(-55,650)' : 'translate(-205,600)'}>
           <rect width="250" height="70" rx="16" />
           <text x="18" y="29" className={s.blr1}>
             Bengaluru
@@ -175,7 +185,7 @@ export function HeroMap() {
             {ist ? `Home of DSU · ${ist} IST` : 'Home of DSU · Karnataka'}
           </text>
         </g>
-        <path className={s.blrTick} d="M45 610 L190 568" />
+        <path className={s.blrTick} d={small ? 'M70 650 L192 572' : 'M45 610 L190 568'} />
       </svg>
 
       {tip && (

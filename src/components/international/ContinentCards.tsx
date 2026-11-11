@@ -1,27 +1,18 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
-import { useDragScroll } from '@/components/ui/useDragScroll';
+import { useEffect, useState } from 'react';
 import { continents } from './data';
 import { EVT_ACTIVE, EVT_PICK } from './HeroMap';
+import { Rail } from './Rail';
 import s from './International.module.scss';
 
-/** Continent photos, captioned underneath. Follows the hero map; picking one traces its route up there. The row scrolls sideways once there are more photos than fit. */
+/** Continent photos with the name on them. Follows the hero map; picking one traces its route up there. */
 export function ContinentCards() {
   const [active, setActive] = useState(0);
-  const track = useRef<HTMLUListElement>(null);
-  useDragScroll(track);
 
   useEffect(() => {
-    const on = (e: Event) => {
-      const i = (e as CustomEvent<number>).detail;
-      setActive(i);
-      // keep the lit photo in view when the row scrolls (sideways only: never moves the page)
-      const el = track.current;
-      const card = el?.children[i] as HTMLElement | undefined;
-      if (el && card && el.scrollWidth > el.clientWidth) el.scrollTo({ left: card.offsetLeft - el.offsetLeft - (el.clientWidth - card.offsetWidth) / 2, behavior: 'smooth' });
-    };
+    const on = (e: Event) => setActive((e as CustomEvent<number>).detail);
     window.addEventListener(EVT_ACTIVE, on);
     return () => window.removeEventListener(EVT_ACTIVE, on);
   }, []);
@@ -32,17 +23,21 @@ export function ContinentCards() {
   };
 
   return (
-    <ul ref={track} className={s.continents} data-stagger>
+    <Rail className={s.continents} label="continent" stagger>
       {continents.map((c, i) => (
-        <li key={c.n} className={i === active ? s.on : ''}>
-          <button type="button" aria-pressed={i === active} onClick={() => pick(i)}>
-            <span className={s.contPhoto}>
-              <Image src={`/images/international/${c.img}.webp`} alt={`Online learner from ${c.n}`} fill sizes="(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 16vw" />
+        <li key={c.n}>
+          <button type="button" aria-pressed={i === active} className={i === active ? s.on : ''} onClick={() => pick(i)}>
+            <Image src={`/images/international/${c.img}.webp`} alt={`Online learner from ${c.n}`} fill sizes="(max-width: 760px) 80vw, (max-width: 1200px) 33vw, 20vw" />
+            <span className={s.contFlag} aria-hidden="true">
+              {c.e}
             </span>
-            <b>{c.n}</b>
+            <span className={s.contTxt}>
+              <small>Learners from</small>
+              <b>{c.n}</b>
+            </span>
           </button>
         </li>
       ))}
-    </ul>
+    </Rail>
   );
 }

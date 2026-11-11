@@ -36,7 +36,7 @@ export const usps: Usp[] = [
     icon: 'award',
     title: 'Reputed DSU Alumni Recognition',
     text: 'Graduate into the alumni community of Dayananda Sagar Institutions — founded by the late Sri Dayananda Sagar in the 1960s — with hiring partners including Deloitte, EY, Capgemini and ANZ.',
-    feature: { img: 'usp-alumni', alt: 'Alumni network collaborating', tag: 'Lifelong network' },
+    feature: { img: 'alumni', alt: 'Alumni network collaborating', tag: 'Lifelong network' },
   },
 ];
 

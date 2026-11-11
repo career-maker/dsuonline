@@ -86,30 +86,30 @@ export function CallbackForm() {
           {err('email')}
         </div>
       </div>
-      <div className={s.field}>
-        <label htmlFor={`${uid}-country`}>Country of residence</label>
-        <select id={`${uid}-country`} name="country" defaultValue="" {...bad('country')}>
-          <option value="">Select country</option>
-          {formCountries.map((c) => (
-            <option key={c}>{c}</option>
-          ))}
-        </select>
-        {err('country')}
-      </div>
       <div className={s.fieldRow}>
+        <div className={s.field}>
+          <label htmlFor={`${uid}-country`}>Country of residence</label>
+          <select id={`${uid}-country`} name="country" defaultValue="" {...bad('country')}>
+            <option value="">Select country</option>
+            {formCountries.map((c) => (
+              <option key={c}>{c}</option>
+            ))}
+          </select>
+          {err('country')}
+        </div>
         <div className={s.field}>
           <label htmlFor={`${uid}-phone`}>Phone (with country code)</label>
           <input id={`${uid}-phone`} name="phone" type="tel" autoComplete="tel" placeholder="+971 ..." maxLength={20} {...bad('phone')} />
           {err('phone')}
         </div>
-        <div className={s.field}>
-          <label htmlFor={`${uid}-programme`}>Program of interest</label>
-          <select id={`${uid}-programme`} name="programme" defaultValue="Online MBA">
-            {programmes.map((p) => (
-              <option key={p}>{p}</option>
-            ))}
-          </select>
-        </div>
+      </div>
+      <div className={s.field}>
+        <label htmlFor={`${uid}-programme`}>Program of interest</label>
+        <select id={`${uid}-programme`} name="programme" defaultValue="Online MBA">
+          {programmes.map((p) => (
+            <option key={p}>{p}</option>
+          ))}
+        </select>
       </div>
       {phase === 'error' && <p className={s.banner}>{serverError}</p>}
       <ArrowLink type="submit" disabled={phase === 'submitting'}>
