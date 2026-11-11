@@ -3218,8 +3218,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   > p:not(.eyebrow) {
-    margin-top: clamp(16px, #{u(24)}, 24px);
     @include body-text;
+    margin-top: clamp(14px, #{u(20)}, 20px); // after the mixin, which resets margins
     color: $ink;
     max-width: none;
   }
@@ -3228,8 +3228,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     margin-top: clamp(6px, #{u(8)}, 8px);
   }
 
-  h2 + p {
-    margin-top: 20px;
+  > h2 + p {
+    margin-top: clamp(16px, #{u(26)}, 26px);
   }
 }
 

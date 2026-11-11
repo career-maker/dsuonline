@@ -34,8 +34,8 @@ $gold-ink: #8c6500; // gold that passes AA on white
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100svh;
-  padding-block: clamp(60px, #{u(90)}, 90px) clamp(24px, #{u(40)}, 40px);
+  min-height: 0;
+  padding-block: clamp(36px, #{u(56)}, 56px);
 }
 
 // small gold label above a section title: the site's own mini-title style
@@ -2070,4 +2070,9 @@ $gold-ink: #8c6500; // gold that passes AA on white
   .progPhoto {
     height: 30px;
   }
+}
+
+// tighter rhythm between sections (the content already fits a screen; no forced full height)
+.alumniSec {
+  padding-top: 0;
 }
