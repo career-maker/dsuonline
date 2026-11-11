@@ -9,7 +9,6 @@ import { HeroMap } from '@/components/international/HeroMap';
 import { Ico } from '@/components/international/Ico';
 import { IntlMotion } from '@/components/international/IntlMotion';
 import { TimeZones } from '@/components/international/TimeZones';
-import { worldCountries } from '@/components/international/world-data';
 import { site } from '@/data/site';
 import s from '@/components/international/International.module.scss';
 
@@ -63,11 +62,7 @@ export default function InternationalLearners() {
               <Image src="/images/brand/legacy-light.webp" alt="Legacy since the 1960s" width={58} height={51} />
             </div>
           </div>
-          <HeroMap>
-            {worldCountries.map(([n, d, c, home]) => (
-              <path key={n} data-n={n} data-c={c >= 0 ? c : undefined} d={d} className={home ? `${s.st} ${s.home}` : c >= 0 ? `${s.st} ${s.listed}` : s.st} />
-            ))}
-          </HeroMap>
+          <HeroMap />
         </div>
       </section>
 

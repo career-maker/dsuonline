@@ -1,25 +1,34 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState, type MouseEvent, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState, type MouseEvent } from 'react';
 import { continents } from './data';
-import { blr, countryDots, stops, worldView } from './world-data';
+import { blr, indiaStates, indiaView } from './india-data';
 import s from './International.module.scss';
 
 /** map -> other widgets: the continent now lit. other widgets -> map: a learner picked one. */
 export const EVT_ACTIVE = 'intl:active';
 export const EVT_PICK = 'intl:pick';
 
-/** flight path: a gentle arc bulging north between Bengaluru and the continent */
-const routes = stops.map((c) => {
+/** where each continent's badge sits around India (same order as `continents`) */
+const spots = [
+  { x: 640, y: 300 },
+  { x: -95, y: 480 },
+  { x: -95, y: 110 },
+  { x: 330, y: -10 },
+  { x: -95, y: 295 },
+];
+
+/** flight path: a curve from Bengaluru to the continent badge */
+const routes = spots.map((c) => {
   const mx = (blr.x + c.x) / 2;
-  const my = (blr.y + c.y) / 2 - Math.hypot(c.x - blr.x, c.y - blr.y) * 0.28;
-  return `M${blr.x} ${blr.y} Q${mx} ${my} ${c.x} ${c.y}`;
+  const my = (blr.y + c.y) / 2;
+  return `M${blr.x} ${blr.y} Q${mx - (c.y - blr.y) * 0.28} ${my + (c.x - blr.x) * 0.28} ${c.x} ${c.y}`;
 });
 
 const istTime = () => new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit' });
 
-/** World map with a route from Bengaluru to each continent, and a ruled list that selects them. `children` = the country outlines (rendered on the server). */
-export function HeroMap({ children }: { children: ReactNode }) {
+/** Map of India with a route from Bengaluru to each continent, and chips that select them. */
+export function HeroMap() {
   const root = useRef<HTMLDivElement>(null);
   const routeEls = useRef<(SVGPathElement | null)[]>([]);
   const plane = useRef<SVGCircleElement>(null);
@@ -68,13 +77,13 @@ export function HeroMap({ children }: { children: ReactNode }) {
     let raf = 0;
     const cycle = setInterval(() => {
       if (auto.current && visible && !hover && !document.hidden) setActive((a) => (a + 1) % continents.length);
-    }, 3200);
+    }, 2800);
     const fly = (t: number) => {
       const r = routeEls.current[activeRef.current];
       const dot = plane.current;
       if (r && dot && visible) {
         const L = r.getTotalLength();
-        const p = r.getPointAtLength((L * ((t - t0.current) % 2000)) / 2000);
+        const p = r.getPointAtLength((L * ((t - t0.current) % 1800)) / 1800);
         dot.setAttribute('cx', String(p.x));
         dot.setAttribute('cy', String(p.y));
       }
@@ -96,55 +105,77 @@ export function HeroMap({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  const onCountry = (e: MouseEvent<SVGSVGElement>) => {
+  const onState = (e: MouseEvent<SVGSVGElement>) => {
     const n = (e.target as SVGElement).dataset?.n;
     const r = root.current?.getBoundingClientRect();
     if (!n || !r) return setTip(null);
-    setTip({ text: n, x: e.clientX - r.left, y: e.clientY - r.top });
+    setTip({ text: n === 'Karnataka' ? 'Karnataka · Bengaluru' : n, x: e.clientX - r.left, y: e.clientY - r.top });
   };
 
   return (
     <div id="hero-map" ref={root} className={s.map}>
       <svg
         className={s.world}
-        data-active={active}
-        viewBox={worldView}
+        viewBox={indiaView}
         role="img"
-        aria-label="World map: routes from Bengaluru, India to Asia, Africa, Europe, North America, South America and Oceania"
-        onMouseMove={onCountry}
+        aria-label="Map of India with Bengaluru, Karnataka highlighted, and routes to Asia, Africa, Europe, North America and South America"
+        onMouseMove={onState}
         onMouseLeave={() => setTip(null)}
       >
-        <g>{children}</g>
+        <defs>
+          <radialGradient id="intlGlow">
+            <stop offset="0" stopColor="#22c3e6" stopOpacity=".6" />
+            <stop offset="1" stopColor="#22c3e6" stopOpacity="0" />
+          </radialGradient>
+          <linearGradient id="intlKa" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#4fa3ff" />
+            <stop offset="1" stopColor="#22c3e6" />
+          </linearGradient>
+        </defs>
         <g>
-          {stops.map((c, i) => (
-            <path key={c.n} ref={(el) => void (routeEls.current[i] = el)} d={routes[i]} className={`${s.route} ${i === active ? s.on : ''}`} />
-          ))}
-          <circle ref={plane} r="3.5" className={s.plane} cx={blr.x} cy={blr.y} />
-        </g>
-        {/* the learner countries, marked where they really are */}
-        <g aria-hidden="true">
-          {countryDots.map((d) => (
-            <circle key={d.n} cx={d.x} cy={d.y} r={d.c === active ? 4.4 : 2.8} className={`${s.cdot} ${d.c === active ? s.on : ''}`} />
+          {indiaStates.map(([n, d, ka]) => (
+            <path key={n} data-n={n} d={d} className={ka ? `${s.st} ${s.home}` : s.st} />
           ))}
         </g>
         <g>
-          {stops.map((c, i) => (
-            <g key={c.n} className={`${s.stop} ${i === active ? s.on : ''}`} aria-hidden="true" onMouseEnter={() => pick(i)} onClick={() => pick(i)}>
-              <circle cx={c.x} cy={c.y} r="14" className={s.hit} />
-              <text x={c.x + c.dx} y={c.y + c.dy} textAnchor={c.a === 's' ? 'start' : c.a === 'e' ? 'end' : 'middle'}>
-                {c.n}
-              </text>
-            </g>
+          {spots.map((c, i) => (
+            <path key={continents[i].n} ref={(el) => void (routeEls.current[i] = el)} d={routes[i]} className={`${s.route} ${i === active ? s.on : ''}`} />
           ))}
+          <circle ref={plane} r="6" className={s.plane} cx={blr.x} cy={blr.y} />
         </g>
-        <circle className={s.ring} cx={blr.x} cy={blr.y} r="5" />
-        <circle cx={blr.x} cy={blr.y} r="4.5" className={s.blrDot} />
-        <text className={s.blr1} x={blr.x} y={blr.y + 30} textAnchor="middle">
-          Bengaluru
-        </text>
-        <text className={s.blr2} x={blr.x} y={blr.y + 45} textAnchor="middle">
-          {ist ? `Home of DSU · ${ist} IST` : 'Home of DSU'}
-        </text>
+        <g>
+          {spots.map((c, i) => {
+            const n = continents[i].n;
+            const w = n.length * 9.6 + 26;
+            return (
+              <g key={n} className={`${s.av} ${i === active ? s.on : ''}`} transform={`translate(${c.x},${c.y})`} aria-hidden="true" onMouseEnter={() => pick(i)} onClick={() => pick(i)}>
+                <circle className={s.avBg} r="26" />
+                <text y="6" className={s.avEmoji}>
+                  {continents[i].e}
+                </text>
+                <circle className={s.avBd} r="26" />
+                <g className={s.avLb}>
+                  <rect x={-w / 2} y="32" width={w} height="28" rx="14" />
+                  <text y="51">{n}</text>
+                </g>
+              </g>
+            );
+          })}
+        </g>
+        <circle cx={blr.x} cy={blr.y} r="90" fill="url(#intlGlow)" />
+        <circle className={s.ring} cx={blr.x} cy={blr.y} r="10" />
+        <circle className={`${s.ring} ${s.r2}`} cx={blr.x} cy={blr.y} r="10" />
+        <circle cx={blr.x} cy={blr.y} r="8" className={s.blrDot} />
+        <g className={s.blrLabel} transform="translate(-205,600)">
+          <rect width="250" height="70" rx="16" />
+          <text x="18" y="29" className={s.blr1}>
+            Bengaluru
+          </text>
+          <text x="18" y="52" className={s.blr2}>
+            {ist ? `Home of DSU · ${ist} IST` : 'Home of DSU · Karnataka'}
+          </text>
+        </g>
+        <path className={s.blrTick} d="M45 610 L190 568" />
       </svg>
 
       {tip && (
@@ -157,13 +188,14 @@ export function HeroMap({ children }: { children: ReactNode }) {
         {continents.map((c, i) => (
           <li key={c.n}>
             <button type="button" aria-pressed={i === active} className={i === active ? s.on : ''} onClick={() => pick(i)}>
-              <b>{c.n}</b>
-              <span>{c.ex}</span>
+              <span aria-hidden="true">{c.e}</span> {c.n}
             </button>
           </li>
         ))}
       </ul>
-      <p className={s.credit}>Map data: Natural Earth (public domain)</p>
+      <p className={s.credit}>
+        Map data: svg-maps/india by Victor Cazanave, CC BY 4.0
+      </p>
     </div>
   );
 }

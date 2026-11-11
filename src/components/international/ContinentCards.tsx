@@ -40,7 +40,6 @@ export function ContinentCards() {
               <Image src={`/images/international/${c.img}.webp`} alt={`Online learner from ${c.n}`} fill sizes="(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 16vw" />
             </span>
             <b>{c.n}</b>
-            <span className={s.contEx}>{c.ex}</span>
           </button>
         </li>
       ))}

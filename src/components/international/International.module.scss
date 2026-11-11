@@ -113,7 +113,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   align-items: center;
   overflow: hidden;
   color: #fff;
-  background: linear-gradient(135deg, $navy 0%, $blue 70%, $navy 100%);
+  background: #0b1f4d;
   min-height: 100svh;
   padding: clamp(104px, #{u(150)}, 150px) 0 clamp(32px, #{u(60)}, 60px);
 
@@ -125,14 +125,15 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .heroImg {
   object-fit: cover;
-  opacity: 0.2;
-  mix-blend-mode: luminosity;
+  opacity: 0.3;
 }
 
 .heroShade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(100deg, rgb(1 6 63 / 96%) 30%, rgb(1 6 63 / 60%) 65%, rgb(2 9 102 / 35%));
+  background:
+    radial-gradient(1000px 600px at 85% 15%, rgb(34 195 230 / 32%), transparent 60%),
+    linear-gradient(100deg, rgb(11 31 77 / 97%) 30%, rgb(16 42 102 / 78%) 65%, rgb(29 91 216 / 45%));
 }
 
 .heroGrid {
@@ -182,15 +183,17 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .heroCopy h1 {
   margin: 10px 0 0;
-  font-size: fs(55, 32px);
-  line-height: 1.1;
-  font-weight: 700;
+  font-size: clamp(2.4rem, 5.2vw, 4rem);
+  line-height: 1.12;
+  font-weight: 800;
   letter-spacing: -0.02em;
   text-wrap: balance;
 
   em {
     font-style: normal;
-    color: $yellow;
+    background: linear-gradient(90deg, #4fa3ff, #22c3e6);
+    background-clip: text;
+    color: transparent;
   }
 }
 
@@ -268,8 +271,9 @@ $gold-ink: #8c6500; // gold that passes AA on white
   display: block;
   width: 100%;
   height: auto;
-  max-height: 50svh;
-  overflow: hidden;
+  max-height: 62svh;
+  overflow: visible;
+  filter: drop-shadow(0 30px 40px rgb(0 0 0 / 35%));
 
   @include down($bp-lg) {
     max-height: none;
@@ -277,132 +281,177 @@ $gold-ink: #8c6500; // gold that passes AA on white
 }
 
 .st {
-  fill: rgb(255 255 255 / 9%);
-  stroke: rgb(255 255 255 / 22%);
-  stroke-width: 0.5;
-  transition: fill 0.4s;
-}
+  fill: rgb(255 255 255 / 13%);
+  stroke: rgb(255 255 255 / 35%);
+  stroke-width: 1;
+  transition: fill 0.25s;
+  cursor: pointer;
 
-// countries DSU learners come from
-.listed {
-  fill: rgb(255 255 255 / 22%);
-}
-
-.home {
-  fill: $yellow;
-  stroke: #fff;
-  stroke-width: 0.8;
-}
-
-// the lit continent's countries turn gold
-@for $i from 0 through 5 {
-  .world[data-active='#{$i}'] .listed[data-c='#{$i}'] {
-    fill: rgb(255 215 0 / 55%);
-    stroke: rgb(255 255 255 / 70%);
+  &:hover {
+    fill: rgb(79 163 255 / 55%);
   }
 }
 
-.cdot {
-  fill: #fff;
-  opacity: 0.75;
-  transition: r 0.3s;
+// Karnataka: home of DSU
+.home {
+  fill: url(#intlKa);
+  stroke: #fff;
+  stroke-width: 1.6;
 
-  &.on {
-    fill: $yellow;
-    opacity: 1;
+  &:hover {
+    fill: url(#intlKa);
   }
 }
 
 .blrDot {
-  fill: $navy;
-  stroke: #fff;
-  stroke-width: 2.5;
+  fill: #fff;
+  stroke: #22c3e6;
+  stroke-width: 4;
 }
 
 .ring {
   fill: none;
-  stroke: $yellow;
-  stroke-width: 2;
+  stroke: #22c3e6;
+  stroke-width: 3;
   transform-box: fill-box;
   transform-origin: center;
   opacity: 0;
 
   @media (prefers-reduced-motion: no-preference) {
-    animation: ring 2.6s ease-out infinite;
+    animation: ring 2.4s ease-out infinite;
   }
+}
+
+.r2 {
+  animation-delay: 1.2s;
 }
 
 @keyframes ring {
   from {
     transform: scale(1);
-    opacity: 0.9;
+    opacity: 0.95;
   }
 
   to {
-    transform: scale(5);
+    transform: scale(6);
     opacity: 0;
   }
 }
 
-.blr1 {
+.blrLabel rect {
   fill: #fff;
-  font-size: 19px;
-  font-weight: 700;
-  paint-order: stroke;
-  stroke: $navy;
-  stroke-width: 3px;
-  stroke-linejoin: round;
+  filter: drop-shadow(0 12px 20px rgb(0 0 0 / 35%));
+}
+
+.blr1 {
+  fill: #0b1f4d;
+  font-size: 24px;
+  font-weight: 800;
 }
 
 .blr2 {
-  fill: $yellow;
-  font-size: 12px;
-  font-weight: 500;
-  paint-order: stroke;
-  stroke: $navy;
-  stroke-width: 3px;
-  stroke-linejoin: round;
+  fill: #1d5bd8;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.blrTick {
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 4 4;
+  fill: none;
+  opacity: 0.8;
 }
 
 .route {
   fill: none;
-  stroke: #fff;
-  stroke-width: 1;
-  stroke-dasharray: 4 5;
-  opacity: 0.35;
-  transition: opacity 0.4s, stroke-width 0.4s, stroke 0.4s;
+  stroke: #4fa3ff;
+  stroke-width: 2;
+  stroke-dasharray: 6 7;
+  opacity: 0.25;
+  transition: opacity 0.4s, stroke-width 0.4s;
 
   &.on {
     opacity: 1;
-    stroke: $yellow;
-    stroke-width: 2.2;
+    stroke: #22c3e6;
+    stroke-width: 3.5;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: dash 1s linear infinite;
+    }
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -26;
   }
 }
 
 .plane {
   fill: #fff;
+  opacity: 0;
 }
 
-.stop {
+.route.on ~ .plane {
+  opacity: 1;
+}
+
+// continent badges around the map
+.av {
+  opacity: 0.45;
+  transition: opacity 0.4s;
   cursor: pointer;
 
-  .hit {
-    fill: transparent;
+  &.on {
+    opacity: 1;
   }
+}
 
+.avBg {
+  fill: url(#intlKa);
+}
+
+.avBd {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3;
+
+  .on > & {
+    stroke: #22c3e6;
+    stroke-width: 4;
+  }
+}
+
+.avEmoji {
+  font-size: 26px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  transform: translateY(-4px);
+}
+
+.avLb {
   text {
-    fill: rgb(255 255 255 / 80%);
-    font-size: 17px;
-    font-weight: 700;
-    paint-order: stroke;
-    stroke: $navy;
-    stroke-width: 3.5px;
-    stroke-linejoin: round;
-    transition: fill 0.3s;
+    fill: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    text-anchor: middle;
   }
 
-  &.on text {
-    fill: $yellow;
+  rect {
+    fill: #0b1f4d;
+    stroke: rgb(255 255 255 / 30%);
+  }
+
+  .on > & {
+    rect {
+      fill: #22c3e6;
+      stroke: #22c3e6;
+    }
+
+    text {
+      fill: #0b1f4d;
+    }
   }
 }
 
@@ -410,75 +459,48 @@ $gold-ink: #8c6500; // gold that passes AA on white
   position: absolute;
   z-index: 5;
   pointer-events: none;
-  padding: 5px 10px;
-  border-radius: 4px;
+  padding: 6px 12px;
+  border-radius: 999px;
   background: #fff;
-  color: $navy;
-  font-size: 13px;
+  color: #0b1f4d;
+  font-size: 0.78rem;
   font-weight: 700;
   white-space: nowrap;
+  box-shadow: 0 10px 24px -8px rgb(0 0 0 / 50%);
   transform: translate(-50%, -140%);
 }
 
-// ruled destinations list: the selector for the routes
+// continent chips: the selector for the routes
 .legend {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0 clamp(14px, #{u(28)}, 28px);
-  margin: clamp(10px, #{u(20)}, 20px) 0 0;
-
-  @include down($bp-md) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 18px 0 0;
   padding: 0;
   list-style: none;
 
   button {
-    position: relative;
-    display: grid;
-    gap: 2px;
-    width: 100%;
-    padding: 9px 0 9px 14px;
-    border: 0;
-    border-top: 1px solid rgb(255 255 255 / 18%);
-    background: none;
-    color: rgb(255 255 255 / 72%);
+    padding: 7px 13px;
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 999px;
+    background: rgb(255 255 255 / 8%);
+    color: #fff;
     font: inherit;
-    text-align: left;
+    font-size: 0.78rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: background 0.25s;
     @include focus-ring;
 
-    // marker: a short gold bar, only on the lit destination
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 12px;
-      width: 4px;
-      height: 0;
-      background: $yellow;
-      transition: height 0.4s $ease;
+    &:hover {
+      background: rgb(255 255 255 / 18%);
     }
 
-    b {
-      font-size: fs(20, 16px);
-      font-weight: 700;
-      color: #fff;
-    }
-
-    span {
-      font-size: 13px;
-      line-height: 1.35;
-    }
-
-    &:hover,
     &.on {
-      color: #fff;
-    }
-
-    &.on::before {
-      height: calc(100% - 24px);
+      background: #22c3e6;
+      border-color: #22c3e6;
+      color: #0b1f4d;
     }
   }
 }
@@ -710,7 +732,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 // ---------- CONTINENT PHOTOS (row scrolls once there are more than fit)
 .continents {
   --gap: clamp(12px, #{u(22)}, 22px);
-  --per: 6;
+  --per: 5;
   display: flex;
   gap: var(--gap);
   margin: 0;

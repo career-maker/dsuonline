@@ -190,3 +190,7 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - 2026-11-04: mobile (<760px) hero no longer shows NAAC/UGC/Legacy logos; shown as white strip under hero (`.logoStrip` in Hero.tsx). Server pm2 auto-start via systemd `pm2-dev-inter-f3` (done). Playwright py works; playwright-cli needs `--browser msedge`.
 - 2026-11-04: hero logos (NAAC/UGC/Legacy) now removed from the hero on ALL devices; white `.logoStrip` under hero everywhere. Graphify graph built (src+tools+root, AST only); keep it current with `graphify update .` after every round.
 - 2026-11-06: header search icon now opens a full-width white search bar underneath the header (not a popup); .searchPanel anchors to fixed .header.
+
+## Update 2026-11-11
+- International Learners hero: India map (states from svg-maps/india, `india-data.ts`) with routes to 5 continent badges + chips; hero gradient + h1 size/weight copied from client's `dsu-online-international.html`. Continents = Asia, Africa, Europe, North America, South America (Oceania removed), names only (no country lists).
+- Site-wide font changed Roboto -> Plus Jakarta Sans (`--font-main`, layout.tsx, weights 400-800).

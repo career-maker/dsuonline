@@ -53,14 +53,13 @@ export const modes = [
   { icon: 'screen', title: 'Online Exams', text: 'Continuous assessment and semester-end exams — all from home.' },
 ];
 
-/** The six continents, in the order the hero map uses (see world-data.ts). */
+/** The five continents shown on the page (names only; same order as the hero map). */
 export const continents = [
-  { n: 'Asia', ex: 'UAE · Saudi Arabia · Qatar · Singapore · Nepal', img: 'asia' },
-  { n: 'Africa', ex: 'Kenya · Nigeria', img: 'africa' },
-  { n: 'Europe', ex: 'United Kingdom', img: 'europe' },
-  { n: 'North America', ex: 'United States · Canada', img: 'north-america' },
-  { n: 'South America', ex: 'Learners across South America', img: 'south-america' },
-  { n: 'Oceania', ex: 'Australia', img: 'oceania' },
+  { n: 'Asia', e: '🌏', img: 'asia' },
+  { n: 'Africa', e: '🌍', img: 'africa' },
+  { n: 'Europe', e: '🌍', img: 'europe' },
+  { n: 'North America', e: '🌎', img: 'north-america' },
+  { n: 'South America', e: '🌎', img: 'south-america' },
 ];
 
 export const parChecks = [
