@@ -121,7 +121,7 @@
 .heroEyebrow {
   @include eyebrow;
   @include hero-eyebrow-gap;
-  color: $yellow;
+  color: $logo-yellow;
 }
 
 .heroSub {

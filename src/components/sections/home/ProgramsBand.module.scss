@@ -25,6 +25,7 @@
 
   .eyebrow {
     @include eyebrow;
+    color: $logo-yellow;
   }
 
   .lead {

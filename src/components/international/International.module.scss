@@ -47,7 +47,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 .anywhere .eyebrow,
 .cta .eyebrow,
 .hero .eyebrow {
-  color: $yellow;
+  color: $logo-yellow;
 }
 
 .white {
@@ -188,9 +188,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
   em {
     font-style: normal;
-    background: linear-gradient(90deg, #4fa3ff, #22c3e6);
-    background-clip: text;
-    color: transparent;
+    color: $logo-yellow;
   }
 }
 
@@ -905,9 +903,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   font-weight: 800;
   line-height: 1.2;
   font-variant-numeric: tabular-nums;
-  background: linear-gradient(90deg, #fff, #22c3e6);
-  background-clip: text;
-  color: transparent;
+  color: $logo-yellow;
 }
 
 .zoneNote {
@@ -1575,9 +1571,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
     font-size: 45px;
     font-weight: 800;
     line-height: 1;
-    background: linear-gradient(90deg, $navy, $iblue);
-    background-clip: text;
-    color: transparent;
+    color: $logo-blue;
   }
 
   small {
