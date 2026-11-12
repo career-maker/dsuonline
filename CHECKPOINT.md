@@ -218,3 +218,8 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - DONE: intl 'Why' cards mobile hover no longer clipped (padding moved into .uspGrid; .uspGrid padding:0 was overriding .track).
 - DONE: programme hero text matched to dsuonline.com (MBA/MCA/B.Com '(Online X)' subtitle, BCA no eyebrow, B.Com clean title). Logos + Scroll Down intentionally not added.
 - DONE: programme hero 5-tile row: last tile spans 2 cols (desktop).
+
+## Update 2026-11-12: shared programme hero template
+- Programme pages (mba/mca/bba/bca/bcom) now use `src/components/inner/ProgramHero.tsx` (+ `.module.scss`): eyebrow "Your next chapter starts here", title "Lead with Knowledge. Grow with <X> Degree Online.", description, DUAL pill (only when page has an Elective fact, links `#pair`), buttons, counters (years/semesters/credits), auto-fit "at a glance" tiles. Nothing on the right (no photo/card). Props built in `Page.tsx` (`programHero`) from page content. MBA description text from user's reference; others use first sentence of live copy.
+- Rule this session: every section edit the user specifies for MBA applies to all 5 programme pages via the same shared template.
+- Anchors added: `#pair` (elective combinator), `#curriculum`.

@@ -21,6 +21,7 @@ import { PayOptions } from './PayOptions';
 import { ReferForm } from './ReferForm';
 import { StatNumber } from './StatNumber';
 import { CtaBand, InnerHero, type Crumb } from './InnerPage';
+import { ProgramHero } from './ProgramHero';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Faq } from '@/components/sections/home/Faq';
 import { FaqList, LeaderGrid } from './Interactive';
@@ -815,7 +816,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (programLinks && /elective/i.test(title) && sec.subs.length > 0) {
       const progName = ({ mba: 'MBA', mca: 'MCA', bba: 'BBA', bca: 'BCA', bcom: 'B.Com' } as Record<string, string>)[slug.replace(/^online-/, '')] ?? 'Online';
       nodes.push(
-        <Sec key={`${key}-pair`} tone="sky">
+        <Sec key={`${key}-pair`} tone="sky" id="pair">
           <ElectiveCombinator programName={progName} programCode={slug.replace(/^online-/, '')} electives={programLinks.map((x) => x.name)} sectors={pageIndustries(raw)} />
         </Sec>,
       );
@@ -873,7 +874,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     // --- curriculum tabs
     if (/curriculum/i.test(title) && all.some((b) => b.t === 'table')) {
       nodes.push(
-        <Sec key={key} tone={(nextTone(), 'blue')} title={title}>
+        <Sec key={key} tone={(nextTone(), 'blue')} title={title} id="curriculum">
           {curriculum(sec)}
         </Sec>,
       );
@@ -1109,9 +1110,52 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     );
   }
 
+  // programme pages: one shared hero template, every value derived from the page content (CMS fields later)
+  const fv = (l: RegExp) => facts?.find((f) => l.test(f.label));
+  const dur = fv(/duration/i);
+  const num = (x?: string) => Number(/\d+/.exec(x ?? '')?.[0] ?? 0);
+  const feeN = Number((fv(/total fees/i)?.value ?? '').replace(/[^\d]/g, ''));
+  const credits = (() => {
+    const rows = raw.flatMap((b) => (b.t === 'table' ? b.rows : []));
+    const grand = rows.find((r) => /^(grand total|total program credits)$/i.test(r[0] ?? ''));
+    if (grand) return Number(grand[1]) || 0;
+    const per = rows.filter((r) => /^total credits$/i.test(r[0] ?? '')).map((r) => Number(r[1]) || 0);
+    return per.length === num(dur?.note) ? per.reduce((a, b) => a + b, 0) : 0;
+  })();
+  const progShort = ({ mba: 'MBA', mca: 'MCA', bba: 'BBA', bca: 'BCA', bcom: 'B.Com' } as Record<string, string>)[slug.replace(/^online-/, '')];
+  const nElec = programLinks?.length ?? 0;
+  const HERO_DESC: Record<string, string> = {
+    'online-mba': 'The Online Master of Business Administration at Dayananda Sagar University is designed for future business leaders and ambitious learners seeking career growth through flexible, industry-relevant learning.',
+  };
+  const programHero =
+    withFacts && crumbs.length < 3 && progShort && dur ? (
+      <ProgramHero
+        eyebrow="Your next chapter starts here"
+        lines={['Lead with', 'Knowledge.']}
+        name={progShort}
+        closing="Degree Online."
+        desc={HERO_DESC[slug] ?? (subtitle ?? raw.filter(isP).find((b) => b.x.length > 150)?.x)?.split(/(?<=\.)\s/)[0]}
+        pill={fv(/^elective$/i) && nElec > 1 ? { tag: 'DUAL', text: `Every learner specialises in 2 of ${nElec} electives`, href: '#pair' } : undefined}
+        stats={[
+          { value: num(dur.value), label: /year/i.test(dur.value) ? (num(dur.value) > 1 ? 'Years' : 'Year') : 'Months', note: 'Programme duration' },
+          { value: num(dur.note), label: 'Semesters', note: 'Structured learning' },
+          ...(credits ? [{ value: credits, label: '', note: 'Total credits' }] : []),
+        ]}
+        glance={{
+          title: `Explore your ${progShort} at a glance`,
+          tiles: [
+            { value: '100%', label: 'Online learning' },
+            ...(feeN ? [{ value: `\u20B9${(feeN / 1e5).toFixed(2)}L`, label: 'Total programme fees' }] : []),
+            ...(nElec ? [{ value: String(nElec), label: 'In-demand electives' }] : []),
+            { value: 'Live + Recorded', label: 'Learning sessions' },
+          ],
+        }}
+      />
+    ) : null;
+
   return (
     <>
-      <InnerHero size={withFacts ? (crumbs.length >= 3 ? 'gradient' : 'full') : 'short'} badges={slug === 'about'} bannerSrc={BANNERS[slug]} bannerMobileSrc={BANNERS_MOBILE[slug]} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={ph ? ph.eyebrow : preEyebrow} title={ph?.title ?? st.h1} subtitle={ph ? ph.subtitle : withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
+      {programHero ?? <InnerHero size={withFacts ? (crumbs.length >= 3 ? 'gradient' : 'full') : 'short'} badges={slug === 'about'} bannerSrc={BANNERS[slug]} bannerMobileSrc={BANNERS_MOBILE[slug]} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={ph ? ph.eyebrow : preEyebrow} title={ph?.title ?? st.h1} subtitle={ph ? ph.subtitle : withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />}
       {longSub && slug === 'student-testimonials' && subtitle && (
         <Sec tone="white">
           <div className={s.introGrid}>
