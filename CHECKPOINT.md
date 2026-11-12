@@ -217,3 +217,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - DONE: intl hero h1 two lines (scoped span rule to > span; TitleReveal word spans were going display:block).
 - DONE: intl 'Why' cards mobile hover no longer clipped (padding moved into .uspGrid; .uspGrid padding:0 was overriding .track).
 - DONE: programme hero text matched to dsuonline.com (MBA/MCA/B.Com '(Online X)' subtitle, BCA no eyebrow, B.Com clean title). Logos + Scroll Down intentionally not added.
+- DONE: programme hero 5-tile row: last tile spans 2 cols (desktop).

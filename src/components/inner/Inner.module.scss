@@ -775,6 +775,11 @@
     grid-template-columns: repeat(3, minmax(0, 1fr)); // three cards per row
     gap: 12px;
 
+    // five tiles: the last one fills the rest of its row instead of leaving a gap on the right
+    > div:last-child:nth-child(3n + 2) {
+      grid-column: span 2;
+    }
+
     > div {
       padding: 14px 16px;
       border: 1px solid rgb(255 255 255 / 18%);
