@@ -202,3 +202,5 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - 2026-11-11 (7): intl Programs cards: big 16:10 photos, no one-screen compaction (section may exceed screen).
 - 2026-11-12: mini titles (eyebrow) = logo blue #0077be on white/grey, logo yellow #fff200 on blue/dark (tokens $logo-blue/$logo-yellow in _tokens.scss; eyebrow mixin defaults blue). Gradient title text removed (intl hero em, clocks, zoneNote) -> solid logo colours. Not deployed.
 - 2026-11-12: intl Admissions: progress line above step cards removed (cards = client design).
+
+- DONE (2026-11-12): first-load preloader = crest SVG draw-on (Preloader.tsx + .boot in Preloader.module.scss). Visibility/timing from inline script in layout.tsx (adds html.is-loading, min 1.7s, hide on load, failsafe 5.3s, skipped for reduced-motion, absent w/o JS). Lighthouse mobile (3 runs, noisy): CLS 0 before/after; LCP median 4.1s -> 4.6s; TBT similar.

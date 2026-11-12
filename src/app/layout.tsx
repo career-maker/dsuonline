@@ -40,7 +40,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={fontMain.variable}>
+    <html lang="en" className={fontMain.variable} suppressHydrationWarning>
+      <head>
+        <script
+          // first-load preloader: min 1.7s, hide on load, failsafe 5.3s; skipped for reduced motion; absent without JS
+          dangerouslySetInnerHTML={{
+            __html: "(function(d){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;var h=d.documentElement,t=Date.now(),f;h.classList.add('is-loading');function o(){if(f)return;f=1;h.classList.add('is-leaving');setTimeout(function(){h.classList.remove('is-loading','is-leaving')},700)}function g(){setTimeout(o,Math.max(0,1700-(Date.now()-t)))}d.readyState=='complete'?g():addEventListener('load',g);setTimeout(o,5300)})(document)",
+          }}
+        />
+      </head>
       <body>
         <Preloader />
         <SmoothScroll />

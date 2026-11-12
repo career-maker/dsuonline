@@ -145,6 +145,7 @@ ol {
 // no scrolling behind the preloader
 html.is-loading {
   overflow: hidden;
+  scrollbar-gutter: stable; // keep the scrollbar slot so the page does not shift when the preloader exits
 }
 
 /* Custom Page Scrollbar */

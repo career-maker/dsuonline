@@ -1,46 +1,101 @@
 @use 'tokens' as *;
 
-.screen {
+// first-load crest draw-on. Exists only while the inline script in layout.tsx has put .is-loading on <html>
+// (so: never without JS, never with prefers-reduced-motion).
+.boot {
   position: fixed;
   inset: 0;
   z-index: 300;
-  display: grid;
+  display: none;
   place-items: center;
   background: $blue;
-  // no-JS safety net: never leave the page covered
-  animation: failsafe 0s 6s forwards;
+  pointer-events: none;
 }
 
-.disc {
+:global(html.is-loading) .boot {
   display: grid;
-  place-items: center;
-  width: clamp(190px, 28vmin, 320px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #fff;
+}
+
+:global(html.is-leaving) .boot {
+  animation: boot-out 0.7s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+
+  .lockup {
+    animation: lockup-out 0.7s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  }
+}
+
+.lockup {
+  position: relative;
+  width: min(86vw, 360px);
+  aspect-ratio: 800 / 156;
+
+  img,
+  svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
 
   img {
-    width: 74%;
-    height: auto;
+    opacity: 0;
+    animation: fade-in 0.4s ease 1s forwards;
+  }
+
+  svg {
+    overflow: visible;
+    animation: fade-out 0.3s ease 1.1s forwards;
   }
 }
 
-// home exit: the white circle expands over the screen, then the cover fades to reveal the page
-.home.out {
-  animation: cover-fade 0.45s ease 0.75s forwards;
+.draw {
+  fill: none;
+  stroke: $logo-yellow;
+  stroke-width: 3.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 0.7s cubic-bezier(0.6, 0, 0.3, 1) var(--d, 0s) forwards;
+}
 
-  .disc {
-    animation: expand 0.8s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+.ringIn {
+  stroke: $logo-blue;
+}
 
-    img {
-      animation: logo-out 0.25s ease forwards;
-    }
+.shield {
+  stroke: #fff;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 
-// inner pages: blue panel slides up and off
-.inner.out {
-  animation: slide-up 0.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes boot-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes lockup-out {
+  to {
+    transform: translateY(-28px) scale(1.06);
+    opacity: 0;
+  }
 }
 
 // route changes: panel fades in over the page, then slides up (a single upward motion)
@@ -100,24 +155,9 @@
   }
 }
 
-@keyframes failsafe {
-  to {
-    visibility: hidden;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .home.out,
-  .inner.out {
-    animation: cover-fade 0.2s ease forwards;
-  }
-
-  .home.out .disc,
-  .home.out .disc img {
-    animation: none;
-  }
-
+  .boot,
   .sweep {
-    display: none;
+    display: none !important;
   }
 }

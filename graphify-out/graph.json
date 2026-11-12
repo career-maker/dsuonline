@@ -2162,7 +2162,7 @@
       "file_type": "code",
       "norm_label": "preloader()",
       "source_file": "src/components/layout/Preloader.tsx",
-      "source_location": "L15"
+      "source_location": "L13"
     },
     {
       "id": "src_components_layout_sidetabs_sidetabs",
@@ -7454,7 +7454,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L45",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -7466,7 +7466,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L46",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -7478,7 +7478,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L47",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -7490,7 +7490,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L48",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -7502,7 +7502,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L49",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -7514,7 +7514,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L50",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -7526,7 +7526,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L52",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -7538,7 +7538,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L53",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -23836,7 +23836,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layout/Preloader.tsx",
-      "source_location": "L15",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -26084,5 +26084,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "54df7a1e235bb0242873c7dca18586b0b2a10bb1"
+  "built_at_commit": "6ce0dabea95137c334328df83b6af3dd1090ffb2"
 }
