@@ -215,3 +215,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 
 - 2026-11-12: REVERTED experimental.inlineCss (it grew home HTML 258KB->909KB, gz 31KB->148KB, hurt mobile FCP/TBT). Do not re-enable.
 - DONE: intl hero h1 two lines (scoped span rule to > span; TitleReveal word spans were going display:block).
+- DONE: intl 'Why' cards mobile hover no longer clipped (padding moved into .uspGrid; .uspGrid padding:0 was overriding .track).

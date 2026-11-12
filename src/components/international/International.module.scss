@@ -666,6 +666,12 @@ $gold-ink: #8c6500; // gold that passes AA on white
   @media (max-width: 1199.98px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  // mobile carousel (overflow-x:auto clips both axes): room above for the 6px hover lift, below for its shadow
+  @include down($bp-sm) {
+    margin-block: -12px;
+    padding: 18px var(--gut, 16px) 24px;
+  }
 }
 
 .usp {
