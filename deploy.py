@@ -74,6 +74,9 @@ for root, dirs, files in os.walk('.'):
         new[rel_path] = {'k': key, 'h': h}
         if old.get(rel_path, {}).get('h') != h:
             changed.append((full_path, rel_path))
+if '--seed' in sys.argv:  # mark the current tree as already on the server (e.g. after an interrupted run)
+    json.dump({p: new[p] for p in new}, open(manifest_path, 'w'))
+    print('manifest seeded'); sys.exit(0)
 deps_changed = any(p in ('package.json', 'package-lock.json') for _, p in changed) or not old
 lap(f"{len(changed)} changed file(s) of {len(new)}; dependencies changed: {deps_changed}")
 
