@@ -6,16 +6,57 @@
   overflow: hidden;
   color: #fff;
   padding: clamp(104px, #{u(150)}, 150px) 0 clamp(36px, #{u(64)}, 64px);
+  @include down($bp-md) {
+    padding-top: min(86vw, 400px);
+  }
+
   background: radial-gradient(1000px 600px at 85% 15%, rgb(34 195 230 / 32%), transparent 60%), linear-gradient(100deg, #0b1f4d 30%, #102a66 65%, #1d5bd8 100%);
 }
 
+// photo stays on the right: it dissolves into the navy so ~10% shows behind the copy
+.bg {
+  position: absolute;
+  inset: 0;
+  mask-image: linear-gradient(90deg, rgb(0 0 0 / 4%) 0%, rgb(0 0 0 / 4%) 40%, rgb(0 0 0 / 25%) 48%, rgb(0 0 0 / 52%) 56%, rgb(0 0 0 / 79%) 64%, rgb(0 0 0 / 97%) 72%, #000 76%);
+
+  @include down($bp-lg) {
+    mask-image: linear-gradient(90deg, rgb(0 0 0 / 4%) 0%, rgb(0 0 0 / 4%) 48%, rgb(0 0 0 / 37%) 63%, rgb(0 0 0 / 79%) 75%, #000 86%);
+  }
+
+  // phones + small tablets: photo on top, copy on the navy below it
+  @include down($bp-md) {
+    bottom: auto;
+    height: min(112vw, 520px);
+    mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  }
+}
+
+.img {
+  object-fit: cover;
+  object-position: 78% 28%;
+
+  @include down($bp-md) {
+    object-position: 72% 6%;
+  }
+}
+
 .inner {
+  position: relative;
+  z-index: 1;
   @include container;
   letter-spacing: -0.0175em;
 
   // content column stays on the left; the right side is intentionally empty on wide screens
   > * {
     max-width: min(100%, 720px);
+
+    @include down($bp-lg) {
+      max-width: min(100%, 56%);
+    }
+
+    @include down($bp-md) {
+      max-width: none;
+    }
   }
 
   h1 {

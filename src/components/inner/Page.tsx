@@ -1130,6 +1130,9 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
   const programHero =
     withFacts && crumbs.length < 3 && progShort && dur ? (
       <ProgramHero
+        bgSrc={BANNERS[slug]}
+        bgMobileSrc={BANNERS_MOBILE[slug]}
+        bgIndex={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)}
         eyebrow="Your next chapter starts here"
         lines={['Lead with', 'Knowledge.']}
         name={progShort}

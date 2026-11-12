@@ -223,3 +223,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - Programme pages (mba/mca/bba/bca/bcom) now use `src/components/inner/ProgramHero.tsx` (+ `.module.scss`): eyebrow "Your next chapter starts here", title "Lead with Knowledge. Grow with <X> Degree Online.", description, DUAL pill (only when page has an Elective fact, links `#pair`), buttons, counters (years/semesters/credits), auto-fit "at a glance" tiles. Nothing on the right (no photo/card). Props built in `Page.tsx` (`programHero`) from page content. MBA description text from user's reference; others use first sentence of live copy.
 - Rule this session: every section edit the user specifies for MBA applies to all 5 programme pages via the same shared template.
 - Anchors added: `#pair` (elective combinator), `#curriculum`.
+- 2026-11-12: ProgramHero keeps the programme photo on the right (fades into navy; photo on top on phones). User wanted photo kept, no extra card.

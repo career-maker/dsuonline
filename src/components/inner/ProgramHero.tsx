@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import { heroSlides } from '@/data/home';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { Counter } from '@/components/ui/Counter';
 import { site } from '@/data/site';
@@ -16,12 +18,21 @@ export type ProgramHeroProps = {
   stats: { value: number; label: string; note: string }[];
   glance: { title: string; tiles: { value: string; label: string }[] };
   curriculumHref?: string;
+  /** photo kept on the right (desktop crop / phone crop); falls back to a home hero slide */
+  bgSrc?: string;
+  bgMobileSrc?: string;
+  bgIndex?: number;
 };
 
 /** One hero for every programme page: all text comes from props so the CMS can drive it. Nothing on the right. */
-export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, glance }: ProgramHeroProps) {
+export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, glance, bgSrc, bgMobileSrc, bgIndex = 0 }: ProgramHeroProps) {
+  const slide = heroSlides[bgIndex % heroSlides.length];
   return (
     <section className={s.hero}>
+      <picture className={s.bg}>
+        <source media="(max-width: 899.98px)" srcSet={bgMobileSrc ?? bgSrc ?? slide.mobile} />
+        <Image src={bgSrc ?? slide.desktop} alt="" fill priority sizes="100vw" className={s.img} />
+      </picture>
       <div className={s.inner}>
         <p className={s.eyebrow}>{eyebrow}</p>
         <h1>
