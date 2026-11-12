@@ -251,9 +251,6 @@ export default function InternationalLearners() {
             <h2>Four steps, fully online</h2>
             <p className={s.sub}>Apply from your home country — no paperwork to post, no offices to visit.</p>
           </div>
-          <div className={s.progress} aria-hidden="true">
-            <div />
-          </div>
           <Rail className={s.steps} label="step" stagger>
             {steps.map((st, i) => (
               <li key={st.title} className={s.step}>

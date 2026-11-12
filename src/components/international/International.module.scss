@@ -1214,7 +1214,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
-  margin: 0;
+  margin: clamp(20px, #{u(34)}, 34px) 0 0;
   padding: 0;
   list-style: none;
 
@@ -1363,35 +1363,6 @@ $gold-ink: #8c6500; // gold that passes AA on white
 }
 
 // ---------- ADMISSIONS
-.progress {
-  height: 4px;
-  margin: 0 0 34px;
-  overflow: hidden;
-  border-radius: 4px;
-  background: $iline;
-
-  div {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, $iblue, #22c3e6);
-    transform-origin: left;
-
-    @media (prefers-reduced-motion: no-preference) {
-      animation: grow 1.6s $ease both;
-    }
-  }
-
-  @include down($bp-sm) {
-    display: none;
-  }
-}
-
-@keyframes grow {
-  from {
-    scale: 0 1;
-  }
-}
-
 .steps {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1444,7 +1415,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   }
 
   &:last-child {
-    border: 0;
+    border-color: transparent;
     color: #fff;
     background: linear-gradient(135deg, $navy, $iblue);
 

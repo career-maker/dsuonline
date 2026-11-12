@@ -201,3 +201,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - 2026-11-11 (6): intl sections no longer forced 100svh (tighter gaps; still fit a screen); programme 'Why DSU Online X?' title->paragraph gap fixed (Kit.module.scss .whyPText margin order).
 - 2026-11-11 (7): intl Programs cards: big 16:10 photos, no one-screen compaction (section may exceed screen).
 - 2026-11-12: mini titles (eyebrow) = logo blue #0077be on white/grey, logo yellow #fff200 on blue/dark (tokens $logo-blue/$logo-yellow in _tokens.scss; eyebrow mixin defaults blue). Gradient title text removed (intl hero em, clocks, zoneNote) -> solid logo colours. Not deployed.
+- 2026-11-12: intl Admissions: progress line above step cards removed (cards = client design).
