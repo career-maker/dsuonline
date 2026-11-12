@@ -9,8 +9,7 @@ export function TitleReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
-    // home keeps static titles (performance budget); inner pages animate
-    if (pathname === '/' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     let io: IntersectionObserver | undefined;
     const t = setTimeout(() => {
       io = new IntersectionObserver(

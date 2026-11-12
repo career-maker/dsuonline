@@ -1016,7 +1016,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
   @include down($bp-sm) {
     button {
-      min-height: 320px;
+      min-height: 170px;
     }
   }
 }
@@ -1728,7 +1728,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .err {
   margin: 0;
-  font-size: 14px;
+  font-size: 7px; // 50% of the 14px field label
   line-height: 1.35;
   color: #b3261e;
 }

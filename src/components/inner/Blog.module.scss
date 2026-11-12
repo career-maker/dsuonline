@@ -165,6 +165,7 @@
 }
 
 .postHeroWrapper {
+  width: 80%; // featured image at 80% of the column (height follows the aspect ratio)
   overflow: hidden;
   margin-bottom: 24px;
   border-radius: 12px;
