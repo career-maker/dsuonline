@@ -177,7 +177,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   letter-spacing: -0.02em;
 
   // two lines at every width: the size follows the column
-  span {
+  > span {
     display: block;
     white-space: nowrap;
   }

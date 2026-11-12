@@ -214,3 +214,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - DONE (2026-11-12): intl continent cards use aspect-ratio 2/3 (3/4 below 1200px), object-position top, so photos are not cropped; map credit visually hidden (sr-only, CC BY attribution kept in DOM); TitleReveal now covers page h1 + section h2 on every page incl. home, via MutationObserver (home sections stream in late).
 
 - 2026-11-12: REVERTED experimental.inlineCss (it grew home HTML 258KB->909KB, gz 31KB->148KB, hurt mobile FCP/TBT). Do not re-enable.
+- DONE: intl hero h1 two lines (scoped span rule to > span; TitleReveal word spans were going display:block).

@@ -12,9 +12,9 @@
     "semantic_hash": ""
   },
   "next.config.ts": {
-    "mtime": 1794464350.4245791,
-    "seen": 1794464565.0961914,
-    "ast_hash": "bfa5857570f615b0e13676e78c88074e",
+    "mtime": 1794465835.2879915,
+    "seen": 1794469962.7566195,
+    "ast_hash": "3e6e8cc6ae99e7ca0c86ce4b6b8b086d",
     "semantic_hash": ""
   },
   "package.json": {
@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794464565.633796,
-    "seen": 1794465163.551025,
-    "ast_hash": "b3f933248dd66a53363e8f50d9638058",
+    "mtime": 1794466013.629684,
+    "seen": 1794469962.7569926,
+    "ast_hash": "d5af7c19e39f29a111f18a0eb9afae15",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
