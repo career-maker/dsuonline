@@ -206,3 +206,5 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - DONE (2026-11-12): first-load preloader = crest SVG draw-on (Preloader.tsx + .boot in Preloader.module.scss). Visibility/timing from inline script in layout.tsx (adds html.is-loading, min 1.7s, hide on load, failsafe 5.3s, skipped for reduced-motion, absent w/o JS). Lighthouse mobile (3 runs, noisy): CLS 0 before/after; LCP median 4.1s -> 4.6s; TBT similar.
 
 - DONE (2026-11-12, round 2): preloader redesigned (no drawing: logo rises in + gold rule); intl continent cards mobile min-height 170 (matches reference); form `.err` = 50% of label (7px intl / 7.5px modal+contact+refer, see EnquiryModal/International scss); blog detail hero wrapper width 80%; TitleReveal now also runs on home (all h2).
+
+- DONE (2026-11-12): programme pages Admission Process section now shows main title 'A Step-by-Step Guide' (section-heads.ts; was title: null).

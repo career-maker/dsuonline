@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794462837.694397,
-    "seen": 1794463669.4640198,
-    "ast_hash": "2e490677d2d56946b5d472fcab499e41",
+    "mtime": 1794463670.0938997,
+    "seen": 1794463947.4046977,
+    "ast_hash": "7dd92c0bd7f0ed046a5ccbd9b35b1d19",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -552,9 +552,9 @@
     "semantic_hash": ""
   },
   "src/data/section-heads.ts": {
-    "mtime": 1793852584.3623066,
-    "seen": 1793852714.8487492,
-    "ast_hash": "a658173778c88fe1b13168327081a440",
+    "mtime": 1794463798.4908686,
+    "seen": 1794463947.4046612,
+    "ast_hash": "d3a6134477e011678c6b6ebc49961c53",
     "semantic_hash": ""
   },
   "src/data/faculty.ts": {

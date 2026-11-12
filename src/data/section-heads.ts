@@ -14,7 +14,7 @@ export const sectionHeads: SectionHead[] = [
   { match: /career/i, eyebrow: 'Careers' },
   { match: /curriculum/i, eyebrow: 'Curriculum' },
   { match: /faculty/i, eyebrow: 'Faculty' },
-  { match: /admission|how to apply/i, eyebrow: 'Admission Process', title: null },
+  { match: /admission|how to apply/i, eyebrow: 'Admission Process', title: 'A Step-by-Step Guide' },
   { match: /added value|certificate/i, eyebrow: 'Certification' },
   { match: /eligib/i, eyebrow: 'Eligibility' },
 ];
