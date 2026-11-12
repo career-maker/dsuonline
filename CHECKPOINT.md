@@ -210,3 +210,5 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - DONE (2026-11-12): programme pages Admission Process section now shows main title 'A Step-by-Step Guide' (section-heads.ts; was title: null).
 
 - DONE (2026-11-12): perf pass from Lighthouse report: experimental.inlineCss (no render-blocking CSS), icons in public/icons downscaled to 3x design size + palette PNG (-225KB), preloader uses small logo-preload.webp (unoptimized, low priority), TitleReveal batches reads after writes (forced reflow), ProgramsBand card-title links min-height 24px.
+
+- DONE (2026-11-12): intl continent cards use aspect-ratio 2/3 (3/4 below 1200px), object-position top, so photos are not cropped; map credit visually hidden (sr-only, CC BY attribution kept in DOM); TitleReveal now covers page h1 + section h2 on every page incl. home, via MutationObserver (home sections stream in late).

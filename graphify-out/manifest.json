@@ -234,9 +234,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/TitleReveal.tsx": {
-    "mtime": 1794464350.4329393,
-    "seen": 1794464565.0963347,
-    "ast_hash": "91965212d2b5b0f5a72acc3a54d73f97",
+    "mtime": 1794464992.4156983,
+    "seen": 1794465163.550928,
+    "ast_hash": "a9465016848c54bdbfda75982ce4e2d0",
     "semantic_hash": ""
   },
   "src/components/sections/home/About.tsx": {
@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794463948.2654352,
-    "seen": 1794464565.0964425,
-    "ast_hash": "23eb2b309811f854242103bf752ec648",
+    "mtime": 1794464565.633796,
+    "seen": 1794465163.551025,
+    "ast_hash": "b3f933248dd66a53363e8f50d9638058",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -618,9 +618,9 @@
     "semantic_hash": ""
   },
   "src/components/international/HeroMap.tsx": {
-    "mtime": 1794401182.134379,
-    "seen": 1794401331.9552448,
-    "ast_hash": "eb6276c2740c737bf98f28373c695470",
+    "mtime": 1794464998.0226095,
+    "seen": 1794465163.550889,
+    "ast_hash": "f3d42b714238ae4cbfade4ad84a3a66e",
     "semantic_hash": ""
   },
   "src/components/international/Ico.tsx": {

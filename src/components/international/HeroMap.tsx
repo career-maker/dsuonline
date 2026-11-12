@@ -203,7 +203,7 @@ export function HeroMap() {
           </li>
         ))}
       </ul>
-      <p className={s.credit}>
+      <p className={`${s.credit} ${s.sr}`}>
         Map data: svg-maps/india by Victor Cazanave, CC BY 4.0
       </p>
     </div>

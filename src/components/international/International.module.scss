@@ -973,12 +973,13 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
   li {
     display: flex;
+    aspect-ratio: 2 / 3; // the photos are 2:3 portraits: full height so nobody is cropped
   }
 
   button {
     position: relative;
     flex: 1;
-    min-height: 280px;
+    min-height: 0;
     padding: 0;
     overflow: hidden;
     border: 3px solid transparent;
@@ -993,6 +994,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
     img {
       object-fit: cover;
+      object-position: 50% 15%;
       transition: scale 0.8s;
     }
 
@@ -1014,9 +1016,9 @@ $gold-ink: #8c6500; // gold that passes AA on white
     }
   }
 
-  @include down($bp-sm) {
-    button {
-      min-height: 170px;
+  @media (max-width: 1199.98px) {
+    li {
+      aspect-ratio: 3 / 4;
     }
   }
 }
