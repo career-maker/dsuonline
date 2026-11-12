@@ -22,6 +22,7 @@ export function TitleReveal() {
         },
         { threshold: 0.01, rootMargin: '0px 0px -4% 0px' },
       );
+      const split: HTMLElement[] = [];
       document.querySelectorAll<HTMLElement>('main h2').forEach((h) => {
         if (h.dataset.tr) return;
         h.dataset.tr = '1';
@@ -51,8 +52,13 @@ export function TitleReveal() {
         };
         walk(h);
         h.classList.add(s.title);
-        const r = h.getBoundingClientRect();
-        if (r.top < window.innerHeight * 0.9 && r.bottom > 0) requestAnimationFrame(() => h.classList.add(s.in));
+        split.push(h);
+      });
+      // all reads after all writes: one layout pass instead of one per heading
+      const vh = window.innerHeight * 0.9;
+      const rects = split.map((h) => h.getBoundingClientRect());
+      split.forEach((h, i) => {
+        if (rects[i].top < vh && rects[i].bottom > 0) requestAnimationFrame(() => h.classList.add(s.in));
         else io?.observe(h);
       });
     }, 150);

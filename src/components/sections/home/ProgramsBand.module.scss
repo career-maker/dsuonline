@@ -189,6 +189,11 @@
   }
 }
 
+.card h3 a {
+  display: inline-block;
+  min-height: 24px; // touch target
+}
+
 .card h3 {
   margin-top: clamp(14px, #{u(22)}, 22px);
   font-size: fs(28, 22px);
@@ -408,6 +413,8 @@
   font-weight: 700;
 
   a {
+    display: inline-block;
+    min-height: 24px; // touch target
     color: inherit;
     text-decoration: none;
   }

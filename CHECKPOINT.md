@@ -208,3 +208,5 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - DONE (2026-11-12, round 2): preloader redesigned (no drawing: logo rises in + gold rule); intl continent cards mobile min-height 170 (matches reference); form `.err` = 50% of label (7px intl / 7.5px modal+contact+refer, see EnquiryModal/International scss); blog detail hero wrapper width 80%; TitleReveal now also runs on home (all h2).
 
 - DONE (2026-11-12): programme pages Admission Process section now shows main title 'A Step-by-Step Guide' (section-heads.ts; was title: null).
+
+- DONE (2026-11-12): perf pass from Lighthouse report: experimental.inlineCss (no render-blocking CSS), icons in public/icons downscaled to 3x design size + palette PNG (-225KB), preloader uses small logo-preload.webp (unoptimized, low priority), TitleReveal batches reads after writes (forced reflow), ProgramsBand card-title links min-height 24px.

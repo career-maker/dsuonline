@@ -24,7 +24,7 @@ export function Preloader() {
     <>
       <div className={s.boot} aria-hidden="true">
         <div className={s.lockup}>
-          <Image src="/images/brand/logo-header.webp" alt="" width={800} height={156} sizes="360px" priority />
+          <Image src="/images/brand/logo-preload.webp" alt="" width={720} height={140} loading="eager" fetchPriority="low" unoptimized />
           <span className={s.rule} />
         </div>
       </div>
