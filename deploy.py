@@ -48,24 +48,47 @@ print("==> Packaging project files for upload...")
 exclude_dirs = {'.git', 'node_modules', '.next', 'shots', 'design', 'video-production', '__pycache__'}
 exclude_files = {'.server.local', 'GIT-PUSH.local.md', 'tsconfig.tsbuildinfo'}
 
+import hashlib, json, time
+T0 = time.time()
+def lap(msg):
+    print(f"[{time.time() - T0:5.0f}s] {msg}", flush=True)
+
+# only upload files that changed since the last successful deploy (hash manifest kept locally, gitignored)
+manifest_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.deploy-manifest.json')
+old = json.load(open(manifest_path)) if os.path.isfile(manifest_path) else {}
+new = {}
+changed = []
+for root, dirs, files in os.walk('.'):
+    dirs[:] = [d for d in dirs if d not in exclude_dirs and not d.startswith('.next')]
+    for file in files:
+        if file in exclude_files or file.endswith('.tsbuildinfo') or file.endswith('.tar.gz') or file == '.deploy-manifest.json':
+            continue
+        full_path = os.path.join(root, file)
+        rel_path = os.path.relpath(full_path, '.').replace(os.sep, '/')
+        st = os.stat(full_path)
+        key = f"{st.st_size}:{int(st.st_mtime)}"
+        if old.get(rel_path, {}).get('k') == key:
+            new[rel_path] = old[rel_path]
+            continue
+        h = hashlib.md5(open(full_path, 'rb').read()).hexdigest()
+        new[rel_path] = {'k': key, 'h': h}
+        if old.get(rel_path, {}).get('h') != h:
+            changed.append((full_path, rel_path))
+deps_changed = any(p in ('package.json', 'package-lock.json') for _, p in changed) or not old
+lap(f"{len(changed)} changed file(s) of {len(new)}; dependencies changed: {deps_changed}")
+
 with tempfile.NamedTemporaryFile(suffix='.tar.gz', dir='.', delete=False) as tf:
     temp_archive_path = tf.name
 
 try:
     with tarfile.open(temp_archive_path, 'w:gz') as tar:
-        for root, dirs, files in os.walk('.'):
-            # Prune excluded directories
-            dirs[:] = [d for d in dirs if d not in exclude_dirs and not d.startswith('.next')]
-            for file in files:
-                if file in exclude_files or file.endswith('.tsbuildinfo') or file.endswith('.tar.gz'):
-                    continue
-                full_path = os.path.join(root, file)
-                rel_path = os.path.relpath(full_path, '.')
-                tar.add(full_path, arcname=rel_path)
+        for full_path, rel_path in changed:
+            tar.add(full_path, arcname=rel_path)
 
     remote_tar = f"/home/{user}/dsuonline_deploy.tar.gz"
     print(f"==> Uploading archive ({os.path.getsize(temp_archive_path)} bytes) to {remote_tar}...")
     sftp.put(temp_archive_path, remote_tar)
+    lap("upload done")
 finally:
     if os.path.exists(temp_archive_path):
         os.remove(temp_archive_path)
@@ -79,12 +102,17 @@ cd /home/{user}/{remote_dir}
 tar -xzf /home/{user}/dsuonline_deploy.tar.gz
 rm -f /home/{user}/dsuonline_deploy.tar.gz
 
-echo "==> Running npm install..."
-npm install --no-audit --no-fund
+if [ "{1 if deps_changed else 0}" = "1" ]; then
+  echo "==> Running npm install..."
+  npm install --no-audit --no-fund
+else
+  echo "==> package.json unchanged: skipping npm install"
+fi
 
-echo "==> Running next build --webpack..."
+echo "==> Running next build --webpack... ($(date +%T))"
 NEXT_PUBLIC_OPT_IMAGES=1 NEXT_TELEMETRY_DISABLED=1 NODE_OPTIONS=--max-old-space-size=4096 npx next build --webpack
 
+echo "==> Build finished ($(date +%T))"
 echo "==> Managing PM2 process '{pm2_name}'..."
 if pm2 describe {pm2_name} >/dev/null 2>&1; then
     pm2 restart {pm2_name} --update-env
@@ -111,8 +139,14 @@ if err:
     print(err)
 
 sftp.close()
+status = stdout.channel.recv_exit_status()
 ssh.close()
-print("==> Deployment complete!")
+if status == 0:
+    json.dump(new, open(manifest_path, "w"))
+    lap("manifest saved")
+else:
+    print(f"!! remote script exited {status}; manifest not saved so next deploy re-uploads")
+print("==> Deployment complete!" if status == 0 else "==> Deployment FAILED")
 
 # Push source to GitHub too (only non-ignored files)
 import subprocess

@@ -56,3 +56,4 @@ __pycache__/
 /issues.json
 /video-production/
 /shots/
+.deploy-manifest.json

@@ -36,12 +36,12 @@ export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, 
       <div className={s.inner}>
         <p className={s.eyebrow}>{eyebrow}</p>
         <h1>
-          <span>{lines[0]}</span>
-          <span>{lines[1]}</span>
           <span>
-            Grow with <b>{name}</b>
+            {lines[0]} {lines[1]}
           </span>
-          <b>{closing}</b>
+          <span>
+            Grow with <b>{name}</b> <b>{closing}</b>
+          </span>
         </h1>
         {desc && <p className={s.desc}>{desc}</p>}
         {pill && (
