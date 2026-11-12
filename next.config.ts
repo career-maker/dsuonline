@@ -4,9 +4,6 @@ import path from "node:path";
 const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
-  experimental: {
-    inlineCss: true, // no render-blocking stylesheet requests on first load
-  },
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,
