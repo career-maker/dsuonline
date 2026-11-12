@@ -576,6 +576,17 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
   const introBlocks = st.hero.filter((b) => slug !== 'contact-us' && b.t !== 'a' && b.t !== 'img' && !(isP(b) && (factText.has(b.x) || b.x === subtitle)));
   const longSub = !withFacts && !!subtitle && subtitle.length >= 200;
 
+  // programme hero text exactly as on dsuonline.com (its markup spells "(Online MBA)" letter by letter and hides some lines in comments)
+  const EYE = 'Advance Your Career with';
+  const PROG_HERO: Record<string, { eyebrow?: string; title?: string; subtitle?: string }> = {
+    'online-mba': { eyebrow: EYE, subtitle: '(Online MBA)' },
+    'online-mca': { eyebrow: EYE, subtitle: '(Online MCA)' },
+    'online-bba': { eyebrow: EYE },
+    'online-bca': {},
+    'online-bcom': { eyebrow: EYE, title: 'DSU Online B.Com Program', subtitle: '(Online B.Com)' },
+  };
+  const ph = PROG_HERO[slug];
+
   let ti = 0;
   const nextTone = (): Tone => (ti++ % 2 === 0 ? 'white' : 'grey');
 
@@ -1100,7 +1111,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
 
   return (
     <>
-      <InnerHero size={withFacts ? (crumbs.length >= 3 ? 'gradient' : 'full') : 'short'} badges={slug === 'about'} bannerSrc={BANNERS[slug]} bannerMobileSrc={BANNERS_MOBILE[slug]} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={preEyebrow} title={st.h1} subtitle={withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
+      <InnerHero size={withFacts ? (crumbs.length >= 3 ? 'gradient' : 'full') : 'short'} badges={slug === 'about'} bannerSrc={BANNERS[slug]} bannerMobileSrc={BANNERS_MOBILE[slug]} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={ph ? ph.eyebrow : preEyebrow} title={ph?.title ?? st.h1} subtitle={ph ? ph.subtitle : withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />
       {longSub && slug === 'student-testimonials' && subtitle && (
         <Sec tone="white">
           <div className={s.introGrid}>
