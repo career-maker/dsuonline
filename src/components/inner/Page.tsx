@@ -311,23 +311,6 @@ function curriculum(sec: Section): ReactNode | null {
   return <Tabs groups={groups} />;
 }
 
-/** names listed under the page's "Industries" heading (title / description pairs) */
-function pageIndustries(blocks: Block[]): string[] {
-  const i = blocks.findIndex((b) => b.t === 'h3' && /industr/i.test(b.x));
-  if (i < 0) return [];
-  const out: string[] = [];
-  let n = 0;
-  for (let j = i + 1; j < blocks.length; j++) {
-    const b = blocks[j];
-    if (b.t === 'h2' || b.t === 'h3') break;
-    if (b.t === 'p') {
-      if (n % 2 === 0) out.push(b.x);
-      n++;
-    }
-  }
-  return out;
-}
-
 function careers(sec: Section): ReactNode {
   const ps = sec.blocks.filter(isP).map((b) => b.x);
   const cards: { title: string; items: string[] }[] = [];
@@ -830,7 +813,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       );
       nodes.push(
         <Sec key={`${key}-pair`} tone="sky" id="pair">
-          <ElectiveCombinator programName={progName} programCode={slug.replace(/^online-/, '')} electives={programLinks.map((x) => x.name)} sectors={pageIndustries(raw)} />
+          <ElectiveCombinator programName={progName} programCode={slug.replace(/^online-/, '')} electives={programLinks.map((x) => ({ name: x.name, blurb: x.blurb }))} />
         </Sec>,
       );
       continue;

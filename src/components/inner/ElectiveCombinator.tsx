@@ -1,129 +1,128 @@
 'use client';
 
 import { useState } from 'react';
+import { ArrowLink } from '@/components/ui/ArrowLink';
+import { CardSlider } from '@/components/ui/CardSlider';
 import { useEnquiry } from '@/components/layout/EnquiryProvider';
+import { architectCopy } from '@/data/programme-architect';
 import s from './ElectiveCombinator.module.scss';
 
+type Elective = { name: string; blurb?: string };
+
+const ICON: Record<'branch' | 'swap' | 'rise' | 'clock', string> = {
+  branch: 'M6 3v6a4 4 0 004 4h4a4 4 0 014 4v4M6 3a2 2 0 100 .01M18 21a2 2 0 100-.01M6 13a2 2 0 100 .01',
+  swap: 'M4 8h13l-3-3m6 11H7l3 3',
+  rise: 'M3 17l6-6 4 4 8-8m0 0h-5m5 0v5',
+  clock: 'M12 3a9 9 0 100 18 9 9 0 000-18zm0 4v5l3 2',
+};
+
+function Benefit({ icon, title, text }: { icon: keyof typeof ICON; title: string; text: string }) {
+  return (
+    <div className={s.benefit}>
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d={ICON[icon]} />
+      </svg>
+      <h3>{title}</h3>
+      <p>{text}</p>
+    </div>
+  );
+}
+
 /**
- * "Pair 1 Major + 1 Minor": pick a major and a minor elective and see the combined profile.
- * Copy here is placeholder text (to be replaced later); electives and hiring sectors come from the page itself.
+ * Dual specialisation builder: tick any two electives (never more than two) and the combination is previewed beside the list.
+ * Electives come from the page; the wording from `programme-architect.ts`.
  */
-export function ElectiveCombinator({ programName, programCode, electives, sectors }: { programName: string; programCode: string; electives: string[]; sectors: string[] }) {
+export function ElectiveCombinator({ programName, programCode, electives }: { programName: string; programCode: string; electives: Elective[] }) {
   const { open } = useEnquiry();
-  const [major, setMajor] = useState(0);
-  const [minor, setMinor] = useState(electives.length > 1 ? 1 : 0);
-  const a = electives[major];
-  const b = electives[minor];
+  const copy = architectCopy(programName, electives.map((e) => e.name), programCode === 'mba');
+  const [picked, setPicked] = useState<number[]>(electives.length > 1 ? [0, 1] : [0]); // selection order = badge number
+  const full = picked.length >= 2;
 
-  const pick = (role: 'major' | 'minor', i: number) => {
-    if (role === 'major') {
-      if (i === minor && electives.length > 1) setMinor(major); // swap so the two never clash
-      setMajor(i);
-    } else {
-      if (i === major && electives.length > 1) setMajor(minor);
-      setMinor(i);
-    }
-  };
-
-  const panel = (role: 'major' | 'minor') => {
-    const cur = role === 'major' ? major : minor;
-    const other = role === 'major' ? minor : major;
-    return (
-      <div className={s.panel}>
-        <div className={s.panelHead}>
-          <h3>
-            <span className={`${s.no} ${role === 'minor' ? s.noAlt : ''}`}>{role === 'major' ? 1 : 2}</span>
-            {role === 'major' ? 'Select Major Elective' : 'Select Complementary Minor'}
-          </h3>
-          <p>
-            Current: <b>{electives[cur]}</b>
-          </p>
-        </div>
-        <div className={s.tiles} role="radiogroup" aria-label={role === 'major' ? 'Major elective' : 'Minor elective'}>
-          {electives.map((name, i) => (
-            <button
-              key={name}
-              type="button"
-              role="radio"
-              aria-checked={i === cur}
-              aria-disabled={i === other && electives.length > 1 ? true : undefined}
-              className={`${s.tile} ${i === cur ? (role === 'major' ? s.onMajor : s.onMinor) : ''} ${i === other && electives.length > 1 ? s.taken : ''}`}
-              onClick={() => i !== other && pick(role, i)}
-            >
-              {name}
-              {i === other && electives.length > 1 && <small>{role === 'major' ? 'Selected as minor' : 'Selected as major'}</small>}
-            </button>
-          ))}
-        </div>
-      </div>
-    );
-  };
+  const toggle = (i: number) => setPicked((p) => (p.includes(i) ? p.filter((x) => x !== i) : p.length < 2 ? [...p, i] : p));
+  const chosen = picked.map((i) => electives[i]);
 
   return (
     <div className={s.wrap}>
       <header className={s.head}>
-        <p className={s.eyebrow}>Interactive Elective Architect</p>
-        <h2>
-          Pair 1 Major + 1 Minor:
-          <span className={s.accent}> Unlock Multi-Dimensional Market Dominance</span>
-        </h2>
-        <p className={s.lead}>
-          Choose your primary major and a complementary minor from the {programName} electives below to see how the combination shapes your career profile.
-        </p>
+        <div>
+          <p className={s.eyebrow}>{copy.eyebrow}</p>
+          <h2>{copy.title}</h2>
+          <p className={s.lead}>{copy.lead}</p>
+        </div>
+        <dl className={s.stats}>
+          {copy.stats.map((x) => (
+            <div key={x.label}>
+              <dt>{x.value}</dt>
+              <dd>{x.label}</dd>
+            </div>
+          ))}
+        </dl>
       </header>
 
-      <div className={s.grid}>
-        <div className={s.pickers}>
-          {panel('major')}
-          {electives.length > 1 && panel('minor')}
-        </div>
-
-        <aside className={s.profile} aria-live="polite">
-          <p className={s.kicker}>Synergy profile</p>
-          <div className={s.profileHead}>
-            <h3>
-              {a}
-              {electives.length > 1 && <> + {b}</>}
-            </h3>
-            <span className={s.demand}>High demand</span>
-          </div>
-
-          <p className={s.label}>Job market strategic advantage</p>
-          <p className={s.body}>
-            {electives.length > 1
-              ? `Pairing ${a} with ${b} gives you depth in one discipline and range in another, making you a stronger fit for roles that cut across both areas.`
-              : `${a} builds focused depth for roles in this area.`}
-          </p>
-
-          <p className={s.label}>Prime target job roles</p>
-          <ul className={s.roles}>
-            <li>{a} Manager</li>
-            {electives.length > 1 && <li>{b} Specialist</li>}
-            {electives.length > 1 && (
-              <li>
-                {a} &amp; {b} Consultant
-              </li>
-            )}
-            <li>Program Lead – {a}</li>
+      <div className={s.builder} id="architect">
+        <section className={s.pick} aria-labelledby="architect-pick">
+          <h3 id="architect-pick">{copy.buildTitle}</h3>
+          <p className={s.hint}>{copy.buildHint}</p>
+          <ul className={s.options}>
+            {electives.map((e, i) => {
+              const n = picked.indexOf(i);
+              const on = n >= 0;
+              const locked = full && !on;
+              return (
+                <li key={e.name}>
+                  <label className={`${s.opt} ${on ? s.on : ''} ${locked ? s.locked : ''}`}>
+                    <input type="checkbox" checked={on} disabled={locked} onChange={() => toggle(i)} />
+                    <span className={s.box} aria-hidden="true">
+                      {on ? n + 1 : ''}
+                    </span>
+                    <span className={s.name}>{e.name}</span>
+                  </label>
+                </li>
+              );
+            })}
           </ul>
-
-          <div className={s.meta}>
-            <div>
-              <span>Target hiring sectors</span>
-              <b>{sectors.slice(0, 4).join(', ')}</b>
-            </div>
-            <div>
-              <span>Your selection</span>
-              <b>
-                {a} (Major){electives.length > 1 && <>, {b} (Minor)</>}
-              </b>
-            </div>
+          <div className={s.foot}>
+            <span aria-live="polite">{picked.length} of 2 selected</span>
+            <button type="button" onClick={() => setPicked([])} disabled={!picked.length}>
+              Clear selection
+            </button>
           </div>
+        </section>
 
-          <button type="button" className={s.cta} onClick={() => open(programCode)}>
-            Lock this combination in your application
-          </button>
+        <aside className={s.result} aria-live="polite">
+          <p className={s.kicker}>Your dual specialisation</p>
+          <h3>{chosen.length === 2 ? `Online ${programName} in ${chosen[0].name} & ${chosen[1].name}` : `Online ${programName} with Dual Specialisation`}</h3>
+          <div className={s.pair}>
+            {[0, 1].map((slot) => {
+              const e = chosen[slot];
+              return e ? (
+                <div key={e.name} className={s.sel}>
+                  <b>{e.name}</b>
+                  {e.blurb && <p>{e.blurb}</p>}
+                </div>
+              ) : (
+                <div key={slot} className={`${s.sel} ${s.empty}`}>
+                  <b>Choose a specialisation</b>
+                  <p>Tick {slot === 0 ? 'your first' : 'one more'} from the list.</p>
+                </div>
+              );
+            })}
+          </div>
+          <ArrowLink variant="outline" className={s.cta} onClick={() => open(programCode)}>
+            {copy.cta}
+          </ArrowLink>
         </aside>
+      </div>
+
+      <ul className={s.benefits}>
+        {copy.benefits.map((b) => (
+          <li key={b.title}>
+            <Benefit {...b} />
+          </li>
+        ))}
+      </ul>
+      <div className={s.benefitsMobile}>
+        <CardSlider label="Benefits of a dual specialisation" slideWidth="78%" items={copy.benefits.map((b) => <Benefit key={b.title} {...b} />)} />
       </div>
     </div>
   );

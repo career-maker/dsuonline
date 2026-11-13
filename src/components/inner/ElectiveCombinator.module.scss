@@ -1,23 +1,30 @@
 @use 'tokens' as *;
 @use 'mixins' as *;
 
-// Site look: light band, white cards, brand-blue selection, navy profile card (same family as the career flip cards)
+$edge: #d3e1ec;
+$ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
 .wrap {
-  color: $ink;
+  min-width: 0;
+  letter-spacing: -0.0175em;
 }
 
+// ---------- header: title + lead on the left, three numbers on the right
 .head {
-  max-width: 900px;
-  margin: 0 0 clamp(24px, #{u(42)}, 42px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(24px, #{u(90)}, 100px);
+  align-items: end;
+  margin-bottom: clamp(26px, #{u(48)}, 52px);
 
   h2 {
-    margin-top: clamp(6px, #{u(8)}, 8px);
     @include h2;
-    text-wrap: balance;
+    margin-top: clamp(6px, #{u(8)}, 8px);
   }
 
-  .accent {
-    color: $blue;
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 }
 
@@ -26,296 +33,345 @@
 }
 
 .lead {
-  max-width: 760px;
-  margin-top: clamp(14px, #{u(20)}, 20px);
   @include body-text;
+  max-width: 44em;
+  margin-top: clamp(14px, #{u(20)}, 20px);
 }
 
-.grid {
+.stats {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(16px, #{u(28)}, 28px);
-  align-items: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+
+  > div {
+    padding: 4px clamp(12px, #{u(24)}, 24px);
+    border-left: 1px solid $edge;
+  }
+
+  dt {
+    font-size: clamp(36px, #{u(64)}, 64px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: $blue;
+  }
+
+  dd {
+    margin: 8px 0 0;
+    font-size: clamp(13px, #{u(16)}, 16px);
+    line-height: 1.35;
+    color: $body;
+  }
+}
+
+// ---------- builder: one selection box + the live result
+.builder {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid $edge;
+  border-radius: 20px;
+  background: #fff;
 
   @include down($bp-lg) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
-.pickers {
-  display: grid;
-  gap: clamp(16px, #{u(24)}, 24px);
-  min-width: 0;
-}
-
-.panel {
-  padding: clamp(18px, #{u(30)}, 30px);
-  border: 1px solid #dfe6f2;
-  border-radius: 18px;
-  background: #fff;
-  box-shadow: 0 8px 26px rgb(2 9 102 / 6%);
-}
-
-.panelHead {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px 16px;
-  margin-bottom: 18px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #e6eaf4;
+.pick {
+  padding: clamp(22px, #{u(40)}, 44px);
 
   h3 {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: fs(24, 19px);
-    line-height: 1.2;
-    font-weight: 700;
-    letter-spacing: -0.015em;
+    font-size: clamp(20px, #{u(28)}, 28px);
+    font-weight: 600;
     color: $ink;
   }
+}
 
-  p {
-    font-size: 14.5px;
-    color: $body;
+.hint {
+  margin-top: 6px;
+  font-size: clamp(14px, #{u(17)}, 17px);
+  line-height: 1.5;
+  color: $body;
+}
 
-    b {
-      font-weight: 600;
-      color: $blue;
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(14px, #{u(28)}, 28px);
+  margin-top: clamp(16px, #{u(26)}, 26px);
+  padding: 0;
+  list-style: none;
+
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
+  }
+
+  li {
+    border-top: 1px solid $edge;
+  }
+}
+
+// a whole row is the click target; the real checkbox stays in the DOM for keyboards and screen readers
+.opt {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 56px;
+  padding: 10px 6px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    cursor: inherit;
+  }
+
+  &:has(input:focus-visible) {
+    outline: 2px solid $logo-blue;
+    outline-offset: -2px;
+  }
+
+  @media (hover: hover) {
+    &:hover:not(.locked) {
+      background: $bg-card-sky;
+
+      .box {
+        border-color: $blue;
+      }
+
+      .name {
+        transform: translateX(3px);
+      }
     }
   }
 }
 
-.no {
+.box {
   display: grid;
   flex: none;
   place-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: $blue;
-  font-size: 15px;
+  width: 26px;
+  height: 26px;
+  border: 1.5px solid #8fb3d0;
+  border-radius: 7px;
+  background: #fff;
+  font-size: 13px;
   font-weight: 700;
   color: #fff;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.35s $ease;
 }
 
-.noAlt {
-  background: $yellow;
-  color: $blue-dark;
-}
-
-.tiles {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr));
-  gap: 10px;
-}
-
-.tile {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4px;
-  min-height: 70px;
-  padding: 12px 14px;
-  border: 1px solid #dfe6f2;
-  border-radius: 12px;
-  background: #f5f7fd;
-  color: $ink;
-  font: inherit;
-  font-size: 15px;
+.name {
+  font-size: clamp(15px, #{u(19)}, 19px);
   font-weight: 500;
   line-height: 1.3;
-  text-align: left;
-  cursor: pointer;
-  transition: background-color 0.25s, border-color 0.25s, color 0.25s, box-shadow 0.25s, translate 0.25s;
-  @include focus-ring;
+  color: $ink;
+  transition: transform 0.3s $ease, color 0.25s;
+}
 
-  small {
-    font-size: 11.5px;
-    font-weight: 400;
-    color: $body;
-  }
-
-  &:hover:not(.taken) {
+.on {
+  .box {
     border-color: $blue;
-    background: #eaeefb;
-    translate: 0 -2px;
+    background: $blue;
+    transform: scale(1.06);
+  }
+
+  .name {
+    font-weight: 600;
+    color: $blue;
   }
 }
 
-.onMajor,
-.onMajor:hover {
-  border-color: $blue !important;
-  background: $blue !important;
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 10px 22px rgb(2 9 102 / 24%);
-}
-
-.onMinor,
-.onMinor:hover {
-  border-color: $yellow !important;
-  background: #fff6d3 !important;
-  color: $blue-dark;
-  font-weight: 600;
-  box-shadow: 0 10px 22px rgb(226 181 0 / 22%);
-}
-
-.taken {
-  opacity: 0.45;
+.locked {
   cursor: not-allowed;
+  opacity: 0.45;
 }
 
-// profile: brand navy card
-.profile {
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid $edge;
+  font-size: 14px;
+  color: $body;
+
+  button {
+    font-size: 14px;
+    font-weight: 600;
+    color: $blue;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+  }
+}
+
+// ---------- result panel (navy, same gradient as the programme hero)
+.result {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: clamp(20px, #{u(32)}, 32px);
-  border-radius: 18px;
-  background: linear-gradient(150deg, #01063f 0%, #020966 70%, #1a2394 100%);
+  padding: clamp(22px, #{u(40)}, 44px);
   color: #fff;
-  box-shadow: 0 18px 44px rgb(2 9 102 / 26%);
+  background: linear-gradient(135deg, #0b1f4d 30%, #102a66 70%, #1d4fc8 100%);
+
+  h3 {
+    margin-top: 10px;
+    font-size: clamp(22px, #{u(32)}, 32px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  > :last-child {
+    align-self: flex-start;
+    margin-top: auto;
+    max-width: 100%;
+  }
 }
 
 .kicker {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  @include eyebrow;
   color: $logo-yellow;
 }
 
-.profileHead {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 14px;
-  margin: 6px 0 8px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgb(255 255 255 / 18%);
-
-  h3 {
-    font-size: fs(32, 22px);
-    line-height: 1.15;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    text-wrap: balance;
-  }
-}
-
-.demand {
-  flex: none;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: $yellow;
-  font-size: 13px;
-  font-weight: 600;
-  color: $blue-dark;
-}
-
-.label {
-  margin-top: 14px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgb(255 255 255 / 68%);
-}
-
-.body {
-  margin-top: 6px;
-  font-size: 16px;
-  line-height: 1.6;
-  color: rgb(255 255 255 / 92%);
-}
-
-.roles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 8px 0 0;
-  padding: 0;
-  list-style: none;
-
-  li {
-    padding: 7px 13px;
-    border: 1px solid rgb(255 255 255 / 28%);
-    border-radius: 999px;
-    background: rgb(255 255 255 / 8%);
-    font-size: 14px;
-    line-height: 1.2;
-    font-weight: 500;
-  }
-}
-
-.meta {
+.pair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 20px;
-  padding-top: 18px;
-  border-top: 1px solid rgb(255 255 255 / 18%);
-
-  span {
-    display: block;
-    font-size: 13px;
-    color: rgb(255 255 255 / 66%);
-  }
-
-  b {
-    display: block;
-    margin-top: 4px;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.35;
-  }
+  gap: 0;
+  margin: clamp(18px, #{u(30)}, 30px) 0 clamp(20px, #{u(34)}, 34px);
 
   @include down($bp-sm) {
     grid-template-columns: 1fr;
   }
 }
 
-.cta {
-  margin-top: 22px;
-  padding: 15px 20px;
-  border: 0;
-  border-radius: 8px;
-  background: $yellow;
-  font: inherit;
-  font-size: 16px;
-  font-weight: 600;
-  color: $blue-dark;
-  cursor: pointer;
-  transition: filter 0.25s, translate 0.25s, box-shadow 0.25s;
-  @include focus-ring;
+.sel {
+  padding: 4px clamp(14px, #{u(26)}, 26px) 4px 0;
 
-  &:hover {
-    filter: brightness(1.06);
-    translate: 0 -2px;
-    box-shadow: 0 12px 26px rgb(0 0 0 / 25%);
+  & + & {
+    padding-left: clamp(14px, #{u(26)}, 26px);
+    border-left: 1px solid rgb(255 255 255 / 22%);
+
+    @include down($bp-sm) {
+      margin-top: 16px;
+      padding: 16px 0 0;
+      border-top: 1px solid rgb(255 255 255 / 22%);
+      border-left: 0;
+    }
+  }
+
+  b {
+    display: block;
+    font-size: clamp(17px, #{u(22)}, 22px);
+    font-weight: 600;
+  }
+
+  p {
+    margin-top: 8px;
+    font-size: clamp(13px, #{u(16)}, 16px);
+    line-height: 1.55;
+    color: rgb(255 255 255 / 80%);
   }
 }
 
-// phones: electives become compact wrapping chips so long lists (e.g. MCA) stay short
-@include down($bp-sm) {
-  .tiles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+.empty {
+  opacity: 0.6;
+}
+
+// ---------- benefits: four columns divided by hairlines (no boxes), a carousel on phones
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(28px, #{u(48)}, 52px);
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 0 clamp(14px, #{u(28)}, 28px);
+    border-left: 1px solid $edge;
   }
 
-  .tile {
-    min-height: 0;
-    padding: 9px 14px;
-    border-radius: 999px;
-    font-size: 14px;
-    text-align: center;
+  li:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
 
-    small {
-      display: none;
+  @include down($bp-lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 28px;
+
+    li:nth-child(odd) {
+      padding-left: 0;
+      border-left: 0;
     }
   }
+
+  @include down($bp-sm) {
+    display: none;
+  }
+}
+
+.benefitsMobile {
+  display: none;
+  margin-top: 26px;
+
+  @include down($bp-sm) {
+    display: block;
+  }
+}
+
+.benefit {
+  svg {
+    color: $logo-blue;
+    transition: transform 0.4s $ease;
+  }
+
+  h3 {
+    margin-top: 14px;
+    font-size: clamp(17px, #{u(21)}, 21px);
+    font-weight: 600;
+    color: $ink;
+  }
+
+  p {
+    margin-top: 6px;
+    font-size: clamp(14px, #{u(16)}, 16px);
+    line-height: 1.55;
+    color: $body;
+  }
+
+  @media (hover: hover) {
+    &:hover svg {
+      transform: translateY(-4px);
+    }
+  }
+
+  // inside the phone carousel the benefit is a bordered card
+  :global(.swiper-slide) & {
+    height: 100%;
+    padding: 18px;
+    border: 1px solid $edge;
+    border-radius: 14px;
+    background: #fff;
+  }
+}
+
+// the long counsellor label may wrap on narrow screens instead of running off the panel
+.cta {
+  height: auto;
+  min-height: 50px;
+  padding-block: 14px;
+  text-align: left;
+  white-space: normal;
+  line-height: 1.3;
 }
