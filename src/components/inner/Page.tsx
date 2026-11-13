@@ -25,6 +25,8 @@ import { ProgramHero } from './ProgramHero';
 import { ProgramAdvantage } from './ProgramAdvantage';
 import { ProgramAbout } from './ProgramAbout';
 import { ProgramFees } from './ProgramFees';
+import { ProgramCurriculum } from './ProgramCurriculum';
+import { buildCurriculum } from './curriculumData';
 import { advantageLead, dualCopy } from '@/data/programme-advantage';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Faq } from '@/components/sections/home/Faq';
@@ -893,6 +895,20 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
 
     // --- curriculum tabs
     if (/curriculum/i.test(title) && all.some((b) => b.t === 'table')) {
+      if (programLinks) {
+        // programme pages: semester menu + electives dropdown (see curriculumData.ts)
+        const data = buildCurriculum(
+          all.filter((b): b is Extract<Block, { t: 'table' }> => b.t === 'table').map((b) => b.rows),
+          programLinks.map((x) => x.name),
+          slug.replace(/^online-/, ''),
+        );
+        nodes.push(
+          <Sec key={key} tone={nextTone()} title={title} id="curriculum">
+            <ProgramCurriculum {...data} />
+          </Sec>,
+        );
+        continue;
+      }
       nodes.push(
         <Sec key={key} tone={(nextTone(), 'blue')} title={title} id="curriculum">
           {curriculum(sec)}
