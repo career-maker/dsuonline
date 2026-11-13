@@ -121,30 +121,86 @@
   max-width: 40em;
 }
 
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(20px, #{u(48)}, 48px);
   margin-top: clamp(22px, #{u(34)}, 34px);
   padding: 0;
   list-style: none;
 
-  li {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 9px 16px 9px 12px;
-    border: 1px solid #cfe3f1;
-    border-radius: 999px;
-    background: $bg-card-sky;
-    font-size: clamp(13px, #{u(16)}, 16px);
-    font-weight: 500;
-    line-height: 1.2;
-    color: $blue;
+  @include down($bp-sm) {
+    grid-template-columns: 1fr;
   }
 
-  svg {
-    flex: none;
-    color: $logo-blue;
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: clamp(10px, #{u(14)}, 14px) 0;
+    cursor: default;
+
+    // hairline rule that draws itself left to right on hover
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+    }
+
+    &::before {
+      right: 0;
+      background: #dbe5ee;
+    }
+
+    &::after {
+      width: 100%;
+      background: $logo-blue;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+  }
+}
+
+.tick {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid $logo-blue;
+  border-radius: 50%;
+  color: $logo-blue;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.label {
+  font-size: clamp(15px, #{u(19)}, 19px);
+  font-weight: 500;
+  line-height: 1.3;
+  color: $ink;
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), color 0.3s ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .points li:hover {
+    &::after {
+      transform: scaleX(1);
+    }
+
+    .tick {
+      background: $logo-blue;
+      color: #fff;
+      transform: scale(1.12) rotate(-8deg);
+    }
+
+    .label {
+      transform: translateX(4px);
+      color: $blue;
+    }
   }
 }
