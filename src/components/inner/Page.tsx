@@ -28,6 +28,8 @@ import { ProgramFees } from './ProgramFees';
 import { ProgramCurriculum } from './ProgramCurriculum';
 import { ProgramFaculty } from './ProgramFaculty';
 import { ProgramLearning } from './ProgramLearning';
+import { ProgramEligibility } from './ProgramEligibility';
+import { ProgramGuidance } from './ProgramGuidance';
 import { buildCurriculum } from './curriculumData';
 import { advantageLead, dualCopy } from '@/data/programme-advantage';
 import { FramedImage } from '@/components/ui/FramedImage';
@@ -942,18 +944,32 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     // --- learning system (sub-headings become cards)
     if (/learning system/i.test(title) && sec.subs.length >= 2) {
       if (programLinks) {
-        const items = sec.subs.map((x) => {
+        // eligibility is its own section right after this one (see below), so it is not a tab here
+        const learnSubs = sec.subs.filter((x) => !/eligib/i.test(x.title));
+        const eligSubHere = sec.subs.find((x) => /eligib/i.test(x.title));
+        const eligText = eligibility?.text ?? eligSubHere?.blocks.filter(isP).map((b) => b.x).join(' ');
+        const items = learnSubs.map((x) => {
           const ps = x.blocks.filter(isP).map((b) => b.x);
           const list = x.blocks.filter((b): b is Extract<Block, { t: 'ul' }> => b.t === 'ul').flatMap((b) => b.items);
           const subIdx = ps.findIndex((p) => /^\(.*\)$/.test(p.trim()));
           const sub = subIdx >= 0 ? ps[subIdx].trim().replace(/^\(|\)$/g, '') : undefined;
           return { title: x.title, sub, list: list.length ? list : undefined, text: list.length ? undefined : ps.filter((_, i) => i !== subIdx).join(' ') };
         });
-        // "Eligibility Overview" belongs to the learning system when the page lists it as its own section
-        if (eligibility?.text && !items.some((i) => /eligib/i.test(i.title))) items.push({ title: eligibility.title, sub: undefined, list: undefined, text: eligibility.text });
         nodes.push(
           <Sec key={key} tone={nextTone()} id={slugify(title)}>
             <ProgramLearning eyebrow={headFor(title).eyebrow} title={headFor(title).title ?? title} intro={sec.blocks.filter(isP).map((b) => b.x).filter((x) => x.length > 40)} items={items} />
+          </Sec>,
+        );
+        if (eligText) {
+          nodes.push(
+            <Sec key={`${key}-elig`} tone="sky" id="eligibility">
+              <ProgramEligibility name={progShortName} text={eligText} />
+            </Sec>,
+          );
+        }
+        nodes.push(
+          <Sec key={`${key}-guidance`} tone="white" compact id="admission-guidance">
+            <ProgramGuidance name={progShortName} code={slug.replace(/^online-/, '')} degree={/^(mba|mca)$/.test(slug.replace(/^online-/, '')) ? "Master's degree" : "Bachelor's degree"} dual={!!facts?.find((f) => /^elective$/i.test(f.label)) && !!dualCopy[slug]} />
           </Sec>,
         );
         continue;

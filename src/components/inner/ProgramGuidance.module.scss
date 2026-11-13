@@ -1,0 +1,141 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+$ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(26px, #{u(70)}, 80px);
+  align-items: center;
+  padding: clamp(24px, #{u(64)}, 70px);
+  border-radius: clamp(18px, #{u(28)}, 28px);
+  color: #fff;
+  background: linear-gradient(120deg, #0b1f4d 25%, #102a66 70%, #1d4fc8 100%);
+  letter-spacing: -0.0175em;
+
+  @include down($bp-lg) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+
+.eyebrow {
+  @include eyebrow;
+  color: $logo-yellow;
+}
+
+.copy h2 {
+  @include h2;
+  margin-top: clamp(8px, #{u(12)}, 12px);
+  color: #fff;
+}
+
+.lead {
+  max-width: 30em;
+  margin-top: clamp(14px, #{u(22)}, 22px);
+  font-size: clamp(15px, #{u(19)}, 19px);
+  line-height: 1.6;
+  color: rgb(255 255 255 / 84%);
+}
+
+.points {
+  display: grid;
+  gap: 12px;
+  margin: clamp(18px, #{u(30)}, 30px) 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: clamp(15px, #{u(18)}, 18px);
+    font-weight: 500;
+  }
+
+  svg {
+    flex: none;
+    box-sizing: content-box;
+    padding: 6px;
+    border-radius: 50%;
+    background: rgb(34 195 230 / 22%);
+    color: #22c3e6;
+  }
+}
+
+// ---------- right: photo with the topic card laid over its lower edge
+.side {
+  display: grid;
+  min-width: 0;
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  border-radius: 18px 18px 0 0;
+  background: #102a66;
+}
+
+.img {
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
+.card {
+  padding: clamp(18px, #{u(28)}, 28px);
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 0 0 18px 18px;
+  background: rgb(255 255 255 / 8%);
+
+  h3 {
+    font-size: clamp(16px, #{u(20)}, 20px);
+    font-weight: 600;
+  }
+
+  > p {
+    margin-top: 14px;
+    font-size: clamp(13px, #{u(16)}, 16px);
+    line-height: 1.55;
+    color: rgb(255 255 255 / 80%);
+  }
+}
+
+// topics are plain tags: the counsellor covers them all, nothing to pick
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 7px 14px;
+    border: 1px solid rgb(255 255 255 / 30%);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 22px;
+  margin-top: 18px;
+
+  a {
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.25s;
+
+    &:hover {
+      text-decoration-color: currentcolor;
+    }
+  }
+}

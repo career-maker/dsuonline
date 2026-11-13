@@ -1,0 +1,102 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+$edge: #cfe3f1;
+
+.wrap {
+  letter-spacing: -0.0175em;
+}
+
+.head {
+  margin-bottom: clamp(22px, #{u(40)}, 40px);
+
+  h2 {
+    @include h2;
+    margin-top: clamp(6px, #{u(8)}, 8px);
+  }
+}
+
+.eyebrow {
+  @include eyebrow;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: clamp(16px, #{u(28)}, 30px);
+  align-items: stretch;
+
+  @include down($bp-lg) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+// next-step card: same navy gradient as the programme hero
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 14px;
+  padding: clamp(24px, #{u(44)}, 44px);
+  border-radius: 20px;
+  color: #fff;
+  background: linear-gradient(135deg, #0b1f4d 30%, #102a66 65%, #1d4fc8 100%);
+
+  h3 {
+    font-size: clamp(22px, #{u(32)}, 32px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    max-width: 26em;
+    font-size: clamp(14px, #{u(17)}, 17px);
+    line-height: 1.55;
+    color: rgb(255 255 255 / 82%);
+  }
+
+  > :last-child {
+    margin-top: 8px;
+  }
+
+  @include down($bp-lg) {
+    justify-content: flex-start;
+  }
+}
+
+// criteria: icon-led rows split by hairlines, no boxes
+.points {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(8px, #{u(14)}, 14px) clamp(20px, #{u(40)}, 40px);
+  border: 1px solid $edge;
+  border-radius: 20px;
+  background: #fff;
+  list-style: none;
+  margin: 0;
+
+  li {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 18px;
+    padding: clamp(16px, #{u(26)}, 26px) 0;
+
+    & + li {
+      border-top: 1px solid $edge;
+    }
+  }
+
+  svg {
+    margin-top: 3px;
+    color: $logo-blue;
+  }
+
+  p {
+    font-size: clamp(15px, #{u(19)}, 19px);
+    line-height: 1.6;
+    color: $ink;
+  }
+}
