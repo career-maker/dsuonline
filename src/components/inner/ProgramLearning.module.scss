@@ -1,0 +1,225 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+$edge: #d9e4ee;
+$ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+.wrap {
+  letter-spacing: -0.0175em;
+}
+
+.head {
+  margin-bottom: clamp(24px, #{u(44)}, 44px);
+
+  h2 {
+    @include h2;
+    margin-top: clamp(6px, #{u(8)}, 8px);
+  }
+}
+
+.eyebrow {
+  @include eyebrow;
+}
+
+.intro {
+  @include body-text;
+  max-width: 62em;
+  margin-top: clamp(14px, #{u(20)}, 20px);
+}
+
+// ---------- tabs + content on the left, photo on the right
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(24px, #{u(64)}, 70px);
+  align-items: stretch;
+
+  @include down($bp-lg) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+}
+
+.left {
+  min-width: 0;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: clamp(10px, #{u(16)}, 16px);
+
+  @include down($bp-sm) {
+    display: none;
+  }
+}
+
+.tabsMobile {
+  display: none;
+
+  @include down($bp-sm) {
+    display: block;
+  }
+}
+
+// tab card: names only (title + the short bracket line), the content opens below
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  padding: clamp(14px, #{u(20)}, 20px);
+  border: 1px solid $edge;
+  border-radius: 14px;
+  background: #fff;
+  font: inherit;
+  text-align: left;
+  color: $ink;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, color 0.3s, transform 0.4s $ease, box-shadow 0.4s $ease;
+  @include focus-ring;
+
+  svg {
+    margin-bottom: 8px;
+    color: $logo-blue;
+    transition: color 0.3s;
+  }
+
+  b {
+    font-size: clamp(16px, #{u(20)}, 20px);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  small {
+    font-size: 13px;
+    line-height: 1.35;
+    color: $body;
+    transition: color 0.3s;
+  }
+
+  @media (hover: hover) {
+    &:hover:not(.on) {
+      border-color: #8fb3d0;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.on {
+  border-color: $blue;
+  background: $blue;
+  color: #fff;
+  box-shadow: 0 14px 30px rgb(2 9 102 / 22%);
+
+  svg {
+    color: $logo-yellow;
+  }
+
+  small {
+    color: rgb(255 255 255 / 78%);
+  }
+}
+
+// the opened tab
+.panel {
+  margin-top: clamp(16px, #{u(26)}, 26px);
+  padding: clamp(20px, #{u(32)}, 32px);
+  border-radius: 16px;
+  background: $bg-card-sky;
+  animation: rise 0.45s $ease both;
+
+  h3 {
+    font-size: clamp(20px, #{u(28)}, 28px);
+    font-weight: 600;
+    color: $ink;
+  }
+
+  ul {
+    display: grid;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    padding-left: 26px;
+    font-size: clamp(15px, #{u(18)}, 18px);
+    line-height: 1.55;
+    color: $body;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.5em;
+      left: 2px;
+      width: 12px;
+      height: 6px;
+      border-bottom: 2px solid $logo-blue;
+      border-left: 2px solid $logo-blue;
+      transform: rotate(-45deg) translateY(-50%);
+    }
+  }
+}
+
+.sub {
+  margin-top: 4px;
+  font-size: 14px;
+  color: $logo-blue;
+  font-weight: 500;
+}
+
+.text {
+  margin-top: 14px;
+  font-size: clamp(15px, #{u(18)}, 18px);
+  line-height: 1.6;
+  color: $body;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    animation: none;
+  }
+}
+
+// ---------- photo: all five stacked, the active one fades in
+.photo {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: $bg-sky;
+  box-shadow: 0 22px 50px rgb(2 9 102 / 12%);
+
+  @include down($bp-lg) {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.img {
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.22); // some source photos carry black bars on the edges; this crops them out
+  transition: opacity 0.6s ease;
+}
+
+.shown {
+  opacity: 1;
+}

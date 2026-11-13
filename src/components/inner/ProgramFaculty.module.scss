@@ -1,0 +1,116 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+$ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+// fixed small cards, centred, so three or five faculty look equally deliberate
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(14px, #{u(24)}, 26px);
+  padding: 0;
+  list-style: none;
+
+  li {
+    width: min(100%, 260px);
+  }
+
+  @include down($bp-sm) {
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
+
+  @include down($bp-sm) {
+    display: block;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: clamp(22px, #{u(30)}, 30px) clamp(16px, #{u(22)}, 22px) clamp(22px, #{u(28)}, 28px);
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: $bg-card-sky;
+  text-align: center;
+  transition: transform 0.45s $ease, box-shadow 0.45s $ease, border-color 0.45s, background 0.45s;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-6px);
+      border-color: #cfe3f1;
+      background: #fff;
+      box-shadow: 0 18px 40px rgb(0 40 80 / 12%);
+
+      .photo {
+        box-shadow: 0 0 0 2px $logo-blue, 0 8px 20px rgb(2 9 102 / 18%);
+      }
+
+      .img {
+        transform: scale(1.06);
+      }
+    }
+  }
+}
+
+// round photo: cover + a top-weighted crop keeps faces in frame whatever the source ratio
+.photo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(112px, #{u(140)}, 140px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #dfeaf4;
+  box-shadow: 0 0 0 2px #cfe3f1, 0 6px 16px rgb(2 9 102 / 10%);
+  transition: box-shadow 0.45s $ease;
+}
+
+.img {
+  object-fit: cover;
+  object-position: 50% 18%;
+  transition: transform 0.7s $ease;
+}
+
+.initials {
+  font-size: 34px;
+  font-weight: 700;
+  color: $blue;
+}
+
+// three levels, three looks: name (bold, dark, large) / degrees (light, grey, small) / job title (caps, blue, tracked)
+.name {
+  margin-top: clamp(14px, #{u(20)}, 20px);
+  font-size: clamp(18px, #{u(22)}, 22px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: $ink;
+}
+
+.creds {
+  margin-top: 8px;
+  font-size: clamp(13px, #{u(15)}, 15px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: $body;
+}
+
+.role {
+  margin-top: auto;
+  padding-top: 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $logo-blue;
+}

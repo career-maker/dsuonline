@@ -26,6 +26,8 @@ import { ProgramAdvantage } from './ProgramAdvantage';
 import { ProgramAbout } from './ProgramAbout';
 import { ProgramFees } from './ProgramFees';
 import { ProgramCurriculum } from './ProgramCurriculum';
+import { ProgramFaculty } from './ProgramFaculty';
+import { ProgramLearning } from './ProgramLearning';
 import { buildCurriculum } from './curriculumData';
 import { advantageLead, dualCopy } from '@/data/programme-advantage';
 import { FramedImage } from '@/components/ui/FramedImage';
@@ -921,7 +923,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (/faculty/i.test(title) && sec.subs.some((x) => x.blocks.some((b) => b.t === 'img'))) {
       nodes.push(
         <Sec key={key} tone={nextTone()} title={title}>
-          {faculty(sec)}
+          {programLinks ? <ProgramFaculty items={sec.subs.map((x) => ({ name: x.title, creds: x.blocks.filter(isP)[0]?.x, role: x.blocks.filter(isP)[1]?.x, img: x.blocks.find((b) => b.t === 'img') ? imgOf(x.blocks.find((b) => b.t === 'img')!) : undefined }))} /> : faculty(sec)}
         </Sec>,
       );
       continue;
@@ -939,6 +941,23 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
 
     // --- learning system (sub-headings become cards)
     if (/learning system/i.test(title) && sec.subs.length >= 2) {
+      if (programLinks) {
+        const items = sec.subs.map((x) => {
+          const ps = x.blocks.filter(isP).map((b) => b.x);
+          const list = x.blocks.filter((b): b is Extract<Block, { t: 'ul' }> => b.t === 'ul').flatMap((b) => b.items);
+          const subIdx = ps.findIndex((p) => /^\(.*\)$/.test(p.trim()));
+          const sub = subIdx >= 0 ? ps[subIdx].trim().replace(/^\(|\)$/g, '') : undefined;
+          return { title: x.title, sub, list: list.length ? list : undefined, text: list.length ? undefined : ps.filter((_, i) => i !== subIdx).join(' ') };
+        });
+        // "Eligibility Overview" belongs to the learning system when the page lists it as its own section
+        if (eligibility?.text && !items.some((i) => /eligib/i.test(i.title))) items.push({ title: eligibility.title, sub: undefined, list: undefined, text: eligibility.text });
+        nodes.push(
+          <Sec key={key} tone={nextTone()} id={slugify(title)}>
+            <ProgramLearning eyebrow={headFor(title).eyebrow} title={headFor(title).title ?? title} intro={sec.blocks.filter(isP).map((b) => b.x).filter((x) => x.length > 40)} items={items} />
+          </Sec>,
+        );
+        continue;
+      }
       nodes.push(
         <Sec key={key} tone={nextTone()} title={title}>
           {learningCards(sec, eligibility)}
