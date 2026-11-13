@@ -1,11 +1,11 @@
 {
   "0": "InnerPage.tsx",
   "1": "Kit.tsx",
-  "2": "icons.tsx",
+  "2": "layout.tsx",
   "3": "scrape.py",
-  "4": "ArrowLink",
+  "4": "EnquiryModal.tsx",
   "5": "package.json",
-  "6": "Testimonial.tsx",
+  "6": "ArrowLink",
   "7": "compilerOptions",
   "8": "international-learners/page.tsx",
   "9": "DSU Online — CHECKPOINT (read this first in any new session)",
@@ -21,10 +21,15 @@
   "19": "specViews",
   "20": "AdmissionSteps.tsx",
   "21": "ProgramAdvantage.tsx",
-  "22": "renderSeg",
+  "22": "next",
   "23": "FeeTabs.tsx",
   "24": "server.js",
   "25": "not-found.tsx",
-  "26": "section-heads.ts",
-  "27": "next"
+  "26": "withEyebrow",
+  "27": "home.ts",
+  "28": "app/page.tsx",
+  "29": "site.ts",
+  "30": "FacultyArticles.tsx",
+  "31": "CareerFlip.tsx",
+  "32": "EmiCalculator.tsx"
 }

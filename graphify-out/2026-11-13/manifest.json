@@ -1,8 +1,8 @@
 {
   "deploy.py": {
-    "mtime": 1794488360.2050774,
-    "seen": 1794544560.128725,
-    "ast_hash": "ec7d3415dd6000ef022c998a196cdc2b",
+    "mtime": 1794544641.7637143,
+    "seen": 1794547776.2911582,
+    "ast_hash": "c6ad88116c05cad97d028161bae7095a",
     "semantic_hash": ""
   },
   "eslint.config.mjs": {
@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1794487137.442676,
-    "seen": 1794487259.785423,
-    "ast_hash": "3dab40704e7bf0624002bd5dad160579",
+    "mtime": 1794547432.4170165,
+    "seen": 1794547776.291243,
+    "ast_hash": "5380ef4d07a2917ea96111e564960559",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794488057.7136405,
-    "seen": 1794544560.1289437,
-    "ast_hash": "bb5a1c38b211366852052fe3c18fdafe",
+    "mtime": 1794544560.777273,
+    "seen": 1794547776.291396,
+    "ast_hash": "5c7e03ab671c6020586a41d7104bb6ef",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -663,6 +663,18 @@
     "mtime": 1794544297.3376298,
     "seen": 1794544560.1287973,
     "ast_hash": "2f7afaa4fe84c7b18218a25c0aa738c8",
+    "semantic_hash": ""
+  },
+  "src/components/inner/ProgramAdvantage.tsx": {
+    "mtime": 1794547426.2614224,
+    "seen": 1794547776.291247,
+    "ast_hash": "5a249267a06a032c77acf94e0ebeff4c",
+    "semantic_hash": ""
+  },
+  "src/data/programme-advantage.ts": {
+    "mtime": 1794547426.0748768,
+    "seen": 1794547776.2913523,
+    "ast_hash": "b23c7999f8fed8ad791d7cf45d6f1e51",
     "semantic_hash": ""
   }
 }

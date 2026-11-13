@@ -1,0 +1,17 @@
+@use 'tokens' as *;
+
+.slider {
+  // room under the track for the dots; sides bleed to the screen edge so the next card peeks in
+  padding-bottom: 34px;
+  overflow: visible;
+  --swiper-pagination-color: #{$logo-blue};
+  --swiper-pagination-bullet-inactive-color: #9db2c6;
+  --swiper-pagination-bullet-inactive-opacity: 0.5;
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bottom: 4px;
+}
+
+.slide {
+  width: var(--slide-w, 72%);
+  height: auto;
+}

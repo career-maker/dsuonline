@@ -72,18 +72,15 @@ $edge: #e3eaf1;
     color: $ink;
   }
 
-  a {
-    margin-top: 4px;
-    font-weight: 600;
-    color: $blue;
-
-    &:hover {
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
+  // same button as the hero's Apply Now (ArrowLink), blue on white
+  a.combo {
+    margin-top: 8px;
+    background: #2338e8;
+    color: #fff;
   }
 }
 
+// desktop / tablet: grid. phones: the same cards in a Swiper carousel (see CardSlider)
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
@@ -91,45 +88,38 @@ $edge: #e3eaf1;
   padding: 0;
   list-style: none;
 
-  li {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    padding: clamp(18px, #{u(26)}, 26px);
-    border: 1px solid $edge;
-    border-radius: 16px;
-    background: #fff;
-    transition: border-color 0.2s, transform 0.2s;
+  @include down($bp-sm) {
+    display: none;
+  }
+}
 
-    &:hover {
-      border-color: #b9d2ea;
-      transform: translateY(-3px);
-    }
+.mobileCards {
+  display: none;
+
+  @include down($bp-sm) {
+    display: block;
+    margin-top: 22px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  padding: clamp(18px, #{u(26)}, 26px);
+  border: 1px solid $edge;
+  border-radius: 16px;
+  background: #fff;
+  transition: border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    border-color: #b9d2ea;
+    transform: translateY(-3px);
   }
 
   .tile {
     margin-bottom: 14px;
-  }
-
-  @include down($bp-sm) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-
-    li {
-      padding: 14px;
-    }
-
-    .tile {
-      margin-bottom: 8px;
-    }
-
-    h3 {
-      font-size: 15px;
-    }
-
-    p {
-      font-size: 13px;
-    }
   }
 
   h3 {

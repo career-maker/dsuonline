@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { ArrowLink } from '@/components/ui/ArrowLink';
+import { CardSlider } from '@/components/ui/CardSlider';
 import { advantageBanner, advantageCards, type AdvantageCard } from '@/data/programme-advantage';
 import s from './ProgramAdvantage.module.scss';
 
@@ -14,6 +15,18 @@ const P: Record<AdvantageCard['icon'] | 'swap', string> = {
   growth: 'M3 17l6-6 4 4 8-8m0 0h-5m5 0v5',
   swap: 'M4 8h13l-3-3m6 11H7l3 3',
 };
+
+function Card({ c }: { c: AdvantageCard }) {
+  return (
+    <div className={s.card}>
+      <span className={s.tile}>
+        <Ico n={c.icon} />
+      </span>
+      <h3>{c.title}</h3>
+      <p>{c.text}</p>
+    </div>
+  );
+}
 
 function Ico({ n }: { n: keyof typeof P }) {
   return (
@@ -43,20 +56,21 @@ export function ProgramAdvantage({ name, lead, dual, bannerSrc }: { name: string
               </span>
               <h3>Dual Specialisation</h3>
               <p>{dual.text}</p>
-              <Link href={dual.href}>Build your combination &rarr;</Link>
+              <ArrowLink href={dual.href} className={s.combo}>
+                Build your combination
+              </ArrowLink>
             </div>
           )}
           <ul className={s.cards}>
             {advantageCards.map((c) => (
               <li key={c.title}>
-                <span className={s.tile}>
-                  <Ico n={c.icon} />
-                </span>
-                <h3>{c.title}</h3>
-                <p>{c.text}</p>
+                <Card c={c} />
               </li>
             ))}
           </ul>
+          <div className={s.mobileCards}>
+            <CardSlider label={`Why choose the Online ${name}`} items={advantageCards.map((c) => <Card key={c.title} c={c} />)} />
+          </div>
         </div>
       </section>
       <section className={s.bannerSec}>
