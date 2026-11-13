@@ -50,15 +50,6 @@ export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, 
             <span>{pill.text} &rarr;</span>
           </a>
         )}
-        <div className={s.ctas}>
-          <ArrowLink href={site.apply} external>
-            Apply Now
-          </ArrowLink>
-          <EnquireButton />
-          <ArrowLink href="/docs/dsu-online-brochure.pdf" download="DSU-Online-Brochure.pdf" variant="outline">
-            Download Brochure
-          </ArrowLink>
-        </div>
         <dl className={s.stats}>
           {stats.map((x) => (
             <div key={x.label}>
@@ -78,6 +69,15 @@ export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, 
             </li>
           ))}
         </ul>
+        <div className={s.ctas}>
+          <ArrowLink href={site.apply} external>
+            Apply Now
+          </ArrowLink>
+          <EnquireButton />
+          <ArrowLink href="/docs/dsu-online-brochure.pdf" download="DSU-Online-Brochure.pdf" variant="outline">
+            Download Brochure
+          </ArrowLink>
+        </div>
       </div>
     </section>
   );

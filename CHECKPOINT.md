@@ -225,3 +225,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - Anchors added: `#pair` (elective combinator), `#curriculum`.
 - 2026-11-12: ProgramHero keeps the programme photo on the right (fades into navy; photo on top on phones). User wanted photo kept, no extra card.
 - 2026-11-12: ProgramHero: title always 2 lines, hero = 100svh (fits all tested sizes 1920x1080 .. 320x568, above mobile bottom bar), eyebrow = site style (logo yellow, no dash). deploy.py now uploads only changed files (`.deploy-manifest.json`, gitignored), skips npm install unless package*.json changed, prints stage timings. Server-side `next build --webpack` is still the slowest stage.
+- 2026-11-13: ProgramHero buttons (Apply/Enquire/Brochure) moved under the 'at a glance' tiles.
