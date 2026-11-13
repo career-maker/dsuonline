@@ -23,6 +23,7 @@ import { StatNumber } from './StatNumber';
 import { CtaBand, InnerHero, type Crumb } from './InnerPage';
 import { ProgramHero } from './ProgramHero';
 import { ProgramAdvantage } from './ProgramAdvantage';
+import { ProgramAbout } from './ProgramAbout';
 import { advantageLead, dualCopy } from '@/data/programme-advantage';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Faq } from '@/components/sections/home/Faq';
@@ -46,7 +47,6 @@ import {
   QuoteCards,
   RoleGrid,
   StoryCards,
-  WhyProgram,
   Sec,
   Split,
   Steps,
@@ -1065,11 +1065,13 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const benefits = sec.blocks.filter(isP).filter((b) => b.x.length <= 90).map((b) => b.x);
       nodes.push(
         <Sec key={key} tone={nextTone()}>
-          <WhyProgram
+          <ProgramAbout
             title={title}
             paras={paras}
             items={benefits}
-            photo={<Pic img={{ src: `/images/inner/prog-${code}.webp`, alt: `Learner pursuing ${title.replace(/^why\s+|\?$/gi, '')}`, w: pw, h: ph }} sizes="(max-width: 900px) 100vw, 480px" className={s.cover} />}
+            photo={`/images/inner/prog-${code}.webp`}
+            inset="/images/learn/live-classes.webp"
+            alt={`Learner pursuing ${title.replace(/^why\s+|\?$/gi, '')}`}
           />
         </Sec>,
       );
@@ -1166,7 +1168,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           name={progShort}
           lead={advantageLead[slug] ?? `A flexible ${num(dur?.value)}-${/year/i.test(dur?.value ?? '') ? 'year' : 'month'} online programme with in-demand electives for learners across industries.`}
           dual={fv(/^elective$/i) && dualCopy[slug] ? { text: dualCopy[slug], href: '#pair' } : undefined}
-          bannerSrc="/images/why/why-bg.webp"
+          bannerSrc="/images/inner/advantage-banner.webp"
         />
       )}
       {longSub && slug === 'student-testimonials' && subtitle && (

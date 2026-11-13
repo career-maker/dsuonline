@@ -187,24 +187,32 @@ $edge: #dbe5ee;
 }
 
 .banner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  position: relative;
+  display: flex;
+  align-items: center;
   overflow: hidden;
+  min-height: clamp(320px, #{u(470)}, 470px);
   border-radius: clamp(18px, #{u(28)}, 28px);
   color: #fff;
-  background: $blue-dark;
+  background: linear-gradient(100deg, #0b1f4d 30%, #102a66 70%, #1d5bd8 100%);
 
+  // phones: photo on top dissolving downward, copy on the navy below it
   @include down($bp-md) {
-    grid-template-columns: 1fr;
+    display: block;
+    min-height: 0;
+    padding-top: min(52vw, 240px);
   }
 }
 
 .bannerCopy {
-  align-self: center;
+  position: relative;
+  z-index: 1;
+  max-width: min(100%, 52%);
   padding: clamp(28px, #{u(64)}, 70px);
 
   @include down($bp-md) {
-    order: 2;
+    max-width: none;
+    padding: 18px clamp(20px, 5vw, 32px) 28px;
   }
 }
 
@@ -242,21 +250,18 @@ $edge: #dbe5ee;
 }
 
 .bannerPhoto {
-  position: relative;
-  min-height: clamp(220px, #{u(430)}, 460px);
-  margin: clamp(10px, #{u(14)}, 14px) clamp(10px, #{u(14)}, 14px) clamp(10px, #{u(14)}, 14px) 0;
-  overflow: hidden;
-  border-radius: clamp(16px, #{u(110)}, 110px) clamp(14px, #{u(22)}, 22px) clamp(14px, #{u(22)}, 22px) clamp(16px, #{u(110)}, 110px);
+  position: absolute;
+  inset: 0 0 0 28%;
+  mask-image: linear-gradient(90deg, rgb(0 0 0 / 4%) 0%, rgb(0 0 0 / 25%) 12%, rgb(0 0 0 / 55%) 24%, rgb(0 0 0 / 85%) 36%, #000 46%);
 
   @include down($bp-md) {
-    order: 1;
-    min-height: 220px;
-    margin: 10px 10px 0;
-    border-radius: 16px;
+    inset: 0 0 auto;
+    height: min(62vw, 300px);
+    mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
   }
 }
 
 .bannerImg {
   object-fit: cover;
-  object-position: 62% 40%;
+  object-position: 55% 28%;
 }

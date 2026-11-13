@@ -1,0 +1,112 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(36px, #{u(100)}, 110px);
+  align-items: center;
+  letter-spacing: -0.0175em;
+
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+// ---------- photo pair: a tinted block sits behind the main photo, the second photo overlaps its corner
+.media {
+  position: relative;
+  max-width: 560px;
+  padding: 0 0 clamp(28px, #{u(48)}, 48px) clamp(14px, #{u(22)}, 22px);
+
+  @include down($bp-lg) {
+    max-width: 520px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: clamp(14px, #{u(22)}, 22px);
+    bottom: clamp(48px, #{u(70)}, 70px);
+    left: 0;
+    width: 62%;
+    border-radius: 20px;
+    background: $bg-sky;
+  }
+}
+
+.main {
+  position: relative;
+  aspect-ratio: 538 / 522;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: clamp(-14px, #{u(-22)}, -22px) 0 0;
+  box-shadow: 0 24px 50px rgb(2 9 102 / 12%);
+}
+
+.img {
+  object-fit: cover;
+}
+
+.second {
+  position: absolute;
+  right: clamp(-6px, #{u(-24)}, -24px);
+  bottom: 0;
+  width: 40%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: clamp(4px, #{u(7)}, 7px) solid #fff;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgb(2 9 102 / 16%);
+
+  @include down($bp-sm) {
+    right: -4px;
+  }
+}
+
+// ---------- copy
+.eyebrow {
+  @include eyebrow;
+}
+
+.copy h2 {
+  @include h2;
+  margin-top: clamp(6px, #{u(8)}, 8px);
+}
+
+.para {
+  @include body-text;
+  margin-top: clamp(14px, #{u(20)}, 20px);
+  max-width: 40em;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: clamp(22px, #{u(34)}, 34px);
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px 9px 12px;
+    border: 1px solid #cfe3f1;
+    border-radius: 999px;
+    background: $bg-card-sky;
+    font-size: clamp(13px, #{u(16)}, 16px);
+    font-weight: 500;
+    line-height: 1.2;
+    color: $blue;
+  }
+
+  svg {
+    flex: none;
+    color: $logo-blue;
+  }
+}

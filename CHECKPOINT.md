@@ -230,3 +230,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - 2026-11-13: added dep swiper; src/components/ui/CardSlider.tsx (Swiper, drag-follow) used for advantage cards on phones. Dual 'Build your combination' = ArrowLink blue. Old carousels not yet migrated to Swiper.
 - 2026-11-13: ProgramAdvantage redesigned (not a copy of client reference): top row pitch + dual panel, 4-col tinted Kit-style cards (Swiper carousel on phones), banner = navy panel + inset curved photo. Dual button = plain global ArrowLink.
 - 2026-11-13: advantage card colours shift by one per row of 4 so no neighbours (across/down/carousel) share a colour.
+- 2026-11-13: 'The Program' (Why DSU Online X?) = new ProgramAbout.tsx (photo pair left, live copy split in 2 paras + benefit chips right); advantage banner photo = public/images/inner/advantage-banner.webp with hero-style dissolving gradient. Old WhyProgram in Kit.tsx now unused by programme pages.
