@@ -40,7 +40,7 @@ export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, 
             {lines[0]} {lines[1]}
           </span>
           <span>
-            Grow with <b>{name}</b> <b>{closing}</b>
+            Grow with <b>{name}</b> <b className={s.closing}>{closing}</b>
           </span>
         </h1>
         {desc && <p className={s.desc}>{desc}</p>}

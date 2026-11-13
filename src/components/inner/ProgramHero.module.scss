@@ -220,11 +220,41 @@
 }
 
 
-// phones: three compact buttons in one row, tiles two per row
+// phones: bigger title (three short lines), a one-line pill, Apply + Enquire side by side with the brochure button full width below, tiles two per row
 @include down($bp-sm) {
+  .inner h1 {
+    font-size: clamp(25px, min(8.2vw, 5.2svh), 36px);
+    line-height: 1.14;
+
+    > span {
+      white-space: normal;
+    }
+
+    .closing {
+      display: block;
+    }
+  }
+
+  .pill {
+    max-width: 100%;
+    gap: 8px;
+    padding: 4px 12px 4px 4px;
+    font-size: 11.5px;
+    white-space: nowrap;
+
+    i {
+      padding: 3px 9px;
+      font-size: 10px;
+    }
+  }
+
   .ctas {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    > :last-child {
+      grid-column: 1 / -1;
+    }
 
     > * {
       width: 100%;
@@ -252,6 +282,30 @@
 
 @media (max-width: 600px) and (max-height: 760px) {
   .glance {
+    display: none;
+  }
+}
+
+// short phones: with the bigger title and the two button rows, drop the optional parts step by step so the hero still fits one screen
+@media (max-width: 600px) and (max-height: 860px) {
+  .desc {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) and (max-height: 720px) {
+  .pill,
+  .stats dd {
+    display: none;
+  }
+
+  .inner h1 {
+    font-size: clamp(24px, min(8.2vw, 4.7svh), 34px);
+  }
+}
+
+@media (max-width: 600px) and (max-height: 640px) {
+  .tiles li:nth-child(n + 3) {
     display: none;
   }
 }
