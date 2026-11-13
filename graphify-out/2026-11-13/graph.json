@@ -9299,7 +9299,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1005",
+      "source_location": "L1019",
       "weight": 1.0
     },
     {
@@ -9311,7 +9311,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1037",
+      "source_location": "L1051",
       "weight": 1.0
     },
     {
@@ -9323,7 +9323,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1052",
+      "source_location": "L1066",
       "weight": 1.0
     },
     {
@@ -9335,7 +9335,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1091",
+      "source_location": "L1105",
       "weight": 1.0
     },
     {
@@ -9347,7 +9347,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1096",
+      "source_location": "L1110",
       "weight": 1.0
     },
     {
@@ -9359,7 +9359,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1096",
+      "source_location": "L1110",
       "weight": 1.0
     },
     {
@@ -9371,7 +9371,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1120",
+      "source_location": "L1134",
       "weight": 1.0
     },
     {
@@ -9383,7 +9383,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1149",
+      "source_location": "L1163",
       "weight": 1.0
     },
     {
@@ -9395,7 +9395,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1151",
+      "source_location": "L1165",
       "weight": 1.0
     },
     {
@@ -9407,7 +9407,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1179",
+      "source_location": "L1193",
       "weight": 1.0
     },
     {
@@ -9484,26 +9484,14 @@
     },
     {
       "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_page_flat",
+      "target": "src_components_inner_parse_parsepairs",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L598",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_lib_content_loadfaculty",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L609",
+      "source_location": "L604",
       "weight": 1.0
     },
     {
@@ -9515,415 +9503,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L611",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_kit_facultyshowcase",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L612",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_sections_home_about_aboutband",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L622",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_ui_framedimage_framedimage",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L634",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_sections_home_whychoose_whychoose",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L649",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_lib_content_loadaboutwhy",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L650",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_whytabs_whytabs",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L654",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_kit_checklist",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L660",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_clean_slugify",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L672",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_kit_pic",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L673",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_kit_split",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L673",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_page_imgof",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L673",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_kit_head",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L674",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_payoptions_payoptions",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L675",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_kit_classapart",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L697",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_kit_logowall",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L703",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_kit_doclist",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L717",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_kit_contactrow",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L727",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_kit_officecard",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L738",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_contactform_contactform",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L766",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_parse_parsefaq",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L781",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_parse_parsefaqbyquestionmarks",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L782",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_sections_home_faq_faq",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L784",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_parse_parsequotes",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L789",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_kit_quotecards",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L794",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_kit_storycards",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L794",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_page_programtestimonials",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L794",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_ui_testimonial_testimonialgrid",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L794",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_electivegrid_electivegrid",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L806",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_electivecombinator_electivecombinator",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L816",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_feetable_feetable",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L829",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_feetabs_feetabs",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L829",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_kit_datatable",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L829",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_emicalculator_emicalculator",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L841",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_page_contentpage",
-      "target": "src_components_inner_parse_parsepairs",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L847",
+      "source_location": "L609",
       "weight": 1.0
     },
     {
@@ -9935,7 +9515,427 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L610",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_page_flat",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L621",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_lib_content_loadfaculty",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L632",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_kit_facultyshowcase",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L635",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_sections_home_about_aboutband",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L645",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_ui_framedimage_framedimage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L657",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_sections_home_whychoose_whychoose",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L672",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_lib_content_loadaboutwhy",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L673",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_whytabs_whytabs",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L677",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_kit_checklist",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L683",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_clean_slugify",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L695",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_kit_pic",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L696",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_kit_split",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L696",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_page_imgof",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L696",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_kit_head",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L697",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_payoptions_payoptions",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L698",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_kit_classapart",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L720",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_kit_logowall",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L726",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_kit_doclist",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L740",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_kit_contactrow",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L750",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_kit_officecard",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L761",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_contactform_contactform",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L789",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_parse_parsefaq",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L804",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_parse_parsefaqbyquestionmarks",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L805",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_sections_home_faq_faq",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L807",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_parse_parsequotes",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L812",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_kit_quotecards",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L817",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_kit_storycards",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L817",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_page_programtestimonials",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L817",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_ui_testimonial_testimonialgrid",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L817",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_electivegrid_electivegrid",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L830",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_electivecombinator_electivecombinator",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L840",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_feetable_feetable",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
       "source_location": "L853",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_feetabs_feetabs",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L853",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_kit_datatable",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L853",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_page_contentpage",
+      "target": "src_components_inner_emicalculator_emicalculator",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L865",
       "weight": 1.0
     },
     {
@@ -9947,7 +9947,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L864",
+      "source_location": "L878",
       "weight": 1.0
     },
     {
@@ -9959,7 +9959,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L874",
+      "source_location": "L888",
       "weight": 1.0
     },
     {
@@ -9971,7 +9971,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L884",
+      "source_location": "L898",
       "weight": 1.0
     },
     {
@@ -9983,7 +9983,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L894",
+      "source_location": "L908",
       "weight": 1.0
     },
     {
@@ -9995,7 +9995,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L901",
+      "source_location": "L915",
       "weight": 1.0
     },
     {
@@ -10007,7 +10007,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L909",
+      "source_location": "L923",
       "weight": 1.0
     },
     {
@@ -10019,7 +10019,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L909",
+      "source_location": "L923",
       "weight": 1.0
     },
     {
@@ -10031,7 +10031,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L913",
+      "source_location": "L927",
       "weight": 1.0
     },
     {
@@ -10043,7 +10043,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L923",
+      "source_location": "L937",
       "weight": 1.0
     },
     {
@@ -10055,7 +10055,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L926",
+      "source_location": "L940",
       "weight": 1.0
     },
     {
@@ -10067,7 +10067,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L967",
+      "source_location": "L981",
       "weight": 1.0
     },
     {
@@ -10079,7 +10079,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L978",
+      "source_location": "L992",
       "weight": 1.0
     },
     {
@@ -10091,7 +10091,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L985",
+      "source_location": "L999",
       "weight": 1.0
     },
     {
@@ -12383,7 +12383,7 @@
       "confidence_score": 1.0,
       "context": "export",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1184",
+      "source_location": "L1198",
       "weight": 1.0
     },
     {
@@ -27231,7 +27231,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L1177",
+      "source_location": "L1191",
       "weight": 1.0
     },
     {
@@ -27464,5 +27464,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e9179e7c6c28249c18a794b2415669140aa797c9"
+  "built_at_commit": "3eeb72aa1d826ce150f42de9e71e0b6fba7267f9"
 }

@@ -24,6 +24,7 @@ import { CtaBand, InnerHero, type Crumb } from './InnerPage';
 import { ProgramHero } from './ProgramHero';
 import { ProgramAdvantage } from './ProgramAdvantage';
 import { ProgramAbout } from './ProgramAbout';
+import { ProgramFees } from './ProgramFees';
 import { advantageLead, dualCopy } from '@/data/programme-advantage';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Faq } from '@/components/sections/home/Faq';
@@ -597,6 +598,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     }
   });
   const nodes: ReactNode[] = [];
+  const progShortName = ({ mba: 'MBA', mca: 'MCA', bba: 'BBA', bca: 'BCA', bcom: 'B.Com' } as Record<string, string>)[slug.replace(/^online-/, '')] ?? '';
   // programme pages: the live fees section also holds "Career Path" + "Industries"; show them right after the testimonials instead
   const careerFromFees = programLinks ? secs.find((x) => /fee/i.test(x.title) && x.subs.some((y) => /career/i.test(y.title))) : undefined;
   const careerNode = (): ReactNode => {
@@ -847,14 +849,32 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (/fee/i.test(title) && all.some((b) => b.t === 'table')) {
       const tables = all.filter((b): b is Extract<Block, { t: 'table' }> => b.t === 'table');
       const note = all.filter(isP).map((b) => b.x).find((x) => /^note/i.test(x));
-      nodes.push(
-        <Sec key={key} tone={nextTone()} title={title}>
-          <div className={s.tables}>
-            {programLinks && tables.length > 1 ? <FeeTabs tables={tables.map((t) => t.rows)} /> : tables.map((t, i) => (programLinks ? <FeeTable key={i} rows={t.rows} /> : <DataTable key={i} rows={t.rows} caption={title} />))}
-          </div>
-          {note && <p className={s.note}>{note}</p>}
-        </Sec>,
-      );
+      if (programLinks) {
+        // programme pages: pitch + photo on the left, tables on the right. The description is built only from the page's own fee facts.
+        const feeFacts = (facts ?? []).filter((f) => /semester fees?/i.test(f.label));
+        const totalFact = (facts ?? []).find((f) => /total fees/i.test(f.label));
+        const money = (v: string) => v.replace(/\/-$/, '').trim();
+        const parts = feeFacts.map((f) => (f.note && /per sem/i.test(f.note) ? `${money(f.value)} per semester for the ${f.label.replace(/\s*fees?$/i, '').toLowerCase()}` : `${money(f.value)} for the ${f.label.replace(/\s*fees?$/i, '').toLowerCase()}`));
+        const desc =
+          totalFact && parts.length
+            ? `The Online ${progShortName} costs ${money(totalFact.value)} in total. Fees are paid semester by semester: ${parts.length > 1 ? `${parts.slice(0, -1).join(', ')} and ${parts[parts.length - 1]}` : parts[0]}. The table also shows the year-wise split.`
+            : undefined;
+        const h = headFor(title);
+        nodes.push(
+          <Sec key={key} tone={nextTone()} id={slugify(title)}>
+            <ProgramFees eyebrow={h.eyebrow} title={h.title ?? title} desc={desc} photo="/images/career/handshake.webp" note={note}>
+              <div className={s.tables}>{tables.length > 1 ? <FeeTabs tables={tables.map((t) => t.rows)} /> : tables.map((t, i) => <FeeTable key={i} rows={t.rows} />)}</div>
+            </ProgramFees>
+          </Sec>,
+        );
+      } else {
+        nodes.push(
+          <Sec key={key} tone={nextTone()} title={title}>
+            <div className={s.tables}>{tables.map((t, i) => <DataTable key={i} rows={t.rows} caption={title} />)}</div>
+            {note && <p className={s.note}>{note}</p>}
+          </Sec>,
+        );
+      }
       // programme pages: EMI planner right under the fee table (total read from the table's "Total Fees" row)
       if (programLinks) {
         const totalRow = tables.flatMap((tb) => tb.rows).find((r) => /^total fees?/i.test(r[0] ?? ''));

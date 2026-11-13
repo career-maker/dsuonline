@@ -239,3 +239,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - 2026-11-13: ElectiveCombinator redesigned: one checkbox list (max 2, others disabled, Clear selection) + live navy result panel + stats + 4 benefits (Swiper on phones). Copy in src/data/programme-architect.ts (MBA text from client reference; other programmes templated with their electives). Anchor #pair.
 - 2026-11-13: Architect 'Clear selection' = plain text action (reset UA button).
 - 2026-11-13: programme page order now: ... Electives, Architect, Testimonials, Careers, Fees+EMI, Curriculum... (Careers pulled out of fees section on mca/bba/bca/bcom via careerNode in Page.tsx).
+- 2026-11-13: Fee Structure = ProgramFees.tsx (left: mini title, title, description built from page fee facts, photo career/handshake.webp stretching to table height; right: FeeTabs table + note). Stacks on <1200.
