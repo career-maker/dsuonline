@@ -22,6 +22,8 @@ import { ReferForm } from './ReferForm';
 import { StatNumber } from './StatNumber';
 import { CtaBand, InnerHero, type Crumb } from './InnerPage';
 import { ProgramHero } from './ProgramHero';
+import { ProgramAdvantage } from './ProgramAdvantage';
+import { advantageLead, dualCopy } from '@/data/programme-advantage';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Faq } from '@/components/sections/home/Faq';
 import { FaqList, LeaderGrid } from './Interactive';
@@ -588,7 +590,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
   };
   const ph = PROG_HERO[slug];
 
-  let ti = 0;
+  let ti = withFacts && crumbs.length < 3 ? 1 : 0; // programme pages: the advantage block above is white, so The Program starts grey
   const nextTone = (): Tone => (ti++ % 2 === 0 ? 'white' : 'grey');
 
   // sections whose body is a single paragraph (Why DSU: accordion titles) are merged into one FAQ-style block
@@ -1159,6 +1161,14 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
   return (
     <>
       {programHero ?? <InnerHero size={withFacts ? (crumbs.length >= 3 ? 'gradient' : 'full') : 'short'} badges={slug === 'about'} bannerSrc={BANNERS[slug]} bannerMobileSrc={BANNERS_MOBILE[slug]} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={ph ? ph.eyebrow : preEyebrow} title={ph?.title ?? st.h1} subtitle={ph ? ph.subtitle : withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />}
+      {programHero && progShort && (
+        <ProgramAdvantage
+          name={progShort}
+          lead={advantageLead[slug] ?? `A flexible ${num(dur?.value)}-${/year/i.test(dur?.value ?? '') ? 'year' : 'month'} online programme with in-demand electives for learners across industries.`}
+          dual={fv(/^elective$/i) && dualCopy[slug] ? { text: dualCopy[slug], href: '#pair' } : undefined}
+          bannerSrc="/images/why/why-bg.webp"
+        />
+      )}
       {longSub && slug === 'student-testimonials' && subtitle && (
         <Sec tone="white">
           <div className={s.introGrid}>

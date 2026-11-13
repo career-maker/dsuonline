@@ -1,0 +1,213 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+$edge: #e3eaf1;
+
+.wrap {
+  @include container;
+}
+
+.sec {
+  background: #fff;
+  letter-spacing: -0.0175em;
+  @include section-pad(80, 56);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: end;
+  gap: 16px clamp(24px, 6vw, 96px);
+  margin-bottom: clamp(28px, #{u(48)}, 52px);
+
+  h2 {
+    @include h2;
+    margin-top: clamp(6px, #{u(8)}, 8px);
+    max-width: 14em;
+  }
+
+  @include down($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eyebrow {
+  @include eyebrow;
+}
+
+.lead {
+  @include body-text;
+  max-width: 34em;
+  font-size: clamp(15px, #{u(20)}, 20px);
+  padding-bottom: 6px;
+}
+
+.tile {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #e9f2fb;
+  color: $logo-blue;
+}
+
+.dual {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+  margin-bottom: clamp(24px, #{u(36)}, 36px);
+
+  h3 {
+    margin-top: 8px;
+    font-size: clamp(18px, #{u(24)}, 24px);
+    font-weight: 600;
+    color: $ink;
+  }
+
+  p {
+    max-width: 62em;
+    font-size: clamp(15px, #{u(18)}, 18px);
+    line-height: 1.5;
+    color: $ink;
+  }
+
+  a {
+    margin-top: 4px;
+    font-weight: 600;
+    color: $blue;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: clamp(12px, #{u(18)}, 20px);
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: clamp(18px, #{u(26)}, 26px);
+    border: 1px solid $edge;
+    border-radius: 16px;
+    background: #fff;
+    transition: border-color 0.2s, transform 0.2s;
+
+    &:hover {
+      border-color: #b9d2ea;
+      transform: translateY(-3px);
+    }
+  }
+
+  .tile {
+    margin-bottom: 14px;
+  }
+
+  @include down($bp-sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+
+    li {
+      padding: 14px;
+    }
+
+    .tile {
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 15px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  h3 {
+    font-size: clamp(16px, #{u(20)}, 20px);
+    font-weight: 600;
+    color: $ink;
+  }
+
+  p {
+    font-size: clamp(14px, #{u(16)}, 16px);
+    line-height: 1.5;
+    color: $body;
+  }
+}
+
+// ---------- banner
+.bannerSec {
+  background: #fff;
+  padding-bottom: clamp(48px, #{u(80)}, 80px);
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  min-height: clamp(300px, #{u(470)}, 470px);
+  border-radius: clamp(18px, #{u(28)}, 28px);
+  color: #fff;
+  background: linear-gradient(100deg, #0b1f4d 35%, #102a66 100%);
+}
+
+// the photo dissolves into the navy so the copy keeps its contrast
+.bannerImg {
+  object-fit: cover;
+  object-position: 70% 40%;
+  mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 15%) 35%, rgb(0 0 0 / 75%) 55%, #000 72%);
+  opacity: 0.9;
+
+  @include down($bp-md) {
+    mask-image: linear-gradient(180deg, rgb(0 0 0 / 55%), rgb(0 0 0 / 20%));
+    opacity: 0.6;
+  }
+}
+
+.bannerCopy {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  padding: clamp(28px, #{u(60)}, 64px);
+}
+
+.bannerEyebrow {
+  @include eyebrow;
+  color: $logo-yellow;
+}
+
+.words {
+  display: grid;
+  margin-top: clamp(10px, #{u(16)}, 16px);
+  font-size: clamp(40px, #{u(92)}, 92px);
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+
+  span:nth-child(2) {
+    color: #38a8ff;
+  }
+
+  span:nth-child(3) {
+    color: #22c3e6;
+  }
+}
+
+.bannerText {
+  max-width: 30em;
+  margin-top: clamp(14px, #{u(22)}, 22px);
+  font-size: clamp(14px, #{u(18)}, 18px);
+  line-height: 1.5;
+  color: rgb(255 255 255 / 85%);
+}

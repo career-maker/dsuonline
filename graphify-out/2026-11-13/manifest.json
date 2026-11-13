@@ -1,8 +1,8 @@
 {
   "deploy.py": {
-    "mtime": 1794488034.7209537,
-    "seen": 1794488057.1415215,
-    "ast_hash": "6ef37d281ee249c09f6e0cf3ab6be7a9",
+    "mtime": 1794488360.2050774,
+    "seen": 1794544560.128725,
+    "ast_hash": "ec7d3415dd6000ef022c998a196cdc2b",
     "semantic_hash": ""
   },
   "eslint.config.mjs": {
@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794487260.259209,
-    "seen": 1794488057.1417513,
-    "ast_hash": "d48e1656f67872174365df5f9ca5631b",
+    "mtime": 1794488057.7136405,
+    "seen": 1794544560.1289437,
+    "ast_hash": "bb5a1c38b211366852052fe3c18fdafe",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -660,9 +660,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/ProgramHero.tsx": {
-    "mtime": 1794487654.5251267,
-    "seen": 1794488057.141597,
-    "ast_hash": "041c4576dad74141de2306b6742a5edc",
+    "mtime": 1794544297.3376298,
+    "seen": 1794544560.1287973,
+    "ast_hash": "2f7afaa4fe84c7b18218a25c0aa738c8",
     "semantic_hash": ""
   }
 }
