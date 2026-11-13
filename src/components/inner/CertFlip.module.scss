@@ -1,0 +1,91 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+$ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+.wrap {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+}
+
+.card {
+  display: block;
+  width: min(100%, 640px);
+  aspect-ratio: 1.4;
+  padding: 0;
+  border: 0;
+  background: none;
+  perspective: 1400px;
+  cursor: pointer;
+  @include focus-ring;
+}
+
+.inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s $ease;
+}
+
+.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+// both sides are letterboxed on white, so neither certificate is ever cropped
+.face {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border: 1px solid #d9e4ee;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 24px 50px rgb(2 9 102 / 14%);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.img {
+  padding: 10px;
+  object-fit: contain;
+}
+
+.hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: $body;
+
+  svg {
+    color: $logo-blue;
+  }
+}
+
+// wording follows the input: touch screens say "tap", mouse screens say "hover"
+.mouse {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .touch {
+    display: none;
+  }
+
+  .mouse {
+    display: inline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inner {
+    transition-duration: 0.01s;
+  }
+}

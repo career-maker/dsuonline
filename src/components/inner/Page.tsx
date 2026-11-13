@@ -30,6 +30,10 @@ import { ProgramFaculty } from './ProgramFaculty';
 import { ProgramLearning } from './ProgramLearning';
 import { ProgramEligibility } from './ProgramEligibility';
 import { ProgramGuidance } from './ProgramGuidance';
+import { ProgramFaq } from './ProgramFaq';
+import { ProgramNextStep } from './ProgramNextStep';
+import { CertFlip } from './CertFlip';
+import { faqFor } from '@/data/programme-faq';
 import { buildCurriculum } from './curriculumData';
 import { advantageLead, dualCopy } from '@/data/programme-advantage';
 import { FramedImage } from '@/components/ui/FramedImage';
@@ -604,6 +608,8 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     }
   });
   const nodes: ReactNode[] = [];
+  let admissionSteps: string[] = [];
+  let eligTextOuter: string | undefined;
   const progShortName = ({ mba: 'MBA', mca: 'MCA', bba: 'BBA', bca: 'BCA', bcom: 'B.Com' } as Record<string, string>)[slug.replace(/^online-/, '')] ?? '';
   // programme pages: the live fees section also holds "Career Path" + "Industries"; show them right after the testimonials instead
   const careerFromFees = programLinks ? secs.find((x) => /fee/i.test(x.title) && x.subs.some((y) => /career/i.test(y.title))) : undefined;
@@ -948,6 +954,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         const learnSubs = sec.subs.filter((x) => !/eligib/i.test(x.title));
         const eligSubHere = sec.subs.find((x) => /eligib/i.test(x.title));
         const eligText = eligibility?.text ?? eligSubHere?.blocks.filter(isP).map((b) => b.x).join(' ');
+        eligTextOuter = eligText;
         const items = learnSubs.map((x) => {
           const ps = x.blocks.filter(isP).map((b) => b.x);
           const list = x.blocks.filter((b): b is Extract<Block, { t: 'ul' }> => b.t === 'ul').flatMap((b) => b.items);
@@ -999,6 +1006,10 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           </Sec>
         ),
       );
+      if (programLinks) {
+        admissionSteps = steps.map((x) => x.title);
+        nodes.push(<span key="faq-slot" hidden />); // replaced by the FAQ + banner once the page facts are known (see below)
+      }
       for (const r of rest) {
         const rimg = r.blocks.find((b) => b.t === 'img');
         nodes.push(
@@ -1060,7 +1071,11 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if ((/certificate|added value/i.test(title) || (sec.blocks.length > 0 && sec.blocks.every((b) => b.t === 'img') && imgs.length <= 3)) && imgs.length >= 2) {
       nodes.push(
         <Sec key={key} tone={nextTone()} center title={title}>
-          {certificates(sec.blocks)}
+          {programLinks && imgs.length >= 2 ? (
+            <CertFlip front={{ src: imgOf(imgs[0]).src, alt: imgOf(imgs[0]).alt || 'Sample certificate, front' }} back={{ src: imgOf(imgs[1]).src, alt: imgOf(imgs[1]).alt || 'Sample certificate, back' }} />
+          ) : (
+            certificates(sec.blocks)
+          )}
         </Sec>,
       );
       continue;
@@ -1228,6 +1243,35 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         }}
       />
     ) : null;
+
+  // programme pages: FAQ + closing banner go where the admission section left its slot
+  const faqAt = nodes.findIndex((n) => isValidElement(n) && n.key === 'faq-slot');
+  if (programLinks && progShort && faqAt >= 0) {
+    const copy = faqFor({
+      name: progShort,
+      code: slug.replace(/^online-/, ''),
+      years: /year/i.test(dur?.value ?? '') ? num(dur?.value) : undefined,
+      semesters: num(dur?.note) || undefined,
+      credits: credits || undefined,
+      fee: fv(/total fees/i)?.value,
+      electives: programLinks.map((x) => x.name),
+      steps: admissionSteps,
+      eligibility: eligTextOuter,
+      about: (HERO_DESC[slug] ?? subtitle ?? raw.filter(isP).find((b) => b.x.length > 150)?.x)?.split(/(?<=\.)\s/)[0],
+      dual: !!fv(/^elective$/i) && !!dualCopy[slug],
+    });
+    const dualHere = !!fv(/^elective$/i) && !!dualCopy[slug];
+    nodes.splice(
+      faqAt,
+      1,
+      <Sec key="faq" tone="grey" id="faq">
+        <ProgramFaq title={copy.title} lead={copy.lead} items={copy.items} code={slug.replace(/^online-/, '')} />
+      </Sec>,
+      <Sec key="next-step" tone="white" compact id="next-step">
+        <ProgramNextStep name={progShort} dual={dualHere} />
+      </Sec>,
+    );
+  }
 
   return (
     <>

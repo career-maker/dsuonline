@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1794560968.7102482,
-    "seen": 1794561080.1610067,
-    "ast_hash": "a4dea241af02e67afc7ae4eb96eca061",
+    "mtime": 1794561300.8549743,
+    "seen": 1794561461.8219783,
+    "ast_hash": "d11d4c556af1374279e0cdc4dd8b3eac",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794560869.9012597,
-    "seen": 1794561080.161219,
-    "ast_hash": "eb89eef9a2fac0bd5b97c5ad1050fed0",
+    "mtime": 1794561080.7122512,
+    "seen": 1794561461.8222063,
+    "ast_hash": "3f97de62fe1a072623a26954ee53a20b",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -735,6 +735,30 @@
     "mtime": 1794560113.8575013,
     "seen": 1794560251.8141067,
     "ast_hash": "e4870112019f750556b0ce4acd26cfe6",
+    "semantic_hash": ""
+  },
+  "src/components/inner/CertFlip.tsx": {
+    "mtime": 1794561275.8042252,
+    "seen": 1794561461.8219454,
+    "ast_hash": "c8c6416f9c205c6cc88ca9099749a391",
+    "semantic_hash": ""
+  },
+  "src/components/inner/ProgramFaq.tsx": {
+    "mtime": 1794561275.2660007,
+    "seen": 1794561461.8219967,
+    "ast_hash": "eb345a210697c06751a0a4bc54ded449",
+    "semantic_hash": ""
+  },
+  "src/components/inner/ProgramNextStep.tsx": {
+    "mtime": 1794561275.4832401,
+    "seen": 1794561461.8220088,
+    "ast_hash": "bf6e52dcabd762effa201d35f2c6edbf",
+    "semantic_hash": ""
+  },
+  "src/data/programme-faq.ts": {
+    "mtime": 1794561275.1639779,
+    "seen": 1794561461.8221664,
+    "ast_hash": "a6ecf369fe165114d4e6837e8f68c6a1",
     "semantic_hash": ""
   }
 }
