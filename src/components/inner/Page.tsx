@@ -33,6 +33,7 @@ import { ProgramGuidance } from './ProgramGuidance';
 import { ProgramFaq } from './ProgramFaq';
 import { ProgramNextStep } from './ProgramNextStep';
 import { CertFlip } from './CertFlip';
+import { ProgramCertificate } from './ProgramCertificate';
 import { faqFor } from '@/data/programme-faq';
 import { buildCurriculum } from './curriculumData';
 import { advantageLead, dualCopy } from '@/data/programme-advantage';
@@ -1070,13 +1071,17 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     const imgs = all.filter((b) => b.t === 'img');
     if ((/certificate|added value/i.test(title) || (sec.blocks.length > 0 && sec.blocks.every((b) => b.t === 'img') && imgs.length <= 3)) && imgs.length >= 2) {
       nodes.push(
-        <Sec key={key} tone={nextTone()} center title={title}>
-          {programLinks && imgs.length >= 2 ? (
-            <CertFlip front={{ src: imgOf(imgs[0]).src, alt: imgOf(imgs[0]).alt || 'Sample certificate, front' }} back={{ src: imgOf(imgs[1]).src, alt: imgOf(imgs[1]).alt || 'Sample certificate, back' }} />
-          ) : (
-            certificates(sec.blocks)
-          )}
-        </Sec>,
+        programLinks && imgs.length >= 2 ? (
+          <Sec key={key} tone={nextTone()} id={slugify(title)}>
+            <ProgramCertificate eyebrow={headFor(title).eyebrow} title={headFor(title).title ?? title} photo="/images/inner/convocation.webp">
+              <CertFlip front={{ src: imgOf(imgs[0]).src, alt: imgOf(imgs[0]).alt || 'Sample certificate, front' }} back={{ src: imgOf(imgs[1]).src, alt: imgOf(imgs[1]).alt || 'Sample certificate, back' }} />
+            </ProgramCertificate>
+          </Sec>
+        ) : (
+          <Sec key={key} tone={nextTone()} center title={title}>
+            {certificates(sec.blocks)}
+          </Sec>
+        ),
       );
       continue;
     }

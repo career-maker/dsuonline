@@ -345,19 +345,6 @@
       "source_location": "L7"
     },
     {
-      "id": "src_components_inner_structure_structure",
-      "label": "structure",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "structure",
-      "source_file": "src/components/inner/structure.ts",
-      "source_location": "L19"
-    },
-    {
       "id": "src_components_layout_header_hit",
       "label": "Hit",
       "_callable": true,
@@ -449,6 +436,32 @@
       "source_location": "L5"
     },
     {
+      "id": "src_components_inner_careerflip_careeritem",
+      "label": "CareerItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "ElectiveCombinator.tsx",
+      "file_type": "code",
+      "norm_label": "careeritem",
+      "source_file": "src/components/inner/CareerFlip.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_components_inner_careerflip_industryitem",
+      "label": "IndustryItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "ElectiveCombinator.tsx",
+      "file_type": "code",
+      "norm_label": "industryitem",
+      "source_file": "src/components/inner/CareerFlip.tsx",
+      "source_location": "L8"
+    },
+    {
       "id": "src_components_inner_electivecombinator_elective",
       "label": "Elective",
       "_callable": true,
@@ -485,7 +498,7 @@
       "file_type": "code",
       "norm_label": "item",
       "source_file": "src/components/inner/ProgramFaculty.tsx",
-      "source_location": "L6"
+      "source_location": "L7"
     },
     {
       "id": "src_components_inner_programlearning_learnitem",
@@ -670,13 +683,26 @@
       "source_location": "L57"
     },
     {
+      "id": "src_components_inner_structure_structure",
+      "label": "structure",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "InnerHero",
+      "file_type": "code",
+      "norm_label": "structure",
+      "source_file": "src/components/inner/structure.ts",
+      "source_location": "L19"
+    },
+    {
       "id": "src_data_section_heads_sectionhead",
       "label": "SectionHead",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "section-heads.ts",
+      "community_name": "InnerHero",
       "file_type": "code",
       "norm_label": "sectionhead",
       "source_file": "src/data/section-heads.ts",
@@ -707,32 +733,6 @@
       "norm_label": "faqitem",
       "source_file": "src/data/programme-faq.ts",
       "source_location": "L5"
-    },
-    {
-      "id": "src_components_inner_careerflip_careeritem",
-      "label": "CareerItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "CareerFlip.tsx",
-      "file_type": "code",
-      "norm_label": "careeritem",
-      "source_file": "src/components/inner/CareerFlip.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_components_inner_careerflip_industryitem",
-      "label": "IndustryItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "CareerFlip.tsx",
-      "file_type": "code",
-      "norm_label": "industryitem",
-      "source_file": "src/components/inner/CareerFlip.tsx",
-      "source_location": "L7"
     },
     {
       "id": "src_components_inner_contactform_phase",
@@ -1519,6 +1519,30 @@
       "source_location": "L368"
     },
     {
+      "id": "src_components_inner_programabout_halves",
+      "label": "halves()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "Page.tsx",
+      "file_type": "code",
+      "norm_label": "halves()",
+      "source_file": "src/components/inner/ProgramAbout.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_inner_programabout_programabout",
+      "label": "ProgramAbout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "Page.tsx",
+      "file_type": "code",
+      "norm_label": "programabout()",
+      "source_file": "src/components/inner/ProgramAbout.tsx",
+      "source_location": "L17"
+    },
+    {
       "id": "src_components_inner_programfees_programfees",
       "label": "ProgramFees()",
       "_callable": true,
@@ -1783,18 +1807,6 @@
       "source_location": "L65"
     },
     {
-      "id": "src_components_ui_icons_playicon",
-      "label": "PlayIcon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "playicon()",
-      "source_file": "src/components/ui/icons.tsx",
-      "source_location": "L60"
-    },
-    {
       "id": "src_components_ui_icons_searchicon",
       "label": "SearchIcon()",
       "_callable": true,
@@ -1852,7 +1864,7 @@
       "file_type": "code",
       "norm_label": "initialof()",
       "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L9"
+      "source_location": "L13"
     },
     {
       "id": "src_components_ui_testimonialshowcase_testimonialshowcase",
@@ -1864,7 +1876,7 @@
       "file_type": "code",
       "norm_label": "testimonialshowcase()",
       "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L15"
+      "source_location": "L19"
     },
     {
       "id": "src_components_ui_usedragscroll_usedragscroll",
@@ -1927,64 +1939,100 @@
       "source_location": "L13"
     },
     {
-      "id": "src_components_inner_clean_slugify",
-      "label": "slugify()",
+      "id": "src_components_inner_kit_checklist",
+      "label": "Checklist()",
       "_callable": true,
       "_origin": "ast",
       "community": 16,
       "community_name": "ContentPage",
       "file_type": "code",
-      "norm_label": "slugify()",
-      "source_file": "src/components/inner/clean.ts",
-      "source_location": "L27"
-    },
-    {
-      "id": "src_components_inner_innerpage_innerhero",
-      "label": "InnerHero()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "innerhero()",
-      "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L103"
-    },
-    {
-      "id": "src_components_inner_kit_facultygrid",
-      "label": "FacultyGrid()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "facultygrid()",
+      "norm_label": "checklist()",
       "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L282"
+      "source_location": "L75"
     },
     {
-      "id": "src_components_inner_kit_head",
-      "label": "Head()",
+      "id": "src_components_inner_kit_classapart",
+      "label": "ClassApart()",
       "_callable": true,
       "_origin": "ast",
       "community": 16,
       "community_name": "ContentPage",
       "file_type": "code",
-      "norm_label": "head()",
+      "norm_label": "classapart()",
       "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L18"
+      "source_location": "L235"
     },
     {
-      "id": "src_components_inner_kit_sec",
-      "label": "Sec()",
+      "id": "src_components_inner_kit_contactrow",
+      "label": "ContactRow()",
       "_callable": true,
       "_origin": "ast",
       "community": 16,
       "community_name": "ContentPage",
       "file_type": "code",
-      "norm_label": "sec()",
+      "norm_label": "contactrow()",
       "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L29"
+      "source_location": "L351"
+    },
+    {
+      "id": "src_components_inner_kit_logowall",
+      "label": "LogoWall()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ContentPage",
+      "file_type": "code",
+      "norm_label": "logowall()",
+      "source_file": "src/components/inner/Kit.tsx",
+      "source_location": "L257"
+    },
+    {
+      "id": "src_components_inner_kit_pic",
+      "label": "Pic()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ContentPage",
+      "file_type": "code",
+      "norm_label": "pic()",
+      "source_file": "src/components/inner/Kit.tsx",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_components_inner_kit_prose",
+      "label": "Prose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ContentPage",
+      "file_type": "code",
+      "norm_label": "prose()",
+      "source_file": "src/components/inner/Kit.tsx",
+      "source_location": "L65"
+    },
+    {
+      "id": "src_components_inner_kit_split",
+      "label": "Split()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ContentPage",
+      "file_type": "code",
+      "norm_label": "split()",
+      "source_file": "src/components/inner/Kit.tsx",
+      "source_location": "L56"
+    },
+    {
+      "id": "src_components_inner_page_body",
+      "label": "Body()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ContentPage",
+      "file_type": "code",
+      "norm_label": "body()",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L223"
     },
     {
       "id": "src_components_inner_page_certificates",
@@ -2009,18 +2057,6 @@
       "norm_label": "contentpage()",
       "source_file": "src/components/inner/Page.tsx",
       "source_location": "L562"
-    },
-    {
-      "id": "src_components_inner_page_faculty",
-      "label": "faculty()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "faculty()",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L334"
     },
     {
       "id": "src_components_inner_page_icontiles",
@@ -2059,18 +2095,6 @@
       "source_location": "L97"
     },
     {
-      "id": "src_components_inner_page_legalpage",
-      "label": "LegalPage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "legalpage()",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L470"
-    },
-    {
       "id": "src_components_inner_page_programtestimonials",
       "label": "programTestimonials()",
       "_callable": true,
@@ -2083,16 +2107,28 @@
       "source_location": "L556"
     },
     {
-      "id": "src_components_inner_page_referpage",
-      "label": "ReferPage()",
+      "id": "src_components_inner_page_renderseg",
+      "label": "renderSeg()",
       "_callable": true,
       "_origin": "ast",
       "community": 16,
       "community_name": "ContentPage",
       "file_type": "code",
-      "norm_label": "referpage()",
+      "norm_label": "renderseg()",
       "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L436"
+      "source_location": "L170"
+    },
+    {
+      "id": "src_components_inner_page_segments",
+      "label": "segments()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ContentPage",
+      "file_type": "code",
+      "norm_label": "segments()",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L103"
     },
     {
       "id": "src_components_inner_page_swapphotos",
@@ -2105,18 +2141,6 @@
       "norm_label": "swapphotos()",
       "source_file": "src/components/inner/Page.tsx",
       "source_location": "L528"
-    },
-    {
-      "id": "src_components_inner_page_witheyebrow",
-      "label": "withEyebrow()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "witheyebrow()",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L544"
     },
     {
       "id": "src_components_inner_payoptions_payoptions",
@@ -2512,7 +2536,7 @@
       "file_type": "code",
       "norm_label": "card()",
       "source_file": "src/components/inner/ProgramFaculty.tsx",
-      "source_location": "L17"
+      "source_location": "L19"
     },
     {
       "id": "src_components_inner_programfaculty_initials",
@@ -2524,7 +2548,7 @@
       "file_type": "code",
       "norm_label": "initials()",
       "source_file": "src/components/inner/ProgramFaculty.tsx",
-      "source_location": "L8"
+      "source_location": "L9"
     },
     {
       "id": "src_components_inner_programfaculty_programfaculty",
@@ -2536,7 +2560,7 @@
       "file_type": "code",
       "norm_label": "programfaculty()",
       "source_file": "src/components/inner/ProgramFaculty.tsx",
-      "source_location": "L31"
+      "source_location": "L47"
     },
     {
       "id": "src_components_inner_programlearning_iconof",
@@ -2681,18 +2705,6 @@
       "norm_label": "parsequotes()",
       "source_file": "src/components/inner/parse.ts",
       "source_location": "L12"
-    },
-    {
-      "id": "src_components_inner_parse_splitbullets",
-      "label": "splitBullets()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "parse.ts",
-      "file_type": "code",
-      "norm_label": "splitbullets()",
-      "source_file": "src/components/inner/parse.ts",
-      "source_location": "L94"
     },
     {
       "id": "src_components_inner_parse_txt",
@@ -2899,126 +2911,6 @@
       "source_location": "L33"
     },
     {
-      "id": "src_components_inner_kit_checklist",
-      "label": "Checklist()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "renderSeg",
-      "file_type": "code",
-      "norm_label": "checklist()",
-      "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L75"
-    },
-    {
-      "id": "src_components_inner_kit_classapart",
-      "label": "ClassApart()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "renderSeg",
-      "file_type": "code",
-      "norm_label": "classapart()",
-      "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L235"
-    },
-    {
-      "id": "src_components_inner_kit_contactrow",
-      "label": "ContactRow()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "renderSeg",
-      "file_type": "code",
-      "norm_label": "contactrow()",
-      "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L351"
-    },
-    {
-      "id": "src_components_inner_kit_logowall",
-      "label": "LogoWall()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "renderSeg",
-      "file_type": "code",
-      "norm_label": "logowall()",
-      "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L257"
-    },
-    {
-      "id": "src_components_inner_kit_pic",
-      "label": "Pic()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "renderSeg",
-      "file_type": "code",
-      "norm_label": "pic()",
-      "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_components_inner_kit_prose",
-      "label": "Prose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "renderSeg",
-      "file_type": "code",
-      "norm_label": "prose()",
-      "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L65"
-    },
-    {
-      "id": "src_components_inner_kit_split",
-      "label": "Split()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "renderSeg",
-      "file_type": "code",
-      "norm_label": "split()",
-      "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L56"
-    },
-    {
-      "id": "src_components_inner_page_body",
-      "label": "Body()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "renderSeg",
-      "file_type": "code",
-      "norm_label": "body()",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L223"
-    },
-    {
-      "id": "src_components_inner_page_renderseg",
-      "label": "renderSeg()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "renderSeg",
-      "file_type": "code",
-      "norm_label": "renderseg()",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L170"
-    },
-    {
-      "id": "src_components_inner_page_segments",
-      "label": "segments()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "renderSeg",
-      "file_type": "code",
-      "norm_label": "segments()",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L103"
-    },
-    {
       "id": "src_app_page_homepage",
       "label": "HomePage()",
       "_callable": true,
@@ -3211,6 +3103,30 @@
       "source_location": "L5"
     },
     {
+      "id": "src_components_ui_icons_playicon",
+      "label": "PlayIcon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "app/page.tsx",
+      "file_type": "code",
+      "norm_label": "playicon()",
+      "source_file": "src/components/ui/icons.tsx",
+      "source_location": "L60"
+    },
+    {
+      "id": "src_components_inner_careerflip_careerflip",
+      "label": "CareerFlip()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "specViews",
+      "file_type": "code",
+      "norm_label": "careerflip()",
+      "source_file": "src/components/inner/CareerFlip.tsx",
+      "source_location": "L14"
+    },
+    {
       "id": "src_components_inner_kit_cardgrid",
       "label": "CardGrid()",
       "_callable": true,
@@ -3223,28 +3139,16 @@
       "source_location": "L133"
     },
     {
-      "id": "src_components_inner_kit_learningcards",
-      "label": "LearningCards()",
+      "id": "src_components_inner_kit_facultygrid",
+      "label": "FacultyGrid()",
       "_callable": true,
       "_origin": "ast",
       "community": 28,
       "community_name": "specViews",
       "file_type": "code",
-      "norm_label": "learningcards()",
+      "norm_label": "facultygrid()",
       "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L303"
-    },
-    {
-      "id": "src_components_inner_kit_lsicon",
-      "label": "lsIcon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "specViews",
-      "file_type": "code",
-      "norm_label": "lsicon()",
-      "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L288"
+      "source_location": "L282"
     },
     {
       "id": "src_components_inner_kit_rolegrid",
@@ -3271,6 +3175,18 @@
       "source_location": "L325"
     },
     {
+      "id": "src_components_inner_page_faculty",
+      "label": "faculty()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "specViews",
+      "file_type": "code",
+      "norm_label": "faculty()",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L334"
+    },
+    {
       "id": "src_components_inner_page_isp",
       "label": "isP()",
       "_callable": true,
@@ -3281,18 +3197,6 @@
       "norm_label": "isp()",
       "source_file": "src/components/inner/Page.tsx",
       "source_location": "L89"
-    },
-    {
-      "id": "src_components_inner_page_learningcards",
-      "label": "learningCards()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "specViews",
-      "file_type": "code",
-      "norm_label": "learningcards()",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L343"
     },
     {
       "id": "src_components_inner_page_specviews",
@@ -3331,12 +3235,108 @@
       "source_location": "L87"
     },
     {
+      "id": "src_components_inner_parse_splitbullets",
+      "label": "splitBullets()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "specViews",
+      "file_type": "code",
+      "norm_label": "splitbullets()",
+      "source_file": "src/components/inner/parse.ts",
+      "source_location": "L94"
+    },
+    {
+      "id": "src_components_inner_clean_slugify",
+      "label": "slugify()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "InnerHero",
+      "file_type": "code",
+      "norm_label": "slugify()",
+      "source_file": "src/components/inner/clean.ts",
+      "source_location": "L27"
+    },
+    {
+      "id": "src_components_inner_innerpage_innerhero",
+      "label": "InnerHero()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "InnerHero",
+      "file_type": "code",
+      "norm_label": "innerhero()",
+      "source_file": "src/components/inner/InnerPage.tsx",
+      "source_location": "L103"
+    },
+    {
+      "id": "src_components_inner_kit_head",
+      "label": "Head()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "InnerHero",
+      "file_type": "code",
+      "norm_label": "head()",
+      "source_file": "src/components/inner/Kit.tsx",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_components_inner_kit_sec",
+      "label": "Sec()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "InnerHero",
+      "file_type": "code",
+      "norm_label": "sec()",
+      "source_file": "src/components/inner/Kit.tsx",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_components_inner_page_legalpage",
+      "label": "LegalPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "InnerHero",
+      "file_type": "code",
+      "norm_label": "legalpage()",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L470"
+    },
+    {
+      "id": "src_components_inner_page_referpage",
+      "label": "ReferPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "InnerHero",
+      "file_type": "code",
+      "norm_label": "referpage()",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L436"
+    },
+    {
+      "id": "src_components_inner_page_witheyebrow",
+      "label": "withEyebrow()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "InnerHero",
+      "file_type": "code",
+      "norm_label": "witheyebrow()",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L544"
+    },
+    {
       "id": "src_data_section_heads_headfor",
       "label": "headFor()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "section-heads.ts",
+      "community_name": "InnerHero",
       "file_type": "code",
       "norm_label": "headfor()",
       "source_file": "src/data/section-heads.ts",
@@ -3619,42 +3619,6 @@
       "source_location": "L4"
     },
     {
-      "id": "src_components_inner_careerflip_careerflip",
-      "label": "CareerFlip()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "CareerFlip.tsx",
-      "file_type": "code",
-      "norm_label": "careerflip()",
-      "source_file": "src/components/inner/CareerFlip.tsx",
-      "source_location": "L13"
-    },
-    {
-      "id": "src_components_inner_programabout_halves",
-      "label": "halves()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 33,
-      "community_name": "ProgramAbout.tsx",
-      "file_type": "code",
-      "norm_label": "halves()",
-      "source_file": "src/components/inner/ProgramAbout.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_components_inner_programabout_programabout",
-      "label": "ProgramAbout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 33,
-      "community_name": "ProgramAbout.tsx",
-      "file_type": "code",
-      "norm_label": "programabout()",
-      "source_file": "src/components/inner/ProgramAbout.tsx",
-      "source_location": "L17"
-    },
-    {
       "id": "src_components_inner_contactform_contactform",
       "label": "ContactForm()",
       "_callable": true,
@@ -3907,6 +3871,18 @@
       "source_location": "L445"
     },
     {
+      "id": "src_components_inner_kit_learningcards",
+      "label": "LearningCards()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "Kit.tsx",
+      "file_type": "code",
+      "norm_label": "learningcards()",
+      "source_file": "src/components/inner/Kit.tsx",
+      "source_location": "L303"
+    },
+    {
       "id": "src_components_inner_kit_linkgrid",
       "label": "LinkGrid()",
       "_callable": true,
@@ -3917,6 +3893,18 @@
       "norm_label": "linkgrid()",
       "source_file": "src/components/inner/Kit.tsx",
       "source_location": "L333"
+    },
+    {
+      "id": "src_components_inner_kit_lsicon",
+      "label": "lsIcon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "Kit.tsx",
+      "file_type": "code",
+      "norm_label": "lsicon()",
+      "source_file": "src/components/inner/Kit.tsx",
+      "source_location": "L288"
     },
     {
       "id": "src_components_inner_kit_officecard",
@@ -3989,6 +3977,18 @@
       "norm_label": "whyprogram()",
       "source_file": "src/components/inner/Kit.tsx",
       "source_location": "L108"
+    },
+    {
+      "id": "src_components_inner_page_learningcards",
+      "label": "learningCards()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "Kit.tsx",
+      "file_type": "code",
+      "norm_label": "learningcards()",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L343"
     },
     {
       "id": "src_components_inner_roleicon_roleicon",
@@ -4378,6 +4378,17 @@
       "norm_label": "elective_photos",
       "source_file": "src/components/inner/Page.tsx",
       "source_location": "L520"
+    },
+    {
+      "id": "src_components_inner_programabout",
+      "label": "ProgramAbout.tsx",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "Page.tsx",
+      "file_type": "code",
+      "norm_label": "programabout.tsx",
+      "source_file": "src/components/inner/ProgramAbout.tsx",
+      "source_location": "L1"
     },
     {
       "id": "src_components_inner_programfees",
@@ -5197,6 +5208,17 @@
       "source_location": "L16"
     },
     {
+      "id": "src_components_inner_careerflip",
+      "label": "CareerFlip.tsx",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "ElectiveCombinator.tsx",
+      "file_type": "code",
+      "norm_label": "careerflip.tsx",
+      "source_file": "src/components/inner/CareerFlip.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_inner_electivecombinator",
       "label": "ElectiveCombinator.tsx",
       "_origin": "ast",
@@ -5972,7 +5994,7 @@
       "label": "section-heads.ts",
       "_origin": "ast",
       "community": 29,
-      "community_name": "section-heads.ts",
+      "community_name": "InnerHero",
       "file_type": "code",
       "norm_label": "section-heads.ts",
       "source_file": "src/data/section-heads.ts",
@@ -5983,7 +6005,7 @@
       "label": "sectionHeads",
       "_origin": "ast",
       "community": 29,
-      "community_name": "section-heads.ts",
+      "community_name": "InnerHero",
       "file_type": "code",
       "norm_label": "sectionheads",
       "source_file": "src/data/section-heads.ts",
@@ -6163,28 +6185,6 @@
       "file_type": "code",
       "norm_label": "not-found.tsx",
       "source_file": "src/app/not-found.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_inner_careerflip",
-      "label": "CareerFlip.tsx",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "CareerFlip.tsx",
-      "file_type": "code",
-      "norm_label": "careerflip.tsx",
-      "source_file": "src/components/inner/CareerFlip.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_inner_programabout",
-      "label": "ProgramAbout.tsx",
-      "_origin": "ast",
-      "community": 33,
-      "community_name": "ProgramAbout.tsx",
-      "file_type": "code",
-      "norm_label": "programabout.tsx",
-      "source_file": "src/components/inner/ProgramAbout.tsx",
       "source_location": "L1"
     },
     {
@@ -7720,6 +7720,17 @@
       "type": "external"
     },
     {
+      "id": "src_components_inner_programabout_module",
+      "label": "src_components_inner_programabout_module",
+      "community": 1,
+      "community_name": "Page.tsx",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_components_inner_programabout_module",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "src_components_inner_programfees_module",
       "label": "src_components_inner_programfees_module",
       "community": 1,
@@ -7925,6 +7936,17 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_components_inner_admissionsteps_module",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "src_components_inner_careerflip_module",
+      "label": "src_components_inner_careerflip_module",
+      "community": 21,
+      "community_name": "ElectiveCombinator.tsx",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_components_inner_careerflip_module",
       "source_file": "",
       "type": "external"
     },
@@ -8332,28 +8354,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_app_status_module",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "src_components_inner_careerflip_module",
-      "label": "src_components_inner_careerflip_module",
-      "community": 32,
-      "community_name": "CareerFlip.tsx",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_components_inner_careerflip_module",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "src_components_inner_programabout_module",
-      "label": "src_components_inner_programabout_module",
-      "community": 33,
-      "community_name": "ProgramAbout.tsx",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_components_inner_programabout_module",
       "source_file": "",
       "type": "external"
     },
@@ -9118,6 +9118,18 @@
       "context": "call",
       "source_file": "src/components/inner/Blog.tsx",
       "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_careerflip_careerflip",
+      "target": "src_components_ui_cardslider_cardslider",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/CareerFlip.tsx",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -11661,7 +11673,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/ProgramFaculty.tsx",
-      "source_location": "L21",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_programfaculty_card",
+      "target": "src_components_ui_icon_icon",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/ProgramFaculty.tsx",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -11673,7 +11697,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/ProgramFaculty.tsx",
-      "source_location": "L37",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -11685,7 +11709,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/ProgramFaculty.tsx",
-      "source_location": "L42",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -13094,30 +13118,6 @@
     },
     {
       "source": "src_components_ui_testimonialshowcase_testimonialshowcase",
-      "target": "src_components_ui_testimonialshowcase_initialof",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L103",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_ui_testimonialshowcase_testimonialshowcase",
-      "target": "src_components_ui_icons_playicon",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L110",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_ui_testimonialshowcase_testimonialshowcase",
       "target": "src_components_ui_icons_chevronleft",
       "relation": "calls",
       "_origin": "ast",
@@ -13125,7 +13125,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L77",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -13137,7 +13137,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L83",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_testimonialshowcase_testimonialshowcase",
+      "target": "src_components_ui_testimonialshowcase_initialof",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/ui/TestimonialShowcase.tsx",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_testimonialshowcase_testimonialshowcase",
+      "target": "src_components_ui_icons_playicon",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/ui/TestimonialShowcase.tsx",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -14542,6 +14566,18 @@
       "context": "import",
       "source_file": "src/components/inner/Blog.tsx",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_careerflip",
+      "target": "src_components_ui_cardslider_cardslider",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/inner/CareerFlip.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -16382,7 +16418,7 @@
     },
     {
       "source": "src_components_inner_programfaculty",
-      "target": "src_components_inner_parse_img",
+      "target": "src_components_ui_icon_icon",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -16390,6 +16426,18 @@
       "context": "import",
       "source_file": "src/components/inner/ProgramFaculty.tsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_programfaculty",
+      "target": "src_components_inner_parse_img",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/inner/ProgramFaculty.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -18206,6 +18254,18 @@
     },
     {
       "source": "src_components_ui_testimonialshowcase",
+      "target": "src_data_testimonials_testimonial",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ui/TestimonialShowcase.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_testimonialshowcase",
       "target": "src_components_ui_icons_chevronleft",
       "relation": "imports",
       "_origin": "ast",
@@ -18213,7 +18273,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L5",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -18225,7 +18285,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L5",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -18237,19 +18297,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_ui_testimonialshowcase",
-      "target": "src_data_testimonials_testimonial",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -19386,7 +19434,7 @@
     },
     {
       "source": "src_components_inner_careerflip",
-      "target": "src_components_inner_careerflip_module",
+      "target": "src_components_ui_cardslider",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19394,6 +19442,18 @@
       "context": "import",
       "source_file": "src/components/inner/CareerFlip.tsx",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_careerflip",
+      "target": "src_components_inner_careerflip_module",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/inner/CareerFlip.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -21003,7 +21063,7 @@
     },
     {
       "source": "src_components_inner_programfaculty",
-      "target": "src_components_inner_parse",
+      "target": "src_components_ui_icon",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -21011,6 +21071,18 @@
       "context": "import",
       "source_file": "src/components/inner/ProgramFaculty.tsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_programfaculty",
+      "target": "src_components_inner_parse",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/inner/ProgramFaculty.tsx",
+      "source_location": "L4",
       "type_only": true,
       "weight": 1.0
     },
@@ -21023,7 +21095,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/inner/ProgramFaculty.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -23753,6 +23825,31 @@
     },
     {
       "source": "src_components_ui_testimonialshowcase",
+      "target": "src_data_testimonials",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ui/TestimonialShowcase.tsx",
+      "source_location": "L10",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_testimonialshowcase",
+      "target": "src_components_ui_testimonialshowcase_module",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ui/TestimonialShowcase.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_testimonialshowcase",
       "target": "ref_next",
       "relation": "imports_from",
       "_origin": "ast",
@@ -23777,6 +23874,18 @@
     },
     {
       "source": "src_components_ui_testimonialshowcase",
+      "target": "ref_swiper",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ui/TestimonialShowcase.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_testimonialshowcase",
       "target": "src_components_ui_icons",
       "relation": "imports_from",
       "_origin": "ast",
@@ -23784,32 +23893,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_ui_testimonialshowcase",
-      "target": "src_data_testimonials",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L6",
-      "type_only": true,
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_ui_testimonialshowcase",
-      "target": "src_components_ui_testimonialshowcase_module",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -24899,7 +24983,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/CareerFlip.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -24910,7 +24994,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/CareerFlip.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -24921,7 +25005,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/CareerFlip.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -26516,7 +26600,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/ProgramFaculty.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -26527,7 +26611,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/ProgramFaculty.tsx",
-      "source_location": "L31",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -26538,7 +26622,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/ProgramFaculty.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -26549,7 +26633,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/ProgramFaculty.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -28303,24 +28387,24 @@
     },
     {
       "source": "src_components_ui_testimonialshowcase",
-      "target": "src_components_ui_testimonialshowcase_testimonialshowcase",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_ui_testimonialshowcase",
       "target": "src_components_ui_testimonialshowcase_initialof",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/ui/TestimonialShowcase.tsx",
-      "source_location": "L9",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_testimonialshowcase",
+      "target": "src_components_ui_testimonialshowcase_testimonialshowcase",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/TestimonialShowcase.tsx",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -29898,5 +29982,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0e4abb4d2708ddab26e92c13181b1ece751033d2"
+  "built_at_commit": "3b9a91d4a6ad9ab2c69af4db0564370dff67f751"
 }
