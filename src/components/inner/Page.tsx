@@ -577,7 +577,16 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
   const nextTone = (): Tone => (ti++ % 2 === 0 ? 'white' : 'grey');
 
   // sections whose body is a single paragraph (Why DSU: accordion titles) are merged into one FAQ-style block
-  const secs = st.sections;
+  // programme pages: Careers moves up to sit right after the testimonials (the live site lists it after the fees)
+  const secs = (() => {
+    const a = [...st.sections];
+    const career = a.find((x) => /^career/i.test(x.title));
+    const stories = a.find((x) => /real stories/i.test(x.title));
+    if (!programLinks || !career || !stories) return a;
+    a.splice(a.indexOf(career), 1);
+    a.splice(a.indexOf(stories) + 1, 0, career);
+    return a;
+  })();
   // a lone sub-heading with no body (e.g. "Your Success Is Our Priority") is the small line above the NEXT section's title
   const kickers: Record<number, string> = {};
   secs.forEach((sc, i) => {
@@ -588,6 +597,20 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     }
   });
   const nodes: ReactNode[] = [];
+  // programme pages: the live fees section also holds "Career Path" + "Industries"; show them right after the testimonials instead
+  const careerFromFees = programLinks ? secs.find((x) => /fee/i.test(x.title) && x.subs.some((y) => /career/i.test(y.title))) : undefined;
+  const careerNode = (): ReactNode => {
+    if (!careerFromFees) return null;
+    const pairs = (sub: Sub) => parsePairs(sub.blocks).map((p) => ({ title: p.title, text: p.text.replace(/\.(?=[A-Z])/g, '. ') }));
+    const cs = careerFromFees.subs.find((x) => /career/i.test(x.title));
+    const is = careerFromFees.subs.find((x) => /industr/i.test(x.title));
+    if (!cs || !pairs(cs).length) return null;
+    return (
+      <Sec key="career-path" tone={nextTone()} title={cs.title}>
+        <CareerFlip careers={pairs(cs).map((p) => ({ title: p.title, text: p.text }))} industries={is ? pairs(is) : []} industriesTitle={is?.title} />
+      </Sec>
+    );
+  };
   // programme pages: "Eligibility Criteria / Eligibility Overview" belongs to the admission process, so it is shown inside that section
   const eligIdx = programLinks ? secs.findIndex((x) => /^eligibility/i.test(x.title) && x.subs.some((y) => /overview/i.test(y.title))) : -1;
   const eligSub = eligIdx >= 0 ? secs[eligIdx].subs.find((y) => /overview/i.test(y.title)) : undefined;
@@ -794,6 +817,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           {programLinks ? <TestimonialGrid items={programTestimonials(slug)} /> : quotes.filter((q) => q.img).length >= quotes.length / 2 ? <StoryCards items={quotes} initial={9} /> : <QuoteCards items={quotes} initial={6} home={slug === 'why-dsu-online'} />}
         </Sec>,
       );
+      if (careerFromFees) nodes.push(careerNode());
       continue;
     }
 
@@ -843,17 +867,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           );
         }
       }
-      // the live page keeps "Career Path" and "Industries" under the fee block: one flip-card section (industries live on the card backs)
-      const cleanPairs = (sub: Sub) => parsePairs(sub.blocks).map((p) => ({ title: p.title, text: p.text.replace(/\.(?=[A-Z])/g, '. ') }));
-      const careerSub = sec.subs.find((x) => /career/i.test(x.title));
-      const indSub = sec.subs.find((x) => /industr/i.test(x.title));
-      if (careerSub && cleanPairs(careerSub).length) {
-        nodes.push(
-          <Sec key={`${key}-${careerSub.title}`} tone={nextTone()} title={careerSub.title}>
-            <CareerFlip careers={cleanPairs(careerSub).map((p) => ({ title: p.title, text: p.text }))} industries={indSub ? cleanPairs(indSub) : []} industriesTitle={indSub?.title} />
-          </Sec>,
-        );
-      }
+      // (programme pages: "Career Path" + "Industries" under the fee block are shown after the testimonials, see careerNode)
       continue;
     }
 
