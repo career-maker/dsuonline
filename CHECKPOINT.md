@@ -232,3 +232,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - 2026-11-13: advantage card colours shift by one per row of 4 so no neighbours (across/down/carousel) share a colour.
 - 2026-11-13: 'The Program' (Why DSU Online X?) = new ProgramAbout.tsx (photo pair left, live copy split in 2 paras + benefit chips right); advantage banner photo = public/images/inner/advantage-banner.webp with hero-style dissolving gradient. Old WhyProgram in Kit.tsx now unused by programme pages.
 - 2026-11-13: ProgramAbout photo column stretches to text height on desktop (no gap on 1920).
+- 2026-11-13: ProgramAbout photos have separate hover animations (main lift+zoom, second tilt+pop).

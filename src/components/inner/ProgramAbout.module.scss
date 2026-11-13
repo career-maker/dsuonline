@@ -56,6 +56,33 @@
 
 .img {
   object-fit: cover;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+// each photo has its own hover: the main one lifts and its picture slowly zooms; the small one tilts and pops forward
+.main,
+.second {
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.5s ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .main:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 34px 60px rgb(2 9 102 / 20%);
+
+    .img {
+      transform: scale(1.06);
+    }
+  }
+
+  .second:hover {
+    transform: translate(-4px, -8px) rotate(-3deg) scale(1.07);
+    box-shadow: 0 22px 44px rgb(2 9 102 / 28%);
+
+    .img {
+      transform: scale(1.12);
+    }
+  }
 }
 
 .second {
