@@ -1,17 +1,15 @@
-'use client';
-
-import Image from 'next/image';
-import { useState, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import { CardSlider } from '@/components/ui/CardSlider';
 import s from './AdmissionSteps.module.scss';
 
 type Step = { title: string; text: string };
 
 // one title: keep "A" with "Step-by-Step" so it never ends a line on its own
-const heading = (t: string): ReactNode => t.replace(/A (?=Step)/, 'A ');
+const heading = (t: string): ReactNode => t.replace(/A (?=Step)/, 'A ');
 
 const ic = { fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round', strokeLinejoin: 'round' } as const;
 const wrap = (d: ReactNode) => (
-  <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" {...ic}>
+  <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" {...ic}>
     {d}
   </svg>
 );
@@ -25,53 +23,38 @@ const icons: ReactNode[] = [
   wrap(<><path d="M2 12 16 5l14 7-14 7z" /><path d="M8 15v6c0 2 4 4 8 4s8-2 8-4v-6" /></>), // enrolled
 ];
 
-/** Admission process: numbered timeline (hover / focus moves the highlight), one column per step; stacks on phones. */
-export function AdmissionSteps({ eyebrow, title, steps, image, eligibility }: { eyebrow?: string; title?: string; steps: Step[]; eligibility?: { title: string; text: string }; image?: { src: string; alt: string; w?: number; h?: number } }) {
-  const [active, setActive] = useState(0);
+function StepCard({ st, i }: { st: Step; i: number }) {
+  // the colour shifts by one every row of four, so neighbours (across, down and in the phone carousel) never match
+  return (
+    <article className={`${s.card} ${s[`t${(i + Math.floor(i / 4)) % 4}`]}`}>
+      <div className={s.top}>
+        <span className={s.ico}>{icons[i % icons.length]}</span>
+        <span className={s.step}>Step {i + 1}</span>
+      </div>
+      <h3>{st.title}</h3>
+      <p>{st.text}</p>
+    </article>
+  );
+}
+
+/** Admission process: one tinted card per step. Grid on desktop / tablet, Swiper carousel on phones. */
+export function AdmissionSteps({ eyebrow, title, steps }: { eyebrow?: string; title?: string; steps: Step[] }) {
   return (
     <div className={s.wrap}>
       <header className={s.head}>
-        {eyebrow && (
-          <p className={s.eyebrow}>
-            {eyebrow}
-            <i aria-hidden="true" />
-          </p>
-        )}
+        {eyebrow && <p className={s.eyebrow}>{eyebrow}</p>}
         {title && <h2>{heading(title)}</h2>}
       </header>
-      {image && (
-        <div className={s.photo}>
-          <Image src={image.src} alt={image.alt} fill sizes="(max-width: 900px) 100vw, 40vw" />
-        </div>
-      )}
-
-      {eligibility && (
-        <div className={s.elig}>
-          <span className={s.eligIco}>
-            <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" {...ic}>
-              <path d="M2 12 16 5l14 7-14 7z" />
-              <path d="M8 15v6c0 2 4 4 8 4s8-2 8-4v-6" />
-            </svg>
-          </span>
-          <div>
-            <h3>{eligibility.title}</h3>
-            <p>{eligibility.text}</p>
-          </div>
-        </div>
-      )}
-
-      <ol className={s.steps} style={{ ['--n' as string]: steps.length }}>
+      <ol className={s.grid}>
         {steps.map((st, i) => (
-          <li key={st.title} className={i === active ? s.on : undefined} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)}>
-            <span className={s.num}>{String(i + 1).padStart(2, '0')}</span>
-            <div className={s.card} tabIndex={0}>
-              <span className={s.ico}>{icons[i % icons.length]}</span>
-              <h3>{st.title}</h3>
-              <p>{st.text}</p>
-            </div>
+          <li key={st.title}>
+            <StepCard st={st} i={i} />
           </li>
         ))}
       </ol>
+      <div className={s.mobile}>
+        <CardSlider label="Admission steps" slideWidth="78%" items={steps.map((st, i) => <StepCard key={st.title} st={st} i={i} />)} />
+      </div>
     </div>
   );
 }

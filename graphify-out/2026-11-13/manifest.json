@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1794559650.928218,
-    "seen": 1794559890.4599485,
-    "ast_hash": "14c35e2818b7d7f54f6ca4f1ff79b81f",
+    "mtime": 1794560126.7510424,
+    "seen": 1794560251.814068,
+    "ast_hash": "617c5cd7bd37175ffedb38eacd79c5f3",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794559476.1808124,
-    "seen": 1794559890.4603128,
-    "ast_hash": "0e43d5bcf26ecd73abab08810fb76a17",
+    "mtime": 1794560252.5998762,
+    "seen": 1794560869.227472,
+    "ast_hash": "50c5cb9b816d555ce9861ad557e8361a",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -723,6 +723,18 @@
     "mtime": 1794559642.7121842,
     "seen": 1794559890.4599826,
     "ast_hash": "dd8a23ab97b808774146aae893b0d37c",
+    "semantic_hash": ""
+  },
+  "src/components/inner/ProgramEligibility.tsx": {
+    "mtime": 1794560235.0456424,
+    "seen": 1794560251.8140934,
+    "ast_hash": "3e63646a856b2f4f9e87b9a1aa13a9c9",
+    "semantic_hash": ""
+  },
+  "src/components/inner/ProgramGuidance.tsx": {
+    "mtime": 1794560113.8575013,
+    "seen": 1794560251.8141067,
+    "ast_hash": "e4870112019f750556b0ce4acd26cfe6",
     "semantic_hash": ""
   }
 }

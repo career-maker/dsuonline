@@ -991,7 +991,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       nodes.push(
         programLinks ? (
           <Sec key={key} tone="white">
-            <AdmissionSteps eyebrow={headFor(title).eyebrow} title={headFor(title).title} steps={steps} image={stepImg ? imgOf(stepImg) : undefined} />
+            <AdmissionSteps eyebrow={headFor(title).eyebrow} title={headFor(title).title} steps={steps} />
           </Sec>
         ) : (
           <Sec key={key} tone={nextTone()} title={title}>

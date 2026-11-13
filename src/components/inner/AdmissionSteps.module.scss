@@ -1,256 +1,174 @@
 @use 'tokens' as *;
 @use 'mixins' as *;
 
+$ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
 .wrap {
-  position: relative;
-  padding: clamp(20px, #{u(48)}, 48px) clamp(18px, #{u(48)}, 48px) clamp(24px, #{u(40)}, 40px);
-  border: 1px solid #e3e8f2;
-  border-radius: 24px;
-  background: linear-gradient(160deg, #fff 0%, #f5f7fd 100%);
-  box-shadow: 0 18px 50px rgb(2 9 102 / 8%);
-  overflow: hidden;
+  letter-spacing: -0.0175em;
 }
 
 .head {
-  position: relative;
-  z-index: 1;
-  max-width: 64%;
-  // leaves room for the photo in the top-right corner so it never reaches the steps
-  min-height: clamp(150px, #{u(210)}, 220px);
-  padding-bottom: clamp(18px, #{u(30)}, 30px);
+  margin-bottom: clamp(24px, #{u(44)}, 44px);
 
   h2 {
-    margin-top: 14px;
     @include h2;
-    text-wrap: balance;
-  }
-
-  @include down($bp-lg) {
-    max-width: 100%;
-    min-height: 0;
+    margin-top: clamp(6px, #{u(8)}, 8px);
   }
 }
 
-// same mini title as every other section
 .eyebrow {
   @include eyebrow;
 }
 
-// photo sits in the top-right corner with a curved lower-left edge
-.photo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30%;
-  height: clamp(150px, #{u(210)}, 220px);
-  overflow: hidden;
-  border-radius: 0 0 0 clamp(60px, #{u(130)}, 130px);
-  background: #dfe6f3;
-
-  img {
-    object-fit: cover;
-    object-position: 50% 30%;
-  }
-
-  @include down($bp-lg) {
-    position: relative;
-    width: 100%;
-    height: clamp(160px, 38vw, 260px);
-    margin-bottom: 26px;
-    border-radius: 18px;
-  }
-}
-
-.steps {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
-  margin: 0;
+// ---------- grid (4 across; a short last row is centred)
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(14px, #{u(24)}, 26px);
   padding: 0;
   list-style: none;
 
-  // dashed rail through the number circles
-  &::before {
+  li {
+    width: calc((100% - 3 * clamp(14px, #{u(24)}, 26px)) / 4);
+
+    @include down($bp-lg) {
+      width: calc((100% - clamp(14px, #{u(24)}, 26px)) / 2);
+    }
+  }
+
+  @include down($bp-sm) {
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
+
+  @include down($bp-sm) {
+    display: block;
+  }
+}
+
+// ---------- card
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: clamp(220px, #{u(300)}, 300px);
+  overflow: hidden;
+  padding: clamp(20px, #{u(28)}, 28px);
+  border: 1px solid transparent;
+  border-radius: 18px;
+  transition: transform 0.45s $ease, box-shadow 0.45s $ease, border-color 0.45s;
+
+  // a big soft circle in the corner that grows on hover
+  &::after {
     content: '';
     position: absolute;
-    top: 25px;
-    left: 3%;
-    right: 3%;
-    border-top: 2px dashed #c9d2e6;
+    right: -48px;
+    bottom: -48px;
+    width: 140px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 55%);
+    transition: transform 0.6s $ease;
   }
 
-  > li {
+  h3,
+  p,
+  .top {
     position: relative;
-    min-width: 0;
+    z-index: 1;
   }
-
-  @include down($bp-lg) {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    row-gap: 28px;
-
-    &::before {
-      display: none;
-    }
-  }
-
-  @include down($bp-md) {
-    grid-template-columns: 1fr;
-    row-gap: 0;
-
-    // vertical dashed rail on phones
-    &::before {
-      display: block;
-      top: 24px;
-      bottom: 24px;
-      left: 24px;
-      right: auto;
-      border-top: 0;
-      border-left: 2px dashed #c9d2e6;
-    }
-
-    > li {
-      display: grid;
-      grid-template-columns: 50px minmax(0, 1fr);
-      column-gap: 14px;
-      padding-bottom: 14px;
-    }
-  }
-}
-
-.num {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  place-items: center;
-  width: 50px;
-  height: 50px;
-  margin: 0 0 18px 6px;
-  border: 1.5px solid #cfd6e8;
-  border-radius: 50%;
-  background: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  color: $ink;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s, scale 0.3s;
-
-  @include down($bp-md) {
-    margin: 0;
-  }
-}
-
-.card {
-  height: calc(100% - 68px);
-  padding: 18px 16px 20px;
-  border-radius: 14px;
-  border-right: 1px solid #e3e8f2;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  outline-offset: 2px;
-  @include focus-ring;
 
   h3 {
-    margin-top: 16px;
-    font-size: fs(20, 17px);
+    margin-top: clamp(18px, #{u(28)}, 28px);
+    font-size: clamp(18px, #{u(23)}, 23px);
+    font-weight: 600;
     line-height: 1.25;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: $ink;
-  }
-
-  p {
-    margin-top: 10px;
-    font-size: 14.5px;
-    line-height: 1.55;
-    color: $body;
-  }
-
-  @include down($bp-lg) {
-    height: auto;
-    border-right: 0;
-    border: 1px solid #e8ecf5;
-    background: #fff;
-  }
-
-  @include down($bp-md) {
-    margin-top: 0;
-  }
-}
-
-.ico {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: #eef1fa;
-  color: $blue;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-// active step (default first): filled number + tinted card
-.on {
-  .num {
-    border-color: $blue;
-    background: $blue;
-    color: #fff;
-    scale: 1.06;
-  }
-
-  .card {
-    background: #eaeefb;
-    box-shadow: inset 0 0 0 1px rgb(2 9 102 / 10%);
-  }
-
-  .ico {
-    background: $blue;
-    color: #fff;
-  }
-}
-
-
-// eligibility belongs to the admission process: a highlighted strip above the steps
-.elig {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-  margin-bottom: clamp(24px, #{u(40)}, 40px);
-  padding: clamp(18px, #{u(26)}, 26px) clamp(18px, #{u(30)}, 30px);
-  border: 1px solid #dfe6f2;
-  border-left: 4px solid $gold;
-  border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 8px 24px rgb(2 9 102 / 6%);
-
-  h3 {
-    font-size: fs(24, 19px);
-    line-height: 1.2;
-    font-weight: 700;
-    letter-spacing: -0.015em;
     color: $ink;
   }
 
   p {
     margin-top: 8px;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: clamp(14px, #{u(16)}, 16px);
+    line-height: 1.55;
     color: $body;
   }
 
-  @include down($bp-sm) {
-    flex-direction: column;
-    gap: 12px;
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-8px);
+      border-color: rgb(2 9 102 / 25%);
+      box-shadow: 0 22px 44px rgb(0 40 80 / 14%);
+
+      &::after {
+        transform: scale(2.4);
+      }
+
+      .ico {
+        background: $blue;
+        color: #fff;
+        transform: rotate(-8deg) scale(1.08);
+      }
+
+      .step {
+        color: $blue;
+      }
+    }
   }
 }
 
-.eligIco {
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ico {
   display: grid;
-  flex: none;
   place-items: center;
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
   border-radius: 14px;
-  background: $blue;
-  color: #fff;
+  background: #fff;
+  color: $blue;
+  transition: background 0.35s, color 0.35s, transform 0.45s $ease;
+}
+
+.step {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $logo-blue;
+  transition: color 0.3s;
+}
+
+// the same four soft box colours as the other card grids
+.t0 {
+  background: #e6f2f9;
+}
+
+.t1 {
+  background: #fff8d1;
+}
+
+.t2 {
+  background: #e3f4ea;
+}
+
+.t3 {
+  background: #fdebdc;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::after,
+  .ico {
+    transition: none;
+  }
 }
