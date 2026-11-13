@@ -1,17 +1,17 @@
 # Graph Report - dsu online  (2026-11-13)
 
 ## Corpus Check
-- 112 files · ~74,243 words
+- 112 files · ~74,294 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 42 file(s) not represented in the graph (top: .scss 39, (none) 2, .ico 1)
 
 ## Summary
-- 654 nodes · 1661 edges · 33 communities (29 shown, 4 thin omitted)
+- 654 nodes · 1660 edges · 33 communities (29 shown, 4 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `bff7573b`
+- Built from commit: `f784a7f0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -150,7 +150,7 @@ Cohesion: 0.29
 Nodes (6): AdmissionSteps(), heading(), ic, icons, Step, wrap()
 
 ### Community 21 - "ProgramAdvantage.tsx"
-Cohesion: 0.19
+Cohesion: 0.18
 Nodes (11): swiper, Card(), Ico(), P, ProgramAdvantage(), CardSlider(), advantageBanner, AdvantageCard (+3 more)
 
 ### Community 22 - "next"

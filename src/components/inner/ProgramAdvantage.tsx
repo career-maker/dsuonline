@@ -18,7 +18,8 @@ const P: Record<AdvantageCard['icon'] | 'swap', string> = {
 
 function Card({ c, i }: { c: AdvantageCard; i: number }) {
   return (
-    <div className={`${s.card} ${s[`t${i % 4}`]}`}>
+    // colour shifts by one every row of four, so neighbours differ across, down and in the phone carousel (also in the 2-column tablet grid)
+    <div className={`${s.card} ${s[`t${(i + Math.floor(i / 4)) % 4}`]}`}>
       <Ico n={c.icon} />
       <h3>{c.title}</h3>
       <p>{c.text}</p>

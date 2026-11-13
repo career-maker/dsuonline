@@ -2764,7 +2764,7 @@
       "file_type": "code",
       "norm_label": "ico()",
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L31"
+      "source_location": "L29"
     },
     {
       "id": "src_components_inner_programadvantage_programadvantage",
@@ -2776,7 +2776,7 @@
       "file_type": "code",
       "norm_label": "programadvantage()",
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L40"
+      "source_location": "L38"
     },
     {
       "id": "src_components_ui_cardslider_cardslider",
@@ -10442,19 +10442,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_programadvantage_programadvantage",
-      "target": "src_components_inner_programadvantage_ico",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L55",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -10466,7 +10454,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L59",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -10478,7 +10466,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L67",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -10490,7 +10478,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L72",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -23917,7 +23905,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L31",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -23928,7 +23916,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L40",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -27078,5 +27066,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "bff7573b3e0929c6cba29e9362201ed11b9d9caa"
+  "built_at_commit": "f784a7f0f6501fb8849f08aab80f4bc53bf1d3d4"
 }

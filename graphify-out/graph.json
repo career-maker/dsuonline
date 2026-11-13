@@ -2764,7 +2764,7 @@
       "file_type": "code",
       "norm_label": "ico()",
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "src_components_inner_programadvantage_programadvantage",
@@ -2776,7 +2776,7 @@
       "file_type": "code",
       "norm_label": "programadvantage()",
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L38"
+      "source_location": "L39"
     },
     {
       "id": "src_components_ui_cardslider_cardslider",
@@ -10442,7 +10442,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -10454,7 +10454,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -10466,7 +10466,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L69",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -10478,7 +10478,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L74",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -23905,7 +23905,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -23916,7 +23916,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -27066,5 +27066,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f784a7f0f6501fb8849f08aab80f4bc53bf1d3d4"
+  "built_at_commit": "4eca819456adca8c3fbc857ccf97c44d6dffef51"
 }
