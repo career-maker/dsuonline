@@ -4,8 +4,8 @@
 .about {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-  gap: clamp(36px, #{u(100)}, 110px);
-  align-items: center;
+  gap: clamp(36px, #{u(90)}, 100px);
+  align-items: stretch;
   letter-spacing: -0.0175em;
 
   @include down($bp-lg) {
@@ -17,10 +17,12 @@
 // ---------- photo pair: a tinted block sits behind the main photo, the second photo overlaps its corner
 .media {
   position: relative;
-  max-width: 560px;
+  display: flex;
+  min-height: 420px;
   padding: 0 0 clamp(28px, #{u(48)}, 48px) clamp(14px, #{u(22)}, 22px);
 
   @include down($bp-lg) {
+    display: block;
     max-width: 520px;
     margin-inline: auto;
     width: 100%;
@@ -40,11 +42,16 @@
 
 .main {
   position: relative;
-  aspect-ratio: 538 / 522;
+  flex: 1;
+  aspect-ratio: 538 / 522; // phones/tablet: fixed ratio; desktop: stretches to the text column's height
   overflow: hidden;
   border-radius: 20px;
   margin: clamp(-14px, #{u(-22)}, -22px) 0 0;
   box-shadow: 0 24px 50px rgb(2 9 102 / 12%);
+
+  @include up($bp-lg) {
+    aspect-ratio: auto;
+  }
 }
 
 .img {
@@ -70,6 +77,10 @@
 // ---------- copy
 .eyebrow {
   @include eyebrow;
+}
+
+.copy {
+  align-self: center;
 }
 
 .copy h2 {
