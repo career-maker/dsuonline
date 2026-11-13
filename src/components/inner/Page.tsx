@@ -70,7 +70,7 @@ type Props = {
   slug: string;
   crumbs: Crumb[];
   blocks: Block[];
-  programLinks?: { name: string; href: string; duration?: string }[];
+  programLinks?: { name: string; href: string; duration?: string; blurb?: string }[];
   withFacts?: boolean;
 };
 
@@ -822,7 +822,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         <Sec key={key} tone={nextTone()}>
           <ElectiveGrid
             items={programLinks}
-            eyebrow="Electives"
+            eyebrow="Customise your learning"
             title={title}
             lead={`Choose from industry-relevant electives to specialize your ${progName} and build the skills that align with your career goals.`}
           />

@@ -235,3 +235,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - 2026-11-13: ProgramAbout photos have separate hover animations (main lift+zoom, second tilt+pop).
 - 2026-11-13: ProgramAbout benefits = plain points (ring+tick, hairline that draws on hover), 2 cols desktop, no pills.
 - 2026-11-13: programme page order: Hero, Advantage, banner, The Program, Electives, Interactive Elective Architect (#pair), Testimonials...
+- 2026-11-13: ElectiveGrid = photo cards (photo ~2/3, name, tagline from each elective page banner, Know More), grid desktop, Swiper on phones; mini title 'Customise your learning'. Live HRM page has Finance's tagline (live copy slip); duplicate taglines hidden after first use.

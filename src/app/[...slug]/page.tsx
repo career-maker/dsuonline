@@ -23,13 +23,20 @@ export function generateStaticParams(): Params[] {
 type Resolved =
   | { kind: 'blogIndex'; page: number }
   | { kind: 'post'; data: PageData; slug: string }
-  | { kind: 'page'; data: PageData; crumbs: Crumb[]; programLinks?: { name: string; href: string; duration?: string }[]; withFacts: boolean };
+  | { kind: 'page'; data: PageData; crumbs: Crumb[]; programLinks?: { name: string; href: string; duration?: string; blurb?: string }[]; withFacts: boolean };
 
 /** "3 Years (6 Semesters)" as printed in the specialization page's banner facts. */
 function bannerDuration(prog: (typeof programs)[number], sp: { slug: string }): string | undefined {
   const ps = (loadPage([prog.href.slice(1), `${prog.code}-electives`, sp.slug])?.blocks ?? []).filter((b): b is Extract<Block, { t: 'p' }> => b.t === 'p').map((b) => b.x);
   const i = ps.findIndex((x) => /^duration$/i.test(x.trim()));
   return i < 0 ? undefined : [ps[i + 1], /^\(/.test(ps[i + 2] ?? '') ? ps[i + 2] : ''].filter(Boolean).join(' ');
+}
+
+/** the one-line tagline under the specialization page's banner title ("Data Science | Visualization | ..."), shown as the card description */
+function bannerBlurb(prog: (typeof programs)[number], sp: { slug: string }): string | undefined {
+  const ps = (loadPage([prog.href.slice(1), `${prog.code}-electives`, sp.slug])?.blocks ?? []).filter((b): b is Extract<Block, { t: 'p' }> => b.t === 'p').map((b) => b.x.trim());
+  const tag = ps.find((x, i) => i > 0 && /\|/.test(x) && x.length < 140);
+  return tag?.split('|').map((x) => x.trim()).filter(Boolean).join(' \u00B7 ');
 }
 
 function resolve(segments: string[]): Resolved | null {
@@ -54,7 +61,10 @@ function resolve(segments: string[]): Resolved | null {
       kind: 'page',
       data,
       crumbs: [{ label: 'Home', href: '/' }, { label: `Online ${prog.name}` }],
-      programLinks: prog.specializations.map((sp) => ({ name: sp.name, href: specializationHref(prog, sp), duration: bannerDuration(prog, sp) })),
+      // a tagline that repeats on another elective (live-site copy slip) is shown only once, on its first card
+      programLinks: prog.specializations
+        .map((sp) => ({ name: sp.name, href: specializationHref(prog, sp), duration: bannerDuration(prog, sp), blurb: bannerBlurb(prog, sp) }))
+        .map((l, i, all) => (l.blurb && all.findIndex((x) => x.blurb === l.blurb) !== i ? { ...l, blurb: undefined } : l)),
       withFacts: true,
     };
   }

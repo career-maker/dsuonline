@@ -8,7 +8,7 @@ export type SectionHead = { match: RegExp; eyebrow?: string; title?: string | nu
 
 export const sectionHeads: SectionHead[] = [
   { match: /learning system/i, eyebrow: 'Learning Experience' },
-  { match: /elective/i, eyebrow: 'Electives' },
+  { match: /elective/i, eyebrow: 'Customise your learning' },
   { match: /real stories/i, eyebrow: 'Testimonials' },
   { match: /fee/i, eyebrow: 'Fee Structure' },
   { match: /career/i, eyebrow: 'Careers' },
