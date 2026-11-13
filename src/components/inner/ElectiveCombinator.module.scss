@@ -201,13 +201,27 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   font-size: 14px;
   color: $body;
 
+  // plain text action: the browser's default button box is reset
   button {
+    appearance: none;
+    padding: 6px 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    font: inherit;
     font-size: 14px;
     font-weight: 600;
     color: $blue;
     text-decoration: underline;
-    text-underline-offset: 3px;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
     cursor: pointer;
+    transition: text-decoration-color 0.25s ease;
+    @include focus-ring;
+
+    &:hover:not(:disabled) {
+      text-decoration-color: currentcolor;
+    }
 
     &:disabled {
       opacity: 0.4;

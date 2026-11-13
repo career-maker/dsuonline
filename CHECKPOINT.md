@@ -237,3 +237,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - 2026-11-13: programme page order: Hero, Advantage, banner, The Program, Electives, Interactive Elective Architect (#pair), Testimonials...
 - 2026-11-13: ElectiveGrid = photo cards (photo ~2/3, name, tagline from each elective page banner, Know More), grid desktop, Swiper on phones; mini title 'Customise your learning'. Live HRM page has Finance's tagline (live copy slip); duplicate taglines hidden after first use.
 - 2026-11-13: ElectiveCombinator redesigned: one checkbox list (max 2, others disabled, Clear selection) + live navy result panel + stats + 4 benefits (Swiper on phones). Copy in src/data/programme-architect.ts (MBA text from client reference; other programmes templated with their electives). Anchor #pair.
+- 2026-11-13: Architect 'Clear selection' = plain text action (reset UA button).
