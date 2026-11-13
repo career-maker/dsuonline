@@ -234,3 +234,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - 2026-11-13: ProgramAbout photo column stretches to text height on desktop (no gap on 1920).
 - 2026-11-13: ProgramAbout photos have separate hover animations (main lift+zoom, second tilt+pop).
 - 2026-11-13: ProgramAbout benefits = plain points (ring+tick, hairline that draws on hover), 2 cols desktop, no pills.
+- 2026-11-13: programme page order: Hero, Advantage, banner, The Program, Electives, Interactive Elective Architect (#pair), Testimonials...

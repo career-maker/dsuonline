@@ -817,11 +817,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     // --- programme electives grid
     if (programLinks && /elective/i.test(title) && sec.subs.length > 0) {
       const progName = ({ mba: 'MBA', mca: 'MCA', bba: 'BBA', bca: 'BCA', bcom: 'B.Com' } as Record<string, string>)[slug.replace(/^online-/, '')] ?? 'Online';
-      nodes.push(
-        <Sec key={`${key}-pair`} tone="sky" id="pair">
-          <ElectiveCombinator programName={progName} programCode={slug.replace(/^online-/, '')} electives={programLinks.map((x) => x.name)} sectors={pageIndustries(raw)} />
-        </Sec>,
-      );
+      // order: the electives first, then the interactive elective architect (anchor #pair)
       nodes.push(
         <Sec key={key} tone={nextTone()}>
           <ElectiveGrid
@@ -830,6 +826,11 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
             title={title}
             lead={`Choose from industry-relevant electives to specialize your ${progName} and build the skills that align with your career goals.`}
           />
+        </Sec>,
+      );
+      nodes.push(
+        <Sec key={`${key}-pair`} tone="sky" id="pair">
+          <ElectiveCombinator programName={progName} programCode={slug.replace(/^online-/, '')} electives={programLinks.map((x) => x.name)} sectors={pageIndustries(raw)} />
         </Sec>,
       );
       continue;
