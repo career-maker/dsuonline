@@ -1,7 +1,7 @@
 @use 'tokens' as *;
 @use 'mixins' as *;
 
-$edge: #e3eaf1;
+$edge: #dbe5ee;
 
 .wrap {
   @include container;
@@ -10,24 +10,20 @@ $edge: #e3eaf1;
 .sec {
   background: #fff;
   letter-spacing: -0.0175em;
-  @include section-pad(80, 56);
+  @include section-pad(90, 70);
 }
 
-.head {
+// top row: pitch on the left, dual-specialisation panel (or the lead, when a page has no dual) on the right
+.top {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, #{u(80)}, 100px);
   align-items: end;
-  gap: 16px clamp(24px, 6vw, 96px);
-  margin-bottom: clamp(28px, #{u(48)}, 52px);
+  margin-bottom: clamp(26px, #{u(48)}, 52px);
 
-  h2 {
-    @include h2;
-    margin-top: clamp(6px, #{u(8)}, 8px);
-    max-width: 14em;
-  }
-
-  @include down($bp-md) {
+  @include down($bp-lg) {
     grid-template-columns: 1fr;
+    gap: 22px;
   }
 }
 
@@ -35,141 +31,181 @@ $edge: #e3eaf1;
   @include eyebrow;
 }
 
+.title {
+  @include h2;
+  margin-top: clamp(6px, #{u(8)}, 8px);
+}
+
 .lead {
   @include body-text;
-  max-width: 34em;
+  max-width: 30em;
+  margin-top: clamp(14px, #{u(22)}, 22px);
+
+  &.side {
+    margin: 0;
+  }
   font-size: clamp(15px, #{u(20)}, 20px);
-  padding-bottom: 6px;
 }
 
-.tile {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: #e9f2fb;
-  color: $logo-blue;
-}
-
+// dual specialisation: a tinted panel with a tiny "two electives, one degree" sketch and the global button
 .dual {
-  display: grid;
-  justify-items: start;
-  gap: 8px;
-  margin-bottom: clamp(24px, #{u(36)}, 36px);
+  padding: clamp(20px, #{u(30)}, 30px);
+  border: 1px solid #cfe3f1;
+  border-radius: 14px;
+  background: $bg-card-sky;
 
   h3 {
-    margin-top: 8px;
+    margin-top: 18px;
     font-size: clamp(18px, #{u(24)}, 24px);
     font-weight: 600;
     color: $ink;
   }
 
   p {
-    max-width: 62em;
-    font-size: clamp(15px, #{u(18)}, 18px);
-    line-height: 1.5;
-    color: $ink;
+    margin-top: 8px;
+    font-size: clamp(14px, #{u(17)}, 17px);
+    line-height: 1.55;
+    color: $body;
   }
 
-  // same button as the hero's Apply Now (ArrowLink), blue on white
-  a.combo {
-    margin-top: 8px;
-    background: #2338e8;
-    color: #fff;
+  :global(a) {
+    margin-top: 20px;
   }
 }
 
-// desktop / tablet: grid. phones: the same cards in a Swiper carousel (see CardSlider)
+.sketch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: $blue;
+
+  b {
+    padding: 7px 14px;
+    border: 1px solid $logo-blue;
+    border-radius: 999px;
+    background: #fff;
+    font-weight: 600;
+  }
+
+  i {
+    font-style: normal;
+    color: $logo-blue;
+  }
+
+  em {
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: $blue;
+    color: #fff;
+    font-style: normal;
+  }
+}
+
+// ---------- the eight reasons: the site's soft tinted cards (same colours as the Kit card grids)
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
-  gap: clamp(12px, #{u(18)}, 20px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, #{u(24)}, 24px);
   padding: 0;
   list-style: none;
+
+  @include down($bp-lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
   @include down($bp-sm) {
     display: none;
   }
 }
 
+// phones: the same cards in a Swiper carousel
 .mobileCards {
   display: none;
 
   @include down($bp-sm) {
     display: block;
-    margin-top: 22px;
   }
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
   height: 100%;
-  padding: clamp(18px, #{u(26)}, 26px);
-  border: 1px solid $edge;
+  padding: clamp(20px, #{u(30)}, 30px);
+  border: 1px solid transparent;
   border-radius: 16px;
-  background: #fff;
-  transition: border-color 0.2s, transform 0.2s;
+  transition: box-shadow 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.35s;
 
-  &:hover {
-    border-color: #b9d2ea;
-    transform: translateY(-3px);
+  @media (hover: hover) {
+    &:hover {
+      border-color: rgb(2 9 102 / 35%);
+      box-shadow: 0 16px 40px rgb(0 40 80 / 12%);
+    }
   }
 
-  .tile {
-    margin-bottom: 14px;
+  svg {
+    margin-bottom: clamp(14px, #{u(24)}, 24px);
+    color: $blue;
   }
 
   h3 {
-    font-size: clamp(16px, #{u(20)}, 20px);
-    font-weight: 600;
+    font-size: clamp(18px, #{u(24)}, 24px);
+    line-height: 1.25;
+    font-weight: 500;
     color: $ink;
   }
 
   p {
-    font-size: clamp(14px, #{u(16)}, 16px);
-    line-height: 1.5;
+    margin-top: 8px;
+    font-size: clamp(14px, #{u(17)}, 17px);
+    line-height: 1.55;
     color: $body;
   }
 }
 
-// ---------- banner
+.t0 {
+  background: #e6f2f9;
+}
+
+.t1 {
+  background: #fff8d1;
+}
+
+.t2 {
+  background: #e3f4ea;
+}
+
+.t3 {
+  background: #fdebdc;
+}
+
+// ---------- closing banner: navy copy panel + an inset photo with a curved edge
 .bannerSec {
   background: #fff;
-  padding-bottom: clamp(48px, #{u(80)}, 80px);
+  padding-bottom: clamp(48px, #{u(90)}, 90px);
 }
 
 .banner {
-  position: relative;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   overflow: hidden;
-  min-height: clamp(300px, #{u(470)}, 470px);
   border-radius: clamp(18px, #{u(28)}, 28px);
   color: #fff;
-  background: linear-gradient(100deg, #0b1f4d 35%, #102a66 100%);
-}
-
-// the photo dissolves into the navy so the copy keeps its contrast
-.bannerImg {
-  object-fit: cover;
-  object-position: 70% 40%;
-  mask-image: linear-gradient(90deg, transparent 0%, rgb(0 0 0 / 15%) 35%, rgb(0 0 0 / 75%) 55%, #000 72%);
-  opacity: 0.9;
+  background: $blue-dark;
 
   @include down($bp-md) {
-    mask-image: linear-gradient(180deg, rgb(0 0 0 / 55%), rgb(0 0 0 / 20%));
-    opacity: 0.6;
+    grid-template-columns: 1fr;
   }
 }
 
 .bannerCopy {
-  position: relative;
-  z-index: 1;
-  max-width: 560px;
-  padding: clamp(28px, #{u(60)}, 64px);
+  align-self: center;
+  padding: clamp(28px, #{u(64)}, 70px);
+
+  @include down($bp-md) {
+    order: 2;
+  }
 }
 
 .bannerEyebrow {
@@ -177,11 +213,14 @@ $edge: #e3eaf1;
   color: $logo-yellow;
 }
 
+// the three words run on one line and step through the brand blues
 .words {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.28em;
   margin-top: clamp(10px, #{u(16)}, 16px);
-  font-size: clamp(40px, #{u(92)}, 92px);
-  line-height: 1.02;
+  font-size: clamp(34px, #{u(76)}, 76px);
+  line-height: 1.08;
   font-weight: 700;
   letter-spacing: -0.03em;
 
@@ -195,9 +234,29 @@ $edge: #e3eaf1;
 }
 
 .bannerText {
-  max-width: 30em;
+  max-width: 28em;
   margin-top: clamp(14px, #{u(22)}, 22px);
   font-size: clamp(14px, #{u(18)}, 18px);
-  line-height: 1.5;
-  color: rgb(255 255 255 / 85%);
+  line-height: 1.55;
+  color: rgb(255 255 255 / 82%);
+}
+
+.bannerPhoto {
+  position: relative;
+  min-height: clamp(220px, #{u(430)}, 460px);
+  margin: clamp(10px, #{u(14)}, 14px) clamp(10px, #{u(14)}, 14px) clamp(10px, #{u(14)}, 14px) 0;
+  overflow: hidden;
+  border-radius: clamp(16px, #{u(110)}, 110px) clamp(14px, #{u(22)}, 22px) clamp(14px, #{u(22)}, 22px) clamp(16px, #{u(110)}, 110px);
+
+  @include down($bp-md) {
+    order: 1;
+    min-height: 220px;
+    margin: 10px 10px 0;
+    border-radius: 16px;
+  }
+}
+
+.bannerImg {
+  object-fit: cover;
+  object-position: 62% 40%;
 }

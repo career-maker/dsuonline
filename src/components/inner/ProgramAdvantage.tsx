@@ -16,12 +16,10 @@ const P: Record<AdvantageCard['icon'] | 'swap', string> = {
   swap: 'M4 8h13l-3-3m6 11H7l3 3',
 };
 
-function Card({ c }: { c: AdvantageCard }) {
+function Card({ c, i }: { c: AdvantageCard; i: number }) {
   return (
-    <div className={s.card}>
-      <span className={s.tile}>
-        <Ico n={c.icon} />
-      </span>
+    <div className={`${s.card} ${s[`t${i % 4}`]}`}>
+      <Ico n={c.icon} />
       <h3>{c.title}</h3>
       <p>{c.text}</p>
     </div>
@@ -30,7 +28,7 @@ function Card({ c }: { c: AdvantageCard }) {
 
 function Ico({ n }: { n: keyof typeof P }) {
   return (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d={P[n]} />
     </svg>
   );
@@ -42,41 +40,44 @@ export function ProgramAdvantage({ name, lead, dual, bannerSrc }: { name: string
     <>
       <section className={s.sec} id="advantage">
         <div className={s.wrap}>
-          <header className={s.head}>
+          <div className={s.top}>
             <div>
               <p className={s.eyebrow}>The DSU Online Advantage</p>
-              <h2>Why choose the Online {name}?</h2>
+              <h2 className={s.title}>Why choose the Online {name}?</h2>
+              {dual && <p className={s.lead}>{lead}</p>}
             </div>
-            <p className={s.lead}>{lead}</p>
-          </header>
-          {dual && (
-            <div className={s.dual}>
-              <span className={s.tile}>
-                <Ico n="swap" />
-              </span>
-              <h3>Dual Specialisation</h3>
-              <p>{dual.text}</p>
-              <ArrowLink href={dual.href} className={s.combo}>
-                Build your combination
-              </ArrowLink>
-            </div>
-          )}
+            {dual ? (
+              <div className={s.dual}>
+                <p className={s.sketch} aria-hidden="true">
+                  <b>Elective 1</b>
+                  <i>+</i>
+                  <b>Elective 2</b>
+                  <i>=</i>
+                  <em>One Online {name}</em>
+                </p>
+                <h3>Dual Specialisation</h3>
+                <p>{dual.text}</p>
+                <ArrowLink href={dual.href}>Build your combination</ArrowLink>
+              </div>
+            ) : (
+              <p className={`${s.lead} ${s.side}`}>{lead}</p>
+            )}
+          </div>
           <ul className={s.cards}>
-            {advantageCards.map((c) => (
+            {advantageCards.map((c, i) => (
               <li key={c.title}>
-                <Card c={c} />
+                <Card c={c} i={i} />
               </li>
             ))}
           </ul>
           <div className={s.mobileCards}>
-            <CardSlider label={`Why choose the Online ${name}`} items={advantageCards.map((c) => <Card key={c.title} c={c} />)} />
+            <CardSlider label={`Why choose the Online ${name}`} items={advantageCards.map((c, i) => <Card key={c.title} c={c} i={i} />)} />
           </div>
         </div>
       </section>
       <section className={s.bannerSec}>
         <div className={s.wrap}>
           <div className={s.banner}>
-            <Image src={bannerSrc} alt="" fill sizes="(max-width: 1200px) 100vw, 1180px" className={s.bannerImg} />
             <div className={s.bannerCopy}>
               <p className={s.bannerEyebrow}>{advantageBanner.eyebrow}</p>
               <p className={s.words} aria-label={advantageBanner.words.join(' ')}>
@@ -87,6 +88,9 @@ export function ProgramAdvantage({ name, lead, dual, bannerSrc }: { name: string
                 ))}
               </p>
               <p className={s.bannerText}>{advantageBanner.text}</p>
+            </div>
+            <div className={s.bannerPhoto}>
+              <Image src={bannerSrc} alt="" fill sizes="(max-width: 900px) 100vw, 600px" className={s.bannerImg} />
             </div>
           </div>
         </div>

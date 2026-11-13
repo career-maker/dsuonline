@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794547776.697363,
-    "seen": 1794550949.2756486,
-    "ast_hash": "658b43a09ae6cd6d0a22ff3c6f09a47e",
+    "mtime": 1794550949.667396,
+    "seen": 1794551472.1566746,
+    "ast_hash": "e8bceee867b9d279c0d519aeda006f40",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -666,9 +666,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/ProgramAdvantage.tsx": {
-    "mtime": 1794550775.0438335,
-    "seen": 1794550949.2755222,
-    "ast_hash": "fc210fcecd71875894bf1646971df828",
+    "mtime": 1794551381.7568257,
+    "seen": 1794551472.1565406,
+    "ast_hash": "787b6e2276a344911d838441909536b5",
     "semantic_hash": ""
   },
   "src/data/programme-advantage.ts": {

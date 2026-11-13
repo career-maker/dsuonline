@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1794213613.0890858,
-    "seen": 1794214511.91418,
-    "ast_hash": "8d2ec73abd766d0b15454aff1647ddb2",
+    "mtime": 1794550740.2658257,
+    "seen": 1794550949.275476,
+    "ast_hash": "fa7aba9f9b2000d0c7aca20bb8d57ba9",
     "semantic_hash": ""
   },
   "server.js": {
@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794544560.777273,
-    "seen": 1794547776.291396,
-    "ast_hash": "5c7e03ab671c6020586a41d7104bb6ef",
+    "mtime": 1794547776.697363,
+    "seen": 1794550949.2756486,
+    "ast_hash": "658b43a09ae6cd6d0a22ff3c6f09a47e",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -666,15 +666,21 @@
     "semantic_hash": ""
   },
   "src/components/inner/ProgramAdvantage.tsx": {
-    "mtime": 1794547426.2614224,
-    "seen": 1794547776.291247,
-    "ast_hash": "5a249267a06a032c77acf94e0ebeff4c",
+    "mtime": 1794550775.0438335,
+    "seen": 1794550949.2755222,
+    "ast_hash": "fc210fcecd71875894bf1646971df828",
     "semantic_hash": ""
   },
   "src/data/programme-advantage.ts": {
     "mtime": 1794547426.0748768,
     "seen": 1794547776.2913523,
     "ast_hash": "b23c7999f8fed8ad791d7cf45d6f1e51",
+    "semantic_hash": ""
+  },
+  "src/components/ui/CardSlider.tsx": {
+    "mtime": 1794550752.6886096,
+    "seen": 1794550949.275598,
+    "ast_hash": "36755d1f12a76c06795418e7efcb6c09",
     "semantic_hash": ""
   }
 }
