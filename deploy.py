@@ -126,8 +126,8 @@ pm2 save
 
 echo "==> Verifying health..."
 sleep 3
-curl -s -o /dev/null -w 'Local HTTP status: %{{http_code}}\\n' http://127.0.0.1:{app_port}/
-curl -s -o /dev/null -w 'Public HTTPS status: %{{http_code}}\\n' https://dsuonline.intersmarthosting.in/
+curl -s -o /dev/null -w "Local HTTP status: %{{http_code}}\\n" http://127.0.0.1:{app_port}/
+curl -s -o /dev/null -w "Public HTTPS status: %{{http_code}}\\n" https://dsuonline.intersmarthosting.in/
 """
 
 stdin, stdout, stderr = ssh.exec_command(f"bash -lc '{remote_script}'")
