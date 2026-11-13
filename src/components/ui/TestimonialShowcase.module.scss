@@ -82,28 +82,28 @@
   }
 }
 
-// marquee track: scrolled by JS, right edge fades
+// Swiper track: right edge fades on desktop
 .rail {
-  overflow: hidden;
+  min-width: 0;
   padding-bottom: 8px;
   mask-image: linear-gradient(90deg, #000 calc(100% - 60px), transparent);
-
-  ul {
-    display: flex;
-    width: max-content;
-    gap: clamp(14px, #{u(20)}, 20px);
-  }
 
   @include down($bp-lg) {
     mask-image: none;
   }
 }
 
+.swiper {
+  overflow: hidden;
+  padding-bottom: 14px; // room for the speech-bubble tail
+}
+
+// slides keep the card widths; swiper-slide would otherwise stretch to the whole track
 .item {
   display: flex;
-  flex: none;
   flex-direction: column;
   width: clamp(270px, #{u(380)}, 400px);
+  height: auto;
 
   @include down($bp-sm) {
     width: min(82vw, 330px);

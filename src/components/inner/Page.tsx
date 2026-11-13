@@ -913,7 +913,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           slug.replace(/^online-/, ''),
         );
         nodes.push(
-          <Sec key={key} tone={nextTone()} title={title} id="curriculum">
+          <Sec key={key} tone={(nextTone(), 'sky')} title={title} id="curriculum">
             <ProgramCurriculum {...data} />
           </Sec>,
         );
@@ -930,7 +930,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     // --- faculty
     if (/faculty/i.test(title) && sec.subs.some((x) => x.blocks.some((b) => b.t === 'img'))) {
       nodes.push(
-        <Sec key={key} tone={nextTone()} title={title}>
+        <Sec key={key} tone={programLinks ? (nextTone(), 'white') : nextTone()} title={title}>
           {programLinks ? <ProgramFaculty items={sec.subs.map((x) => ({ name: x.title, creds: x.blocks.filter(isP)[0]?.x, role: x.blocks.filter(isP)[1]?.x, img: x.blocks.find((b) => b.t === 'img') ? imgOf(x.blocks.find((b) => b.t === 'img')!) : undefined }))} /> : faculty(sec)}
         </Sec>,
       );
@@ -963,7 +963,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           return { title: x.title, sub, list: list.length ? list : undefined, text: list.length ? undefined : ps.filter((_, i) => i !== subIdx).join(' ') };
         });
         nodes.push(
-          <Sec key={key} tone={nextTone()} id={slugify(title)}>
+          <Sec key={key} tone={(nextTone(), 'grey')} id={slugify(title)}>
             <ProgramLearning eyebrow={headFor(title).eyebrow} title={headFor(title).title ?? title} intro={sec.blocks.filter(isP).map((b) => b.x).filter((x) => x.length > 40)} items={items} />
           </Sec>,
         );

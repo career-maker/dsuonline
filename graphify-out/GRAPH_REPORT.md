@@ -1,17 +1,17 @@
 # Graph Report - dsu online  (2026-11-13)
 
 ## Corpus Check
-- 125 files · ~79,970 words
+- 125 files · ~80,112 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 53 file(s) not represented in the graph (top: .scss 50, (none) 2, .ico 1)
 
 ## Summary
-- 726 nodes · 1829 edges · 34 communities (29 shown, 5 thin omitted)
+- 726 nodes · 1836 edges · 31 communities (27 shown, 4 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 22 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0e4abb4d`
+- Built from commit: `3b9a91d4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -41,13 +41,10 @@
 - FeeTabs.tsx
 - Footer.tsx
 - useEnquiry
-- renderSeg
 - app/page.tsx
 - specViews
-- section-heads.ts
+- InnerHero
 - ProgramFaq.tsx
-- CareerFlip.tsx
-- ProgramAbout.tsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `ContentPage()` - 84 edges
@@ -55,7 +52,7 @@
 3. `ArrowLink()` - 50 edges
 4. `next` - 44 edges
 5. `ChevronRight()` - 22 edges
-6. `Icon()` - 18 edges
+6. `Icon()` - 20 edges
 7. `Flow()` - 16 edges
 8. `ChevronLeft()` - 16 edges
 9. `site` - 16 edges
@@ -76,15 +73,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (34 total, 5 thin omitted)
+## Communities (31 total, 4 thin omitted)
 
 ### Community 0 - "InnerPage.tsx"
 Cohesion: 0.07
 Nodes (59): bannerBlurb(), bannerDuration(), generateMetadata(), generateStaticParams(), InnerRoute(), Params, resolve(), Resolved (+51 more)
 
 ### Community 1 - "Page.tsx"
-Cohesion: 0.12
-Nodes (17): LeaderGrid(), Tabs(), DataTable(), ADMISSION_PHOTOS, BANNERS, BANNERS_MOBILE, contactSocial, curriculum() (+9 more)
+Cohesion: 0.10
+Nodes (19): LeaderGrid(), Tabs(), DataTable(), ADMISSION_PHOTOS, BANNERS, BANNERS_MOBILE, contactSocial, curriculum() (+11 more)
 
 ### Community 2 - "layout.tsx"
 Cohesion: 0.20
@@ -103,8 +100,8 @@ Cohesion: 0.06
 Nodes (32): eslintConfig, dependencies, gsap, lenis, next, react, react-dom, sass (+24 more)
 
 ### Community 6 - "Kit.tsx"
-Cohesion: 0.11
-Nodes (19): CtaLink(), DocList(), FacultyShowcase(), highlight(), HIGHLIGHTS, lsi, OfficeCard(), QuoteCards() (+11 more)
+Cohesion: 0.10
+Nodes (22): CtaLink(), DocList(), FacultyShowcase(), highlight(), HIGHLIGHTS, LearningCards(), lsi, lsIcon() (+14 more)
 
 ### Community 7 - "compilerOptions"
 Cohesion: 0.11
@@ -124,7 +121,7 @@ Nodes (5): Crawling & Beta Stage (SEO), Deploy to Server (dsuonline.intersmartho
 
 ### Community 11 - "react"
 Cohesion: 0.06
-Nodes (41): react, ICON_BY_SLUG, ICONS, FacultyScroller(), Item, FaqList(), icons, stroke (+33 more)
+Nodes (40): react, ICON_BY_SLUG, ICONS, FacultyScroller(), Item, FaqList(), icons, stroke (+32 more)
 
 ### Community 12 - "README.md"
 Cohesion: 0.50
@@ -136,7 +133,7 @@ Nodes (7): nextConfig, next, app, { createServer }, handle, next, Pic
 
 ### Community 16 - "ContentPage"
 Cohesion: 0.17
-Nodes (20): CertFlip(), slugify(), InnerHero(), FacultyGrid(), Head(), Sec(), certificates(), ContentPage() (+12 more)
+Nodes (20): CertFlip(), Checklist(), ClassApart(), ContactRow(), LogoWall(), Pic(), Prose(), Split() (+12 more)
 
 ### Community 18 - "Header.tsx"
 Cohesion: 0.17
@@ -151,12 +148,12 @@ Cohesion: 0.60
 Nodes (3): emi(), EmiCalculator(), inr()
 
 ### Community 21 - "ElectiveCombinator.tsx"
-Cohesion: 0.06
-Nodes (37): swiper, AdmissionSteps(), heading(), ic, icons, Step, StepCard(), wrap() (+29 more)
+Cohesion: 0.05
+Nodes (39): swiper, AdmissionSteps(), heading(), ic, icons, Step, StepCard(), wrap() (+31 more)
 
 ### Community 22 - "parse.ts"
-Cohesion: 0.20
-Nodes (12): cleanBlocks(), isNote(), isQuote(), asImg(), Faq, Img, parseFaq(), parseFaqByQuestionMarks() (+4 more)
+Cohesion: 0.22
+Nodes (11): cleanBlocks(), isNote(), isQuote(), asImg(), Faq, Img, parseFaq(), parseFaqByQuestionMarks() (+3 more)
 
 ### Community 23 - "FeeTabs.tsx"
 Cohesion: 0.43
@@ -170,49 +167,41 @@ Nodes (9): BrochureForm(), Footer(), FooterGroup(), subscribe(), ChevronDown(), 
 Cohesion: 0.31
 Nodes (5): ProgramGuidance(), EnquiryContext, useEnquiry(), SideTabs(), PhoneIcon()
 
-### Community 26 - "renderSeg"
-Cohesion: 0.24
-Nodes (10): Checklist(), ClassApart(), ContactRow(), LogoWall(), Pic(), Prose(), Split(), Body() (+2 more)
-
 ### Community 27 - "app/page.tsx"
 Cohesion: 0.06
-Nodes (47): Architecture, homeFaqs, HomePage(), StatNumber(), About(), AboutBand(), aboutPhotos, Careers() (+39 more)
+Nodes (48): Architecture, homeFaqs, HomePage(), StatNumber(), About(), AboutBand(), aboutPhotos, Careers() (+40 more)
 
 ### Community 28 - "specViews"
-Cohesion: 0.31
-Nodes (10): CardGrid(), LearningCards(), lsIcon(), RoleGrid(), careers(), isP(), learningCards(), specViews() (+2 more)
+Cohesion: 0.27
+Nodes (11): CareerFlip(), CardGrid(), FacultyGrid(), RoleGrid(), careers(), faculty(), isP(), specViews() (+3 more)
 
-### Community 29 - "section-heads.ts"
-Cohesion: 0.50
-Nodes (3): headFor(), SectionHead, sectionHeads
+### Community 29 - "InnerHero"
+Cohesion: 0.20
+Nodes (11): slugify(), InnerHero(), Head(), Sec(), LegalPage(), ReferPage(), withEyebrow(), structure (+3 more)
 
 ### Community 30 - "ProgramFaq.tsx"
 Cohesion: 0.27
 Nodes (6): Item(), ProgramFaq(), faqFor(), FaqInput, FaqItem, rupees()
 
-### Community 32 - "CareerFlip.tsx"
-Cohesion: 0.40
-Nodes (3): CareerFlip(), CareerItem, IndustryItem
-
 ## Knowledge Gaps
 - **5 isolated node(s):** `sass`, `@types/node`, `@types/react`, `@types/react-dom`, `typescript`
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 238 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `InnerPage.tsx`, `CareerFlip.tsx`, `Page.tsx`, `layout.tsx`, `ArrowLink`, `package.json`, `Kit.tsx`, `international-learners/page.tsx`, `next`, `Header.tsx`, `curriculumData.ts`, `EmiCalculator.tsx`, `ElectiveCombinator.tsx`, `FeeTabs.tsx`, `Footer.tsx`, `useEnquiry`, `app/page.tsx`, `ProgramFaq.tsx`?**
-  _High betweenness centrality (0.189) - this node is a cross-community bridge._
+- **Why does `react` connect `react` to `InnerPage.tsx`, `Page.tsx`, `layout.tsx`, `ArrowLink`, `package.json`, `Kit.tsx`, `international-learners/page.tsx`, `next`, `Header.tsx`, `curriculumData.ts`, `EmiCalculator.tsx`, `ElectiveCombinator.tsx`, `FeeTabs.tsx`, `Footer.tsx`, `useEnquiry`, `app/page.tsx`, `ProgramFaq.tsx`?**
+  _High betweenness centrality (0.188) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `ContentPage()` (e.g. with `Architecture` and `isP()`) actually correct?**
   _`ContentPage()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `sass`, `@types/node`, `@types/react` to the rest of the system?**
   _5 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `InnerPage.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.06533646322378717 - nodes in this community are weakly interconnected._
-- **Why does `next` connect `next` to `InnerPage.tsx`, `Page.tsx`, `layout.tsx`, `ProgramAbout.tsx`, `ArrowLink`, `package.json`, `Kit.tsx`, `international-learners/page.tsx`, `react`, `Header.tsx`, `ElectiveCombinator.tsx`, `Footer.tsx`, `useEnquiry`, `app/page.tsx`, `not-found.tsx`?**
-  _High betweenness centrality (0.149) - this node is a cross-community bridge._
+- **Why does `next` connect `next` to `InnerPage.tsx`, `Page.tsx`, `layout.tsx`, `ArrowLink`, `package.json`, `Kit.tsx`, `international-learners/page.tsx`, `react`, `Header.tsx`, `ElectiveCombinator.tsx`, `Footer.tsx`, `useEnquiry`, `app/page.tsx`, `not-found.tsx`?**
+  _High betweenness centrality (0.148) - this node is a cross-community bridge._
 - **Should `Page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.12121212121212122 - nodes in this community are weakly interconnected._
-- **Why does `ArrowLink()` connect `ArrowLink` to `InnerPage.tsx`, `Kit.tsx`, `international-learners/page.tsx`, `DSU Online — CHECKPOINT (read this first in any new session)`, `react`, `ContentPage`, `ElectiveCombinator.tsx`, `useEnquiry`, `app/page.tsx`, `ProgramFaq.tsx`?**
+  _Cohesion score 0.10461538461538461 - nodes in this community are weakly interconnected._
+- **Why does `ArrowLink()` connect `ArrowLink` to `InnerPage.tsx`, `Kit.tsx`, `international-learners/page.tsx`, `DSU Online — CHECKPOINT (read this first in any new session)`, `react`, `ElectiveCombinator.tsx`, `useEnquiry`, `app/page.tsx`, `InnerHero`, `ProgramFaq.tsx`?**
   _High betweenness centrality (0.052) - this node is a cross-community bridge._

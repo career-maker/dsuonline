@@ -102,6 +102,19 @@ $edge: #dbe5ee;
     color: #fff;
     font-style: normal;
   }
+
+  // phones: the whole "Elective 1 + Elective 2 = One Online MBA" stays on a single line
+  @include down($bp-sm) {
+    flex-wrap: nowrap;
+    gap: 4px;
+    font-size: 10.5px;
+
+    b,
+    em {
+      padding: 5px 8px;
+      white-space: nowrap;
+    }
+  }
 }
 
 // ---------- the eight reasons: the site's soft tinted cards (same colours as the Kit card grids)

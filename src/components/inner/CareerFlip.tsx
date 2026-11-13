@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, type KeyboardEvent } from 'react';
+import { CardSlider } from '@/components/ui/CardSlider';
 import s from './CareerFlip.module.scss';
 
 export type CareerItem = { title: string; items?: string[]; text?: string };
@@ -18,12 +19,10 @@ export function CareerFlip({ careers, industries, industriesTitle = 'Industries'
       setOpen(open === i ? null : i);
     }
   };
-  return (
-    <ul className={s.grid}>
-      {careers.map((c, i) => {
+  const card = (c: CareerItem, i: number) => {
         const flipped = open === i;
         return (
-          <li key={c.title} className={`${s.item} ${flipped ? s.flipped : ''}`}>
+          <div key={c.title} className={`${s.item} ${flipped ? s.flipped : ''}`}>
             <div
               className={s.card}
               role="button"
@@ -72,9 +71,20 @@ export function CareerFlip({ careers, industries, industriesTitle = 'Industries'
                 </div>
               </div>
             </div>
-          </li>
+          </div>
         );
-      })}
-    </ul>
+  };
+
+  return (
+    <>
+      <ul className={s.grid}>
+        {careers.map((c, i) => (
+          <li key={c.title}>{card(c, i)}</li>
+        ))}
+      </ul>
+      <div className={s.mobile}>
+        <CardSlider label="Career options" slideWidth="84%" items={careers.map((c, i) => card(c, i))} />
+      </div>
+    </>
   );
 }

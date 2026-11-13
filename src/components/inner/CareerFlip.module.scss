@@ -8,10 +8,24 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @include down($bp-sm) {
+    display: none;
+  }
+}
+
+// phones: the same flip cards in a Swiper carousel
+.mobile {
+  display: none;
+
+  @include down($bp-sm) {
+    display: block;
+  }
 }
 
 .item {
   min-width: 0;
+  height: 100%;
   perspective: 1400px;
 }
 

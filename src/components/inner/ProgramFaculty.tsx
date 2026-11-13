@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { CardSlider } from '@/components/ui/CardSlider';
+import { Icon } from '@/components/ui/Icon';
 import type { Img } from './parse';
 import s from './ProgramFaculty.module.scss';
 
@@ -14,20 +15,35 @@ function initials(name: string) {
     .join('');
 }
 
+/** Same card as the home "Meet Our Faculty": light-blue box, portrait on top, name, job title, degrees with the yellow marker, profile links. */
 function Card({ f }: { f: Item }) {
   return (
     <article className={s.card}>
       <div className={s.photo}>
-        {f.img ? <Image src={f.img.src} alt={f.img.alt || f.name} fill sizes="140px" className={s.img} /> : <span className={s.initials}>{initials(f.name)}</span>}
+        {f.img ? <Image src={f.img.src} alt={f.img.alt || f.name} fill sizes="(max-width: 600px) 80vw, 300px" className={s.img} /> : <span className={s.initials}>{initials(f.name)}</span>}
       </div>
-      <h3 className={s.name}>{f.name}</h3>
-      {f.creds && <p className={s.creds}>{f.creds}</p>}
-      {f.role && <p className={s.role}>{f.role}</p>}
+      <div className={s.body}>
+        <h3>{f.name}</h3>
+        {f.role && <p className={s.role}>{f.role}</p>}
+        {f.creds && (
+          <ul className={s.points}>
+            <li>{f.creds}</li>
+          </ul>
+        )}
+        <div className={s.links}>
+          <a href="#" aria-label={`View profile: ${f.name}`}>
+            View Profile &gt;
+          </a>
+          <a href="https://www.linkedin.com/company/dsuonline" target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn: ${f.name}`}>
+            <Icon name="linkedin" /> LinkedIn
+          </a>
+        </div>
+      </div>
     </article>
   );
 }
 
-/** Programme faculty: small light cards with a round photo; a grid on desktop, a Swiper carousel on phones. */
+/** Programme faculty: a centred grid on desktop / tablet, a Swiper carousel on phones. */
 export function ProgramFaculty({ items }: { items: Item[] }) {
   return (
     <>
@@ -39,7 +55,7 @@ export function ProgramFaculty({ items }: { items: Item[] }) {
         ))}
       </ul>
       <div className={s.mobile}>
-        <CardSlider label="Faculty" slideWidth="68%" items={items.map((f) => <Card key={f.name} f={f} />)} />
+        <CardSlider label="Faculty" slideWidth="82%" items={items.map((f) => <Card key={f.name} f={f} />)} />
       </div>
     </>
   );
