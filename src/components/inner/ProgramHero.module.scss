@@ -32,7 +32,8 @@
   &.hero {
     min-height: 0;
     justify-content: flex-start;
-    padding: clamp(96px, 11vw, 124px) 0 clamp(36px, 4vw, 56px);
+    // header height (same clamp as the header) + a gap that grows with the screen
+    padding: calc(clamp(68px, #{u(121)}, 121px) + clamp(24px, 3vw, 56px)) 0 clamp(36px, 4vw, 56px);
   }
 
   .inner > .split {
