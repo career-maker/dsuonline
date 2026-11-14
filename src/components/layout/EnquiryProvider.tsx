@@ -3,7 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { EnquiryModal } from './EnquiryModal';
 
-const EnquiryContext = createContext<{ open: (programCode?: string | unknown) => void } | null>(null);
+const EnquiryContext = createContext<{ open: (programCode?: string | unknown, combination?: string) => void } | null>(null);
 
 export function useEnquiry() {
   const ctx = useContext(EnquiryContext);
@@ -17,14 +17,16 @@ const SEEN_KEY = 'dsu-enquiry-seen';
 export function EnquiryProvider({ children }: { children: ReactNode }) {
   const [isOpen, setOpen] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState<string | undefined>(undefined);
+  const [combination, setCombination] = useState<string | undefined>(undefined);
   const openRef = useRef(false);
 
   useEffect(() => {
     openRef.current = isOpen;
   }, [isOpen]);
 
-  const open = useCallback((programCode?: string | unknown) => {
+  const open = useCallback((programCode?: string | unknown, combo?: string) => {
     setSelectedProgram(typeof programCode === 'string' ? programCode : undefined);
+    setCombination(typeof combo === 'string' ? combo : undefined);
     setOpen(true);
     try {
       sessionStorage.setItem(SEEN_KEY, '1');
@@ -62,9 +64,11 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
       {isOpen && (
         <EnquiryModal
           initialProgramme={selectedProgram}
+          combination={combination}
           onClose={() => {
             setOpen(false);
             setSelectedProgram(undefined);
+            setCombination(undefined);
           }}
         />
       )}

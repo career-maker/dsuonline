@@ -15,7 +15,7 @@ type Phase = 'idle' | 'submitting' | 'sent' | 'unconfigured' | 'error';
 const empty: EnquiryValues = { name: '', email: '', phone: '', otp: '', programme: '', state: '', city: '', message: '' };
 const FOCUSABLE = 'button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href]';
 
-export function EnquiryModal({ onClose, initialProgramme }: { onClose: () => void; initialProgramme?: string }) {
+export function EnquiryModal({ onClose, initialProgramme, combination }: { onClose: () => void; initialProgramme?: string; combination?: string }) {
   const uid = useId();
   const titleId = `${uid}-title`;
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -23,6 +23,7 @@ export function EnquiryModal({ onClose, initialProgramme }: { onClose: () => voi
   const [values, setValues] = useState<EnquiryValues>(() => ({
     ...empty,
     programme: initialProgramme ?? '',
+    message: combination ? `I would like to discuss this dual specialisation: ${combination}` : '',
   }));
   const [errors, setErrors] = useState<EnquiryErrors>({});
   const [phase, setPhase] = useState<Phase>('idle');
@@ -150,6 +151,12 @@ export function EnquiryModal({ onClose, initialProgramme }: { onClose: () => voi
             </div>
           ) : (
             <form className={s.form} onSubmit={onSubmit} noValidate aria-busy={busy}>
+              {combination && (
+                <p className={`${s.combo} ${s.wide}`}>
+                  <small>Your dual specialisation</small>
+                  <strong>{combination}</strong>
+                </p>
+              )}
               <p className={`${s.lead} ${s.wide}`}>Fields marked * are required.</p>
 
               <div className={s.field}>

@@ -172,6 +172,27 @@ $ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   color: $body;
 }
 
+.combo {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 10px 14px;
+  background: $bg-card-sky;
+  border-left: 3px solid $gold;
+  border-radius: 4px;
+
+  small {
+    font-size: 12px;
+    color: $body;
+  }
+
+  strong {
+    font-size: 15px;
+    color: $blue;
+    line-height: 1.35;
+  }
+}
+
 .field {
   display: grid;
   gap: 6px;
