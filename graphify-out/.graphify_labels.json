@@ -1,5 +1,5 @@
 {
-  "0": "ArrowLink",
+  "0": "InnerPage.tsx",
   "1": "Page.tsx",
   "2": "site.ts",
   "3": "scrape.py",
@@ -19,14 +19,17 @@
   "17": "empty.js",
   "18": "ProgramAbout.tsx",
   "19": "curriculumData.ts",
-  "20": "EmiCalculator.tsx",
-  "21": "ElectiveCombinator.tsx",
+  "20": "ArrowLink",
+  "21": "ProgramAdvantage.tsx",
   "22": "parse.ts",
   "23": "FeeTabs.tsx",
-  "24": "learningCards",
+  "24": "icons.tsx",
+  "25": "Footer.tsx",
+  "26": "Blogs.tsx",
   "27": "next",
   "28": "specViews",
-  "29": "section-heads.ts",
-  "30": "ProgramFaq.tsx",
-  "31": "not-found.tsx"
+  "29": "withEyebrow",
+  "30": "programme-faq.ts",
+  "31": "not-found.tsx",
+  "32": "layout.tsx"
 }

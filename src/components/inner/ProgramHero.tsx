@@ -22,10 +22,12 @@ export type ProgramHeroProps = {
   bgSrc?: string;
   bgMobileSrc?: string;
   bgIndex?: number;
+  /** words before the bold name in the second headline line */
+  grow?: string;
 };
 
 /** One hero for every programme page: all text comes from props so the CMS can drive it. Nothing on the right. */
-export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, glance, bgSrc, bgMobileSrc, bgIndex = 0 }: ProgramHeroProps) {
+export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, glance, bgSrc, bgMobileSrc, bgIndex = 0, grow = 'Grow with' }: ProgramHeroProps) {
   const slide = heroSlides[bgIndex % heroSlides.length];
   return (
     <section className={s.hero}>
@@ -40,7 +42,7 @@ export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, 
             {lines[0]} {lines[1]}
           </span>
           <span>
-            Grow with <b>{name}</b> <b className={s.closing}>{closing}</b>
+            {grow} <b>{name}</b> {closing && <b className={s.closing}>{closing}</b>}
           </span>
         </h1>
         {desc && <p className={s.desc}>{desc}</p>}

@@ -14,7 +14,7 @@ function halves(p: string): string[] {
 }
 
 /** "The Program" block on programme pages: a framed photo pair on the left, the live copy and benefit chips on the right. */
-export function ProgramAbout({ title, paras, items, photo, inset, alt }: { title: string; paras: string[]; items: string[]; photo: string; inset: string; alt: string }) {
+export function ProgramAbout({ title, paras, items, photo, inset, alt, eyebrow = 'The Program' }: { eyebrow?: string; title: string; paras: string[]; items: string[]; photo: string; inset: string; alt: string }) {
   return (
     <div className={s.about}>
       <div className={s.media}>
@@ -26,7 +26,7 @@ export function ProgramAbout({ title, paras, items, photo, inset, alt }: { title
         </div>
       </div>
       <div className={s.copy}>
-        <p className={s.eyebrow}>The Program</p>
+        <p className={s.eyebrow}>{eyebrow}</p>
         <h2>{title}</h2>
         {paras.flatMap(halves).map((p) => (
           <p key={p} className={s.para}>

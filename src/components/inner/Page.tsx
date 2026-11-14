@@ -26,12 +26,9 @@ import { ProgramAdvantage } from './ProgramAdvantage';
 import { ProgramAbout } from './ProgramAbout';
 import { ProgramFees } from './ProgramFees';
 import { ProgramCurriculum } from './ProgramCurriculum';
-import { ProgramFaculty } from './ProgramFaculty';
 import { ProgramLearning } from './ProgramLearning';
 import { ProgramEligibility } from './ProgramEligibility';
 import { ProgramGuidance } from './ProgramGuidance';
-import { ProgramFaq } from './ProgramFaq';
-import { ProgramNextStep } from './ProgramNextStep';
 import { CertFlip } from './CertFlip';
 import { ProgramCertificate } from './ProgramCertificate';
 import { faqFor } from '@/data/programme-faq';
@@ -56,7 +53,6 @@ import {
   Pic,
   Prose,
   ClassApart,
-  QuoteCards,
   RoleGrid,
   StoryCards,
   Sec,
@@ -829,7 +825,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const lead = sec.blocks.filter(isP).find((b) => b.x.length > 30 && !/^[“"]/.test(b.x) && !quotes.some((q) => q.quote === b.x))?.x;
       nodes.push(
         <Sec key={key} tone="sky" center title={title} lead={lead}>
-          {programLinks ? <TestimonialGrid items={programTestimonials(slug)} /> : quotes.filter((q) => q.img).length >= quotes.length / 2 ? <StoryCards items={quotes} initial={9} /> : <QuoteCards items={quotes} initial={6} home={slug === 'why-dsu-online'} />}
+          {programLinks ? <TestimonialGrid items={programTestimonials(slug)} /> : <StoryCards items={quotes} />}
         </Sec>,
       );
       if (careerFromFees) nodes.push(careerNode());
@@ -932,7 +928,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (/faculty/i.test(title) && sec.subs.some((x) => x.blocks.some((b) => b.t === 'img'))) {
       nodes.push(
         <Sec key={key} tone={programLinks ? (nextTone(), 'white') : nextTone()} title={title}>
-          {programLinks ? <ProgramFaculty items={sec.subs.map((x) => ({ name: x.title, creds: x.blocks.filter(isP)[0]?.x, role: x.blocks.filter(isP)[1]?.x, img: x.blocks.find((b) => b.t === 'img') ? imgOf(x.blocks.find((b) => b.t === 'img')!) : undefined }))} /> : faculty(sec)}
+          {faculty(sec)}
         </Sec>,
       );
       continue;
@@ -1118,6 +1114,17 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       continue;
     }
 
+    // --- specialization pages: "About X" = copy left, photo right (same block as the programme pages' "The Program")
+    const aboutImg = sec.blocks.find((b) => b.t === 'img');
+    if (withFacts && crumbs.length >= 3 && /^about/i.test(title) && aboutImg && sec.blocks.some(isP)) {
+      nodes.push(
+        <Sec key={key} tone={nextTone()}>
+          <ProgramAbout eyebrow="About the specialisation" title={title} paras={sec.blocks.filter(isP).map((b) => b.x)} items={[]} photo={imgOf(aboutImg).src} inset="/images/learn/live-classes.webp" alt={imgOf(aboutImg).alt || title} />
+        </Sec>,
+      );
+      continue;
+    }
+
     // --- mixed: sub-headings that all hold a few lines become cards
     const cardSubs = sec.subs.length >= 2 && sec.subs.every((x) => !x.blocks.some((b) => b.t === 'img' || b.t === 'table') && x.blocks.reduce((t, b) => t + (isP(b) ? b.x.length : b.t === 'ul' ? b.items.join('').length : 0), 0) < 700);
     const hasLead = sec.blocks.length > 0;
@@ -1249,6 +1256,59 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       />
     ) : null;
 
+  // specialization pages: the programme hero, then the shared learner stories + home FAQ after the page's own sections
+  const isSpec = withFacts && crumbs.length >= 3;
+  const specRoot = slug.split('/')[0].replace(/^online-/, '');
+  const specProg = ({ mba: 'MBA', mca: 'MCA', bba: 'BBA', bca: 'BCA', bcom: 'B.Com' } as Record<string, string>)[specRoot];
+  const specName = crumbs[crumbs.length - 1]?.label ?? '';
+  const specHero =
+    isSpec && specProg && dur ? (
+      <ProgramHero
+        bgSrc={BANNERS[`online-${specRoot}`]}
+        bgMobileSrc={BANNERS_MOBILE[`online-${specRoot}`]}
+        bgIndex={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)}
+        eyebrow={preEyebrow ?? 'Your next chapter starts here'}
+        lines={[`Online ${specProg}`, 'Program']}
+        grow="Specialise in"
+        name={specName}
+        closing=""
+        desc={subtitle?.split('|').map((x) => x.trim()).filter(Boolean).join(' · ')}
+        stats={[
+          { value: num(dur.value), label: /year/i.test(dur.value) ? (num(dur.value) > 1 ? 'Years' : 'Year') : 'Months', note: 'Programme duration' },
+          ...(num(dur.note) ? [{ value: num(dur.note), label: 'Semesters', note: 'Structured learning' }] : []),
+        ]}
+        glance={{
+          title: `Explore your ${specName} specialisation at a glance`,
+          tiles: [
+            { value: '100%', label: 'Online learning' },
+            ...(facts ?? []).filter((f) => !/duration/i.test(f.label) && /\d/.test(f.value)).map((f) => ({ value: f.value.replace(/\/-$/, '').replace(/^INR\s*/i, '₹'), label: f.note ? `${f.label} (${f.note})` : f.label })),
+          ],
+        }}
+      />
+    ) : null;
+  if (isSpec) {
+    const subsAll = st.sections.flatMap((sc) => [{ title: sc.title, blocks: sc.blocks }, ...sc.subs]);
+    const titlesIn = (re: RegExp) => {
+      const bl = (subsAll.find((x) => re.test(x.title))?.blocks ?? []).filter(isP).map((b) => b.x.trim()).filter(Boolean);
+      return bl.length >= 2 && bl.length % 2 === 0 ? parsePairs(bl.map((x) => ({ t: 'p', x }) as Block)).map((q) => q.title) : bl;
+    };
+    const mods = titlesIn(/learning modules/i);
+    const roles = titlesIn(/career path/i);
+    const durTxt = [dur?.value, dur?.note].filter(Boolean).join(' ');
+    const items = [
+      ...(durTxt ? [{ q: `How long is the Online ${specProg} in ${specName}?`, a: [`The programme runs for ${durTxt}.`] }] : []),
+      ...(fv(/total fees/i) ? [{ q: `What are the fees for the Online ${specProg} in ${specName}?`, a: [`The total programme fee is ${fv(/total fees/i)!.value.replace(/\/-$/, '')}, paid semester by semester.`] }] : []),
+      ...(mods.length ? [{ q: `What will I learn in ${specName}?`, a: [`The learning modules are ${mods.join(', ')}.`] }] : []),
+      ...(roles.length ? [{ q: `Which careers can I pursue after ${specName}?`, a: [`Career paths include ${roles.slice(0, 6).join(', ')}.`] }] : []),
+    ];
+    nodes.push(
+      <Sec key="spec-stories" tone="sky" center eyebrow="Testimonials" title="Hear From Our Learners">
+        <TestimonialGrid items={programTestimonials(specRoot)} />
+      </Sec>,
+    );
+    if (items.length >= 2) nodes.push(<Faq key="spec-faq" items={items} title={`${specName} FAQs`} />);
+  }
+
   // programme pages: FAQ + closing banner go where the admission section left its slot
   const faqAt = nodes.findIndex((n) => isValidElement(n) && n.key === 'faq-slot');
   if (programLinks && progShort && faqAt >= 0) {
@@ -1265,22 +1325,16 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       about: (HERO_DESC[slug] ?? subtitle ?? raw.filter(isP).find((b) => b.x.length > 150)?.x)?.split(/(?<=\.)\s/)[0],
       dual: !!fv(/^elective$/i) && !!dualCopy[slug],
     });
-    const dualHere = !!fv(/^elective$/i) && !!dualCopy[slug];
     nodes.splice(
       faqAt,
       1,
-      <Sec key="faq" tone="grey" id="faq">
-        <ProgramFaq title={copy.title} lead={copy.lead} items={copy.items} code={slug.replace(/^online-/, '')} />
-      </Sec>,
-      <Sec key="next-step" tone="white" compact id="next-step">
-        <ProgramNextStep name={progShort} dual={dualHere} />
-      </Sec>,
+      <Faq key="faq" items={copy.items.map((x) => ({ q: x.q, a: [x.a] }))} title={copy.title} />,
     );
   }
 
   return (
     <>
-      {programHero ?? <InnerHero size={withFacts ? (crumbs.length >= 3 ? 'gradient' : 'full') : 'short'} badges={slug === 'about'} bannerSrc={BANNERS[slug]} bannerMobileSrc={BANNERS_MOBILE[slug]} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={ph ? ph.eyebrow : preEyebrow} title={ph?.title ?? st.h1} subtitle={ph ? ph.subtitle : withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />}
+      {programHero ?? specHero ?? <InnerHero size={withFacts ? (crumbs.length >= 3 ? 'gradient' : 'full') : 'short'} badges={slug === 'about'} bannerSrc={BANNERS[slug]} bannerMobileSrc={BANNERS_MOBILE[slug]} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={ph ? ph.eyebrow : preEyebrow} title={ph?.title ?? st.h1} subtitle={ph ? ph.subtitle : withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />}
       {programHero && progShort && (
         <ProgramAdvantage
           name={progShort}

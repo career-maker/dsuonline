@@ -4,8 +4,7 @@ import type { ReactNode } from 'react';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { FacultyStrip } from '@/components/sections/home/FacultyArticles';
 import { TestimonialGrid } from '@/components/ui/Testimonial';
-import { FacultyScroller } from './FacultyScroller';
-import { QuoteSlider } from './QuoteSlider';
+import { ProgramFaculty } from './ProgramFaculty';
 import { localHref } from '@/lib/content';
 import { slugify } from './clean';
 import { Tabs } from './Interactive';
@@ -209,28 +208,6 @@ export function DataTable({ rows, caption }: { rows: string[][]; caption?: strin
   );
 }
 
-export function QuoteCards({ items, initial = 6, home }: { items: Quote[]; initial?: number; home?: boolean }) {
-  const cards = items.map((q) => (
-    <li key={q.quote} className={`${s.quote} ${home ? s.quoteHome : ''}`}>
-      <span className={s.qmark} aria-hidden="true">
-        “
-      </span>
-      <p>{q.quote.replace(/^[“"‘]\s*|[”"’]\s*$/g, '')}</p>
-      <div className={s.who}>
-        {q.img ? <Image src={q.img.src} alt="" width={96} height={96} sizes="56px" className={s.avatar} /> : <span className={s.avatar} aria-hidden="true">{q.name.replace(/^(Mr|Ms|Mrs|Dr)\.?\s*/i, '').charAt(0)}</span>}
-        <div>
-          <b>{q.name}</b>
-          {q.meta.map((m) => (
-            <span key={m}>{m}</span>
-          ))}
-        </div>
-      </div>
-    </li>
-  ));
-  void initial;
-  return <QuoteSlider cards={cards} />;
-}
-
 /** "A Learning Experience That's a Class Apart": picture beside six numbered cards (replaces the old accordion). */
 export function ClassApart({ items, img }: { items: { t: string; d: string }[]; img?: Img }) {
   return (
@@ -280,7 +257,7 @@ export function LogoWall({ imgs }: { imgs: Img[] }) {
 }
 
 export function FacultyGrid({ items }: { items: { name: string; creds?: string; role?: string; img?: Img }[] }) {
-  return <FacultyScroller items={items} />;
+  return <ProgramFaculty items={items} />;
 }
 
 // ---------- "Program Learning System": icon cards (title, subtitle, bullets or paragraph)

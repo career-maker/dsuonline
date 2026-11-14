@@ -108,27 +108,21 @@
     "semantic_hash": ""
   },
   "src/components/inner/Kit.tsx": {
-    "mtime": 1793907005.7987628,
-    "seen": 1793907174.2738295,
-    "ast_hash": "54df08d75e0edcd2dd2cdcbcb7b296b1",
+    "mtime": 1794631291.2422109,
+    "seen": 1794631335.0254743,
+    "ast_hash": "2c6e38ab0f2a0b2a6412672ee889a3ab",
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1794562747.1657946,
-    "seen": 1794562824.342795,
-    "ast_hash": "ff42a51ad95e0507fbf2ffce38581b99",
+    "mtime": 1794631291.2575343,
+    "seen": 1794631335.0254798,
+    "ast_hash": "b7b8918c7c6a4811eac771b3ee2cd36e",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
     "mtime": 1793083333.10761,
     "seen": 1793773932.7654371,
     "ast_hash": "3f39b4a1074876ff2a7fb2548cba63ca",
-    "semantic_hash": ""
-  },
-  "src/components/inner/QuoteSlider.tsx": {
-    "mtime": 1793852848.2688272,
-    "seen": 1793852961.8870432,
-    "ast_hash": "404b4cba1a016dc95b56b210630889aa",
     "semantic_hash": ""
   },
   "src/components/inner/ReferForm.tsx": {
@@ -180,15 +174,15 @@
     "semantic_hash": ""
   },
   "src/components/layout/EnquiryModal.tsx": {
-    "mtime": 1793166629.5214744,
-    "seen": 1793773932.7654586,
-    "ast_hash": "e7c4ba655959cf580766cd25704709cf",
+    "mtime": 1794630771.681729,
+    "seen": 1794631335.0256865,
+    "ast_hash": "b7316a8d954286e4fdfbfb99a9a135ad",
     "semantic_hash": ""
   },
   "src/components/layout/EnquiryProvider.tsx": {
-    "mtime": 1793016052.408131,
-    "seen": 1793773932.7654607,
-    "ast_hash": "1ee027eec5264e0705d4fc3b9a3bf2f4",
+    "mtime": 1794630771.3966,
+    "seen": 1794631335.0256956,
+    "ast_hash": "165a22c52c995fb8ab8d61829df642ec",
     "semantic_hash": ""
   },
   "src/components/layout/FactsDrawer.tsx": {
@@ -462,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794562561.705436,
-    "seen": 1794562824.343006,
-    "ast_hash": "f4f054113a298490ed0e82a9f97da702",
+    "mtime": 1794562824.8578582,
+    "seen": 1794631335.026176,
+    "ast_hash": "1745f3acc06c64e2a32afcf1622d6316",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -534,21 +528,15 @@
     "semantic_hash": ""
   },
   "src/components/inner/ElectiveCombinator.tsx": {
-    "mtime": 1794556897.2229588,
-    "seen": 1794556962.5566697,
-    "ast_hash": "8e9a121dbf3bb5379228c4b8ad603162",
+    "mtime": 1794630771.778055,
+    "seen": 1794631335.0254009,
+    "ast_hash": "b6df202672466827af8c11451b345bf0",
     "semantic_hash": ""
   },
   "src/components/inner/FeeTable.tsx": {
     "mtime": 1793903169.3548055,
     "seen": 1793903316.8258128,
     "ast_hash": "9d5e8547a92036ff92a96a998439ed3f",
-    "semantic_hash": ""
-  },
-  "src/components/inner/FacultyScroller.tsx": {
-    "mtime": 1793874664.3551197,
-    "seen": 1793874828.2028794,
-    "ast_hash": "1a82c421cb88b6287f6b6048d3ee27e3",
     "semantic_hash": ""
   },
   "src/data/section-heads.ts": {
@@ -660,9 +648,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/ProgramHero.tsx": {
-    "mtime": 1794561619.26019,
-    "seen": 1794561856.2915938,
-    "ast_hash": "d120a80d038757a033f5a4f722916ab0",
+    "mtime": 1794631291.2856731,
+    "seen": 1794631335.0255373,
+    "ast_hash": "1abf1c7ec6320ba1fa2a7e7e1f1aac8a",
     "semantic_hash": ""
   },
   "src/components/inner/ProgramAdvantage.tsx": {
@@ -684,9 +672,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/ProgramAbout.tsx": {
-    "mtime": 1794552849.7470224,
-    "seen": 1794552924.2285578,
-    "ast_hash": "ffdd4024ff6dfcf1ff188b3bcfef876d",
+    "mtime": 1794631291.271618,
+    "seen": 1794631335.0254896,
+    "ast_hash": "e22bf6357f204cd50ebb80e8deb2f14f",
     "semantic_hash": ""
   },
   "src/data/programme-architect.ts": {
@@ -741,18 +729,6 @@
     "mtime": 1794561275.8042252,
     "seen": 1794561461.8219454,
     "ast_hash": "c8c6416f9c205c6cc88ca9099749a391",
-    "semantic_hash": ""
-  },
-  "src/components/inner/ProgramFaq.tsx": {
-    "mtime": 1794561275.2660007,
-    "seen": 1794561461.8219967,
-    "ast_hash": "eb345a210697c06751a0a4bc54ded449",
-    "semantic_hash": ""
-  },
-  "src/components/inner/ProgramNextStep.tsx": {
-    "mtime": 1794561275.4832401,
-    "seen": 1794561461.8220088,
-    "ast_hash": "bf6e52dcabd762effa201d35f2c6edbf",
     "semantic_hash": ""
   },
   "src/data/programme-faq.ts": {

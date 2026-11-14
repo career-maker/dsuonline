@@ -249,3 +249,8 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - 2026-11-13: ProgramHero phones: title bigger (3 short lines, closing on its own line), DUAL pill one line smaller, buttons 2+1 rows (brochure full width). Short phones hide desc (<=860h), pill+stat notes (<=720h), tiles 3-4 (<=640h) so hero still fits one screen. Checked 6 phone sizes x mba/mca/bcom via shots/m.py.
 - 2026-11-13: mobile fixes: TestimonialShowcase now Swiper (autoplay 2.5s added AFTER mount via 'live' state: Swiper Autoplay calls new Date() at construction and breaks Next prerender; drag, arrows, pause while quote open); CareerFlip = grid + Swiper on phones; curriculum tab row overflow-y hidden; advantage dual sketch one line on phones; ProgramFaculty restyled like home Meet Our Faculty (grid desktop, Swiper phones); section tones: curriculum sky, faculty white, learning grey.
 - 2026-11-13: Certification = ProgramCertificate (convocation photo public/images/inner/convocation.webp left, CertFlip right; stacks on <1200). Guidance chat button full width + centred on phones.
+
+
+### Update: common sections + specialization template
+- Programme FAQ now uses the home `Faq`; ProgramFaq/ProgramNextStep removed. Reviews: all inner pages use `StoryCards`/`TestimonialShowcase` (QuoteCards removed). Faculty: `FacultyGrid` -> `ProgramFaculty` (home-style card).
+- Specialization pages: one template in `Page.tsx` (ProgramHero, ProgramAbout, modules/career cards, awards, shared testimonials, home FAQ built from page data).
