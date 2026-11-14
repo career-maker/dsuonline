@@ -24,13 +24,15 @@ export type ProgramHeroProps = {
   bgIndex?: number;
   /** words before the bold name in the second headline line */
   grow?: string;
+  /** light blue on the left, navy on the right (specialization pages) */
+  reverse?: boolean;
 };
 
 /** One hero for every programme page: all text comes from props so the CMS can drive it. Nothing on the right. */
-export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, glance, bgSrc, bgMobileSrc, bgIndex = 0, grow = 'Grow with' }: ProgramHeroProps) {
+export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, glance, bgSrc, bgMobileSrc, bgIndex = 0, grow = 'Grow with', reverse }: ProgramHeroProps) {
   const slide = heroSlides[bgIndex % heroSlides.length];
   return (
-    <section className={s.hero}>
+    <section className={`${s.hero} ${reverse ? s.rev : ''}`}>
       <picture className={s.bg}>
         <source media="(max-width: 899.98px)" srcSet={bgMobileSrc ?? bgSrc ?? slide.mobile} />
         <Image src={bgSrc ?? slide.desktop} alt="" fill priority sizes="100vw" className={s.img} />

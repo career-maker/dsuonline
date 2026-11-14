@@ -1270,6 +1270,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         eyebrow={preEyebrow ?? 'Your next chapter starts here'}
         lines={[`Online ${specProg}`, 'Program']}
         grow="Specialise in"
+        reverse
         name={specName}
         closing=""
         desc={subtitle?.split('|').map((x) => x.trim()).filter(Boolean).join(' · ')}
