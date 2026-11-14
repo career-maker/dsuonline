@@ -28,6 +28,71 @@
     color: $logo-yellow;
   }
 
+  // compact two-column banner: title block + buttons left, counters + fee tiles right
+  &.hero {
+    min-height: 0;
+    justify-content: flex-start;
+    padding: clamp(96px, 11vw, 124px) 0 clamp(36px, 4vw, 56px);
+  }
+
+  .inner > .split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: clamp(28px, 4vw, 64px);
+    align-items: center;
+    max-width: none;
+
+    @include down($bp-lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .left,
+  .side {
+    min-width: 0;
+    max-width: none;
+  }
+
+  .inner h1 {
+    margin-top: 10px;
+    font-size: clamp(26px, 3.3vw, 46px);
+
+    > span {
+      white-space: normal;
+    }
+  }
+
+  .desc {
+    display: block;
+    -webkit-line-clamp: 4;
+    max-width: 560px;
+  }
+
+  .ctas {
+    margin-top: clamp(16px, 2vw, 26px);
+  }
+
+  .side {
+    padding: clamp(16px, 2vw, 26px);
+    border: 1px solid rgb(255 255 255 / 16%);
+    border-radius: 16px;
+    background: rgb(5 15 55 / 38%);
+  }
+
+  .stats {
+    margin-top: 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+  }
+
+  .glance {
+    margin-top: 14px;
+  }
+
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .ctas > :first-child {
     border-color: #fff;
     background: #fff;
