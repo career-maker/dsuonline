@@ -24,6 +24,10 @@
 .rev {
   background: radial-gradient(1000px 600px at 15% 15%, rgb(34 195 230 / 32%), transparent 60%), linear-gradient(260deg, #0b1f4d 30%, #102a66 65%, #1d5bd8 100%);
 
+  &.hero h1 b {
+    color: $logo-yellow;
+  }
+
   .ctas > :first-child {
     border-color: #fff;
     background: #fff;

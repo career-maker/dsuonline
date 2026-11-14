@@ -1264,9 +1264,6 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
   const specHero =
     isSpec && specProg && dur ? (
       <ProgramHero
-        bgSrc={BANNERS[`online-${specRoot}`]}
-        bgMobileSrc={BANNERS_MOBILE[`online-${specRoot}`]}
-        bgIndex={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)}
         eyebrow={preEyebrow ?? 'Your next chapter starts here'}
         lines={[`Online ${specProg}`, 'Program']}
         grow="Specialise in"
