@@ -2061,3 +2061,29 @@ $gold-ink: #8c6500; // gold that passes AA on white
     }
   }
 }
+
+// At par: left column stretches to the table's height; the photo takes whatever room is left (never a thin crop, no gap)
+@include up($bp-lg) {
+  .par {
+    align-items: stretch;
+
+    > div:first-child {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .parImg {
+      flex: 1 1 auto;
+      height: auto;
+      min-height: 220px;
+      margin-top: 28px;
+    }
+  }
+}
+
+@include down($bp-lg) {
+  .par .parImg {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
