@@ -26,10 +26,15 @@
   color: #0b1f4d;
 
   .eyebrow,
-  &.hero h1,
-  &.hero h1 b,
   .desc {
     color: #0b1f4d;
+  }
+
+  // title in white; a soft navy shadow keeps it readable on the light blue
+  &.hero h1,
+  &.hero h1 b {
+    color: #fff;
+    text-shadow: 0 2px 14px rgb(11 31 77 / 35%);
   }
 
   .eyebrow {
