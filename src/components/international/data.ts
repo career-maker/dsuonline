@@ -55,11 +55,11 @@ export const modes = [
 
 /** The five continents shown on the page (names only; same order as the hero map). */
 export const continents = [
-  { n: 'Asia', e: '🌏', img: 'asia' },
-  { n: 'Africa', e: '🌍', img: 'africa' },
-  { n: 'Europe', e: '🌍', img: 'europe' },
-  { n: 'North America', e: '🌎', img: 'north-america' },
-  { n: 'South America', e: '🌎', img: 'south-america' },
+  { n: 'Asia', ex: 'UAE · Saudi Arabia · Qatar · Singapore · Nepal', e: '🌏', img: 'asia' },
+  { n: 'Africa', ex: 'Kenya · Nigeria', e: '🌍', img: 'africa' },
+  { n: 'Europe', ex: 'United Kingdom', e: '🌍', img: 'europe' },
+  { n: 'North America', ex: 'United States · Canada', e: '🌎', img: 'north-america' },
+  { n: 'South America', ex: 'Learners across South America', e: '🌎', img: 'south-america' },
 ];
 
 export const parChecks = [

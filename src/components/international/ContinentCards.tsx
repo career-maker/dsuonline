@@ -34,6 +34,7 @@ export function ContinentCards() {
             <span className={s.contTxt}>
               <small>Learners from</small>
               <b>{c.n}</b>
+              <span className={s.contEx}>{c.ex}</span>
             </span>
           </button>
         </li>

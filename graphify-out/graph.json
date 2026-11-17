@@ -6213,7 +6213,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-11-12: shared programme hero template",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L226"
+      "source_location": "L227"
     },
     {
       "id": "checkpoint_update_common_sections_specialization_template",
@@ -6225,7 +6225,7 @@
       "node_kind": "heading",
       "norm_label": "update: common sections + specialization template",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L258"
+      "source_location": "L259"
     },
     {
       "id": "src_components_inner_contactform",
@@ -7448,7 +7448,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L191"
+      "source_location": "L192"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -7496,7 +7496,7 @@
       "node_kind": "heading",
       "norm_label": "next steps (do top item first when the user says \"continue\")",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L126"
+      "source_location": "L127"
     },
     {
       "id": "checkpoint_open_questions_asked_earlier_defaults_used",
@@ -7544,7 +7544,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L175"
+      "source_location": "L176"
     },
     {
       "id": "checkpoint_update_2026_10_28",
@@ -7556,7 +7556,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L183"
+      "source_location": "L184"
     },
     {
       "id": "checkpoint_update_2026_11_11",
@@ -7568,7 +7568,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-11-11",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L198"
+      "source_location": "L199"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -23422,7 +23422,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L126",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -23433,7 +23433,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L175",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -23455,7 +23455,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L183",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -23466,7 +23466,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L191",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -23477,7 +23477,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L198",
+      "source_location": "L199",
       "weight": 1.0
     },
     {
@@ -23488,7 +23488,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L226",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
@@ -23554,7 +23554,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L258",
+      "source_location": "L259",
       "weight": 1.0
     },
     {
@@ -29167,7 +29167,7 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L186",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -29191,7 +29191,7 @@
       "confidence_score": 0.95,
       "context": "FacultyGrid",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L259",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -29203,7 +29203,7 @@
       "confidence_score": 0.95,
       "context": "ProgramFaculty",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L259",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -29227,7 +29227,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L178",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -29239,7 +29239,7 @@
       "confidence_score": 0.95,
       "context": "StoryCards",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L259",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -29251,7 +29251,7 @@
       "confidence_score": 0.95,
       "context": "TestimonialShowcase",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L259",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -29263,7 +29263,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L178",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -29311,10 +29311,10 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L176",
+      "source_location": "L177",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5c3577b057fb02869e990d7fc809ea903e589fe5"
+  "built_at_commit": "84468fc42215f3d008959999518222364d6253cb"
 }

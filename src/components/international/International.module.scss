@@ -1070,6 +1070,24 @@ $gold-ink: #8c6500; // gold that passes AA on white
   }
 }
 
+// countries: revealed on hover, keyboard focus, or when the continent is selected
+.contEx {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #c9d5f2;
+  transition: max-height 0.4s, margin-top 0.4s;
+}
+
+.continents button:hover .contEx,
+.continents button:focus-visible .contEx,
+.continents button.on .contEx {
+  max-height: 60px;
+  margin-top: 4px;
+}
+
 // ---------- AT PAR
 .par {
   display: grid;
