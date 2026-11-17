@@ -120,6 +120,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## Latest change
+- Footer brochure form: no PDF linked; `BROCHURE` map in `BrochureForm.tsx` defaults to `#` (shows "Brochure coming soon."). Fill per-programme PDF paths there when files arrive. Other "Download Brochure" buttons (ProgramHero, InnerPage, Blog, ProgramsBand) still point at `/docs/dsu-online-brochure.pdf`.
 - International "At par" section: photo now flexes to fill the left column down to the table bottom (no crop strip, no gap); mobile/tablet 16:9. Sections are content-height (`.sec` min-height 0), only the hero is 100svh.
 - International continent photo cards: country list (`ex` in data.ts) reveals on hover/focus/selected, copy from the reference HTML.
 - International "Built for every time zone": rounder, roomier city/mode cards, white clock with cyan minutes, LMS card uses play icon (matches `video-production/image copy 6.png`).

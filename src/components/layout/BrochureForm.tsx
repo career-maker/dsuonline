@@ -5,7 +5,9 @@ import { programs } from '@/data/programs';
 import { ChevronDown, DownloadIcon } from '@/components/ui/icons';
 import s from './Footer.module.scss';
 
-/** Prototype: brochure PDFs are not supplied yet, so submit only confirms selection. */
+/** Brochure file per programme code. '#' = file not supplied yet; put the PDF path here when it arrives. */
+const BROCHURE: Record<string, string> = {};
+
 export function BrochureForm() {
   const id = useId();
   const [choice, setChoice] = useState('');
@@ -17,8 +19,13 @@ export function BrochureForm() {
       setNote('Please select a programme.');
       return;
     }
+    const href = BROCHURE[choice] ?? '#';
+    if (href === '#') {
+      setNote('Brochure coming soon.');
+      return;
+    }
     const link = document.createElement('a');
-    link.href = '/docs/dsu-online-brochure.pdf';
+    link.href = href;
     link.download = `DSU-Online-${choice.toUpperCase()}-Brochure.pdf`;
     document.body.appendChild(link);
     link.click();
