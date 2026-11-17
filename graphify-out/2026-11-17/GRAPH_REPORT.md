@@ -1,17 +1,17 @@
 # Graph Report - dsu online  (2026-11-17)
 
 ## Corpus Check
-- 124 files · ~80,860 words
+- 124 files · ~81,101 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 53 file(s) not represented in the graph (top: .scss 50, (none) 2, .ico 1)
 
 ## Summary
-- 726 nodes · 1805 edges · 32 communities (26 shown, 6 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 26 edges (avg confidence: 0.9)
+- 726 nodes · 1806 edges · 32 communities (26 shown, 6 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 27 edges (avg confidence: 0.91)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `357a08dc`
+- Built from commit: `8c37db8d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -66,9 +66,9 @@
   CHECKPOINT.md → src/components/inner/Page.tsx
 - `Update 2026-10-28` --references--> `ArrowLink()`  [INFERRED]
   CHECKPOINT.md → src/components/ui/ArrowLink.tsx
-- `Architecture` --references--> `ReferPage()`  [INFERRED]
+- `Latest change` --references--> `specEyebrow()`  [INFERRED]
   CHECKPOINT.md → src/components/inner/Page.tsx
-- `Architecture` --references--> `ContentPage()`  [INFERRED]
+- `Architecture` --references--> `ReferPage()`  [INFERRED]
   CHECKPOINT.md → src/components/inner/Page.tsx
 
 ## Import Cycles
@@ -182,14 +182,14 @@ Nodes (5): Update: common sections + specialization template, FacultyGrid(), Sto
 
 ## Knowledge Gaps
 - **5 isolated node(s):** `sass`, `@types/node`, `@types/react`, `@types/react-dom`, `typescript`
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 239 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 238 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `react` connect `react` to `InnerPage.tsx`, `Page.tsx`, `Interactive.tsx`, `Blogs.tsx`, `ArrowLink`, `package.json`, `Kit.tsx`, `Testimonial.tsx`, `next`, `curriculumData.ts`, `EmiCalculator.tsx`, `ElectiveCombinator.tsx`, `FeeTabs.tsx`, `icons.tsx`?**
-  _High betweenness centrality (0.188) - this node is a cross-community bridge._
+  _High betweenness centrality (0.189) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `ContentPage()` (e.g. with `Architecture` and `isP()`) actually correct?**
   _`ContentPage()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `sass`, `@types/node`, `@types/react` to the rest of the system?**
@@ -201,4 +201,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Page.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.10333333333333333 - nodes in this community are weakly interconnected._
 - **Why does `ArrowLink()` connect `ArrowLink` to `InnerPage.tsx`, `Blogs.tsx`, `Kit.tsx`, `react`, `DSU Online — CHECKPOINT (read this first in any new session)`, `ContentPage`, `next`, `ElectiveCombinator.tsx`, `icons.tsx`?**
-  _High betweenness centrality (0.049) - this node is a cross-community bridge._
+  _High betweenness centrality (0.048) - this node is a cross-community bridge._

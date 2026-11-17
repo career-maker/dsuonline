@@ -460,7 +460,7 @@
 }
 
 .login {
-  background: $blue;
+  background: $btn-blue;
 }
 
 .burger {
@@ -630,7 +630,7 @@
     }
 
     a {
-      background: #020966;
+      background: $btn-blue;
       color: #fff;
     }
 
@@ -870,7 +870,7 @@
       }
 
       a {
-        background: $blue;
+        background: $btn-blue;
         color: #fff;
 
         &:hover {

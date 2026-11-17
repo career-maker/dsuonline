@@ -39,7 +39,7 @@
 }
 
 .solid {
-  background: $blue;
+  background: $btn-blue;
   color: #fff;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .ghost {
-  border: 1px solid #020966;
+  border: 1px solid $btn-blue;
   background: #fff;
   color: $ink;
 }
