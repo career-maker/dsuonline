@@ -119,6 +119,10 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - GOTCHA: when editing via bash, the tool layer turns a double backslash + b in my command into a real backspace char. Never write regex word-boundary via python/heredoc; use the Edit tool or `chr(92)`. Fixer: `python shots/fixbs.py <files>`.
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
+## Latest change
+- International page "Why learners worldwide" section: removed one-screen squeeze on desktop (roomy cards, 272px rows, 20px gap) to match `video-production/image copy 5.png`. Note: `#id` selectors in SCSS modules need `:global(#id)`; older `#why .head` rules in International.module.scss are dead.
+- `next build` ends with a SecurityFatalError nudge (Next 16.4.3 advisory) after generating pages; not caused by our code.
+
 ## NEXT STEPS (do top item first when the user says "continue")
 - Done 2026-11-09: /international-learners REDESIGNED (not the client's layout): no pills/eyebrows/icon-card grids; hero map has plain-text stops + ruled continent legend; Why = sticky photo + ruled facts list; clocks = 24h rulers; programs = ruled rows; admissions = timeline; GSAP clip-reveal photos. Deployed version is still the older design until `python deploy.py` is run.
 - Done 2026-11-09: /international-learners page (client HTML -> our style). Route `src/app/international-learners/page.tsx`, parts in `src/components/international/` (HeroMap = India map + routes to continents, ContinentCards, TimeZones, CallbackForm via lib/enquiry (no backend, says 'Not sent yet'), IntlMotion = GSAP+ScrollTrigger, new dep `gsap`). Images in public/images/international (Unsplash, local webp; graduation photo replaced, original 404). Linked in header More menu (`moreNav`). Not deployed yet. Map credit CC BY 4.0 shown on page.
