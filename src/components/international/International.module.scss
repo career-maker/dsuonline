@@ -1689,9 +1689,12 @@ $gold-ink: #8c6500; // gold that passes AA on white
     letter-spacing: -0.02em;
   }
 
+  // main action spans the whole form
   > button,
   > a {
-    justify-self: start;
+    justify-self: stretch;
+    justify-content: center;
+    width: 100%;
   }
 }
 

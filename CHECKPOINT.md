@@ -120,6 +120,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## Latest change
+- Near-black buttons are now Navy #0B1F4D (ArrowLink dark/outline, header mobile-menu buttons, programs-band link, home hero phone button). International "Request a callback" form: Get Free Counselling button is full width (centred label).
 - Specialisation banner title is white (soft navy text-shadow for legibility on #4FA3FF); eyebrow + description stay navy.
 - International hero: photo + shade removed, background is a palette-only gradient (#0B1F4D -> #102A66 -> #1D5BD8). Specialisation banner (`.rev` in ProgramHero.module.scss): flat #4FA3FF, navy text, solid navy facts panel (#102A66 tiles), white Apply Now, navy Enquire/Download buttons.
 - BLUE PALETTE (client): Navy #0B1F4D, Navy 2 #102A66, Primary #1D5BD8, Sky #4FA3FF, Cyan #22C3E6. All saturated/dark blue literals in src (hex + rgb()) were remapped to the nearest of these (old navy #020966/#01063f -> #0B1F4D, logo blue #0077BE -> #1D5BD8, etc.); `$blue`/`$blue-dark`/`$logo-blue` tokens follow. Pale surface tints (e.g. #E6F2F9, #EAF1FF, #F3F6FC), light text tints (#C9D5F2), slate greys, near-black, violet (#6C63FF tint) and teal (#0F9D8A) were deliberately left alone. SVG/image assets in public/ not touched. New blues must come from the palette.
