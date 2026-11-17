@@ -14,7 +14,7 @@ function halves(p: string): string[] {
 }
 
 /** "The Program" block on programme pages: a framed photo pair on the left, the live copy and benefit chips on the right. */
-export function ProgramAbout({ title, paras, items, photo, inset, alt, eyebrow = 'The Program' }: { eyebrow?: string; title: string; paras: string[]; items: string[]; photo: string; inset: string; alt: string }) {
+export function ProgramAbout({ title, paras, items, photo, inset, alt, eyebrow = 'The Program', credits, coreLine, chips }: { eyebrow?: string; title: string; paras: string[]; items: string[]; photo: string; inset: string; alt: string; credits?: number; coreLine?: string; chips?: string[] }) {
   return (
     <div className={s.about}>
       <div className={s.media}>
@@ -33,6 +33,22 @@ export function ProgramAbout({ title, paras, items, photo, inset, alt, eyebrow =
             {p}
           </p>
         ))}
+        {coreLine && (
+          <p className={s.core}>
+            {credits ? <b>{credits} credits</b> : null}
+            <span>{coreLine}</span>
+          </p>
+        )}
+        {chips && chips.length > 0 && (
+          <ul className={s.chips}>
+            {chips.map((c) => (
+              <li key={c}>
+                <span className={s.chipDot} aria-hidden="true" />
+                {c}
+              </li>
+            ))}
+          </ul>
+        )}
         <ul className={s.points}>
           {items.map((it) => (
             <li key={it}>

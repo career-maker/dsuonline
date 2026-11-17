@@ -36,6 +36,8 @@ import { buildCurriculum } from './curriculumData';
 import { advantageLead, dualCopy } from '@/data/programme-advantage';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Faq } from '@/components/sections/home/Faq';
+import { SPEC_EXTRAS } from '@/data/spec-extras';
+import { SpecCore } from './SpecCore';
 import { FaqList, LeaderGrid } from './Interactive';
 import {
   CardGrid,
@@ -242,6 +244,15 @@ function Body({ blocks, head }: { blocks: Block[]; head?: ReactNode }) {
  * "Learning Modules" -> numbered cards, "Career Path" -> ruled list with icons; everything else keeps its normal view.
  * Content shapes handled: title/description paragraph pairs under one heading, a heading with a list, or one heading per module.
  */
+/** small label above each specialisation-page heading (same pattern everywhere: label + title) */
+function specEyebrow(title: string): string {
+  if (/module|curriculum|syllabus/i.test(title)) return 'What you will study';
+  if (/career/i.test(title)) return 'Where it can take you';
+  if (/award|recogni/i.test(title)) return 'Recognised for excellence';
+  if (/industr|sector/i.test(title)) return 'Where you can work';
+  return 'Specialisation highlights';
+}
+
 function specViews(subs: Sub[]): ReactNode[] {
   const ps = (x: Sub) => x.blocks.filter(isP).map((b) => b.x);
   const clean = (x: Sub) => x.blocks.filter((b) => !isP(b) || b.x.trim());
@@ -253,8 +264,8 @@ function specViews(subs: Sub[]): ReactNode[] {
   const titlesOf = (x: Sub) => (/career/i.test(x.title) && x.blocks.length >= 2 && x.blocks.every(isP) ? ps(x).filter((v) => v.trim()).map((v) => ({ title: v.trim(), text: '' })) : []);
   const simple = (x: Sub) => x.blocks.length > 0 && x.blocks.every(isP) && x.blocks.length <= 2 && ps(x).join('').length < 420 && !/career/i.test(x.title);
   const wrap = (key: string, title: string, node: ReactNode) => (
-    <div key={key} style={{ marginTop: 'clamp(28px, 3.4vw, 52px)' }}>
-      <h3 style={{ marginBottom: 16, fontSize: 'max(21px, calc(var(--u) * 30))', fontWeight: 700, lineHeight: 1.2 }}>{title}</h3>
+    <div key={key} style={{ marginTop: 'clamp(40px, 5vw, 72px)' }}>
+      <Head center eyebrow={specEyebrow(title)} title={title} />
       {node}
     </div>
   );
@@ -289,15 +300,15 @@ function SubView({ sub }: { sub: Sub }) {
   if (onlyP && sub.blocks.length >= 4 && sub.blocks.length % 2 === 0) {
     const pairs = parsePairs(sub.blocks);
     return (
-      <div style={{ marginTop: 'clamp(28px, 3.4vw, 52px)' }}>
-        <h3 style={{ marginBottom: 16, fontSize: 'max(21px, calc(var(--u) * 30))', fontWeight: 700, lineHeight: 1.2 }}>{sub.title}</h3>
+      <div style={{ marginTop: 'clamp(40px, 5vw, 72px)' }}>
+        <Head center eyebrow={specEyebrow(sub.title)} title={sub.title} />
         {/career/i.test(sub.title) ? <RoleGrid items={pairs} /> : <CardGrid items={pairs} cols={3} tint />}
       </div>
     );
   }
   return (
-    <div style={{ marginTop: 'clamp(28px, 3.4vw, 52px)' }}>
-      <h3 style={{ marginBottom: 16, fontSize: 'max(21px, calc(var(--u) * 30))', fontWeight: 700, lineHeight: 1.2 }}>{sub.title}</h3>
+    <div style={{ marginTop: 'clamp(40px, 5vw, 72px)' }}>
+      <Head center eyebrow={specEyebrow(sub.title)} title={sub.title} />
       <Body blocks={sub.blocks} />
     </div>
   );
@@ -635,6 +646,43 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (!sec.blocks.length && !sec.subs.length) {
       // a heading with no body of its own is the small line above the next section's title (e.g. "Counselling")
       if (secs[n + 1] && title) kickers[n + 1] = title;
+      continue;
+    }
+
+    // --- specialization pages: "About X" = copy left, photo right (same block as the programme pages' "The Program")
+    const aboutImg = sec.blocks.find((b) => b.t === 'img');
+    if (withFacts && crumbs.length >= 3 && /^about\b/i.test(title) && aboutImg && sec.blocks.some(isP)) {
+      const ex = SPEC_EXTRAS[`${slug.split('/')[0].replace(/^online-/, '')}/${slug.split('/')[2]}`];
+      nodes.push(
+        <Sec key={key} tone={nextTone()}>
+          <ProgramAbout
+            eyebrow="Specialisation overview"
+            title={ex?.aboutTitle ?? title}
+            paras={ex?.about ? [ex.about] : sec.blocks.filter(isP).map((b) => b.x)}
+            items={[]}
+            credits={ex?.credits}
+            coreLine={ex?.coreLine}
+            chips={ex?.highlights}
+            photo={imgOf(aboutImg).src}
+            inset="/images/learn/live-classes.webp"
+            alt={imgOf(aboutImg).alt || title}
+          />
+        </Sec>,
+      );
+      if (ex?.core) {
+        nodes.push(
+          <Sec key={`${key}-core`} tone={nextTone()}>
+            <SpecCore core={ex.core} credits={ex.credits} />
+          </Sec>,
+        );
+      }
+      if (sec.subs.length) {
+        nodes.push(
+          <Sec key={`${key}-subs`} tone={nextTone()}>
+            {specViews(sec.subs)}
+          </Sec>,
+        );
+      }
       continue;
     }
 
@@ -1114,17 +1162,6 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       continue;
     }
 
-    // --- specialization pages: "About X" = copy left, photo right (same block as the programme pages' "The Program")
-    const aboutImg = sec.blocks.find((b) => b.t === 'img');
-    if (withFacts && crumbs.length >= 3 && /^about/i.test(title) && aboutImg && sec.blocks.some(isP)) {
-      nodes.push(
-        <Sec key={key} tone={nextTone()}>
-          <ProgramAbout eyebrow="About the specialisation" title={title} paras={sec.blocks.filter(isP).map((b) => b.x)} items={[]} photo={imgOf(aboutImg).src} inset="/images/learn/live-classes.webp" alt={imgOf(aboutImg).alt || title} />
-        </Sec>,
-      );
-      continue;
-    }
-
     // --- mixed: sub-headings that all hold a few lines become cards
     const cardSubs = sec.subs.length >= 2 && sec.subs.every((x) => !x.blocks.some((b) => b.t === 'img' || b.t === 'table') && x.blocks.reduce((t, b) => t + (isP(b) ? b.x.length : b.t === 'ul' ? b.items.join('').length : 0), 0) < 700);
     const hasLead = sec.blocks.length > 0;
@@ -1284,29 +1321,6 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         }}
       />
     ) : null;
-  if (isSpec) {
-    const subsAll = st.sections.flatMap((sc) => [{ title: sc.title, blocks: sc.blocks }, ...sc.subs]);
-    const titlesIn = (re: RegExp) => {
-      const bl = (subsAll.find((x) => re.test(x.title))?.blocks ?? []).filter(isP).map((b) => b.x.trim()).filter(Boolean);
-      return bl.length >= 2 && bl.length % 2 === 0 ? parsePairs(bl.map((x) => ({ t: 'p', x }) as Block)).map((q) => q.title) : bl;
-    };
-    const mods = titlesIn(/learning modules/i);
-    const roles = titlesIn(/career path/i);
-    const durTxt = [dur?.value, dur?.note].filter(Boolean).join(' ');
-    const items = [
-      ...(durTxt ? [{ q: `How long is the Online ${specProg} in ${specName}?`, a: [`The programme runs for ${durTxt}.`] }] : []),
-      ...(fv(/total fees/i) ? [{ q: `What are the fees for the Online ${specProg} in ${specName}?`, a: [`The total programme fee is ${fv(/total fees/i)!.value.replace(/\/-$/, '')}, paid semester by semester.`] }] : []),
-      ...(mods.length ? [{ q: `What will I learn in ${specName}?`, a: [`The learning modules are ${mods.join(', ')}.`] }] : []),
-      ...(roles.length ? [{ q: `Which careers can I pursue after ${specName}?`, a: [`Career paths include ${roles.slice(0, 6).join(', ')}.`] }] : []),
-    ];
-    nodes.push(
-      <Sec key="spec-stories" tone="sky" center eyebrow="Testimonials" title="Hear From Our Learners">
-        <TestimonialGrid items={programTestimonials(specRoot)} />
-      </Sec>,
-    );
-    if (items.length >= 2) nodes.push(<Faq key="spec-faq" items={items} title={`${specName} FAQs`} />);
-  }
-
   // programme pages: FAQ + closing banner go where the admission section left its slot
   const faqAt = nodes.findIndex((n) => isValidElement(n) && n.key === 'faq-slot');
   if (programLinks && progShort && faqAt >= 0) {
@@ -1362,7 +1376,11 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       <div data-spec={withFacts && crumbs.length >= 3 ? '' : undefined} style={{ display: 'contents' }}>
         {programLinks ? nodes.map(withEyebrow) : nodes}
       </div>
-      <CtaBand />
+      {isSpec && specProg ? (
+        <CtaBand title={`Advance Your ${specName} Skills`} text={`Online ${specProg} Program - ${specName}${fv(/total fees/i) ? ` · Total Fees ${fv(/total fees/i)!.value}` : ''}`} apply="Apply Now!" />
+      ) : (
+        <CtaBand />
+      )}
     </>
   );
 }

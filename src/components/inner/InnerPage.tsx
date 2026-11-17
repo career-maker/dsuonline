@@ -206,17 +206,17 @@ export function InnerHero({
   );
 }
 
-export function CtaBand() {
+export function CtaBand({ title = 'Ready to take the Next Step ?', text = 'Admission Open for 2027, Enroll Now & Stop Your Future', apply = 'Apply Now' }: { title?: string; text?: string; apply?: string } = {}) {
   return (
     <section className={s.cta}>
       <div className={s.inner}>
         <div>
-          <h2>Ready to take the Next Step ?</h2>
-          <p>Admission Open for 2027, Enroll Now &amp; Stop Your Future</p>
+          <h2>{title}</h2>
+          <p>{text}</p>
         </div>
         <div className={s.ctaBtns}>
           <ArrowLink href={site.apply} external>
-            Apply Now
+            {apply}
           </ArrowLink>
           <EnquireButton variant="outline" />
         </div>

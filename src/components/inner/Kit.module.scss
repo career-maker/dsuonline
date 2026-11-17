@@ -4151,3 +4151,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     color: #fff;
   }
 }
+
+// specialisation pages: awards strip moves slower so the logos can be read
+:global([data-spec]) .marquee ul {
+  animation-duration: 140s;
+}
