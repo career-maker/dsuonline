@@ -240,7 +240,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
     animation: rise 0.9s $ease both;
   }
 
-  @for $i from 1 through 5 {
+  @for $i from 1 through 7 {
     .heroCopy > :nth-child(#{$i}) {
       animation-delay: #{0.05 + $i * 0.1}s;
     }
@@ -2085,5 +2085,67 @@ $gold-ink: #8c6500; // gold that passes AA on white
   .par .parImg {
     height: auto;
     aspect-ratio: 16 / 9;
+  }
+}
+
+// hero: three key points as glass chips under the buttons
+.heroUsps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  max-width: 42rem;
+  margin: clamp(22px, #{u(34)}, 34px) 0 0;
+  padding: 0;
+  list-style: none;
+
+  @include down($bp-sm) {
+    flex-direction: column;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid rgb(255 255 255 / 18%);
+    border-radius: 16px;
+    background: rgb(255 255 255 / 8%);
+    backdrop-filter: blur(8px);
+  }
+
+  .ico {
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    border-radius: 12px;
+    background: rgb(34 195 230 / 18%);
+    color: #22c3e6;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  b,
+  small {
+    display: block;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  b {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #fff;
+  }
+
+  small {
+    margin-top: 2px;
+    font-size: 12.5px;
+    line-height: 1.35;
+    color: rgb(255 255 255 / 75%);
   }
 }

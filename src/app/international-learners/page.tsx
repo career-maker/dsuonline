@@ -20,6 +20,11 @@ export const metadata: Metadata = {
 
 const img = (n: string) => `/images/international/${n}.webp`;
 const tints = ['cyan', 'sky', 'violet', 'blue'];
+const heroUsps = [
+  { icon: 'video', title: 'Live + Recorded', text: 'Never miss a class' },
+  { icon: 'globe', title: 'Learn from anywhere', text: 'Any country, any time zone' },
+  { icon: 'cap', title: 'UGC-Entitled', text: 'Online degree' },
+];
 
 export default function InternationalLearners() {
   return (
@@ -55,6 +60,19 @@ export default function InternationalLearners() {
                 Explore Programs
               </ArrowLink>
             </div>
+            <ul className={s.heroUsps}>
+              {heroUsps.map((u) => (
+                <li key={u.title}>
+                  <span className={s.ico}>
+                    <Ico name={u.icon} />
+                  </span>
+                  <span>
+                    <b>{u.title}</b>
+                    <small>{u.text}</small>
+                  </span>
+                </li>
+              ))}
+            </ul>
             <div className={s.badges}>
               <Image src="/images/brand/naac.webp" alt="NAAC A+ grade accredited" width={294} height={100} />
               <Image src="/images/brand/ugc.webp" alt="UGC Entitled" width={202} height={103} />
