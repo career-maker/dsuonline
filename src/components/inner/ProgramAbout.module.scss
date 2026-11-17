@@ -47,7 +47,7 @@
   overflow: hidden;
   border-radius: 20px;
   margin: clamp(-14px, #{u(-22)}, -22px) 0 0;
-  box-shadow: 0 24px 50px rgb(2 9 102 / 12%);
+  box-shadow: 0 24px 50px rgb(11 31 77 / 12%);
 
   @include up($bp-lg) {
     aspect-ratio: auto;
@@ -68,7 +68,7 @@
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .main:hover {
     transform: translateY(-6px);
-    box-shadow: 0 34px 60px rgb(2 9 102 / 20%);
+    box-shadow: 0 34px 60px rgb(11 31 77 / 20%);
 
     .img {
       transform: scale(1.06);
@@ -77,7 +77,7 @@
 
   .second:hover {
     transform: translate(-4px, -8px) rotate(-3deg) scale(1.07);
-    box-shadow: 0 22px 44px rgb(2 9 102 / 28%);
+    box-shadow: 0 22px 44px rgb(11 31 77 / 28%);
 
     .img {
       transform: scale(1.12);
@@ -94,7 +94,7 @@
   overflow: hidden;
   border: clamp(4px, #{u(7)}, 7px) solid #fff;
   border-radius: 18px;
-  box-shadow: 0 14px 34px rgb(2 9 102 / 16%);
+  box-shadow: 0 14px 34px rgb(11 31 77 / 16%);
 
   @include down($bp-sm) {
     right: -4px;

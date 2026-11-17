@@ -90,7 +90,7 @@
     display: none;
     padding: px(24) px(20) px(40);
     overflow: auto;
-    background: #0d1620;
+    background: #0b1f4d;
 
     > ul {
       flex-direction: column;
@@ -159,10 +159,10 @@
   align-items: stretch;
   gap: px(4);
   padding: px(10);
-  border: 1px solid rgb(0 60 110 / 8%);
+  border: 1px solid rgb(16 42 102 / 8%);
   border-radius: px(16);
   background: #fff;
-  box-shadow: 0 28px 60px rgb(0 20 50 / 32%);
+  box-shadow: 0 28px 60px rgb(11 31 77 / 32%);
 
   li {
     width: 100%;
@@ -265,8 +265,8 @@
       left: 50%;
       width: 14px;
       height: 14px;
-      border-top: 1px solid rgb(0 60 110 / 8%);
-      border-left: 1px solid rgb(0 60 110 / 8%);
+      border-top: 1px solid rgb(16 42 102 / 8%);
+      border-left: 1px solid rgb(16 42 102 / 8%);
       background: #fff;
       rotate: 45deg;
       translate: -50% 0;
@@ -449,8 +449,8 @@
 }
 
 .login:hover {
-  background: #0a95e0;
-  box-shadow: 0 8px 22px rgb(2 9 102 / 45%);
+  background: #22c3e6;
+  box-shadow: 0 8px 22px rgb(11 31 77 / 45%);
 }
 
 .phone {
@@ -642,7 +642,7 @@
     // buttons keep their own colours on hover (the generic dropdown row hover would otherwise paint them sky-blue)
     a:hover,
     a:focus-visible {
-      background: #0a95e0;
+      background: #22c3e6;
       color: #fff;
       filter: none;
     }
@@ -875,7 +875,7 @@
 
         &:hover {
           padding-left: 0;
-          background: #0a95e0;
+          background: #22c3e6;
           color: #fff;
         }
       }

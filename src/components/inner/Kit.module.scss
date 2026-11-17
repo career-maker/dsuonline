@@ -177,8 +177,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
     @media (hover: hover) {
       &:hover {
-        border-color: rgb(2 9 102 / 40%);
-        box-shadow: 0 16px 40px rgb(0 40 80 / 12%);
+        border-color: rgb(11 31 77 / 40%);
+        box-shadow: 0 16px 40px rgb(11 31 77 / 12%);
       }
     }
   }
@@ -277,7 +277,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     padding: clamp(20px, 2vw, 28px);
     border-radius: 16px;
     background: #fff;
-    box-shadow: 0 2px 14px rgb(0 40 80 / 8%);
+    box-shadow: 0 2px 14px rgb(11 31 77 / 8%);
   }
 
   h3 {
@@ -373,12 +373,12 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: clamp(22px, 2vw, 30px);
   border-radius: 16px;
   background: #fff;
-  box-shadow: 0 2px 16px rgb(0 40 80 / 8%);
+  box-shadow: 0 2px 16px rgb(11 31 77 / 8%);
   transition: box-shadow 0.35s $ease;
 
   @media (hover: hover) {
     &:hover {
-      box-shadow: 0 16px 40px rgb(0 40 80 / 16%);
+      box-shadow: 0 16px 40px rgb(11 31 77 / 16%);
     }
   }
 
@@ -503,7 +503,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
     @media (hover: hover) {
       &:hover {
-        box-shadow: 0 16px 40px rgb(0 40 80 / 16%);
+        box-shadow: 0 16px 40px rgb(11 31 77 / 16%);
       }
     }
   }
@@ -580,8 +580,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .faqOn {
-  border-color: rgb(2 9 102 / 45%) !important;
-  box-shadow: 0 10px 30px rgb(0 40 80 / 10%);
+  border-color: rgb(11 31 77 / 45%) !important;
+  box-shadow: 0 10px 30px rgb(11 31 77 / 10%);
 
   .faqChev {
     rotate: 90deg;
@@ -762,7 +762,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   th {
     padding: 16px 24px;
-    background: rgb(1 6 63 / 55%);
+    background: rgb(11 31 77 / 55%);
     border-bottom: 1px solid rgb(255 255 255 / 18%);
     color: rgb(255 255 255 / 85%);
     font-size: 13px;
@@ -808,7 +808,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   // total row
   .sumRow td {
-    background: rgb(1 6 63 / 55%) !important;
+    background: rgb(11 31 77 / 55%) !important;
     border-top: 1px solid rgb(255 255 255 / 18%);
     font-size: 0.95em;
     font-weight: 600;
@@ -863,7 +863,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
     &:hover {
       border-color: $blue;
-      box-shadow: 0 10px 28px rgb(2 9 102 / 16%);
+      box-shadow: 0 10px 28px rgb(11 31 77 / 16%);
 
       i {
         translate: 4px 0;
@@ -935,13 +935,13 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     border: 1px solid #dbe7f0;
     border-radius: 16px;
     background: #fff;
-    box-shadow: 0 2px 10px rgb(16 42 67 / 5%);
+    box-shadow: 0 2px 10px rgb(11 31 77 / 5%);
     transition: border-color 0.25s, box-shadow 0.3s, translate 0.3s $ease;
 
     &:hover,
     &:focus-visible {
       border-color: $blue;
-      box-shadow: 0 14px 32px rgb(2 9 102 / 18%);
+      box-shadow: 0 14px 32px rgb(11 31 77 / 18%);
       translate: 0 -4px;
 
       .elPhoto img {
@@ -997,7 +997,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(0deg, rgb(2 20 40 / 30%) 0%, rgb(2 20 40 / 0%) 55%);
+    background: linear-gradient(0deg, rgb(11 31 77 / 30%) 0%, rgb(11 31 77 / 0%) 55%);
   }
 }
 
@@ -1111,7 +1111,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     padding: 14px;
     border-radius: 16px;
     background: #fff;
-    box-shadow: 0 2px 16px rgb(0 40 80 / 10%);
+    box-shadow: 0 2px 16px rgb(11 31 77 / 10%);
   }
 
   img {
@@ -1303,8 +1303,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     transition: border-color 0.25s, box-shadow 0.3s;
 
     &:hover {
-      border-color: rgb(2 9 102 / 45%);
-      box-shadow: 0 10px 28px rgb(0 40 80 / 10%);
+      border-color: rgb(11 31 77 / 45%);
+      box-shadow: 0 10px 28px rgb(11 31 77 / 10%);
     }
   }
 }
@@ -1395,8 +1395,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
     @media (hover: hover) {
       &:hover {
-        border-color: rgb(2 9 102 / 40%);
-        box-shadow: 0 16px 40px rgb(0 40 80 / 14%);
+        border-color: rgb(11 31 77 / 40%);
+        box-shadow: 0 16px 40px rgb(11 31 77 / 14%);
       }
     }
   }
@@ -1692,8 +1692,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
     @media (hover: hover) {
       &:hover {
-        border-color: rgb(2 9 102 / 40%);
-        box-shadow: 0 16px 40px rgb(0 40 80 / 12%);
+        border-color: rgb(11 31 77 / 40%);
+        box-shadow: 0 16px 40px rgb(11 31 77 / 12%);
       }
     }
   }
@@ -1734,12 +1734,12 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     padding: clamp(16px, #{u(24)}, 24px);
     border-radius: 12px;
     background: #fff;
-    box-shadow: 0 2px 12px rgb(0 40 80 / 7%);
+    box-shadow: 0 2px 12px rgb(11 31 77 / 7%);
     transition: box-shadow 0.35s $ease;
 
     @media (hover: hover) {
       &:hover {
-        box-shadow: 0 14px 34px rgb(0 40 80 / 14%);
+        box-shadow: 0 14px 34px rgb(11 31 77 / 14%);
       }
     }
   }
@@ -1768,7 +1768,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   flex-direction: column;
   gap: 10px;
   padding: clamp(14px, 1.4vw, 20px);
-  background: linear-gradient(180deg, rgb(2 52 88 / 94%), rgb(2 36 62 / 97%));
+  background: linear-gradient(180deg, rgb(16 42 102 / 94%), rgb(11 31 77 / 97%));
   color: #fff;
   font-size: fs(17, 15px);
   line-height: 1.6;
@@ -2011,7 +2011,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border: 1px solid $line-soft;
   border-radius: 18px;
   background: #fff;
-  box-shadow: 0 18px 50px rgb(0 40 80 / 10%);
+  box-shadow: 0 18px 50px rgb(11 31 77 / 10%);
 
   > h2 {
     margin-bottom: 18px;
@@ -2419,7 +2419,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .pay_blue {
-  --c: #020966;
+  --c: #0b1f4d;
   --t: #e6f2f9;
 }
 
@@ -2446,7 +2446,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--t, #e6f2f9);
-  color: var(--c, #020966);
+  color: var(--c, #0b1f4d);
   transition: background-color 0.3s, color 0.3s;
 
   svg {
@@ -2915,7 +2915,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 // ---------- blue band sections (placement counters, "DSU Advantage")
 .blue {
-  background: radial-gradient(circle at 12% 0%, rgb(255 255 255 / 14%), transparent 40%), linear-gradient(120deg, #01063f 0%, #020966 70%, #1a2394 100%);
+  background: radial-gradient(circle at 12% 0%, rgb(255 255 255 / 14%), transparent 40%), linear-gradient(120deg, #0b1f4d 0%, #0b1f4d 70%, #102a66 100%);
 
   .head h2,
   .head .lead {
@@ -2982,7 +2982,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
       &:hover {
         translate: 0 -5px;
         background: $blue;
-        box-shadow: 0 16px 36px rgb(0 70 120 / 22%);
+        box-shadow: 0 16px 36px rgb(16 42 102 / 22%);
 
         h3,
         p {
@@ -3025,7 +3025,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   display: flex;
   flex-direction: column;
   border: 0;
-  background: radial-gradient(circle at 100% 0%, rgb(255 255 255 / 16%), transparent 45%), linear-gradient(150deg, #01063f 0%, #020966 100%);
+  background: radial-gradient(circle at 100% 0%, rgb(255 255 255 / 16%), transparent 45%), linear-gradient(150deg, #0b1f4d 0%, #0b1f4d 100%);
   box-shadow: none;
 
   .qmark {
@@ -3074,7 +3074,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 20px;
-  background: #0e2a3d;
+  background: #0b1f4d;
   color: #fff;
 
   @include down($bp-md) {
@@ -3096,7 +3096,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgb(2 30 52 / 94%) 0%, rgb(2 30 52 / 70%) 38%, transparent 72%);
+  background: linear-gradient(0deg, rgb(11 31 77 / 94%) 0%, rgb(11 31 77 / 70%) 38%, transparent 72%);
 }
 
 .whyCaption {
@@ -3168,7 +3168,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     @media (hover: hover) {
       &:hover {
         border-color: $blue;
-        box-shadow: 0 10px 24px rgb(0 70 120 / 16%);
+        box-shadow: 0 10px 24px rgb(16 42 102 / 16%);
       }
     }
   }
@@ -3257,7 +3257,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
       &:hover {
         translate: 0 -6px;
         background: #fff;
-        box-shadow: 0 14px 30px rgb(2 9 102 / 14%);
+        box-shadow: 0 14px 30px rgb(11 31 77 / 14%);
         z-index: 1;
       }
 
@@ -3438,8 +3438,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   @media (hover: hover) and (prefers-reduced-motion: no-preference) {
     &:hover {
       translate: 0 -6px;
-      border-color: rgb(2 9 102 / 25%);
-      box-shadow: 0 18px 38px rgb(2 9 102 / 16%);
+      border-color: rgb(11 31 77 / 25%);
+      box-shadow: 0 18px 38px rgb(11 31 77 / 16%);
     }
 
     &:hover .elPic img {
@@ -3548,7 +3548,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border: 1px solid #dfe5f1;
   border-radius: 18px;
   background: #fff;
-  box-shadow: 0 10px 30px rgb(2 9 102 / 8%);
+  box-shadow: 0 10px 30px rgb(11 31 77 / 8%);
 
   table {
     min-width: 0;
@@ -3597,7 +3597,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   .sumRow td {
     background: #e8edfb !important;
-    border-top: 2px solid rgb(2 9 102 / 14%);
+    border-top: 2px solid rgb(11 31 77 / 14%);
     font-size: 1.05em;
     font-weight: 700;
     color: $blue;
@@ -3747,14 +3747,14 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border: 1px solid #e3e8f2;
   border-radius: 18px;
   background: linear-gradient(160deg, #fff 0%, #f5f7fd 100%);
-  box-shadow: 0 8px 26px rgb(2 9 102 / 6%);
+  box-shadow: 0 8px 26px rgb(11 31 77 / 6%);
   transition: translate 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s ease, border-color 0.3s;
 
   @media (hover: hover) and (prefers-reduced-motion: no-preference) {
     &:hover {
       translate: 0 -5px;
-      border-color: rgb(2 9 102 / 22%);
-      box-shadow: 0 18px 40px rgb(2 9 102 / 13%);
+      border-color: rgb(11 31 77 / 22%);
+      box-shadow: 0 18px 40px rgb(11 31 77 / 13%);
     }
 
     &:hover .lsIco {
@@ -3843,14 +3843,14 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border: 1px solid #e1e7f2;
   border-radius: 20px;
   background: #fff;
-  box-shadow: 0 8px 26px rgb(2 9 102 / 6%);
+  box-shadow: 0 8px 26px rgb(11 31 77 / 6%);
   transition: translate 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.4s ease, border-color 0.3s;
 
   @media (hover: hover) and (prefers-reduced-motion: no-preference) {
     &:hover {
       translate: 0 -8px;
-      border-color: rgb(2 9 102 / 22%);
-      box-shadow: 0 22px 46px rgb(2 9 102 / 15%);
+      border-color: rgb(11 31 77 / 22%);
+      box-shadow: 0 22px 46px rgb(11 31 77 / 15%);
     }
 
     &:hover .fcPhoto img {
@@ -3882,7 +3882,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     content: '';
     position: absolute;
     inset: 55% 0 0;
-    background: linear-gradient(180deg, rgb(1 6 63 / 0%) 0%, rgb(1 6 63 / 62%) 100%);
+    background: linear-gradient(180deg, rgb(11 31 77 / 0%) 0%, rgb(11 31 77 / 62%) 100%);
     pointer-events: none;
   }
 }
@@ -3901,7 +3901,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: 7px 14px 7px 12px;
   border-radius: 14px;
   background: rgb(255 255 255 / 94%);
-  box-shadow: 0 6px 16px rgb(1 6 63 / 22%);
+  box-shadow: 0 6px 16px rgb(11 31 77 / 22%);
   font-size: 13.5px;
   font-weight: 600;
   line-height: 1.25;
@@ -3992,7 +3992,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     border: 1px solid #e3e8f2;
     border-radius: 18px;
     background: #fff;
-    box-shadow: 0 6px 22px rgb(2 9 102 / 6%);
+    box-shadow: 0 6px 22px rgb(11 31 77 / 6%);
     transition: box-shadow 0.3s $ease, translate 0.3s $ease;
 
     &::before {
@@ -4012,13 +4012,13 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
       line-height: 1;
       font-weight: 800;
       letter-spacing: -0.04em;
-      color: rgb(2 9 102 / 9%);
+      color: rgb(11 31 77 / 9%);
     }
 
     @media (hover: hover) {
       &:hover {
         translate: 0 -4px;
-        box-shadow: 0 16px 36px rgb(2 9 102 / 14%);
+        box-shadow: 0 16px 36px rgb(11 31 77 / 14%);
       }
     }
   }

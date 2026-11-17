@@ -24,7 +24,7 @@ $ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   overflow: hidden;
   border-radius: 16px;
   background: #fff;
-  box-shadow: 0 32px 80px rgb(2 20 40 / 40%), 0 4px 14px rgb(2 20 40 / 18%);
+  box-shadow: 0 32px 80px rgb(11 31 77 / 40%), 0 4px 14px rgb(11 31 77 / 18%);
   letter-spacing: -0.0175em;
   animation: rise 0.55s $ease both;
 
@@ -72,7 +72,7 @@ $ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   justify-content: space-between;
   gap: 28px;
   padding: clamp(28px, 3.6vw, 48px);
-  background: linear-gradient(160deg, rgb(2 9 102 / 94%) 0%, rgb(1 6 63 / 97%) 100%), url('/images/hero/mobile-1.webp') 60% 20% / cover;
+  background: linear-gradient(160deg, rgb(11 31 77 / 94%) 0%, rgb(11 31 77 / 97%) 100%), url('/images/hero/mobile-1.webp') 60% 20% / cover;
   color: #fff;
 
   h2 {
@@ -236,7 +236,7 @@ $ease: cubic-bezier(0.2, 0.8, 0.2, 1);
     &:focus-visible {
       border-color: $blue;
       outline: 0;
-      box-shadow: 0 0 0 3px rgb(2 9 102 / 22%);
+      box-shadow: 0 0 0 3px rgb(11 31 77 / 22%);
     }
 
     &[aria-invalid='true'] {
@@ -323,7 +323,7 @@ $ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   border: 1px solid #c9d6e0;
   border-radius: 10px;
   background: #fff;
-  box-shadow: 0 18px 40px rgb(2 20 40 / 24%);
+  box-shadow: 0 18px 40px rgb(11 31 77 / 24%);
   animation: fade 0.15s ease both;
 
   input {

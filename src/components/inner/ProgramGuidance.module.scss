@@ -11,7 +11,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: clamp(24px, #{u(64)}, 70px);
   border-radius: clamp(18px, #{u(28)}, 28px);
   color: #fff;
-  background: linear-gradient(120deg, #0b1f4d 25%, #102a66 70%, #1d4fc8 100%);
+  background: linear-gradient(120deg, #0b1f4d 25%, #102a66 70%, #1d5bd8 100%);
   letter-spacing: -0.0175em;
 
   @include down($bp-lg) {

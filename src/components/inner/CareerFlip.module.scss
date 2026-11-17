@@ -64,7 +64,7 @@
   border: 1px solid #e3e8f2;
   background: #fff;
   color: $ink;
-  box-shadow: 0 6px 22px rgb(2 9 102 / 6%);
+  box-shadow: 0 6px 22px rgb(11 31 77 / 6%);
 
   // brand accent bar
   &::before {
@@ -105,7 +105,7 @@
   line-height: 1;
   font-weight: 800;
   letter-spacing: -0.04em;
-  color: rgb(2 9 102 / 9%);
+  color: rgb(11 31 77 / 9%);
 }
 
 .roles {
@@ -152,7 +152,7 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: rgb(2 9 102 / 8%);
+    background: rgb(11 31 77 / 8%);
     transition: rotate 0.6s ease, background-color 0.3s;
   }
 }
@@ -165,9 +165,9 @@
   overflow-y: auto;
   scrollbar-width: none;
   transform: rotateY(180deg);
-  background: linear-gradient(150deg, #01063f 0%, #020966 70%, #1a2394 100%);
+  background: linear-gradient(150deg, #0b1f4d 0%, #0b1f4d 70%, #102a66 100%);
   color: #fff;
-  box-shadow: 0 14px 34px rgb(2 9 102 / 28%);
+  box-shadow: 0 14px 34px rgb(11 31 77 / 28%);
 
   h3 {
     margin-top: 4px;
@@ -224,7 +224,7 @@
   }
 
   .item:hover .hint i {
-    background: rgb(2 9 102 / 14%);
+    background: rgb(11 31 77 / 14%);
   }
 }
 

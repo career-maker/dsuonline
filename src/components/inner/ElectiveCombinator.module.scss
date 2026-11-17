@@ -156,7 +156,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   place-items: center;
   width: 26px;
   height: 26px;
-  border: 1.5px solid #8fb3d0;
+  border: 1.5px solid #4fa3ff;
   border-radius: 7px;
   background: #fff;
   font-size: 13px;
@@ -236,7 +236,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   flex-direction: column;
   padding: clamp(22px, #{u(40)}, 44px);
   color: #fff;
-  background: linear-gradient(135deg, #0b1f4d 30%, #102a66 70%, #1d4fc8 100%);
+  background: linear-gradient(135deg, #0b1f4d 30%, #102a66 70%, #1d5bd8 100%);
 
   h3 {
     margin-top: 10px;

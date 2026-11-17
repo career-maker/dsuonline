@@ -31,7 +31,7 @@
     border: 1px solid #e8eef3;
     border-radius: 14px;
     background: #fff;
-    box-shadow: 0 2px 12px rgb(0 40 80 / 6%);
+    box-shadow: 0 2px 12px rgb(11 31 77 / 6%);
   }
 }
 
@@ -161,7 +161,7 @@
   border: 1px solid #e7eff6;
   border-radius: 16px;
   background: #fff;
-  box-shadow: 0 4px 20px rgb(0 40 80 / 4%);
+  box-shadow: 0 4px 20px rgb(11 31 77 / 4%);
 }
 
 .postHeroWrapper {
@@ -198,7 +198,7 @@
   padding: 4px 14px;
   border-radius: 20px;
   background: #e6f2f9;
-  color: #020966;
+  color: #0b1f4d;
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.02em;
@@ -291,7 +291,7 @@
   &:hover {
     border-color: $blue;
     background: #fff;
-    box-shadow: 0 8px 24px rgb(2 9 102 / 12%);
+    box-shadow: 0 8px 24px rgb(11 31 77 / 12%);
     transform: translateY(-2px);
 
     .navArrow {
@@ -349,14 +349,14 @@
   border: 1px solid #e7eff6;
   border-radius: 16px;
   background: #fff;
-  box-shadow: 0 4px 18px rgb(0 40 80 / 4%);
+  box-shadow: 0 4px 18px rgb(11 31 77 / 4%);
 }
 
 .ctaWidget {
-  background: linear-gradient(145deg, #01063f 0%, #020966 100%);
+  background: linear-gradient(145deg, #0b1f4d 0%, #0b1f4d 100%);
   border: 0;
   color: #fff;
-  box-shadow: 0 10px 28px rgba(2, 92, 144, 0.28);
+  box-shadow: 0 10px 28px rgba(16, 42, 102, 0.28);
 
   h3 {
     font-size: fs(22, 19px);
@@ -400,7 +400,7 @@
 
 .wApplyBtn {
   background: #ffd200 !important;
-  color: #0b1a2a !important;
+  color: #0b1f4d !important;
   font-weight: 700 !important;
 
   &:hover {
@@ -481,7 +481,7 @@
   padding: 3px 8px;
   border-radius: 4px;
   background: #e6f2f9;
-  color: #020966;
+  color: #0b1f4d;
   font-size: 12px;
   font-weight: 600;
 }
@@ -599,12 +599,12 @@
   overflow: hidden;
   background: #fff;
   border: 1px solid #e8eff6;
-  box-shadow: 0 4px 16px rgb(0 40 80 / 4%);
+  box-shadow: 0 4px 16px rgb(11 31 77 / 4%);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgb(0 40 80 / 10%);
+    box-shadow: 0 12px 30px rgb(11 31 77 / 10%);
 
     .relatedThumb img {
       transform: scale(1.05);
@@ -633,7 +633,7 @@
   left: 12px;
   padding: 4px 10px;
   border-radius: 4px;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(11, 31, 77, 0.85);
   backdrop-filter: blur(4px);
   color: #fff;
   font-size: 12px;

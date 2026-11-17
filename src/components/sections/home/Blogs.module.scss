@@ -101,7 +101,7 @@
 .photo {
   object-fit: contain;
   object-position: 50% 0;
-  background: #0e2a3d;
+  background: #0b1f4d;
 }
 
 .card {
@@ -116,7 +116,7 @@
   @include down($bp-lg) {
     aspect-ratio: auto;
     padding-top: 61%;
-    background: #0e2a3d;
+    background: #0b1f4d;
 
     .photo {
       inset: 0 0 auto 0 !important;

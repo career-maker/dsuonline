@@ -102,7 +102,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   @media (hover: hover) {
     &:hover:not(.on) {
-      border-color: #8fb3d0;
+      border-color: #4fa3ff;
       transform: translateY(-3px);
     }
   }
@@ -112,7 +112,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border-color: $blue;
   background: $blue;
   color: #fff;
-  box-shadow: 0 14px 30px rgb(2 9 102 / 22%);
+  box-shadow: 0 14px 30px rgb(11 31 77 / 22%);
 
   svg {
     color: $logo-yellow;
@@ -205,7 +205,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   overflow: hidden;
   border-radius: 20px;
   background: $bg-sky;
-  box-shadow: 0 22px 50px rgb(2 9 102 / 12%);
+  box-shadow: 0 22px 50px rgb(11 31 77 / 12%);
 
   @include down($bp-lg) {
     min-height: 0;

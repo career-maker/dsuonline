@@ -101,8 +101,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   @media (hover: hover) {
     &:hover {
       transform: translateY(-8px);
-      border-color: rgb(2 9 102 / 25%);
-      box-shadow: 0 22px 44px rgb(0 40 80 / 14%);
+      border-color: rgb(11 31 77 / 25%);
+      box-shadow: 0 22px 44px rgb(11 31 77 / 14%);
 
       &::after {
         transform: scale(2.4);
