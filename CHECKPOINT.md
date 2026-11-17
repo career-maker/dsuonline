@@ -120,6 +120,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - Always: after each change round -> update this file, commit, `git push origin master`.
 
 ## Latest change
+- Specialisation Career Path: new `CareerShowcase` (photo left, points right auto-scrolling upward as a marquee; pauses + highlights on hover/focus; phones = swipe carousel). Learning Modules / title+text card groups (`ModuleCards`) are swipe carousels on phones (<=600px). Photo is /images/inner/convocation.webp (change in Page.tsx `CareerShowcase image=`).
 - Specialisation "Learning Modules" (and other title+text card groups) use new `ModuleCards` (Careers-card look: white card, blue/gold top bar, faint number; no flip). Testimonials page intro: left-aligned title + full-width paragraph in a compact section.
 - Near-black buttons are now Navy #0B1F4D (ArrowLink dark/outline, header mobile-menu buttons, programs-band link, home hero phone button). International "Request a callback" form: Get Free Counselling button is full width (centred label).
 - Specialisation banner title is white (soft navy text-shadow for legibility on #4FA3FF); eyebrow + description stay navy.

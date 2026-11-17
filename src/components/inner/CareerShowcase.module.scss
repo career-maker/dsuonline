@@ -1,0 +1,162 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+// desktop + tablet: photo | auto-scrolling points
+.wide {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(20px, #{u(48)}, 48px);
+  align-items: stretch;
+
+  @include down($bp-lg) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  @include down($bp-sm) {
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
+
+  @include down($bp-sm) {
+    display: block;
+  }
+}
+
+.photo {
+  position: relative;
+  min-height: 380px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 24px 50px rgb(11 31 77 / 14%);
+
+  @include down($bp-lg) {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: 50% 30%;
+  }
+}
+
+// the window the points scroll through; top and bottom fade out
+.view {
+  height: clamp(380px, 38vw, 500px);
+  overflow: hidden;
+  border-radius: 20px;
+  outline-offset: 4px;
+  mask-image: linear-gradient(180deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+  @include focus-ring;
+
+  @include down($bp-lg) {
+    height: 380px;
+  }
+}
+
+.track {
+  display: grid;
+  gap: 14px;
+  animation: career-up var(--dur, 48s) linear infinite;
+  will-change: transform;
+}
+
+.view:hover .track,
+.view:focus-within .track,
+.view:focus .track {
+  animation-play-state: paused;
+}
+
+.list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0 10px 0 0; // room for the hover nudge inside the clipped window
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 20px 22px;
+  border: 1px solid #e3e8f2;
+  border-left: 4px solid $gold;
+  border-radius: 14px;
+  background: #fff;
+  color: $ink;
+  box-shadow: 0 6px 22px rgb(11 31 77 / 6%);
+  cursor: default;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+
+  h3 {
+    margin: 0;
+    font-size: fs(20, 17px);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    transition: color 0.3s;
+  }
+
+  p {
+    margin: 6px 0 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: $body;
+    transition: color 0.3s;
+  }
+
+  &:hover {
+    transform: translateX(6px);
+    border-color: $blue;
+    background: $blue;
+    box-shadow: 0 14px 30px rgb(11 31 77 / 28%);
+
+    h3 {
+      color: #fff;
+    }
+
+    p {
+      color: #c9d5f2;
+    }
+
+    .no {
+      color: #22c3e6;
+    }
+  }
+}
+
+.no {
+  flex: none;
+  min-width: 2ch;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: rgb(11 31 77 / 22%);
+  transition: color 0.3s;
+}
+
+@keyframes career-up {
+  to {
+    transform: translateY(calc(-50% - 7px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view {
+    overflow-y: auto;
+    mask-image: none;
+  }
+
+  .track {
+    animation: none;
+  }
+
+  .list[aria-hidden='true'] {
+    display: none;
+  }
+}

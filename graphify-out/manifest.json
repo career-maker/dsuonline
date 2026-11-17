@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1794917745.4465837,
-    "seen": 1794917821.3201444,
-    "ast_hash": "67ad39e33666ae396118b1a23544b93f",
+    "mtime": 1794917925.9750514,
+    "seen": 1794918035.5256326,
+    "ast_hash": "95d1ec9dd53b398959944cfb2cfb87b2",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794917555.955835,
-    "seen": 1794917821.3204002,
-    "ast_hash": "4f943d56715f5bca76dcdb47e44f22e0",
+    "mtime": 1794917845.19161,
+    "seen": 1794918035.525831,
+    "ast_hash": "040404172eda55dc7cebad5cc91f88be",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -756,9 +756,15 @@
     "semantic_hash": ""
   },
   "src/components/inner/ModuleCards.tsx": {
-    "mtime": 1794917728.4665115,
-    "seen": 1794917821.3201406,
-    "ast_hash": "fdb83f07aab12fcdbf0e477e8139efdb",
+    "mtime": 1794917910.2716694,
+    "seen": 1794918035.5256307,
+    "ast_hash": "ecc7788db9f97f9fb5821f1f0dad4d57",
+    "semantic_hash": ""
+  },
+  "src/components/inner/CareerShowcase.tsx": {
+    "mtime": 1794917910.0777168,
+    "seen": 1794918035.5256019,
+    "ast_hash": "d8d2f76770bee768e9280f85c81a478c",
     "semantic_hash": ""
   }
 }

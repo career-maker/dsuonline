@@ -1,26 +1,43 @@
+import { CardSlider } from '@/components/ui/CardSlider';
 import s from './ModuleCards.module.scss';
 
-/** Numbered cards in the same look as the programme pages' Careers cards (white card, brand accent bar, faint number), without the flip. */
-export function ModuleCards({ items }: { items: { title: string; text?: string; list?: string[] }[] }) {
+type Item = { title: string; text?: string; list?: string[] };
+
+/** One numbered card in the Careers-card look (white card, brand accent bar, faint number), without the flip. */
+export function ModuleCard({ no, title, text, list }: Item & { no: number }) {
   return (
-    <ul className={s.grid}>
-      {items.map((c, i) => (
-        <li key={c.title} className={s.card}>
-          <span className={s.no} aria-hidden="true">
-            {String(i + 1).padStart(2, '0')}
-          </span>
-          <h3>{c.title}</h3>
-          {c.list ? (
-            <ul className={s.roles}>
-              {c.list.map((r) => (
-                <li key={r}>{r}</li>
-              ))}
-            </ul>
-          ) : (
-            c.text && <p>{c.text}</p>
-          )}
-        </li>
-      ))}
-    </ul>
+    <div className={s.card}>
+      <span className={s.no} aria-hidden="true">
+        {String(no).padStart(2, '0')}
+      </span>
+      <h3>{title}</h3>
+      {list ? (
+        <ul className={s.roles}>
+          {list.map((r) => (
+            <li key={r}>{r}</li>
+          ))}
+        </ul>
+      ) : (
+        text && <p>{text}</p>
+      )}
+    </div>
+  );
+}
+
+/** Card grid; on phones the same cards become a swipe carousel so the section stays short. */
+export function ModuleCards({ items }: { items: Item[] }) {
+  return (
+    <>
+      <ul className={s.grid}>
+        {items.map((c, i) => (
+          <li key={c.title}>
+            <ModuleCard no={i + 1} {...c} />
+          </li>
+        ))}
+      </ul>
+      <div className={s.mobile}>
+        <CardSlider label="Cards" slideWidth="84%" items={items.map((c, i) => <ModuleCard key={c.title} no={i + 1} {...c} />)} />
+      </div>
+    </>
   );
 }

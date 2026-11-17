@@ -39,6 +39,7 @@ import { Faq } from '@/components/sections/home/Faq';
 import { SPEC_EXTRAS } from '@/data/spec-extras';
 import { SpecCore } from './SpecCore';
 import { ModuleCards } from './ModuleCards';
+import { CareerShowcase } from './CareerShowcase';
 import { FaqList, LeaderGrid } from './Interactive';
 import {
   CardGrid,
@@ -276,7 +277,7 @@ function specViews(subs: Sub[]): ReactNode[] {
     const pairs = pairsOf(x);
     const titles = pairs.length ? [] : titlesOf(x);
     if (/career/i.test(x.title) && (pairs.length || titles.length)) {
-      out.push(wrap(x.title, x.title, <RoleGrid items={pairs.length ? pairs : titles} />));
+      out.push(wrap(x.title, x.title, <CareerShowcase items={pairs.length ? pairs : titles} image="/images/inner/convocation.webp" alt="DSU graduate receiving her degree at convocation" />));
     } else if (pairs.length) {
       out.push(wrap(x.title, x.title, <ModuleCards items={pairs} />));
     } else if (!x.blocks.length && subs[i + 1] && simple(subs[i + 1])) {
@@ -303,7 +304,7 @@ function SubView({ sub }: { sub: Sub }) {
     return (
       <div style={{ marginTop: 'clamp(40px, 5vw, 72px)' }}>
         <Head center eyebrow={specEyebrow(sub.title)} title={sub.title} />
-        {/career/i.test(sub.title) ? <RoleGrid items={pairs} /> : <ModuleCards items={pairs} />}
+        {/career/i.test(sub.title) ? <CareerShowcase items={pairs} image="/images/inner/convocation.webp" alt="DSU graduate receiving her degree at convocation" /> : <ModuleCards items={pairs} />}
       </div>
     );
   }

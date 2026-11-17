@@ -8,9 +8,28 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  > li {
+    display: flex;
+    min-width: 0;
+  }
+
+  @include down($bp-sm) {
+    display: none;
+  }
+}
+
+// phones: the same cards in a swipe carousel
+.mobile {
+  display: none;
+
+  @include down($bp-sm) {
+    display: block;
+  }
 }
 
 .card {
+  flex: 1;
   position: relative;
   display: flex;
   flex-direction: column;
