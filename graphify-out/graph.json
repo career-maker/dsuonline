@@ -1269,42 +1269,6 @@
       "source_location": "L480"
     },
     {
-      "id": "src_components_inner_programeligibility_criteria",
-      "label": "criteria()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "ArrowLink",
-      "file_type": "code",
-      "norm_label": "criteria()",
-      "source_file": "src/components/inner/ProgramEligibility.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_components_inner_programeligibility_iconof",
-      "label": "iconOf()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "ArrowLink",
-      "file_type": "code",
-      "norm_label": "iconof()",
-      "source_file": "src/components/inner/ProgramEligibility.tsx",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_components_inner_programeligibility_programeligibility",
-      "label": "ProgramEligibility()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "ArrowLink",
-      "file_type": "code",
-      "norm_label": "programeligibility()",
-      "source_file": "src/components/inner/ProgramEligibility.tsx",
-      "source_location": "L21"
-    },
-    {
       "id": "src_components_inner_programhero_programhero",
       "label": "ProgramHero()",
       "_callable": true,
@@ -3561,6 +3525,42 @@
       "source_location": "L18"
     },
     {
+      "id": "src_components_inner_programeligibility_criteria",
+      "label": "criteria()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "EnquiryModal.tsx",
+      "file_type": "code",
+      "norm_label": "criteria()",
+      "source_file": "src/components/inner/ProgramEligibility.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_components_inner_programeligibility_iconof",
+      "label": "iconOf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "EnquiryModal.tsx",
+      "file_type": "code",
+      "norm_label": "iconof()",
+      "source_file": "src/components/inner/ProgramEligibility.tsx",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_components_inner_programeligibility_programeligibility",
+      "label": "ProgramEligibility()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "EnquiryModal.tsx",
+      "file_type": "code",
+      "norm_label": "programeligibility()",
+      "source_file": "src/components/inner/ProgramEligibility.tsx",
+      "source_location": "L21"
+    },
+    {
       "id": "src_components_inner_referform_referform",
       "label": "ReferForm()",
       "_callable": true,
@@ -4294,17 +4294,6 @@
       "file_type": "code",
       "norm_label": "innerpage.tsx",
       "source_file": "src/components/inner/InnerPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_inner_programeligibility",
-      "label": "ProgramEligibility.tsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "ArrowLink",
-      "file_type": "code",
-      "norm_label": "programeligibility.tsx",
-      "source_file": "src/components/inner/ProgramEligibility.tsx",
       "source_location": "L1"
     },
     {
@@ -6192,7 +6181,7 @@
       "node_kind": "heading",
       "norm_label": "update: common sections + specialization template",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L274"
+      "source_location": "L275"
     },
     {
       "id": "src_components_sections_home_careers",
@@ -6270,6 +6259,17 @@
       "norm_label": "empty",
       "source_file": "src/components/inner/ContactForm.tsx",
       "source_location": "L15"
+    },
+    {
+      "id": "src_components_inner_programeligibility",
+      "label": "ProgramEligibility.tsx",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "EnquiryModal.tsx",
+      "file_type": "code",
+      "norm_label": "programeligibility.tsx",
+      "source_file": "src/components/inner/ProgramEligibility.tsx",
+      "source_location": "L1"
     },
     {
       "id": "src_components_inner_referform",
@@ -7624,7 +7624,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L207"
+      "source_location": "L208"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -7660,7 +7660,7 @@
       "node_kind": "heading",
       "norm_label": "next steps (do top item first when the user says \"continue\")",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L142"
+      "source_location": "L143"
     },
     {
       "id": "checkpoint_open_questions_asked_earlier_defaults_used",
@@ -7720,7 +7720,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L191"
+      "source_location": "L192"
     },
     {
       "id": "checkpoint_update_2026_10_28",
@@ -7732,7 +7732,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L199"
+      "source_location": "L200"
     },
     {
       "id": "checkpoint_update_2026_11_11",
@@ -7744,7 +7744,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-11-11",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L214"
+      "source_location": "L215"
     },
     {
       "id": "checkpoint_update_2026_11_12_shared_programme_hero_template",
@@ -7756,7 +7756,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-11-12: shared programme hero template",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L242"
+      "source_location": "L243"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -7811,17 +7811,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_components_inner_inner_module",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "src_components_inner_programeligibility_module",
-      "label": "src_components_inner_programeligibility_module",
-      "community": 0,
-      "community_name": "ArrowLink",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_components_inner_programeligibility_module",
       "source_file": "",
       "type": "external"
     },
@@ -8515,6 +8504,17 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_components_sections_home_faq_module",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "src_components_inner_programeligibility_module",
+      "label": "src_components_inner_programeligibility_module",
+      "community": 4,
+      "community_name": "EnquiryModal.tsx",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_components_inner_programeligibility_module",
       "source_file": "",
       "type": "external"
     },
@@ -24015,7 +24015,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L142",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -24037,7 +24037,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L191",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -24048,7 +24048,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L199",
+      "source_location": "L200",
       "weight": 1.0
     },
     {
@@ -24059,7 +24059,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L207",
+      "source_location": "L208",
       "weight": 1.0
     },
     {
@@ -24070,7 +24070,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L214",
+      "source_location": "L215",
       "weight": 1.0
     },
     {
@@ -24081,7 +24081,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L242",
+      "source_location": "L243",
       "weight": 1.0
     },
     {
@@ -24147,7 +24147,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L274",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -29892,7 +29892,19 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L202",
+      "source_location": "L203",
+      "weight": 1.0
+    },
+    {
+      "source": "checkpoint_latest_change",
+      "target": "src_components_ui_cardslider_cardslider",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "CardSlider",
+      "source_file": "CHECKPOINT.md",
+      "source_location": "L123",
       "weight": 1.0
     },
     {
@@ -29904,7 +29916,7 @@
       "confidence_score": 0.95,
       "context": "CareerShowcase",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L123",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -29928,7 +29940,7 @@
       "confidence_score": 0.95,
       "context": "FacultyGrid",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L275",
+      "source_location": "L276",
       "weight": 1.0
     },
     {
@@ -29940,7 +29952,7 @@
       "confidence_score": 0.95,
       "context": "ModuleCards",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L123",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -29952,7 +29964,7 @@
       "confidence_score": 0.95,
       "context": "ProgramFaculty",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L275",
+      "source_location": "L276",
       "weight": 1.0
     },
     {
@@ -29964,7 +29976,7 @@
       "confidence_score": 0.95,
       "context": "ProgramHero",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L130",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -29988,7 +30000,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L194",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
@@ -30000,7 +30012,7 @@
       "confidence_score": 0.95,
       "context": "StoryCards",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L275",
+      "source_location": "L276",
       "weight": 1.0
     },
     {
@@ -30012,7 +30024,7 @@
       "confidence_score": 0.95,
       "context": "TestimonialShowcase",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L275",
+      "source_location": "L276",
       "weight": 1.0
     },
     {
@@ -30024,7 +30036,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L194",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
@@ -30072,7 +30084,7 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L192",
+      "source_location": "L193",
       "weight": 1.0
     },
     {
@@ -30084,10 +30096,10 @@
       "confidence_score": 0.95,
       "context": "specEyebrow",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L134",
+      "source_location": "L135",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2fb18513ceba6ab437b71f7d78b46bfc523f990a"
+  "built_at_commit": "1f3725c38ad8b4c2933db3a15a1d9bd8a8f44f19"
 }

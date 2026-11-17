@@ -124,6 +124,19 @@
       "source_location": "L6"
     },
     {
+      "id": "src_components_inner_structure_structure",
+      "label": "structure",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "ArrowLink",
+      "file_type": "code",
+      "norm_label": "structure",
+      "source_file": "src/components/inner/structure.ts",
+      "source_location": "L19"
+    },
+    {
       "id": "src_components_inner_structure_sub",
       "label": "Sub",
       "_callable": true,
@@ -241,19 +254,6 @@
       "source_location": "L7"
     },
     {
-      "id": "src_data_spec_extras_specextra",
-      "label": "SpecExtra",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Page.tsx",
-      "file_type": "code",
-      "norm_label": "specextra",
-      "source_file": "src/data/spec-extras.ts",
-      "source_location": "L3"
-    },
-    {
       "id": "src_components_ui_card_p",
       "label": "P",
       "_callable": true,
@@ -291,19 +291,6 @@
       "norm_label": "testimonial",
       "source_file": "src/data/testimonials.ts",
       "source_location": "L3"
-    },
-    {
-      "id": "src_components_inner_structure_structure",
-      "label": "structure",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "structure",
-      "source_file": "src/components/inner/structure.ts",
-      "source_location": "L19"
     },
     {
       "id": "src_data_home_bentotile",
@@ -611,24 +598,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "role",
       "source_file": "src/components/inner/CareerShowcase.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_components_inner_electivegrid_item",
-      "label": "Item",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "CardSlider",
-      "file_type": "code",
-      "norm_label": "item",
-      "source_file": "src/components/inner/ElectiveGrid.tsx",
-      "source_location": "L6"
+      "source_location": "L5"
     },
     {
       "id": "src_components_inner_modulecards_item",
@@ -637,7 +611,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "item",
       "source_file": "src/components/inner/ModuleCards.tsx",
@@ -650,7 +624,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "withEyebrow",
+      "community_name": "slugify",
       "file_type": "code",
       "norm_label": "sectionhead",
       "source_file": "src/data/section-heads.ts",
@@ -681,6 +655,32 @@
       "norm_label": "faqitem",
       "source_file": "src/data/programme-faq.ts",
       "source_location": "L5"
+    },
+    {
+      "id": "src_components_inner_electivegrid_item",
+      "label": "Item",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "CardSlider",
+      "file_type": "code",
+      "norm_label": "item",
+      "source_file": "src/components/inner/ElectiveGrid.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_data_spec_extras_specextra",
+      "label": "SpecExtra",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "CardSlider",
+      "file_type": "code",
+      "norm_label": "specextra",
+      "source_file": "src/data/spec-extras.ts",
+      "source_location": "L3"
     },
     {
       "id": "src_components_sections_home_facultyarticles_facultycarddata",
@@ -1257,6 +1257,18 @@
       "source_location": "L35"
     },
     {
+      "id": "src_components_inner_page_legalpage",
+      "label": "LegalPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "ArrowLink",
+      "file_type": "code",
+      "norm_label": "legalpage()",
+      "source_file": "src/components/inner/Page.tsx",
+      "source_location": "L480"
+    },
+    {
       "id": "src_components_inner_programeligibility_criteria",
       "label": "criteria()",
       "_callable": true,
@@ -1545,18 +1557,6 @@
       "source_location": "L9"
     },
     {
-      "id": "src_components_inner_speccore_speccore",
-      "label": "SpecCore()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Page.tsx",
-      "file_type": "code",
-      "norm_label": "speccore()",
-      "source_file": "src/components/inner/SpecCore.tsx",
-      "source_location": "L5"
-    },
-    {
       "id": "src_components_inner_whytabs_whytabs",
       "label": "WhyTabs()",
       "_callable": true,
@@ -1689,18 +1689,6 @@
       "source_location": "L13"
     },
     {
-      "id": "src_components_inner_clean_slugify",
-      "label": "slugify()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "slugify()",
-      "source_file": "src/components/inner/clean.ts",
-      "source_location": "L27"
-    },
-    {
       "id": "src_components_inner_interactive_leadergrid",
       "label": "LeaderGrid()",
       "_callable": true,
@@ -1747,18 +1735,6 @@
       "norm_label": "pic()",
       "source_file": "src/components/inner/Kit.tsx",
       "source_location": "L39"
-    },
-    {
-      "id": "src_components_inner_kit_sec",
-      "label": "Sec()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "sec()",
-      "source_file": "src/components/inner/Kit.tsx",
-      "source_location": "L28"
     },
     {
       "id": "src_components_inner_kit_split",
@@ -1867,18 +1843,6 @@
       "norm_label": "leaders()",
       "source_file": "src/components/inner/Page.tsx",
       "source_location": "L378"
-    },
-    {
-      "id": "src_components_inner_page_legalpage",
-      "label": "LegalPage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ContentPage",
-      "file_type": "code",
-      "norm_label": "legalpage()",
-      "source_file": "src/components/inner/Page.tsx",
-      "source_location": "L480"
     },
     {
       "id": "src_components_inner_page_programtestimonials",
@@ -2870,7 +2834,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "careerflip()",
       "source_file": "src/components/inner/CareerFlip.tsx",
@@ -2882,11 +2846,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "body()",
       "source_file": "src/components/inner/CareerShowcase.tsx",
-      "source_location": "L8"
+      "source_location": "L7"
     },
     {
       "id": "src_components_inner_careershowcase_careershowcase",
@@ -2894,35 +2858,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "careershowcase()",
       "source_file": "src/components/inner/CareerShowcase.tsx",
-      "source_location": "L19"
-    },
-    {
-      "id": "src_components_inner_electivegrid_card",
-      "label": "Card()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "CardSlider",
-      "file_type": "code",
-      "norm_label": "card()",
-      "source_file": "src/components/inner/ElectiveGrid.tsx",
-      "source_location": "L8"
-    },
-    {
-      "id": "src_components_inner_electivegrid_electivegrid",
-      "label": "ElectiveGrid()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "CardSlider",
-      "file_type": "code",
-      "norm_label": "electivegrid()",
-      "source_file": "src/components/inner/ElectiveGrid.tsx",
-      "source_location": "L28"
+      "source_location": "L18"
     },
     {
       "id": "src_components_inner_kit_head",
@@ -2930,7 +2870,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "head()",
       "source_file": "src/components/inner/Kit.tsx",
@@ -2942,7 +2882,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "modulecard()",
       "source_file": "src/components/inner/ModuleCards.tsx",
@@ -2954,7 +2894,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "modulecards()",
       "source_file": "src/components/inner/ModuleCards.tsx",
@@ -2966,7 +2906,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "careers()",
       "source_file": "src/components/inner/Page.tsx",
@@ -2978,7 +2918,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "isp()",
       "source_file": "src/components/inner/Page.tsx",
@@ -2990,7 +2930,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "speceyebrow()",
       "source_file": "src/components/inner/Page.tsx",
@@ -3002,7 +2942,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "specviews()",
       "source_file": "src/components/inner/Page.tsx",
@@ -3014,7 +2954,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "subview()",
       "source_file": "src/components/inner/Page.tsx",
@@ -3026,7 +2966,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "parsepairs()",
       "source_file": "src/components/inner/parse.ts",
@@ -3038,35 +2978,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "splitbullets()",
       "source_file": "src/components/inner/parse.ts",
       "source_location": "L94"
     },
     {
-      "id": "src_components_inner_programadvantage_programadvantage",
-      "label": "ProgramAdvantage()",
+      "id": "src_components_inner_clean_slugify",
+      "label": "slugify()",
       "_callable": true,
       "_origin": "ast",
-      "community": 28,
-      "community_name": "CardSlider",
+      "community": 29,
+      "community_name": "slugify",
       "file_type": "code",
-      "norm_label": "programadvantage()",
-      "source_file": "src/components/inner/ProgramAdvantage.tsx",
-      "source_location": "L39"
+      "norm_label": "slugify()",
+      "source_file": "src/components/inner/clean.ts",
+      "source_location": "L27"
     },
     {
-      "id": "src_components_ui_cardslider_cardslider",
-      "label": "CardSlider()",
+      "id": "src_components_inner_kit_sec",
+      "label": "Sec()",
       "_callable": true,
       "_origin": "ast",
-      "community": 28,
-      "community_name": "CardSlider",
+      "community": 29,
+      "community_name": "slugify",
       "file_type": "code",
-      "norm_label": "cardslider()",
-      "source_file": "src/components/ui/CardSlider.tsx",
-      "source_location": "L14"
+      "norm_label": "sec()",
+      "source_file": "src/components/inner/Kit.tsx",
+      "source_location": "L28"
     },
     {
       "id": "src_components_inner_page_witheyebrow",
@@ -3074,7 +3014,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "withEyebrow",
+      "community_name": "slugify",
       "file_type": "code",
       "norm_label": "witheyebrow()",
       "source_file": "src/components/inner/Page.tsx",
@@ -3086,7 +3026,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 29,
-      "community_name": "withEyebrow",
+      "community_name": "slugify",
       "file_type": "code",
       "norm_label": "headfor()",
       "source_file": "src/data/section-heads.ts",
@@ -3319,6 +3259,66 @@
       "norm_label": "rupees()",
       "source_file": "src/data/programme-faq.ts",
       "source_location": "L21"
+    },
+    {
+      "id": "src_components_inner_electivegrid_card",
+      "label": "Card()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "CardSlider",
+      "file_type": "code",
+      "norm_label": "card()",
+      "source_file": "src/components/inner/ElectiveGrid.tsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_components_inner_electivegrid_electivegrid",
+      "label": "ElectiveGrid()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "CardSlider",
+      "file_type": "code",
+      "norm_label": "electivegrid()",
+      "source_file": "src/components/inner/ElectiveGrid.tsx",
+      "source_location": "L28"
+    },
+    {
+      "id": "src_components_inner_programadvantage_programadvantage",
+      "label": "ProgramAdvantage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "CardSlider",
+      "file_type": "code",
+      "norm_label": "programadvantage()",
+      "source_file": "src/components/inner/ProgramAdvantage.tsx",
+      "source_location": "L39"
+    },
+    {
+      "id": "src_components_inner_speccore_speccore",
+      "label": "SpecCore()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "CardSlider",
+      "file_type": "code",
+      "norm_label": "speccore()",
+      "source_file": "src/components/inner/SpecCore.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_components_ui_cardslider_cardslider",
+      "label": "CardSlider()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "CardSlider",
+      "file_type": "code",
+      "norm_label": "cardslider()",
+      "source_file": "src/components/ui/CardSlider.tsx",
+      "source_location": "L15"
     },
     {
       "id": "src_components_sections_home_facultyarticles_avatar",
@@ -4528,17 +4528,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_inner_speccore",
-      "label": "SpecCore.tsx",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Page.tsx",
-      "file_type": "code",
-      "norm_label": "speccore.tsx",
-      "source_file": "src/components/inner/SpecCore.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_inner_whytabs",
       "label": "WhyTabs.tsx",
       "_origin": "ast",
@@ -4548,28 +4537,6 @@
       "norm_label": "whytabs.tsx",
       "source_file": "src/components/inner/WhyTabs.tsx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_data_spec_extras",
-      "label": "spec-extras.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Page.tsx",
-      "file_type": "code",
-      "norm_label": "spec-extras.ts",
-      "source_file": "src/data/spec-extras.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_data_spec_extras_spec_extras",
-      "label": "SPEC_EXTRAS",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "Page.tsx",
-      "file_type": "code",
-      "norm_label": "spec_extras",
-      "source_file": "src/data/spec-extras.ts",
-      "source_location": "L21"
     },
     {
       "id": "deploy_server",
@@ -5790,21 +5757,10 @@
       "label": "CareerShowcase.tsx",
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "careershowcase.tsx",
       "source_file": "src/components/inner/CareerShowcase.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_inner_electivegrid",
-      "label": "ElectiveGrid.tsx",
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "CardSlider",
-      "file_type": "code",
-      "norm_label": "electivegrid.tsx",
-      "source_file": "src/components/inner/ElectiveGrid.tsx",
       "source_location": "L1"
     },
     {
@@ -5812,7 +5768,7 @@
       "label": "ModuleCards.tsx",
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "code",
       "norm_label": "modulecards.tsx",
       "source_file": "src/components/inner/ModuleCards.tsx",
@@ -5823,7 +5779,7 @@
       "label": "Latest change",
       "_origin": "ast",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "latest change",
@@ -5835,7 +5791,7 @@
       "label": "section-heads.ts",
       "_origin": "ast",
       "community": 29,
-      "community_name": "withEyebrow",
+      "community_name": "slugify",
       "file_type": "code",
       "norm_label": "section-heads.ts",
       "source_file": "src/data/section-heads.ts",
@@ -5846,7 +5802,7 @@
       "label": "sectionHeads",
       "_origin": "ast",
       "community": 29,
-      "community_name": "withEyebrow",
+      "community_name": "slugify",
       "file_type": "code",
       "norm_label": "sectionheads",
       "source_file": "src/data/section-heads.ts",
@@ -5994,6 +5950,50 @@
       "norm_label": "programme-faq.ts",
       "source_file": "src/data/programme-faq.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "src_components_inner_electivegrid",
+      "label": "ElectiveGrid.tsx",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "CardSlider",
+      "file_type": "code",
+      "norm_label": "electivegrid.tsx",
+      "source_file": "src/components/inner/ElectiveGrid.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_inner_speccore",
+      "label": "SpecCore.tsx",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "CardSlider",
+      "file_type": "code",
+      "norm_label": "speccore.tsx",
+      "source_file": "src/components/inner/SpecCore.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_data_spec_extras",
+      "label": "spec-extras.ts",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "CardSlider",
+      "file_type": "code",
+      "norm_label": "spec-extras.ts",
+      "source_file": "src/data/spec-extras.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_data_spec_extras_spec_extras",
+      "label": "SPEC_EXTRAS",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "CardSlider",
+      "file_type": "code",
+      "norm_label": "spec_extras",
+      "source_file": "src/data/spec-extras.ts",
+      "source_location": "L21"
     },
     {
       "id": "src_components_sections_home_facultyarticles",
@@ -6183,18 +6183,6 @@
       "source_location": "L1"
     },
     {
-      "id": "checkpoint_update_2026_11_12_shared_programme_hero_template",
-      "label": "Update 2026-11-12: shared programme hero template",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "ProgramFaculty.tsx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "update 2026-11-12: shared programme hero template",
-      "source_file": "CHECKPOINT.md",
-      "source_location": "L241"
-    },
-    {
       "id": "checkpoint_update_common_sections_specialization_template",
       "label": "Update: common sections + specialization template",
       "_origin": "ast",
@@ -6204,7 +6192,7 @@
       "node_kind": "heading",
       "norm_label": "update: common sections + specialization template",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L273"
+      "source_location": "L274"
     },
     {
       "id": "src_components_sections_home_careers",
@@ -7636,7 +7624,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L206"
+      "source_location": "L207"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -7672,7 +7660,7 @@
       "node_kind": "heading",
       "norm_label": "next steps (do top item first when the user says \"continue\")",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L141"
+      "source_location": "L142"
     },
     {
       "id": "checkpoint_open_questions_asked_earlier_defaults_used",
@@ -7732,7 +7720,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L190"
+      "source_location": "L191"
     },
     {
       "id": "checkpoint_update_2026_10_28",
@@ -7744,7 +7732,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L198"
+      "source_location": "L199"
     },
     {
       "id": "checkpoint_update_2026_11_11",
@@ -7756,7 +7744,19 @@
       "node_kind": "heading",
       "norm_label": "update 2026-11-11",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L213"
+      "source_location": "L214"
+    },
+    {
+      "id": "checkpoint_update_2026_11_12_shared_programme_hero_template",
+      "label": "Update 2026-11-12: shared programme hero template",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "DSU Online \u2014 CHECKPOINT (read this first in any new session)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "update 2026-11-12: shared programme hero template",
+      "source_file": "CHECKPOINT.md",
+      "source_location": "L242"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -7888,17 +7888,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_components_inner_programfees_module",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "src_components_inner_speccore_module",
-      "label": "src_components_inner_speccore_module",
-      "community": 1,
-      "community_name": "Page.tsx",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_components_inner_speccore_module",
       "source_file": "",
       "type": "external"
     },
@@ -8236,7 +8225,7 @@
       "id": "src_components_inner_careershowcase_module",
       "label": "src_components_inner_careershowcase_module",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "external": true,
       "file_type": "concept",
       "norm_label": "src_components_inner_careershowcase_module",
@@ -8244,21 +8233,10 @@
       "type": "external"
     },
     {
-      "id": "src_components_inner_electivegrid_module",
-      "label": "src_components_inner_electivegrid_module",
-      "community": 28,
-      "community_name": "CardSlider",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_components_inner_electivegrid_module",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "src_components_inner_modulecards_module",
       "label": "src_components_inner_modulecards_module",
       "community": 28,
-      "community_name": "CardSlider",
+      "community_name": "specViews",
       "external": true,
       "file_type": "concept",
       "norm_label": "src_components_inner_modulecards_module",
@@ -8438,6 +8416,28 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "urllib_request",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "src_components_inner_electivegrid_module",
+      "label": "src_components_inner_electivegrid_module",
+      "community": 31,
+      "community_name": "CardSlider",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_components_inner_electivegrid_module",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "src_components_inner_speccore_module",
+      "label": "src_components_inner_speccore_module",
+      "community": 31,
+      "community_name": "CardSlider",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_components_inner_speccore_module",
       "source_file": "",
       "type": "external"
     },
@@ -9269,7 +9269,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/CareerShowcase.tsx",
-      "source_location": "L29",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -9281,19 +9281,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/inner/CareerShowcase.tsx",
-      "source_location": "L50",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_careershowcase_careershowcase",
-      "target": "src_components_inner_modulecards_modulecard",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/inner/CareerShowcase.tsx",
-      "source_location": "L54",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -12045,6 +12033,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_inner_speccore_speccore",
+      "target": "src_components_ui_cardslider_cardslider",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/inner/SpecCore.tsx",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_inner_statnumber_statnumber",
       "target": "src_components_ui_counter_counter",
       "relation": "calls",
@@ -14685,18 +14685,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_inner_careershowcase",
-      "target": "src_components_inner_modulecards_modulecard",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/inner/CareerShowcase.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_inner_clean",
       "target": "src_lib_content_block",
       "relation": "imports",
@@ -16714,7 +16702,7 @@
     },
     {
       "source": "src_components_inner_speccore",
-      "target": "src_data_spec_extras_specextra",
+      "target": "src_components_ui_cardslider_cardslider",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -16722,6 +16710,18 @@
       "context": "import",
       "source_file": "src/components/inner/SpecCore.tsx",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_speccore",
+      "target": "src_data_spec_extras_specextra",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/inner/SpecCore.tsx",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -19478,18 +19478,6 @@
     },
     {
       "source": "src_components_inner_careershowcase",
-      "target": "src_components_inner_modulecards",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/inner/CareerShowcase.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_inner_careershowcase",
       "target": "src_components_inner_careershowcase_module",
       "relation": "imports_from",
       "_origin": "ast",
@@ -19497,7 +19485,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/inner/CareerShowcase.tsx",
-      "source_location": "L4",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -21482,7 +21470,7 @@
     },
     {
       "source": "src_components_inner_speccore",
-      "target": "src_data_spec_extras",
+      "target": "src_components_ui_cardslider",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -21490,6 +21478,18 @@
       "context": "import",
       "source_file": "src/components/inner/SpecCore.tsx",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_inner_speccore",
+      "target": "src_data_spec_extras",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/inner/SpecCore.tsx",
+      "source_location": "L2",
       "type_only": true,
       "weight": 1.0
     },
@@ -21502,7 +21502,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/inner/SpecCore.tsx",
-      "source_location": "L2",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -23574,7 +23574,6 @@
       "context": "import",
       "source_file": "src/components/ui/CardSlider.tsx",
       "source_location": "L3",
-      "type_only": true,
       "weight": 1.0
     },
     {
@@ -24016,7 +24015,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L141",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -24038,7 +24037,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L190",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -24049,7 +24048,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L198",
+      "source_location": "L199",
       "weight": 1.0
     },
     {
@@ -24060,7 +24059,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L206",
+      "source_location": "L207",
       "weight": 1.0
     },
     {
@@ -24071,7 +24070,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L213",
+      "source_location": "L214",
       "weight": 1.0
     },
     {
@@ -24082,7 +24081,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L241",
+      "source_location": "L242",
       "weight": 1.0
     },
     {
@@ -24148,7 +24147,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L273",
+      "source_location": "L274",
       "weight": 1.0
     },
     {
@@ -24973,7 +24972,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/CareerShowcase.tsx",
-      "source_location": "L19",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -24984,7 +24983,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/CareerShowcase.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -24995,7 +24994,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/CareerShowcase.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -26854,7 +26853,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/inner/SpecCore.tsx",
-      "source_location": "L5",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -28108,7 +28107,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/ui/CardSlider.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -29893,7 +29892,19 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L201",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "checkpoint_latest_change",
+      "target": "src_components_inner_careershowcase_careershowcase",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "CareerShowcase",
+      "source_file": "CHECKPOINT.md",
+      "source_location": "L123",
       "weight": 1.0
     },
     {
@@ -29917,7 +29928,7 @@
       "confidence_score": 0.95,
       "context": "FacultyGrid",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L274",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -29941,7 +29952,7 @@
       "confidence_score": 0.95,
       "context": "ProgramFaculty",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L274",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -29953,7 +29964,7 @@
       "confidence_score": 0.95,
       "context": "ProgramHero",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L129",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -29977,7 +29988,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L193",
+      "source_location": "L194",
       "weight": 1.0
     },
     {
@@ -29989,7 +30000,7 @@
       "confidence_score": 0.95,
       "context": "StoryCards",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L274",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -30001,7 +30012,7 @@
       "confidence_score": 0.95,
       "context": "TestimonialShowcase",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L274",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -30013,7 +30024,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L193",
+      "source_location": "L194",
       "weight": 1.0
     },
     {
@@ -30061,7 +30072,7 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L191",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -30073,10 +30084,10 @@
       "confidence_score": 0.95,
       "context": "specEyebrow",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L133",
+      "source_location": "L134",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3e7add7f64e6b29d81013ce8b49c68fb93989c2b"
+  "built_at_commit": "2fb18513ceba6ab437b71f7d78b46bfc523f990a"
 }

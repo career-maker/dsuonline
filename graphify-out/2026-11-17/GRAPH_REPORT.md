@@ -1,17 +1,17 @@
 # Graph Report - dsu online  (2026-11-17)
 
 ## Corpus Check
-- 126 files · ~81,978 words
+- 126 files · ~82,264 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 55 file(s) not represented in the graph (top: .scss 52, (none) 2, .ico 1)
 
 ## Summary
-- 737 nodes · 1834 edges · 36 communities (31 shown, 5 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 29 edges (avg confidence: 0.91)
+- 737 nodes · 1835 edges · 37 communities (32 shown, 5 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 30 edges (avg confidence: 0.91)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3e7add7f`
+- Built from commit: `2fb18513`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -42,9 +42,10 @@
 - ProgramAdvantage.tsx
 - ProgramAbout.tsx
 - layout.tsx
-- CardSlider
-- withEyebrow
+- specViews
+- slugify
 - programme-faq.ts
+- CardSlider
 - FacultyArticles.tsx
 - next
 - Learning.tsx
@@ -56,8 +57,8 @@
 2. `react` - 58 edges
 3. `ArrowLink()` - 46 edges
 4. `next` - 45 edges
-5. `Icon()` - 20 edges
-6. `CardSlider()` - 19 edges
+5. `CardSlider()` - 21 edges
+6. `Icon()` - 20 edges
 7. `ChevronRight()` - 18 edges
 8. `Flow()` - 16 edges
 9. `compilerOptions` - 16 edges
@@ -78,15 +79,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (36 total, 5 thin omitted)
+## Communities (37 total, 5 thin omitted)
 
 ### Community 0 - "ArrowLink"
 Cohesion: 0.06
-Nodes (63): nextConfig, bannerBlurb(), bannerDuration(), generateMetadata(), generateStaticParams(), InnerRoute(), Params, resolve() (+55 more)
+Nodes (65): nextConfig, bannerBlurb(), bannerDuration(), generateMetadata(), generateStaticParams(), InnerRoute(), Params, resolve() (+57 more)
 
 ### Community 1 - "Page.tsx"
-Cohesion: 0.09
-Nodes (18): ADMISSION_PHOTOS, BANNERS, BANNERS_MOBILE, contactSocial, ELECTIVE_PHOTOS, P, Props, Seg (+10 more)
+Cohesion: 0.11
+Nodes (15): ADMISSION_PHOTOS, BANNERS, BANNERS_MOBILE, contactSocial, ELECTIVE_PHOTOS, P, Props, Seg (+7 more)
 
 ### Community 2 - "icons.tsx"
 Cohesion: 0.13
@@ -117,8 +118,8 @@ Cohesion: 0.08
 Nodes (38): gsap, heroUsps, img(), InternationalLearners(), metadata, tints, CallbackForm(), Phase (+30 more)
 
 ### Community 9 - "DSU Online — CHECKPOINT (read this first in any new session)"
-Cohesion: 0.14
-Nodes (13): 2026-10-30 inner-page photos, DSU Online — CHECKPOINT (read this first in any new session), Latest commits (newest last), NEXT STEPS (do top item first when the user says "continue"), Open questions asked earlier (defaults used), Run locally, Status, Update 2026-10-26 (latest) (+5 more)
+Cohesion: 0.13
+Nodes (14): 2026-10-30 inner-page photos, DSU Online — CHECKPOINT (read this first in any new session), Latest commits (newest last), NEXT STEPS (do top item first when the user says "continue"), Open questions asked earlier (defaults used), Run locally, Status, Update 2026-10-26 (latest) (+6 more)
 
 ### Community 10 - "Deploy to Server (dsuonline.intersmarthosting.in)"
 Cohesion: 0.33
@@ -137,8 +138,8 @@ Cohesion: 0.33
 Nodes (4): app, { createServer }, handle, next
 
 ### Community 16 - "ContentPage"
-Cohesion: 0.14
-Nodes (25): CertFlip(), slugify(), LeaderGrid(), ClassApart(), LogoWall(), Pic(), Sec(), Split() (+17 more)
+Cohesion: 0.16
+Nodes (21): CertFlip(), LeaderGrid(), ClassApart(), LogoWall(), Pic(), Split(), Body(), certificates() (+13 more)
 
 ### Community 18 - "home.ts"
 Cohesion: 0.13
@@ -172,17 +173,21 @@ Nodes (8): Card(), Ico(), P, advantageBanner, AdvantageCard, advantageCards, adv
 Cohesion: 0.09
 Nodes (20): fontMain, metadata, RootLayout(), Benefit(), Elective, ElectiveCombinator(), ICON, ProgramGuidance() (+12 more)
 
-### Community 28 - "CardSlider"
-Cohesion: 0.13
-Nodes (21): Latest change, CareerFlip(), body(), CareerShowcase(), Role, Card(), ElectiveGrid(), Item (+13 more)
+### Community 28 - "specViews"
+Cohesion: 0.16
+Nodes (16): Latest change, CareerFlip(), body(), CareerShowcase(), Role, Head(), Item, ModuleCard() (+8 more)
 
-### Community 29 - "withEyebrow"
-Cohesion: 0.40
-Nodes (4): withEyebrow(), headFor(), SectionHead, sectionHeads
+### Community 29 - "slugify"
+Cohesion: 0.29
+Nodes (6): slugify(), Sec(), withEyebrow(), headFor(), SectionHead, sectionHeads
 
 ### Community 30 - "programme-faq.ts"
 Cohesion: 0.40
 Nodes (4): faqFor(), FaqInput, FaqItem, rupees()
+
+### Community 31 - "CardSlider"
+Cohesion: 0.21
+Nodes (8): Card(), ElectiveGrid(), Item, ProgramAdvantage(), SpecCore(), CardSlider(), SPEC_EXTRAS, SpecExtra
 
 ### Community 32 - "FacultyArticles.tsx"
 Cohesion: 0.27
@@ -197,8 +202,8 @@ Cohesion: 0.48
 Nodes (4): Learning(), VideoTile(), PlayIcon(), bentoTiles
 
 ### Community 38 - "ProgramFaculty.tsx"
-Cohesion: 0.19
-Nodes (11): Update 2026-11-12: shared programme hero template, Update: common sections + specialization template, FacultyGrid(), StoryCards(), faculty(), Img, Card(), initials() (+3 more)
+Cohesion: 0.21
+Nodes (10): Update: common sections + specialization template, FacultyGrid(), StoryCards(), faculty(), Img, Card(), initials(), Item (+2 more)
 
 ### Community 39 - "Faq.tsx"
 Cohesion: 0.24
@@ -213,16 +218,16 @@ Nodes (6): Faq(), FramedImage(), Props, Rect, careerTabs, recruiters
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `react` connect `react` to `ArrowLink`, `Page.tsx`, `FacultyArticles.tsx`, `next`, `EnquiryModal.tsx`, `package.json`, `Kit.tsx`, `Faq.tsx`, `international-learners/page.tsx`, `icons.tsx`, `Learning.tsx`, `Testimonial.tsx`, `home.ts`, `curriculumData.ts`, `app/page.tsx`, `parse.ts`, `FeeTabs.tsx`, `layout.tsx`?**
-  _High betweenness centrality (0.185) - this node is a cross-community bridge._
+  _High betweenness centrality (0.186) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `ContentPage()` (e.g. with `Architecture` and `isP()`) actually correct?**
   _`ContentPage()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `sass`, `@types/node`, `@types/react` to the rest of the system?**
   _5 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `ArrowLink` be split into smaller, more focused modules?**
-  _Cohesion score 0.05737234652897304 - nodes in this community are weakly interconnected._
-- **Why does `next` connect `next` to `ArrowLink`, `Page.tsx`, `icons.tsx`, `EnquiryModal.tsx`, `package.json`, `Kit.tsx`, `international-learners/page.tsx`, `Testimonial.tsx`, `server.js`, `home.ts`, `app/page.tsx`, `react`, `ProgramAdvantage.tsx`, `ProgramAbout.tsx`, `layout.tsx`, `not-found.tsx`, `CardSlider`, `FacultyArticles.tsx`, `ProgramFaculty.tsx`, `Faq.tsx`?**
-  _High betweenness centrality (0.153) - this node is a cross-community bridge._
+  _Cohesion score 0.05663474692202462 - nodes in this community are weakly interconnected._
+- **Why does `next` connect `next` to `ArrowLink`, `Page.tsx`, `icons.tsx`, `EnquiryModal.tsx`, `package.json`, `Kit.tsx`, `international-learners/page.tsx`, `Testimonial.tsx`, `server.js`, `home.ts`, `app/page.tsx`, `react`, `ProgramAdvantage.tsx`, `ProgramAbout.tsx`, `layout.tsx`, `not-found.tsx`, `specViews`, `CardSlider`, `FacultyArticles.tsx`, `ProgramFaculty.tsx`, `Faq.tsx`?**
+  _High betweenness centrality (0.152) - this node is a cross-community bridge._
 - **Should `Page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.0896551724137931 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10507246376811594 - nodes in this community are weakly interconnected._
 - **Why does `ArrowLink()` connect `ArrowLink` to `FacultyArticles.tsx`, `next`, `icons.tsx`, `EnquiryModal.tsx`, `Kit.tsx`, `Faq.tsx`, `international-learners/page.tsx`, `DSU Online — CHECKPOINT (read this first in any new session)`, `home.ts`, `app/page.tsx`, `react`, `ProgramAdvantage.tsx`, `layout.tsx`, `CardSlider`?**
   _High betweenness centrality (0.047) - this node is a cross-community bridge._

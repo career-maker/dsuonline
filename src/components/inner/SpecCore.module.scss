@@ -245,9 +245,11 @@
 // ---------- phones: carousels instead of long stacks (each in its own card style)
 .mob {
   display: none;
+  min-width: 0;
 
   @include down($bp-sm) {
     display: block;
+    overflow: hidden; // slides stay inside the white panel instead of bleeding past its edges
   }
 }
 

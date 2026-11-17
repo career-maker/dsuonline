@@ -1,17 +1,17 @@
 # Graph Report - dsu online  (2026-11-17)
 
 ## Corpus Check
-- 126 files · ~82,264 words
+- 126 files · ~82,339 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 55 file(s) not represented in the graph (top: .scss 52, (none) 2, .ico 1)
 
 ## Summary
-- 737 nodes · 1835 edges · 37 communities (32 shown, 5 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 30 edges (avg confidence: 0.91)
+- 737 nodes · 1836 edges · 37 communities (32 shown, 5 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 31 edges (avg confidence: 0.91)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2fb18513`
+- Built from commit: `1f3725c3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -57,7 +57,7 @@
 2. `react` - 58 edges
 3. `ArrowLink()` - 46 edges
 4. `next` - 45 edges
-5. `CardSlider()` - 21 edges
+5. `CardSlider()` - 22 edges
 6. `Icon()` - 20 edges
 7. `ChevronRight()` - 18 edges
 8. `Flow()` - 16 edges
@@ -83,7 +83,7 @@
 
 ### Community 0 - "ArrowLink"
 Cohesion: 0.06
-Nodes (65): nextConfig, bannerBlurb(), bannerDuration(), generateMetadata(), generateStaticParams(), InnerRoute(), Params, resolve() (+57 more)
+Nodes (62): nextConfig, bannerBlurb(), bannerDuration(), generateMetadata(), generateStaticParams(), InnerRoute(), Params, resolve() (+54 more)
 
 ### Community 1 - "Page.tsx"
 Cohesion: 0.11
@@ -98,8 +98,8 @@ Cohesion: 0.08
 Nodes (14): git(), lap(), local(), main(), optimize_image(), cfmail(), clean(), decode_mail() (+6 more)
 
 ### Community 4 - "EnquiryModal.tsx"
-Cohesion: 0.07
-Nodes (50): react-dom, ContactForm(), empty, Phase, empty, Phase, ReferForm(), V (+42 more)
+Cohesion: 0.06
+Nodes (53): react-dom, ContactForm(), empty, Phase, criteria(), iconOf(), ProgramEligibility(), empty (+45 more)
 
 ### Community 5 - "package.json"
 Cohesion: 0.06
@@ -224,10 +224,10 @@ _Questions this graph is uniquely positioned to answer:_
 - **What connects `sass`, `@types/node`, `@types/react` to the rest of the system?**
   _5 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `ArrowLink` be split into smaller, more focused modules?**
-  _Cohesion score 0.05663474692202462 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06111111111111111 - nodes in this community are weakly interconnected._
 - **Why does `next` connect `next` to `ArrowLink`, `Page.tsx`, `icons.tsx`, `EnquiryModal.tsx`, `package.json`, `Kit.tsx`, `international-learners/page.tsx`, `Testimonial.tsx`, `server.js`, `home.ts`, `app/page.tsx`, `react`, `ProgramAdvantage.tsx`, `ProgramAbout.tsx`, `layout.tsx`, `not-found.tsx`, `specViews`, `CardSlider`, `FacultyArticles.tsx`, `ProgramFaculty.tsx`, `Faq.tsx`?**
   _High betweenness centrality (0.152) - this node is a cross-community bridge._
 - **Should `Page.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.10507246376811594 - nodes in this community are weakly interconnected._
 - **Why does `ArrowLink()` connect `ArrowLink` to `FacultyArticles.tsx`, `next`, `icons.tsx`, `EnquiryModal.tsx`, `Kit.tsx`, `Faq.tsx`, `international-learners/page.tsx`, `DSU Online — CHECKPOINT (read this first in any new session)`, `home.ts`, `app/page.tsx`, `react`, `ProgramAdvantage.tsx`, `layout.tsx`, `CardSlider`?**
-  _High betweenness centrality (0.047) - this node is a cross-community bridge._
+  _High betweenness centrality (0.046) - this node is a cross-community bridge._
