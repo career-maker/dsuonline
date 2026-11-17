@@ -140,6 +140,44 @@
   transition: color 0.3s;
 }
 
+// phone carousel card: dark navy, deliberately unlike the white Learning Modules cards
+.slide {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  min-height: 190px;
+  padding: 22px;
+  border-radius: 18px;
+  background: linear-gradient(150deg, #0b1f4d 0%, #0b1f4d 65%, #102a66 100%);
+  color: #fff;
+
+  h3 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: #c9d5f2;
+  }
+}
+
+.slideNo {
+  align-self: flex-start;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: #22c3e6;
+  color: #0b1f4d;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
 @keyframes career-up {
   to {
     transform: translateY(calc(-50% - 7px));

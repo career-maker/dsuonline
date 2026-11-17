@@ -3,7 +3,12 @@
 
 .core {
   display: grid;
+  grid-template-columns: minmax(0, 1fr); // carousels inside must never widen the page
   gap: clamp(18px, 2vw, 28px);
+
+  > * {
+    min-width: 0;
+  }
 }
 
 .top {
@@ -234,5 +239,136 @@
 
   @include down($bp-sm) {
     display: none;
+  }
+}
+
+// ---------- phones: carousels instead of long stacks (each in its own card style)
+.mob {
+  display: none;
+
+  @include down($bp-sm) {
+    display: block;
+  }
+}
+
+.desk {
+  @include down($bp-sm) {
+    display: none;
+  }
+}
+
+// "at a glance" slide: tinted card with a round number badge
+.gSlide {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 100%;
+  min-height: 112px;
+  padding: 18px;
+  border-radius: 16px;
+  background: #f3f6fc;
+
+  b,
+  span:not(.gNo) {
+    display: block;
+  }
+
+  b {
+    font-size: 16px;
+    color: $ink;
+  }
+
+  span:not(.gNo) {
+    margin-top: 4px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: $body;
+  }
+}
+
+.gNo {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1d5bd8;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+// objective -> outcome slide: objective on top, outcome underneath
+.pSlide {
+  display: grid;
+  gap: 6px;
+  height: 100%;
+
+  small {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  mark {
+    padding: 1px 6px;
+    border-radius: 6px;
+    font-weight: 700;
+    color: inherit;
+  }
+
+  .obj,
+  .out {
+    height: auto;
+  }
+}
+
+.pArrow {
+  justify-self: center;
+  font-size: 18px;
+  line-height: 1;
+  color: #1d5bd8;
+}
+
+// topics: a compact two-row strip you can swipe sideways instead of a tall wrapped block
+@include down($bp-sm) {
+  .topicsPanel {
+    padding-block: 16px;
+
+    h3 {
+      margin-bottom: 12px;
+    }
+  }
+
+  .chips {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto);
+    justify-content: start;
+    gap: 8px;
+    margin-inline: -4px;
+    padding: 2px 4px 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    li {
+      padding: 7px 14px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
   }
 }

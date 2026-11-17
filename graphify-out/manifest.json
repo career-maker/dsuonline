@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794917845.19161,
-    "seen": 1794918035.525831,
-    "ast_hash": "040404172eda55dc7cebad5cc91f88be",
+    "mtime": 1794918036.2535355,
+    "seen": 1794919086.1559954,
+    "ast_hash": "15da7c9ae16dd39fa4c5374f00cb0f15",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -666,9 +666,9 @@
     "semantic_hash": ""
   },
   "src/components/ui/CardSlider.tsx": {
-    "mtime": 1794550752.6886096,
-    "seen": 1794550949.275598,
-    "ast_hash": "36755d1f12a76c06795418e7efcb6c09",
+    "mtime": 1794919014.5559373,
+    "seen": 1794919086.1557543,
+    "ast_hash": "7c9b2393010ef549c37d496bd662c03a",
     "semantic_hash": ""
   },
   "src/components/inner/ProgramAbout.tsx": {
@@ -744,9 +744,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/SpecCore.tsx": {
-    "mtime": 1794909860.7032204,
-    "seen": 1794910304.8521352,
-    "ast_hash": "87451e3f81b8c3cd2c695db6e3e28c45",
+    "mtime": 1794918917.1370418,
+    "seen": 1794919086.1554847,
+    "ast_hash": "16c5ee6b61a18ee892e03db544becf21",
     "semantic_hash": ""
   },
   "src/data/spec-extras.ts": {
@@ -756,15 +756,15 @@
     "semantic_hash": ""
   },
   "src/components/inner/ModuleCards.tsx": {
-    "mtime": 1794917910.2716694,
-    "seen": 1794918035.5256307,
-    "ast_hash": "ecc7788db9f97f9fb5821f1f0dad4d57",
+    "mtime": 1794918905.5422032,
+    "seen": 1794919086.155426,
+    "ast_hash": "409776fb0074463648433cfcf3f6f912",
     "semantic_hash": ""
   },
   "src/components/inner/CareerShowcase.tsx": {
-    "mtime": 1794917910.0777168,
-    "seen": 1794918035.5256019,
-    "ast_hash": "d8d2f76770bee768e9280f85c81a478c",
+    "mtime": 1794918905.794201,
+    "seen": 1794919086.1553779,
+    "ast_hash": "fc0610265f823f8200c6081a3aca9059",
     "semantic_hash": ""
   }
 }

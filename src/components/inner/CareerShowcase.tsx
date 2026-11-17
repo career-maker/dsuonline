@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { CardSlider } from '@/components/ui/CardSlider';
-import { ModuleCard } from './ModuleCards';
 import s from './CareerShowcase.module.scss';
 
 type Role = { title: string; text: string };
@@ -50,8 +49,15 @@ export function CareerShowcase({ items, image, alt = '' }: { items: Role[]; imag
         <CardSlider
           label="Career paths"
           slideWidth="84%"
+          autoplay
           items={items.map((r, i) => (
-            <ModuleCard key={r.title} no={i + 1} title={r.title} text={r.text ? body(r.text) : undefined} />
+            <div key={r.title} className={s.slide}>
+              <span className={s.slideNo} aria-hidden="true">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <h3>{r.title}</h3>
+              {r.text && <p>{body(r.text)}</p>}
+            </div>
           ))}
         />
       </div>

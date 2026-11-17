@@ -36,7 +36,7 @@ export function ModuleCards({ items }: { items: Item[] }) {
         ))}
       </ul>
       <div className={s.mobile}>
-        <CardSlider label="Cards" slideWidth="84%" items={items.map((c, i) => <ModuleCard key={c.title} no={i + 1} {...c} />)} />
+        <CardSlider label="Cards" slideWidth="84%" autoplay items={items.map((c, i) => <ModuleCard key={c.title} no={i + 1} {...c} />)} />
       </div>
     </>
   );
