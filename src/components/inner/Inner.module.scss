@@ -805,8 +805,8 @@
 
   // Apply Now stays a vivid blue on the navy panel
   .heroCtas > :first-child {
-    border-color: #2338e8;
-    background: #2338e8;
+    border-color: #1d5bd8;
+    background: #1d5bd8;
   }
 
   @include down($bp-lg) {
