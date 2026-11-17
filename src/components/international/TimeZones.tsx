@@ -36,7 +36,9 @@ export function TimeZones() {
             {z.city}
             <Ico name={now?.[i].day === false ? 'moon' : 'sun'} />
           </div>
-          <time className={s.clock}>{now?.[i].time ?? '--:--'}</time>
+          <time className={s.clock}>
+            {(now?.[i].time ?? '--:--').split(':')[0]}:<span>{(now?.[i].time ?? '--:--').split(':')[1]}</span>
+          </time>
           <div className={s.zoneNote}>{z.note}</div>
         </li>
       ))}

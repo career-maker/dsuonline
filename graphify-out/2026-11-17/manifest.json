@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1794631291.2575343,
-    "seen": 1794631335.0254798,
-    "ast_hash": "b7b8918c7c6a4811eac771b3ee2cd36e",
+    "mtime": 1794632980.9263644,
+    "seen": 1794908231.6963687,
+    "ast_hash": "77a859058b37ca1bc757c9011b08ed74",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -264,8 +264,8 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/Faq.tsx": {
-    "mtime": 1793337723.1606517,
-    "seen": 1793773932.765493,
+    "mtime": 1794631816.770009,
+    "seen": 1794908231.6964896,
     "ast_hash": "6c3a91aa4e38f35b2c53ebe7489092fe",
     "semantic_hash": ""
   },
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794562824.8578582,
-    "seen": 1794631335.026176,
-    "ast_hash": "1745f3acc06c64e2a32afcf1622d6316",
+    "mtime": 1794631335.9052284,
+    "seen": 1794908231.6965992,
+    "ast_hash": "9e0e9c087a8226dbea1dcd6c77e91f49",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -648,9 +648,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/ProgramHero.tsx": {
-    "mtime": 1794631291.2856731,
-    "seen": 1794631335.0255373,
-    "ast_hash": "1abf1c7ec6320ba1fa2a7e7e1f1aac8a",
+    "mtime": 1794633233.6643755,
+    "seen": 1794908231.6963966,
+    "ast_hash": "9f8f5d36ab1b12a0550c1ce52bc6103b",
     "semantic_hash": ""
   },
   "src/components/inner/ProgramAdvantage.tsx": {

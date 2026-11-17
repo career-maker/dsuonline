@@ -49,7 +49,7 @@ export const zones = [
 
 export const modes = [
   { icon: 'video', title: 'Weekend Live Sessions', text: 'Interactive lectures with course coordinators, plus dedicated mentors.' },
-  { icon: 'layers', title: 'Four-Quadrant LMS', text: 'e-Tutorials, e-Content, discussion forums and self-assessments.' },
+  { icon: 'play', title: 'Four-Quadrant LMS', text: 'e-Tutorials, e-Content, discussion forums and self-assessments.' },
   { icon: 'screen', title: 'Online Exams', text: 'Continuous assessment and semester-end exams — all from home.' },
 ];
 
