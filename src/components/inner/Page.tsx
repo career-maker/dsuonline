@@ -38,6 +38,7 @@ import { FramedImage } from '@/components/ui/FramedImage';
 import { Faq } from '@/components/sections/home/Faq';
 import { SPEC_EXTRAS } from '@/data/spec-extras';
 import { SpecCore } from './SpecCore';
+import { ModuleCards } from './ModuleCards';
 import { FaqList, LeaderGrid } from './Interactive';
 import {
   CardGrid,
@@ -277,13 +278,13 @@ function specViews(subs: Sub[]): ReactNode[] {
     if (/career/i.test(x.title) && (pairs.length || titles.length)) {
       out.push(wrap(x.title, x.title, <RoleGrid items={pairs.length ? pairs : titles} />));
     } else if (pairs.length) {
-      out.push(wrap(x.title, x.title, <CardGrid items={pairs} cols={3} tint />));
+      out.push(wrap(x.title, x.title, <ModuleCards items={pairs} />));
     } else if (!x.blocks.length && subs[i + 1] && simple(subs[i + 1])) {
       const run: Sub[] = [];
       let j = i + 1;
       while (j < subs.length && simple(subs[j])) run.push(subs[j++]);
       if (run.length >= 3) {
-        out.push(wrap(x.title, x.title, <CardGrid items={run.map((r) => ({ title: r.title, text: ps(r).join(' ') }))} cols={3} tint />));
+        out.push(wrap(x.title, x.title, <ModuleCards items={run.map((r) => ({ title: r.title, text: ps(r).join(' ') }))} />));
         i = j - 1;
         continue;
       }
@@ -302,7 +303,7 @@ function SubView({ sub }: { sub: Sub }) {
     return (
       <div style={{ marginTop: 'clamp(40px, 5vw, 72px)' }}>
         <Head center eyebrow={specEyebrow(sub.title)} title={sub.title} />
-        {/career/i.test(sub.title) ? <RoleGrid items={pairs} /> : <CardGrid items={pairs} cols={3} tint />}
+        {/career/i.test(sub.title) ? <RoleGrid items={pairs} /> : <ModuleCards items={pairs} />}
       </div>
     );
   }
@@ -1356,7 +1357,12 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         />
       )}
       {longSub && slug === 'student-testimonials' && subtitle && (
-        <Sec tone="white" center title="Testimonials" lead={subtitle.replace(/^Testimonials\s+/, '')} />
+        <Sec tone="white" compact>
+          <div className={s.introFull}>
+            <h2>Testimonials</h2>
+            <p>{subtitle.replace(/^Testimonials\s+/, '')}</p>
+          </div>
+        </Sec>
       )}
       {(longSub ? slug !== 'student-testimonials' : false) || (introBlocks.length > 0 && !withFacts) ? (
         <Sec tone="white" narrow={!heroImgs.length} center={!heroImgs.length}>

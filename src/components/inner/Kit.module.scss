@@ -4156,3 +4156,19 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 :global([data-spec]) .marquee ul {
   animation-duration: 140s;
 }
+
+// testimonials page intro: title, then one full-width paragraph (no narrow centred column)
+.introFull {
+  h2 {
+    @include h2;
+  }
+
+  p {
+    @include body-text;
+    max-width: none;
+    margin-top: clamp(12px, #{u(18)}, 18px);
+    font-size: max(16px, calc(var(--u) * 19));
+    line-height: 1.75;
+    text-align: left;
+  }
+}
