@@ -101,7 +101,8 @@ $gold-ink: #8c6500; // gold that passes AA on white
   align-items: center;
   overflow: hidden;
   color: #fff;
-  background: #0b1f4d;
+  // palette only: Navy -> Navy 2 -> Primary Blue
+  background: linear-gradient(100deg, #0b1f4d 30%, #102a66 65%, #1d5bd8 100%);
   min-height: 100svh;
   padding: clamp(104px, #{u(150)}, 150px) 0 clamp(32px, #{u(60)}, 60px);
 

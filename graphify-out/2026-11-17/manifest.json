@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/BlogSlider.tsx": {
-    "mtime": 1793852848.0522244,
-    "seen": 1793852961.8870845,
-    "ast_hash": "481b8bda5eaa7b8f52e89f359e03d571",
+    "mtime": 1794916401.309732,
+    "seen": 1794916560.837404,
+    "ast_hash": "ef01c6280eb4d46b17d46f61cbd3fd8a",
     "semantic_hash": ""
   },
   "src/components/sections/home/Blogs.tsx": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794915569.3640332,
-    "seen": 1794915994.2762558,
-    "ast_hash": "46c12de822f7407fd4d9515d1b9baaa3",
+    "mtime": 1794915995.0429158,
+    "seen": 1794916560.8375082,
+    "ast_hash": "67b0d5835b4165036325ccdec7d697a0",
     "semantic_hash": ""
   },
   "CLAUDE.md": {

@@ -33,8 +33,6 @@ export default function InternationalLearners() {
 
       {/* HERO */}
       <section className={s.hero}>
-        <Image src={img('hero')} alt="" fill priority sizes="100vw" className={s.heroImg} />
-        <div className={s.heroShade} aria-hidden="true" />
         <div className={`${s.wrap} ${s.heroGrid}`}>
           <div className={s.heroCopy}>
             <nav aria-label="Breadcrumb" className={s.crumbs}>

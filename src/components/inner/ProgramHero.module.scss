@@ -20,12 +20,30 @@
   background: linear-gradient(100deg, #000 30%, #0b0b0b 65%, #1c1c1c 100%);
 }
 
-// reversed gradient: lighter blue behind the copy on the left, navy on the right; the Apply Now button flips to white so it stays visible
+// specialisation banner: one flat Sky Blue (#4FA3FF); copy is navy for contrast, the facts panel is solid navy, Apply Now is white
 .rev {
-  background: radial-gradient(1000px 600px at 15% 15%, rgb(34 195 230 / 32%), transparent 60%), linear-gradient(260deg, #0b1f4d 30%, #102a66 65%, #1d5bd8 100%);
+  background: #4fa3ff;
+  color: #0b1f4d;
 
-  &.hero h1 b {
-    color: $logo-yellow;
+  .eyebrow,
+  &.hero h1,
+  &.hero h1 b,
+  .desc {
+    color: #0b1f4d;
+  }
+
+  .eyebrow {
+    font-weight: 700;
+  }
+
+  .desc {
+    opacity: 0.9;
+  }
+
+  .ctas > :not(:first-child) {
+    border-color: #0b1f4d;
+    background: #0b1f4d;
+    color: #fff;
   }
 
   // compact two-column banner: title block + buttons left, counters + fee tiles right
@@ -75,15 +93,21 @@
 
   .side {
     padding: clamp(16px, 2vw, 26px);
-    border: 1px solid rgb(255 255 255 / 16%);
+    border: 1px solid #0b1f4d;
     border-radius: 16px;
-    background: rgb(11 31 77 / 38%);
+    background: #0b1f4d;
+    color: #fff;
   }
 
   .stats {
     margin-top: 0;
     padding-bottom: 14px;
-    border-bottom: 1px solid rgb(255 255 255 / 14%);
+    border-bottom: 1px solid #1d5bd8;
+  }
+
+  .tiles li {
+    border-color: #1d5bd8;
+    background: #102a66;
   }
 
   .glance {
