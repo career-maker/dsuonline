@@ -113,6 +113,6 @@ export function CarouselControls({ target }: { target: RefObject<HTMLElement | n
 }
 
 /** Inner-page learner stories (testimonials page, programme pages): the showcase layout. */
-export function TestimonialGrid({ items }: { items: Testimonial[] }) {
-  return <TestimonialShowcase items={items} onSky />;
+export function TestimonialGrid({ items, grid }: { items: Testimonial[]; grid?: boolean }) {
+  return <TestimonialShowcase items={items} onSky grid={grid} />;
 }

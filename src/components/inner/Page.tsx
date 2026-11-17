@@ -873,7 +873,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       const lead = sec.blocks.filter(isP).find((b) => b.x.length > 30 && !/^[“"]/.test(b.x) && !quotes.some((q) => q.quote === b.x))?.x;
       nodes.push(
         <Sec key={key} tone="sky" center title={title} lead={lead}>
-          {programLinks ? <TestimonialGrid items={programTestimonials(slug)} /> : <StoryCards items={quotes} />}
+          {programLinks ? <TestimonialGrid items={programTestimonials(slug)} /> : <StoryCards items={quotes} grid={slug === 'student-testimonials'} />}
         </Sec>,
       );
       if (careerFromFees) nodes.push(careerNode());
@@ -1356,17 +1356,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         />
       )}
       {longSub && slug === 'student-testimonials' && subtitle && (
-        <Sec tone="white">
-          <div className={s.introGrid}>
-            <div className={s.introLeft}>
-              <div className={s.introPhoto}>
-                <Image src="/images/about/about-left.webp" alt="DSU Online learner studying with the university campus behind" width={961} height={541} sizes="(max-width: 1200px) 100vw, 640px" />
-              </div>
-              <h2>Testimonials</h2>
-            </div>
-            <p>{subtitle.replace(/^Testimonials\s+/, '')}</p>
-          </div>
-        </Sec>
+        <Sec tone="white" center title="Testimonials" lead={subtitle.replace(/^Testimonials\s+/, '')} />
       )}
       {(longSub ? slug !== 'student-testimonials' : false) || (introBlocks.length > 0 && !withFacts) ? (
         <Sec tone="white" narrow={!heroImgs.length} center={!heroImgs.length}>

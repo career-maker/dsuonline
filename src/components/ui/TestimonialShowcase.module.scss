@@ -239,3 +239,31 @@
     height: 16px;
   }
 }
+
+// grid mode (testimonials page): desktop = every story in a grid; tablet + phone keep the swipe carousel below
+.grid {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  letter-spacing: -0.0175em;
+  text-align: left;
+
+  @include up($bp-lg) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(28px, #{u(40)}, 44px) clamp(18px, #{u(28)}, 32px);
+  }
+}
+
+.gridItem {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.belowGrid {
+  @include up($bp-lg) {
+    display: none;
+  }
+}

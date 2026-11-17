@@ -377,9 +377,10 @@ export function OfficeCard({ title, children }: { title: string; children: React
 }
 
 /** Learner stories: same card as the home testimonials (hover shows the quote; carousel with the quote under the photo on tablet / phone). */
-export function StoryCards({ items }: { items: Quote[]; initial?: number }) {
+export function StoryCards({ items, grid }: { items: Quote[]; initial?: number; grid?: boolean }) {
   return (
     <TestimonialGrid
+      grid={grid}
       items={items.map((q) => {
         const [course, ...rest] = q.meta;
         return { name: q.name, course, company: rest.join(' - ') || undefined, quote: q.quote.replace(/^[“"‘]\s*|[”"’]\s*$/g, ''), img: q.img?.src };
