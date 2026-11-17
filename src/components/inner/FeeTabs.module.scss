@@ -11,7 +11,7 @@
 .tab {
   padding: 12px clamp(18px, #{u(30)}, 30px);
   border: 1.5px solid $blue;
-  border-radius: 4px;
+  border-radius: 999px;
   background: #fff;
   color: $blue;
   font-size: fs(18, 15px);

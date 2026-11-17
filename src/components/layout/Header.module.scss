@@ -416,8 +416,8 @@
   align-items: center;
   gap: px(10);
   height: clamp(40px, #{u(47)}, 47px);
-  padding: 0 px(14);
-  border-radius: px(4);
+  padding: 0 px(18);
+  border-radius: 999px;
   font-size: px(14);
   font-weight: 500;
   color: #fff;
@@ -622,7 +622,7 @@
       height: px(44);
       padding: 0 px(10);
       border: 0;
-      border-radius: px(3);
+      border-radius: 999px;
       font-size: px(16);
       font-weight: 500;
       cursor: pointer;
@@ -863,7 +863,7 @@
         height: 48px;
         padding: 0;
         border: 0;
-        border-radius: 4px;
+        border-radius: 999px;
         font-size: 16px;
         font-weight: 500;
         cursor: pointer;
