@@ -300,3 +300,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - Programme 'Personalised admission guidance' photo -> faq-learner.webp.
 - EMI 'No Cost EMI · 0% interest' pill: always-on shimmer + radiating ring + gentle scale pulse (off for reduced motion).
 - EMI calculator redesign: removed no-cost text box, tenure milestones (6/8/10/12/15/18) under slider, big months block aligned with price, scratch-card reveal of the No Cost EMI offer (canvas foil + keyboard 'Reveal offer' button), congratulations popup, interest row shows 'Scratch to reveal' until revealed.
+- Footer: specialization links now identical to Quick Links items (u(16)/u(22) desktop, px(18)/px(24) below).

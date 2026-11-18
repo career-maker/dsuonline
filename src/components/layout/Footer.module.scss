@@ -200,8 +200,8 @@
   }
 
   li {
-    font-size: px(15);
-    line-height: px(21);
+    font-size: px(18);
+    line-height: px(24);
     font-weight: 500;
 
     a {
@@ -494,8 +494,8 @@
     }
 
     li {
-      font-size: max(14px, calc(var(--u) * 16));
-      line-height: 1.45;
+      font-size: u(16); // same as the Quick Links items
+      line-height: u(22);
 
       a {
         display: inline-block;
