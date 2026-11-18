@@ -8,7 +8,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
   gap: clamp(20px, #{u(48)}, 52px);
-  align-items: start;
+  align-items: stretch;
   letter-spacing: -0.0175em;
 
   @include down($bp-lg) {
@@ -20,6 +20,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 // ---------- left: semester menu + credits
 .side {
   display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
   gap: 18px;
 
   @include down($bp-lg) {
@@ -130,6 +131,23 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   font-size: 14px;
   font-weight: 600;
   white-space: nowrap;
+}
+
+.photo {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: $bg-sky;
+
+  @include down($bp-lg) {
+    display: none;
+  }
+}
+
+.img {
+  object-fit: cover;
+  object-position: 50% 30%;
 }
 
 .credits {

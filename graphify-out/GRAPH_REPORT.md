@@ -1,17 +1,17 @@
 # Graph Report - dsu online  (2026-11-18)
 
 ## Corpus Check
-- 128 files · ~83,764 words
+- 128 files · ~83,829 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 56 file(s) not represented in the graph (top: .scss 53, (none) 2, .ico 1)
 
 ## Summary
-- 747 nodes · 1861 edges · 48 communities (40 shown, 8 thin omitted)
+- 747 nodes · 1862 edges · 48 communities (40 shown, 8 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 31 edges (avg confidence: 0.91)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d8b1a9a1`
+- Built from commit: `66ece286`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -66,7 +66,7 @@
 ## God Nodes (most connected - your core abstractions)
 1. `ContentPage()` - 83 edges
 2. `react` - 59 edges
-3. `next` - 46 edges
+3. `next` - 47 edges
 4. `ArrowLink()` - 46 edges
 5. `CardSlider()` - 24 edges
 6. `Icon()` - 20 edges
@@ -261,15 +261,15 @@ Nodes (3): LearningCards(), lsIcon(), learningCards()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `react` connect `react` to `ElectiveCombinator.tsx`, `Page.tsx`, `icons.tsx`, `ArrowLink`, `package.json`, `Kit.tsx`, `international-learners/page.tsx`, `Faq.tsx`, `home.ts`, `curriculumData.ts`, `app/page.tsx`, `site.ts`, `InnerPage.tsx`, `Footer.tsx`, `next`, `layout.tsx`, `FacultyArticles.tsx`, `[...slug]/page.tsx`, `AdmissionSteps.tsx`, `FactsDrawer.tsx`, `Learning.tsx`, `ProgramsBand.tsx`, `ProgramLearning.tsx`, `CardSlider.tsx`, `FeeTabs.tsx`?**
-  _High betweenness centrality (0.187) - this node is a cross-community bridge._
+  _High betweenness centrality (0.185) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `ContentPage()` (e.g. with `Architecture` and `isP()`) actually correct?**
   _`ContentPage()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `sass`, `@types/node`, `@types/react` to the rest of the system?**
   _5 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Page.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.0855614973262032 - nodes in this community are weakly interconnected._
-- **Why does `next` connect `next` to `Page.tsx`, `icons.tsx`, `ArrowLink`, `package.json`, `Kit.tsx`, `international-learners/page.tsx`, `Faq.tsx`, `server.js`, `home.ts`, `app/page.tsx`, `react`, `site.ts`, `ProgramAdvantage.tsx`, `InnerPage.tsx`, `Footer.tsx`, `CardSlider`, `layout.tsx`, `FacultyArticles.tsx`, `[...slug]/page.tsx`, `ProgramFaculty.tsx`, `ProgramsBand.tsx`, `ProgramLearning.tsx`, `not-found.tsx`, `ElectiveGrid.tsx`, `ProgramAbout.tsx`?**
-  _High betweenness centrality (0.152) - this node is a cross-community bridge._
+- **Why does `next` connect `next` to `Page.tsx`, `icons.tsx`, `ArrowLink`, `package.json`, `Kit.tsx`, `international-learners/page.tsx`, `Faq.tsx`, `server.js`, `home.ts`, `curriculumData.ts`, `app/page.tsx`, `react`, `site.ts`, `ProgramAdvantage.tsx`, `InnerPage.tsx`, `Footer.tsx`, `CardSlider`, `layout.tsx`, `FacultyArticles.tsx`, `[...slug]/page.tsx`, `ProgramFaculty.tsx`, `ProgramsBand.tsx`, `ProgramLearning.tsx`, `not-found.tsx`, `ElectiveGrid.tsx`, `ProgramAbout.tsx`?**
+  _High betweenness centrality (0.155) - this node is a cross-community bridge._
 - **Should `scrape.py` be split into smaller, more focused modules?**
   _Cohesion score 0.08456659619450317 - nodes in this community are weakly interconnected._
 - **Why does `ArrowLink()` connect `ArrowLink` to `ElectiveCombinator.tsx`, `FacultyArticles.tsx`, `[...slug]/page.tsx`, `Kit.tsx`, `ProgramsBand.tsx`, `international-learners/page.tsx`, `DSU Online — CHECKPOINT (read this first in any new session)`, `Faq.tsx`, `ContentPage`, `home.ts`, `app/page.tsx`, `ProgramAdvantage.tsx`, `InnerPage.tsx`, `layout.tsx`?**

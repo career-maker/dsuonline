@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useId, useRef, useState } from 'react';
+import Image from 'next/image';
 import type { CurData, CurRow } from './curriculumData';
 import s from './ProgramCurriculum.module.scss';
 
@@ -73,6 +74,10 @@ export function ProgramCurriculum({ sems, electives, totalCredits }: CurData) {
             <b>{totalCredits} Credits</b>
           </div>
         )}
+        {/* fills the space under the credits box so the left column ends level with the table */}
+        <div className={s.photo} aria-hidden="true">
+          <Image src="/images/learn/learn-your-way.webp" alt="" fill sizes="(max-width: 1200px) 0px, 25vw" className={s.img} />
+        </div>
       </aside>
 
       <div className={s.main}>

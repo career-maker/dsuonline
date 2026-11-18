@@ -287,3 +287,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - Programme FAQ: two columns (learner stories carousel left via FaqStories, FAQ right, no numbers, no CTA panel). CtaBand enquire button hidden on programme pages. Footer brochure PDFs in public/docs/dsu-online-<code>-brochure.pdf.
 - Programme FAQ now uses the 25 live-site FAQs (src/data/live-faqs.json, scraped from dsuonline.com home). Curriculum sem tabs match ref: rounded boxes + credit ring + gradient Grand Total.
 - Desktop side sticky tabs enlarged ~30% (width u(72), font u(21), call u(68)).
+- Curriculum left column: photo fills the gap under Grand Total (ends level with the table).
