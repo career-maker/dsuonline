@@ -25,7 +25,7 @@ export function VideoTile({ id, title, children }: { id: string; title: string; 
     <div ref={box} className={s.videoBox}>
       {children}
       {playing ? (
-        <iframe className={s.player} src={src} title={title} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" />
+        <iframe className={s.player} src={src} title={title} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerPolicy="strict-origin-when-cross-origin" />
       ) : (
         <button type="button" className={s.play} onClick={() => setManual(true)} aria-label={`Play video: ${title}`}>
           <PlayIcon />

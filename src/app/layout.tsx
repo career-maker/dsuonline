@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import { Preloader } from '@/components/layout/Preloader';
 import { TitleReveal } from '@/components/layout/TitleReveal';
+import { NavProgress } from '@/components/layout/NavProgress';
 import { FactsDrawer } from '@/components/layout/FactsDrawer';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
 import { EnquiryProvider } from '@/components/layout/EnquiryProvider';
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SmoothScroll />
         <FactsDrawer />
         <TitleReveal />
+        <NavProgress />
         <EnquiryProvider>
           <Header />
           <main data-u>{children}</main>

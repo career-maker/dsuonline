@@ -81,7 +81,6 @@ export function TestimonialCard({ t, big }: { t: Testimonial; big?: boolean; siz
             src={`https://www.youtube.com/embed/${t.video}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
             title={`${t.name} testimonial video`}
             allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-            allowFullScreen
             referrerPolicy="strict-origin-when-cross-origin"
           />
           <button type="button" className={s.close} onClick={() => setPlaying(false)} aria-label="Close video">
