@@ -35,7 +35,7 @@ export type FacultyCardData = { name: string; role: string; creds: string; src: 
 /** One "Meet Our Faculty" card (shared by the home page and /academics-at-dsu). */
 export function FacultyCard({ f, clone }: { f: FacultyCardData; clone?: boolean }) {
   return (
-    <li aria-hidden={clone || undefined} inert={clone || undefined}>
+    <li aria-hidden={clone || undefined}>
       <div className={s.fphoto}>
         {/* whole portrait, top-aligned so heads are never cut */}
         <Image src={f.src} alt={clone ? '' : f.name} fill sizes="(max-width: 900px) 50vw, 330px" className={s.fimg} />
