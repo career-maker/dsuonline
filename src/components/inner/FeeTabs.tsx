@@ -19,8 +19,11 @@ export function FeeTabs({ tables }: { tables: string[][][] }) {
     refs.current[n]?.focus();
   };
 
+  // the active tab's "Total Fees" row, shown in the top corner
+  const sum = tables[on].slice(1).find((r) => r.length < tables[on][0].length);
   return (
     <div className={s.wrap}>
+      <div className={s.top}>
       <div className={s.tabs} role="tablist" aria-label="Fee structure">
         {tables.map((rows, i) => (
           <button
@@ -41,6 +44,13 @@ export function FeeTabs({ tables }: { tables: string[][][] }) {
             {feeTitle(rows[0])}
           </button>
         ))}
+      </div>
+      {sum && (
+        <p className={s.total} aria-live="polite">
+          <span>{sum[0]}</span>
+          <b>{sum.slice(1).join(' ')}</b>
+        </p>
+      )}
       </div>
       {tables.map((rows, i) => (
         <div key={i} role="tabpanel" id={`${id}-p${i}`} aria-labelledby={`${id}-t${i}`} hidden={on !== i} className={s.panel}>

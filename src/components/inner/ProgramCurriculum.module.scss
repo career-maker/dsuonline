@@ -292,9 +292,9 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     background: #eef4fa;
     font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.06em;
+    letter-spacing: 0;
     text-align: left;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: $body;
   }
 

@@ -1,11 +1,36 @@
 @use 'tokens' as *;
 @use 'mixins' as *;
 
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  margin-bottom: clamp(18px, #{u(28)}, 28px);
+}
+
 .tabs {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: clamp(18px, #{u(28)}, 28px);
+}
+
+.total {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-left: auto;
+  padding: 10px clamp(16px, #{u(24)}, 24px);
+  border-radius: 999px;
+  background: $blue;
+  color: #fff;
+  font-size: fs(16, 14px);
+
+  b {
+    font-size: fs(22, 18px);
+    font-weight: 700;
+  }
 }
 
 .tab {

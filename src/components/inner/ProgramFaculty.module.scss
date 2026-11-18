@@ -8,12 +8,20 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: clamp(14px, #{u(20)}, 22px);
+  --gap: clamp(14px, #{u(20)}, 22px);
+  gap: var(--gap);
   padding: 0;
   list-style: none;
 
+  // 3 per row on smaller desktops / tablets, 5 per row on big desktops
   li {
-    width: min(100%, 300px);
+    width: calc((100% - 2 * var(--gap)) / 3);
+  }
+
+  @include up($bp-xl) {
+    li {
+      width: calc((100% - 4 * var(--gap)) / 5);
+    }
   }
 
   @include down($bp-sm) {

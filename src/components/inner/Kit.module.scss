@@ -767,8 +767,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     color: rgb(255 255 255 / 85%);
     font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    letter-spacing: 0;
+    text-transform: capitalize;
   }
 
   // credits column (3-column tables only) is right aligned
@@ -3561,8 +3561,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     color: #fff;
     font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    letter-spacing: 0;
+    text-transform: capitalize;
     white-space: normal;
     text-align: center;
   }
