@@ -26,6 +26,7 @@ User rules: home page pixel-matches the PDF; inner pages follow home typography/
 - Enquiry popup submit: NO backend. `NEXT_PUBLIC_ENQUIRY_ENDPOINT` env var (JSON POST) enables delivery; otherwise UI says "Not sent yet". Do not claim delivery.
 
 ## Status
+Academics "Meet Our Faculty" (FacultyStrip): >=1200px = 5-per-row grid (no clones, no arrows, same card size); <1200 keeps autoplay carousel. Checked via shots/fac.py at 1440/1920/1024/390.
 Faculty photos: 18 replaced in place in public/content (same filenames) from client "Prof. images.zip" (400x294 landscape, cropped by object-fit cover). Visual check not done.
 Testimonials: programme pages 'Real Stories' + /student-testimonials use TestimonialGrid (4/row, 12px hover copy, Show more/less); programme pages show the same learners as home (own programme first). Home bento: click small card swaps it into big card (desktop). Academics 'Meet Our Faculty' = FacultyCarousel (2s autoplay). Visual check of these NOT done (browser tools unavailable).
 Home 'Meet Our Faculty' = 18 real faculty from the 5 programme pages (`src/data/faculty.ts`, generated from content/pages/online-*.json). Old dummy `faculty` in home.ts still feeds article authors only.

@@ -65,11 +65,11 @@ export function FacultyStrip({ items }: { items: FacultyCardData[] }) {
   const { canScroll, step } = useLoopCarousel(ref, { looped: true, auto: 2000 });
   return (
     <div className={`${s.section} ${s.onSky}`} style={{ padding: 0, background: 'transparent' }}>
-      <ul className={s.faculty} ref={ref} aria-label="Faculty" style={{ marginTop: 0 }}>
+      <ul className={`${s.faculty} ${s.stripGrid}`} ref={ref} aria-label="Faculty" style={{ marginTop: 0 }}>
         {[0, 1].map((copy) => items.map((f) => <FacultyCard key={`${copy}-${f.name}`} f={f} clone={copy === 1} />))}
       </ul>
       {canScroll && (
-        <div className={s.arrowBtns} style={{ justifyContent: 'flex-end', marginTop: 18 }}>
+        <div className={`${s.arrowBtns} ${s.stripArrows}`} style={{ justifyContent: 'flex-end', marginTop: 18 }}>
           <button type="button" className={s.arrowBtn} onClick={() => step(-1)} aria-label="Previous faculty">
             <ChevronLeft />
           </button>
