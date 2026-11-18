@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1795003985.8338096,
-    "seen": 1795003993.8809886,
-    "ast_hash": "5e7dac3947f17a35cd591090b7e8c15b",
+    "mtime": 1795004084.4797356,
+    "seen": 1795004093.3373828,
+    "ast_hash": "6bdc53c44128e7e522934a5e1ef0ee13",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -720,9 +720,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/ProgramGuidance.tsx": {
-    "mtime": 1794560113.8575013,
-    "seen": 1794560251.8141067,
-    "ast_hash": "e4870112019f750556b0ce4acd26cfe6",
+    "mtime": 1795004037.1847646,
+    "seen": 1795004093.3372085,
+    "ast_hash": "55706d1f324466f1e04ecb6204d234c7",
     "semantic_hash": ""
   },
   "src/components/inner/CertFlip.tsx": {

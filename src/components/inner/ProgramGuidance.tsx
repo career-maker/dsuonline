@@ -32,7 +32,7 @@ export function ProgramGuidance({ name, code, degree, dual }: { name: string; co
       </div>
       <div className={s.side}>
         <div className={s.photo}>
-          <Image src="/images/faq/cta.webp" alt="" fill sizes="(max-width: 1200px) 100vw, 520px" className={s.img} />
+          <Image src="/images/faq/faq-learner.webp" alt="" fill sizes="(max-width: 1200px) 100vw, 520px" className={s.img} />
         </div>
         <div className={s.card}>
           <h3>What our counsellors can help with</h3>
