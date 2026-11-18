@@ -258,9 +258,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/FacultyArticles.tsx": {
-    "mtime": 1795024193.390148,
-    "seen": 1795024404.1677513,
-    "ast_hash": "0c6ab0f2cc44f980c331279d43066241",
+    "mtime": 1795025060.9932034,
+    "seen": 1795025651.212033,
+    "ast_hash": "325772460d9748592c758871878a17a4",
     "semantic_hash": ""
   },
   "src/components/sections/home/Faq.tsx": {

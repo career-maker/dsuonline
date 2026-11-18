@@ -1972,6 +1972,13 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     max-width: none;
     margin-bottom: clamp(18px, #{u(28)}, 28px);
   }
+
+  // desktop: form card sits centred against the taller left column
+  > .contactFormCard {
+    @include up($bp-lg) {
+      align-self: center;
+    }
+  }
 }
 
 .social {
