@@ -174,14 +174,71 @@
 
 // every plan is interest-free
 .badge {
+  position: relative;
   align-self: flex-start;
   margin-top: 14px;
   padding: 7px 14px;
   border-radius: 999px;
-  background: $logo-yellow;
+  // gold shimmer sweeps across the pill all the time
+  background: linear-gradient(110deg, $logo-yellow 35%, #fff7b0 50%, $logo-yellow 65%) 0 0 / 250% 100%;
   color: $ink;
   font-size: 14px;
   font-weight: 700;
+  animation: shimmer 2.8s linear infinite, nudge 2.8s ease-in-out infinite;
+
+  // soft ring that keeps radiating out of the pill
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 2px solid $logo-yellow;
+    opacity: 0;
+    pointer-events: none;
+    animation: ring 2.4s ease-out infinite;
+  }
+
+  &::after {
+    animation-delay: 1.2s;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -250% 0;
+  }
+}
+
+@keyframes ring {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.22, 1.9);
+  }
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.04;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge,
+  .badge::before,
+  .badge::after {
+    animation: none;
+  }
 }
 
 .nocost {

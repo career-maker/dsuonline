@@ -298,3 +298,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - Home FAQ image -> faq-learner.webp (navy fade added for text), header home icon larger, footer specialization links 16px-scaled (min 14px).
 - Navigation: links no longer prefetch on sight (prefetch={false} everywhere; flood of background fetches queued ahead of clicks on the slow server); NavProgress prefetches on hover/touch and shows bar + dimmed page + progress cursor instantly on click (capture-phase listener).
 - Programme 'Personalised admission guidance' photo -> faq-learner.webp.
+- EMI 'No Cost EMI · 0% interest' pill: always-on shimmer + radiating ring + gentle scale pulse (off for reduced motion).
