@@ -867,7 +867,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     const faq = parseFaq(all);
     if ((/frequently|faq/i.test(title) || faq.length >= 3) && (faq.length || parseFaqByQuestionMarks(all).length >= 2)) {
       const items = faq.length >= 2 ? faq : parseFaqByQuestionMarks(all);
-      nodes.push(<Faq key={key} items={items} title={title} image={slug === 'about' ? '/images/inner/faq.webp' : undefined} />);
+      nodes.push(<Faq key={key} items={items} title={title} split />);
       continue;
     }
 
@@ -1345,7 +1345,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     nodes.splice(
       faqAt,
       1,
-      <Faq key="faq" items={liveFaqs} title="Frequently Asked Questions" stories={programTestimonials(slug)} />,
+      <Faq key="faq" items={liveFaqs} title="Frequently Asked Questions" split />,
     );
   }
 

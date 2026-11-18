@@ -288,3 +288,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - Programme FAQ now uses the 25 live-site FAQs (src/data/live-faqs.json, scraped from dsuonline.com home). Curriculum sem tabs match ref: rounded boxes + credit ring + gradient Grand Total.
 - Desktop side sticky tabs enlarged ~30% (width u(72), font u(21), call u(68)).
 - Curriculum left column: photo fills the gap under Grand Total (ends level with the table).
+- Images: next.config formats webp-only (avif encoder timed out on server => broken/slow images). tools/warm-images.py <base-url> warms the image cache after deploy. Inner-page FAQ = Faq split (two aligned columns + View More, no numbers/panel); home FAQ unchanged.

@@ -12,9 +12,9 @@
     "semantic_hash": ""
   },
   "next.config.ts": {
-    "mtime": 1794465835.2879915,
-    "seen": 1794469962.7566195,
-    "ast_hash": "3e6e8cc6ae99e7ca0c86ce4b6b8b086d",
+    "mtime": 1794994248.4797833,
+    "seen": 1794994420.65561,
+    "ast_hash": "26604f1094ab856ecf3bde21343d774a",
     "semantic_hash": ""
   },
   "package.json": {
@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1794991648.6313992,
-    "seen": 1794991758.7473495,
-    "ast_hash": "d94eb1c8775299e950604d7dac88cdd9",
+    "mtime": 1794994244.0550144,
+    "seen": 1794994420.655672,
+    "ast_hash": "27554ccaa9b451b42e8a2a82a727fa19",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -264,9 +264,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/Faq.tsx": {
-    "mtime": 1794991107.2194457,
-    "seen": 1794991348.3170469,
-    "ast_hash": "b4393ad6fe157595ddf9d9108152c9cf",
+    "mtime": 1794994381.7937107,
+    "seen": 1794994420.6557698,
+    "ast_hash": "83380a8dc10c848a2ea14a4505c99b36",
     "semantic_hash": ""
   },
   "src/components/sections/home/Hero.tsx": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794992620.2294514,
-    "seen": 1794992811.0619383,
-    "ast_hash": "747c830aa85e1a6f9741b53c291e4340",
+    "mtime": 1794994409.6266942,
+    "seen": 1794994420.6558638,
+    "ast_hash": "6778a9d3b1d1c1c35ff8e657d332e29d",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -767,16 +767,16 @@
     "ast_hash": "fc0610265f823f8200c6081a3aca9059",
     "semantic_hash": ""
   },
-  "src/components/sections/home/FaqStories.tsx": {
-    "mtime": 1794991107.2194457,
-    "seen": 1794991348.3170502,
-    "ast_hash": "74c9cdfe1dd2a99de0860db18eec3ac5",
-    "semantic_hash": ""
-  },
   "src/data/live-faqs.json": {
     "mtime": 1794991642.4336371,
     "seen": 1794991758.7475164,
     "ast_hash": "8c995182cd2956785a31528620914e32",
+    "semantic_hash": ""
+  },
+  "tools/warm-images.py": {
+    "mtime": 1794994381.843804,
+    "seen": 1794994420.6558576,
+    "ast_hash": "daaecccb5542fc8cfb3be9e50cc2eed6",
     "semantic_hash": ""
   }
 }

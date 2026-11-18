@@ -21,16 +21,36 @@
 }
 
 .two {
-  // no number column: the question takes the full row
+  grid-template-columns: minmax(0, 1fr);
+
+  // two aligned columns of questions (no number column)
   .list button {
     grid-template-columns: 1fr 20px;
   }
 
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(28px, #{u(64)}, 70px);
+  .a {
+    padding-left: 0;
+  }
+}
 
+.cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(24px, #{u(64)}, 70px);
+  margin-top: clamp(24px, #{u(54)}, 54px);
+  align-items: start;
+
+  .list {
+    margin-top: 0;
+  }
+
+  // the second column needs its own top rule so both columns start level
   @include down($bp-lg) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+
+    .list + .list {
+      border-top: 0;
+    }
   }
 }
 
@@ -170,9 +190,30 @@
     padding: u(98.16) 0 u(70);
   }
 
+  .faqSplit {
+    min-height: 0;
+  }
+
   .inner {
     grid-template-columns: u(985) u(711);
     gap: u(35);
+  }
+
+  // inner pages: two question columns across the full width
+  .two {
+    grid-template-columns: minmax(0, 1fr);
+
+    .list button {
+      grid-template-columns: 1fr u(18);
+    }
+  }
+
+  .cols {
+    gap: 0 u(64);
+
+    .list {
+      margin-top: 0;
+    }
   }
 
   .eyebrow {

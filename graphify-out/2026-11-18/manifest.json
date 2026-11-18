@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794992372.8234525,
-    "seen": 1794992391.0816126,
-    "ast_hash": "bc50d6e355150ca96b166f61998ee971",
+    "mtime": 1794992620.2294514,
+    "seen": 1794992811.0619383,
+    "ast_hash": "747c830aa85e1a6f9741b53c291e4340",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -690,9 +690,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/ProgramCurriculum.tsx": {
-    "mtime": 1794991648.6313992,
-    "seen": 1794991758.7473624,
-    "ast_hash": "6ab507496f4bf0a78870239a7fb36e0d",
+    "mtime": 1794992414.75687,
+    "seen": 1794992811.0617435,
+    "ast_hash": "3cbdb3d3acddb8349c2863af58143d54",
     "semantic_hash": ""
   },
   "src/components/inner/curriculumData.ts": {

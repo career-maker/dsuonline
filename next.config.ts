@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/webp'], // avif encoding is too slow on the server (WASM image encoder) and made images time out
     minimumCacheTTL: 31536000,
   },
   async headers() {
