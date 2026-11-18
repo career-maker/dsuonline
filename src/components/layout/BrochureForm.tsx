@@ -5,8 +5,8 @@ import { programs } from '@/data/programs';
 import { ChevronDown, DownloadIcon } from '@/components/ui/icons';
 import s from './Footer.module.scss';
 
-/** Brochure file per programme code. '#' = file not supplied yet; put the PDF path here when it arrives. */
-const BROCHURE: Record<string, string> = {};
+/** Brochure file per programme code (public/docs). */
+const BROCHURE: Record<string, string> = Object.fromEntries(['mba', 'mca', 'bba', 'bca', 'bcom'].map((c) => [c, `/docs/dsu-online-${c}-brochure.pdf`]));
 
 export function BrochureForm() {
   const id = useId();

@@ -1344,7 +1344,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     nodes.splice(
       faqAt,
       1,
-      <Faq key="faq" items={copy.items.map((x) => ({ q: x.q, a: [x.a] }))} title={copy.title} />,
+      <Faq key="faq" items={copy.items.map((x) => ({ q: x.q, a: [x.a] }))} title={copy.title} stories={programTestimonials(slug)} />,
     );
   }
 
@@ -1378,7 +1378,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       {isSpec && specProg ? (
         <CtaBand title={`Advance Your ${specName} Skills`} text={`Online ${specProg} Program - ${specName}${fv(/total fees/i) ? ` · Total Fees ${fv(/total fees/i)!.value}` : ''}`} apply="Apply Now!" />
       ) : (
-        <CtaBand />
+        <CtaBand enquire={!programLinks} />
       )}
     </>
   );

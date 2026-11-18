@@ -6,11 +6,14 @@ import { FramedImage } from '@/components/ui/FramedImage';
 import { ChevronRight } from '@/components/ui/icons';
 import type { Faq as FaqItem } from '@/components/inner/parse';
 import { site } from '@/data/site';
+import type { Testimonial } from '@/data/testimonials';
+import { FaqStories } from './FaqStories';
 import s from './Faq.module.scss';
 
 const FIRST = 5;
 
-export function Faq({ items, title = 'Frequently Asked Questions', image = '/images/faq/cta.webp' }: { items: FaqItem[]; title?: string; image?: string }) {
+/** `stories` (programme pages): learner stories carousel on the left, the questions (no numbers) on the right, no call-to-action panel. */
+export function Faq({ items, title = 'Frequently Asked Questions', image = '/images/faq/cta.webp', stories }: { items: FaqItem[]; title?: string; image?: string; stories?: Testimonial[] }) {
   const [open, setOpen] = useState<number | null>(null);
   const [shown, setShown] = useState(FIRST);
   const faqs = items.slice(0, shown);
@@ -19,7 +22,8 @@ export function Faq({ items, title = 'Frequently Asked Questions', image = '/ima
 
   return (
     <section className={s.faq} id="dsu-faq">
-      <div className={s.inner}>
+      <div className={`${s.inner} ${stories ? s.two : ''}`}>
+        {stories && <FaqStories items={stories} />}
         <div className={s.left}>
           <p className={s.eyebrow}>FAQ</p>
           <h2>{title}</h2>
@@ -31,7 +35,7 @@ export function Faq({ items, title = 'Frequently Asked Questions', image = '/ima
                 <li key={f.q}>
                   <h3>
                     <button type="button" aria-expanded={isOpen} aria-controls={`${uid}-${i}`} onClick={() => setOpen(isOpen ? null : i)}>
-                      <span className={s.num}>{String(i + 1).padStart(2, '0')}</span>
+                      {!stories && <span className={s.num}>{String(i + 1).padStart(2, '0')}</span>}
                       <span className={s.q}>{f.q.replace(/^\d+\s*\.\s*/, '')}</span>
                       <ChevronRight className={isOpen ? s.rot : ''} />
                     </button>
@@ -59,6 +63,7 @@ export function Faq({ items, title = 'Frequently Asked Questions', image = '/ima
           )}
         </div>
 
+        {!stories && (
         <aside className={s.cta}>
           <FramedImage src={image} frame={[1115, 9060, 711, 608]} box={[1115, 9059.9, 711, 608.2]} sizes="(max-width: 1200px) 100vw, 711px" />
           <div className={s.shade} />
@@ -79,6 +84,7 @@ export function Faq({ items, title = 'Frequently Asked Questions', image = '/ima
             </div>
           </div>
         </aside>
+        )}
       </div>
     </section>
   );

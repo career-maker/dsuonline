@@ -20,6 +20,20 @@
   }
 }
 
+.two {
+  // no number column: the question takes the full row
+  .list button {
+    grid-template-columns: 1fr 20px;
+  }
+
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(28px, #{u(64)}, 70px);
+
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .eyebrow {
   @include eyebrow;
   color: $logo-yellow;
