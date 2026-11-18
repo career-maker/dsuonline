@@ -534,7 +534,7 @@ const ADMISSION_PHOTOS: Record<string, { src: string; w: number; h: number }> = 
   '/content/3796bafc-point-to-remember.png': { src: '/images/inner/eligibility.webp', w: 742, h: 692 },
   '/content/336e799b-document-required.png': { src: '/images/inner/doc-required.webp', w: 742, h: 677 },
 };
-const BANNERS: Record<string, string> = { admission: '/images/inner/banner-admission.webp', 'contact-us': '/images/inner/banner-contact.webp', 'online-mba': '/images/inner/banner-mba.webp' };
+const BANNERS: Record<string, string> = { admission: '/images/inner/banner-admission.webp', 'contact-us': '/images/inner/banner-contact.webp', 'online-mba': '/images/inner/banner-mba.webp', about: '/images/inner/banner-about.webp' };
 const BANNERS_MOBILE: Record<string, string> = { 'online-mba': '/images/inner/banner-mba-mobile.webp' };
 
 function swapPhotos(blocks: Block[], slug: string): Block[] {
@@ -721,7 +721,6 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           right={aboutPhotos.right}
           href="/admission"
           cta="Apply Now"
-          play={false}
         />,
       );
       continue;

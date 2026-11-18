@@ -293,3 +293,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - Scroll lag: Lenis switched from duration 1 to lerp 0.2 (snappier). Perf traces on a fresh server show no jank; earlier 'runaway render' was a stale local server (restart after every build).
 - Hero banners + about image replaced (renamed files banner-*.webp / about-learner.webp because next/image cache is 1yr per URL). Perf: inlineCss, LCP preload, TitleReveal lazy split, deviceSizes, preloader 1s, icons shrunk. --fk 0.7, body-text weight 500.
 - Fixed React #418 hydration error (programme + international pages): TitleReveal no longer splits heading text into spans (raced hydration); headings now fade/rise as a block via classes only.
+- About: new banner (banner-about.webp), new right image about-cafe.webp (home + about), play button shown on About page card.

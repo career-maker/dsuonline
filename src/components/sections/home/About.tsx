@@ -17,10 +17,10 @@ export const aboutPhotos = {
   ),
   right: (
     <FramedImage
-      src="/images/about/about-right.webp"
-      alt="Dayananda Sagar University campus"
+      src="/images/about/about-cafe.webp"
+      alt="Learners studying together at a cafe, attending an online class"
       frame={[1424, 2098, 400, 538]}
-      box={[1333, 2098.1, 732.8, 537.9]}
+      box={[1424, 2098, 400, 538]}
       sizes="(max-width: 900px) 100vw, 400px"
     />
   ),
@@ -145,10 +145,10 @@ export function About() {
       }
       right={
         <FramedImage
-          src="/images/about/about-right.webp"
-          alt="Dayananda Sagar University campus"
+          src="/images/about/about-cafe.webp"
+          alt="Learners studying together at a cafe, attending an online class"
           frame={[1424, 2098, 400, 538]}
-          box={[1333, 2098.1, 732.8, 537.9]}
+          box={[1424, 2098, 400, 538]}
           sizes="(max-width: 900px) 100vw, 400px"
         />
       }

@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1794998093.8308907,
-    "seen": 1794998359.510987,
-    "ast_hash": "407319c28ddae5a4c3a55d6f77bd6948",
+    "mtime": 1795001960.1746323,
+    "seen": 1795002033.68637,
+    "ast_hash": "4565288bb3d2e028daaf2880882a3efa",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -234,9 +234,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/About.tsx": {
-    "mtime": 1794997585.2856638,
-    "seen": 1794997726.8501215,
-    "ast_hash": "15aa3038f49781fd5fc66fcd44f29408",
+    "mtime": 1795001960.141899,
+    "seen": 1795002033.6864717,
+    "ast_hash": "63f5ff057ef8aabe95092eac0170b25a",
     "semantic_hash": ""
   },
   "src/components/sections/home/BlogSlider.tsx": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794998345.7175293,
-    "seen": 1794998359.5112097,
-    "ast_hash": "ead447b95b138eae14b3a40449c69006",
+    "mtime": 1795002023.2191885,
+    "seen": 1795002033.6865923,
+    "ast_hash": "dd561096887b51a5f42b2e837cb4ed29",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
