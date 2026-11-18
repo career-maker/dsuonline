@@ -258,9 +258,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/FacultyArticles.tsx": {
-    "mtime": 1795003833.7272022,
-    "seen": 1795003993.8808517,
-    "ast_hash": "5e14fc351211f20e88105f627a7d142e",
+    "mtime": 1795024193.390148,
+    "seen": 1795024404.1677513,
+    "ast_hash": "0c6ab0f2cc44f980c331279d43066241",
     "semantic_hash": ""
   },
   "src/components/sections/home/Faq.tsx": {
@@ -360,9 +360,9 @@
     "semantic_hash": ""
   },
   "src/data/home.ts": {
-    "mtime": 1794997585.3471794,
-    "seen": 1794997726.8501813,
-    "ast_hash": "d3338329e10e0b3be150eca8fb63640f",
+    "mtime": 1795023954.8923483,
+    "seen": 1795024404.1677911,
+    "ast_hash": "80cea0b041e6dd471740de2eb9296f73",
     "semantic_hash": ""
   },
   "src/data/icon-sizes.ts": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1795006929.604572,
-    "seen": 1795006940.3613625,
-    "ast_hash": "ca9aae2ae4b733d3976421ad89020d55",
+    "mtime": 1795023523.900225,
+    "seen": 1795024404.1678298,
+    "ast_hash": "52acabb4d2f3c0b7aef929ea4878f373",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -546,9 +546,9 @@
     "semantic_hash": ""
   },
   "src/data/faculty.ts": {
-    "mtime": 1793857557.5813625,
-    "seen": 1793857700.3763845,
-    "ast_hash": "5e328cc8f4aa89da038eb8e7eb2ba657",
+    "mtime": 1795023954.8740497,
+    "seen": 1795024404.1677895,
+    "ast_hash": "41d59cdfb8bde6c80725d947380455ec",
     "semantic_hash": ""
   },
   "src/components/ui/avatar.tsx": {

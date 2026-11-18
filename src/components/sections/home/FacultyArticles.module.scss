@@ -55,13 +55,13 @@
 
 // ---- faculty
 .faculty {
-  @include zoom('.fphoto img');
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(220px, 17vw, 330px), 1fr));
   gap: clamp(12px, #{u(20)}, 20px);
   margin-top: clamp(28px, #{u(56)}, 56px);
 
   > li {
+    @include zoom('.fphoto img');
     overflow: hidden;
     border-radius: px(6);
     background: $bg-sky;
