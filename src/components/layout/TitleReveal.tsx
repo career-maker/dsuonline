@@ -10,13 +10,17 @@ export function TitleReveal() {
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    // a title is split into words only when it is about to be seen: no page-wide layout pass up front
     const io = new IntersectionObserver(
       (entries) => {
-        for (const e of entries) {
-          if (!e.isIntersecting) continue;
-          (e.target as HTMLElement).classList.add(s.in);
-          io.unobserve(e.target);
-        }
+        const seen = entries.filter((e) => e.isIntersecting).map((e) => e.target as HTMLElement);
+        if (!seen.length) return;
+        seen.forEach((h) => {
+          io.unobserve(h);
+          split(h);
+        });
+        // two frames: the hidden state has to be painted once before the rise animation starts
+        requestAnimationFrame(() => requestAnimationFrame(() => seen.forEach((h) => h.classList.add(s.in))));
       },
       { threshold: 0.01, rootMargin: '0px 0px -4% 0px' },
     );
@@ -54,15 +58,9 @@ export function TitleReveal() {
 
     // page titles (h1) and section titles (h2); the home hero h1 has its own identical animation (aria-label)
     const scan = () => {
-      const fresh = Array.from(document.querySelectorAll<HTMLElement>('main h1:not([data-tr]):not([aria-label]), main h2:not([data-tr])'));
-      if (!fresh.length) return;
-      fresh.forEach(split);
-      // reads after all writes: one layout pass
-      const vh = window.innerHeight * 0.9;
-      const rects = fresh.map((h) => h.getBoundingClientRect());
-      fresh.forEach((h, i) => {
-        if (rects[i].top < vh && rects[i].bottom > 0) requestAnimationFrame(() => h.classList.add(s.in));
-        else io.observe(h);
+      document.querySelectorAll<HTMLElement>('main h1:not([data-tr]):not([aria-label]), main h2:not([data-tr])').forEach((h) => {
+        h.dataset.tr = 'q';
+        io.observe(h);
       });
     };
 
@@ -73,7 +71,7 @@ export function TitleReveal() {
       raf = requestAnimationFrame(scan);
     });
     mo.observe(document.body, { childList: true, subtree: true });
-    const t = setTimeout(scan, 150);
+    const t = setTimeout(scan, 0);
     return () => {
       clearTimeout(t);
       cancelAnimationFrame(raf);

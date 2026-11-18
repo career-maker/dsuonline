@@ -1443,8 +1443,9 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   text-align: left;
 
   p {
-    font-size: fs(16, 15px);
+    font-size: max(15px, calc(var(--u) * 17));
     line-height: 1.6;
+    font-weight: 500;
     color: $body;
 
     + p {

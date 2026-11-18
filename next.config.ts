@@ -4,7 +4,9 @@ import path from "node:path";
 const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
+  experimental: { inlineCss: true }, // stylesheets inlined: no render-blocking CSS requests
   images: {
+    deviceSizes: [640, 828, 1080, 1280, 1440, 1600, 1920],
     formats: ['image/webp'], // avif encoding is too slow on the server (WASM image encoder) and made images time out
     minimumCacheTTL: 31536000,
   },

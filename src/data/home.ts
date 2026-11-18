@@ -3,8 +3,8 @@
 
 // Each slide carries its own desktop/tablet and phone artwork (CMS: one image field per breakpoint).
 export const heroSlides = [
-  { desktop: '/images/hero/slide-1.webp', mobile: '/images/hero/mobile-1.webp' },
-  { desktop: '/images/hero/slide-2.webp', mobile: '/images/hero/mobile-2.webp' },
+  { desktop: '/images/hero/banner-1.webp', mobile: '/images/hero/banner-m1.webp' },
+  { desktop: '/images/hero/banner-2.webp', mobile: '/images/hero/banner-m2.webp' },
 ] as const;
 
 export const tickerItems: { text: string; link?: string; href?: string }[] = [

@@ -8,10 +8,10 @@ import { aboutCopy, aboutFeatures, aboutStats } from '@/data/home';
 export const aboutPhotos = {
   left: (
     <FramedImage
-      src="/images/about/about-left.webp"
-      alt="Learner studying online with the DSU campus behind"
+      src="/images/about/about-learner.webp"
+      alt="Learner studying online with headphones and a notebook"
       frame={[95, 2100, 562, 541]}
-      box={[-104.1, 2100, 961.3, 541]}
+      box={[95, 2100, 562, 541]}
       sizes="(max-width: 900px) 100vw, 562px"
     />
   ),
@@ -136,10 +136,10 @@ export function About() {
       copy={aboutCopy}
       left={
         <FramedImage
-          src="/images/about/about-left.webp"
-          alt="Learner studying online with the DSU campus behind"
+          src="/images/about/about-learner.webp"
+          alt="Learner studying online with headphones and a notebook"
           frame={[95, 2100, 562, 541]}
-          box={[-104.1, 2100, 961.3, 541]}
+          box={[95, 2100, 562, 541]}
           sizes="(max-width: 900px) 100vw, 562px"
         />
       }

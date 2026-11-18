@@ -23,7 +23,7 @@
   border-radius: 3px;
   background: $blue;
   color: #fff;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.02em;
   line-height: 1.4;
@@ -35,9 +35,9 @@
   overflow: hidden;
   padding-left: 14px;
   border-left: 3px solid $yellow;
-  font-size: fs(17, 15px);
+  font-size: max(15px, calc(var(--u) * 18));
   line-height: 1.6;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .more {
@@ -67,15 +67,16 @@
 
   b {
     display: block;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.25;
     font-weight: 600;
   }
 
   span {
     display: block;
-    font-size: 12px;
+    font-size: 13.5px;
     line-height: 1.35;
+    font-weight: 500;
     color: var(--card-sub, #{$body});
   }
 }

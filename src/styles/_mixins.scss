@@ -56,7 +56,7 @@
 @mixin body-text {
   font-size: max(15px, calc(var(--u) * 18)); // 15px floor: the halved desktop floor of fs() made paragraphs tiny on small laptops
   line-height: 1.61;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
   color: $body;
   margin: 0;

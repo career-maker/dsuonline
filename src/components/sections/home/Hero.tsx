@@ -7,11 +7,16 @@ import { heroSlides } from '@/data/home';
 import s from './Hero.module.scss';
 
 // object-position that reproduces the design's crop of each slide
-const slidePos = ['100% 25%', '0% 25%'] as const;
+const slidePos = ['75% 25%', '75% 25%'] as const;
 const slideSize = [
-  [2069, 987],
-  [1860, 906],
+  [1920, 970],
+  [1920, 970],
 ] as const;
+
+const first = {
+  d: getImageProps({ src: heroSlides[0].desktop, alt: '', width: slideSize[0][0], height: slideSize[0][1], sizes: '100vw', priority: true }).props,
+  m: getImageProps({ src: heroSlides[0].mobile, alt: '', width: 790, height: 987, sizes: '100vw', priority: true }).props,
+};
 
 export function Hero() {
   const [active, setActive] = useState(0);
@@ -26,8 +31,11 @@ export function Hero() {
   return (
     <>
     <section className={s.hero} aria-roledescription="carousel" aria-label="Featured">
+      {/* LCP: the first slide is requested at the top of the document instead of after CSS + JS */}
+      <link rel="preload" as="image" media="(min-width: 760px)" imageSrcSet={first.d.srcSet} imageSizes="100vw" fetchPriority="high" />
+      <link rel="preload" as="image" media="(max-width: 759.98px)" imageSrcSet={first.m.srcSet} imageSizes="100vw" fetchPriority="high" />
       {heroSlides.map((slide, i) => {
-        const desktop = getImageProps({ src: slide.desktop, alt: '', width: slideSize[i][0], height: slideSize[i][1], sizes: '110vw', priority: i === 0 }).props;
+        const desktop = getImageProps({ src: slide.desktop, alt: '', width: slideSize[i][0], height: slideSize[i][1], sizes: '100vw', priority: i === 0 }).props;
         const mobile = getImageProps({ src: slide.mobile, alt: '', width: 790, height: 987, sizes: '100vw', priority: i === 0 }).props;
         return (
           <div key={slide.desktop} className={`${s.bg} ${i === active ? s.bgOn : ''}`} aria-hidden={i !== active}>
