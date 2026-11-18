@@ -135,29 +135,29 @@ $w: clamp(40px, #{u(54)}, 54px);
 // ---------- desktop: exact geometry of the 1920 artboard
 @include up($bp-lg) {
   .tabs {
-    top: u(292);
-    width: u(55);
+    top: u(260);
+    width: u(72);
   }
 
   .tab {
-    width: u(55);
-    border-radius: u(12) 0 0 u(12);
-    font-size: u(16);
+    width: u(72);
+    border-radius: u(14) 0 0 u(14);
+    font-size: u(21);
   }
 
   .enquire {
-    height: u(139);
+    height: u(182);
   }
 
   .apply {
-    height: u(143);
+    height: u(188);
     margin-top: u(8);
   }
 
   // round call button, a little in from the screen edge
   .ico {
-    width: u(52);
-    height: u(52);
+    width: u(68);
+    height: u(68);
     margin: u(8) u(8) 0 auto;
     border-radius: 50%;
     overflow: hidden;
