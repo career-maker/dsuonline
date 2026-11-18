@@ -173,8 +173,8 @@ export const faculty: Faculty[] = [
   { key: 'aakash', name: 'Dr. Aakash Verma', role: 'Assistant Professor, Information Systems', points: ['10+ years of Academic Experience', 'Ph.D in Information Technology'], box: [1096.3, 6962.5, 538, 358.6] },
   { key: 'meera', name: 'Dr. Meera Singh', role: 'Lecturer, Human Resources', points: ['8+ years in Academia and Consulting', 'Ph.D in Organizational Behavior'], box: [1278.7, 6961.8, 664.4, 443.2] },
   // two more faculty from the live Online MBA page
-  { key: 'richa', src: '/content/0a5d5e9e-Dr.richa-tiwari.webp', name: 'Dr. Richa Tiwari', role: 'Professor & Course Coordinator', points: ['B.A (Hons) MBA (MIS), M.A Economics', 'PGCOM (IIMN), Ph.D'], box: [0, 0, 0, 0] },
-  { key: 'anupama', src: '/content/5977f2f2-Dr.anupama.g.webp', name: 'Dr. Anupama G', role: 'Professor & Program Coordinator', points: ['MBA, M.Phil', 'Ph.D, PGDCA'], box: [0, 0, 0, 0] },
+  { key: 'richa', src: '/content/0a5d5e9e-Dr.richa-tiwari-v2.webp', name: 'Dr. Richa Tiwari', role: 'Professor & Course Coordinator', points: ['B.A (Hons) MBA (MIS), M.A Economics', 'PGCOM (IIMN), Ph.D'], box: [0, 0, 0, 0] },
+  { key: 'anupama', src: '/content/5977f2f2-Dr.anupama.g-v2.webp', name: 'Dr. Anupama G', role: 'Professor & Program Coordinator', points: ['MBA, M.Phil', 'Ph.D, PGDCA'], box: [0, 0, 0, 0] },
 ];
 
 export const articles = [
