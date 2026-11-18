@@ -16,7 +16,7 @@ export function SmoothScroll() {
     let lenis: Lenis | undefined;
     let raf = 0;
     try {
-      lenis = new Lenis({ duration: 1, anchors: true });
+      lenis = new Lenis({ lerp: 0.2, anchors: true }); // snappier than the default 1s ease: scrolling felt laggy when changing direction
     } catch {
       return;
     }
