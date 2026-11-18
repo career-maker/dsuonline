@@ -280,3 +280,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 
 ## 2026-11-18 Dual specialisation
 - Dual block (pill, #pair combinator, guidance, advantage copy) shown only for programmes in `DUAL_PROGRAMMES` (`src/data/programme-architect.ts`, now `['mba']`). Add bba/bca/bcom/mca there to re-enable. Combinator now Major + Minor radio lists (can't pick same elective twice).
+- EMI calculator now follows client chart: tenure chips 6/8/10/12/15/18 months, 0% interest, PG (MBA/MCA) fee 130000, UG (BBA/BCA/B.Com) yearly fee 44000. Constants in `EmiCalculator.tsx`.

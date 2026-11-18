@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1794917925.9750514,
-    "seen": 1794918035.5256326,
-    "ast_hash": "95d1ec9dd53b398959944cfb2cfb87b2",
+    "mtime": 1794989581.355106,
+    "seen": 1794989644.3237495,
+    "ast_hash": "a4f8f077070fd430bbd57b57adc63a02",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794919086.756288,
-    "seen": 1794919272.517654,
-    "ast_hash": "ba08553f215e07a58097b88d0d170f5f",
+    "mtime": 1794989631.5808518,
+    "seen": 1794989644.3239331,
+    "ast_hash": "1fae596af1fa3f41358b5200cf3ddaf6",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -528,9 +528,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/ElectiveCombinator.tsx": {
-    "mtime": 1794630771.778055,
-    "seen": 1794631335.0254009,
-    "ast_hash": "b6df202672466827af8c11451b345bf0",
+    "mtime": 1794989581.3422542,
+    "seen": 1794989644.32373,
+    "ast_hash": "d145706fa12e80a139bbd931d1f4c0ff",
     "semantic_hash": ""
   },
   "src/components/inner/FeeTable.tsx": {
@@ -678,9 +678,9 @@
     "semantic_hash": ""
   },
   "src/data/programme-architect.ts": {
-    "mtime": 1794556819.5562792,
-    "seen": 1794556962.556793,
-    "ast_hash": "f547e037bea3ce9bda6bcb31987e94e4",
+    "mtime": 1794989581.3637624,
+    "seen": 1794989644.323902,
+    "ast_hash": "585253287076f1cbb1840b8570fd5b51",
     "semantic_hash": ""
   },
   "src/components/inner/ProgramFees.tsx": {
