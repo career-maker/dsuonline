@@ -59,16 +59,18 @@ export function ProgramCurriculum({ sems, electives, totalCredits }: CurData) {
         <div className={s.menu} role="tablist" aria-label="Semesters" aria-orientation="vertical">
           {sems.map((x, i) => (
             <button key={x.label} type="button" role="tab" aria-selected={view.kind === 'sem' && view.i === i} className={view.kind === 'sem' && view.i === i ? s.on : ''} onClick={() => pickSem(i)}>
-              <b>{x.label}</b>
-              {x.total && <small>{x.total} Credits</small>}
+              <span>
+                <b>{x.label}</b>
+                {x.total && <small>{x.total} Credits</small>}
+              </span>
+              {x.total && <i className={s.ring}>{x.total}</i>}
             </button>
           ))}
         </div>
         {totalCredits && (
           <div className={s.credits}>
-            <span>Total credits</span>
-            <b>{totalCredits}</b>
-            <small>across {sems.length} semesters</small>
+            <span>Grand Total</span>
+            <b>{totalCredits} Credits</b>
           </div>
         )}
       </aside>

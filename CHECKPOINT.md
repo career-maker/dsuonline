@@ -285,3 +285,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - Learning system: 4 tabs always in one row, no tab subheadings. Faculty cards = home size (u(330) wide, 330:242 photo). Programme section intro paragraphs (Learning/Fees/Advantage/Combinator/ElectiveGrid) 13px black.
 - Curriculum: semester tabs are plain boxes with per-sem credits + credits badge in panel head. Eligibility: SC/ST/OBC relaxation merged into the 50% point (criteria() in ProgramEligibility.tsx).
 - Programme FAQ: two columns (learner stories carousel left via FaqStories, FAQ right, no numbers, no CTA panel). CtaBand enquire button hidden on programme pages. Footer brochure PDFs in public/docs/dsu-online-<code>-brochure.pdf.
+- Programme FAQ now uses the 25 live-site FAQs (src/data/live-faqs.json, scraped from dsuonline.com home). Curriculum sem tabs match ref: rounded boxes + credit ring + gradient Grand Total.

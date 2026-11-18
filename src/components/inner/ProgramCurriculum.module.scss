@@ -33,11 +33,12 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   button {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: clamp(12px, #{u(16)}, 16px) clamp(14px, #{u(20)}, 20px);
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: clamp(12px, #{u(18)}, 18px) clamp(14px, #{u(20)}, 20px);
     border: 1px solid $edge;
-    border-radius: 6px;
+    border-radius: 16px;
     background: #fff;
     font: inherit;
     text-align: left;
@@ -46,9 +47,30 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     transition: background 0.25s, border-color 0.25s, color 0.25s;
     @include focus-ring;
 
+    span {
+      display: grid;
+      gap: 2px;
+    }
+
     b {
       font-size: clamp(15px, #{u(19)}, 19px);
       font-weight: 600;
+    }
+
+    // credits ring on the right of each semester box
+    .ring {
+      display: grid;
+      flex: none;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: $bg-sky;
+      color: $ink;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      transition: background 0.25s, color 0.25s;
     }
 
     small {
@@ -71,6 +93,11 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
     small {
       color: rgb(255 255 255 / 80%);
+    }
+
+    .ring {
+      background: rgb(255 255 255 / 18%);
+      color: #fff;
     }
   }
 
@@ -107,40 +134,22 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 .credits {
   display: grid;
-  gap: 2px;
-  padding: clamp(16px, #{u(24)}, 26px);
-  border-radius: 14px;
-  background: $blue;
+  gap: 4px;
+  padding: clamp(16px, #{u(22)}, 24px) clamp(16px, #{u(22)}, 24px);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1d5bd8, #22c3e6);
   color: #fff;
 
   span {
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgb(255 255 255 / 75%);
+    font-size: 16px;
+    font-weight: 600;
   }
 
   b {
-    font-size: clamp(40px, #{u(64)}, 64px);
+    font-size: clamp(26px, #{u(34)}, 34px);
     font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    color: $logo-yellow;
-  }
-
-  small {
-    font-size: 14px;
-    color: rgb(255 255 255 / 75%);
-  }
-
-  @include down($bp-lg) {
-    grid-template-columns: auto auto 1fr;
-    align-items: baseline;
-    gap: 4px 12px;
-
-    b {
-      font-size: 30px;
-    }
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
 }
 

@@ -96,9 +96,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/InnerPage.tsx": {
-    "mtime": 1794909811.8342476,
-    "seen": 1794910304.8520947,
-    "ast_hash": "4e5164a540a9fa77eae8b6374f8a1573",
+    "mtime": 1794991107.2335548,
+    "seen": 1794991348.3169203,
+    "ast_hash": "91ca6cd9bc5d61ec5977565418d52f37",
     "semantic_hash": ""
   },
   "src/components/inner/Interactive.tsx": {
@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1794989581.355106,
-    "seen": 1794989644.3237495,
-    "ast_hash": "a4f8f077070fd430bbd57b57adc63a02",
+    "mtime": 1794991107.2314816,
+    "seen": 1794991348.3169308,
+    "ast_hash": "f8d5aea7b82f6866233d82904e794ae6",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/BrochureForm.tsx": {
-    "mtime": 1794909246.011595,
-    "seen": 1794909285.625328,
-    "ast_hash": "bdd474f1717b7f81d3932ec02f225d04",
+    "mtime": 1794991115.742546,
+    "seen": 1794991348.3170068,
+    "ast_hash": "beba8b23543fc98ed142adf7570b3465",
     "semantic_hash": ""
   },
   "src/components/layout/CountryPicker.tsx": {
@@ -264,9 +264,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/Faq.tsx": {
-    "mtime": 1794631816.770009,
-    "seen": 1794908231.6964896,
-    "ast_hash": "6c3a91aa4e38f35b2c53ebe7489092fe",
+    "mtime": 1794991107.2194457,
+    "seen": 1794991348.3170469,
+    "ast_hash": "b4393ad6fe157595ddf9d9108152c9cf",
     "semantic_hash": ""
   },
   "src/components/sections/home/Hero.tsx": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794991042.2789085,
-    "seen": 1794991052.4048092,
-    "ast_hash": "d6b205f0a31fb9934c110335f9ac203f",
+    "mtime": 1794991272.9246233,
+    "seen": 1794991348.3171573,
+    "ast_hash": "f5ae03b4df3401d1b980c92af4cc55aa",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -765,6 +765,12 @@
     "mtime": 1794918905.794201,
     "seen": 1794919086.1553779,
     "ast_hash": "fc0610265f823f8200c6081a3aca9059",
+    "semantic_hash": ""
+  },
+  "src/components/sections/home/FaqStories.tsx": {
+    "mtime": 1794991107.2194457,
+    "seen": 1794991348.3170502,
+    "ast_hash": "74c9cdfe1dd2a99de0860db18eec3ac5",
     "semantic_hash": ""
   }
 }

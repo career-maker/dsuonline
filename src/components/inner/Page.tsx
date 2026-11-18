@@ -32,6 +32,7 @@ import { ProgramGuidance } from './ProgramGuidance';
 import { CertFlip } from './CertFlip';
 import { ProgramCertificate } from './ProgramCertificate';
 import { faqFor } from '@/data/programme-faq';
+import liveFaqs from '@/data/live-faqs.json';
 import { buildCurriculum } from './curriculumData';
 import { advantageLead, dualCopy } from '@/data/programme-advantage';
 import { dualOn } from '@/data/programme-architect';
@@ -1344,7 +1345,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     nodes.splice(
       faqAt,
       1,
-      <Faq key="faq" items={copy.items.map((x) => ({ q: x.q, a: [x.a] }))} title={copy.title} stories={programTestimonials(slug)} />,
+      <Faq key="faq" items={liveFaqs} title="Frequently Asked Questions" stories={programTestimonials(slug)} />,
     );
   }
 
