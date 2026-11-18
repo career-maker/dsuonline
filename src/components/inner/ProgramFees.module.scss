@@ -32,6 +32,8 @@
 
 .desc {
   @include body-text;
+  font-size: 13px; // programme section intro: 13px black
+  color: #000;
   max-width: 32em;
   margin-top: clamp(14px, #{u(20)}, 20px);
 }

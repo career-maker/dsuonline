@@ -34,7 +34,6 @@ function TabFace({ item }: { item: LearnItem }) {
         <path d={iconOf(item.title)} />
       </svg>
       <b>{item.title}</b>
-      {item.sub && <small>{item.sub}</small>}
     </>
   );
 }

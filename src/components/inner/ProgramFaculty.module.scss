@@ -13,15 +13,9 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: 0;
   list-style: none;
 
-  // 3 per row on smaller desktops / tablets, 5 per row on big desktops
+  // fixed home-card width: 5 per row on big desktops, fewer as the screen narrows
   li {
-    width: calc((100% - 2 * var(--gap)) / 3);
-  }
-
-  @include up($bp-xl) {
-    li {
-      width: calc((100% - 4 * var(--gap)) / 5);
-    }
+    width: max(220px, #{u(330)}); // same width as the home cards
   }
 
   @include down($bp-sm) {
@@ -64,7 +58,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   position: relative;
   display: grid;
   place-items: center;
-  aspect-ratio: 1;
+  aspect-ratio: 330 / 242; // home card photo
   overflow: hidden;
   background: #cfe3f1;
 }
@@ -85,6 +79,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   display: flex;
   flex: 1;
   flex-direction: column;
+  min-height: #{u(193)}; // home card body
   padding: clamp(12px, #{u(14)}, 16px) clamp(12px, #{u(16)}, 16px) clamp(14px, #{u(22)}, 22px);
 
   h3 {

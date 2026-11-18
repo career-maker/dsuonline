@@ -44,7 +44,8 @@ $edge: #dbe5ee;
   &.side {
     margin: 0;
   }
-  font-size: clamp(15px, #{u(20)}, 20px);
+  font-size: 13px; // programme section intro: 13px black
+  color: #000;
 }
 
 // dual specialisation: a tinted panel with a tiny "two electives, one degree" sketch and the global button

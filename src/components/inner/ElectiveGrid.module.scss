@@ -25,9 +25,9 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .lead {
   max-width: 860px;
   margin-top: 16px;
-  font-size: fs(20, 16px);
+  font-size: 13px; // programme section intro: 13px black
   line-height: 1.6;
-  color: $body;
+  color: #000;
 }
 
 // ---------- desktop / tablet grid

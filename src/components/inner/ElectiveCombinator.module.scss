@@ -34,6 +34,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 .lead {
   @include body-text;
+  font-size: 13px; // programme section intro: 13px black
+  color: #000;
   max-width: 44em;
   margin-top: clamp(14px, #{u(20)}, 20px);
 }
