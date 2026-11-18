@@ -901,7 +901,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       if (dualOn(slug))
         nodes.push(
           <Sec key={`${key}-pair`} tone="sky" id="pair">
-            <ElectiveCombinator programName={progName} programCode={slug.replace(/^online-/, '')} electives={programLinks.map((x) => ({ name: x.name, blurb: x.blurb }))} />
+            <ElectiveCombinator programName={progName} programCode={slug.replace(/^online-/, '')} electives={programLinks.map((x) => ({ name: x.name, blurb: x.blurb, slug: x.href.split('/').pop()!.replace('&', '-and-') }))} />
           </Sec>,
         );
       continue;
@@ -1272,6 +1272,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
   const programHero =
     withFacts && crumbs.length < 3 && progShort && dur ? (
       <ProgramHero
+        code={slug.split('/')[0].replace(/^online-/, '')}
         bgSrc={BANNERS[slug]}
         bgMobileSrc={BANNERS_MOBILE[slug]}
         bgIndex={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)}
@@ -1306,6 +1307,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
   const specHero =
     isSpec && specProg && dur ? (
       <ProgramHero
+        code={slug.split('/')[0].replace(/^online-/, '')}
         eyebrow={preEyebrow ?? 'Your next chapter starts here'}
         lines={[`Online ${specProg}`, 'Program']}
         grow="Specialise in"

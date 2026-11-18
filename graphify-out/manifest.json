@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Blog.tsx": {
-    "mtime": 1793874674.9357076,
-    "seen": 1793874828.2028656,
-    "ast_hash": "86c00d1b33946dcabcbdcf925a8d03b0",
+    "mtime": 1794995387.191195,
+    "seen": 1794995606.414837,
+    "ast_hash": "fd197432ec56e1a504b7a57e747aef7d",
     "semantic_hash": ""
   },
   "src/components/inner/ContactForm.tsx": {
@@ -96,9 +96,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/InnerPage.tsx": {
-    "mtime": 1794991107.2335548,
-    "seen": 1794991348.3169203,
-    "ast_hash": "91ca6cd9bc5d61ec5977565418d52f37",
+    "mtime": 1794995392.8267696,
+    "seen": 1794995606.4148605,
+    "ast_hash": "29864d510ffdd4285ffcfb8e1bd648aa",
     "semantic_hash": ""
   },
   "src/components/inner/Interactive.tsx": {
@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1794994244.0550144,
-    "seen": 1794994420.655672,
-    "ast_hash": "27554ccaa9b451b42e8a2a82a727fa19",
+    "mtime": 1794995392.8743832,
+    "seen": 1794995606.4148676,
+    "ast_hash": "407319c28ddae5a4c3a55d6f77bd6948",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "src/components/layout/BrochureForm.tsx": {
-    "mtime": 1794991115.742546,
-    "seen": 1794991348.3170068,
-    "ast_hash": "beba8b23543fc98ed142adf7570b3465",
+    "mtime": 1794995397.009559,
+    "seen": 1794995606.4149249,
+    "ast_hash": "3ec38e73712312fdd60792e02ceb42cc",
     "semantic_hash": ""
   },
   "src/components/layout/CountryPicker.tsx": {
@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/ProgramsBand.tsx": {
-    "mtime": 1793852866.0843382,
-    "seen": 1793852961.8870978,
-    "ast_hash": "82a0f7fb468e9c1c6c480cc983f2fc7f",
+    "mtime": 1794995387.173823,
+    "seen": 1794995606.4149594,
+    "ast_hash": "b53d33b4e5d07c79bef8e900e77a935a",
     "semantic_hash": ""
   },
   "src/components/sections/home/Recognitions.tsx": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794994409.6266942,
-    "seen": 1794994420.6558638,
-    "ast_hash": "6778a9d3b1d1c1c35ff8e657d332e29d",
+    "mtime": 1794995591.4230137,
+    "seen": 1794995606.4150374,
+    "ast_hash": "c28f16e9aa0bfdf8e189f5f4ae51dded",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -528,9 +528,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/ElectiveCombinator.tsx": {
-    "mtime": 1794989581.3422542,
-    "seen": 1794989644.32373,
-    "ast_hash": "d145706fa12e80a139bbd931d1f4c0ff",
+    "mtime": 1794995363.9295297,
+    "seen": 1794995606.414848,
+    "ast_hash": "d5cbe48b252e5e1e4f817e062d509601",
     "semantic_hash": ""
   },
   "src/components/inner/FeeTable.tsx": {
@@ -570,9 +570,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/EmiCalculator.tsx": {
-    "mtime": 1794989830.9179332,
-    "seen": 1794989909.6674943,
-    "ast_hash": "ca422ec46d2620a5eccb5b4223190d1f",
+    "mtime": 1794995408.9477763,
+    "seen": 1794995606.414852,
+    "ast_hash": "e99dd42f484260101ca82f0663bff6cb",
     "semantic_hash": ""
   },
   "src/components/inner/FeeTabs.tsx": {
@@ -648,9 +648,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/ProgramHero.tsx": {
-    "mtime": 1794633233.6643755,
-    "seen": 1794908231.6963966,
-    "ast_hash": "9f8f5d36ab1b12a0550c1ce52bc6103b",
+    "mtime": 1794995387.1539567,
+    "seen": 1794995606.4148872,
+    "ast_hash": "4e97a3fe835bbb59cdef2d49fc98aecd",
     "semantic_hash": ""
   },
   "src/components/inner/ProgramAdvantage.tsx": {
@@ -678,9 +678,9 @@
     "semantic_hash": ""
   },
   "src/data/programme-architect.ts": {
-    "mtime": 1794989581.3637624,
-    "seen": 1794989644.323902,
-    "ast_hash": "585253287076f1cbb1840b8570fd5b51",
+    "mtime": 1794995506.2269487,
+    "seen": 1794995606.4150043,
+    "ast_hash": "d669586d0f4f7cce51cf917e0eaa9a3d",
     "semantic_hash": ""
   },
   "src/components/inner/ProgramFees.tsx": {
@@ -777,6 +777,12 @@
     "mtime": 1794994381.843804,
     "seen": 1794994420.6558576,
     "ast_hash": "daaecccb5542fc8cfb3be9e50cc2eed6",
+    "semantic_hash": ""
+  },
+  "src/data/brochures.ts": {
+    "mtime": 1794995387.027644,
+    "seen": 1794995606.4149902,
+    "ast_hash": "71893e0d19240152236ccac995d33213",
     "semantic_hash": ""
   }
 }

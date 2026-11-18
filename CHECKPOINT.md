@@ -289,3 +289,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - Desktop side sticky tabs enlarged ~30% (width u(72), font u(21), call u(68)).
 - Curriculum left column: photo fills the gap under Grand Total (ends level with the table).
 - Images: next.config formats webp-only (avif encoder timed out on server => broken/slow images). tools/warm-images.py <base-url> warms the image cache after deploy. Inner-page FAQ = Faq split (two aligned columns + View More, no numbers/panel); home FAQ unchanged.
+- Dual picker back to tick-any-two with elective photos on the right; hero Enquire removed (programme heroes); brochure buttons open per-programme PDF in new tab (src/data/brochures.ts); EMI: amount+tenure sliders, no-cost badge, pop animation; body-text 15px floor; faculty row breaks out to 5 per row with home padding.

@@ -26,11 +26,12 @@ export function BrochureForm() {
     }
     const link = document.createElement('a');
     link.href = href;
-    link.download = `DSU-Online-${choice.toUpperCase()}-Brochure.pdf`;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    setNote('Brochure download started.');
+    setNote('Brochure opened in a new tab.');
   };
 
   return (

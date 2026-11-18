@@ -32,7 +32,7 @@ export function architectCopy(name: string, electives: string[], isMba: boolean)
       { value: '1', label: `UGC-entitled Online ${name}` },
     ],
     buildTitle: 'Build your dual specialisation',
-    buildHint: 'Pick one major elective and one minor elective to preview your combination.',
+    buildHint: 'Select any two specialisations to preview your combination.',
     benefits: [
       {
         icon: 'branch',

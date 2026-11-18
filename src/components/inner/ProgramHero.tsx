@@ -3,11 +3,13 @@ import { heroSlides } from '@/data/home';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { Counter } from '@/components/ui/Counter';
 import { site } from '@/data/site';
-import { EnquireButton } from './EnquireButton';
+import { brochureHref } from '@/data/brochures';
 import s from './ProgramHero.module.scss';
 
 export type ProgramHeroProps = {
   eyebrow: string;
+  /** programme code (mba, mca ...): picks the brochure PDF */
+  code?: string;
   /** two plain lines, then "Grow with <name>" and the closing line */
   lines: [string, string];
   name: string;
@@ -29,7 +31,7 @@ export type ProgramHeroProps = {
 };
 
 /** One hero for every programme page: all text comes from props so the CMS can drive it. Nothing on the right. */
-export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, glance, bgSrc, bgMobileSrc, bgIndex = 0, grow = 'Grow with', reverse }: ProgramHeroProps) {
+export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, glance, bgSrc, bgMobileSrc, bgIndex = 0, grow = 'Grow with', reverse, code }: ProgramHeroProps) {
   const slide = heroSlides[bgIndex % heroSlides.length];
   const head = (
     <>
@@ -79,8 +81,7 @@ export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, 
       <ArrowLink href={site.apply} external>
         Apply Now
       </ArrowLink>
-      <EnquireButton />
-      <ArrowLink href="/docs/dsu-online-brochure.pdf" download="DSU-Online-Brochure.pdf" variant="outline">
+      <ArrowLink href={brochureHref(code)} external variant="outline">
         Download Brochure
       </ArrowLink>
     </div>

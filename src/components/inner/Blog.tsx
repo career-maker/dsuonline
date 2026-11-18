@@ -1,3 +1,4 @@
+import { brochureHref } from '@/data/brochures';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
@@ -174,8 +175,8 @@ export function BlogPost({ data, slug }: { data: PageData; slug?: string }) {
                   Apply Now
                 </ArrowLink>
                 <ArrowLink
-                  href="/docs/dsu-online-brochure.pdf"
-                  download="DSU-Online-Brochure.pdf"
+                  href={brochureHref()}
+                  external
                   variant="outline"
                 >
                   Download Brochure

@@ -8,14 +8,20 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  --gap: clamp(14px, #{u(20)}, 22px);
-  gap: var(--gap);
+  gap: #{u(20)};
   padding: 0;
   list-style: none;
 
-  // fixed home-card width: 5 per row on big desktops, fewer as the screen narrows
+  // five home-size cards in one row: the row breaks out of the section's narrower content box (the home faculty strip is that wide too)
+  width: #{u(1730)};
+  max-width: calc(100vw - 24px);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
   li {
-    width: max(220px, #{u(330)}); // same width as the home cards
+    width: #{u(330)}; // same width as the home cards
+    min-width: 190px;
   }
 
   @include down($bp-sm) {
@@ -80,7 +86,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   flex: 1;
   flex-direction: column;
   min-height: #{u(193)}; // home card body
-  padding: clamp(12px, #{u(14)}, 16px) clamp(12px, #{u(16)}, 16px) clamp(14px, #{u(22)}, 22px);
+  padding: #{u(11.16)} #{u(15)} #{u(25)}; // same padding as the home faculty card
 
   h3 {
     font-size: clamp(17px, #{u(20)}, 20px);

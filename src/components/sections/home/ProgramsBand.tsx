@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useEnquiry } from '@/components/layout/EnquiryProvider';
+import { brochureHref } from '@/data/brochures';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Icon } from '@/components/ui/Icon';
@@ -258,8 +259,8 @@ export function ProgramsBand({
                   <div className={s.detailBtns}>
                     <ArrowLink href={p.href}>Explore Program</ArrowLink>
                     <ArrowLink
-                      href="/docs/dsu-online-brochure.pdf"
-                      download={`DSU-Online-${code.toUpperCase()}-Brochure.pdf`}
+                      href={brochureHref(code)}
+                      external
                       variant="outline"
                     >
                       Download Brochure

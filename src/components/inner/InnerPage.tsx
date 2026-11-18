@@ -1,3 +1,4 @@
+import { brochureHref } from '@/data/brochures';
 import Image from 'next/image';
 import Link from 'next/link';
 import { heroSlides } from '@/data/home';
@@ -193,9 +194,8 @@ export function InnerHero({
               Apply Now
             </ArrowLink>
           )}
-          <EnquireButton />
           {facts && facts.length > 0 && (
-            <ArrowLink href="/docs/dsu-online-brochure.pdf" download="DSU-Online-Brochure.pdf" variant="outline">
+            <ArrowLink href={brochureHref(crumbs.find((c) => /^\/online-/.test(c.href ?? ''))?.href?.replace(/^\/online-/, ''))} external variant="outline">
               Download Brochure
             </ArrowLink>
           )}

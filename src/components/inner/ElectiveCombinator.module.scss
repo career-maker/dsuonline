@@ -34,8 +34,6 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 .lead {
   @include body-text;
-  font-size: 13px; // programme section intro: 13px black
-  color: #000;
   max-width: 44em;
   margin-top: clamp(14px, #{u(20)}, 20px);
 }
@@ -97,36 +95,11 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   color: $body;
 }
 
-.group {
-  margin: clamp(16px, #{u(24)}, 24px) 0 0;
-  padding: 0;
-  border: 0;
-
-  legend {
-    padding: 0;
-    font-size: clamp(13px, #{u(15)}, 15px);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: $blue;
-  }
-}
-
-.sel small {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: $blue;
-}
-
 .options {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 clamp(14px, #{u(28)}, 28px);
-  margin-top: 10px;
+  margin-top: clamp(16px, #{u(26)}, 26px);
   padding: 0;
   list-style: none;
 
@@ -184,7 +157,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   width: 26px;
   height: 26px;
   border: 1.5px solid #4fa3ff;
-  border-radius: 50%;
+  border-radius: 7px;
   background: #fff;
   font-size: 13px;
   font-weight: 700;
@@ -203,7 +176,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .on {
   .box {
     border-color: $blue;
-    background: radial-gradient(#fff 0 32%, $blue 36%);
+    background: $blue;
     transform: scale(1.06);
   }
 
@@ -415,4 +388,19 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   text-align: left;
   white-space: normal;
   line-height: 1.3;
+}
+
+// photo of the chosen elective, under its name
+.selPic {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: $bg-sky;
+}
+
+.selImg {
+  object-fit: cover;
 }

@@ -32,7 +32,7 @@
 
 .desc {
   @include body-text;
-  font-size: 13px; // programme section intro: 13px black
+  font-size: max(15px, calc(var(--u) * 17)); // programme section intro: black, 15px minimum
   color: #000;
   max-width: 32em;
   margin-top: clamp(14px, #{u(20)}, 20px);
