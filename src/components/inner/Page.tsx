@@ -34,6 +34,7 @@ import { ProgramCertificate } from './ProgramCertificate';
 import { faqFor } from '@/data/programme-faq';
 import { buildCurriculum } from './curriculumData';
 import { advantageLead, dualCopy } from '@/data/programme-advantage';
+import { dualOn } from '@/data/programme-architect';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Faq } from '@/components/sections/home/Faq';
 import { SPEC_EXTRAS } from '@/data/spec-extras';
@@ -896,11 +897,12 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           />
         </Sec>,
       );
-      nodes.push(
-        <Sec key={`${key}-pair`} tone="sky" id="pair">
-          <ElectiveCombinator programName={progName} programCode={slug.replace(/^online-/, '')} electives={programLinks.map((x) => ({ name: x.name, blurb: x.blurb }))} />
-        </Sec>,
-      );
+      if (dualOn(slug))
+        nodes.push(
+          <Sec key={`${key}-pair`} tone="sky" id="pair">
+            <ElectiveCombinator programName={progName} programCode={slug.replace(/^online-/, '')} electives={programLinks.map((x) => ({ name: x.name, blurb: x.blurb }))} />
+          </Sec>,
+        );
       continue;
     }
 
@@ -1023,7 +1025,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         }
         nodes.push(
           <Sec key={`${key}-guidance`} tone="white" compact id="admission-guidance">
-            <ProgramGuidance name={progShortName} code={slug.replace(/^online-/, '')} degree={/^(mba|mca)$/.test(slug.replace(/^online-/, '')) ? "Master's degree" : "Bachelor's degree"} dual={!!facts?.find((f) => /^elective$/i.test(f.label)) && !!dualCopy[slug]} />
+            <ProgramGuidance name={progShortName} code={slug.replace(/^online-/, '')} degree={/^(mba|mca)$/.test(slug.replace(/^online-/, '')) ? "Master's degree" : "Bachelor's degree"} dual={dualOn(slug) && !!facts?.find((f) => /^elective$/i.test(f.label)) && !!dualCopy[slug]} />
           </Sec>,
         );
         continue;
@@ -1277,7 +1279,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         name={progShort}
         closing="Degree Online."
         desc={HERO_DESC[slug] ?? (subtitle ?? raw.filter(isP).find((b) => b.x.length > 150)?.x)?.split(/(?<=\.)\s/)[0]}
-        pill={fv(/^elective$/i) && nElec > 1 ? { tag: 'DUAL', text: `Every learner specialises in 2 of ${nElec} electives`, href: '#pair' } : undefined}
+        pill={dualOn(slug) && fv(/^elective$/i) && nElec > 1 ? { tag: 'DUAL', text: `Every learner specialises in 2 of ${nElec} electives`, href: '#pair' } : undefined}
         stats={[
           { value: num(dur.value), label: /year/i.test(dur.value) ? (num(dur.value) > 1 ? 'Years' : 'Year') : 'Months', note: 'Programme duration' },
           { value: num(dur.note), label: 'Semesters', note: 'Structured learning' },
@@ -1337,7 +1339,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       steps: admissionSteps,
       eligibility: eligTextOuter,
       about: (HERO_DESC[slug] ?? subtitle ?? raw.filter(isP).find((b) => b.x.length > 150)?.x)?.split(/(?<=\.)\s/)[0],
-      dual: !!fv(/^elective$/i) && !!dualCopy[slug],
+      dual: dualOn(slug) && !!fv(/^elective$/i) && !!dualCopy[slug],
     });
     nodes.splice(
       faqAt,
@@ -1353,7 +1355,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         <ProgramAdvantage
           name={progShort}
           lead={advantageLead[slug] ?? `A flexible ${num(dur?.value)}-${/year/i.test(dur?.value ?? '') ? 'year' : 'month'} online programme with in-demand electives for learners across industries.`}
-          dual={fv(/^elective$/i) && dualCopy[slug] ? { text: dualCopy[slug], href: '#pair' } : undefined}
+          dual={dualOn(slug) && fv(/^elective$/i) && dualCopy[slug] ? { text: dualCopy[slug], href: '#pair' } : undefined}
           bannerSrc="/images/inner/advantage-banner.webp"
         />
       )}

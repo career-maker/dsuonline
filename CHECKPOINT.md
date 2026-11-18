@@ -276,3 +276,7 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 ### Update: common sections + specialization template
 - Programme FAQ now uses the home `Faq`; ProgramFaq/ProgramNextStep removed. Reviews: all inner pages use `StoryCards`/`TestimonialShowcase` (QuoteCards removed). Faculty: `FacultyGrid` -> `ProgramFaculty` (home-style card).
 - Specialization pages: one template in `Page.tsx` (ProgramHero, ProgramAbout, modules/career cards, awards, shared testimonials, home FAQ built from page data).
+
+
+## 2026-11-18 Dual specialisation
+- Dual block (pill, #pair combinator, guidance, advantage copy) shown only for programmes in `DUAL_PROGRAMMES` (`src/data/programme-architect.ts`, now `['mba']`). Add bba/bca/bcom/mca there to re-enable. Combinator now Major + Minor radio lists (can't pick same elective twice).

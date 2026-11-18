@@ -29,17 +29,17 @@ function Benefit({ icon, title, text }: { icon: keyof typeof ICON; title: string
 }
 
 /**
- * Dual specialisation builder: tick any two electives (never more than two) and the combination is previewed beside the list.
+ * Dual specialisation builder: pick one major and one minor elective (never the same one twice); the combination is previewed beside the lists.
  * Electives come from the page; the wording from `programme-architect.ts`.
  */
 export function ElectiveCombinator({ programName, programCode, electives }: { programName: string; programCode: string; electives: Elective[] }) {
   const { open } = useEnquiry();
   const copy = architectCopy(programName, electives.map((e) => e.name), programCode === 'mba');
-  const [picked, setPicked] = useState<number[]>(electives.length > 1 ? [0, 1] : [0]); // selection order = badge number
-  const full = picked.length >= 2;
-
-  const toggle = (i: number) => setPicked((p) => (p.includes(i) ? p.filter((x) => x !== i) : p.length < 2 ? [...p, i] : p));
-  const chosen = picked.map((i) => electives[i]);
+  const [major, setMajor] = useState<number | null>(0);
+  const [minor, setMinor] = useState<number | null>(electives.length > 1 ? 1 : null);
+  const chosen = [major, minor].map((i) => (i === null ? undefined : electives[i]));
+  const both = !!chosen[0] && !!chosen[1];
+  const title = both ? `Online ${programName} in ${chosen[0]!.name} & ${chosen[1]!.name}` : undefined;
 
   return (
     <div className={s.wrap}>
@@ -63,27 +63,32 @@ export function ElectiveCombinator({ programName, programCode, electives }: { pr
         <section className={s.pick} aria-labelledby="architect-pick">
           <h3 id="architect-pick">{copy.buildTitle}</h3>
           <p className={s.hint}>{copy.buildHint}</p>
-          <ul className={s.options}>
-            {electives.map((e, i) => {
-              const n = picked.indexOf(i);
-              const on = n >= 0;
-              const locked = full && !on;
-              return (
-                <li key={e.name}>
-                  <label className={`${s.opt} ${on ? s.on : ''} ${locked ? s.locked : ''}`}>
-                    <input type="checkbox" checked={on} disabled={locked} onChange={() => toggle(i)} />
-                    <span className={s.box} aria-hidden="true">
-                      {on ? n + 1 : ''}
-                    </span>
-                    <span className={s.name}>{e.name}</span>
-                  </label>
-                </li>
-              );
-            })}
-          </ul>
+          {([
+            ['Major elective', major, setMajor, minor],
+            ['Minor elective', minor, setMinor, major],
+          ] as const).map(([label, val, set, other]) => (
+            <fieldset key={label} className={s.group}>
+              <legend>{label}</legend>
+              <ul className={s.options}>
+                {electives.map((e, i) => {
+                  const on = val === i;
+                  const locked = other === i; // same elective cannot be both major and minor
+                  return (
+                    <li key={e.name}>
+                      <label className={`${s.opt} ${on ? s.on : ''} ${locked ? s.locked : ''}`}>
+                        <input type="radio" name={`${label}-${programCode}`} checked={on} disabled={locked} onChange={() => set(i)} />
+                        <span className={s.box} aria-hidden="true" />
+                        <span className={s.name}>{e.name}</span>
+                      </label>
+                    </li>
+                  );
+                })}
+              </ul>
+            </fieldset>
+          ))}
           <div className={s.foot}>
-            <span aria-live="polite">{picked.length} of 2 selected</span>
-            <button type="button" onClick={() => setPicked([])} disabled={!picked.length}>
+            <span aria-live="polite">{(major !== null ? 1 : 0) + (minor !== null ? 1 : 0)} of 2 selected</span>
+            <button type="button" onClick={() => { setMajor(null); setMinor(null); }} disabled={major === null && minor === null}>
               Clear selection
             </button>
           </div>
@@ -91,24 +96,25 @@ export function ElectiveCombinator({ programName, programCode, electives }: { pr
 
         <aside className={s.result} aria-live="polite">
           <p className={s.kicker}>Your dual specialisation</p>
-          <h3>{chosen.length === 2 ? `Online ${programName} in ${chosen[0].name} & ${chosen[1].name}` : `Online ${programName} with Dual Specialisation`}</h3>
+          <h3>{title ?? `Online ${programName} with Dual Specialisation`}</h3>
           <div className={s.pair}>
-            {[0, 1].map((slot) => {
+            {(['Major', 'Minor'] as const).map((role, slot) => {
               const e = chosen[slot];
               return e ? (
-                <div key={e.name} className={s.sel}>
+                <div key={role} className={s.sel}>
+                  <small>{role}</small>
                   <b>{e.name}</b>
                   {e.blurb && <p>{e.blurb}</p>}
                 </div>
               ) : (
-                <div key={slot} className={`${s.sel} ${s.empty}`}>
-                  <b>Choose a specialisation</b>
-                  <p>Tick {slot === 0 ? 'your first' : 'one more'} from the list.</p>
+                <div key={role} className={`${s.sel} ${s.empty}`}>
+                  <small>{role}</small>
+                  <b>Choose a {role.toLowerCase()} elective</b>
                 </div>
               );
             })}
           </div>
-          <ArrowLink variant="outline" className={s.cta} onClick={() => open(programCode, chosen.length === 2 ? `Online ${programName} in ${chosen[0].name} & ${chosen[1].name}` : undefined)}>
+          <ArrowLink variant="outline" className={s.cta} onClick={() => open(programCode, title)}>
             {copy.cta}
           </ArrowLink>
         </aside>

@@ -24,16 +24,15 @@
   "22": "parse.ts",
   "23": "FeeTabs.tsx",
   "24": "ProgramAdvantage.tsx",
-  "25": "ProgramAbout.tsx",
-  "26": "layout.tsx",
+  "25": "[...slug]/page.tsx",
+  "26": "ElectiveCombinator.tsx",
   "27": "not-found.tsx",
-  "28": "specViews",
+  "28": "CardSlider",
   "29": "slugify",
   "30": "programme-faq.ts",
-  "31": "CardSlider",
   "32": "FacultyArticles.tsx",
   "33": "next",
-  "37": "Learning.tsx",
+  "37": "Icon",
   "38": "ProgramFaculty.tsx",
-  "39": "Faq.tsx"
+  "39": "Icon.tsx"
 }

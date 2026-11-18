@@ -95,11 +95,36 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   color: $body;
 }
 
+.group {
+  margin: clamp(16px, #{u(24)}, 24px) 0 0;
+  padding: 0;
+  border: 0;
+
+  legend {
+    padding: 0;
+    font-size: clamp(13px, #{u(15)}, 15px);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $blue;
+  }
+}
+
+.sel small {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $blue;
+}
+
 .options {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 clamp(14px, #{u(28)}, 28px);
-  margin-top: clamp(16px, #{u(26)}, 26px);
+  margin-top: 10px;
   padding: 0;
   list-style: none;
 
@@ -157,7 +182,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   width: 26px;
   height: 26px;
   border: 1.5px solid #4fa3ff;
-  border-radius: 7px;
+  border-radius: 50%;
   background: #fff;
   font-size: 13px;
   font-weight: 700;
@@ -176,7 +201,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .on {
   .box {
     border-color: $blue;
-    background: $blue;
+    background: radial-gradient(#fff 0 32%, $blue 36%);
     transform: scale(1.06);
   }
 

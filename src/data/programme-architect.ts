@@ -2,6 +2,10 @@
  * Copy for the "Interactive Elective Architect" block on programme pages (dual specialisation).
  * MBA wording is the client's; other programmes get the same sentences with their own electives filled in. CMS-ready.
  */
+/** Programmes that show dual specialisation. Add a code (bba, bca, bcom, mca) to switch it on for that programme; CMS flag later. */
+export const DUAL_PROGRAMMES = ['mba'];
+export const dualOn = (slug: string) => DUAL_PROGRAMMES.includes(slug.replace(/^online-/, ''));
+
 export type ArchitectCopy = {
   eyebrow: string;
   title: string;
@@ -28,7 +32,7 @@ export function architectCopy(name: string, electives: string[], isMba: boolean)
       { value: '1', label: `UGC-entitled Online ${name}` },
     ],
     buildTitle: 'Build your dual specialisation',
-    buildHint: 'Select any two specialisations to preview your combination.',
+    buildHint: 'Pick one major elective and one minor elective to preview your combination.',
     benefits: [
       {
         icon: 'branch',
