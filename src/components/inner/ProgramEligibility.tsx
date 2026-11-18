@@ -4,12 +4,16 @@ import s from './ProgramEligibility.module.scss';
 
 /** the live page prints the criteria as one paragraph: split it into its sentences (not at "B.Tech." style abbreviations) */
 export function criteria(text: string): string[] {
-  return text
+  const list = text
     .replace(/\s+([,.;])/g, '$1') // the live copy has stray spaces before punctuation ("45% , as")
     .split(/(?<=[a-z0-9)%])\.\s*(?=[A-Z])/)
     .map((x) => x.trim())
     .filter(Boolean)
     .map((x) => (/[.)]$/.test(x) ? x : `${x}.`));
+  // the SC / ST / OBC relaxation belongs with the 50% aggregate rule it relaxes: one point
+  const i = list.findIndex((x, k) => k > 0 && /^candidates belonging to sc/i.test(x));
+  if (i > 0) list.splice(i - 1, 2, `${list[i - 1]} ${list[i]}`);
+  return list;
 }
 
 const CAP = 'M2 9l10-5 10 5-10 5L2 9zm4 3.5V17c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6';

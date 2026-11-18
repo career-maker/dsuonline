@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1794990111.9069612,
-    "seen": 1794990120.918588,
-    "ast_hash": "6d48993048d4c8ee0b5403435b42da5f",
+    "mtime": 1794990790.7118595,
+    "seen": 1794990799.5180655,
+    "ast_hash": "4055ab8ced3797cbb7977f578c169f02",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -708,9 +708,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/ProgramLearning.tsx": {
-    "mtime": 1794559642.7121842,
-    "seen": 1794559890.4599826,
-    "ast_hash": "dd8a23ab97b808774146aae893b0d37c",
+    "mtime": 1794990682.3492765,
+    "seen": 1794990799.5179007,
+    "ast_hash": "81efac79a07030eb09d85998993dab3e",
     "semantic_hash": ""
   },
   "src/components/inner/ProgramEligibility.tsx": {
