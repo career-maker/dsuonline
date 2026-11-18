@@ -158,7 +158,7 @@ export function ProgramsBand({
             const ph = photos[code];
             return (
               <article key={code} className={s.card}>
-                <Link href={p.href} className={s.media} aria-label={`Explore ${p.name} - ${p.fullName} Program`}>
+                <Link prefetch={false} href={p.href} className={s.media} aria-label={`Explore ${p.name} - ${p.fullName} Program`}>
                   <FramedImage
                     src={`/images/programs/${code}.webp`}
                     alt={`Learner pursuing ${p.name} online`}
@@ -176,7 +176,7 @@ export function ProgramsBand({
                   </span>
                 </Link>
                 <h3>
-                  <Link href={p.href}>{p.name}</Link>
+                  <Link prefetch={false} href={p.href}>{p.name}</Link>
                 </h3>
                 <p className={s.full}>{p.fullName}</p>
                 <ul className={s.meta}>
@@ -196,7 +196,7 @@ export function ProgramsBand({
                   </li>
                 </ul>
                 <div className={s.foot}>
-                  <Link href={p.href} className={s.explore} aria-label={`Explore ${p.name} - ${p.fullName} Program`}>
+                  <Link prefetch={false} href={p.href} className={s.explore} aria-label={`Explore ${p.name} - ${p.fullName} Program`}>
                     Explore Program &gt;
                   </Link>
                   <ArrowLink
@@ -216,7 +216,7 @@ export function ProgramsBand({
                   <div className={s.detailTop}>
                     <div>
                       <p className={s.detailName}>
-                        <Link href={p.href}>{p.name}</Link>
+                        <Link prefetch={false} href={p.href}>{p.name}</Link>
                       </p>
                       <p className={s.detailFull}>
                         {p.lines[0]}
@@ -245,12 +245,12 @@ export function ProgramsBand({
                   <ul className={s.chips}>
                     {p.specializations.slice(0, 4).map((sp) => (
                       <li key={sp.slug}>
-                        <Link href={specializationHref(p, sp)}>{sp.name}</Link>
+                        <Link prefetch={false} href={specializationHref(p, sp)}>{sp.name}</Link>
                       </li>
                     ))}
                     {p.specializations.length > 4 && (
                       <li>
-                        <Link href={p.href} className={s.more}>
+                        <Link prefetch={false} href={p.href} className={s.more}>
                           More +
                         </Link>
                       </li>

@@ -117,7 +117,7 @@ export function BlogSlider({ slides }: { slides: Slide[] }) {
       >
         {slides.map((b, i) => (
           <li key={b.slug} className={s.card}>
-            <Link href={`/resources/blogs/${b.slug}`} className={s.photoLink} aria-label={b.title} tabIndex={-1}>
+            <Link prefetch={false} href={`/resources/blogs/${b.slug}`} className={s.photoLink} aria-label={b.title} tabIndex={-1}>
               <Image src={b.image} alt={b.alt} fill sizes="(max-width: 600px) 90vw, (max-width: 1200px) 48vw, 32vw" className={s.photo} loading="lazy" />
             </Link>
             <span className={s.shade} />
@@ -130,10 +130,10 @@ export function BlogSlider({ slides }: { slides: Slide[] }) {
             </time>
             <div className={s.body}>
               <h3>
-                <Link href={`/resources/blogs/${b.slug}`}>{b.title}</Link>
+                <Link prefetch={false} href={`/resources/blogs/${b.slug}`}>{b.title}</Link>
               </h3>
               <p>{b.excerpt}</p>
-              <Link href={`/resources/blogs/${b.slug}`} className={s.read} aria-label={`Read article: ${b.title}`}>
+              <Link prefetch={false} href={`/resources/blogs/${b.slug}`} className={s.read} aria-label={`Read article: ${b.title}`}>
                 Read Article
               </Link>
             </div>

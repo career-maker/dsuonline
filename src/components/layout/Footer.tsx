@@ -12,7 +12,7 @@ export function Footer() {
       <div className={s.inner}>
         <div className={s.top}>
           <div className={s.brand}>
-            <Link href="/" aria-label="Dayananda Sagar University Online - home">
+            <Link prefetch={false} href="/" aria-label="Dayananda Sagar University Online - home">
               <Image src="/images/brand/logo-dark.webp" alt="Dayananda Sagar University Online" width={401} height={80} />
             </Link>
             <address>Kudlu Gate, Hosur Road, Bengaluru - 560 114</address>
@@ -33,7 +33,7 @@ export function Footer() {
                 <ul>
                   {c.links.map((l) => (
                     <li key={l.label}>
-                      <Link href={l.href}>{l.label}</Link>
+                      <Link prefetch={false} href={l.href}>{l.label}</Link>
                     </li>
                   ))}
                 </ul>
@@ -43,7 +43,7 @@ export function Footer() {
               <ul>
                 {programs.map((p) => (
                   <li key={p.code}>
-                    <Link href={p.href}>{p.name}</Link>
+                    <Link prefetch={false} href={p.href}>{p.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -52,7 +52,7 @@ export function Footer() {
               <ul>
                 {footerColumns[2].links.map((l) => (
                   <li key={l.label}>
-                    <Link href={l.href}>{l.label}</Link>
+                    <Link prefetch={false} href={l.href}>{l.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -82,7 +82,7 @@ export function Footer() {
               <ul>
                 {p.specializations.map((sp) => (
                   <li key={sp.slug}>
-                    <Link href={specializationHref(p, sp)}>{sp.name}</Link>
+                    <Link prefetch={false} href={specializationHref(p, sp)}>{sp.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -94,7 +94,7 @@ export function Footer() {
                 <ul>
                   {p.specializations.map((sp) => (
                     <li key={sp.slug}>
-                      <Link href={specializationHref(p, sp)}>{sp.name}</Link>
+                      <Link prefetch={false} href={specializationHref(p, sp)}>{sp.name}</Link>
                     </li>
                   ))}
                 </ul>
@@ -109,7 +109,7 @@ export function Footer() {
         <div className={s.barInner}>
           <p>Copyright © 2026 DSU. All Rights Reserved</p>
           <p>
-            <Link href="/privacy-policy">Privacy Policy</Link> | <Link href="/privacy-policy#dnd-terms-and-conditions">Terms &amp; Conditions</Link>
+            <Link prefetch={false} href="/privacy-policy">Privacy Policy</Link> | <Link prefetch={false} href="/privacy-policy#dnd-terms-and-conditions">Terms &amp; Conditions</Link>
           </p>
           <p className={s.credit}>
             Designed &amp; Developed&nbsp; By:

@@ -266,7 +266,7 @@ export function FacultyArticles() {
                   {a.excerpt[0]} <br className={s.br} />
                   {a.excerpt[1]}
                 </p>
-                <Link href={`/resources/blogs/${a.post}`} className={s.read}>
+                <Link prefetch={false} href={`/resources/blogs/${a.post}`} className={s.read}>
                   Read Article &gt;
                 </Link>
                 <div className={s.author}>
@@ -281,7 +281,7 @@ export function FacultyArticles() {
                     <b>{a.author.name}</b>
                     <span>{a.author.role}</span>
                     <p>
-                      <Link href="/academics-at-dsu">View Profile &gt;</Link>
+                      <Link prefetch={false} href="/academics-at-dsu">View Profile &gt;</Link>
                       <a href="https://www.linkedin.com/company/dsuonline" target="_blank" rel="noopener noreferrer">
                         LinkedIn <Icon name="linkedin" />
                       </a>

@@ -47,7 +47,7 @@ export function ArrowLink(props: Props) {
       {inner}
     </a>
   ) : (
-    <Link href={props.href} className={cls}>
+    <Link prefetch={false} href={props.href} className={cls}>
       {inner}
     </Link>
   );

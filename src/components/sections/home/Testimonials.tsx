@@ -25,7 +25,7 @@ export function Testimonials() {
                   <>
                     {' '}
                     {t.href ? (
-                      <Link href={t.href} className={s.tickerLink} aria-label={`View ${t.text}`} tabIndex={i >= tickerItems.length ? -1 : undefined}>
+                      <Link prefetch={false} href={t.href} className={s.tickerLink} aria-label={`View ${t.text}`} tabIndex={i >= tickerItems.length ? -1 : undefined}>
                         {t.link}
                       </Link>
                     ) : (

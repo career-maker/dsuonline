@@ -312,7 +312,7 @@ export function LinkGrid({ items }: { items: { name: string; href: string; hint?
     <ul className={s.linkGrid}>
       {items.map((l) => (
         <li key={l.href}>
-          <Link href={l.href}>
+          <Link prefetch={false} href={l.href}>
             <span>
               <b>{l.name}</b>
               {l.hint && <small>{l.hint}</small>}
@@ -351,7 +351,7 @@ export function DocList({ items }: { items: { title: string; links: { x: string;
             {d.links.map((l) => {
               const h = localHref(l.href);
               return h.startsWith('/') ? (
-                <Link key={l.href} href={h}>
+                <Link prefetch={false} key={l.href} href={h}>
                   {l.x}
                 </Link>
               ) : (

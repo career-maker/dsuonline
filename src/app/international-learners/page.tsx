@@ -38,7 +38,7 @@ export default function InternationalLearners() {
             <nav aria-label="Breadcrumb" className={s.crumbs}>
               <ol>
                 <li>
-                  <Link href="/">Home</Link>
+                  <Link prefetch={false} href="/">Home</Link>
                 </li>
                 <li>
                   <span aria-current="page">International Learners</span>
@@ -226,7 +226,7 @@ export default function InternationalLearners() {
           <Rail className={s.progList} label="program" stagger>
             {intlPrograms.map((p) => (
               <li key={p.code} className={s.prog}>
-                <Link href={p.href} className={s.progPhoto} aria-label={`${p.cta} - ${p.title} programme page`} tabIndex={-1}>
+                <Link prefetch={false} href={p.href} className={s.progPhoto} aria-label={`${p.cta} - ${p.title} programme page`} tabIndex={-1}>
                   <Image src={img(p.code)} alt={p.alt} fill sizes="(max-width: 760px) 90vw, (max-width: 1200px) 50vw, 33vw" />
                 </Link>
                 <div className={s.progBody}>
@@ -238,7 +238,7 @@ export default function InternationalLearners() {
                       <li key={c}>{c}</li>
                     ))}
                   </ul>
-                  <Link href={p.href} className={s.go}>
+                  <Link prefetch={false} href={p.href} className={s.go}>
                     {p.cta} <span aria-hidden="true">→</span>
                   </Link>
                 </div>

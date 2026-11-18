@@ -296,3 +296,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - About: new banner (banner-about.webp), new right image about-cafe.webp (home + about), play button shown on About page card.
 - Console: removed duplicate allowFullScreen on YouTube iframes. NavProgress (layout): top progress bar on internal link click + hard-navigation fallback after 6s if client navigation stalls.
 - Home FAQ image -> faq-learner.webp (navy fade added for text), header home icon larger, footer specialization links 16px-scaled (min 14px).
+- Navigation: links no longer prefetch on sight (prefetch={false} everywhere; flood of background fetches queued ahead of clicks on the slow server); NavProgress prefetches on hover/touch and shows bar + dimmed page + progress cursor instantly on click (capture-phase listener).

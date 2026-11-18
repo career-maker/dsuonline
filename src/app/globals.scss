@@ -189,3 +189,13 @@ h3 {
 html.menu-open {
   overflow: hidden;
 }
+
+// a page change is loading: pointer shows progress and the page dims slightly so the click clearly registered
+html.is-navigating {
+  cursor: progress;
+
+  main {
+    opacity: 0.72;
+    transition: opacity 0.25s ease;
+  }
+}

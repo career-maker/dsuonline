@@ -9,7 +9,7 @@ function Card({ l }: { l: Item }) {
   // photos live in public/images/electives/<slug>.webp
   const slug = l.href.split('/').pop()!.replace('&', '-and-');
   return (
-    <Link href={l.href} className={s.card}>
+    <Link prefetch={false} href={l.href} className={s.card}>
       <span className={s.pic}>
         <Image src={`/images/electives/${slug}.webp`} alt="" fill sizes="(max-width: 600px) 78vw, (max-width: 1200px) 45vw, 22vw" className={s.img} />
       </span>

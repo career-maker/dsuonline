@@ -86,7 +86,7 @@ function SectionView({ sec, tone, programLinks }: { sec: Section; tone: 'white' 
           <ul className={s.electives}>
             {programLinks.map((l) => (
               <li key={l.href}>
-                <Link href={l.href}>
+                <Link prefetch={false} href={l.href}>
                   <span>{l.name}</span>
                   <em>Know More</em>
                 </Link>
@@ -148,7 +148,7 @@ export function InnerHero({
           <ol>
             {crumbs.map((c, i) => (
               <li key={c.label}>
-                {c.href && i < crumbs.length - 1 ? <Link href={c.href}>{c.label}</Link> : <span aria-current="page">{c.label}</span>}
+                {c.href && i < crumbs.length - 1 ? <Link prefetch={false} href={c.href}>{c.label}</Link> : <span aria-current="page">{c.label}</span>}
               </li>
             ))}
           </ol>

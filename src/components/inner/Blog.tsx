@@ -27,7 +27,7 @@ export function BlogIndex({ page }: { page: number }) {
               const c = toSlide(p);
               return (
                 <li key={c.slug} className={s.acard}>
-                  <Link href={`/resources/blogs/${c.slug}`} className={s.aphoto} aria-label={c.title} tabIndex={-1}>
+                  <Link prefetch={false} href={`/resources/blogs/${c.slug}`} className={s.aphoto} aria-label={c.title} tabIndex={-1}>
                     {c.image && <Image src={c.image} alt={c.alt} fill sizes="(max-width: 600px) 90vw, (max-width: 1200px) 48vw, 32vw" />}
                   </Link>
                   <div className={s.abody}>
@@ -36,10 +36,10 @@ export function BlogIndex({ page }: { page: number }) {
                       {c.ord} {c.month}
                     </time>
                     <h3>
-                      <Link href={`/resources/blogs/${c.slug}`}>{c.title}</Link>
+                      <Link prefetch={false} href={`/resources/blogs/${c.slug}`}>{c.title}</Link>
                     </h3>
                     <p>{c.excerpt}</p>
-                    <Link href={`/resources/blogs/${c.slug}`} className={s.aread} aria-label={`Read article: ${c.title}`}>
+                    <Link prefetch={false} href={`/resources/blogs/${c.slug}`} className={s.aread} aria-label={`Read article: ${c.title}`}>
                       Read Article &gt;
                     </Link>
                   </div>
@@ -149,13 +149,13 @@ export function BlogPost({ data, slug }: { data: PageData; slug?: string }) {
             {/* Next / Previous Navigation Bar */}
             <nav className={s.postNav} aria-label="Previous and next articles">
               {prevPost && (
-                <Link href={`/resources/blogs/${prevPost.slug}`} className={s.navPrev}>
+                <Link prefetch={false} href={`/resources/blogs/${prevPost.slug}`} className={s.navPrev}>
                   <span className={s.navArrow}>← Previous Article</span>
                   <strong className={s.navTitle}>{prevPost.title}</strong>
                 </Link>
               )}
               {nextPost && (
-                <Link href={`/resources/blogs/${nextPost.slug}`} className={s.navNext}>
+                <Link prefetch={false} href={`/resources/blogs/${nextPost.slug}`} className={s.navNext}>
                   <span className={s.navArrow}>Next Article →</span>
                   <strong className={s.navTitle}>{nextPost.title}</strong>
                 </Link>
@@ -190,7 +190,7 @@ export function BlogPost({ data, slug }: { data: PageData; slug?: string }) {
               <ul className={s.progList}>
                 {programs.map((p) => (
                   <li key={p.code}>
-                    <Link href={p.href} className={s.progItem}>
+                    <Link prefetch={false} href={p.href} className={s.progItem}>
                       <div>
                         <strong>{p.name}</strong>
                         <span>{p.fullName}</span>
@@ -208,7 +208,7 @@ export function BlogPost({ data, slug }: { data: PageData; slug?: string }) {
               <ul className={s.recentList}>
                 {recentPosts.map((r) => (
                   <li key={r.slug}>
-                    <Link href={`/resources/blogs/${r.slug}`} className={s.recentItem}>
+                    <Link prefetch={false} href={`/resources/blogs/${r.slug}`} className={s.recentItem}>
                       {r.image && (
                         <div className={s.recentThumb}>
                           <Image src={r.image} alt="" width={80} height={52} sizes="80px" />
@@ -237,7 +237,7 @@ export function BlogPost({ data, slug }: { data: PageData; slug?: string }) {
               <ul className={s.relatedGrid}>
                 {related.map((rb) => (
                   <li key={rb.slug} className={s.relatedCard}>
-                    <Link href={`/resources/blogs/${rb.slug}`} className={s.relatedThumb}>
+                    <Link prefetch={false} href={`/resources/blogs/${rb.slug}`} className={s.relatedThumb}>
                       {rb.image && (
                         <Image
                           src={rb.image}
@@ -251,10 +251,10 @@ export function BlogPost({ data, slug }: { data: PageData; slug?: string }) {
                     </Link>
                     <div className={s.relatedBody}>
                       <h3>
-                        <Link href={`/resources/blogs/${rb.slug}`}>{rb.title}</Link>
+                        <Link prefetch={false} href={`/resources/blogs/${rb.slug}`}>{rb.title}</Link>
                       </h3>
                       <p>{rb.excerpt}</p>
-                      <Link href={`/resources/blogs/${rb.slug}`} className={s.relatedMore}>
+                      <Link prefetch={false} href={`/resources/blogs/${rb.slug}`} className={s.relatedMore}>
                         Read Article →
                       </Link>
                     </div>

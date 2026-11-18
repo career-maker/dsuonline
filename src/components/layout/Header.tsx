@@ -141,7 +141,7 @@ export function Header() {
           </li>
         ) : (
         <li key={n.href}>
-          <Link href={n.href} onClick={closeAll}>
+          <Link prefetch={false} href={n.href} onClick={closeAll}>
             <span className={s.txt}>
               <b>{n.label}</b>
             </span>
@@ -172,14 +172,14 @@ export function Header() {
   return (
     <header className={`${s.header} ${stuck ? s.stuck : ''} ${hidden ? s.hide : ''}`} data-u>
       <div className={s.bar}>
-        <Link href="/" className={s.logo} aria-label="Dayananda Sagar University Online - home" onClick={closeAll}>
+        <Link prefetch={false} href="/" className={s.logo} aria-label="Dayananda Sagar University Online - home" onClick={closeAll}>
           <Image src="/images/brand/logo-header.webp" alt="Dayananda Sagar University Online" width={385} height={75} priority />
         </Link>
 
         <nav className={`${s.nav} ${menuOpen ? s.navOpen : ''} ${held ? s.held : ''}`} data-lenis-prevent aria-label="Primary" onMouseLeave={() => setHeld(false)}>
           <ul>
             <li>
-              <Link href="/" className={s.homeLink} aria-label="Home" onClick={closeAll}>
+              <Link prefetch={false} href="/" className={s.homeLink} aria-label="Home" onClick={closeAll}>
                 <Image className={s.ico} src="/icons/hdr-home.png" alt="" width={18} height={19} />
               </Link>
             </li>
@@ -196,7 +196,7 @@ export function Header() {
               <ul id={progId} className={`${s.dropdown} ${progOpen ? s.dropdownOpen : ''}`}>
                 {programs.map((p) => (
                   <li key={p.code}>
-                    <Link href={p.href} onClick={closeAll}>
+                    <Link prefetch={false} href={p.href} onClick={closeAll}>
                       <span className={s.code}>{p.name}</span>
                       <span className={s.txt}>
                         <b>{p.fullName}</b>
@@ -214,7 +214,7 @@ export function Header() {
             </li>
             {mainNav.map((n) => (
               <li key={n.href}>
-                <Link href={n.href} onClick={closeAll}>
+                <Link prefetch={false} href={n.href} onClick={closeAll}>
                   {n.label}
                 </Link>
               </li>
@@ -269,7 +269,7 @@ export function Header() {
                     {hits.length ? (
                       hits.map((h) => (
                         <li key={h.href + h.label}>
-                          <Link href={h.href} onClick={closeAll}>
+                          <Link prefetch={false} href={h.href} onClick={closeAll}>
                             {h.label}
                           </Link>
                         </li>
