@@ -264,9 +264,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/Faq.tsx": {
-    "mtime": 1794994381.7937107,
-    "seen": 1794994420.6557698,
-    "ast_hash": "83380a8dc10c848a2ea14a4505c99b36",
+    "mtime": 1795003419.595719,
+    "seen": 1795003532.3705611,
+    "ast_hash": "b3bff5358acc9a492c9319c8ecb5eaaf",
     "semantic_hash": ""
   },
   "src/components/sections/home/Hero.tsx": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1795002998.1511993,
-    "seen": 1795003008.3163362,
-    "ast_hash": "e8fd952e4e88a5348e21eee810410ab8",
+    "mtime": 1795003524.4981544,
+    "seen": 1795003532.3706565,
+    "ast_hash": "641233530e984321a1b835ed420501ab",
     "semantic_hash": ""
   },
   "CLAUDE.md": {

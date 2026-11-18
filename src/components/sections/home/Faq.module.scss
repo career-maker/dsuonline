@@ -300,10 +300,10 @@
   }
 }
 
-// the design photo has no overlay
+// navy fade at the bottom keeps the white call-to-action text readable on the light photo
 @include up($bp-lg) {
   .shade {
-    display: none;
+    background: linear-gradient(180deg, rgb(11 31 77 / 0%) 30%, rgb(11 31 77 / 55%) 62%, rgb(11 31 77 / 90%) 100%);
   }
 }
 

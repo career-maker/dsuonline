@@ -11,7 +11,7 @@ import s from './Faq.module.scss';
 const FIRST = 6;
 
 /** Default (home): list on the left, call-to-action panel on the right. `split` (inner pages): the questions run in two aligned columns, no numbers, no panel. */
-export function Faq({ items, title = 'Frequently Asked Questions', image = '/images/faq/cta.webp', split = false }: { items: FaqItem[]; title?: string; image?: string; split?: boolean }) {
+export function Faq({ items, title = 'Frequently Asked Questions', image = '/images/faq/faq-learner.webp', split = false }: { items: FaqItem[]; title?: string; image?: string; split?: boolean }) {
   const [open, setOpen] = useState<number | null>(null);
   const first = split ? FIRST : 5;
   const [shown, setShown] = useState(first);

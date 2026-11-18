@@ -295,3 +295,4 @@ Zip photos (public/images/inner/*): about-why tabs (9), /about quality+FAQ photo
 - Fixed React #418 hydration error (programme + international pages): TitleReveal no longer splits heading text into spans (raced hydration); headings now fade/rise as a block via classes only.
 - About: new banner (banner-about.webp), new right image about-cafe.webp (home + about), play button shown on About page card.
 - Console: removed duplicate allowFullScreen on YouTube iframes. NavProgress (layout): top progress bar on internal link click + hard-navigation fallback after 6s if client navigation stalls.
+- Home FAQ image -> faq-learner.webp (navy fade added for text), header home icon larger, footer specialization links 16px-scaled (min 14px).
