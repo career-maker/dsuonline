@@ -138,9 +138,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/WhyTabs.tsx": {
-    "mtime": 1793105676.3054962,
-    "seen": 1793773932.765446,
-    "ast_hash": "368866906a8393cce39d83b2f97d85bc",
+    "mtime": 1795067670.438341,
+    "seen": 1795067754.595722,
+    "ast_hash": "8e06d7b8b3851b86aed589302577feed",
     "semantic_hash": ""
   },
   "src/components/inner/clean.ts": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1795024404.6034214,
-    "seen": 1795024677.5243595,
-    "ast_hash": "ab71a53d5538783ae1e7deb00fb3a1fe",
+    "mtime": 1795067580.094839,
+    "seen": 1795067754.5958982,
+    "ast_hash": "31c96a50d140edfcb97eac9af35f7082",
     "semantic_hash": ""
   },
   "CLAUDE.md": {

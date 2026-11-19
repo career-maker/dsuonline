@@ -3,7 +3,10 @@
 import { useId, useState, type FormEvent } from 'react';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { site } from '@/data/site';
-import { submitEnquiry } from '@/lib/enquiry';
+import { CountryPicker } from '@/components/layout/CountryPicker';
+import ps from '@/components/layout/EnquiryModal.module.scss';
+import { defaultCountry, type Country } from '@/data/countries';
+import { normalisePhone, submitEnquiry } from '@/lib/enquiry';
 import { formCountries } from './data';
 import s from './International.module.scss';
 
@@ -17,6 +20,7 @@ export function CallbackForm() {
   const [phase, setPhase] = useState<Phase>('idle');
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [serverError, setServerError] = useState('');
+  const [dial, setDial] = useState<Country>(defaultCountry);
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -27,7 +31,8 @@ export function CallbackForm() {
     if (v('name').length < 2) found.name = 'Enter your full name.';
     if (!EMAIL.test(v('email'))) found.email = 'Enter a valid email, like name@example.com.';
     if (!v('country')) found.country = 'Select your country of residence.';
-    if (v('phone') && !/^\+?[\d\s\-().]{6,18}$/.test(v('phone'))) found.phone = 'Enter a valid phone number with country code.';
+    const num = normalisePhone(v('phone'), dial.iso);
+    if (num && !(dial.iso === 'in' ? /^[6-9]\d{9}$/ : /^\d{6,14}$/).test(num)) found.phone = dial.iso === 'in' ? 'Enter a valid 10-digit Indian mobile number.' : 'Enter a valid phone number (6-14 digits).';
     setErrors(found);
     const first = Object.keys(found)[0];
     if (first) return void e.currentTarget.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
@@ -37,7 +42,7 @@ export function CallbackForm() {
     const res = await submitEnquiry({
       name: v('name'),
       email: v('email'),
-      phone: v('phone'),
+      phone: num ? `${dial.dial}${num}` : '',
       otp: '',
       programme: v('programme'),
       state: '',
@@ -98,8 +103,11 @@ export function CallbackForm() {
           {err('country')}
         </div>
         <div className={s.field}>
-          <label htmlFor={`${uid}-phone`}>Phone (with country code)</label>
-          <input id={`${uid}-phone`} name="phone" type="tel" autoComplete="tel" placeholder="+971 ..." maxLength={20} {...bad('phone')} />
+          <label htmlFor={`${uid}-phone`}>Phone</label>
+          <div className={`${ps.phone} ${s.phoneRow}`}>
+            <CountryPicker value={dial} onChange={setDial} />
+            <input id={`${uid}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel-national" maxLength={16} {...bad('phone')} />
+          </div>
           {err('phone')}
         </div>
       </div>

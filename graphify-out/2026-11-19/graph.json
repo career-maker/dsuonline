@@ -4301,7 +4301,7 @@
       "node_kind": "heading",
       "norm_label": "update: common sections + specialization template",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L278"
+      "source_location": "L279"
     },
     {
       "id": "src_components_inner_page",
@@ -7784,7 +7784,7 @@
       "node_kind": "heading",
       "norm_label": "2026-10-30 inner-page photos",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L211"
+      "source_location": "L212"
     },
     {
       "id": "checkpoint_2026_11_18_dual_specialisation",
@@ -7796,7 +7796,7 @@
       "node_kind": "heading",
       "norm_label": "2026-11-18 dual specialisation",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L283"
+      "source_location": "L284"
     },
     {
       "id": "checkpoint_dsu_online_checkpoint_read_this_first_in_any_new_session",
@@ -7832,7 +7832,7 @@
       "node_kind": "heading",
       "norm_label": "next steps (do top item first when the user says \"continue\")",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L146"
+      "source_location": "L147"
     },
     {
       "id": "checkpoint_open_questions_asked_earlier_defaults_used",
@@ -7892,7 +7892,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-27 (qa-issue round, new account)",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L195"
+      "source_location": "L196"
     },
     {
       "id": "checkpoint_update_2026_10_28",
@@ -7904,7 +7904,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-10-28",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L203"
+      "source_location": "L204"
     },
     {
       "id": "checkpoint_update_2026_11_11",
@@ -7916,7 +7916,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-11-11",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L218"
+      "source_location": "L219"
     },
     {
       "id": "checkpoint_update_2026_11_12_shared_programme_hero_template",
@@ -7928,7 +7928,7 @@
       "node_kind": "heading",
       "norm_label": "update 2026-11-12: shared programme hero template",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L246"
+      "source_location": "L247"
     },
     {
       "id": "checkpoint_what_this_is",
@@ -24555,7 +24555,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L146",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -24577,7 +24577,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L195",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -24588,7 +24588,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L203",
+      "source_location": "L204",
       "weight": 1.0
     },
     {
@@ -24599,7 +24599,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L211",
+      "source_location": "L212",
       "weight": 1.0
     },
     {
@@ -24610,7 +24610,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L218",
+      "source_location": "L219",
       "weight": 1.0
     },
     {
@@ -24621,7 +24621,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L246",
+      "source_location": "L247",
       "weight": 1.0
     },
     {
@@ -24643,7 +24643,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L283",
+      "source_location": "L284",
       "weight": 1.0
     },
     {
@@ -24698,7 +24698,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHECKPOINT.md",
-      "source_location": "L278",
+      "source_location": "L279",
       "weight": 1.0
     },
     {
@@ -30564,7 +30564,7 @@
       "confidence_score": 0.95,
       "context": "ArrowLink",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L206",
+      "source_location": "L207",
       "weight": 1.0
     },
     {
@@ -30612,7 +30612,7 @@
       "confidence_score": 0.95,
       "context": "FacultyGrid",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L279",
+      "source_location": "L280",
       "weight": 1.0
     },
     {
@@ -30636,7 +30636,7 @@
       "confidence_score": 0.95,
       "context": "ProgramFaculty",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L279",
+      "source_location": "L280",
       "weight": 1.0
     },
     {
@@ -30672,7 +30672,7 @@
       "confidence_score": 0.95,
       "context": "Reveal",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L198",
+      "source_location": "L199",
       "weight": 1.0
     },
     {
@@ -30684,7 +30684,7 @@
       "confidence_score": 0.95,
       "context": "StoryCards",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L279",
+      "source_location": "L280",
       "weight": 1.0
     },
     {
@@ -30696,7 +30696,7 @@
       "confidence_score": 0.95,
       "context": "TestimonialShowcase",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L279",
+      "source_location": "L280",
       "weight": 1.0
     },
     {
@@ -30708,7 +30708,7 @@
       "confidence_score": 0.95,
       "context": "Testimonials",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L198",
+      "source_location": "L199",
       "weight": 1.0
     },
     {
@@ -30756,7 +30756,7 @@
       "confidence_score": 0.95,
       "context": "loadBlogPost",
       "source_file": "CHECKPOINT.md",
-      "source_location": "L196",
+      "source_location": "L197",
       "weight": 1.0
     },
     {
@@ -30773,5 +30773,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "070aa6ece0b598088bfc0d2644cd321b937c3cb4"
+  "built_at_commit": "6d65362bc58efab04f36dc1f22e8f87820099108"
 }

@@ -1760,6 +1760,20 @@ $gold-ink: #8c6500; // gold that passes AA on white
   }
 }
 
+// country-code picker + number joined as one field (picker comes from the enquiry popup)
+.field .phoneRow {
+  input {
+    border-radius: 0 12px 12px 0;
+  }
+
+  button {
+    border: 1.5px solid $iline;
+    border-right: 0;
+    border-radius: 12px 0 0 12px;
+    background: #f3f6fc;
+  }
+}
+
 .err {
   margin: 0;
   font-size: 7px; // 50% of the 14px field label
