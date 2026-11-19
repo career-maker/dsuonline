@@ -334,13 +334,13 @@ function curriculum(sec: Section): ReactNode | null {
   return <Tabs groups={groups} />;
 }
 
-function careers(sec: Section): ReactNode {
+function careers(sec: Section, code: string): ReactNode {
   const ps = sec.blocks.filter(isP).map((b) => b.x);
   const cards: { title: string; items: string[] }[] = [];
   for (let i = 0; i + 1 < ps.length; i += 2) cards.push({ title: ps[i], items: splitBullets(ps[i + 1]) });
   const ind = sec.subs.find((x) => /industr/i.test(x.title));
   const pairs = ind ? parsePairs(ind.blocks) : [];
-  return <CareerFlip careers={cards} industries={pairs} industriesTitle={ind?.title} />;
+  return <CareerFlip careers={cards} industries={pairs} industriesTitle={ind?.title} code={code} />;
 }
 
 function faculty(sec: Section): ReactNode {
@@ -633,7 +633,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (!cs || !pairs(cs).length) return null;
     return (
       <Sec key="career-path" tone={nextTone()} title={cs.title}>
-        <CareerFlip careers={pairs(cs).map((p) => ({ title: p.title, text: p.text }))} industries={is ? pairs(is) : []} industriesTitle={is?.title} />
+        <CareerFlip careers={pairs(cs).map((p) => ({ title: p.title, text: p.text }))} industries={is ? pairs(is) : []} industriesTitle={is?.title} code={slug.replace(/^online-/, '')} />
       </Sec>
     );
   };
@@ -990,7 +990,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
     if (/career options/i.test(title)) {
       nodes.push(
         <Sec key={key} tone={nextTone()} title={title}>
-          {careers(sec)}
+          {careers(sec, slug.replace(/^online-/, ''))}
         </Sec>,
       );
       continue;

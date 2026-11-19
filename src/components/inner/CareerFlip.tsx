@@ -2,6 +2,7 @@
 
 import { useState, type KeyboardEvent } from 'react';
 import { CardSlider } from '@/components/ui/CardSlider';
+import { industriesFor } from '@/data/career-industries';
 import s from './CareerFlip.module.scss';
 
 export type CareerItem = { title: string; items?: string[]; text?: string };
@@ -11,7 +12,7 @@ export type IndustryItem = { title: string; text: string };
  * Career options as flip cards: front = role group and its roles, back = the industries that hire (hover, tap or Enter/Space flips it).
  * Only the page's own career and industry copy is used.
  */
-export function CareerFlip({ careers, industries, industriesTitle = 'Industries' }: { careers: CareerItem[]; industries: IndustryItem[]; industriesTitle?: string }) {
+export function CareerFlip({ careers, industries, industriesTitle = 'Industries', code }: { careers: CareerItem[]; industries: IndustryItem[]; industriesTitle?: string; code?: string }) {
   const [open, setOpen] = useState<number | null>(null);
   const key = (e: KeyboardEvent, i: number) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -61,10 +62,8 @@ export function CareerFlip({ careers, industries, industriesTitle = 'Industries'
                   <p className={s.label}>{industriesTitle}</p>
                   <h3>{c.title}</h3>
                   <ul className={s.chips}>
-                    {industries.map((x) => (
-                      <li key={x.title} title={x.text}>
-                        {x.title}
-                      </li>
+                    {((code && industriesFor(code, c.title)?.map((x) => ({ title: x, text: '' }))) || industries).map((x) => (
+                      <li key={x.title} title={x.text || undefined}>{x.title}</li>
                     ))}
                   </ul>
                   <span className={s.hint}>Tap to flip back</span>

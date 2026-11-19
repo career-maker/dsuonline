@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/Page.tsx": {
-    "mtime": 1795067410.1673887,
-    "seen": 1795067566.8529124,
-    "ast_hash": "daa9a7872ee4d90cfe45c2ce77203d42",
+    "mtime": 1795070742.715468,
+    "seen": 1795070894.7933037,
+    "ast_hash": "5fa009866f86b55d595b21003700b471",
     "semantic_hash": ""
   },
   "src/components/inner/PayOptions.tsx": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1795067755.1214128,
-    "seen": 1795068987.5964537,
-    "ast_hash": "8d72bc72412cd72b58245eeff3163b3d",
+    "mtime": 1795068988.3222656,
+    "seen": 1795070894.793967,
+    "ast_hash": "f3f47adbbdda5cc4b1615153575e4ec9",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -516,9 +516,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/CareerFlip.tsx": {
-    "mtime": 1794562325.8469353,
-    "seen": 1794562561.1845422,
-    "ast_hash": "8f55005d82beabaabfc4d6cba1d15903",
+    "mtime": 1795070738.0215063,
+    "seen": 1795070894.7932105,
+    "ast_hash": "ccee0b601e2566c2af110760165d0341",
     "semantic_hash": ""
   },
   "src/components/inner/AdmissionSteps.tsx": {
@@ -789,6 +789,12 @@
     "mtime": 1795003928.3523483,
     "seen": 1795003993.8808324,
     "ast_hash": "84bf0460cb1c1aabb11c6ca12e806f6d",
+    "semantic_hash": ""
+  },
+  "src/data/career-industries.ts": {
+    "mtime": 1795070737.9423728,
+    "seen": 1795070894.793789,
+    "ast_hash": "6130d6b87d8c91c30bff5836e6f36627",
     "semantic_hash": ""
   }
 }

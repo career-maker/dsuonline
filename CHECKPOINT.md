@@ -143,6 +143,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - International page "Why learners worldwide" section: removed one-screen squeeze on desktop (roomy cards, 272px rows, 20px gap) to match `video-production/image copy 5.png`. Note: `#id` selectors in SCSS modules need `:global(#id)`; older `#why .head` rules in International.module.scss are dead.
 - `next build` ends with a SecurityFatalError nudge (Next 16.4.3 advisory) after generating pages; not caused by our code.
 - Programme pages: advantage banner photo -> advantage-banner-v2.webp; "Why DSU Online X" big photo -> prog-main-v2.webp, inset -> prog-inset-v2.webp (same on all five programmes; old prog-*.webp left unused).
+- Career Path flip cards: back of each card now lists that role's own industries (client list in src/data/career-industries.ts, by programme + role; falls back to the shared Industries list if a role is missing).
 - International callback form: phone label now just "Phone"; country-code CountryPicker (India default) joined to the number field, same as popup; submitted phone = dial + digits.
 - About "Why choose DSU": one shared photo (first item's, about-why-1) for all points in WhyTabs; only caption text changes.
 
