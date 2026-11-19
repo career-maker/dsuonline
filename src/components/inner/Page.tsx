@@ -1196,7 +1196,6 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
 
     // --- programme pages: "Why DSU Online <X>?" = text + benefits left, programme photo right
     if (programLinks && /^why\b/i.test(title) && !sec.subs.length) {
-      const code = slug.replace(/^online-/, '');
       const [pw, ph] = [538, 522];
       const paras = sec.blocks.filter(isP).filter((b) => b.x.length > 90).map((b) => b.x);
       const benefits = sec.blocks.filter(isP).filter((b) => b.x.length <= 90).map((b) => b.x);
@@ -1206,8 +1205,8 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
             title={title}
             paras={paras}
             items={benefits}
-            photo={`/images/inner/prog-${code}.webp`}
-            inset="/images/learn/live-classes.webp"
+            photo="/images/inner/prog-main-v2.webp"
+            inset="/images/inner/prog-inset-v2.webp"
             alt={`Learner pursuing ${title.replace(/^why\s+|\?$/gi, '')}`}
           />
         </Sec>,
@@ -1358,7 +1357,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           name={progShort}
           lead={advantageLead[slug] ?? `A flexible ${num(dur?.value)}-${/year/i.test(dur?.value ?? '') ? 'year' : 'month'} online programme with in-demand electives for learners across industries.`}
           dual={dualOn(slug) && fv(/^elective$/i) && dualCopy[slug] ? { text: dualCopy[slug], href: '#pair' } : undefined}
-          bannerSrc="/images/inner/advantage-banner.webp"
+          bannerSrc="/images/inner/advantage-banner-v2.webp"
         />
       )}
       {longSub && slug === 'student-testimonials' && subtitle && (
