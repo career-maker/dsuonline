@@ -1,7 +1,7 @@
 # Graph Report - dsu online  (2026-11-19)
 
 ## Corpus Check
-- 131 files · ~86,341 words
+- 131 files · ~86,376 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 56 file(s) not represented in the graph (top: .scss 53, (none) 2, .ico 1)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a17be835`
+- Built from commit: `5a3dede2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

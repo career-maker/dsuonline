@@ -87,7 +87,7 @@ export function AboutBand({ title, copy, left, right, href = '/about', cta = 'Kn
             {play && (
               <a
                 className={s.play}
-                href="https://www.youtube.com/@dsuonline"
+                href="https://www.youtube.com/@dsuonlineofficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Explore DSU - watch the campus video"

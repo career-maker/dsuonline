@@ -12,11 +12,11 @@ export const site = {
   apply: 'https://apply.dsuonline.com/',
   designer: { name: 'Inter Smart', href: 'https://intersmart.in' },
   social: [
-    { name: 'Facebook', href: 'https://www.facebook.com/dsuonline', icon: 'facebook' },
+    { name: 'Facebook', href: 'https://www.facebook.com/dsuonline.official', icon: 'facebook' },
     { name: 'X', href: 'https://x.com/dsuonline', icon: 'x' },
-    { name: 'Instagram', href: 'https://www.instagram.com/dsuonline', icon: 'instagram' },
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/dsuonline', icon: 'linkedin' },
-    { name: 'YouTube', href: 'https://www.youtube.com/@dsuonline', icon: 'youtube' },
+    { name: 'Instagram', href: 'https://www.instagram.com/dsuonline.official', icon: 'instagram' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/dsu-online', icon: 'linkedin' },
+    { name: 'YouTube', href: 'https://www.youtube.com/@dsuonlineofficial', icon: 'youtube' },
   ],
 } as const;
 

@@ -34,7 +34,7 @@ function Card({ f }: { f: Item }) {
           <a href="#" aria-label={`View profile: ${f.name}`}>
             View Profile &gt;
           </a>
-          <a href="https://www.linkedin.com/company/dsuonline" target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn: ${f.name}`}>
+          <a href="https://www.linkedin.com/company/dsu-online" target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn: ${f.name}`}>
             <Icon name="linkedin" /> LinkedIn
           </a>
         </div>

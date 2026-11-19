@@ -50,7 +50,7 @@ export function FacultyCard({ f, clone }: { f: FacultyCardData; clone?: boolean 
           <a href="#" aria-label={`View profile: ${f.name}`} tabIndex={clone ? -1 : undefined}>
             View Profile &gt;
           </a>
-          <a href="https://www.linkedin.com/company/dsuonline" target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn: ${f.name}`} tabIndex={clone ? -1 : undefined}>
+          <a href="https://www.linkedin.com/company/dsu-online" target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn: ${f.name}`} tabIndex={clone ? -1 : undefined}>
             <Icon name="linkedin" /> LinkedIn
           </a>
         </div>
@@ -282,7 +282,7 @@ export function FacultyArticles() {
                     <span>{a.author.role}</span>
                     <p>
                       <Link prefetch={false} href="/academics-at-dsu">View Profile &gt;</Link>
-                      <a href="https://www.linkedin.com/company/dsuonline" target="_blank" rel="noopener noreferrer">
+                      <a href="https://www.linkedin.com/company/dsu-online" target="_blank" rel="noopener noreferrer">
                         LinkedIn <Icon name="linkedin" />
                       </a>
                     </p>
