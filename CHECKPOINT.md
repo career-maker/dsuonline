@@ -143,6 +143,7 @@ Inner-page scope (all sheet pages), Facts item, blog scope (all 135), asset down
 - International page "Why learners worldwide" section: removed one-screen squeeze on desktop (roomy cards, 272px rows, 20px gap) to match `video-production/image copy 5.png`. Note: `#id` selectors in SCSS modules need `:global(#id)`; older `#why .head` rules in International.module.scss are dead.
 - `next build` ends with a SecurityFatalError nudge (Next 16.4.3 advisory) after generating pages; not caused by our code.
 - Programme pages: advantage banner photo -> advantage-banner-v2.webp; "Why DSU Online X" big photo -> prog-main-v2.webp, inset -> prog-inset-v2.webp (same on all five programmes; old prog-*.webp left unused).
+- About "Why choose DSU": one shared photo (first item's, about-why-1) for all points in WhyTabs; only caption text changes.
 
 ## NEXT STEPS (do top item first when the user says "continue")
 - Done 2026-11-09: /international-learners REDESIGNED (not the client's layout): no pills/eyebrows/icon-card grids; hero map has plain-text stops + ruled continent legend; Why = sticky photo + ruled facts list; clocks = 24h rulers; programs = ruled rows; admissions = timeline; GSAP clip-reveal photos. Deployed version is still the older design until `python deploy.py` is run.
