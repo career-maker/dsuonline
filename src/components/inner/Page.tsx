@@ -73,9 +73,9 @@ import s from './Kit.module.scss';
 
 // social links exactly as on the live contact page
 const contactSocial = [
-  { name: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/dsuonline.official/' },
+  { name: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/dsuonline.official' },
   { name: 'Facebook', icon: 'facebook', href: 'https://www.facebook.com/dsuonline.official' },
-  { name: 'LinkedIn', icon: 'linkedin', href: 'https://www.linkedin.com/company/dsu-online/' },
+  { name: 'LinkedIn', icon: 'linkedin', href: 'https://www.linkedin.com/company/dsu-online' },
   { name: 'YouTube', icon: 'youtube', href: 'https://www.youtube.com/@dsuonlineofficial' },
   { name: 'X', icon: 'x', href: 'https://x.com/dsuonline' },
 ] as const;
