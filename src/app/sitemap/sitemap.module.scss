@@ -16,17 +16,61 @@
 }
 
 // equal-width columns; every card in a row stretches to the same height
-.groups,
-.programs {
+.groups {
   display: grid;
   gap: clamp(16px, #{u(28)}, 28px);
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 
-  @include down($bp-lg) {
+  @include down($bp-xl) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   @include down($bp-sm) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+// one full-width row per programme: title on the left, specializations in an aligned 3-column grid
+.programs {
+  display: grid;
+  gap: clamp(16px, #{u(24)}, 24px);
+}
+
+.card.row {
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
+  gap: clamp(20px, #{u(48)}, 48px);
+  align-items: start;
+
+  h3 {
+    margin: 0;
+    padding: 0 0 0 16px;
+    border-bottom: 0;
+    border-left: 4px solid $btn-blue;
+
+    em {
+      margin-top: 6px;
+      font-size: fs(14, 12px);
+      font-style: normal;
+      font-weight: 600;
+      color: $btn-blue;
+    }
+  }
+
+  ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(16px, #{u(32)}, 32px);
+
+    @include down($bp-lg) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include down($bp-sm) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @include down($bp-md) {
     grid-template-columns: minmax(0, 1fr);
   }
 }
@@ -67,6 +111,7 @@
 
   li a {
     display: flex;
+    overflow-wrap: anywhere;
     align-items: center;
     gap: 10px;
     min-height: 40px;

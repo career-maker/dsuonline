@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1795071094.5563312,
-    "seen": 1795083160.95713,
-    "ast_hash": "a753ac5283e4aac6f6e5776c6b3ed073",
+    "mtime": 1795083868.1547155,
+    "seen": 1795083883.173914,
+    "ast_hash": "0af0b209b2cec8e191f3a0bb1e3210be",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -804,9 +804,9 @@
     "semantic_hash": ""
   },
   "src/app/sitemap/page.tsx": {
-    "mtime": 1795083036.3149858,
-    "seen": 1795083160.9567556,
-    "ast_hash": "9e452a36b6b81ad2776001448b2c2a97",
+    "mtime": 1795083605.0246348,
+    "seen": 1795083883.173515,
+    "ast_hash": "5805b8b7f93c081ad523f306dfef1513",
     "semantic_hash": ""
   }
 }
