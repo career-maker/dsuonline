@@ -1,0 +1,104 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.section {
+  @include section-pad(80, 100);
+  background: $bg-sky;
+}
+
+.inner {
+  @include container;
+}
+
+.heading {
+  @include h2;
+  margin: clamp(40px, #{u(80)}, 80px) 0 clamp(20px, #{u(32)}, 32px);
+}
+
+// equal-width columns; every card in a row stretches to the same height
+.groups,
+.programs {
+  display: grid;
+  gap: clamp(16px, #{u(28)}, 28px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  @include down($bp-lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include down($bp-sm) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.card {
+  padding: clamp(20px, #{u(32)}, 32px);
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 16px;
+
+  h2,
+  h3 {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 0 16px;
+    padding-bottom: 14px;
+    font-size: fs(24, 18px);
+    line-height: 1.2;
+    font-weight: 700;
+    color: $blue;
+    border-bottom: 2px solid $btn-blue;
+
+    span {
+      font-size: fs(15, 13px);
+      font-weight: 400;
+      color: $body;
+    }
+  }
+
+  ul {
+    display: grid;
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 40px;
+    font-size: fs(18, 15px);
+    line-height: 1.3;
+    color: $body;
+    transition: color 0.2s ease, translate 0.2s ease;
+
+    // same-size arrow marker so every label starts on one vertical line
+    &::before {
+      content: '';
+      flex: none;
+      width: 6px;
+      height: 6px;
+      border-top: 2px solid $btn-blue;
+      border-right: 2px solid $btn-blue;
+      rotate: 45deg;
+    }
+
+    &:hover {
+      color: $btn-blue;
+      translate: 3px 0;
+    }
+
+    @include focus-ring;
+  }
+
+  h3 a {
+    color: inherit;
+
+    &:hover {
+      color: $btn-blue;
+    }
+  }
+}

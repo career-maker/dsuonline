@@ -234,9 +234,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/About.tsx": {
-    "mtime": 1795001960.141899,
-    "seen": 1795002033.6864717,
-    "ast_hash": "63f5ff057ef8aabe95092eac0170b25a",
+    "mtime": 1795070941.699301,
+    "seen": 1795071093.7795546,
+    "ast_hash": "776468ddd27ccfe3837a46c7e14049a7",
     "semantic_hash": ""
   },
   "src/components/sections/home/BlogSlider.tsx": {
@@ -258,9 +258,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/FacultyArticles.tsx": {
-    "mtime": 1795025060.9932034,
-    "seen": 1795025651.212033,
-    "ast_hash": "325772460d9748592c758871878a17a4",
+    "mtime": 1795070941.7016723,
+    "seen": 1795071093.7795734,
+    "ast_hash": "7ca59804af24812a6e4cb7a52228aa59",
     "semantic_hash": ""
   },
   "src/components/sections/home/Faq.tsx": {
@@ -384,9 +384,9 @@
     "semantic_hash": ""
   },
   "src/data/site.ts": {
-    "mtime": 1794214002.8533294,
-    "seen": 1794214511.9143991,
-    "ast_hash": "ebe2742661fe407cfd3142bfd07517e4",
+    "mtime": 1795070941.6981668,
+    "seen": 1795071093.7797284,
+    "ast_hash": "ed8e58657d15457dac5dd21c613656c1",
     "semantic_hash": ""
   },
   "src/empty.js": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1795068988.3222656,
-    "seen": 1795070894.793967,
-    "ast_hash": "f3f47adbbdda5cc4b1615153575e4ec9",
+    "mtime": 1795070897.0430405,
+    "seen": 1795071093.7797985,
+    "ast_hash": "5b68bea51d2c9a0e609fba86fbc3b8e8",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -702,9 +702,9 @@
     "semantic_hash": ""
   },
   "src/components/inner/ProgramFaculty.tsx": {
-    "mtime": 1794562344.489313,
-    "seen": 1794562561.1845853,
-    "ast_hash": "f58a3d2ad5a6cb9b72e0f679de80f075",
+    "mtime": 1795070941.7006705,
+    "seen": 1795071093.7793274,
+    "ast_hash": "2a60cfe5d076840f76ca21582cde0397",
     "semantic_hash": ""
   },
   "src/components/inner/ProgramLearning.tsx": {
