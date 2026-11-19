@@ -26,6 +26,7 @@ User rules: home page pixel-matches the PDF; inner pages follow home typography/
 - Enquiry popup submit: NO backend. `NEXT_PUBLIC_ENQUIRY_ENDPOINT` env var (JSON POST) enables delivery; otherwise UI says "Not sent yet". Do not claim delivery.
 
 ## Status
+Swiper slide widths: the server builds with `--webpack`, local `npm run build` uses Turbopack; CSS order differs, so swiper/css `.swiper-slide{width:100%}` beat our slide width on the server (testimonials showed ONE full-width card). Fixed by raising specificity (`.swiper .item` in TestimonialShowcase, `.slider .slide` in CardSlider). Test slider changes with `npx next build --webpack`.
 Sitemap: `/sitemap` page (src/app/sitemap/, 4 cards: Main Pages, Student Corner, Resources (blog index + 5 latest posts), Legal; then one full-width row per programme with specializations in 3 aligned columns) + `/sitemap.xml` from src/app/sitemap.ts (all prerendered routes, base = NEXT_PUBLIC_SITE_URL or https://dsuonline.com). Footer bottom bar links to /sitemap. robots still Disallow (staging). Checked at 1440/390 via shots/pg.py. Build occasionally prints a flaky SecurityFatalError; rerun passes.
 Academics "Meet Our Faculty" (FacultyStrip): >=1200px = 5-per-row grid (no clones, no arrows, same card size); <1200 keeps autoplay carousel. Checked via shots/fac.py at 1440/1920/1024/390.
 Faculty photos: 18 replaced in place in public/content (same filenames) from client "Prof. images.zip" (400x294 landscape, cropped by object-fit cover). Visual check not done.

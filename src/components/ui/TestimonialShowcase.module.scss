@@ -99,7 +99,8 @@
 }
 
 // slides keep the card widths; swiper-slide would otherwise stretch to the whole track
-.item {
+// (".swiper .item" outranks swiper/css's ".swiper-slide{width:100%}" whichever order the bundler emits the CSS in)
+.swiper .item {
   display: flex;
   flex-direction: column;
   width: clamp(270px, #{u(380)}, 400px);
