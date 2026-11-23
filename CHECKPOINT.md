@@ -26,6 +26,7 @@ User rules: home page pixel-matches the PDF; inner pages follow home typography/
 - Enquiry popup submit: NO backend. `NEXT_PUBLIC_ENQUIRY_ENDPOINT` env var (JSON POST) enables delivery; otherwise UI says "Not sent yet". Do not claim delivery.
 
 ## Status
+Programs band "0% Zero Cost EMI" badge: "0%" now centred inside the yellow circle at 19px (was 24.7px and ran past the circle edge). Previewed by injecting the CSS into the live page at 1503/1920/390 (local build OOM).
 Home Programs band cards (and their hover panels) now show "Total Fees : INR 1,30,000" from the new `totalFee` field in src/data/programs.ts (live programme pages list INR 1,30,000 total for all five). Header dropdown and blog badges still show the 1st sem fee.
 Home Programs band: MCA card photo now mirrored (FramedImage `flip`, like BCom) so the 0% Zero Cost EMI badge (top-left) no longer covers the student. Local build could not run (machine out of RAM); not visually verified yet.
 Mobile hero images (2026-11-23): client-supplied `public/images/hero/banner-mobile-1.webp` (790x987) and `banner-mobile-2.webp` (1122x1402, from client PNG) now feed `heroSlides[].mobile`. Old `banner-m1/m2.webp` kept: `banner-m1` is still the EnquiryModal background. Local build could not run (machine out of RAM); phone crop checked by a PIL simulation only.

@@ -153,15 +153,20 @@
     background: $yellow;
   }
 
+  // "0%" centred inside the 43px yellow circle (the old 24.7px text ran past its right edge)
   b {
     position: absolute;
-    left: px(7.1);
-    top: px(8.6);
+    left: 0;
+    top: 0;
     z-index: 1;
-    font-size: px(24.7);
-    line-height: px(25);
+    display: grid;
+    place-items: center;
+    width: px(43);
+    height: px(43);
+    font-size: px(19);
+    line-height: 1;
     font-weight: 700;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.05em;
     color: $blue;
   }
 

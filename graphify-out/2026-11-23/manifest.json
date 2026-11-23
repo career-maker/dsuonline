@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "src/components/sections/home/ProgramsBand.tsx": {
-    "mtime": 1795434933.8957772,
-    "seen": 1795435067.228978,
-    "ast_hash": "44663c01dbaf5d926f6f59348720bbaa",
+    "mtime": 1795435271.5373156,
+    "seen": 1795435348.0874977,
+    "ast_hash": "d99472502cac6b8a0a8998a336e2f77d",
     "semantic_hash": ""
   },
   "src/components/sections/home/Recognitions.tsx": {
@@ -378,9 +378,9 @@
     "semantic_hash": ""
   },
   "src/data/programs.ts": {
-    "mtime": 1793782632.340663,
-    "seen": 1793782808.9882803,
-    "ast_hash": "7da865481ac0c2d02e8180e42de03753",
+    "mtime": 1795435245.0439816,
+    "seen": 1795435348.0876622,
+    "ast_hash": "18ea952b8953592a76fa09e82e4238d8",
     "semantic_hash": ""
   },
   "src/data/site.ts": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1795434994.6306396,
-    "seen": 1795435067.2290745,
-    "ast_hash": "64d1c512376c58fde9c63ee0847a2a9a",
+    "mtime": 1795435306.9572718,
+    "seen": 1795435348.087767,
+    "ast_hash": "4096156b2c0b93747a8eb826e7d1f5a2",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
