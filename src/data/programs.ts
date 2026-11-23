@@ -10,6 +10,7 @@ export type Program = {
   href: string;
   duration: string;
   firstSemFee: string;
+  totalFee: string; // "Total Fees" on the programme page
   specializations: Specialization[];
 };
 
@@ -24,6 +25,7 @@ export const programs: Program[] = [
     href: '/online-mba',
     duration: '2 Years',
     firstSemFee: '32,875',
+    totalFee: '1,30,000',
     specializations: [
       s('Financial Management', 'financial_management'),
       s('Human Resource Management (HRM)', 'human-resource'),
@@ -43,6 +45,7 @@ export const programs: Program[] = [
     href: '/online-mca',
     duration: '2 Years',
     firstSemFee: '32,875',
+    totalFee: '1,30,000',
     specializations: [
       s('Cloud Computing Technologies', 'cloud-computing'),
       s('Data Science', 'data-science'),
@@ -69,6 +72,7 @@ export const programs: Program[] = [
     href: '/online-bba',
     duration: '3 Years',
     firstSemFee: '22,250',
+    totalFee: '1,30,000',
     specializations: [
       s('Digital Marketing', 'digital-marketing'),
       s('Supply Chain Management', 'supply_chain_management'),
@@ -83,6 +87,7 @@ export const programs: Program[] = [
     href: '/online-bca',
     duration: '3 Years',
     firstSemFee: '22,250',
+    totalFee: '1,30,000',
     specializations: [
       s('Artificial Intelligence', 'artificial_intelligence'),
       s('Machine Learning', 'machine_learning'),
@@ -106,6 +111,7 @@ export const programs: Program[] = [
     href: '/online-bcom',
     duration: '3 Years',
     firstSemFee: '22,250',
+    totalFee: '1,30,000',
     specializations: [
       s('Fintech Regulations & Security', 'fintech'),
       s('Supply Chain Management', 'supply_chain_management'),

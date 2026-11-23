@@ -26,6 +26,7 @@ User rules: home page pixel-matches the PDF; inner pages follow home typography/
 - Enquiry popup submit: NO backend. `NEXT_PUBLIC_ENQUIRY_ENDPOINT` env var (JSON POST) enables delivery; otherwise UI says "Not sent yet". Do not claim delivery.
 
 ## Status
+Home Programs band cards (and their hover panels) now show "Total Fees : INR 1,30,000" from the new `totalFee` field in src/data/programs.ts (live programme pages list INR 1,30,000 total for all five). Header dropdown and blog badges still show the 1st sem fee.
 Home Programs band: MCA card photo now mirrored (FramedImage `flip`, like BCom) so the 0% Zero Cost EMI badge (top-left) no longer covers the student. Local build could not run (machine out of RAM); not visually verified yet.
 Mobile hero images (2026-11-23): client-supplied `public/images/hero/banner-mobile-1.webp` (790x987) and `banner-mobile-2.webp` (1122x1402, from client PNG) now feed `heroSlides[].mobile`. Old `banner-m1/m2.webp` kept: `banner-m1` is still the EnquiryModal background. Local build could not run (machine out of RAM); phone crop checked by a PIL simulation only.
 Home hero on phones (<760px): full-screen (layout min-height 100svh, bottom padding clears the 52px action bar), photo covers the whole hero, 3 logos pinned at top under the header (aligned to the text edge), headline/copy/CTA at the bottom; slide dots moved to top:144px. Tablet/desktop unchanged. Checked at 390x844 / 360x740 / 768x1024 via Playwright screenshots.

@@ -191,7 +191,7 @@ export function ProgramsBand({
                   <li>
                     <Icon name="mini-fee" />
                     <span>
-                      1st Sem Fee : <b>INR {p.firstSemFee}</b>
+                      Total Fees : <b>INR {p.totalFee}</b>
                     </span>
                   </li>
                 </ul>
@@ -236,7 +236,7 @@ export function ProgramsBand({
                       <li>
                         <Icon name="mini-fee" />
                         <span>
-                          1st Sem Fee : <b>INR {p.firstSemFee}</b>
+                          Total Fees : <b>INR {p.totalFee}</b>
                         </span>
                       </li>
                     </ul>
