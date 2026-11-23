@@ -4,6 +4,7 @@ import { showHomeBlogs, showHomeCareers } from '@/data/site';
 import { Careers } from '@/components/sections/home/Careers';
 import { FacultyArticles } from '@/components/sections/home/FacultyArticles';
 import { Faq } from '@/components/sections/home/Faq';
+import { CtaBand } from '@/components/inner/InnerPage';
 import { parseFaq } from '@/components/inner/parse';
 import { loadPage } from '@/lib/content';
 import { Hero } from '@/components/sections/home/Hero';
@@ -29,6 +30,7 @@ export default function HomePage() {
       <FacultyArticles />
       <Recognitions />
       <Faq items={homeFaqs} />
+      <CtaBand />
       {showHomeBlogs && <Blogs />}
     </>
   );

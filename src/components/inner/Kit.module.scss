@@ -3078,7 +3078,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 .whyHero {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: auto; // two columns: the stretched row sets the height (a 4/3 ratio then derived a width wider than the column and covered the tiles)
+  min-height: 420px;
   overflow: hidden;
   border-radius: 20px;
   background: #0b1f4d;

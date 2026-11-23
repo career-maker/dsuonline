@@ -104,11 +104,11 @@ $edge: #dbe5ee;
     font-style: normal;
   }
 
-  // phones: the whole "Elective 1 + Elective 2 = One Online MBA" stays on a single line
+  // phones: compact pills that wrap to a second line rather than run past the card
   @include down($bp-sm) {
-    flex-wrap: nowrap;
-    gap: 4px;
-    font-size: 10.5px;
+    flex-wrap: wrap;
+    gap: 6px 4px;
+    font-size: var(--t-xs);
 
     b,
     em {

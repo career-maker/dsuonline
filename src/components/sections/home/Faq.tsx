@@ -1,20 +1,16 @@
 'use client';
 
 import { useId, useState } from 'react';
-import { ArrowLink } from '@/components/ui/ArrowLink';
-import { FramedImage } from '@/components/ui/FramedImage';
 import { ChevronRight } from '@/components/ui/icons';
 import type { Faq as FaqItem } from '@/components/inner/parse';
-import { site } from '@/data/site';
 import s from './Faq.module.scss';
 
 const FIRST = 6;
 
-/** Default (home): list on the left, call-to-action panel on the right. `split` (inner pages): the questions run in two aligned columns, no numbers, no panel. */
-export function Faq({ items, title = 'Frequently Asked Questions', image = '/images/faq/faq-learner.webp', split = false }: { items: FaqItem[]; title?: string; image?: string; split?: boolean }) {
+/** Site FAQ (home, programme and inner pages): questions in two aligned columns, "View More" reveals the rest. */
+export function Faq({ items, title = 'Frequently Asked Questions' }: { items: FaqItem[]; title?: string }) {
   const [open, setOpen] = useState<number | null>(null);
-  const first = split ? FIRST : 5;
-  const [shown, setShown] = useState(first);
+  const [shown, setShown] = useState(FIRST);
   const faqs = items.slice(0, shown);
   const done = shown >= items.length;
   const uid = useId();
@@ -25,7 +21,6 @@ export function Faq({ items, title = 'Frequently Asked Questions', image = '/ima
       <li key={f.q}>
         <h3>
           <button type="button" aria-expanded={isOpen} aria-controls={`${uid}-${i}`} onClick={() => setOpen(isOpen ? null : i)}>
-            {!split && <span className={s.num}>{String(i + 1).padStart(2, '0')}</span>}
             <span className={s.q}>{f.q.replace(/^\d+\s*\.\s*/, '')}</span>
             <ChevronRight className={isOpen ? s.rot : ''} />
           </button>
@@ -47,53 +42,22 @@ export function Faq({ items, title = 'Frequently Asked Questions', image = '/ima
   };
 
   return (
-    <section className={`${s.faq} ${split ? s.faqSplit : ""}`} id="dsu-faq">
-      <div className={`${s.inner} ${split ? s.two : ''}`}>
-        <div className={s.left}>
-          <p className={s.eyebrow}>FAQ</p>
-          <h2>{title}</h2>
+    <section className={s.faq} id="dsu-faq">
+      <div className={s.inner}>
+        <p className={s.eyebrow}>FAQ</p>
+        <h2>{title}</h2>
 
-          {split ? (
-            <div className={s.cols}>
-              {[0, 1].map((c) => (
-                <ul key={c} className={s.list}>
-                  {faqs.map((f, i) => (i % 2 === c ? row(f, i) : null))}
-                </ul>
-              ))}
-            </div>
-          ) : (
-            <ul className={`${s.list} ${shown > first ? s.scroll : ''}`} data-lenis-prevent={shown > first ? '' : undefined}>
-              {faqs.map(row)}
+        <div className={s.cols}>
+          {[0, 1].map((c) => (
+            <ul key={c} className={s.list}>
+              {faqs.map((f, i) => (i % 2 === c ? row(f, i) : null))}
             </ul>
-          )}
-          {items.length > first && (
-            <button type="button" className={s.more} aria-expanded={shown > first} onClick={() => setShown(done ? first : shown + first)}>
-              {done ? 'View Less' : 'View More'}
-            </button>
-          )}
+          ))}
         </div>
-
-        {!split && (
-        <aside className={s.cta}>
-          <FramedImage src={image} frame={[1115, 9060, 711, 608]} box={[1115, 9059.9, 711, 608.2]} sizes="(max-width: 1200px) 100vw, 711px" />
-          <div className={s.shade} />
-          <div className={s.ctaBody}>
-            <h2>
-              Ready to take the
-              <br />
-              Next Step ?
-            </h2>
-            <p>Admission Open for 2027, Enroll Now &amp; Stop Your Future</p>
-            <div className={s.btns}>
-              <ArrowLink href={site.apply} external>
-                Apply Now
-              </ArrowLink>
-              <ArrowLink href="/online-mba" variant="dark">
-                Explore Courses
-              </ArrowLink>
-            </div>
-          </div>
-        </aside>
+        {items.length > FIRST && (
+          <button type="button" className={s.more} aria-expanded={shown > FIRST} onClick={() => setShown(done ? FIRST : shown + FIRST)}>
+            {done ? 'View Less' : 'View More'}
+          </button>
         )}
       </div>
     </section>

@@ -1,6 +1,7 @@
 @use 'tokens' as *;
 @use 'mixins' as *;
 
+// Site FAQ (home, programme and inner pages): two aligned question columns on the brand band.
 .faq {
   background: $blue;
   color: #fff;
@@ -11,40 +12,27 @@
 
 .inner {
   @include container;
-  display: grid;
-  grid-template-columns: minmax(0, 985fr) minmax(0, 711fr);
-  gap: clamp(28px, #{u(30)}, 30px);
-
-  @include down($bp-lg) {
-    grid-template-columns: 1fr;
-  }
 }
 
-.two {
-  grid-template-columns: minmax(0, 1fr);
+.eyebrow {
+  @include eyebrow;
+  color: $logo-yellow;
+}
 
-  // two aligned columns of questions (no number column)
-  .list button {
-    grid-template-columns: 1fr 20px;
-  }
-
-  .a {
-    padding-left: 0;
-  }
+.inner h2 {
+  margin-top: clamp(6px, #{u(8)}, 8px);
+  @include h2;
+  color: #fff;
 }
 
 .cols {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 clamp(24px, #{u(64)}, 70px);
-  margin-top: clamp(24px, #{u(54)}, 54px);
+  margin-top: clamp(24px, #{u(48)}, 48px);
   align-items: start;
 
-  .list {
-    margin-top: 0;
-  }
-
-  // the second column needs its own top rule so both columns start level
+  // one column: the second list continues the first without a double rule
   @include down($bp-lg) {
     grid-template-columns: minmax(0, 1fr);
 
@@ -54,19 +42,7 @@
   }
 }
 
-.eyebrow {
-  @include eyebrow;
-  color: $logo-yellow;
-}
-
-.left h2 {
-  margin-top: clamp(6px, #{u(8)}, 8px);
-  @include h2;
-  color: #fff;
-}
-
 .list {
-  margin-top: clamp(24px, #{u(54)}, 54px);
   border-top: 1px solid rgb(255 255 255 / 14%);
 
   > li {
@@ -80,11 +56,12 @@
 
   button {
     display: grid;
-    grid-template-columns: clamp(34px, #{u(47)}, 47px) 1fr 20px;
+    grid-template-columns: 1fr 20px;
+    gap: clamp(14px, #{u(24)}, 24px);
     align-items: center;
     width: 100%;
-    min-height: clamp(68px, #{u(92)}, 92px);
-    padding: 6px clamp(8px, #{u(40)}, 40px) 0 0;
+    min-height: clamp(64px, #{u(88)}, 88px);
+    padding: clamp(14px, #{u(20)}, 20px) 0;
     border: 0;
     background: none;
     text-align: left;
@@ -93,7 +70,9 @@
     @include focus-ring;
 
     svg {
-      font-size: var(--t-sm);
+      justify-self: end;
+      font-size: var(--t-body);
+      stroke-width: 2.4;
       transition: transform 0.2s;
     }
   }
@@ -103,27 +82,37 @@
   transform: rotate(90deg);
 }
 
-.num {
-  font-size: var(--t-h3l);
-  line-height: 1;
-  font-weight: 500;
-  color: $yellow;
-}
-
 .q {
   font-size: var(--t-lead);
-  line-height: 1.4;
+  line-height: 1.5;
   font-weight: 400;
-  letter-spacing: -0.031em;
+  letter-spacing: -0.01em;
 }
 
+// answer: same paragraph size as the rest of the site, airy line spacing
 .a {
   display: none;
-  padding: 0 clamp(8px, #{u(70)}, 70px) 26px clamp(34px, #{u(47)}, 47px);
+  padding: 0 clamp(20px, #{u(44)}, 44px) clamp(20px, #{u(28)}, 28px) 0;
 
-  p {
-    @include body-text;
-    color: #fff;
+  p,
+  li {
+    font-size: var(--t-body);
+    line-height: 1.75;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: rgb(255 255 255 / 88%);
+  }
+
+  p + p {
+    margin-top: 14px;
+  }
+
+  ul {
+    display: grid;
+    gap: 10px;
+    margin-top: 12px;
+    padding-left: 20px;
+    list-style: disc;
   }
 }
 
@@ -131,201 +120,9 @@
   display: block;
 }
 
-.cta {
-  position: relative;
-  align-self: start;
-  aspect-ratio: 711 / 608;
-  overflow: hidden;
-  border-radius: px(14);
-  color: #fff;
-
-  @include down($bp-lg) {
-    max-width: 711px;
-  }
-
-  @include down($bp-sm) {
-    aspect-ratio: auto;
-    min-height: px(460);
-  }
-}
-
-.shade {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgb(0 0 0 / 0%) 45%, rgb(0 0 0 / 60%) 100%);
-}
-
-.ctaBody {
-  position: absolute;
-  inset: auto clamp(14px, #{u(35)}, 35px) clamp(16px, #{u(34)}, 34px);
-
-  h2 {
-    font-size: fs(55, 34px);
-    @include down($bp-sm) {
-      font-size: clamp(21px, 5.8vw, 26px); // same as section titles (h2 mixin)
-    }
-    line-height: 1.09;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #fff;
-    margin: 0;
-  }
-
-  p {
-    margin-top: clamp(6px, #{u(14)}, 14px);
-    font-size: var(--t-body);
-    line-height: 1.33;
-    font-weight: 400;
-  }
-}
-
-.btns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: px(17);
-  margin-top: clamp(14px, #{u(24)}, 24px);
-}
-
-// ---------- desktop: exact geometry of the 1920 artboard
-@include up($bp-lg) {
-  .faq {
-    min-height: u(826);
-    padding: u(98.16) 0 u(70);
-  }
-
-  .faqSplit {
-    min-height: 0;
-  }
-
-  .inner {
-    grid-template-columns: u(985) u(711);
-    gap: u(35);
-  }
-
-  // inner pages: two question columns across the full width
-  .two {
-    grid-template-columns: minmax(0, 1fr);
-
-    .list button {
-      grid-template-columns: 1fr u(18);
-    }
-  }
-
-  .cols {
-    gap: 0 u(64);
-
-    .list {
-      margin-top: 0;
-    }
-  }
-
-  .eyebrow {
-    line-height: u(24);
-  }
-
-  .left h2 {
-    margin-top: u(6.03);
-    line-height: u(60);
-  }
-
-  // dividers at y9197 + 98, then every 93px; chevron ink at x1025
-  .list {
-    margin-top: u(47.8);
-    border-top-color: rgb(255 255 255 / 10%);
-
-    > li {
-      border-bottom-color: rgb(255 255 255 / 10%);
-    }
-
-    > li:first-child button {
-      height: u(97);
-      padding-top: u(5.2);
-    }
-
-    button {
-      grid-template-columns: u(47) 1fr u(18);
-      height: u(92);
-      min-height: 0;
-      padding: 0 u(42.85) 0 0;
-
-      svg {
-        font-size: var(--t-body);
-        stroke-width: 2.4;
-      }
-    }
-  }
-
-  .num {
-    font-size: var(--t-h3l);
-  }
-
-  .q {
-    font-size: var(--t-lead);
-    line-height: u(28);
-    letter-spacing: -0.015em;
-    translate: 0 u(2);
-  }
-
-  .cta {
-    height: u(608);
-    margin-top: u(1.84);
-    aspect-ratio: auto;
-  }
-
-  .ctaBody {
-    inset: auto u(36) u(32);
-
-    h2 {
-      font-size: u(55);
-      line-height: u(60);
-    }
-
-    p {
-      margin: u(9.65) 0 0 u(2);
-      font-size: var(--t-body);
-      line-height: u(24);
-    }
-  }
-
-  .btns {
-    gap: u(15.6);
-    margin-top: u(24.16);
-
-    > :first-child {
-      width: u(160.4);
-      padding-left: u(20);
-    }
-
-    > :last-child {
-      width: u(209.4);
-      padding-left: u(20);
-    }
-  }
-}
-
-// navy fade at the bottom keeps the white call-to-action text readable on the light photo
-@include up($bp-lg) {
-  .shade {
-    background: linear-gradient(180deg, rgb(11 31 77 / 0%) 30%, rgb(11 31 77 / 55%) 62%, rgb(11 31 77 / 90%) 100%);
-  }
-}
-
-.a ul {
-  display: grid;
-  gap: 6px;
-  margin-top: 8px;
-  padding-left: 18px;
-  list-style: disc;
-  color: #fff;
-}
-
-.a p + p {
-  margin-top: 10px;
-}
-
 .more {
   height: px(50);
-  margin-top: clamp(16px, #{u(26)}, 26px);
+  margin-top: clamp(20px, #{u(32)}, 32px);
   padding: 0 px(28);
   border: 1px solid rgb(255 255 255 / 40%);
   border-radius: px(3);
@@ -339,22 +136,5 @@
 
   &:hover {
     background: rgb(255 255 255 / 12%);
-  }
-}
-
-// "View More" reveals the next questions inside a fixed-height scroll area (section height stays put)
-.scroll {
-  max-height: clamp(340px, #{u(470)}, 470px);
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgb(255 255 255 / 28%) transparent;
-
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background: rgb(255 255 255 / 28%);
   }
 }

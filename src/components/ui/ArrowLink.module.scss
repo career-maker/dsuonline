@@ -30,6 +30,25 @@
   }
 }
 
+// desktop: never narrower than label + icon, even where a caller sets a fixed design width (u() widths shrink, text has a floor)
+@include up($bp-lg) {
+  .btn {
+    min-width: max-content;
+  }
+}
+
+// phones: a long label wraps inside the pill instead of running past its container
+@include down($bp-sm) {
+  .btn {
+    max-width: 100%;
+    height: auto;
+    min-height: px(50);
+    padding-block: 10px;
+    line-height: 1.25;
+    white-space: normal;
+  }
+}
+
 .dots {
   flex: none;
   width: px(14);

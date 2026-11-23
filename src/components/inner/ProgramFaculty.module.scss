@@ -19,8 +19,8 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   left: 50%;
   transform: translateX(-50%);
 
-  li {
-    width: #{u(330)}; // same width as the home cards
+  > li {
+    width: #{u(330)}; // same width as the home cards (direct children only: the credential <li> inside a card matched too)
     min-width: 190px;
   }
 

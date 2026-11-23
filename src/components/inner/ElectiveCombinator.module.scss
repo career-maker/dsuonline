@@ -46,6 +46,13 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   > div {
     padding: 4px clamp(12px, #{u(24)}, 24px);
     border-left: 1px solid $edge;
+
+    // phones: three narrow columns, so the long word "Specialisations" gets less side padding
+    @include down($bp-sm) {
+      padding-inline: 8px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+    }
   }
 
   dt {

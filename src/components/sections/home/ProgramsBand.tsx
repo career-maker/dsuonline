@@ -218,11 +218,7 @@ export function ProgramsBand({
                       <p className={s.detailName}>
                         <Link prefetch={false} href={p.href}>{p.name}</Link>
                       </p>
-                      <p className={s.detailFull}>
-                        {p.lines[0]}
-                        <br />
-                        {p.lines[1]}
-                      </p>
+                      <p className={s.detailFull}>{p.lines.join(' ')}</p>
                     </div>
                     <ul className={s.detailMeta}>
                       <li>
@@ -243,12 +239,12 @@ export function ProgramsBand({
                   </div>
                   <p className={s.detailLabel}>Top Specialization</p>
                   <ul className={s.chips}>
-                    {p.specializations.slice(0, 4).map((sp) => (
+                    {p.specializations.slice(0, 3).map((sp) => (
                       <li key={sp.slug}>
                         <Link prefetch={false} href={specializationHref(p, sp)}>{sp.name}</Link>
                       </li>
                     ))}
-                    {p.specializations.length > 4 && (
+                    {p.specializations.length > 3 && (
                       <li>
                         <Link prefetch={false} href={p.href} className={s.more}>
                           More +

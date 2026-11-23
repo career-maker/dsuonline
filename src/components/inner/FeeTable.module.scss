@@ -63,6 +63,7 @@
 
   td:first-child {
     font-weight: 700;
+    white-space: nowrap; // "SEM 2" stays on one line like "SEM1"
   }
 
   td:last-child,
