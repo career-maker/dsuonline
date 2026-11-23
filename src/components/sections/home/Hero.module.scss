@@ -556,31 +556,33 @@
 // phones: photo on top, copy over its lower edge, CTAs full width, then the form and the programme chips
 @media (max-width: 759.98px) {
 
-  .hero {
-    --img-h: min(124vw, 640px);
-  }
-
-  .bg {
-    inset: 0 0 auto;
-    height: var(--img-h);
-  }
-
+  // full-screen photo: logos pinned under the header, headline/copy/CTA at the bottom
   .bg img {
     object-position: 50% 20% !important;
   }
 
   .shade {
-    inset: 0 0 auto;
-    height: var(--img-h);
-    background: linear-gradient(180deg, rgb(10 13 18 / 45%) 0%, rgb(10 13 18 / 0%) 24%, rgb(10 13 18 / 0%) 46%, rgb(10 13 18 / 88%) 82%, #0a0d12 100%);
+    background: linear-gradient(180deg, rgb(10 13 18 / 55%) 0%, rgb(10 13 18 / 0%) 26%, rgb(10 13 18 / 0%) 42%, rgb(10 13 18 / 85%) 78%, #0a0d12 100%);
   }
 
   .layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 18px;
-    min-height: 0;
-    padding: calc(var(--img-h) - 268px) var(--gut) 22px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    padding: 84px var(--gut) calc(52px + 24px); // 52px = fixed bottom action bar
+  }
+
+  .copy {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 0;
+  }
+
+  .copy .badges {
+    margin-bottom: auto;
+    padding-inline: 0; // line the logos up with the headline's left edge
   }
 
   .copy h1 {
@@ -1145,8 +1147,13 @@
     }
   }
 
+  // the shade gradient darkens the top and bottom; a backing over the whole full-height column would grey the photo
   .copy::before {
-    inset: -30px -20px -20px -20px;
+    display: none;
+  }
+
+  .dotsNav {
+    top: 144px; // below the logo row
   }
 }
 
