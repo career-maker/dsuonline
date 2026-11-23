@@ -50,7 +50,7 @@
 
     em {
       margin-top: 6px;
-      font-size: fs(14, 12px);
+      font-size: var(--t-xs);
       font-style: normal;
       font-weight: 600;
       color: $btn-blue;
@@ -88,14 +88,14 @@
     gap: 4px;
     margin: 0 0 16px;
     padding-bottom: 14px;
-    font-size: fs(24, 18px);
+    font-size: var(--t-h3);
     line-height: 1.2;
     font-weight: 700;
     color: $blue;
     border-bottom: 2px solid $btn-blue;
 
     span {
-      font-size: fs(15, 13px);
+      font-size: var(--t-sm);
       font-weight: 400;
       color: $body;
     }
@@ -115,7 +115,7 @@
     align-items: center;
     gap: 10px;
     min-height: 40px;
-    font-size: fs(18, 15px);
+    font-size: var(--t-body);
     line-height: 1.3;
     color: $body;
     transition: color 0.2s ease, translate 0.2s ease;

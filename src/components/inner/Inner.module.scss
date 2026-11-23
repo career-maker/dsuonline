@@ -86,7 +86,7 @@
     text-wrap: balance;
 
     @include down($bp-sm) {
-      font-size: clamp(21px, 5.8vw, 26px);
+      font-size: var(--t-h3);
     }
   }
 }
@@ -95,7 +95,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  font-size: 15px;
+  font-size: var(--t-body);
   line-height: 1.4;
   color: rgb(255 255 255 / 80%);
 
@@ -127,7 +127,7 @@
 .heroSub {
   max-width: 900px;
   margin-top: 16px;
-  font-size: fs(20, 17px);
+  font-size: var(--t-lead);
   line-height: 1.55;
   font-weight: 400;
   color: rgb(255 255 255 / 92%);
@@ -149,7 +149,7 @@
   }
 
   dt {
-    font-size: 14px;
+    font-size: var(--t-sm);
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -158,7 +158,7 @@
 
   dd {
     margin: 6px 0 0;
-    font-size: fs(26, 20px);
+    font-size: var(--t-h3);
     line-height: 1.2;
     font-weight: 700;
   }
@@ -166,7 +166,7 @@
   small {
     display: block;
     margin-top: 2px;
-    font-size: 14px;
+    font-size: var(--t-sm);
     color: rgb(255 255 255 / 80%);
   }
   // phones: two tiles per row instead of one tall stack
@@ -184,12 +184,12 @@
     }
 
     dt {
-      font-size: 12px;
+      font-size: var(--t-xs);
       color: $body;
     }
 
     dd {
-      font-size: 18px;
+      font-size: var(--t-h4);
       color: $blue;
     }
 
@@ -239,14 +239,14 @@
   max-width: 1000px;
   @include body-text;
   // long-form copy keeps a readable floor even where the design scale shrinks
-  font-size: max(17px, calc(var(--u) * 20));
+  font-size: var(--t-lead);
   line-height: 1.7;
   margin-bottom: 20px;
 }
 
 .minor {
   margin: 20px 0 8px;
-  font-size: fs(22, 18px);
+  font-size: var(--t-h4);
   font-weight: 700;
   color: $ink;
 }
@@ -262,7 +262,7 @@
     display: flex;
     gap: 12px;
     align-items: flex-start;
-    font-size: max(16px, calc(var(--u) * 19));
+    font-size: var(--t-lead);
     line-height: 1.5;
     font-weight: 500;
     color: $ink;
@@ -295,7 +295,7 @@
     width: 100%;
     min-width: 520px;
     border-collapse: collapse;
-    font-size: 16px;
+    font-size: var(--t-lead);
     line-height: 1.45;
   }
 
@@ -368,7 +368,7 @@
   }
 
   h3 {
-    font-size: fs(22, 18px);
+    font-size: var(--t-h4);
     line-height: 1.25;
     font-weight: 500;
     color: $ink;
@@ -376,7 +376,7 @@
 
   p {
     margin-top: 8px;
-    font-size: fs(17, 15px);
+    font-size: var(--t-body);
     line-height: 1.6;
     color: $body;
   }
@@ -401,7 +401,7 @@
 }
 
 .quote {
-  font-size: fs(18, 16px);
+  font-size: var(--t-body);
   line-height: 1.6;
   color: $body;
 }
@@ -413,14 +413,14 @@
 
   b {
     display: block;
-    font-size: 18px;
+    font-size: var(--t-h4);
     font-weight: 500;
     color: $ink;
   }
 
   span {
     display: block;
-    font-size: 15px;
+    font-size: var(--t-body);
     color: $body;
   }
 }
@@ -463,7 +463,7 @@
 
   h3 {
     margin-bottom: 12px;
-    font-size: fs(28, 20px);
+    font-size: var(--t-h3l);
     line-height: 1.25;
     font-weight: 700;
     color: $ink;
@@ -484,12 +484,12 @@
     background: #fff;
 
     h3 {
-      font-size: fs(22, 18px);
+      font-size: var(--t-h4);
       font-weight: 500;
     }
 
     .p {
-      font-size: fs(17, 15px);
+      font-size: var(--t-body);
       line-height: 1.6;
     }
 
@@ -514,7 +514,7 @@
 
   h3 {
     margin: 10px 0 8px;
-    font-size: fs(22, 18px);
+    font-size: var(--t-h4);
     font-weight: 500;
   }
 }
@@ -527,7 +527,7 @@
   border-radius: 50%;
   background: $blue;
   color: #fff;
-  font-size: 18px;
+  font-size: var(--t-h4);
   font-weight: 500;
 }
 
@@ -546,7 +546,7 @@
     border: 1px solid #dbe7f0;
     border-radius: 12px;
     background: #fff;
-    font-size: fs(20, 17px);
+    font-size: var(--t-lead);
     font-weight: 500;
     color: $ink;
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -558,7 +558,7 @@
   }
 
   em {
-    font-size: 14px;
+    font-size: var(--t-sm);
     font-style: normal;
     color: $blue;
     white-space: nowrap;
@@ -584,7 +584,7 @@
     border: 0;
     background: none;
     text-align: left;
-    font-size: fs(20, 16px);
+    font-size: var(--t-lead);
     line-height: 1.4;
     font-weight: 500;
     color: $ink;
@@ -593,7 +593,7 @@
   }
 
   svg {
-    font-size: 16px;
+    font-size: var(--t-lead);
     transition: transform 0.2s;
   }
 
@@ -604,7 +604,7 @@
 }
 
 .faqNum {
-  font-size: 24px;
+  font-size: var(--t-h3l);
   font-weight: 400;
   color: $gold;
 }
@@ -637,6 +637,9 @@
 
   h2 {
     font-size: fs(55, 30px);
+    @include down($bp-sm) {
+      font-size: clamp(21px, 5.8vw, 26px); // same as section titles (h2 mixin)
+    }
     line-height: 1.1;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -644,7 +647,7 @@
 
   p {
     margin-top: 8px;
-    font-size: fs(18, 16px);
+    font-size: var(--t-body);
   }
 }
 
@@ -789,12 +792,12 @@
     }
 
     dt {
-      font-size: 12px;
+      font-size: var(--t-xs);
       color: rgb(255 255 255 / 75%);
     }
 
     dd {
-      font-size: fs(22, 17px);
+      font-size: var(--t-h4);
       color: #fff;
     }
 
@@ -855,7 +858,7 @@
       }
 
       dd {
-        font-size: 17px;
+        font-size: var(--t-lead);
       }
 
       // the elective tile spans the full row
@@ -877,7 +880,7 @@
         min-width: 0;
         justify-content: space-between;
         padding-inline: 14px;
-        font-size: 15px;
+        font-size: var(--t-body);
       }
     }
   }

@@ -31,7 +31,7 @@
   address {
     margin-top: clamp(8px, #{u(10)}, 10px);
     font-style: normal;
-    font-size: px(15);
+    font-size: var(--t-sm);
     line-height: px(20);
     font-weight: 400;
   }
@@ -50,7 +50,7 @@
     border-radius: px(8);
     background: #fff;
     color: #1d1d1d;
-    font-size: px(32);
+    font-size: var(--t-h3l);
     transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease, filter 0.25s ease;
 
     &:hover {
@@ -84,7 +84,7 @@
   }
 
   h2 {
-    font-size: px(20);
+    font-size: var(--t-lead);
     line-height: px(24);
     font-weight: 700;
     text-transform: uppercase;
@@ -98,7 +98,7 @@
   }
 
   li {
-    font-size: px(18);
+    font-size: var(--t-sm);
     line-height: px(24);
     font-weight: 500;
     overflow-wrap: anywhere;
@@ -121,7 +121,7 @@
 .contact {
   p {
     margin-top: px(11);
-    font-size: px(18);
+    font-size: var(--t-sm);
     line-height: px(24);
     font-weight: 400;
     overflow-wrap: anywhere;
@@ -185,7 +185,7 @@
   overflow: visible;
 
   h2 {
-    font-size: px(18);
+    font-size: var(--t-lead);
     line-height: px(22);
     font-weight: 700;
     text-transform: uppercase;
@@ -200,7 +200,7 @@
   }
 
   li {
-    font-size: px(18);
+    font-size: var(--t-sm);
     line-height: px(24);
     font-weight: 500;
 
@@ -222,7 +222,7 @@
   padding: px(20);
 
   h2 {
-    font-size: px(18);
+    font-size: var(--t-lead);
     line-height: px(22);
     font-weight: 700;
     text-transform: uppercase;
@@ -238,7 +238,7 @@
     background: $btn-blue;
     color: #fff;
     border-radius: 999px;
-    font-size: px(15);
+    font-size: var(--t-sm);
     font-weight: 600;
 
     svg {
@@ -260,7 +260,7 @@
     border-radius: px(6);
     background: #fff;
     color: #333;
-    font-size: px(14.5);
+    font-size: var(--t-sm);
     appearance: none;
     cursor: pointer;
   }
@@ -284,7 +284,7 @@
 .note {
   min-height: px(18);
   margin-top: px(6);
-  font-size: px(12);
+  font-size: var(--t-xs);
   color: $blue;
 }
 
@@ -300,7 +300,7 @@
   gap: px(12) px(24);
   min-height: px(67);
   padding-block: px(18);
-  font-size: px(15);
+  font-size: var(--t-sm);
   line-height: px(20);
 
   @include down($bp-md) {
@@ -326,7 +326,7 @@
   display: flex;
   align-items: center;
   gap: px(8);
-  font-size: px(14);
+  font-size: var(--t-xs);
   letter-spacing: 0.02em;
 
   a {
@@ -367,7 +367,7 @@
 
     address {
       margin: u(27.8) 0 0 u(1);
-      font-size: u(15);
+      font-size: var(--t-sm);
       line-height: u(20);
     }
   }
@@ -407,7 +407,7 @@
     padding-top: u(10.86);
 
     h2 {
-      font-size: u(20);
+      font-size: var(--t-lead);
       line-height: u(24);
     }
 
@@ -417,7 +417,7 @@
     }
 
     li {
-      font-size: u(16);
+      font-size: var(--t-sm);
       line-height: u(22);
 
       a {
@@ -437,7 +437,7 @@
   .contact {
     p {
       margin-top: u(8);
-      font-size: u(16);
+      font-size: var(--t-sm);
       line-height: u(22);
 
       &:first-of-type {
@@ -482,7 +482,7 @@
     h2 {
       padding-bottom: 0;
       border-bottom: none;
-      font-size: u(18);
+      font-size: var(--t-lead);
       line-height: u(22);
     }
 
@@ -494,7 +494,7 @@
     }
 
     li {
-      font-size: u(16); // same as the Quick Links items
+      font-size: var(--t-sm); // same as the Quick Links items
       line-height: u(22);
 
       a {
@@ -530,7 +530,7 @@
     padding: u(22) u(20) u(24) u(20);
 
     h2 {
-      font-size: u(18);
+      font-size: var(--t-lead);
       line-height: u(22);
     }
 
@@ -538,7 +538,7 @@
       height: u(42);
       margin-top: u(14);
       gap: u(8);
-      font-size: u(15);
+      font-size: var(--t-sm);
       border-radius: 999px;
 
       svg {
@@ -556,7 +556,7 @@
       padding: 0 u(36) 0 u(14);
       border-radius: u(6);
       background: #fff;
-      font-size: u(14.5);
+      font-size: var(--t-sm);
       border-color: #c9d3da;
     }
 
@@ -588,7 +588,7 @@
   .barInner {
     min-height: 0;
     padding: 0 0 u(22.13);
-    font-size: u(15);
+    font-size: var(--t-sm);
     line-height: u(20);
   }
 }

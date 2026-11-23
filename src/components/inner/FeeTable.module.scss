@@ -10,7 +10,7 @@
   align-items: center;
   gap: 18px;
   margin-bottom: 16px;
-  font-size: fs(28, 20px);
+  font-size: var(--t-h3l);
   font-weight: 700;
   letter-spacing: -0.015em;
   color: $ink;
@@ -32,14 +32,14 @@
     width: 100%;
     border-collapse: collapse;
     table-layout: auto;
-    font-size: clamp(14px, 1.1vw, 17px);
+    font-size: var(--t-body);
   }
 
   th {
     padding: 15px 18px;
     background: #eef1f8;
     border-right: 1px solid #fff;
-    font-size: 14px;
+    font-size: var(--t-sm);
     font-weight: 600;
     letter-spacing: 0;
     text-transform: capitalize;
@@ -94,12 +94,12 @@
   color: #fff;
 
   span {
-    font-size: fs(22, 17px);
+    font-size: var(--t-h4);
     font-weight: 600;
   }
 
   b {
-    font-size: fs(24, 18px);
+    font-size: var(--t-h3);
     font-weight: 700;
     color: $yellow;
     white-space: nowrap;
@@ -111,7 +111,7 @@
     th,
     td {
       padding: 11px 5px;
-      font-size: 12.5px;
+      font-size: var(--t-xs);
     }
 
     th {

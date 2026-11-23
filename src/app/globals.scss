@@ -10,6 +10,16 @@
   --orange: #{$orange};
   --ink: #{$ink};
   --body: #{$body};
+
+  // Type scale: one size per text role, so the same role reads the same on every page of a device.
+  // Phones/tablets use fixed sizes; desktop (below) follows the 1920 design with a readable floor.
+  --t-xs: 12px; // tags, badges, fine print
+  --t-sm: 14px; // meta, captions, footer links, small buttons
+  --t-body: 15px; // paragraphs, list items
+  --t-lead: 16px; // intro/subtitle paragraphs, footer group titles
+  --t-h4: 18px; // small card titles
+  --t-h3: 20px; // card titles
+  --t-h3l: 24px; // large sub-headings inside a section
 }
 
 // Desktop (>= 1200px): the page is the 1920px artboard scaled to the width of its column,
@@ -20,6 +30,13 @@
     --k: var(--u);
     --fk: 0.7; // text floor on small laptops (was 0.5: body text fell to ~10px)
     --gut: calc(var(--u) * 95);
+    --t-xs: max(12px, calc(var(--u) * 13));
+    --t-sm: max(13.5px, calc(var(--u) * 16));
+    --t-body: max(15px, calc(var(--u) * 18));
+    --t-lead: max(16px, calc(var(--u) * 20));
+    --t-h4: max(17px, calc(var(--u) * 22));
+    --t-h3: max(18px, calc(var(--u) * 24));
+    --t-h3l: max(22px, calc(var(--u) * 32));
   }
 
   [data-u] {

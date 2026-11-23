@@ -32,7 +32,7 @@
 
 .desc {
   @include body-text;
-  font-size: max(15px, calc(var(--u) * 17)); // programme section intro: black, 15px minimum
+  font-size: var(--t-body); // programme section intro: black, 15px minimum
   color: #000;
   max-width: 32em;
   margin-top: clamp(14px, #{u(20)}, 20px);
@@ -72,7 +72,7 @@
 
 .note {
   margin-top: 14px;
-  font-size: 14px;
+  font-size: var(--t-sm);
   line-height: 1.5;
   color: $body;
 }

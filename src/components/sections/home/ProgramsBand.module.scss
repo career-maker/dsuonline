@@ -163,7 +163,7 @@
     place-items: center;
     width: px(43);
     height: px(43);
-    font-size: px(19);
+    font-size: px(19); // type:keep (badge fits circle)
     line-height: 1;
     font-weight: 700;
     letter-spacing: -0.05em;
@@ -177,7 +177,7 @@
     z-index: 1;
     width: px(60.2);
     color: #fff;
-    font-size: px(16.5);
+    font-size: px(16.5); // type:keep
     line-height: px(18);
     font-style: normal;
     font-weight: 700;
@@ -187,7 +187,7 @@
   small {
     display: block;
     margin: px(-2.3) px(-9) 0;
-    font-size: px(14.2);
+    font-size: px(14.2); // type:keep
     line-height: px(16);
     font-weight: 500;
     white-space: nowrap;
@@ -201,7 +201,7 @@
 
 .card h3 {
   margin-top: clamp(14px, #{u(22)}, 22px);
-  font-size: fs(28, 22px);
+  font-size: var(--t-h3l);
   line-height: 1.15;
   font-weight: 500;
   color: $ink;
@@ -213,7 +213,7 @@
 }
 
 .full {
-  font-size: fs(20, 16px);
+  font-size: var(--t-lead);
   line-height: 1.25;
   font-weight: 300;
   color: #4a5565;
@@ -230,7 +230,7 @@
     display: flex;
     align-items: center;
     gap: px(7);
-    font-size: px(15);
+    font-size: var(--t-sm);
     line-height: 1.25;
     font-weight: 400;
     text-transform: uppercase;
@@ -266,7 +266,7 @@
   align-items: center;
   min-height: 44px;
   padding: 6px 0;
-  font-size: fs(18, 16px);
+  font-size: var(--t-body);
   line-height: 1.2;
   font-weight: 500;
   color: $blue;
@@ -327,7 +327,7 @@
 
   p {
     margin-top: clamp(8px, #{u(14)}, 14px);
-    font-size: fs(18, 15px);
+    font-size: var(--t-body);
     line-height: 1.6;
     font-weight: 400;
   }
@@ -413,7 +413,7 @@
 }
 
 .detailName {
-  font-size: fs(30, 22px);
+  font-size: var(--t-h3l);
   line-height: 1.1;
   font-weight: 700;
 
@@ -427,7 +427,7 @@
 
 .detailFull {
   margin-top: px(6);
-  font-size: fs(20, 15px);
+  font-size: var(--t-lead);
   line-height: 1.25;
   font-weight: 400;
 }
@@ -440,7 +440,7 @@
     display: flex;
     align-items: center;
     gap: px(8);
-    font-size: px(15);
+    font-size: var(--t-sm);
     line-height: 1.2;
     text-transform: uppercase;
     white-space: nowrap;
@@ -461,7 +461,7 @@
   margin-top: auto;
   padding-top: px(14);
   border-top: 1px solid rgb(255 255 255 / 14%);
-  font-size: px(15);
+  font-size: var(--t-sm);
   line-height: 1;
   text-transform: uppercase;
 }
@@ -484,7 +484,7 @@
     border: 1px solid rgb(255 255 255 / 18%);
     border-radius: px(4);
     background: rgb(255 255 255 / 8%);
-    font-size: px(15);
+    font-size: var(--t-sm);
     line-height: 1.2;
     transition: background-color 0.25s, border-color 0.25s, color 0.25s;
     @include focus-ring;
@@ -563,13 +563,13 @@
 
   .card h3 {
     margin-top: u(22.3);
-    font-size: u(28);
+    font-size: var(--t-h3l);
     line-height: u(32.2);
   }
 
   .full {
     margin-top: u(1.2);
-    font-size: u(20);
+    font-size: var(--t-lead);
     line-height: u(25);
     font-weight: 400;
     letter-spacing: -0.0175em;
@@ -578,14 +578,14 @@
   // icons at x+0 / +174.4 / +307 of the content box
   .meta {
     display: grid;
-    grid-template-columns: u(174.4) u(132.6) auto;
+    grid-template-columns: minmax(auto, u(174.4)) minmax(auto, u(132.6)) auto; // PDF positions at 1920, shrink to content on small laptops
     gap: 0;
     margin: u(18.3) 0 u(30);
 
     li {
       gap: u(7);
       height: u(22);
-      font-size: u(16);
+      font-size: var(--t-sm);
       line-height: u(22);
     }
 
@@ -609,7 +609,7 @@
   }
 
   .explore {
-    font-size: u(18);
+    font-size: var(--t-body);
     letter-spacing: 0;
   }
 
@@ -645,7 +645,7 @@
     p {
       max-width: u(440);
       margin-top: u(4.5);
-      font-size: u(18);
+      font-size: var(--t-body);
       line-height: u(29);
       letter-spacing: -0.02em;
     }
@@ -683,12 +683,12 @@
     padding: 18px 16px;
 
     h3 {
-      font-size: 24px;
+      font-size: var(--t-h3l);
     }
 
     p {
       margin-top: 8px;
-      font-size: 14px;
+      font-size: var(--t-sm);
       line-height: 1.5;
     }
   }

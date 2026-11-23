@@ -79,7 +79,7 @@
 
   h3 {
     margin-top: clamp(6px, #{u(10)}, 10px);
-    font-size: fs(20, 17px);
+    font-size: var(--t-lead);
     line-height: 1.2;
     font-weight: 500;
     color: $ink;
@@ -88,7 +88,7 @@
 
 .role {
   margin-top: px(4);
-  font-size: fs(16, 14px);
+  font-size: var(--t-sm);
   line-height: 1.25;
   font-weight: 400;
   color: $ink;
@@ -102,7 +102,7 @@
   li {
     position: relative;
     padding-left: px(27);
-    font-size: fs(16, 14px);
+    font-size: var(--t-sm);
     line-height: 1.25;
     font-weight: 400;
     color: $ink;
@@ -126,7 +126,7 @@
   justify-content: space-between;
   gap: px(8);
   margin-top: clamp(14px, #{u(26)}, 26px);
-  font-size: fs(16, 14px);
+  font-size: var(--t-sm);
   line-height: 1.4;
 
   a {
@@ -198,20 +198,20 @@
 
   time {
     display: block;
-    font-size: fs(16, 14px);
+    font-size: var(--t-sm);
     line-height: 1.25;
   }
 
   h3 {
     margin-top: clamp(8px, #{u(10)}, 10px);
-    font-size: fs(28, 20px);
+    font-size: var(--t-h3l);
     line-height: 1.357;
     font-weight: 400;
   }
 
   > p {
     margin-top: clamp(8px, #{u(14)}, 14px);
-    font-size: fs(18, 15px);
+    font-size: var(--t-body);
     line-height: 1.61;
     font-weight: 300;
   }
@@ -220,7 +220,7 @@
 .read {
   display: inline-block;
   margin: clamp(10px, #{u(20)}, 20px) 0 0 4px;
-  font-size: fs(16, 14px);
+  font-size: var(--t-sm);
   line-height: 1.25;
   font-weight: 700;
   color: $yellow;
@@ -248,14 +248,14 @@
 
   b {
     display: block;
-    font-size: fs(18, 15px);
+    font-size: var(--t-body);
     line-height: 1.22;
     font-weight: 500;
   }
 
   span {
     display: block;
-    font-size: fs(16, 13px);
+    font-size: var(--t-sm);
     line-height: 1.25;
     font-weight: 300;
   }
@@ -266,7 +266,7 @@
     align-items: center;
     gap: px(16);
     margin-top: 2px;
-    font-size: fs(16, 13px);
+    font-size: var(--t-sm);
     line-height: 1.25;
     font-weight: 500;
 
@@ -414,14 +414,14 @@
 
     h3 {
       margin: 0;
-      font-size: u(20);
+      font-size: var(--t-lead);
       line-height: u(24);
     }
   }
 
   .role {
     margin-top: u(3.37);
-    font-size: u(16);
+    font-size: var(--t-sm);
     line-height: u(20);
   }
 
@@ -431,7 +431,7 @@
 
     li {
       padding-left: u(27);
-      font-size: u(16);
+      font-size: var(--t-sm);
       line-height: u(20);
 
       &::before {
@@ -448,7 +448,7 @@
   .links {
     justify-content: flex-start;
     margin-top: u(20.5);
-    font-size: u(16);
+    font-size: var(--t-sm);
     line-height: u(20);
 
     a:last-child {
@@ -492,20 +492,20 @@
     padding: u(26.53) u(20) 0;
 
     time {
-      font-size: u(16);
+      font-size: var(--t-sm);
       line-height: u(20);
     }
 
     h3 {
       margin-top: u(6.9);
-      font-size: u(28);
+      font-size: var(--t-h3l);
       line-height: u(38);
       letter-spacing: -0.0185em;
     }
 
     > p {
       margin-top: u(6.9);
-      font-size: u(18);
+      font-size: var(--t-body);
       line-height: u(29);
       font-weight: 400;
       letter-spacing: -0.022em;
@@ -514,7 +514,7 @@
 
   .read {
     margin: u(16.2) 0 0 u(4);
-    font-size: u(16);
+    font-size: var(--t-sm);
     line-height: u(20);
   }
 
@@ -532,13 +532,13 @@
 
     b {
       margin-bottom: u(1.5);
-      font-size: u(18);
+      font-size: var(--t-body);
       line-height: u(22);
     }
 
     span,
     p {
-      font-size: u(16);
+      font-size: var(--t-sm);
       line-height: u(23);
     }
 

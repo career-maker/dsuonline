@@ -23,7 +23,7 @@
   border-radius: 3px;
   background: $blue;
   color: #fff;
-  font-size: 13px;
+  font-size: var(--t-sm);
   font-weight: 600;
   letter-spacing: 0.02em;
   line-height: 1.4;
@@ -35,7 +35,7 @@
   overflow: hidden;
   padding-left: 14px;
   border-left: 3px solid $yellow;
-  font-size: max(15px, calc(var(--u) * 18));
+  font-size: var(--t-body);
   line-height: 1.6;
   font-weight: 500;
 }
@@ -47,7 +47,7 @@
   border: 0;
   background: none;
   color: $blue;
-  font-size: 12px;
+  font-size: var(--t-xs);
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -67,14 +67,14 @@
 
   b {
     display: block;
-    font-size: 15px;
+    font-size: var(--t-body);
     line-height: 1.25;
     font-weight: 600;
   }
 
   span {
     display: block;
-    font-size: 13.5px;
+    font-size: var(--t-sm);
     line-height: 1.35;
     font-weight: 500;
     color: var(--card-sub, #{$body});
@@ -92,7 +92,7 @@
   border-radius: 30px;
   background: $yellow;
   color: #1b1b1b;
-  font-size: 12px;
+  font-size: var(--t-xs);
   font-weight: 700;
   cursor: pointer;
 
@@ -138,7 +138,7 @@
   .q {
     display: grid;
     align-content: safe center;
-    font-size: fs(30, 19px);
+    font-size: var(--t-h3l);
     line-height: 1.5;
   }
 

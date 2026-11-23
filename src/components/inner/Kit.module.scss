@@ -122,7 +122,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     display: flex;
     gap: 12px;
     align-items: flex-start;
-    font-size: fs(18, 16px);
+    font-size: var(--t-body);
     line-height: 1.45;
     font-weight: 500;
     color: $ink;
@@ -184,7 +184,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   h3 {
-    font-size: fs(28, 20px);
+    font-size: var(--t-h3l);
     line-height: 1.25;
     font-weight: 500;
     color: $ink;
@@ -192,7 +192,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   p {
     margin-top: 10px;
-    font-size: fs(18, 16px);
+    font-size: var(--t-body);
     line-height: 1.61;
     color: $body;
   }
@@ -233,7 +233,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .num {
   display: block;
   margin-bottom: 10px;
-  font-size: 15px;
+  font-size: var(--t-body);
   font-weight: 500;
   letter-spacing: 0.06em;
   color: $gold;
@@ -247,7 +247,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   li {
     position: relative;
     padding-left: 18px;
-    font-size: clamp(15px, 1.1vw, 16px);
+    font-size: var(--t-sm);
     line-height: 1.5;
     color: $body;
 
@@ -281,7 +281,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   h3 {
-    font-size: fs(24, 19px);
+    font-size: var(--t-h3);
     line-height: 1.25;
     font-weight: 500;
     color: $ink;
@@ -289,7 +289,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   p {
     margin-top: 8px;
-    font-size: clamp(15px, 1.1vw, 16px);
+    font-size: var(--t-sm);
     line-height: 1.55;
     color: $body;
   }
@@ -303,7 +303,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border-radius: 50%;
   background: $blue;
   color: #fff;
-  font-size: 17px;
+  font-size: var(--t-lead);
   font-weight: 500;
 }
 
@@ -319,7 +319,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     width: 100%;
     min-width: 480px;
     border-collapse: collapse;
-    font-size: clamp(14px, 1.1vw, 16px);
+    font-size: var(--t-sm);
     line-height: 1.45;
   }
 
@@ -350,7 +350,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 .note {
   margin-top: 16px;
-  font-size: 15px;
+  font-size: var(--t-body);
   line-height: 1.5;
   color: $body;
 }
@@ -385,7 +385,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   > p {
     flex: 1;
     margin: 18px 0 22px;
-    font-size: clamp(15px, 1.15vw, 17px);
+    font-size: var(--t-body);
     line-height: 1.65;
     color: $body;
   }
@@ -409,7 +409,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   b {
     display: block;
-    font-size: 17px;
+    font-size: var(--t-lead);
     line-height: 1.25;
     font-weight: 500;
     color: $ink;
@@ -418,7 +418,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   > div span {
     display: block;
     margin-top: 2px;
-    font-size: 14px;
+    font-size: var(--t-sm);
     line-height: 1.35;
     color: $body;
   }
@@ -433,7 +433,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border-radius: 50%;
   background: $blue;
   color: #fff;
-  font-size: 22px;
+  font-size: var(--t-h3);
   font-weight: 500;
   object-fit: cover;
   object-position: 50% 20%;
@@ -452,7 +452,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border-radius: 999px;
   background: $btn-blue;
   color: #fff;
-  font-size: px(18);
+  font-size: var(--t-body);
   font-weight: 500;
   letter-spacing: 0;
   cursor: pointer;
@@ -526,7 +526,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: 18px 18px 22px;
 
   h3 {
-    font-size: 19px;
+    font-size: var(--t-h4);
     line-height: 1.25;
     font-weight: 500;
     color: $ink;
@@ -535,7 +535,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 .frole {
   margin-top: 6px;
-  font-size: 15px;
+  font-size: var(--t-body);
   line-height: 1.4;
   font-weight: 500;
   color: $blue;
@@ -543,7 +543,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 .fcreds {
   margin-top: 6px;
-  font-size: 14px;
+  font-size: var(--t-sm);
   line-height: 1.45;
   color: $body;
 }
@@ -593,20 +593,20 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .faqNum {
-  font-size: 22px;
+  font-size: var(--t-h3);
   font-weight: 400;
   color: $gold;
 }
 
 .faqQ {
-  font-size: fs(22, 17px);
+  font-size: var(--t-h4);
   line-height: 1.4;
   font-weight: 500;
   color: $ink;
 }
 
 .faqChev {
-  font-size: 16px;
+  font-size: var(--t-lead);
   color: $blue;
   transition: rotate 0.3s $ease;
 }
@@ -623,7 +623,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   p,
   li {
-    font-size: clamp(15px, 1.15vw, 17px);
+    font-size: var(--t-body);
     line-height: 1.65;
     color: $body;
   }
@@ -667,7 +667,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .tabLabel {
-  font-size: 13px;
+  font-size: var(--t-sm);
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -690,7 +690,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     border-radius: 21px;
     background: rgb(255 255 255 / 10%);
     color: #fff;
-    font-size: 15px;
+    font-size: var(--t-body);
     font-weight: 500;
     letter-spacing: 0.02em;
     white-space: nowrap;
@@ -757,7 +757,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     width: 100%;
     min-width: 0;
     table-layout: auto;
-    font-size: clamp(14px, 1.1vw, 16px);
+    font-size: var(--t-sm);
   }
 
   th {
@@ -765,7 +765,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     background: rgb(11 31 77 / 55%);
     border-bottom: 1px solid rgb(255 255 255 / 18%);
     color: rgb(255 255 255 / 85%);
-    font-size: 13px;
+    font-size: var(--t-sm);
     font-weight: 500;
     letter-spacing: 0;
     text-transform: capitalize;
@@ -828,17 +828,17 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     }
 
     th {
-      font-size: 11px;
+      font-size: var(--t-xs);
       letter-spacing: 0.04em;
     }
 
     td {
-      font-size: 14px;
+      font-size: var(--t-sm);
     }
 
     td:first-child {
       width: 28%;
-      font-size: 12.5px;
+      font-size: var(--t-xs);
     }
   }
 }
@@ -873,7 +873,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   b {
     display: block;
-    font-size: clamp(17px, 1.4vw, 20px);
+    font-size: var(--t-lead);
     line-height: 1.25;
     font-weight: 500;
     color: $ink;
@@ -882,13 +882,13 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   small {
     display: block;
     margin-top: 4px;
-    font-size: 14px;
+    font-size: var(--t-sm);
     color: $body;
   }
 
   i {
     flex: none;
-    font-size: 22px;
+    font-size: var(--t-h3);
     font-style: normal;
     color: $blue;
     transition: translate 0.25s $ease;
@@ -1022,14 +1022,14 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: 16px 20px 6px;
 
   b {
-    font-size: clamp(18px, 1.4vw, 21px);
+    font-size: var(--t-h4);
     line-height: 1.25;
     font-weight: 600;
     color: $ink;
   }
 
   small {
-    font-size: 14px;
+    font-size: var(--t-sm);
     color: $body;
   }
 }
@@ -1041,13 +1041,13 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   margin: 12px 20px 0;
   padding: 14px 0 18px;
   border-top: 1px solid $line-soft;
-  font-size: 15px;
+  font-size: var(--t-body);
   font-weight: 500;
   color: $blue;
 
   i {
     font-style: normal;
-    font-size: 20px;
+    font-size: var(--t-h3);
     transition: translate 0.25s $ease;
   }
 }
@@ -1059,12 +1059,12 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   margin-top: 14px;
 
   span {
-    font-size: 14px;
+    font-size: var(--t-sm);
     color: $body;
   }
 
   a {
-    font-size: clamp(18px, 1.6vw, 22px);
+    font-size: var(--t-h4);
     font-weight: 500;
     color: $blue;
     overflow-wrap: anywhere;
@@ -1123,7 +1123,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   figcaption {
     margin-top: 10px;
     text-align: center;
-    font-size: 15px;
+    font-size: var(--t-body);
     font-weight: 500;
     color: $body;
   }
@@ -1154,14 +1154,14 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   background: #fff;
 
   h3 {
-    font-size: clamp(20px, 1.8vw, 26px);
+    font-size: var(--t-h3);
     font-weight: 500;
     color: $ink;
   }
 
   p {
     margin-top: 10px;
-    font-size: 16px;
+    font-size: var(--t-lead);
     line-height: 1.6;
     color: $body;
   }
@@ -1188,7 +1188,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   h3 {
-    font-size: clamp(22px, 2.2vw, 30px);
+    font-size: var(--t-h3l);
     line-height: 1.2;
     font-weight: 700;
     color: $ink;
@@ -1196,13 +1196,13 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   .role {
     margin: 6px 0 16px;
-    font-size: clamp(16px, 1.3vw, 18px);
+    font-size: var(--t-body);
     font-weight: 500;
     color: $blue;
   }
 
   p {
-    font-size: clamp(15px, 1.15vw, 17px);
+    font-size: var(--t-body);
     line-height: 1.7;
     color: $body;
 
@@ -1253,7 +1253,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   span {
-    font-size: 16px;
+    font-size: var(--t-lead);
     font-weight: 500;
     color: $ink;
   }
@@ -1311,7 +1311,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 .docTitle {
   flex: 1 1 320px;
-  font-size: clamp(16px, 1.3vw, 18px);
+  font-size: var(--t-body);
   line-height: 1.4;
   font-weight: 500;
   color: $ink;
@@ -1331,7 +1331,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     border-radius: 999px;
     background: #fff;
     color: $ink;
-    font-size: px(17);
+    font-size: var(--t-body);
     font-weight: 500;
     letter-spacing: 0;
     transition: filter 0.2s, box-shadow 0.3s;
@@ -1354,7 +1354,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .narrow .prose p {
   max-width: 62ch;
   margin-inline: auto;
-  font-size: fs(20, 17px);
+  font-size: var(--t-lead);
 }
 
 .splitText h3 {
@@ -1404,7 +1404,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   h3 {
     min-height: 2.4em;
     margin-top: 16px;
-    font-size: fs(24, 19px);
+    font-size: var(--t-h3);
     line-height: 1.2;
     font-weight: 700;
     color: $ink;
@@ -1429,7 +1429,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .leadRole {
   min-height: 2.7em;
   margin-top: 6px;
-  font-size: fs(16, 14px);
+  font-size: var(--t-sm);
   line-height: 1.35;
   font-weight: 500;
   color: $blue;
@@ -1443,7 +1443,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   text-align: left;
 
   p {
-    font-size: max(15px, calc(var(--u) * 17));
+    font-size: var(--t-body);
     line-height: 1.6;
     font-weight: 500;
     color: $body;
@@ -1476,7 +1476,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border: 0;
   background: none;
   color: $blue;
-  font-size: 16px;
+  font-size: var(--t-lead);
   font-weight: 500;
   cursor: pointer;
   @include focus-ring;
@@ -1503,7 +1503,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   > p {
     margin-top: 16px;
-    font-size: fs(18, 16px);
+    font-size: var(--t-body);
     line-height: 1.61;
     color: $body;
   }
@@ -1548,7 +1548,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   b {
     display: block;
-    font-size: fs(20, 16px);
+    font-size: var(--t-lead);
     line-height: 1.17;
     font-weight: 500;
   }
@@ -1556,14 +1556,14 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   strong {
     display: block;
     margin-top: 3px;
-    font-size: fs(16, 14px);
+    font-size: var(--t-sm);
     line-height: 1.25;
     font-weight: 700;
   }
 
   span {
     display: block;
-    font-size: fs(16, 14px);
+    font-size: var(--t-sm);
     line-height: 1.25;
     font-weight: 300;
   }
@@ -1578,7 +1578,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     max-width: 62rem;
     margin-inline: auto;
     text-align: center;
-    font-size: fs(20, 17px);
+    font-size: var(--t-lead);
   }
 }
 
@@ -1652,7 +1652,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   .story > p {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: var(--t-sm);
     line-height: 1.5;
   }
 
@@ -1660,12 +1660,12 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     inset: auto 10px 10px;
 
     b {
-      font-size: 14px;
+      font-size: var(--t-sm);
     }
 
     strong,
     span {
-      font-size: 12px;
+      font-size: var(--t-xs);
     }
   }
 
@@ -1700,7 +1700,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   h3 {
-    font-size: fs(24, 19px);
+    font-size: var(--t-h3);
     line-height: 1.2;
     font-weight: 500;
     color: $ink;
@@ -1708,7 +1708,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   p {
     margin-top: 8px;
-    font-size: fs(17, 15px);
+    font-size: var(--t-body);
     line-height: 1.6;
     color: $body;
   }
@@ -1722,7 +1722,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border-radius: 50%;
   background: $blue;
   color: #fff;
-  font-size: 15px;
+  font-size: var(--t-body);
   font-weight: 500;
 }
 
@@ -1746,7 +1746,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   h3 {
-    font-size: fs(22, 18px);
+    font-size: var(--t-h4);
     line-height: 1.25;
     font-weight: 500;
     color: $ink;
@@ -1754,7 +1754,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   p {
     margin-top: 6px;
-    font-size: fs(17, 15px);
+    font-size: var(--t-body);
     line-height: 1.55;
     color: $body;
   }
@@ -1771,7 +1771,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: clamp(14px, 1.4vw, 20px);
   background: linear-gradient(180deg, rgb(16 42 102 / 94%), rgb(11 31 77 / 97%));
   color: #fff;
-  font-size: fs(17, 15px);
+  font-size: var(--t-body);
   line-height: 1.6;
   letter-spacing: -0.01em;
   opacity: 0;
@@ -1807,7 +1807,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   b {
     display: block;
-    font-size: fs(18, 15px);
+    font-size: var(--t-body);
     line-height: 1.2;
     font-weight: 500;
   }
@@ -1815,13 +1815,13 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   strong {
     display: block;
     margin-top: 2px;
-    font-size: fs(15, 13px);
+    font-size: var(--t-sm);
     font-weight: 700;
   }
 
   span {
     display: block;
-    font-size: fs(15, 13px);
+    font-size: var(--t-sm);
     font-weight: 300;
     line-height: 1.25;
   }
@@ -1873,7 +1873,6 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   h2 {
     @include h2;
-    font-size: fs(44, 28px);
   }
 
   p {
@@ -1985,7 +1984,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   margin-top: clamp(20px, #{u(32)}, 32px);
 
   p {
-    font-size: fs(20, 17px);
+    font-size: var(--t-lead);
     font-weight: 500;
     color: $ink;
   }
@@ -2023,7 +2022,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   > h2 {
     margin-bottom: 18px;
-    font-size: fs(32, 24px);
+    font-size: var(--t-h3l);
     line-height: 1.15;
     font-weight: 700;
     color: $ink;
@@ -2034,7 +2033,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   display: flex;
   gap: 10px;
   align-items: flex-start;
-  font-size: 14px;
+  font-size: var(--t-sm);
   line-height: 1.45;
   color: $body;
   cursor: pointer;
@@ -2115,7 +2114,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   > p {
     @include body-text;
-    font-size: max(17px, calc(var(--u) * 20));
+    font-size: var(--t-lead);
     line-height: 1.7;
   }
 
@@ -2210,7 +2209,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .contactFormCard:has(.consent) .consent {
-  font-size: 12px;
+  font-size: var(--t-xs);
 }
 
 // ---------- "Why choose" tabs (about): menu left, detail + photo right
@@ -2241,7 +2240,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     border-radius: 8px;
     background: none;
     color: $ink;
-    font-size: fs(18, 16px);
+    font-size: var(--t-body);
     font-weight: 500;
     text-align: left;
     cursor: pointer;
@@ -2284,7 +2283,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   background: #fff;
 
   h3 {
-    font-size: fs(28, 20px);
+    font-size: var(--t-h3l);
     font-weight: 700;
     color: $ink;
   }
@@ -2373,7 +2372,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .contactRow a {
-  font-size: clamp(16px, #{u(21)}, 21px);
+  font-size: var(--t-h4);
   overflow-wrap: normal;
   word-break: normal;
 }
@@ -2390,7 +2389,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .stats > li > span {
   display: block;
   margin-top: 10px;
-  font-size: 16px;
+  font-size: var(--t-lead);
   line-height: 1.35;
   opacity: 0.92;
 }
@@ -2469,7 +2468,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .payLabel {
-  font-size: fs(22, 18px);
+  font-size: var(--t-h4);
   font-weight: 500;
   line-height: 1.2;
   color: $ink;
@@ -2638,7 +2637,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: 14px 15px 18px;
 
   h3 {
-    font-size: fs(20, 17px);
+    font-size: var(--t-lead);
     line-height: 1.2;
     font-weight: 500;
     color: $ink;
@@ -2647,7 +2646,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 .facRole {
   margin-top: 4px;
-  font-size: fs(16, 14px);
+  font-size: var(--t-sm);
   line-height: 1.3;
   color: $ink;
 }
@@ -2658,7 +2657,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   li {
     position: relative;
     padding-left: 24px;
-    font-size: fs(16, 14px);
+    font-size: var(--t-sm);
     line-height: 1.3;
     color: $ink;
 
@@ -2696,7 +2695,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   p {
     margin-bottom: 10px;
-    font-size: 15px;
+    font-size: var(--t-body);
     font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -2710,7 +2709,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   a {
-    font-size: 15px;
+    font-size: var(--t-body);
     line-height: 1.35;
     color: $ink;
 
@@ -2735,7 +2734,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   h2 {
     margin-bottom: 14px;
-    font-size: fs(32, 22px);
+    font-size: var(--t-h3l);
     line-height: 1.2;
     font-weight: 700;
     color: $ink;
@@ -2743,7 +2742,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   p {
     margin-bottom: 14px;
-    font-size: max(16px, calc(var(--u) * 18));
+    font-size: var(--t-body);
     line-height: 1.75;
     color: $body;
   }
@@ -2757,7 +2756,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   li {
-    font-size: max(16px, calc(var(--u) * 18));
+    font-size: var(--t-body);
     line-height: 1.65;
     color: $body;
   }
@@ -2768,7 +2767,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   display: flex;
   gap: 8px;
   grid-column: 1 / -1;
-  font-size: 13px;
+  font-size: var(--t-sm);
 
   li {
     flex: 1;
@@ -2802,7 +2801,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border-radius: 999px;
   background: #fff;
   color: $blue;
-  font-size: 16px;
+  font-size: var(--t-lead);
   font-weight: 500;
   cursor: pointer;
 }
@@ -2825,7 +2824,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     padding: 16px 20px;
     border-radius: 0;
     border-bottom: 1px solid $line-soft;
-    font-size: fs(19, 16px);
+    font-size: var(--t-lead);
 
     &:last-child {
       border-bottom: 0;
@@ -2834,7 +2833,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     i {
       flex: none;
       width: 32px;
-      font-size: 14px;
+      font-size: var(--t-sm);
       font-style: normal;
       font-weight: 500;
       letter-spacing: 0.06em;
@@ -2897,7 +2896,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     padding: clamp(18px, #{u(28)}, 28px);
 
     h3 {
-      font-size: fs(30, 22px);
+      font-size: var(--t-h3l);
       font-weight: 700;
       line-height: 1.15;
       color: $ink;
@@ -2917,7 +2916,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border-radius: 20px;
   background: $yellow;
   color: #000;
-  font-size: 15px;
+  font-size: var(--t-body);
   font-weight: 700;
 }
 
@@ -3005,7 +3004,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   h3 {
-    font-size: fs(22, 18px);
+    font-size: var(--t-h4);
     line-height: 1.25;
     font-weight: 700;
     color: $ink;
@@ -3013,7 +3012,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   p {
-    font-size: fs(17, 15px);
+    font-size: var(--t-body);
     line-height: 1.55;
     color: $body;
     transition: color 0.35s;
@@ -3021,7 +3020,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .apartNum {
-  font-size: fs(34, 26px);
+  font-size: var(--t-h3l);
   line-height: 1;
   font-weight: 500;
   color: $blue;
@@ -3121,7 +3120,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   h3 {
     margin-top: 10px;
-    font-size: fs(30, 22px);
+    font-size: var(--t-h3l);
     line-height: 1.15;
     font-weight: 700;
     color: #fff;
@@ -3129,7 +3128,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   p {
     margin-top: 8px;
-    font-size: fs(16, 14px);
+    font-size: var(--t-sm);
     line-height: 1.55;
     color: rgb(255 255 255 / 92%);
   }
@@ -3156,7 +3155,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     border-radius: 14px;
     background: #fff;
     text-align: left;
-    font-size: fs(17, 14px);
+    font-size: var(--t-body);
     line-height: 1.3;
     font-weight: 500;
     color: $ink;
@@ -3165,7 +3164,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     @include focus-ring;
 
     i {
-      font-size: fs(24, 18px);
+      font-size: var(--t-h3);
       font-style: normal;
       font-weight: 500;
       line-height: 1;
@@ -3318,7 +3317,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .whyLbl {
-  font-size: fs(18, 15px);
+  font-size: var(--t-body);
   line-height: 1.25;
   font-weight: 500;
   color: $ink;
@@ -3402,7 +3401,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .elLead {
   max-width: 860px;
   margin-top: 16px;
-  font-size: fs(20, 16px);
+  font-size: var(--t-lead);
   line-height: 1.6;
   font-weight: 400;
   letter-spacing: -0.01em;
@@ -3489,7 +3488,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   b {
     margin-top: 14px;
-    font-size: fs(24, 19px);
+    font-size: var(--t-h3);
     line-height: 1.2;
     font-weight: 700;
     letter-spacing: -0.015em;
@@ -3501,7 +3500,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     align-items: center;
     gap: 8px;
     margin-top: 12px;
-    font-size: 15px;
+    font-size: var(--t-body);
     line-height: 1.3;
     color: $body;
   }
@@ -3524,7 +3523,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   gap: 10px;
   margin-top: auto;
   padding-top: 16px;
-  font-size: 16px;
+  font-size: var(--t-lead);
   font-weight: 500;
 
   u {
@@ -3567,7 +3566,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     padding: 16px 20px;
     background: $blue;
     color: #fff;
-    font-size: 13px;
+    font-size: var(--t-sm);
     font-weight: 500;
     letter-spacing: 0;
     text-transform: capitalize;
@@ -3620,7 +3619,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     th,
     td {
       padding: 11px 6px;
-      font-size: 12.5px;
+      font-size: var(--t-xs);
     }
 
     th {
@@ -3781,7 +3780,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border-bottom: 1px solid #e6eaf4;
 
   h3 {
-    font-size: fs(26, 20px);
+    font-size: var(--t-h3);
     line-height: 1.2;
     font-weight: 700;
     letter-spacing: -0.015em;
@@ -3790,7 +3789,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   p {
     margin-top: 4px;
-    font-size: 15px;
+    font-size: var(--t-body);
     line-height: 1.35;
     color: $body;
   }
@@ -3818,7 +3817,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   li {
     position: relative;
     padding-left: 22px;
-    font-size: 15.5px;
+    font-size: var(--t-body);
     line-height: 1.55;
     color: $body;
 
@@ -3837,7 +3836,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .lsText {
-  font-size: 15.5px;
+  font-size: var(--t-body);
   line-height: 1.65;
   color: $body;
 }
@@ -3910,7 +3909,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border-radius: 14px;
   background: rgb(255 255 255 / 94%);
   box-shadow: 0 6px 16px rgb(11 31 77 / 22%);
-  font-size: 13.5px;
+  font-size: var(--t-sm);
   font-weight: 600;
   line-height: 1.25;
   color: $blue-dark;
@@ -3935,7 +3934,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   h3 {
     position: relative;
     padding-bottom: 14px;
-    font-size: fs(26, 20px);
+    font-size: var(--t-h3);
     line-height: 1.2;
     font-weight: 700;
     letter-spacing: -0.015em;
@@ -3960,7 +3959,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 14.5px;
+  font-size: var(--t-body);
   line-height: 1.5;
   color: $body;
 
@@ -3974,7 +3973,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .fcProfile {
   margin-top: auto;
   padding-top: 4px;
-  font-size: 15px;
+  font-size: var(--t-body);
   font-weight: 600;
   color: $blue;
 
@@ -4033,7 +4032,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   .cards.tint h3 {
     max-width: 82%;
-    font-size: fs(24, 20px);
+    font-size: var(--t-h3);
     line-height: 1.2;
     font-weight: 700;
     letter-spacing: -0.015em;
@@ -4043,7 +4042,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   .cards.tint p {
     margin-top: 14px;
-    font-size: 15.5px;
+    font-size: var(--t-body);
     line-height: 1.6;
   }
 
@@ -4122,7 +4121,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
     h3 {
       max-width: none;
-      font-size: fs(24, 19px);
+      font-size: var(--t-h3);
       line-height: 1.2;
       font-weight: 700;
       letter-spacing: -0.015em;
@@ -4131,7 +4130,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
     p {
       margin-top: 6px;
-      font-size: fs(17, 15px);
+      font-size: var(--t-body);
       line-height: 1.5;
       color: $body;
     }
@@ -4175,7 +4174,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     @include body-text;
     max-width: none;
     margin-top: clamp(12px, #{u(18)}, 18px);
-    font-size: max(16px, calc(var(--u) * 19));
+    font-size: var(--t-lead);
     line-height: 1.75;
     text-align: left;
   }

@@ -58,7 +58,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   dd {
     margin: 8px 0 0;
-    font-size: clamp(13px, #{u(16)}, 16px);
+    font-size: var(--t-sm);
     line-height: 1.35;
     color: $body;
   }
@@ -82,7 +82,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: clamp(22px, #{u(40)}, 44px);
 
   h3 {
-    font-size: clamp(20px, #{u(28)}, 28px);
+    font-size: var(--t-h3l);
     font-weight: 600;
     color: $ink;
   }
@@ -90,7 +90,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
 .hint {
   margin-top: 6px;
-  font-size: clamp(14px, #{u(17)}, 17px);
+  font-size: var(--t-body);
   line-height: 1.5;
   color: $body;
 }
@@ -159,14 +159,14 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   border: 1.5px solid #4fa3ff;
   border-radius: 7px;
   background: #fff;
-  font-size: 13px;
+  font-size: var(--t-sm);
   font-weight: 700;
   color: #fff;
   transition: background 0.25s ease, border-color 0.25s ease, transform 0.35s $ease;
 }
 
 .name {
-  font-size: clamp(15px, #{u(19)}, 19px);
+  font-size: var(--t-lead);
   font-weight: 500;
   line-height: 1.3;
   color: $ink;
@@ -198,7 +198,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   gap: 12px;
   padding-top: 16px;
   border-top: 1px solid $edge;
-  font-size: 14px;
+  font-size: var(--t-sm);
   color: $body;
 
   // plain text action: the browser's default button box is reset
@@ -209,7 +209,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     border-radius: 0;
     background: none;
     font: inherit;
-    font-size: 14px;
+    font-size: var(--t-sm);
     font-weight: 600;
     color: $blue;
     text-decoration: underline;
@@ -240,7 +240,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   h3 {
     margin-top: 10px;
-    font-size: clamp(22px, #{u(32)}, 32px);
+    font-size: var(--t-h3l);
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -286,13 +286,13 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   b {
     display: block;
-    font-size: clamp(17px, #{u(22)}, 22px);
+    font-size: var(--t-h4);
     font-weight: 600;
   }
 
   p {
     margin-top: 8px;
-    font-size: clamp(13px, #{u(16)}, 16px);
+    font-size: var(--t-sm);
     line-height: 1.55;
     color: rgb(255 255 255 / 80%);
   }
@@ -352,14 +352,14 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   h3 {
     margin-top: 14px;
-    font-size: clamp(17px, #{u(21)}, 21px);
+    font-size: var(--t-h4);
     font-weight: 600;
     color: $ink;
   }
 
   p {
     margin-top: 6px;
-    font-size: clamp(14px, #{u(16)}, 16px);
+    font-size: var(--t-sm);
     line-height: 1.55;
     color: $body;
   }

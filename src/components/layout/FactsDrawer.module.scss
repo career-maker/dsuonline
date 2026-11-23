@@ -42,7 +42,7 @@
   border-radius: 50%;
   background: $bg-sky;
   color: $ink;
-  font-size: 18px;
+  font-size: var(--t-h4);
   cursor: pointer;
   transition: background-color 0.2s;
   @include focus-ring;
@@ -59,7 +59,7 @@
 
 .title {
   margin: 8px 40px 22px 0;
-  font-size: clamp(24px, 2.4vw, 30px);
+  font-size: var(--t-h3l);
   line-height: 1.2;
   font-weight: 700;
   color: $ink;
@@ -75,7 +75,7 @@
   grid-template-columns: 1.3fr 1fr;
   gap: 12px;
   padding: 0 16px 6px;
-  font-size: 13px;
+  font-size: var(--t-sm);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: $body;
@@ -91,14 +91,14 @@
   background: $bg-card-sky;
 
   dt {
-    font-size: 16px;
+    font-size: var(--t-lead);
     line-height: 1.35;
     font-weight: 500;
     color: $ink;
   }
 
   dd {
-    font-size: 16px;
+    font-size: var(--t-lead);
     line-height: 1.35;
     font-weight: 500;
     color: $blue-dark;

@@ -25,10 +25,10 @@
   border-radius: 999px;
   background: $blue;
   color: #fff;
-  font-size: fs(16, 14px);
+  font-size: var(--t-sm);
 
   b {
-    font-size: fs(22, 18px);
+    font-size: var(--t-h4);
     font-weight: 700;
   }
 }
@@ -39,7 +39,7 @@
   border-radius: 999px;
   background: #fff;
   color: $blue;
-  font-size: fs(18, 15px);
+  font-size: var(--t-body);
   font-weight: 600;
   letter-spacing: -0.0175em;
   cursor: pointer;

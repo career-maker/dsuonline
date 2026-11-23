@@ -61,7 +61,7 @@
   h3 {
     max-width: 82%;
     margin: 6px 0 0;
-    font-size: fs(24, 20px);
+    font-size: var(--t-h3);
     line-height: 1.2;
     font-weight: 700;
     letter-spacing: -0.015em;
@@ -70,7 +70,7 @@
 
   p {
     margin: 14px 0 0;
-    font-size: 15.5px;
+    font-size: var(--t-body);
     line-height: 1.6;
     color: $body;
   }
@@ -97,7 +97,7 @@
   li {
     position: relative;
     padding-left: 20px;
-    font-size: 15.5px;
+    font-size: var(--t-body);
     line-height: 1.45;
     color: $body;
 

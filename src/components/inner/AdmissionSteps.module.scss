@@ -85,7 +85,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   h3 {
     margin-top: clamp(18px, #{u(28)}, 28px);
-    font-size: clamp(18px, #{u(23)}, 23px);
+    font-size: var(--t-h3);
     font-weight: 600;
     line-height: 1.25;
     color: $ink;
@@ -93,7 +93,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   p {
     margin-top: 8px;
-    font-size: clamp(14px, #{u(16)}, 16px);
+    font-size: var(--t-sm);
     line-height: 1.55;
     color: $body;
   }
@@ -140,7 +140,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .step {
-  font-size: 13px;
+  font-size: var(--t-sm);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;

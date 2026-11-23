@@ -155,7 +155,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 15px;
+  font-size: var(--t-body);
   line-height: 1.4;
   color: rgb(255 255 255 / 80%);
 
@@ -196,7 +196,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 .heroLead {
   max-width: 34em;
   margin: clamp(14px, #{u(22)}, 22px) 0 0;
-  font-size: fs(20, 17px);
+  font-size: var(--t-lead);
   line-height: 1.55;
   color: rgb(255 255 255 / 86%);
 }
@@ -350,13 +350,13 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .blr1 {
   fill: #0b1f4d;
-  font-size: 24px;
+  font-size: var(--t-h3l);
   font-weight: 800;
 }
 
 .blr2 {
   fill: #1d5bd8;
-  font-size: 15px;
+  font-size: var(--t-body);
   font-weight: 700;
 }
 
@@ -429,7 +429,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 }
 
 .avEmoji {
-  font-size: 26px;
+  font-size: var(--t-h3l);
   text-anchor: middle;
   dominant-baseline: middle;
   transform: translateY(-4px);
@@ -438,7 +438,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 .avLb {
   text {
     fill: #fff;
-    font-size: 15px;
+    font-size: var(--t-body);
     font-weight: 800;
     text-anchor: middle;
   }
@@ -512,7 +512,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .credit {
   margin: 12px 0 0;
-  font-size: 12px;
+  font-size: var(--t-xs);
   color: rgb(255 255 255 / 50%);
 
   a {
@@ -699,7 +699,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
   h3 {
     margin: 0 0 8px;
-    font-size: fs(20, 17px);
+    font-size: var(--t-lead);
     font-weight: 700;
     line-height: 1.25;
     color: $ink;
@@ -708,7 +708,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
   p {
     margin: 0;
-    font-size: 15px;
+    font-size: var(--t-body);
     line-height: 1.55;
     color: $body;
     transition: color 0.3s;
@@ -784,7 +784,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   }
 
   h3 {
-    font-size: fs(28, 22px);
+    font-size: var(--t-h3l);
     color: #fff;
   }
 
@@ -819,7 +819,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   border-radius: 999px;
   background: rgb(34 195 230 / 20%);
   color: #22c3e6;
-  font-size: 12px;
+  font-size: var(--t-xs);
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -890,7 +890,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: var(--t-xs);
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -918,7 +918,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 }
 
 .zoneNote {
-  font-size: 14px;
+  font-size: var(--t-sm);
   color: #c9d5f2;
 }
 
@@ -957,13 +957,13 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
   h3 {
     margin: 0 0 4px;
-    font-size: fs(20, 17px);
+    font-size: var(--t-lead);
     font-weight: 700;
   }
 
   p {
     margin: 0;
-    font-size: 15px;
+    font-size: var(--t-body);
     line-height: 1.5;
     color: #c9d5f2;
   }
@@ -1045,7 +1045,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   height: 34px;
   border-radius: 50%;
   background: rgb(255 255 255 / 92%);
-  font-size: 16px;
+  font-size: var(--t-lead);
 }
 
 .contTxt {
@@ -1056,7 +1056,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
   small {
     display: block;
-    font-size: 11px;
+    font-size: var(--t-xs);
     font-weight: 800;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -1065,7 +1065,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
   b {
     display: block;
-    font-size: fs(20, 17px);
+    font-size: var(--t-lead);
     font-weight: 800;
     line-height: 1.2;
   }
@@ -1076,7 +1076,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   display: block;
   max-height: 0;
   overflow: hidden;
-  font-size: 13px;
+  font-size: var(--t-sm);
   line-height: 1.4;
   color: #c9d5f2;
   transition: max-height 0.4s, margin-top 0.4s;
@@ -1116,7 +1116,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    font-size: 16px;
+    font-size: var(--t-lead);
     line-height: 1.5;
     color: $ink;
   }
@@ -1161,7 +1161,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   border-radius: 24px;
   background: #fff;
   box-shadow: 0 10px 30px -12px rgb(11 31 77 / 25%);
-  font-size: 15px;
+  font-size: var(--t-body);
 
   th,
   td {
@@ -1193,7 +1193,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
     border: 0;
     background: $navy;
     color: #fff;
-    font-size: 13px;
+    font-size: var(--t-sm);
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1211,7 +1211,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
     th,
     td {
       padding: 12px 10px;
-      font-size: 14px;
+      font-size: var(--t-sm);
     }
   }
 }
@@ -1296,7 +1296,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 }
 
 .lvl {
-  font-size: 12px;
+  font-size: var(--t-xs);
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1305,7 +1305,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .progTitle {
   margin: 8px 0 6px;
-  font-size: fs(32, 26px);
+  font-size: var(--t-h3l);
   font-weight: 800;
   line-height: 1.12;
   letter-spacing: -0.02em;
@@ -1314,7 +1314,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .progText {
   margin: 0 0 20px;
-  font-size: 15px;
+  font-size: var(--t-body);
   line-height: 1.55;
   color: $body;
 }
@@ -1332,7 +1332,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
     border: 1px solid $iline;
     border-radius: 999px;
     background: #f3f6fc;
-    font-size: 13px;
+    font-size: var(--t-sm);
     font-weight: 600;
     color: $ink;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
@@ -1416,14 +1416,14 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
   h3 {
     margin: 0 0 6px;
-    font-size: fs(20, 17px);
+    font-size: var(--t-lead);
     font-weight: 700;
     color: $ink;
   }
 
   p {
     margin: 0;
-    font-size: 15px;
+    font-size: var(--t-body);
     line-height: 1.55;
     color: $body;
   }
@@ -1478,7 +1478,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   border-radius: 16px;
   background: #eaf1ff;
   color: $iblue;
-  font-size: 17px;
+  font-size: var(--t-lead);
   font-weight: 800;
   transition: background 0.35s, color 0.35s, transform 0.35s;
 }
@@ -1532,7 +1532,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
   p {
     margin: 0 0 26px;
-    font-size: fs(20, 16px);
+    font-size: var(--t-lead);
     line-height: 1.55;
     color: #c9d5f2;
   }
@@ -1577,7 +1577,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   }
 
   small {
-    font-size: 11px;
+    font-size: var(--t-xs);
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -1650,7 +1650,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   align-items: center;
   gap: 10px;
   min-height: 44px;
-  font-size: fs(22, 18px);
+  font-size: var(--t-h4);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: #fff;
@@ -1669,7 +1669,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .perks {
   margin: 22px 0 0;
-  font-size: 15px;
+  font-size: var(--t-body);
   color: rgb(255 255 255 / 75%);
 }
 
@@ -1684,7 +1684,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
   h3 {
     margin: 0;
-    font-size: fs(28, 22px);
+    font-size: var(--t-h3l);
     font-weight: 800;
     letter-spacing: -0.02em;
   }
@@ -1700,7 +1700,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 .formNote {
   margin: 0;
-  font-size: 16px;
+  font-size: var(--t-lead);
   line-height: 1.55;
   color: $body;
 
@@ -1728,7 +1728,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   min-width: 0;
 
   label {
-    font-size: 14px;
+    font-size: var(--t-sm);
     font-weight: 700;
     color: #5b6782;
   }
@@ -1743,7 +1743,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
     background: #f3f6fc;
     color: $ink;
     font: inherit;
-    font-size: 16px;
+    font-size: var(--t-lead);
     text-overflow: ellipsis;
     transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 
@@ -1787,12 +1787,12 @@ $gold-ink: #8c6500; // gold that passes AA on white
   border-radius: 6px;
   background: #fdecea;
   color: #8c1d18;
-  font-size: 15px;
+  font-size: var(--t-body);
 }
 
 .fine {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--t-sm);
   line-height: 1.45;
   color: #5b6782;
 }
@@ -2034,12 +2034,12 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
       h3 {
         margin-bottom: 10px;
-        font-size: 19px;
+        font-size: var(--t-h4);
         line-height: 1.25;
       }
 
       p {
-        font-size: 15px;
+        font-size: var(--t-body);
         line-height: 1.6;
       }
     }
@@ -2049,7 +2049,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
       padding: 0;
 
       h3 {
-        font-size: 28px;
+        font-size: var(--t-h3l);
       }
     }
 
@@ -2154,7 +2154,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   }
 
   b {
-    font-size: 14px;
+    font-size: var(--t-sm);
     font-weight: 700;
     line-height: 1.25;
     color: #fff;
@@ -2162,7 +2162,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
   small {
     margin-top: 2px;
-    font-size: 12.5px;
+    font-size: var(--t-xs);
     line-height: 1.35;
     color: rgb(255 255 255 / 75%);
   }

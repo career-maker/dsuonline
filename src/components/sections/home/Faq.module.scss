@@ -93,7 +93,7 @@
     @include focus-ring;
 
     svg {
-      font-size: px(16);
+      font-size: var(--t-sm);
       transition: transform 0.2s;
     }
   }
@@ -104,14 +104,14 @@
 }
 
 .num {
-  font-size: fs(32, 24px);
+  font-size: var(--t-h3l);
   line-height: 1;
   font-weight: 500;
   color: $yellow;
 }
 
 .q {
-  font-size: fs(20, 16px);
+  font-size: var(--t-lead);
   line-height: 1.4;
   font-weight: 400;
   letter-spacing: -0.031em;
@@ -161,6 +161,9 @@
 
   h2 {
     font-size: fs(55, 34px);
+    @include down($bp-sm) {
+      font-size: clamp(21px, 5.8vw, 26px); // same as section titles (h2 mixin)
+    }
     line-height: 1.09;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -170,7 +173,7 @@
 
   p {
     margin-top: clamp(6px, #{u(14)}, 14px);
-    font-size: fs(18, 15px);
+    font-size: var(--t-body);
     line-height: 1.33;
     font-weight: 400;
   }
@@ -246,18 +249,18 @@
       padding: 0 u(42.85) 0 0;
 
       svg {
-        font-size: u(18);
+        font-size: var(--t-body);
         stroke-width: 2.4;
       }
     }
   }
 
   .num {
-    font-size: u(32);
+    font-size: var(--t-h3l);
   }
 
   .q {
-    font-size: u(20);
+    font-size: var(--t-lead);
     line-height: u(28);
     letter-spacing: -0.015em;
     translate: 0 u(2);
@@ -279,7 +282,7 @@
 
     p {
       margin: u(9.65) 0 0 u(2);
-      font-size: u(18);
+      font-size: var(--t-body);
       line-height: u(24);
     }
   }
@@ -328,7 +331,7 @@
   border-radius: px(3);
   background: transparent;
   color: #fff;
-  font-size: px(18);
+  font-size: var(--t-body);
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s;

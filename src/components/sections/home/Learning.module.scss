@@ -101,7 +101,7 @@
   }
 
   h3 {
-    font-size: fs(22, 16px);
+    font-size: var(--t-h4);
     line-height: 1.18;
     font-weight: 500;
     letter-spacing: -0.0175em;
@@ -121,7 +121,7 @@
   background: rgb(255 255 255 / 85%);
   border: 0;
   color: #333;
-  font-size: px(14);
+  font-size: var(--t-xs);
   cursor: pointer;
   transition: scale 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
 
@@ -183,7 +183,7 @@
     gap: u(14);
 
     h3 {
-      font-size: u(22);
+      font-size: var(--t-h4);
       line-height: u(26);
     }
   }

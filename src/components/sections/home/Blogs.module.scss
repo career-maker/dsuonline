@@ -43,7 +43,7 @@
     border: 1.5px solid #1a1a1a;
     background: #fff;
     color: #1a1a1a;
-    font-size: px(22);
+    font-size: var(--t-h4);
 
     // phones: the 37-unit arrow drawing must not shrink with the em-based size (it vanished, leaving an empty ring)
     svg {
@@ -157,7 +157,7 @@
   text-align: center;
 
   strong {
-    font-size: px(28);
+    font-size: var(--t-h3l);
     line-height: px(28);
     font-weight: 500;
   }
@@ -165,13 +165,13 @@
   sup {
     position: relative;
     top: -2px;
-    font-size: px(16);
+    font-size: var(--t-sm);
     font-weight: 500;
     vertical-align: top;
   }
 
   span {
-    font-size: px(16);
+    font-size: var(--t-sm);
     line-height: px(16);
     font-weight: 400;
   }
@@ -196,7 +196,7 @@
   background: #fff;
 
   h3 {
-    font-size: fs(28, 20px);
+    font-size: var(--t-h3l);
     line-height: 1.357;
     font-weight: 500;
     letter-spacing: -0.015em;
@@ -214,7 +214,7 @@
   p {
     margin-top: px(3.8);
     padding-left: px(3);
-    font-size: fs(18, 15px);
+    font-size: var(--t-body);
     line-height: 1.61;
     font-weight: 400;
     color: $body;
@@ -235,7 +235,7 @@
   border-radius: px(3);
   background: $blue;
   color: #fff;
-  font-size: px(16);
+  font-size: var(--t-sm);
   font-weight: 600;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -346,17 +346,17 @@
     background: #212121;
 
     strong {
-      font-size: u(28);
+      font-size: var(--t-h3l);
       line-height: u(28);
     }
 
     sup {
-      font-size: u(16);
+      font-size: var(--t-sm);
     }
 
     span {
       margin-top: u(-12);
-      font-size: u(16);
+      font-size: var(--t-sm);
       line-height: u(20);
     }
   }
@@ -368,7 +368,7 @@
     border-radius: u(14);
 
     h3 {
-      font-size: u(28);
+      font-size: var(--t-h3l);
       line-height: u(38);
       letter-spacing: -0.02em;
     }
@@ -376,7 +376,7 @@
     p {
       margin-top: u(9.92);
       padding-left: u(4);
-      font-size: u(18);
+      font-size: var(--t-body);
       line-height: u(29);
       color: #4a5565;
     }
@@ -388,7 +388,7 @@
     height: u(44);
     margin: u(10.66) 0 0 u(4);
     padding: 0 u(24);
-    font-size: u(16);
+    font-size: var(--t-sm);
   }
 }
 
