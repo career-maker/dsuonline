@@ -360,9 +360,9 @@
     "semantic_hash": ""
   },
   "src/data/home.ts": {
-    "mtime": 1795023954.8923483,
-    "seen": 1795024404.1677911,
-    "ast_hash": "80cea0b041e6dd471740de2eb9296f73",
+    "mtime": 1795432554.7071953,
+    "seen": 1795433079.1851768,
+    "ast_hash": "fc8fd438cd49bde1fafbcc4599d7d186",
     "semantic_hash": ""
   },
   "src/data/icon-sizes.ts": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "CHECKPOINT.md": {
-    "mtime": 1795432038.8542068,
-    "seen": 1795432055.9373224,
-    "ast_hash": "ab6f5536fb9fc39e402b704e26c19764",
+    "mtime": 1795433063.8650196,
+    "seen": 1795433079.1852484,
+    "ast_hash": "0eb5ab5a7755d14cd6747bf2fb89932d",
     "semantic_hash": ""
   },
   "CLAUDE.md": {

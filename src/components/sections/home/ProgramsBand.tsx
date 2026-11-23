@@ -164,7 +164,7 @@ export function ProgramsBand({
                     alt={`Learner pursuing ${p.name} online`}
                     frame={[0, 0, 525, 173]}
                     box={[ph.box[0] - ph.frame[0], ph.box[1] - ph.frame[1], ph.box[2], ph.box[3]]}
-                    flip={code === 'bcom'}
+                    flip={code === 'bcom' || code === 'mca'}
                     sizes="(max-width: 900px) 100vw, 525px"
                   />
                   <span className={s.emi}>
