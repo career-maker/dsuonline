@@ -1289,7 +1289,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           title: `Explore your ${progShort} at a glance`,
           tiles: [
             { value: '100%', label: 'Online learning' },
-            ...(feeN ? [{ value: `\u20B9${(feeN / 1e5).toFixed(2)}L`, label: 'Total programme fees' }] : []),
+            ...(feeN ? [{ value: `\u20B9${feeN.toLocaleString('en-IN')}`, label: 'Total programme fees' }] : []),
             ...(nElec ? [{ value: String(nElec), label: 'In-demand electives' }] : []),
             { value: 'Live + Recorded', label: 'Learning sessions' },
           ],

@@ -201,7 +201,7 @@ export function Header() {
                       <span className={s.txt}>
                         <b>{p.fullName}</b>
                         <small>
-                          {p.duration} · 1st sem INR {p.firstSemFee}
+                          {p.duration} · Total fees INR {p.totalFee}
                         </small>
                       </span>
                       <span className={s.arr} aria-hidden="true">
