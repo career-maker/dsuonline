@@ -129,37 +129,31 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   padding: 14px;
   overflow: visible;
 
-  // axes: a vertical and a horizontal line through the centre gap, arrowheads at the ends
+  // axes: a plain cross through the centre gap (lines fade at the ends) with a round hub where they meet
   &::before,
   &::after {
     content: '';
     position: absolute;
     z-index: 0;
     pointer-events: none;
-    background: linear-gradient(currentcolor, currentcolor) center / 2px 100% no-repeat;
-    color: #4fa3ff;
   }
 
   &::before {
-    top: 0;
-    bottom: 0;
-    left: calc(50% - 6px);
-    width: 12px;
+    inset: 0;
     background:
-      linear-gradient(currentcolor, currentcolor) center / 2px 100% no-repeat,
-      conic-gradient(from 150deg at 50% 0, currentcolor 60deg, transparent 0) top / 12px 10px no-repeat,
-      conic-gradient(from -30deg at 50% 100%, currentcolor 60deg, transparent 0) bottom / 12px 10px no-repeat;
+      linear-gradient(transparent, #4fa3ff 18%, #4fa3ff 82%, transparent) center / 2px 100% no-repeat,
+      linear-gradient(90deg, transparent, #4fa3ff 18%, #4fa3ff 82%, transparent) center / 100% 2px no-repeat;
   }
 
   &::after {
-    left: 0;
-    right: 0;
-    top: calc(50% - 6px);
-    height: 12px;
-    background:
-      linear-gradient(currentcolor, currentcolor) center / 100% 2px no-repeat,
-      conic-gradient(from 60deg at 0 50%, currentcolor 60deg, transparent 0) left / 10px 12px no-repeat,
-      conic-gradient(from 240deg at 100% 50%, currentcolor 60deg, transparent 0) right / 10px 12px no-repeat;
+    top: calc(50% - 9px);
+    left: calc(50% - 9px);
+    width: 18px;
+    height: 18px;
+    border: 3px solid #4fa3ff;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgb(79 163 255 / 18%);
   }
 
   button {
@@ -190,17 +184,19 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
       opacity: 0.85;
     }
 
+    // solid credit badge: white on the dark quadrants, navy on the light ones
     .ring {
       align-self: flex-end;
-      background: rgb(255 255 255 / 22%);
-      color: inherit;
+      background: var(--rb);
+      color: var(--rc);
+      box-shadow: 0 4px 10px rgb(11 31 77 / 18%);
     }
 
     // one palette blue per quadrant; light blues carry navy text
-    &:nth-child(1) { --q: #0b1f4d; --qt: #fff; }
-    &:nth-child(2) { --q: #1d5bd8; --qt: #fff; }
-    &:nth-child(3) { --q: #4fa3ff; --qt: #0b1f4d; }
-    &:nth-child(4) { --q: #22c3e6; --qt: #0b1f4d; }
+    &:nth-child(1) { --q: #0b1f4d; --qt: #fff; --rb: #fff; --rc: #0b1f4d; }
+    &:nth-child(2) { --q: #1d5bd8; --qt: #fff; --rb: #fff; --rc: #0b1f4d; }
+    &:nth-child(3) { --q: #4fa3ff; --qt: #0b1f4d; --rb: #0b1f4d; --rc: #fff; }
+    &:nth-child(4) { --q: #22c3e6; --qt: #0b1f4d; --rb: #0b1f4d; --rc: #fff; }
 
     @media (hover: hover) {
       &:hover:not(.on) {
@@ -224,10 +220,6 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
       color: inherit;
     }
 
-    .ring {
-      background: rgb(255 255 255 / 30%);
-      color: inherit;
-    }
   }
 
   // entrance: each quadrant comes in from its own corner as the section scrolls into view
