@@ -78,11 +78,14 @@ export function ProgramHero({ eyebrow, lines, name, closing, desc, pill, stats, 
   );
   const actions = (
     <div className={s.ctas}>
+      {/* phones show the short label; the full one stays for screen readers */}
       <ArrowLink href={site.apply} external>
-        Apply Now
+        <span className={s.full}>Apply Now</span>
+        <span className={s.short} aria-hidden="true">Apply</span>
       </ArrowLink>
       <ArrowLink href={brochureHref(code)} external variant="outline">
-        Download Brochure
+        <span className={s.full}>Download Brochure</span>
+        <span className={s.short} aria-hidden="true">Download</span>
       </ArrowLink>
     </div>
   );
