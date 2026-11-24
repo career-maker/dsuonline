@@ -26,6 +26,7 @@ User rules: home page pixel-matches the PDF; inner pages follow home typography/
 - Enquiry popup submit: NO backend. `NEXT_PUBLIC_ENQUIRY_ENDPOINT` env var (JSON POST) enables delivery; otherwise UI says "Not sent yet". Do not claim delivery.
 
 ## Status
+MBA 'Why DSU Online MBA?' copy replaced 2026-11-24 with client-supplied text (content/pages/online-mba.json, two paragraphs; benefit bullets unchanged). CLIENT OVERRIDE: a re-scrape (`tools/scrape.py --force`) would restore the old live text, so re-apply after any re-scrape. Not deployed.
 Fees 2026-11-24: programme banner tile shows the full total (₹1,30,000, en-IN grouping from the page's Total Fees) instead of ₹1.30L; header Programs dropdown shows 'Total fees INR 1,30,000' (programs.ts totalFee) instead of the 1st sem fee. Blog sidebar programme badges still show the 1st sem fee (firstSemFee). Not deployed.
 Programme banner on phones/tablets (<900px, ProgramHero, 2026-11-24): photo is its own band at the top (height clamp(300px,72vw,420px), fades out) and the copy starts below it, so the character no longer sits behind the text (specialisation banners have no photo, unchanged). Phones (<600): Apply/Download buttons on one row with short labels "Apply" / "Download" (full labels kept as visually hidden text) and their dot icons back. Checked 390/360/768/1440 + a specialisation page. Not deployed.
 Footer Admissions phone = +91 98801 47004 (src/data/site.ts admissionsPhone, 2026-11-24); Helpdesk stays +91 98801 48004. Not deployed.
