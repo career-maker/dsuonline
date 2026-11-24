@@ -206,7 +206,7 @@ export function InnerHero({
   );
 }
 
-export function CtaBand({ title = 'Ready to take the Next Step ?', text = 'Admission Open for 2027, Enroll Now & Stop Your Future', apply = 'Apply Now', enquire = true }: { title?: string; text?: string; apply?: string; enquire?: boolean } = {}) {
+export function CtaBand({ title = 'Ready to take the Next Step ?', text = 'Admission Open for 2027, Enroll Now & Shape Your Future', apply = 'Apply Now', enquire = true }: { title?: string; text?: string; apply?: string; enquire?: boolean } = {}) {
   return (
     <section className={s.cta}>
       <div className={s.inner}>
