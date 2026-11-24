@@ -140,7 +140,7 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 }
 
-// phones: the chat button takes the full width of the card and its label is centred; the phone number sits centred under it
+// phones: the submit button takes the full width of the card and its label is centred; the phone number sits centred under it
 @include down($bp-sm) {
   .actions {
     flex-direction: column;
@@ -157,5 +157,82 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
     a {
       text-align: center;
     }
+  }
+}
+
+// ---------- "Leave a Query" form inside the navy card
+.form {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgb(255 255 255 / 18%);
+
+  h3 {
+    font-size: var(--t-lead);
+    font-weight: 600;
+  }
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+
+  // name across the full width, email + mobile side by side
+  > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  @include down($bp-sm) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+
+  label {
+    font-size: var(--t-sm);
+    color: rgb(255 255 255 / 85%);
+  }
+
+  input {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 14px;
+    border: 1px solid rgb(255 255 255 / 30%);
+    border-radius: 10px;
+    background: #fff;
+    color: $ink;
+    font: inherit;
+    font-size: var(--t-body);
+    @include focus-ring;
+
+    &[aria-invalid='true'] {
+      border-color: #ffb4a8;
+      box-shadow: 0 0 0 2px rgb(255 180 168 / 45%);
+    }
+  }
+}
+
+.err {
+  font-size: var(--t-xs);
+  color: #ffcfc7;
+}
+
+.done {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgb(255 255 255 / 10%);
+  font-size: var(--t-sm);
+  line-height: 1.55;
+
+  a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: underline;
   }
 }
