@@ -26,3 +26,13 @@ export const advantageLead: Record<string, string> = {
 export const dualCopy: Record<string, string> = {
   'online-mba': 'Combine two in-demand electives, such as Finance with Business Analytics or Marketing with AI, and build expertise across two business functions in one Online MBA.',
 };
+
+/** Client-supplied fee section copy (2026-11-24). Programmes without an entry keep the copy built from their fee facts. */
+const feeText = (n: string) => ({
+  title: `Online ${n} Course Fee Structure`,
+  desc: `The DSU Online ${n} programme fee is INR 1,30,000 for the complete 2-year degree. Learners can pay semester-wise, with INR 32,875 for the first semester and INR 32,375 for each remaining semester. Explore the detailed Online ${n} semester-wise and year-wise fee structure below.`,
+});
+export const feeCopy: Record<string, { title: string; desc: string }> = {
+  'online-mba': feeText('MBA'),
+  'online-mca': feeText('MCA'),
+};

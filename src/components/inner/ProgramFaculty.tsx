@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { CardSlider } from '@/components/ui/CardSlider';
-import { Icon } from '@/components/ui/Icon';
 import type { Img } from './parse';
 import s from './ProgramFaculty.module.scss';
 
@@ -33,9 +32,6 @@ function Card({ f }: { f: Item }) {
         <div className={s.links}>
           <a href="#" aria-label={`View profile: ${f.name}`}>
             View Profile &gt;
-          </a>
-          <a href="https://www.linkedin.com/company/dsu-online" target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn: ${f.name}`}>
-            <Icon name="linkedin" /> LinkedIn
           </a>
         </div>
       </div>

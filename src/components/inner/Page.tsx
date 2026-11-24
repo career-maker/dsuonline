@@ -1,7 +1,6 @@
 import { ElectiveGrid } from './ElectiveGrid';
 import { CareerFlip } from './CareerFlip';
 import { FeeTabs } from '@/components/inner/FeeTabs';
-import { EmiCalculator } from './EmiCalculator';
 import { ElectiveCombinator } from './ElectiveCombinator';
 import { AdmissionSteps } from './AdmissionSteps';
 import { FeeTable } from './FeeTable';
@@ -34,7 +33,7 @@ import { ProgramCertificate } from './ProgramCertificate';
 import { faqFor } from '@/data/programme-faq';
 import liveFaqs from '@/data/live-faqs.json';
 import { buildCurriculum } from './curriculumData';
-import { advantageLead, dualCopy } from '@/data/programme-advantage';
+import { advantageLead, dualCopy, feeCopy } from '@/data/programme-advantage';
 import { dualOn } from '@/data/programme-architect';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Faq } from '@/components/sections/home/Faq';
@@ -923,7 +922,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
         const h = headFor(title);
         nodes.push(
           <Sec key={key} tone={nextTone()} id={slugify(title)}>
-            <ProgramFees eyebrow={h.eyebrow} title={h.title ?? title} desc={desc} photo="/images/career/handshake.webp" note={note}>
+            <ProgramFees eyebrow={h.eyebrow} title={feeCopy[slug]?.title ?? h.title ?? title} desc={feeCopy[slug]?.desc ?? desc} photo="/images/career/handshake.webp" note={note}>
               <div className={s.tables}>{tables.length > 1 ? <FeeTabs tables={tables.map((t) => t.rows)} /> : tables.map((t, i) => <FeeTable key={i} rows={t.rows} />)}</div>
             </ProgramFees>
           </Sec>,
@@ -936,17 +935,13 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
           </Sec>,
         );
       }
-      // programme pages: EMI planner right under the fee table (total read from the table's "Total Fees" row)
+      // programme pages: personalised admission guidance right under the fee table (replaced the EMI calculator, client 2026-11-24)
       if (programLinks) {
-        const totalRow = tables.flatMap((tb) => tb.rows).find((r) => /^total fees?/i.test(r[0] ?? ''));
-        const total = Number((totalRow?.[1] ?? '').replace(/[^\d]/g, ''));
-        if (total > 10000) {
-          nodes.push(
-            <Sec key={`${key}-emi`} tone={nextTone()} eyebrow="Plan Your Payments" title="EMI Calculator">
-              <EmiCalculator total={total} program={({ mba: 'MBA', mca: 'MCA', bba: 'BBA', bca: 'BCA', bcom: 'B.Com' } as Record<string, string>)[slug.replace(/^online-/, '')] ?? 'programme'} />
-            </Sec>,
-          );
-        }
+        nodes.push(
+          <Sec key={`${key}-guidance`} tone="white" compact id="admission-guidance">
+            <ProgramGuidance name={progShortName} code={slug.replace(/^online-/, '')} degree={/^(mba|mca)$/.test(slug.replace(/^online-/, '')) ? "Master's degree" : "Bachelor's degree"} dual={dualOn(slug) && !!facts?.find((f) => /^elective$/i.test(f.label)) && !!dualCopy[slug]} />
+          </Sec>,
+        );
       }
       // (programme pages: "Career Path" + "Industries" under the fee block are shown after the testimonials, see careerNode)
       continue;
@@ -1023,11 +1018,6 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
             </Sec>,
           );
         }
-        nodes.push(
-          <Sec key={`${key}-guidance`} tone="white" compact id="admission-guidance">
-            <ProgramGuidance name={progShortName} code={slug.replace(/^online-/, '')} degree={/^(mba|mca)$/.test(slug.replace(/^online-/, '')) ? "Master's degree" : "Bachelor's degree"} dual={dualOn(slug) && !!facts?.find((f) => /^elective$/i.test(f.label)) && !!dualCopy[slug]} />
-          </Sec>,
-        );
         continue;
       }
       nodes.push(

@@ -90,7 +90,7 @@ export function ElectiveCombinator({ programName, programCode, electives }: { pr
               {chosen.blurb && <p>{chosen.blurb}</p>}
             </div>
           )}
-          <ArrowLink variant="outline" className={s.cta} onClick={() => open(programCode, chosen ? `Online ${programName} in ${chosen.name}` : undefined)}>
+          <ArrowLink variant="outline" className={s.cta} onClick={() => open(programCode)}>
             {copy.cta}
           </ArrowLink>
         </aside>
