@@ -5,7 +5,7 @@ export const site = {
   phoneLabel: '+91 9880147004',
   helpdeskPhone: '+91 98801 48004',
   helpdeskEmail: 'helpdesk@dsuonline.com',
-  admissionsPhone: '+91 98801 48004',
+  admissionsPhone: '+91 98801 47004',
   admissionsEmail: 'admissions@dsuonline.com',
   address: 'Kudlu Gate, Hosur Road, Bengaluru - 560 114',
   learnerLogin: 'https://student.dsuonline.com/login',
