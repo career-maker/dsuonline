@@ -24,6 +24,7 @@ import { ProgramHero } from './ProgramHero';
 import { ProgramAdvantage } from './ProgramAdvantage';
 import { ProgramAbout } from './ProgramAbout';
 import { ProgramFees } from './ProgramFees';
+import { EmiCalculator } from './EmiCalculator';
 import { ProgramCurriculum } from './ProgramCurriculum';
 import { ProgramLearning } from './ProgramLearning';
 import { ProgramEligibility } from './ProgramEligibility';
@@ -33,7 +34,7 @@ import { ProgramCertificate } from './ProgramCertificate';
 import { faqFor } from '@/data/programme-faq';
 import liveFaqs from '@/data/live-faqs.json';
 import { buildCurriculum } from './curriculumData';
-import { advantageLead, dualCopy, feeCopy } from '@/data/programme-advantage';
+import { advantageLead, advantageTitle, dualCopy, feeCopy } from '@/data/programme-advantage';
 import { dualOn } from '@/data/programme-architect';
 import { FramedImage } from '@/components/ui/FramedImage';
 import { Faq } from '@/components/sections/home/Faq';
@@ -942,6 +943,16 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
             <ProgramGuidance name={progShortName} code={slug.replace(/^online-/, '')} degree={/^(mba|mca)$/.test(slug.replace(/^online-/, '')) ? "Master's degree" : "Bachelor's degree"} dual={dualOn(slug) && !!facts?.find((f) => /^elective$/i.test(f.label)) && !!dualCopy[slug]} />
           </Sec>,
         );
+        // EMI planner after the guidance (client 2026-11-24): every programme except MBA. Shared template, so MBA is skipped here.
+        const totalRow = tables.flatMap((tb) => tb.rows).find((r) => /^total fees?/i.test(r[0] ?? ''));
+        const total = Number((totalRow?.[1] ?? '').replace(/[^\d]/g, ''));
+        if (slug !== 'online-mba' && total > 10000) {
+          nodes.push(
+            <Sec key={`${key}-emi`} tone={nextTone()} eyebrow="Plan Your Payments" title="EMI Calculator">
+              <EmiCalculator total={total} program={({ mca: 'MCA', bba: 'BBA', bca: 'BCA', bcom: 'B.Com' } as Record<string, string>)[slug.replace(/^online-/, '')] ?? 'programme'} />
+            </Sec>,
+          );
+        }
       }
       // (programme pages: "Career Path" + "Industries" under the fee block are shown after the testimonials, see careerNode)
       continue;
@@ -1197,7 +1208,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
             items={benefits}
             photo="/images/inner/prog-main-v2.webp"
             inset="/images/inner/prog-inset-v2.webp"
-            alt={`Learner pursuing ${title.replace(/^why\s+|\?$/gi, '')}`}
+            alt={`Learner pursuing ${title.replace(/^why\s+(choose\s+(an?\s+)?)?|\?$/gi, '')}`}
           />
         </Sec>,
       );
@@ -1344,6 +1355,7 @@ export function ContentPage({ slug, crumbs, blocks: raw, programLinks, withFacts
       {programHero ?? specHero ?? <InnerHero size={withFacts ? (crumbs.length >= 3 ? 'gradient' : 'full') : 'short'} badges={slug === 'about'} bannerSrc={BANNERS[slug]} bannerMobileSrc={BANNERS_MOBILE[slug]} banner={[...slug].reduce((n, c) => n + c.charCodeAt(0), 0)} crumbs={crumbs} eyebrow={ph ? ph.eyebrow : preEyebrow} title={ph?.title ?? st.h1} subtitle={ph ? ph.subtitle : withFacts || !longSub ? subtitle : undefined} facts={facts} extra={st.hero} />}
       {programHero && progShort && (
         <ProgramAdvantage
+          title={advantageTitle[slug]}
           name={progShort}
           lead={advantageLead[slug] ?? `A flexible ${num(dur?.value)}-${/year/i.test(dur?.value ?? '') ? 'year' : 'month'} online programme with in-demand electives for learners across industries.`}
           dual={dualOn(slug) && fv(/^elective$/i) && dualCopy[slug] ? { text: dualCopy[slug], href: '#pair' } : undefined}

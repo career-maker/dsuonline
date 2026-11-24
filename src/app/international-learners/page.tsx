@@ -11,6 +11,7 @@ import { IntlMotion } from '@/components/international/IntlMotion';
 import { Rail } from '@/components/international/Rail';
 import { TimeZones } from '@/components/international/TimeZones';
 import { site } from '@/data/site';
+import { programs } from '@/data/programs';
 import s from '@/components/international/International.module.scss';
 
 export const metadata: Metadata = {
@@ -23,8 +24,17 @@ const tints = ['cyan', 'sky', 'violet', 'blue'];
 const heroUsps = [
   { icon: 'video', title: 'Live + Recorded', text: 'Never miss a class' },
   { icon: 'globe', title: 'Learn from anywhere', text: 'Any country, any time zone' },
-  { icon: 'cap', title: 'UGC-Entitled', text: 'Online degree' },
+  { icon: 'cap', title: 'UGC-Entitled', text: 'Globally Recognised' },
+  { icon: 'screen', title: 'Online Remote Proctored', text: 'Examinations' },
 ];
+
+// Fees are billed in INR; USD/EUR are indicative at the client's rates (2026-11-24).
+const RATE = { usd: 0.011, eur: 0.0099 };
+const feeRows = programs.map((p) => {
+  const inr = Number(p.totalFee.replace(/[^\d]/g, ''));
+  return { code: p.code, name: p.name, fullName: p.fullName, href: p.href, duration: p.duration, inr, usd: Math.round(inr * RATE.usd), eur: Math.round(inr * RATE.eur) };
+});
+const money = (n: number, locale: string, currency: string) => new Intl.NumberFormat(locale, { style: 'currency', currency, maximumFractionDigits: 0 }).format(n);
 
 export default function InternationalLearners() {
   return (
@@ -45,6 +55,11 @@ export default function InternationalLearners() {
                 </li>
               </ol>
             </nav>
+            <div className={`${s.badges} ${s.badgesTop}`}>
+              <Image src="/images/brand/naac.webp" alt="NAAC A+ grade accredited" width={294} height={100} />
+              <Image src="/images/brand/ugc.webp" alt="UGC Entitled" width={202} height={103} />
+              <Image src="/images/brand/legacy.webp" alt="Legacy since the 1960s" width={116} height={103} />
+            </div>
             <p className={`${s.eyebrow} ${s.heroEyebrow}`}>Dayananda Sagar University · Bengaluru, India</p>
             <h1>
               <span>An Indian degree that</span> <span><em>travels</em> with you.</span>
@@ -71,11 +86,6 @@ export default function InternationalLearners() {
                 </li>
               ))}
             </ul>
-            <div className={s.badges}>
-              <Image src="/images/brand/naac.webp" alt="NAAC A+ grade accredited" width={294} height={100} />
-              <Image src="/images/brand/ugc.webp" alt="UGC Entitled" width={202} height={103} />
-              <Image src="/images/brand/legacy.webp" alt="Legacy since the 1960s" width={116} height={103} />
-            </div>
           </div>
           <HeroMap />
         </div>
@@ -256,6 +266,49 @@ export default function InternationalLearners() {
               </div>
             </li>
           </Rail>
+        </div>
+      </section>
+
+      {/* FEES */}
+      <section className={`${s.sec} ${s.white}`} id="fees">
+        <div className={s.wrap}>
+          <div className={`${s.head} ${s.center}`} data-reveal>
+            <p className={s.eyebrow}>Fees</p>
+            <h2>Fee structure in INR, USD &amp; EUR</h2>
+            <p className={s.sub}>Total programme fee for the complete degree.</p>
+          </div>
+          <div className={s.feeWrap} data-reveal>
+            <table className={s.feeTable}>
+              <thead>
+                <tr>
+                  <th scope="col">Programme</th>
+                  <th scope="col">INR</th>
+                  <th scope="col">USD</th>
+                  <th scope="col">EUR</th>
+                </tr>
+              </thead>
+              <tbody>
+                {feeRows.map((r) => (
+                  <tr key={r.code}>
+                    <th scope="row">
+                      <Link prefetch={false} href={r.href}>
+                        Online {r.name}
+                      </Link>
+                      <small>
+                        {r.fullName} · {r.duration}
+                      </small>
+                    </th>
+                    <td>{money(r.inr, 'en-IN', 'INR')}</td>
+                    <td>{money(r.usd, 'en-US', 'USD')}</td>
+                    <td>{money(r.eur, 'en-IE', 'EUR')}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className={s.feeNote}>
+            Fees are charged in Indian Rupees (INR). USD and EUR amounts are indicative, converted at ₹1 = US$ {RATE.usd} and ₹1 = € {RATE.eur}; the amount you pay in your currency depends on the exchange rate on the day of payment.
+          </p>
         </div>
       </section>
 

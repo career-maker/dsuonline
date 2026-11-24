@@ -36,7 +36,7 @@ function Ico({ n }: { n: keyof typeof P }) {
 }
 
 /** Advantage cards + closing banner shown under the programme hero. All text comes from props / `programme-advantage.ts`. */
-export function ProgramAdvantage({ name, lead, dual, bannerSrc }: { name: string; lead: string; dual?: { text: string; href: string }; bannerSrc: string }) {
+export function ProgramAdvantage({ name, title, lead, dual, bannerSrc }: { name: string; title?: string; lead: string; dual?: { text: string; href: string }; bannerSrc: string }) {
   return (
     <>
       <section className={s.sec} id="advantage">
@@ -44,7 +44,7 @@ export function ProgramAdvantage({ name, lead, dual, bannerSrc }: { name: string
           <div className={s.top}>
             <div>
               <p className={s.eyebrow}>The DSU Online Advantage</p>
-              <h2 className={s.title}>Why choose the Online {name}?</h2>
+              <h2 className={s.title}>{title ?? `Why choose the Online ${name}?`}</h2>
               {dual && <p className={s.lead}>{lead}</p>}
             </div>
             {dual ? (

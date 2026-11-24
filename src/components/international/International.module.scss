@@ -2108,8 +2108,8 @@ $gold-ink: #8c6500; // gold that passes AA on white
 
 // hero: three key points as glass chips under the buttons
 .heroUsps {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); // four tiles: a tidy 2x2
   gap: 10px;
   width: 100%;
   max-width: 42rem;
@@ -2118,7 +2118,7 @@ $gold-ink: #8c6500; // gold that passes AA on white
   list-style: none;
 
   @include down($bp-sm) {
-    flex-direction: column;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   li {
@@ -2166,4 +2166,110 @@ $gold-ink: #8c6500; // gold that passes AA on white
     line-height: 1.35;
     color: rgb(255 255 255 / 75%);
   }
+}
+
+// accreditation logos sit right under the breadcrumb, above the eyebrow
+.badgesTop {
+  margin: clamp(12px, #{u(20)}, 20px) 0 clamp(14px, #{u(22)}, 22px);
+}
+
+// ---------- fee structure in INR / USD / EUR
+.feeWrap {
+  max-width: 980px;
+  margin: clamp(24px, #{u(40)}, 40px) auto 0;
+  overflow: hidden;
+  border: 1px solid #d9e4ee;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 14px 36px rgb(11 31 77 / 8%);
+}
+
+.feeTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--t-body);
+
+  thead th {
+    padding: 16px 20px;
+    background: #0b1f4d;
+    color: #fff;
+    font-size: var(--t-sm);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: right;
+
+    &:first-child {
+      text-align: left;
+    }
+  }
+
+  tbody th,
+  td {
+    padding: 16px 20px;
+    border-top: 1px solid #e6eef6;
+    vertical-align: middle;
+  }
+
+  tbody th {
+    text-align: left;
+    font-weight: 600;
+    color: #0b1f4d;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: #1d5bd8;
+        text-decoration: underline;
+      }
+    }
+
+    small {
+      display: block;
+      margin-top: 2px;
+      font-size: var(--t-xs);
+      font-weight: 400;
+      color: #495464;
+    }
+  }
+
+  td {
+    text-align: right;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #212121;
+    font-variant-numeric: tabular-nums;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #f6f9fd;
+  }
+
+  tbody tr:hover {
+    background: #eaf2ff;
+  }
+
+  @include down($bp-sm) {
+    font-size: var(--t-sm);
+
+    thead th,
+    tbody th,
+    td {
+      padding: 12px 10px;
+    }
+
+    tbody th small {
+      display: none;
+    }
+  }
+}
+
+.feeNote {
+  max-width: 980px;
+  margin: 14px auto 0;
+  font-size: var(--t-xs);
+  line-height: 1.6;
+  color: #495464;
+  text-align: center;
 }
