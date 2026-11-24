@@ -193,50 +193,6 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 }
 
-.locked {
-  cursor: not-allowed;
-  opacity: 0.45;
-}
-
-.foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-top: 16px;
-  border-top: 1px solid $edge;
-  font-size: var(--t-sm);
-  color: $body;
-
-  // plain text action: the browser's default button box is reset
-  button {
-    appearance: none;
-    padding: 6px 0;
-    border: 0;
-    border-radius: 0;
-    background: none;
-    font: inherit;
-    font-size: var(--t-sm);
-    font-weight: 600;
-    color: $blue;
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    text-underline-offset: 4px;
-    cursor: pointer;
-    transition: text-decoration-color 0.25s ease;
-    @include focus-ring;
-
-    &:hover:not(:disabled) {
-      text-decoration-color: currentcolor;
-    }
-
-    &:disabled {
-      opacity: 0.4;
-      cursor: default;
-    }
-  }
-}
-
 // ---------- result panel (navy, same gradient as the programme hero)
 .result {
   display: flex;
@@ -263,50 +219,6 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 .kicker {
   @include eyebrow;
   color: $logo-yellow;
-}
-
-.pair {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0;
-  margin: clamp(18px, #{u(30)}, 30px) 0 clamp(20px, #{u(34)}, 34px);
-
-  @include down($bp-sm) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.sel {
-  padding: 4px clamp(14px, #{u(26)}, 26px) 4px 0;
-
-  & + & {
-    padding-left: clamp(14px, #{u(26)}, 26px);
-    border-left: 1px solid rgb(255 255 255 / 22%);
-
-    @include down($bp-sm) {
-      margin-top: 16px;
-      padding: 16px 0 0;
-      border-top: 1px solid rgb(255 255 255 / 22%);
-      border-left: 0;
-    }
-  }
-
-  b {
-    display: block;
-    font-size: var(--t-h4);
-    font-weight: 600;
-  }
-
-  p {
-    margin-top: 8px;
-    font-size: var(--t-sm);
-    line-height: 1.55;
-    color: rgb(255 255 255 / 80%);
-  }
-}
-
-.empty {
-  opacity: 0.6;
 }
 
 // ---------- benefits: four columns divided by hairlines (no boxes), a carousel on phones
@@ -397,12 +309,37 @@ $ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   line-height: 1.3;
 }
 
+// the chosen elective: name, photo, line from its page
+.one {
+  margin: clamp(10px, #{u(14)}, 14px) 0 clamp(20px, #{u(30)}, 30px);
+
+  h3 {
+    margin-top: 0;
+  }
+
+  p {
+    margin-top: 12px;
+    font-size: var(--t-body);
+    line-height: 1.6;
+    color: rgb(255 255 255 / 82%);
+  }
+}
+
+// single choice: round marker with a centre dot
+.radio {
+  border-radius: 50%;
+}
+
+.on .radio {
+  box-shadow: inset 0 0 0 5px #fff;
+}
+
 // photo of the chosen elective, under its name
 .selPic {
   position: relative;
   display: block;
   aspect-ratio: 16 / 9;
-  margin-top: 10px;
+  margin-top: 14px;
   overflow: hidden;
   border-radius: 8px;
   background: $bg-sky;

@@ -30,17 +30,14 @@ function Benefit({ icon, title, text }: { icon: keyof typeof ICON; title: string
 }
 
 /**
- * Dual specialisation builder: tick any two electives (never more than two) and the combination is previewed beside the list.
+ * Dual specialisation block: pick one elective from the list and it is previewed beside it.
  * Electives come from the page; the wording from `programme-architect.ts`.
  */
 export function ElectiveCombinator({ programName, programCode, electives }: { programName: string; programCode: string; electives: Elective[] }) {
   const { open } = useEnquiry();
   const copy = architectCopy(programName, electives.map((e) => e.name), programCode === 'mba');
-  const [picked, setPicked] = useState<number[]>(electives.length > 1 ? [0, 1] : [0]); // selection order = badge number
-  const full = picked.length >= 2;
-
-  const toggle = (i: number) => setPicked((p) => (p.includes(i) ? p.filter((x) => x !== i) : p.length < 2 ? [...p, i] : p));
-  const chosen = picked.map((i) => electives[i]);
+  const [picked, setPicked] = useState(0);
+  const chosen = electives[picked];
 
   return (
     <div className={s.wrap}>
@@ -66,55 +63,34 @@ export function ElectiveCombinator({ programName, programCode, electives }: { pr
           <p className={s.hint}>{copy.buildHint}</p>
           <ul className={s.options}>
             {electives.map((e, i) => {
-              const n = picked.indexOf(i);
-              const on = n >= 0;
-              const locked = full && !on;
+              const on = picked === i;
               return (
                 <li key={e.name}>
-                  <label className={`${s.opt} ${on ? s.on : ''} ${locked ? s.locked : ''}`}>
-                    <input type="checkbox" checked={on} disabled={locked} onChange={() => toggle(i)} />
-                    <span className={s.box} aria-hidden="true">
-                      {on ? n + 1 : ''}
-                    </span>
+                  <label className={`${s.opt} ${on ? s.on : ''}`}>
+                    <input type="radio" name={`architect-${programCode}`} checked={on} onChange={() => setPicked(i)} />
+                    <span className={`${s.box} ${s.radio}`} aria-hidden="true" />
                     <span className={s.name}>{e.name}</span>
                   </label>
                 </li>
               );
             })}
           </ul>
-          <div className={s.foot}>
-            <span aria-live="polite">{picked.length} of 2 selected</span>
-            <button type="button" onClick={() => setPicked([])} disabled={!picked.length}>
-              Clear selection
-            </button>
-          </div>
         </section>
 
         <aside className={s.result} aria-live="polite">
-          <p className={s.kicker}>Your dual specialisation</p>
-          <h3>{chosen.length === 2 ? `Online ${programName} in ${chosen[0].name} & ${chosen[1].name}` : `Online ${programName} with Dual Specialisation`}</h3>
-          <div className={s.pair}>
-            {[0, 1].map((slot) => {
-              const e = chosen[slot];
-              return e ? (
-                <div key={e.name} className={s.sel}>
-                  <b>{e.name}</b>
-                  {e.slug && (
-                    <span className={s.selPic}>
-                      <Image src={`/images/electives/${e.slug}.webp`} alt="" fill sizes="(max-width: 1200px) 45vw, 22vw" className={s.selImg} />
-                    </span>
-                  )}
-                  {e.blurb && <p>{e.blurb}</p>}
-                </div>
-              ) : (
-                <div key={slot} className={`${s.sel} ${s.empty}`}>
-                  <b>Choose a specialisation</b>
-                  <p>Tick {slot === 0 ? 'your first' : 'one more'} from the list.</p>
-                </div>
-              );
-            })}
-          </div>
-          <ArrowLink variant="outline" className={s.cta} onClick={() => open(programCode, chosen.length === 2 ? `Online ${programName} in ${chosen[0].name} & ${chosen[1].name}` : undefined)}>
+          <p className={s.kicker}>Your specialisation</p>
+          {chosen && (
+            <div className={s.one}>
+              <h3>{chosen.name}</h3>
+              {chosen.slug && (
+                <span className={s.selPic}>
+                  <Image src={`/images/electives/${chosen.slug}.webp`} alt="" fill sizes="(max-width: 1200px) 90vw, 44vw" className={s.selImg} />
+                </span>
+              )}
+              {chosen.blurb && <p>{chosen.blurb}</p>}
+            </div>
+          )}
+          <ArrowLink variant="outline" className={s.cta} onClick={() => open(programCode, chosen ? `Online ${programName} in ${chosen.name}` : undefined)}>
             {copy.cta}
           </ArrowLink>
         </aside>
