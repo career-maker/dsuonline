@@ -57,7 +57,8 @@ export function ProgramCurriculum({ sems, electives, totalCredits }: CurData) {
   return (
     <div className={s.wrap}>
       <aside className={s.side}>
-        <div className={s.menu} role="tablist" aria-label="Semesters" aria-orientation="vertical">
+        {/* four semesters: a 2x2 "four quadrant" grid on an x/y axis (all screens); otherwise a plain list */}
+        <div className={`${s.menu} ${sems.length === 4 ? s.quad : ''}`} role="tablist" aria-label="Semesters" aria-orientation={sems.length === 4 ? 'horizontal' : 'vertical'}>
           {sems.map((x, i) => (
             <button key={x.label} type="button" role="tab" aria-selected={view.kind === 'sem' && view.i === i} className={view.kind === 'sem' && view.i === i ? s.on : ''} onClick={() => pickSem(i)}>
               <span>
